@@ -1,0 +1,12 @@
+- - ЩЩЩ Name
+  - string
+- - ЧЧЧЧ Position
+  - string
+- - ЪЪЪЪ Office
+  - string
+- - ЮЮЮ Age
+  - string
+- - ЗЗЗ Start date
+  - datetime
+- - Salary
+  - string

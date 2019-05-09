@@ -1,0 +1,259 @@
+{{extend 'w2playout.html'}}
+{{=form}}
+<style>
+   p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12pt; /* Размер шрифта в пунктах */ 
+   }
+  </style>
+<p>{{=T('site tables')}}</p>
+
+<p>{{=A('dfixed0header', _href=URL(c='myadd',f='fixed_header'))}}</p>
+
+<p>{{=A('dpanel', _href=URL(c='myadd',f='panel'))}}</p>
+
+<p>{{=A('dblank', _href=URL(c='myadd',f='blank'))}}</p>
+
+<p>{{=A('dpricing', _href=URL(c='myadd',f='pricing'))}}</p>
+
+<p>{{=A('dgrid', _href=URL(c='myadd',f='grid'))}}</p>
+
+<p>{{=A('dform0validation', _href=URL(c='myadd',f='form_validation'))}}</p>
+
+<p>{{=A('dtypography', _href=URL(c='myadd',f='typography'))}}</p>
+
+<p>{{=A('dfixed0mini0sidebar', _href=URL(c='myadd',f='fixed_mini_sidebar'))}}</p>
+
+<p>{{=A('dno0main0search', _href=URL(c='myadd',f='no_main_search'))}}</p>
+
+<p>{{=A('dfixed0header0fixed0mini0sidebar', _href=URL(c='myadd',f='fixed_header_fixed_mini_sidebar'))}}</p>
+
+<p>{{=A('dmaps', _href=URL(c='myadd',f='maps'))}}</p>
+
+<p>{{=A('dfixed0menu', _href=URL(c='myadd',f='fixed_menu'))}}</p>
+
+<p>{{=A('dboxed', _href=URL(c='myadd',f='boxed'))}}</p>
+
+<p>{{=A('dfixed0header0boxed', _href=URL(c='myadd',f='fixed_header_boxed'))}}</p>
+
+<p>{{=A('dform0wizard', _href=URL(c='myadd',f='form_wizard'))}}</p>
+
+<p>{{=A('dno0header', _href=URL(c='myadd',f='no_header'))}}</p>
+
+<p>{{=A('dno0header0sidebar', _href=URL(c='myadd',f='no_header_sidebar'))}}</p>
+
+<p>{{=A('dfixed0menu0boxed', _href=URL(c='myadd',f='fixed_menu_boxed'))}}</p>
+
+<p>{{=A('dicon', _href=URL(c='myadd',f='icon'))}}</p>
+
+<p>{{=A('dno0right0sidebar', _href=URL(c='myadd',f='no_right_sidebar'))}}</p>
+
+<p>{{=A('dchart', _href=URL(c='myadd',f='chart'))}}</p>
+
+<p>{{=A('dlogin', _href=URL(c='myadd',f='login'))}}</p>
+
+<p>{{=A('dcountdown', _href=URL(c='myadd',f='countdown'))}}</p>
+
+<p>{{=A('d503', _href=URL(c='myadd',f='X503'))}}</p>
+
+<p>{{=A('dbgcolor', _href=URL(c='myadd',f='bgcolor'))}}</p>
+
+<p>{{=A('dalterne', _href=URL(c='myadd',f='alterne'))}}</p>
+
+<p>{{=A('dno0left0sidebar0main0search', _href=URL(c='myadd',f='no_left_sidebar_main_search'))}}</p>
+
+<p>{{=A('ddashboard', _href=URL(c='myadd',f='dashboard'))}}</p>
+
+<p>{{=A('dbgimage', _href=URL(c='myadd',f='bgimage'))}}</p>
+
+<p>{{=A('dform0general', _href=URL(c='myadd',f='form_general'))}}</p>
+
+<p>{{=A('dno0left0sidebar', _href=URL(c='myadd',f='no_left_sidebar'))}}</p>
+
+<p>{{=A('dprogress', _href=URL(c='myadd',f='progress'))}}</p>
+
+<p>{{=A('dno0left0right0sidebar', _href=URL(c='myadd',f='no_left_right_sidebar'))}}</p>
+
+<p>{{=A('dtable', _href=URL(c='myadd',f='table'))}}</p>
+
+<p>{{=A('dfixed0header0mini0sidebar', _href=URL(c='myadd',f='fixed_header_mini_sidebar'))}}</p>
+
+<p>{{=A('dindex', _href=URL(c='myadd',f='table_index1'))}}</p>
+
+<p>{{=A('dcalendar', _href=URL(c='myadd',f='calendar'))}}</p>
+
+<p>{{=A('d403', _href=URL(c='myadd',f='X403'))}}</p>
+
+<p>{{=A('d500', _href=URL(c='myadd',f='X500'))}}</p>
+
+<p>{{=A('dfixed0header0menu', _href=URL(c='myadd',f='fixed_header_menu'))}}</p>
+
+<p>{{=A('dsm', _href=URL(c='myadd',f='sm'))}}</p>
+
+<p>{{=A('dfxhmoxed', _href=URL(c='myadd',f='fxhmoxed'))}}</p>
+
+<p>{{=A('d405', _href=URL(c='myadd',f='X405'))}}</p>
+
+<p>{{=A('dform0wysiwyg', _href=URL(c='myadd',f='form_wysiwyg'))}}</p>
+
+<p>{{=A('d404', _href=URL(c='myadd',f='X404'))}}</p>
+
+<p>{{=A('dbutton', _href=URL(c='myadd',f='button'))}}</p>
+
+<p>{{=A('doffline', _href=URL(c='myadd',f='offline'))}}</p>
+
+<p>{{=A('auth_event', _href=URL(c='myadd',f='auth_eventctrl'))}}</p>
+
+<p>{{=A('auth_user', _href=URL(c='myadd',f='auth_userctrl'))}}</p>
+
+<p>{{=A('auth_group', _href=URL(c='myadd',f='auth_groupctrl'))}}</p>
+
+<p>{{=A('auth_membership', _href=URL(c='myadd',f='auth_membershipctrl'))}}</p>
+
+<p>{{=A('dashboardtable0', _href=URL(c='myadd',f='dashboardtable0ctrl'))}}</p>
+
+<p>{{=A('tabletable0', _href=URL(c='myadd',f='tabletable0ctrl'))}}</p>
+
+<p>{{=A('tabletable1', _href=URL(c='myadd',f='tabletable1ctrl'))}}</p>
+
+<p>{{=A('tabletable2', _href=URL(c='myadd',f='tabletable2ctrl'))}}</p>
+
+<p>{{=A('tabletable3', _href=URL(c='myadd',f='tabletable3ctrl'))}}</p>
+
+<p>{{=A('tabletable4', _href=URL(c='myadd',f='tabletable4ctrl'))}}</p>
+
+<p>{{=A('tabletable5', _href=URL(c='myadd',f='tabletable5ctrl'))}}</p>
+
+<p>{{=A('tabletable6', _href=URL(c='myadd',f='tabletable6ctrl'))}}</p>
+
+<p>{{=A('typographytable0', _href=URL(c='myadd',f='typographytable0ctrl'))}}</p>
+
+<p>{{=A('typographytable1', _href=URL(c='myadd',f='typographytable1ctrl'))}}</p>
+
+<p>{{=A('alternetable0', _href=URL(c='myadd',f='alternetable0ctrl'))}}</p>
+
+<p>{{=A('dbgimageform0', _href=URL(c='myadd',f='dbgimageform0ctrl'))}}</p>
+
+<p>{{=A('dboxedform0', _href=URL(c='myadd',f='dboxedform0ctrl'))}}</p>
+
+<p>{{=A('dbuttonform0', _href=URL(c='myadd',f='dbuttonform0ctrl'))}}</p>
+
+<p>{{=A('dfixed_header_fixed_mini_sidebarform0', _href=URL(c='myadd',f='dfixed_header_fixed_mini_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dX404form0', _href=URL(c='myadd',f='dX404form0ctrl'))}}</p>
+
+<p>{{=A('ddashboardform0', _href=URL(c='myadd',f='ddashboardform0ctrl'))}}</p>
+
+<p>{{=A('dno_right_sidebarform0', _href=URL(c='myadd',f='dno_right_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dform_generalform0', _href=URL(c='myadd',f='dform_generalform0ctrl'))}}</p>
+
+<p>{{=A('dform_generalform1', _href=URL(c='myadd',f='dform_generalform1ctrl'))}}</p>
+
+<p>{{=A('dform_generalform2', _href=URL(c='myadd',f='dform_generalform2ctrl'))}}</p>
+
+<p>{{=A('dform_generalform3', _href=URL(c='myadd',f='dform_generalform3ctrl'))}}</p>
+
+<p>{{=A('dform_generalform4', _href=URL(c='myadd',f='dform_generalform4ctrl'))}}</p>
+
+<p>{{=A('dform_generalform5', _href=URL(c='myadd',f='dform_generalform5ctrl'))}}</p>
+
+<p>{{=A('dform_generalform6', _href=URL(c='myadd',f='dform_generalform6ctrl'))}}</p>
+
+<p>{{=A('dform_generalform7', _href=URL(c='myadd',f='dform_generalform7ctrl'))}}</p>
+
+<p>{{=A('dform_generalform8', _href=URL(c='myadd',f='dform_generalform8ctrl'))}}</p>
+
+<p>{{=A('dform_generalform9', _href=URL(c='myadd',f='dform_generalform9ctrl'))}}</p>
+
+<p>{{=A('dform_generalform10', _href=URL(c='myadd',f='dform_generalform10ctrl'))}}</p>
+
+<p>{{=A('dindexform0', _href=URL(c='myadd',f='dindexform0ctrl'))}}</p>
+
+<p>{{=A('dX503form0', _href=URL(c='myadd',f='dX503form0ctrl'))}}</p>
+
+<p>{{=A('dmapsform0', _href=URL(c='myadd',f='dmapsform0ctrl'))}}</p>
+
+<p>{{=A('dmapsform1', _href=URL(c='myadd',f='dmapsform1ctrl'))}}</p>
+
+<p>{{=A('dtableform0', _href=URL(c='myadd',f='dtableform0ctrl'))}}</p>
+
+<p>{{=A('dfixed_headerform0', _href=URL(c='myadd',f='dfixed_headerform0ctrl'))}}</p>
+
+<p>{{=A('dloginform0', _href=URL(c='myadd',f='dloginform0ctrl'))}}</p>
+
+<p>{{=A('dloginform1', _href=URL(c='myadd',f='dloginform1ctrl'))}}</p>
+
+<p>{{=A('dloginform2', _href=URL(c='myadd',f='dloginform2ctrl'))}}</p>
+
+<p>{{=A('dchartform0', _href=URL(c='myadd',f='dchartform0ctrl'))}}</p>
+
+<p>{{=A('dgridform0', _href=URL(c='myadd',f='dgridform0ctrl'))}}</p>
+
+<p>{{=A('diconform0', _href=URL(c='myadd',f='diconform0ctrl'))}}</p>
+
+<p>{{=A('dX403form0', _href=URL(c='myadd',f='dX403form0ctrl'))}}</p>
+
+<p>{{=A('dfixed_header_menuform0', _href=URL(c='myadd',f='dfixed_header_menuform0ctrl'))}}</p>
+
+<p>{{=A('dfixed_header_mini_sidebarform0', _href=URL(c='myadd',f='dfixed_header_mini_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dpanelform0', _href=URL(c='myadd',f='dpanelform0ctrl'))}}</p>
+
+<p>{{=A('dfixed_menu_boxedform0', _href=URL(c='myadd',f='dfixed_menu_boxedform0ctrl'))}}</p>
+
+<p>{{=A('dfixed_mini_sidebarform0', _href=URL(c='myadd',f='dfixed_mini_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dno_left_sidebarform0', _href=URL(c='myadd',f='dno_left_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dX405form0', _href=URL(c='myadd',f='dX405form0ctrl'))}}</p>
+
+<p>{{=A('dfixed_header_boxedform0', _href=URL(c='myadd',f='dfixed_header_boxedform0ctrl'))}}</p>
+
+<p>{{=A('dtypographyform0', _href=URL(c='myadd',f='dtypographyform0ctrl'))}}</p>
+
+<p>{{=A('dsmform0', _href=URL(c='myadd',f='dsmform0ctrl'))}}</p>
+
+<p>{{=A('dprogressform0', _href=URL(c='myadd',f='dprogressform0ctrl'))}}</p>
+
+<p>{{=A('dalterneform0', _href=URL(c='myadd',f='dalterneform0ctrl'))}}</p>
+
+<p>{{=A('dofflineform0', _href=URL(c='myadd',f='dofflineform0ctrl'))}}</p>
+
+<p>{{=A('dblankform0', _href=URL(c='myadd',f='dblankform0ctrl'))}}</p>
+
+<p>{{=A('dcountdownform0', _href=URL(c='myadd',f='dcountdownform0ctrl'))}}</p>
+
+<p>{{=A('dcountdownform1', _href=URL(c='myadd',f='dcountdownform1ctrl'))}}</p>
+
+<p>{{=A('dform_wysiwygform0', _href=URL(c='myadd',f='dform_wysiwygform0ctrl'))}}</p>
+
+<p>{{=A('dform_wysiwygform1', _href=URL(c='myadd',f='dform_wysiwygform1ctrl'))}}</p>
+
+<p>{{=A('dform_wysiwygform2', _href=URL(c='myadd',f='dform_wysiwygform2ctrl'))}}</p>
+
+<p>{{=A('dpricingform0', _href=URL(c='myadd',f='dpricingform0ctrl'))}}</p>
+
+<p>{{=A('dbgcolorform0', _href=URL(c='myadd',f='dbgcolorform0ctrl'))}}</p>
+
+<p>{{=A('dcalendarform0', _href=URL(c='myadd',f='dcalendarform0ctrl'))}}</p>
+
+<p>{{=A('dno_left_right_sidebarform0', _href=URL(c='myadd',f='dno_left_right_sidebarform0ctrl'))}}</p>
+
+<p>{{=A('dform_wizardform0', _href=URL(c='myadd',f='dform_wizardform0ctrl'))}}</p>
+
+<p>{{=A('dform_wizardform1', _href=URL(c='myadd',f='dform_wizardform1ctrl'))}}</p>
+
+<p>{{=A('dfixed_menuform0', _href=URL(c='myadd',f='dfixed_menuform0ctrl'))}}</p>
+
+<p>{{=A('dfxhmoxedform0', _href=URL(c='myadd',f='dfxhmoxedform0ctrl'))}}</p>
+
+<p>{{=A('dX500form0', _href=URL(c='myadd',f='dX500form0ctrl'))}}</p>
+
+<p>{{=A('dform_validationform0', _href=URL(c='myadd',f='dform_validationform0ctrl'))}}</p>
+
+<p>{{=A('dform_validationform1', _href=URL(c='myadd',f='dform_validationform1ctrl'))}}</p>
+
+<p>{{=A('dform_validationform2', _href=URL(c='myadd',f='dform_validationform2ctrl'))}}</p>
+
+<p>{{=A('dform_validationform3', _href=URL(c='myadd',f='dform_validationform3ctrl'))}}</p>

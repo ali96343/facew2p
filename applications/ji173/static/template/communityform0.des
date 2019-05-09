@@ -1,0 +1,23 @@
+- - select
+  - id: fdf5
+    placeholder: place_3
+  - for: fdf5
+    text: Show
+  - &id001
+    - Everything
+    - Everything
+    - *id001
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_3
+    type: submit
+    value: submit select
+  - for: fdf5
+    text: Show
+  - &id002
+    - Everything
+    - Everything
+    - *id002
+  - {}

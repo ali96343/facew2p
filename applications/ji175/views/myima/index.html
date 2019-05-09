@@ -1,0 +1,46 @@
+{{extend 'w2playout.html'}}
+<h2>{{=T('site images' )}}</h2>
+<p>{{=T('select, pls, image for replace')}}<p>
+<style>
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  }
+.grid img {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
+}
+</style>
+<main class='grid'>
+{{=A(IMG(_src=URL('static/template', 'img/blog-post-3.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-post-3.jpeg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/avatar-1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/avatar-1.jpg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/featured-pic-3.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/featured-pic-3.jpeg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/user.svg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/user.svg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/small-thumbnail-1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/small-thumbnail-1.jpg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/small-thumbnail-2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/small-thumbnail-2.jpg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/small-thumbnail-3.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/small-thumbnail-3.jpg', imgctrl='post')))}}
+{{=A(IMG(_src=URL('static/template', 'img/hero.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/hero.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/featured-pic-1.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/featured-pic-1.jpeg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/featured-pic-2.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/featured-pic-2.jpeg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/avatar-2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/avatar-2.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/avatar-3.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/avatar-3.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/divider-bg.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/divider-bg.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-1.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-2.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-3.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-3.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/gallery-1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/gallery-1.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/gallery-2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/gallery-2.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/gallery-3.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/gallery-3.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/gallery-4.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/gallery-4.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-post-1.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-post-1.jpeg', imgctrl='blog')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-post-2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-post-2.jpg', imgctrl='blog')))}}
+{{=A(IMG(_src=URL('static/template', 'img/blog-post-4.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/blog-post-4.jpeg', imgctrl='blog')))}}
+{{=A(IMG(_src=URL('static/template', 'img/hero-bg.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/hero-bg.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/gallery-2.jpeg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/gallery-2.jpeg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/logo-white.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/logo-white.png', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/template-mac.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/template-mac.png', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'img/logo.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='img/logo.png', imgctrl='index')))}}
+</main>

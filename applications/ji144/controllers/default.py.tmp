@@ -1,0 +1,244 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+# -------------------------------------------------------------------------
+# This is a sample controller
+# - index is the default action of any application
+# - user is required for authentication and authorization
+# - download is for downloading files uploaded in the db (does streaming)
+# -------------------------------------------------------------------------
+
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+
+
+#@auth.requires_login()
+def ui_alerts():
+    response.view = 'default/ui-alerts.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def page_register():
+    response.view = 'default/page-register.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_switches():
+    response.view = 'default/ui-switches.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def page_login():
+    response.view = 'default/page-login.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_badges():
+    response.view = 'default/ui-badges.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def tables_data():
+    response.view = 'default/tables-data.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def charts_peity():
+    response.view = 'default/charts-peity.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_tabs():
+    response.view = 'default/ui-tabs.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def tables_basic():
+    response.view = 'default/tables-basic.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def font_themify():
+    response.view = 'default/font-themify.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_cards():
+    response.view = 'default/ui-cards.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def frame():
+    response.view = 'default/frame.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_typgraphy():
+    response.view = 'default/ui-typgraphy.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def forms_advanced():
+    response.view = 'default/forms-advanced.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def charts_chartjs():
+    response.view = 'default/charts-chartjs.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def charts_flot():
+    response.view = 'default/charts-flot.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_progressbar():
+    response.view = 'default/ui-progressbar.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def maps_gmap():
+    response.view = 'default/maps-gmap.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def widgets():
+    response.view = 'default/widgets.html'
+    return dict(key='value')
+
+
+#@auth.requires_login()
+def index():
+    response.view = 'default/index.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_buttons():
+    response.view = 'default/ui-buttons.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def forms_basic():
+    response.view = 'default/forms-basic.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def pages_forget():
+    response.view = 'default/pages-forget.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_social_buttons():
+    response.view = 'default/ui-social-buttons.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_grids():
+    response.view = 'default/ui-grids.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def ui_modals():
+    response.view = 'default/ui-modals.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def font_fontawesome():
+    response.view = 'default/font-fontawesome.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def maps_vector():
+    response.view = 'default/maps-vector.html'
+    return dict(key='value')
+

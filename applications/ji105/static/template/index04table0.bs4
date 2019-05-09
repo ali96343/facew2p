@@ -1,0 +1,6 @@
+      db.DBTBL.insert( f0= '00 index04table0', f1= '0w2p1 Name', f2= '0w2p2 Price', )
+      db.DBTBL.insert( f0= '4555', f1= 'Samsung Galaxy Mega', f2= '$921', )
+      db.DBTBL.insert( f0= '4556', f1= 'Huawei Ascend P6', f2= '$240', )
+      db.DBTBL.insert( f0= '8778', f1= 'HTC One M8', f2= '$400', )
+      db.DBTBL.insert( f0= '5667', f1= 'Samsung Galaxy Alpha', f2= '$870', )
+      db.DBTBL.insert( f0= '7886', f1= 'LG G3', f2= '$790', )

@@ -1,0 +1,30 @@
+{{extend 'w2playout.html'}}
+<h2>{{=T('site images' )}}</h2>
+<p>{{=T('select, pls, image for replace')}}<p>
+<style>
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  }
+.grid img {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
+}
+</style>
+<main class='grid'>
+{{=A(IMG(_src=URL('static/template', 'images/logo.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/logo.png', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/logo2.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/logo2.png', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/1.jpg', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/2.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/2.jpg', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/3.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/3.jpg', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/4.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/4.jpg', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/admin.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/admin.jpg', imgctrl='ui_alerts')))}}
+{{=A(IMG(_src=URL('static/template', 'images/placeholder.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/placeholder.png', imgctrl='ui_cards')))}}
+{{=A(IMG(_src=URL('static/template', 'images/twitter_corner_blue.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/twitter_corner_blue.png', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/twitter_corner_black.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/twitter_corner_black.png', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/5.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/5.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/avatar/6.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/avatar/6.jpg', imgctrl='index')))}}
+</main>

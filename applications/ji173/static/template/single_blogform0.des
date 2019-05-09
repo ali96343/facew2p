@@ -1,0 +1,31 @@
+- - input
+  - placeholder: Name
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - placeholder: Email
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - placeholder: Subject
+    type: text
+  - {}
+  - []
+  - {}
+- - textarea
+  - placeholder: Message
+  - {}
+  - []
+  - {}
+- - button
+  - class: site-btn btn-sm
+    placeholder: place_0
+    type: submit
+    value: Send
+  - {}
+  - []
+  - {}

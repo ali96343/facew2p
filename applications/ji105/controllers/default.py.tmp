@@ -1,0 +1,328 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+# -------------------------------------------------------------------------
+# This is a sample controller
+# - index is the default action of any application
+# - user is required for authentication and authorization
+# - download is for downloading files uploaded in the db (does streaming)
+# -------------------------------------------------------------------------
+
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+
+
+#@auth.requires_login()
+def index_2():
+    response.view = 'default/index-2.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def animations():
+    response.view = 'default/animations.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def tabs():
+    response.view = 'default/tabs.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def accordion():
+    response.view = 'default/accordion.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def modals():
+    response.view = 'default/modals.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def code_editor():
+    response.view = 'default/code-editor.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def login_register():
+    response.view = 'default/login-register.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def typography():
+    response.view = 'default/typography.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def invoice():
+    response.view = 'default/invoice.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def view_email():
+    response.view = 'default/view-email.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def form_components():
+    response.view = 'default/form-components.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def flot_charts():
+    response.view = 'default/flot-charts.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def buttons():
+    response.view = 'default/buttons.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def analytics():
+    response.view = 'default/analytics.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def dialog():
+    response.view = 'default/dialog.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def wizard():
+    response.view = 'default/wizard.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def bar_charts():
+    response.view = 'default/bar-charts.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def notification():
+    response.view = 'default/notification.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def dropdown():
+    response.view = 'default/dropdown.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def area_charts():
+    response.view = 'default/area-charts.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def index_4():
+    response.view = 'default/index-4.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def form_elements():
+    response.view = 'default/form-elements.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def alert():
+    response.view = 'default/alert.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def line_charts():
+    response.view = 'default/line-charts.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def contact():
+    response.view = 'default/contact.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def popovers():
+    response.view = 'default/popovers.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def normal_table():
+    response.view = 'default/normal-table.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def form_examples():
+    response.view = 'default/form-examples.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def index_3():
+    response.view = 'default/index-3.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def color():
+    response.view = 'default/color.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def widgets():
+    response.view = 'default/widgets.html'
+    return dict(key='value')
+
+
+#@auth.requires_login()
+def index():
+    response.view = 'default/index.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def data_map():
+    response.view = 'default/data-map.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def compose_email():
+    response.view = 'default/compose-email.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def inbox():
+    response.view = 'default/inbox.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def google_map():
+    response.view = 'default/google-map.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def tooltips():
+    response.view = 'default/tooltips.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def data_table():
+    response.view = 'default/data-table.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def X404():
+    response.view = 'default/404.html'
+    return dict(key='value')
+
+
+
+#@auth.requires_login()
+def image_cropper():
+    response.view = 'default/image-cropper.html'
+    return dict(key='value')
+

@@ -1,0 +1,3285 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# coding=utf-8
+
+
+from __future__ import print_function
+
+__author__ = "Alex Beskopilny" 
+__copyright__ = "Copyright 2019, The web2py app generator from css template project"
+__credits__ = ["Alex Beskopilny"]
+__license__ = "MIT"
+__version__ = "0.1.0"
+__maintainer__ = "Alex Beskopilny"
+__email__ = "ab96343@gmail.com"
+__status__ = "Dev"
+
+
+# https://github.com/flatlogic/sing-app
+# https://github.com/BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template
+#$ cd MyApp
+#2. Run npm install && bower install
+#3. Run gulp build
+#4. run gulp watch
+
+# form https://bootstrapious.com/free-templates
+# https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
+# https://github.com/BlackrockDigital/startbootstrap-agency
+# https://startbootstrap.com/themes/
+
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+
+help_text= [ "The script generates web2py app from free (and not free) css template",
+             "using:",
+             "0. install web2py http://web2py.com, copy the script to ~/bin",
+             "1. Create web2py new myapp",
+             "2. cd myapp/static && mkdir template && cd template",
+             "3. search and download free css template to myapp/static/template",
+             "4. run the script  (if template in zip,  the script will unzip the template)",
+             "5. at every run the script delete ../../databases/*",
+             "6. view messages on screen",
+             "7. view url/myapp, view tables in  url/myapp/appadmin, view tables in  url/myapp/myadd",
+             "8. view images in  url/myapp/myima",
+             "9. the script  expect a _relative_ (!) path in the css template!"
+           ]
+
+import yaml, io
+import re, pprint,  glob,  os,  shutil, re, ast
+import requests,  zipfile, socket, difflib, datetime
+import uuid , signal, json, random, string
+from email.utils import parseaddr
+
+def handler(signum, frame):
+    prYellow ( 'Pls, wait for the program to finish! signal handler called with signal: %s' % signum)
+
+# Set the signal handler
+signal.signal(signal.SIGINT, handler)
+
+from collections import defaultdict
+
+try:
+    import bs4 as bs
+    from PIL import Image
+except:
+    sys.exit('pls, install bs4, PIL: pip install bs4, pip install PIL')
+
+#---------------------------------------------------------------------------------------------
+
+#def clean_string(string):
+#    #return str(re.sub(r'\W+', '', string) )
+#    return str(''.join(e for e in string if e.isalnum()) )
+
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+#def prLightPurple(skk): print("\033[94m {}\033[00m" .format(skk))
+#def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+#def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
+#def prLightGray(skk): print("\033[97m {}\033[00m" .format(skk))
+#def prBlack(skk): print("\033[98m {}\033[00m" .format(skk))
+
+
+def gen_uniq_key():
+   letsum= string.ascii_lowercase + string.ascii_uppercase
+   letter= (x  for x in letsum )
+   n=1
+   ll= next (letter)
+   while True:
+       yield ll + str(n)
+       if n % 1000 == 0:
+           n= 0
+           ll= next (letter)
+       n += 1
+
+
+#int_uniq_key= gen_uniq_key() 
+int_uniq_key=  (n  for n in range(100000) ) 
+int_uniq_key4unk=  (n  for n in range(100000) ) 
+
+def replace_in_obj(ob, dd):
+   if isinstance(ob, (list,)):
+      newl=[]
+      for e in ob:
+          for k,v in dd.items():
+              e = e.replace(k, v)
+          newl.append( e )
+      return newl
+
+   if isinstance(ob, (dict,)):
+      newdict= dict()
+      for k1, v1  in ob.items():
+            for k,v in dd.items():
+                v1 = v1.replace(k, v)
+            newdict[k1]= v1
+      return newdict
+
+   ss=ob
+   for k, v in dd.items():
+      ss= ss.replace(k, v)
+
+   return ss
+
+
+def raw_string(s):
+    if isinstance(s, str):
+        s = s.encode('string-escape')
+    elif isinstance(s, unicode):
+        s = s.encode('unicode-escape')
+    return s
+
+def hard_clear(ob, ):
+   def clr_str(s1):
+       if s1 is None:
+           return "submit" + str(next(int_uniq_key4unk))
+       for e in [ '\n\r', '\t', '\n', '\r',"'", '"', ] :
+              s1= s1.replace(e, ' ')
+
+       data= " ".join(s1.split())
+       s1= (data[:1000] + '..') if len(data) > 1000 else data
+       if len(s1) == 0:
+           return "unk_" + str(next(int_uniq_key4unk))
+       return s1.encode('ascii',errors='ignore')
+
+   if isinstance(ob, (list,)):
+      return [ clr_str(e) for e in ob ]
+
+   if isinstance(ob, (dict,)):
+      return { k : clr_str( v )  for k, v in ob.items()}
+
+   return  clr_str(ob)
+
+#--------------------------------------------------------------------------------------------
+
+fld_double=    "   Field( 'FLD', 'double', label= 'LABEL', default= 0.0 ), "
+fld_integer=    "   Field( 'FLD', 'integer', label= 'LABEL', default= 0 ), "
+fld_date=    "   Field( 'FLD', 'date', label= 'LABEL', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), "
+fld_datetime=    "   Field( 'FLD', 'datetime', label= 'LABEL', default = request.now, requires = IS_DATETIME(format=T('%d.%m.%Y %H:%M:%S') )), "
+fld_str=    "   Field( 'FLD', 'string', label= 'LABEL', default= 'w2p FLD' ), "
+fld_txt=    "   Field( 'FLD', 'text', label= 'LABEL' , default= 'w2p FLD'), "
+fld_bool=   "   Field( 'FLD', 'boolean', label= 'LABEL' , default= True), "
+fld_select= "   Field( 'FLD', requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),"
+fld_radio=  "   Field( 'FLD', requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),"
+tbl_med_type= { 'input':fld_str, 'string': fld_str,'textarea': fld_txt, 'radio': fld_radio, 'select': fld_select, 'checkbox': fld_bool, 'button': None ,
+                'integer': fld_integer, 'double': fld_double, 'datetime': fld_datetime , 'date': fld_date, 'boolean': fld_bool }
+
+#---------------------------------------------------------------------------------------------
+class FileOper:
+
+        @staticmethod
+        def put2yaml( fnm, data_fld , mode= 'w' ):
+               if os.path.isfile( fnm ):
+                       return False
+               with io.open( fnm, mode, encoding='utf8') as outfile:
+                       yaml.dump(data_fld, outfile, default_flow_style=False, allow_unicode=True)
+               return True
+
+        @staticmethod
+        def get4yaml ( fnm ):
+               if not os.path.isfile( fnm ):
+                  return None
+               with open( fnm, 'r') as f:
+                         data_fld = yaml.safe_load(f)
+               return data_fld
+
+        @staticmethod
+        def put_get_yaml( fnm, data_fld ,  ):
+             FileOper.put2yaml( fnm, data_fld , )
+             return FileOper.get4yaml ( fnm.split('.')[0] + '.new' )  
+
+
+        @staticmethod
+        def touch(fname):
+               if os.path.exists(fname):
+                    os.utime(fname, None)
+               else:
+                    open(fname, 'a').close()
+
+        @staticmethod
+        def unminify_css(fnm= 'xxx', replace= False):
+               def count_newline(fnm):
+                     string_len= 40
+                     with open(fnm) as f:
+                         minified_css= f.read()
+                     newline=  minified_css.count('\n')
+                     path= os.path.join(os.getcwd(),fnm )
+                     expected_newline=  os.path.getsize( path)/string_len
+                     return  newline < expected_newline
+    
+               if not count_newline(fnm):
+                   return
+
+               if not os.path.isfile(fnm + '.orig'):
+                    shutil.copy2(fnm, fnm + '.orig')
+
+               with open(fnm) as f:
+                   minified_css= f.read()
+    
+               #http://pythonfiddle.com/css-unminifier-script/
+    
+               unminified_css = re.sub("\{", " {\n\n\t", minified_css)
+               unminified_css = re.sub("\}", "\n\n}\n\n", unminified_css)
+               unminified_css = re.sub(";", ";\n\t", unminified_css)
+               #print unminified_css
+               newfnm = fnm if replace == True else fnm + '.un'
+               with open(newfnm, 'w') as f:
+                  f.write(unminified_css)
+                  print (" unmini css: ",newfnm )
+
+        @staticmethod
+        def hp_print(fnm, pat= None, dbg= False):
+
+              with open(fnm) as f:
+                     code = f.read()
+              code= code.replace( r'\r','')
+              if pat is None:
+                     pat= r'(<p>)(.*?)(</p>)(.)'
+              ma= re.search(pat , code,  re.DOTALL)
+              result= code
+
+              if ma:
+                #print ( ma.groups() )
+                if dbg:
+                     for i in range(0, len(ma.groups()) ) :
+                         print    (  "{} {} \n".format(i, ma.group(i) ) )
+                newpat= ma.group(0).replace("\n",'').replace("\t",'')
+                newpat += '\n'
+                result= re.sub( pat , newpat, code, flags=re.S)
+
+              with open(fnm , 'w') as f:
+                  f.write(result)
+
+        @staticmethod
+        def preprocess_hp( hard_hp = False):
+            # for future , now bad
+            for f in glob.glob("*.html"):
+                
+                FileOper.hp_print(f, pat= r'(<title>)(.*?)(</title>)(.)' )
+                if hard_hp == False:
+                  continue 
+                FileOper.hp_print(f, pat= r'(<p>)(.*?)(</p>)(.)' )
+                FileOper.hp_print(f, pat= r'(<p[^>].*?>)(.*?)(</p>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h1[^>].*?>)(.*?)(</h1>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h2[^>].*?>)(.*?)(</h2>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h3[^>].*?>)(.*?)(</h3>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h4[^>].*?>)(.*?)(</h4>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h5[^>].*?>)(.*?)(</h5>)(.)' )
+                FileOper.hp_print(f, pat= r'(<h6[^>].*?>)(.*?)(</h6>)(.)' )
+
+        @staticmethod
+        def func_off_in_file(fnm, ctrl_nm ,add_sym= 'Y' ):
+            def get_ast_list(fnm):
+                 with open(fnm)as f: code= f.read()
+                 tree = ast.parse(code)
+                 return  [x.name for x in ast.walk(tree) if isinstance(x, ast.FunctionDef)]
+
+            for e in  get_ast_list(fnm ):
+                 if e ==  ctrl_nm:
+                    FileOper.func_off(fnm, ctrl_nm, add_sym)
+
+        @staticmethod
+        def replace_pat(fnm= 'index.html.b1', src_pat=r'(<table[^<]+)(.*)(</table>)(.)', dst_pat=  r"\g<1> test\n \g<3> \n" ):
+
+            if not os.path.exists( fnm):
+                prRed ( " replace_pat error: file  %s does not exosts" % k )
+                return None
+               
+            if isinstance(dst_pat, (list,)): 
+                   dst_pat = "\n".join(dst_pat)
+             
+       
+            #dst_pat = dst_pat.encode('ascii',errors='ignore')
+            try: 
+                with open(fnm) as f: code = f.read()
+                ma= re.search(src_pat , code,  re.DOTALL)
+                if ma:
+                  #for i in range(0, len(ma.groups()) ) :
+                  #         print    (  "{} {} \n".format(i, ma.group(i) ) )
+                  result= re.sub( src_pat , dst_pat, code, count=1, flags=re.S)
+                  with open(fnm , 'w') as f: f.write(result)
+                  return fnm
+            except:
+               print ("xxxxxxxxxxxx: ", dst_pat)
+               return None
+            return fnm
+
+        @staticmethod
+        def rm_from_list(ll, pat=""):
+        
+            code="\n".join(ll)
+            result = code
+            pat= r'(<script>)(.*?)(GoogleAnalyticsObject)(.*?)(</script>)(.)'
+            ma= re.search(pat , code,  re.DOTALL)
+        
+            if ma:
+                 #for i in range(0, len(ma.groups()) ) :
+                 #      print "{} {} ".format(i, ma.group(i) )
+                 result=re.sub(pat, "", code, flags=re.S )
+            return result.split('\n')
+        
+        @staticmethod
+        def rebuild_node_index(fnm="index.html", dbg= False, wdir= 'template', pat_size= 'small' ):
+
+#{{
+#response.files.insert(0,URL('static','js/jquery.js'))
+#response.files.insert(1,URL('static','css/calendar.css'))
+#response.files.insert(2,URL('static','js/calendar.js'))
+#response.files.insert(3,URL('static','js/web2py.js'))
+#}}
+
+#   <link href="/css/chunk-01885e5e.1f6a7266.css" rel="prefetch"/>
+
+            if os.getcwd().split('/')[-1] != 'template':
+                sys.exit(" not template directory  ")
+            new_fnm= fnm
+            #new_fnm= fnm + '.new'
+            with  open(fnm,) as f:
+                  html = f.read().decode('utf-8')
+        
+            soup = bs.BeautifulSoup(html, "lxml")
+            lines =  soup.prettify().encode('utf-8').split('\n')
+        
+            #with open (fnm + '.soup', 'w' ) as f:
+            #     f.write("\n".join(lines))
+            FileOper.list2file(lines, fnm + '.soup')
+
+            URLbeg6= "{{response.files.append( URL('static', '%s/" % wdir
+            URLend6= "'))}}"
+        
+            URLbeg= "{{=URL('static', '%s/" % wdir
+            URLend= "')}}"
+        
+       
+            if pat_size == 'big': 
+                 pat= [  r'(<link.*\shref\s?=\s?")([^"]+)(")(\s.*)(.*?)/>()',  r'(src\s?=\s?")([^"]+)(")()',  r'(href\s?=\s?")([^"]+)(")()'    ]
+            else:
+                 pat= [  r'(src\s?=\s?")([^"]+)(")()',  r'(href\s?=\s?")([^"]+)(")()'    ]
+            #pat= [  r'(<link.*\shref\s?=\s?")([^"]+)(")(\srel=)(.*?)/>()',  r'(src\s?=\s?")([^"]+)(")()',  r'(href\s?=\s?")([^"]+)(")()'    ]
+        
+            for ii, line in enumerate(lines):
+                for p1 in pat:
+                    ma= re.search (p1, line)
+                    if ma:
+                        grp0=ma.group(0)
+                        if '{{' in grp0 or 'http:' in grp0:
+                           continue
+                        grp_len= len(ma.groups())
+                        #print "len: ", grp_len
+                        new_pat=""
+                        if dbg:
+                           for i in range(0, grp_len ) :
+                              print ( "{} {} ".format(i, ma.group(i) ) )
+                        
+                        grp2= ma.group(2)
+        
+                        grp2= grp2[1:] if grp2[0] == '/' else grp2 
+        
+                        if not os.path.exists(grp2):
+                           continue
+        
+                        if grp_len == 6: 
+                               new_pat= URLbeg6 + grp2 + URLend6 
+        
+                        if grp_len == 4: 
+                               new_pat= ma.group(1) + URLbeg + grp2 + URLend +ma.group(3)
+        
+                        result = re.sub(p1, new_pat, line)
+                        if dbg:
+                            print ("res: ", result )
+                        lines[ii]= line= result
+        
+            FileOper.list2file(lines, new_fnm )
+            #with open (new_fnm, 'w' ) as f:
+            #     f.write("\n".join(lines))
+        
+#-------------------------------------------------------------------------------------------------
+        @staticmethod
+        def fnd_missed_dir(start_dir, dir_nm):
+            if len(dir_nm) ==0 : return
+            if dir_nm[-1] == '/':
+                dir_nm= dir_nm[:-1]
+            dir_nm= os.path.basename(dir_nm) 
+            for root,dirs,files in os.walk( start_dir  ):
+              if root[len(start_dir)+1:].count(os.sep)<3:
+                for d in dirs:
+                    if d == dir_nm  :
+                              res_dir= os.path.join(root, d, )
+                              return res_dir
+            return None
+
+        @staticmethod
+        def fnd_node_modules(start_dir):
+            for root,dirs,files in os.walk( start_dir  ):
+              if root[len(start_dir)+1:].count(os.sep)<3:
+                for f in files:
+                    #print (dirs)
+                    if ( 'node_modules' in dirs) and ('dist' in dirs):
+                          ind_file= os.path.join(root, "dist", "index.html")
+                          if os.path.exists(ind_file):
+                              res_dir= os.path.join(root, "dist", )
+                              return ( True, res_dir)
+                          else:
+                              return (False, None)
+        
+                          #return (root, dirs)
+                    #print(os.path.join(root,f))
+            return (False, None)
+
+        @staticmethod
+        def replace_in_file(src_file, dst_file, src_str, dst_str):
+            with open(src_file, 'r') as file :
+                  filedata = file.read().replace(src_str, dst_str )
+            with open(dst_file, 'w') as file:
+                  file.write(filedata)
+
+        @staticmethod
+        def func_off(fnm, func_nm, add_sym= 'X'):
+        
+            if not os.path.exists(fnm):
+                 sys.exit("func_off: file not exists: {}".format(fnm))
+            return FileOper.rm_func( fnm, func_nm )
+
+            str_orig = "def {}()".format(func_nm)
+            str_new = "def {}{}()".format(add_sym, func_nm)
+        
+            FileOper.replace_in_file ( fnm,  fnm,  str_orig , str_new  )
+            return fnm
+        
+        @staticmethod
+        def rm_func(fnm, func_nm):
+
+           start_pat='def {}():'.format( func_nm )
+           new_fl=[]
+
+           del_flag = False
+           for e in FileOper.file2list(fnm):
+               if (del_flag == False) and e.startswith(start_pat) :
+                    del_flag = True
+                    continue
+               if (del_flag == True ) and ( e.startswith('def ') or e.startswith('@')  ):
+                    del_flag = False
+        
+               if del_flag == True:
+                    continue
+               new_fl.append(e)
+        
+           FileOper.list2file(new_fl, fnm)
+           return fnm
+        
+
+        @staticmethod
+        def recursive_overwrite(src, dest, ignore=None):
+
+            if os.path.isdir(src):
+                if not os.path.isdir(dest):
+                    os.makedirs(dest)
+                files = os.listdir(src)
+                if ignore is not None:
+                    ignored = ignore(src, files)
+                else:
+                    ignored = set()
+                for f in files:
+                    if f not in ignored:
+                        FileOper.recursive_overwrite(os.path.join(src, f), os.path.join(dest, f), ignore)
+            else:
+                shutil.copyfile(src, dest)
+
+        @staticmethod
+        def pat_list2file(str_list,  pat=None, fnm= None , mode='w'):
+            def replace_in_list(l1, pat_dict, ):
+                s="\n".join(l1)
+                for k, v in pat_dict.items():
+                     s= s.replace(k, v)
+                return s.split('\n')
+
+            if fnm is None:
+                 return
+            if not str_list:
+               return
+
+            res= replace_in_list( str_list, pat )
+
+            FileOper.list2file(res, fnm, mode)
+            return fnm
+
+        @staticmethod
+        def list2file(str_list, fnm, mode='w'):
+            if not str_list:
+               return
+            with open(fnm, mode) as f:
+                   f.write("\n".join(str_list))
+            return fnm
+
+        @staticmethod
+        def file2list(fnm):
+            if not os.path.exists(fnm):
+              prRed ("some errors: %s"  % fnm)
+              return []
+            with open(fnm, 'rb') as f:
+                lines = f.read().splitlines()
+            return lines
+
+        @staticmethod
+        def dict2file(rep_dict, fnm, mode='a'):
+               with open(fnm, mode) as f:
+                   f.write("\n")
+                   pprint.pprint(rep_dict, width=1, stream=f)
+
+        @staticmethod
+        def diff_my_files(file1, file2):
+               lines1 = FileOper.file2list(file1) 
+               lines2 = FileOper.file2list(file2) 
+               for line in difflib.unified_diff(lines1, lines2, fromfile= file1, tofile= file2, lineterm='', n=0):
+                                    print ( line )
+
+        
+#------------------------------------------------------------------------------------        
+ 
+class StrDb:
+    api_str=[
+             "",
+             "",
+             "#https://stackoverflow.com/questions/37806801/can-not-post-data-via-ajax-to-web2py-rest-api-possible-cors-issue/37859336",
+             "#url_name='https://sun.minfindnr.ru/ji15/default/api/t0_tables.json'",
+             "#url_name='https://sun.minfindnr.ru/ji15/default/api/patterns.json'",
+             "",
+             "#@auth.requires_login()",
+             "@request.restful()",
+             "def api():",
+             "    from gluon.serializers import json",
+             "    response.view = 'generic.' + request.extension",
+             "    def GET(*args,**vars):",
+             "         patterns = 'auto'",
+             "         parser = db.parse_as_rest(patterns,args,vars)",
+             "         if parser.status == 200:",
+             "            return dict(content=parser.response)",
+             "         else:",
+             "            raise HTTP(parser.status,parser.error)",
+             "    def POST(table_name,**vars):",
+             "        #return db[table_name].validate_and_insert(**vars)",
+             "        #data = gluon.contrib.simplejson.loads(request.body.read())",
+             "        return json(db[table_name].validate_and_insert(**vars))",
+             "        return dict()",
+             "    def PUT(table_name,record_id,**vars):",
+             "        return db(db[table_name]._id==record_id).update(**vars)",
+             "    def DELETE(table_name,record_id):",
+             "        return db(db[table_name]._id==record_id).delete()",
+             "    def OPTIONS(*args,**vars):",
+             "        print ( 'OPTION called') ",
+             "        return True",
+             "    return dict(GET=GET,POST=POST,PUT=PUT,DELETE=DELETE,OPTIONS=OPTIONS)",
+             "",
+             ]
+
+    auth_user= [  
+             "##https://stackoverflow.com/questions/10201300/how-can-i-create-new-auth-user-and-auth-group-on-web2py-running-on-google-app-en",
+             "def check_initialize():",
+             "    if not db().select(db.auth_user.ALL).first():",
+             "        uid= db.auth_user.insert(",
+             "            username = 'administrator',",
+             "            password = db.auth_user.password.validate('USERPASS8')[0],",
+             "            email = 'USEREMAIL',",
+             "            first_name = 'Main',",
+             "            last_name = 'User1',",
+             "        )",
+             "",
+             "        gid=db.auth_group.insert ( role='000', description= 'AdmGrp')",
+             "        db.auth_membership.insert(user_id= uid, group_id= gid )", 
+             "",
+             "#do initialization check",
+             "#cache.ram('db_initialized', lambda: check_initialize(), time_expire=None)",
+             "check_initialize()",
+             "",
+             "auth.settings.actions_disabled=['register','change_password','request_reset_password','retrieve_username','profile']",
+             "auth.settings.expiration = 1800",
+             "if request.function == 'api':",
+             "     auth.settings.allow_basic_login = True",
+             "",
+             "#",
+             ]
+
+
+    dbpy_https = [
+            "# -*- coding: utf-8 -*-",
+             "############ FORCED SSL #############",
+             "from gluon.settings import global_settings",
+             "if global_settings.cronjob:",
+             "    print ( 'Running as shell script.')",
+             "elif not request.is_https:",
+             "    redirect(URL(scheme='https', args=request.args, vars=request.vars))",
+             "    session.secure()",
+             "#####################################",
+             "",
+             "",
+              ]
+
+#
+# MODEL
+#
+
+    model_define= [
+                "#", 
+                '# table for controller: CONTROLLER' , "#","", 
+                "from gluon.contrib.populate import populate",
+                "",
+                "db.define_table('DBTBL', ",
+                "     Field('f0', label='key',  writable = True , length= 1000),",
+                "     Field('f1', 'text',  label='data string', length= 1000),",
+                "     Field('f2', 'text', label='save data string', length= 1000, default='' ),",
+                "     )",
+                "#",
+                "",
+                "if not db(db.DBTBL.id ).count():", 
+               ]
+
+    model_popula=["    populate(db.DBTBL, 5)" ]
+    model_commit=["    db.commit()", "#", "", ]
+
+
+    main_menu = [
+               "# -*- coding: utf-8 -*-",
+               "",
+               "def _():",
+               "    app = request.application",
+               "    ctr = request.controller",
+               "    ctr_add = 'myadd'",
+               "    ctr_ima = 'myima'",
+               "    ctr_def = 'default'",
+               "    response.menu += [",
+               "        (T('Home'), False, URL('default', 'index'), []),",
+               "        (T('My Sites'), False, URL('admin', 'default', 'site')),",
+               "        (T('This App'), False, '#', [",
+               "            (T('Design'), False, URL('admin', 'default', 'design/%s' % app)),",
+
+               "            (T('Myadd ctrl'), False,",
+               "             URL(",
+               "                 'admin', 'default', 'edit/%s/controllers/%s.py' % (app, ctr_add))),",
+
+               "            (T('Myima ctrl'), False,",
+               "             URL(",
+               "                 'admin', 'default', 'edit/%s/controllers/%s.py' % (app, ctr_ima))),",
+
+               "            (T('default ctrl'), False,",
+               "             URL(",
+               "                 'admin', 'default', 'edit/%s/controllers/%s.py' % (app, ctr_def))),",
+
+               "            (T('DB Model'), False,",
+               "             URL(",
+               "                 'admin', 'default', 'edit/%s/models/db.py' % app)),",
+
+               "            (T('Database'), False, URL(app, 'appadmin', 'index')),",
+               "            (T('Errors'), False, URL(",
+               "                'admin', 'default', 'errors/' + app)),",
+               "            (T('About'), False, URL(",
+               "                'admin', 'default', 'about/' + app)),",
+               "        ]),",
+               "    (T('auth'), False, URL('default', 'index'),",
+               "         [",
+               "         (T('events'), False, URL('myadd','auth_eventctrl')    ),",
+               "         (T('users'), False, URL('myadd','auth_userctrl')    ),",
+               "         (T('groups'), False, URL('myadd','auth_groupctrl')    ),",
+               "         (T('member'), False, URL('myadd','auth_membershipctrl')    ),",
+               "         ]),",
+               "",
+               "      ]",
+               "",
+               "",
+               "add_myima= [(T('Myima'), False, URL('myima', 'index'), []), ] ",
+               "#response.menu += add_myima",
+               "",
+               "add_myadd= [(T('Myadd'), False, URL('myadd', 'index'), []), ] ",
+               "response.menu += add_myadd",
+               "",
+               "_()",
+               "",
+               "if 'auth' in locals():",
+               "    auth.wikimenu()",
+               "",
+               "",
+              ]
+
+
+    head_add= [
+              "",
+              #"  <meta name=\"description\" content=\"ccccccccccc\">",
+              #"  <meta name=\"keywords\" content=\"keykey\">",
+              #"  <meta name=\"author\" content=\"aaaaaaa\">",
+              "",
+              #"   <link  rel=\"icon\" type=\"image/png\" href=\"{{=URL(\'static\',\'images/favicon.png\')}}\"  >",
+              "   <meta charset='utf-8'>",
+              "   <link  rel=\"icon\" type=\"image/x-icon\" href=\"{{=URL(\'static\',\'images/favicon.ico\')}}\"  >",
+              "",
+              ]
+
+# <link href="data:image/x-icon;base64,YourBase64StringHere" rel="icon" type="image/x-icon" />
+
+#
+# CONTROLLER 
+#
+
+    ctrl_mygrid=[
+                "",
+                "",
+                "#@auth.requires_login()",
+                "def mygrid(tnm):",
+                "   return SQLFORM.grid(db[tnm], deletable= False, user_signature=False,  buttons_placement = 'left', showbuttontext=False, csv=False )",
+                "# " ,
+                "",
+               ] 
+
+    ctrl4mygrid=[
+                "",
+                "",
+                "#@auth.requires_login()",
+                "def FCTRL():" ,
+                "    db.DBTBL.f0.writable = True",
+                "    response.view = 'DIR/VIEW'",
+                "    return dict(grid= mygrid('DBTBL'))",
+                "#", 
+                "",
+               ]
+    ctrl4table=[
+                "",
+                "",
+                "#@auth.requires_login()",
+                "def FCTRL():" ,
+                "    response.view = 'DIR/VIEW'",
+                "    return dict(grid= mygrid('DBTBL'))",
+                "#",
+                "",
+               ]
+
+
+    view4mygrid=[
+               "",
+               "{{extend 'w2playout.html'}}",
+               "<p>{{=A(T('site table list'), _href=URL(c='MYAD',f='index'))}}</p>",
+               "<p> DBTBL </p>",
+               "{{=grid}}",
+               "",
+               ]
+    ctrl_search= [
+               "",
+               "#@auth.requires_login()",
+               "def search_site():",
+               "    import os",
+               "    form = SQLFORM.factory(",
+               "       Field('search', label='search for unique text ( or number label) from screen', requires=IS_NOT_EMPTY(),  ),",
+               "       Field('replace', 'text', label='replace with new text', requires=IS_NOT_EMPTY(), length= 1000, ),",
+               "       )",
+               "    if form.process( keepvalues = True  ).accepted: ",
+               "        search  = form.vars.search",
+               "        replace  = form.vars.replace",
+               "        replace=replace.strip()",
+
+               "        for table in db.tables():",
+               "             if any (['auth_' in table, 'form' in table,  not 'f1' in db[table].fields]) :",
+               "                     continue",
+               "             qu= db[table].f1.contains(search)",
+               "             rows = db(qu).select()",
+               "             if rows:",
+               "               if len(rows) == 1:",
+               "                 row = db(qu).select().first()",
+               "                 if row:",
+               "                    #session.flash = 'found!! %s' % row.f1",
+               "                    savef1= row.f1",
+               "                    db(db[table].id == row.id).update( f1= replace, f2= savef1  )",
+               "                    response.flash = 'replaced, found == 1!'",
+               "                    break",
+               "               else:",
+               "                    response.flash = 'do not replaced, found > 1!'",
+               "                    break",
+
+               "    elif form.errors:",
+               "        response.flash = 'Please correct the error(s).'",
+               "    else: ",
+               "        response.flash = 'Insert data please - no fields can be empty.' ",
+	       "    return form",
+               "",
+               ]
+
+    menu4mygrid=[
+               "{{extend 'w2playout.html'}}",
+               "{{=form}}",
+                "<style>",
+                "   p {",
+                "    font-family: Verdana, Arial, Helvetica, sans-serif; ",
+                "    font-size: 12pt; /* Размер шрифта в пунктах */ ",
+                "   }",
+                "  </style>",
+               "<p>{{=T('site tables')}}</p>",
+               "",
+               ]
+
+    menu_item= ["",
+               "<p>{{=A('DBTBL', _href=URL(c='MYAD',f='FCTRL'))}}</p>",
+               "",
+               ]
+
+    ctrl_dumb= [
+               "",
+                "",
+                "#@auth.requires_login()",
+               "def FCTRL():",
+               "    response.view = 'DIR/VIEW'",
+               "    return dict(key='value')",
+               "",
+               "",
+               ]
+
+    ctrl_plus= [
+               "",
+               "",
+               "#@auth.requires_login()",
+               "def FCTRL():",
+               "    response.view = 'DIR/VIEW'",
+               "    qu=db.DBTBL.id > 0",
+               "    rows=db(qu).select()",
+               "    rows_dict = { r.f0 : r.f1 for r in rows }", 
+               "    return dict( TABLEDICT= rows_dict)", 
+               "#",
+               "",
+               ]
+    ctrl_upload= [
+              "",
+              "",
+              "#@auth.requires_login()",
+              "def FCTRL():",
+              "    import os, shutil ",
+              "    from PIL import Image",
+              "",
+              "    def png2jpg(fnm_png, fnm_jpg):",
+              "        im = Image.open(fnm_png)",
+              "        rgb_im = im.convert('RGB')",
+              "        rgb_im.save(fnm_jpg)",
+              "",
+              "    def jpg2png(fnm_jpg, fnm_png):",
+              "        im = Image.open(fnm_jpg)",
+              "        im.save(fnm_png)",
+              "",
+              "    sh_cp= shutil.copyfile",
+              "    func_dict= { 'svg2svg':sh_cp,   'gif2gif': sh_cp ,'png2png':  sh_cp , 'PNG2png': sh_cp ,  ", 
+              "                'jpg2jpg': sh_cp , 'jpg2jpeg': sh_cp, 'jpeg@jpg': sh_cp ,",
+              "                'JPG2jpg': sh_cp , 'JPG2jpeg': sh_cp, 'JPEG@jpg': sh_cp ,",
+              "                              'png2jpg': png2jpg ,  'jpg2png': jpg2png , ",
+              "                              'PNG2jpg': png2jpg ,  'JPG2png': jpg2png , ",
+              "                              'png2jpeg': png2jpg , 'jpeg2png': jpg2png , 'JPEG2png': jpg2png ,   } ",
+              "",
+              "    new_image_file_path='' ",
+              "    param= request.vars.imgnm # controller arg, replaced image", 
+              "    ctrl_ima= request.vars.imgctrl # controller name for image", 
+              "    img_file_path= os.path.join( request.folder, 'static/template', param  )",
+              "    size_str= 'size unknown'",
+              "    if not param.endswith('.svg'):",
+              "        im = Image.open(img_file_path)", 
+              "        width, height = im.size",
+              "        size_str='image size: width= {} height= {}'.format( width, height)",
+              "    size_str +=  ', %s' % ctrl_ima ",
+              "    param_ext= param.split('.')[-1]",
+              "    upfolder= os.path.join(request.folder, 'UPFOLDER')",
+              "    form=SQLFORM.factory( Field('new_image_file', 'upload',uploadfolder= upfolder, requires=IS_NOT_EMPTY()  ))",
+              "    if form.process().accepted:",
+              "        new_image_file_path = os.path.join(upfolder, form.vars.new_image_file)",
+              "        jenka_fnm = request.vars.new_image_file.filename # origin file name",         
+              "        jenka_ext= jenka_fnm.split('.')[-1]",
+              "        if not jenka_fnm.endswith('.svg'):",
+              "            try: ",
+              "               test = Image.open(new_image_file_path) ",
+              "            except: ",
+              "               session.flash= 'bad %s' % jenka_fnm",
+              "               #session.flash= 'bad file format! check file type and try again!'",
+              "               redirect(URL('myima', 'index'))",
+              "",
+              "        param_ext= param.split('.')[-1]",
+              "        func_key= '{}2{}'.format( jenka_ext, param_ext )",
+              "        if func_key in func_dict:",         
+              "            request.flash='image file replaced!' ",
+              "            func_dict[func_key](new_image_file_path, img_file_path  )",      
+              "            #shutil.copyfile(new_image_file_path, img_file_path  )",      
+              "            session.flash= 'write %s' % jenka_fnm",
+              "            #session.flash= 'replaced'",
+              "            #redirect(URL('default', 'index'))",
+              "        else:",
+              "            response.flash = 'not %s file, not replaced! maybe bad extension?' % param_ext",
+              "            if os.path.isfile(new_image_file_path): ",
+              "                   os.remove(new_image_file_path) ",
+              "",
+              "    response.view = 'DIR/VIEW'",
+              "    return dict(form=form, param= param, ext=param_ext, size_str= size_str, ctrl_ima= ctrl_ima )",
+              "",
+              ]
+
+    ctrl_file= '../../controllers/default.py'  
+    ctrl_path= '../../controllers/'
+    ctrl_tmp= '../../controllers/default.py.tmp'
+
+    menu_main_path= '../../models/menu.py'
+    face_lock = "FACELOCK"
+
+    #appadmin_file= "../../views/appadmin.html" 
+    user_file= "../../views/default/user.html" 
+    appadmin_file= "../../views/appadmin.html" 
+    appadmin_change= [ "{{extend 'layout.html'}}", "{{extend 'w2playout.html'}}" ]
+    menu_change= [ "DEVELOPMENT_MENU = True", "DEVELOPMENT_MENU = False" ]
+    index_html_header= [ "{{extend 'layout.html'}}" , "", ""]
+
+    origlayout= '../../views/layout.html'
+    orig_ico= '../../static/images/favicon.ico'
+    png_ico= '../../static/images/favicon.png'
+    base64_ico=""
+    w2playout= '../../views/w2playout.html'
+    req_headers = { 'User-Agent': 'My User Agent 1.0', 'From': 'youremail@domain.com'  }
+
+
+    HOME= None
+    app_nm= None 
+    prog_nm= None
+
+    wdir= 'template' 
+    myadd_app= 'myadd'
+    ima_app= 'myima'
+
+    myview_ext=".view"
+    sv_ext= '.orig'
+    mylog_ext=".log"
+
+    dbf_prefix= 'f'
+    dbt_prefix= 'd'
+    db_path= '../../models/'
+    w2p_db_path= '../../databases/'
+
+    views_path= '../../views/'
+
+    w2p_files= [ views_path, db_path,  w2p_db_path,  ctrl_path  ,  
+                       '../../models/menu.py', ctrl_file , origlayout , 
+                       appadmin_file , user_file, '../../models/db.py']
+
+    main_index= "index.html"
+
+    gen_simple_app= False
+
+    #-----------------------------------------------------
+    db_fnm2ctrl= {}
+    #db_fnm2dbname= {}
+    #db_ctrl2fnm= {}
+    #
+    # 
+    link_table = [] # writer HtmlView.run
+
+    #db_uniq_tables= [] # writer bs4
+    #db_uniq_tables_data= [] # writer bs4
+    db_file_tables= [] # writer bs4
+    #
+    db_html_error_request= []
+    db_html_forward_request= []
+    db_src_not_exists= []
+    db_src_myimg= []
+    db_src_myimg_ctrl= {}
+    db_css_files= []
+    db_css_missed_files= []
+    big_form_dict= {}
+    big_table_dict= {}
+
+#------------------------------------------------------------------------------------        
+        
+class CheckEnv (StrDb):
+     def __init__(Z, backup_app = False , unzip_restart = True):
+         #prGreen ("%s is web2py app generator from free css templates, Copyrights Alex Beskopilny" % os.path.basename(__file__) )
+         Z.unzip_restart = unzip_restart
+         Z.backup_app = backup_app
+         Z.check_env_save_orig()
+         Z.is_empty_dir()
+         Z.is_indexhtml() 
+         Z.funny_rename()
+         Z.clean_models()
+         Z.rm_all_databases()
+
+     def rm_all_databases(Z, folder = '../../databases/'):
+            for the_file in os.listdir(folder):
+                file_path = os.path.join(folder, the_file)
+                try:
+                    if os.path.isfile(file_path):
+                        os.unlink(file_path)
+                except Exception as e:
+                    print(e)
+            print ( "cleared folder: %s" % (folder))
+
+     def clean_models(Z, dbg= False):
+         # .orig must exists
+         for e in ['../../models', '../../views/default', ]:
+             if os.path.isdir(e):
+                    for fnm in os.listdir(e):
+                        if not fnm.endswith(".orig"):
+                             rm_file= os.path.join(e, fnm)
+                             os.remove( rm_file)
+                             if dbg:
+                                   print ("rm file %s" % rm_file)
+
+                    for fnm in os.listdir(e):
+                        if fnm.endswith(".orig"):
+                             orig_fnm= fnm.split('.')[:-1]
+                             orig_fnm= '.'.join(orig_fnm)
+                             dst= os.path.join(e, orig_fnm )
+                             src_orig= os.path.join(e, fnm )
+                             shutil.copy2( src_orig, dst ) 
+         for e in ['../../views/myadd', '../../views/myima']:
+             if os.path.isdir(e):
+                  shutil.rmtree(e, ignore_errors=True)
+                  print ( "rm folder: %s" % (e))
+         for e in ['../../controllers/myadd.py', '../../controllers/myima.py']:
+             if os.path.isfile(e):
+                  os.remove(e)   
+         
+         #sys.exit('stop')
+ 
+     def funny_rename(Z,  ):
+         fun_list= [ fnm for fnm in glob.glob("*.html") if ' ' in fnm  ] 
+         if len(fun_list):
+             print ("funny html names: ", fun_list )
+             [ os.rename(fnm, fnm + Z.sv_ext ) for fnm in fun_list ]
+
+         for fnm in  [ fnm for fnm in glob.glob("*.html")   ] :
+
+              # https://stackoverflow.com/questions/5337070/how-can-i-get-a-files-permission-mask
+             if oct(os.stat(fnm).st_mode & 0o777) != 0o664 :
+                        os.chmod(fnm, 0o664)
+
+             ctrlnm= f0= fnm.split('.')[0]
+             if '-' in ctrlnm:
+                 ctrlnm= ctrlnm.replace ('-', '_')
+             if ctrlnm[0].isdigit():
+                 ctrlnm= 'X'+ ctrlnm
+
+             Z.db_fnm2ctrl[f0]= ctrlnm 
+         #Z.db_ctrl2fnm = {value: key for (key, value) in Z.db_fnm2ctrl.items()}
+         #Z.db_fnm2dbname= {  k :  'd' + v.replace('_','0').replace('-','0') for (k,v) in Z.db_fnm2ctrl.items() }
+
+     def get_from_db_fnm2ctrl(Z, fnm0 ):
+            try:
+               fnm0=fnm0.strip()
+               return Z.db_fnm2ctrl[ fnm0]
+            except Exception as e:
+               x_ctrl= fnm0.split('/')
+               for i, e in enumerate(x_ctrl):
+                    x_nm=  "/".join(x_ctrl[i:])
+                    if x_nm in Z.db_fnm2ctrl:
+                       #print ("found x_nm: ", x_nm)
+                       #print ( Z.db_fnm2ctrl[ x_nm] )
+                       return Z.db_fnm2ctrl[ x_nm]
+
+               if fnm0 not in Z.db_html_error_request:
+                   Z.db_html_error_request.append(fnm0)
+                   file_name= fnm0 + '.html' 
+                   #if  os.path.exists(file_name):
+                   if  os.path.isfile(file_name):
+                       if '/' in file_name:
+                           Z.db_html_forward_request.append(fnm0+ '.html')
+                           fnm_dst= fnm0.split('/')[-1] + '.html'
+                           if not os.path.exists(fnm_dst):
+                                shutil.copy2(file_name, file_name + '.orig')
+                                shutil.copy2(file_name, fnm_dst)
+                                os.remove( file_name )
+               return 'index' 
+
+     def get_from_db_ctrl2fnm(Z, ctrl0 ):
+            try:
+               ctrl0= ctrl0.strip()
+               return Z.db_ctrl2fnm[ ctrl0]
+            except Exception as e:
+               print ("get_from_db_ctrl2fnm: {}, unk_name: {}".format(e, ctrl0 ))
+               return 'index' 
+
+     def is_empty_dir(Z):
+         if len(os.listdir('./') ) == 0:
+               Z.gen_simple_app = True
+               print("Directory is empty ? generate simplest web2py app ?")
+
+     def is_indexhtml(Z):
+         def findInSubdirectory(filename, ):
+             path = os.getcwd()
+             for root, dirs, names in os.walk(path):
+                 if filename in names:
+                     isitpath=  os.path.join(root, filename).lower()
+                     prRed ( "found index.html! is it index for template ?: %s " % os.path.join(root, filename) )
+                     if  'help' in isitpath or 'doc' in isitpath:
+                           print ("maybe it was file")
+                           continue 
+                     return os.path.join(root)
+                     #return os.path.join(root, filename)
+             #raise 'File not found'
+             return None
+             sys.exit( '{} not found!'.format(filename) )
+         
+         Z.ind= os.path.join(os.getcwd(), Z.main_index)
+
+         if os.path.isfile(Z.ind):
+             #print ("found: %s" % (Z.ind) )
+             return
+         else:
+            dstdir=os.getcwd()
+            print (dstdir)
+            is_node, srcdir, =  FileOper.fnd_node_modules( dstdir ) 
+            if is_node == True:
+                FileOper.recursive_overwrite(srcdir, dstdir) 
+                FileOper.rebuild_node_index( fnm= Z.main_index, wdir= Z.wdir )
+                prRed ("it's node app :) is it app work with relative path? maybe you need rewrite routes.py")
+                sys.exit("found npm dist , reuild index.html, run script again for generate w2p app")
+
+            srcdir= findInSubdirectory (Z.main_index)
+            if not srcdir is None:
+                   FileOper.recursive_overwrite(srcdir, dstdir)
+                   #sys.exit("stop")
+
+         if not os.path.isfile(Z.main_index):   
+              cntsubdir = len([name for name in os.listdir('.') if os.path.isdir(name) ] )
+              if cntsubdir == 0:
+                 cntfiles= len([name for name in os.listdir('.') if os.path.isfile(name) ] )
+                 if cntfiles == 1:
+                     path_to_zip_file_list = [ fnm for fnm in glob.glob("*.zip") ] 
+                     if len (path_to_zip_file_list) == 1:
+                         path_to_zip_file= path_to_zip_file_list[0]
+                         zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
+                         zip_ref.extractall('./')
+                         zip_ref.close()
+                         prRed ('=== unzipped file, is index.html in it ? ===')
+                         #if Z.unzip_restart:
+                         #      prRed('unzip and restart')
+                         #      os.system (os.path.basename(__file__) )
+                         #      sys.exit("exit after restart" )
+                         #      return 
+                         sys.exit('run {} again for search index.html'.format(  os.path.basename(__file__) ))
+
+              sys.exit("not found: %s" %(Z.main_index))
+        
+     def check_env_save_orig(Z, ):
+        Z.mydir=os.getcwd().split('/')[-1]
+        Z.HOME= os.path.expanduser("~")
+
+        if os.path.exists(Z.face_lock):
+            sys.exit("found FACELOCK!, can not continue! ")
+        
+        if Z.mydir != Z.wdir:
+            for e in help_text:
+                print (e) 
+            sys.exit("pls, run programm from {} dir".format(Z.wdir))
+        
+        for e in Z.w2p_files:
+             if not os.path.exists(e):
+                print (Z.w2p_files)
+                print (e) 
+                sys.exit("it's not web2py envs") 
+             if os.path.isfile(e):
+                e_saved= e +Z.sv_ext
+                if not os.path.exists(e_saved):
+                  shutil.copy2(e, e_saved)
+                  #print ("saved: %s" % (e_saved))
+                else:
+                  #print ("exists: %s" %( e_saved ) )
+                  pass
+        Z.prog_nm= os.path.basename(__file__)
+        Z.app_nm= os.getcwd().split('/')[-3] 
+        path4save= os.path.join('../../../',Z.app_nm + '.' + Z.prog_nm + '-save',)
+        if (Z.backup_app == True) and  ( not os.path.exists( path4save )):
+               os.makedirs( path4save  ) 
+               srcdir= os.path.join('../../../',Z.app_nm )
+               FileOper.recursive_overwrite(srcdir, path4save )
+               print ('your app saved in: ', path4save )
+        
+        prYellow ( "HOME: %s" % (Z.HOME) )
+        prYellow ( "workdir: %s" % (Z.wdir) )
+        prYellow ( "app name: %s" %(Z.app_nm))
+        prYellow ( "prog name: %s" %(Z.prog_nm))
+
+#------------------------------------------------------------------------------------        
+    
+class FindTables_bs4 (StrDb , ):
+      
+      def __init__(Z, plus_bs4 = True, add_auth = True, mydebug=True):
+          Z.add_auth = add_auth
+          Z.table_counter = 0
+      
+          [ Z.table2myadd(e) for e in ['auth_event', 'auth_user', 'auth_group', 'auth_membership'] ]
+
+          if plus_bs4 == False:
+                return
+          fl = [ fnm for fnm in glob.glob("*.view")  ]
+          prYellow ("--- bs4 report ---" )
+          for  e in fl:
+              Z.fndtbles(e) 
+          #print ( Z.big_table_dict )
+          for  e in fl:
+              Z.fndforms_with_button( e ) 
+              #print ( "----- big_form_dict ---- {}  {}".format( e, len( Z.big_form_dict[e]  ) ) )
+              #if len( Z.big_form_dict[e]  ) == 0:
+              #      Z.print_inp_but(e)
+          #for e in fl:
+          #    Z.fndmenu(e)
+
+      def fndmenu(Z, fnm):
+          soup= Z.get_soup(fnm)
+          print ("hi ", fnm)
+          uls= soup.find_all('ul' )
+          for ee  in uls:
+               lis= ee.find_all('li')
+               for a in lis: 
+                    j= a.select('a')
+                    print (j)
+          return
+
+
+      def print_inp_but(Z,fnm, prn_scope= False):
+
+           start_pat='<input'
+           start0_pat='<label'
+           stop1_pat='<button'
+           stop2_pat='submit'
+           new_fl=[]
+           forig= fnm.split('.')[0] + '.html'
+           #print ("===: ", forig )
+           #print ("===: ", fnm)
+
+           add_flag = False
+           str_list= FileOper.file2list(forig)
+           for i, e in enumerate ( str_list ):
+               e= e.strip()
+               if (add_flag == False) and ( e.startswith(start_pat) or e.startswith(start0_pat) )   :
+                    add_flag = True
+                    new_fl.append( [ e, i,0]  )
+                    continue
+               if (add_flag == True ) and ( e.startswith(start_pat) or e.startswith(start0_pat) ) :
+                    new_fl.append(  [e, i,0]  )
+                    if stop2_pat in e:
+                         new_fl.append([ "****222*****", i, i] )
+                         add_flag = False
+                    continue
+
+               if (add_flag == True ) and ( stop1_pat in e   ):
+                    new_fl.append(  [ e, i,0] )
+                    new_fl.append([ "****111*****", i, i ] )
+                    add_flag = False
+
+               #if add_flag == True:
+               #     continue
+               #new_fl.append(e)
+           if new_fl:
+             prYellow (" {}: input tag {} items".format(forig, len( new_fl) ) )
+             for i, e in enumerate(new_fl):
+                   k= i+1
+                   if k >  len( new_fl ) -1:
+                         break 
+                   e[2] = new_fl[k][1]  - e[1] 
+             print ("-------------") 
+             #print ( new_fl)
+             print (len(new_fl))
+             if (len(new_fl))> 4:
+               begFlag = endFlag = 0
+               for e in new_fl:
+                    print(e)
+                    if begFlag == 0 and endFlag ==0 and e[2] < 15:
+                          begFlag = e[1]
+                          endFlag = 0
+                    if begFlag != 0 and endFlag == 0 and  ( e[2] ==  0 or e[2] > 15 ):
+                          endFlag = e[1]
+                          print ("==={} {}".format ( begFlag, endFlag  ))
+                          str_list.insert(begFlag, "<form>") 
+                          str_list.insert(endFlag+2, "</form>") 
+                          #FileOper.list2file(str_list, forig, )
+                          begFlag = endFlag = 0
+                          break
+
+             if prn_scope:
+                 for e in new_fl:
+                     print (e)
+                 indbeg= new_fl[0][1]
+                 indend= new_fl[-1][1]
+                 #print(*list_1[i:j], sep="\n")
+                 print (indbeg, " ", indend)
+                 for i in range (indbeg , indbeg -5 , -1):
+                     print  ( i, " ", str_list[i])
+                 for i in range (indend , indend + 5 , +1):
+                     print  ( i, " ", str_list[i])
+              
+             return fnm
+    
+    
+      def fnd_input(Z, fnm):
+          # https://stackoverflow.com/questions/30939294/python-beautifulsoup-find-all-input-for-specific-form
+          # https://stackoverflow.com/questions/17786301/beautifulsoup-lowest-common-ancestor
+          # http://akul.me/blog/2016/beautifulsoup-cheatsheet/
+          soup= Z.get_soup(fnm)
+          print ("hi ", fnm)
+          i1 = soup.find_all('button' )
+          for i in i1:
+              print (i)
+              #xx= [p.get('class') for p in i.findAllPrevious('div')]
+              blen = 0
+              for nn, p in enumerate( i.findAllPrevious('div')):
+                    #inps= p.find_all('input') 
+                    inps= p.select('input') 
+                    if inps:
+                         print (inps)
+                         print (  nn )
+              #xx= [p for p in i.findAllPrevious('div')]
+              #xx= [p.get('name') for p in i.findAllPrevious(name = 'div')]
+              #get_par (i)
+
+
+          #i2 = soup.find_all('input', type = 'submit' )
+          #print (i2)
+
+          return
+
+          try:
+             inputs = soup.find_all('button' )
+             #print (inputs)
+             if inputs is None:
+                  print ("none inputs ", fnm)
+                  return
+             for ii, iinput in enumerate(inputs):
+                   print (iinput)
+                   #print (iinput.parent)
+                   ttype= iinput.attrs.get('type')
+                   if ttype and (ttype == 'submit' or ttype == 'reset' or ttype == 'button'):
+                       print ("=========== end form ===================")
+                   but= iinput.find_next_sibling("button")
+                   if but:
+                      print (but)
+                      print ("=========== end form ===================")
+          except:
+             print ('ex in input')
+          return
+
+              #Z.fnd2forms_with_class( e )
+      # https://codereview.stackexchange.com/questions/60769/scrape-an-html-table-with-python 
+      #def get_new_tnm(Z):
+      #    return  'd' + str( uuid.uuid1() ).replace('-','')[:8]
+
+      def fnd2forms_with_class(Z, fnm):
+          soup= Z.get_soup(fnm)
+          try:
+              print (fnm,"   ========================================================")
+              pat=re.compile(r'form-group')
+              for form_class in soup.find_all(name='div', class_ = pat ):
+                   for e in form_class.find_all(['button']):
+                         if e is None:
+                              continue
+                         print ( form_class )
+                         print (e)
+                         for x in form_class.find_all(['input', 'textarea', 'checkbox']):
+                                   print (x)
+                         print ("------------") 
+          except:
+              print ("ex-bs4-class: ", fnm)
+
+
+      def fndforms_with_class(Z, fnm):
+
+          soup= Z.get_soup(fnm)
+
+        #regex = re.compile('.*listing-col-.*')
+        #for EachPart in soup.find_all("div", {"class" : regex}):
+        #print EachPart.get_text()
+
+#from bs4 import BeautifulSoup
+#html = open("medium.html").read()
+#soup = BeautifulSoup(html)
+#tag = soup.find("div", text="inner")
+#print tag.find_parent('div')
+
+
+
+#BeautifulSoup supports CSS selectors which allow you to select elements based on the content of particular attributes. 
+#This includes the selector *= for contains.
+
+#The following will return all div elements with a class attribute containing the text 'listing-col-':
+
+#for EachPart in soup.select('div[class*="listing-col-"]'):
+#    print EachPart.get_text()
+# https://code.tutsplus.com/tutorials/scraping-webpages-in-python-with-beautiful-soup-search-and-dom-modification--cms-28276
+          try:
+              for form_class in soup.select('div[class*="form-"]'):
+                   for but in form_class.find_all('button'):
+                        
+                         pat=re.compile(r'form-.*') 
+                         y= but.find_parent( name='div', class_= pat  )
+                         #y= but.find_parent( name='div', class_="form-group"  )
+                         print (fnm,"   ========================================================")
+                         if y is None:
+                              raise
+
+                         print (y.attrs['class'])
+                         #print (y)
+                         for e in y.find_all(['input','textaria', 'checkbox']):
+                         #for e in y.find_all('input', 'textarea', 'checkbox'):
+                             print (e)
+                             print (e.attrs)
+                         print (but)
+                         print (but.attrs)
+
+
+          except:
+              print ("ex-bs4-class: ", fnm)
+
+      def cre_tbl_bs4(Z):
+          tbl_names=[]
+          s0= ""
+          s1= "db.define_table('DBTBL',"
+          #s2= "      Field('fX', label='LABEL', length = 1000),"
+          s3= "      )"
+          tbl_list=[]
+          tbl_list.append(s0)         
+          # db_uniq_tables_data 
+          for k,v in Z.big_table_dict.items():
+            if len (v) == 0: continue 
+            print (k)
+            for e in v:
+              #print ("--", e)
+              #print ("00", e[0]) # file name
+              #print ("11", e[1]) # table name
+              #print ("22", e[2]) # file with data
+              #print ("33", e[3])  # header list
+              #print ("44", e[4])  # tsize-dict
+                   #print ("----", type(e))
+              tbl_fld_list=[]              
+              new_type_found = True 
+              table_fld_new= FileOper.get4yaml( e[1] + '.new'  )
+              if table_fld_new is None:
+                  table_fld_new= e[6]  
+                  new_type_found  = False 
+              #print ( "++++++ ",table_fld_new  )
+              #print ("+++++++", e[4]['trows'])
+              #trows= e[4]['trows']
+              for iii, eee in enumerate ( table_fld_new ):
+                   #print (eee[0])
+                   #print (eee[1])
+                   if eee[1] in tbl_med_type:
+                        tbl_fld_list.append (  replace_in_obj ( tbl_med_type [ eee[1] ] , { 'FLD': 'f'+ str(iii) , 'LABEL': eee[0] , } ) ) # ')': ', length= 2000)'  }   )  )
+              tbl_nm=  e[1]  # 'd' + str(ii)
+              tbl_list.append (s1 ) # .replace( 'DBTBL', tbl_nm  ) )
+              tbl_list += tbl_fld_list
+              tbl_list.append( s3 )
+              tbl_list.append( "if not db(db.DBTBL.id ).count():" ) #.replace( 'DBTBL', tbl_nm)  ) 
+
+              if new_type_found : 
+                  tbl_list.append( "         from gluon.contrib.populate import populate" ) 
+                  tbl_list.append( "         populate(db.DBTBL  , TROWS) ") ,
+                  tbl_list.append( "") ,
+              else:
+                  tbl_list.extend ( FileOper.file2list( e[2]  )  )
+              tbl_list= replace_in_obj ( tbl_list, {'DBTBL' : tbl_nm,  'TROWS': str(  e[4]['trows'] ) })
+              tbl_names.append(tbl_nm)
+         
+          #print ('\n'.join(tbl_list))
+          if len(tbl_names):
+              FileOper.list2file( tbl_list, '../../models/'  +  'f' + tbl_nm + '.py' )
+          return tbl_names 
+
+
+      def bs4_view_build(Z, attr_dict, header_list, db_name_str,):
+
+              # {{=SQLTABLE(results, orderby=True, headers='labels',truncate=200,  _class='table table-bordered', _width="100%", _style="white-space:wrap")}}
+              def mk_sqltable_class( attr_dict ):
+                      attrs_table_str= ""
+                      for k,v in attr_dict.items():
+                          attrs_table_str += " _{}=\"".format(k)
+                          if isinstance(v, (list,)):
+                              attrs_table_str +=  " ".join(v) + "\", "
+                          elif isinstance(v, (str,)):
+                              attrs_table_str += v + "\","
+                          else:
+                              attrs_table_str +=  "unk_type" + "\"," 
+                      return attrs_table_str
+        
+              #print ( mk_sqltable_class(  attr_dict  ) )
+
+              res_beg=  [
+                "",
+                "<tbody>",
+                "{{queryNNNN= db.DBTBL.id > 0}}",
+                "{{resultsNNNN= db(queryNNNN).select()}}",
+                 "{{if not resultsNNNN is None: }}",
+                 "{{for row in resultsNNNN:}}",
+                 "<tr>",
+                 ]
+              res_end= [
+                 "</tr>",
+                 "{{pass}}",
+                 "{{pass}}",
+                 "</tbody>",
+                 "",
+                 "",
+                 ]
+              res_t= []
+              res_num = str( next(int_uniq_key4unk) )
+              new_ll= FileOper.get4yaml (db_name_str + '.new')
+              if new_ll:
+                  header_list= [ e[0] for e in new_ll ]
+              #print (header_list)
+              for i, e in enumerate(header_list):
+                  res_t.append( "    <td>{{=row.f%s}}</td>" % i )
+              res_beg.extend(res_t)
+              res_beg.extend(res_end)
+              tmp1= ["","<thead>", "<tr>"]
+              new_header=  [ '    <th>' + str(i) + '</th>'  for i in header_list ]
+              tmp1 += new_header
+              tmp1 += ["</tr>","</thead>",]
+              #print ( "\n".join( tmp1 ) )
+              tmp1 += res_beg
+              #FileOper.list2file(res_beg, 'my' + str_num )
+              return "\n".join( replace_in_obj (tmp1, {'DBTBL' : db_name_str, "NNNN": res_num}  ) )
+      
+
+      def replace_tables_in_file(Z, multi_table= True):
+          #Z.db_file_tables.append( {fnm: ( dbindex, t, what, data_fnm,  dict_attrs)} )
+          tbl_name_script = [
+                       ""
+                       "</table>",
+                       ""
+                       "<div  id=divIDFFFF style=\"heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;\" >",
+                       "                   <small>DBTBL</small>",
+                       "</div>" , # white form-name under form
+                       "",
+                       " <script>",
+                       " setTimeout(function(){",
+                       "  if ($('#divIDFFFF').length > 0) {",
+                       "    $('#divIDFFFF').remove();",
+                       "  } ",
+                       "}, 15000)",
+                       " </script>",
+               ]
+
+          res_l=[]
+          metka_l= []
+          file_l=[]
+          text_l=[]
+
+          for k,v in Z.big_table_dict.items():
+            if len (v) == 0: continue
+            print (k)
+            for e in v:
+                   #print ("--", e)
+                   #print ("00", e[0]) # file name
+                   #print ("11", e[1]) # table name
+                   #print ("22", e[2]) # file with data
+                   #print ("33", e[3])  # header list
+                   #print ("44", e[4])  # tsize-dict
+                   #print ("55", e[5])  # table_attr_dict 
+                   #print ("----", type(e))
+                   #print ("+++",e[6])  # table_des
+                   #print ("777",e[7])  # isfoot 
+
+                   if ( multi_table == False) and (  k in res_l):
+                            continue
+
+                   cnt= next(int_uniq_key4unk)#  + 10000 # 1000
+                   metka= "<meka{}>mytest{}</metka{}>".format(str(cnt), str(cnt), str(cnt))
+                   #metka= "<meka{}> mytest <metka{}>".format(str(cnt), str(cnt))
+
+                   fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(<thead[^<]+)(.*?)(</tbody>)(.)', dst_pat= metka )
+                   #fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)', dst_pat= metka )
+                   if fnm1 is None:
+                          prRed ( " replace src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)' error: file%s, dst_pat=%s" % (k, metka) )
+                          break 
+
+                   if os.path.isfile(e[1] + '.new') and e[7] == True:
+                        FileOper.replace_pat(fnm= k , src_pat=r'(<tfoot[^<]+)(.*?)(</tfoot>)(.)', dst_pat= metka )
+
+                   if fnm1 not in res_l:
+                        res_l.append(fnm1)
+
+                   text_table_body= Z.bs4_view_build(  e[5] , e[3],  e[1]   ,   )
+                   metka_l.append(metka)
+                   file_l.append(k)
+                   text_l.append( text_table_body)
+
+                   cnt= next(int_uniq_key4unk)#  + 10000 # 1000
+                   metka= "<meka{}>mytest{}</metka{}>".format(str(cnt), str(cnt), str(cnt))
+                   fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(</table>)', dst_pat= metka )
+                   #fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)', dst_pat= metka )
+                   if fnm1 is None:
+                          prRed ( " error %s  src_pat=r'(</table>)'" % k )
+                          break
+
+                   text_table_body= replace_in_obj ( tbl_name_script, {'DBTBL': e[1] , 'FFFF': str(cnt)} )
+                   metka_l.append(metka)
+                   file_l.append(k)
+                   text_l.append( text_table_body)
+
+
+
+          for ii, e in enumerate(file_l):
+               src1= metka_l[ii]
+               #dst1= text_l[ii]
+               fnm= FileOper.replace_pat(fnm= e , src_pat= metka_l[ii] , dst_pat= text_l[ii] )
+               if fnm is None:
+                          prRed ( " on replace metka with text error: file%s, src_pat=%s" % (e, src1) )
+
+          return res_l
+
+      def cre_form_bs4(Z, dbg= False, dbg_flash= False):
+          #import string
+
+          ctrl_new_beg = [
+                        "",
+                        "",
+                        "#@auth.requires_login()",
+                        "def CTRL():",
+                        "",
+                        "    qu= db.BASETBL.id > 0",
+                        "    rows= db(qu).select()",
+                        "    rows_dict = { r.f0 : r.f1 for r in rows }",
+                        "    response.view = 'DIR/VIEW'",
+                        "",
+                      ]
+
+          def dict2string(ddict, key ):
+                  if len(ddict) == 0:
+                    return "unk1"
+                  s = str(" ".join(  ddict.get( key , []))  )
+                  return  hard_clear(s )
+          def list_class2string(ll):
+               if ll is None:  return str("unk5")
+               return str( " ".join(ll)  ) 
+
+
+          def get_form_pat(fff):
+               #return r'(<form[^<]+)(.*?)(</form>)(.)' 
+               #yyy=  fff.encode('ascii', errors= 'ignore') 
+               #
+               #fff= str(fff).replace('/','.').replace('"','.').replace('&','.').replace('?','.').replace(' ','.').replace(':','.')
+               fff=  str(fff) 
+               
+               form_pat='>'
+               ypos= fff.find(form_pat)
+               if ypos != -1:
+                  y1=fff[0:ypos + 10]
+                  #y1=fff[0:ypos + len(form_pat)]
+                  y1= re.escape(y1)
+                  #y1=fff[0: ypos+ len(form_pat)]
+                  return r'(%s[^<]+)(.*?)(</form>)(.)' %  str(y1 )
+                  #return r'(%s)(.*?)(</form>)(.)' % '<form[^<]+' 
+               return r'(<form[^<]+)(.*?)(</form>)(.)' 
+
+          if len (Z.big_form_dict) ==0:
+                  return
+          for k, v in Z.big_form_dict.items():
+            ctrlsum = ctrl_new_beg
+            ctrl_new_end = "    return dict( DICT= rows_dict, " 
+
+            fnm = k 
+            f0= fnm.split('.')[0]
+            db0_name= Z.dbt_prefix  + f0.replace('_','0').replace('-','0')
+            ctrl_nm= Z.db_fnm2ctrl[f0 ]
+            view_form_file = ".".join( fnm.split('.')[:2] ) 
+
+            ctrlsum= replace_in_list( ctrlsum  , { 'CTRL':  ctrl_nm, 'BASETBL' : db0_name, 'DIR': 'default', 'VIEW': view_form_file }  )
+            for nn, e in enumerate( v ) :
+               
+               if len (e[3]) == 0 :
+                  print ("not found form fields in: ", fnm)
+                  continue 
+
+               #if nn > 0:
+               #    print ("only one form per page! ", fnm)
+               #    continue
+
+               if dbg:
+                  print ( "1: ", e[0] ) # table name, form name
+                  print ( "2: ", e[1] ) # form text src  from file
+                  print ( "3: ", e[2] ) # form attrs
+                  print ( "4: ", e[3] ) # fileds list # [finput, ttext,  pplace, par_attrs, x]
+                 
+               form_name = ctrl_nm + e[0]
+               #form_name = e[1] + str(nn)
+               form_db = 'd' +  form_name
+               #if form_name ==  'form1':
+               #    print ("one form on file!")
+               #    return
+
+               dst_view0= 'layout.html' if view_form_file == 'index.html' else view_form_file
+               dst_view_path =  os.path.join('../../views/', dst_view0  )
+               #-----------------------------------------------------------------------------------------
+
+               lay_beg = [
+                       "",
+                       "{{block myXFORM}}",
+                       "{{end}}",
+                       "",
+                       ]
+               view_beg= [
+                        "",
+                        "{{block myXFORM}}",
+                        "{{include 'web2py_ajax.html'}}",
+                        "",
+                        "{{=XFORM.custom.begin}}",
+                       ]
+
+               view_med= "{{=XFORM.custom.widget.FLD}}" 
+               view_end= [
+                       "{{=XFORM.custom.submit}}",
+                       "{{=XFORM.custom.end}}",
+                        "",
+                       "               <div class='w2p_flash alert alert-dismissable'>{{=response.flashFFFF or ''}}</div>",
+                       "{{end}}",
+                       "",
+                       "",
+                       ]
+
+
+               view_end= [
+                       "{{=XFORM.custom.submit}}",
+                       "{{=XFORM.custom.end}}",
+                        "",
+                       #"               <div class='alert-warning  alert-dismissable'>{{=response.flashFFFF or ''}}</div>",
+                       #"               <div class='w2p_flash alert alert-dismissable'>{{=response.flashFFFF or ''}}</div>",
+                       "<div  id=divIDFFFF style=\"heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;\" >",
+                       "                   <small>{{=response.flashFFFF or ''}}</small>",
+                       "</div>" , # white form-name under form
+                       "",
+                       " <script>",
+                       " setTimeout(function(){",
+                       "  if ($('#divIDFFFF').length > 0) {",
+                       "    $('#divIDFFFF').remove();",
+                       "  } ",
+                       "}, 15000)",
+                       " </script>",
+                       "{{end}}",
+                       "",
+                       "",
+                       ]
+
+
+               view_debug= [
+                       "{{=XFORM.custom.submit}}",
+                       "{{=XFORM.custom.end}}",
+                        "",
+                       '<div class="alert alert-warning alert-dismissible fade show" role="alert">',
+                       " {{=response.flashFFFF or ''}}",
+                       '  <button type="button" class="close" data-dismiss="alert" aria-label="Close">',
+                       '   <span aria-hidden="true">&times;</span>',
+                       '  </button>',
+                       '</div>',
+                       "{{end}}",
+                       "",
+                       "",
+                       ]
+
+
+
+               ctrl_new_form=[ 
+                        "",
+                        "    XFORM = SQLFORM(db.DBTBL, _class = 'FORM_CLASS', _id= 'FORM_ID' )",
+                        "",
+                        ]
+
+               ct_in    = "    XFORM.element('input[name=FLD]')['_XX']='VV'"
+               ct_te    = "    XFORM.element('textarea[name=FLD]')['_XX']='VV'"
+               ct_sub   = "    XFORM.custom.submit['_XX'] = 'VV'"
+               xtitle   = "    XFORM.custom.submit['_title'] = 'submit XFORM'"
+               xin_dict= {'input': ct_in, 'integer': ct_in, 'datetime': ct_in, 'double': ct_in,  'date' : ct_in,  
+                          'select': ct_in, 'textarea': ct_te, 'button': ct_sub, 'a': ct_sub , 'checkbox': ct_in, 'radio': ct_in}
+               #fld_type_dict= {'input': 'string', 'select': 'string', 'textarea': 'text', 'button': 'unktype', 
+               #                 'radio':'string','checkbox':'boolean', 'a': 'unka',}
+               # http://www.web2pyslices.com/slice/show/1370/modify-form-elements-and-attributes
+
+
+               ctrl_if_form = [
+                        "",
+                        "    if XFORM.accepts(request,session): ",
+                        "        response.flashFFFF = 'submitted XFORM' ",
+                        "    elif XFORM.errors:",
+                        "        response.flashFFFF = '!Errors! XFORM' ",
+                        "    else: ",
+                        "        response.flashFFFF = 'XFORM' ",
+                        "",
+                        "",
+                      ]
+
+               tbl_beg= ["db.define_table( 'DBTBL',", ]
+               tbl_med=  "   Field( 'FLD', 'TYPE', label= 'LABEL' ), "
+               tbl_end= "   )"
+
+               #fld_str=    "   Field( 'FLD', 'string', label= 'LABEL', default= 'w2p FLD' ), "
+               #fld_txt=    "   Field( 'FLD', 'text', label= 'LABEL' , default= 'w2p FLD'), "
+               #fld_bool=   "   Field( 'FLD', 'boolean', label= 'LABEL' , default= True), "
+               #fld_select= "   Field( 'FLD', requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),"
+               #fld_radio=  "   Field( 'FLD', requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),"
+               #tbl_med_type= { 'input':fld_str, 'textarea': fld_txt, 'radio': fld_radio, 'select': fld_select, 'checkbox': fld_bool, 'button': None }
+# radio-widget 
+# https://stackoverflow.com/questions/6048934/web2py-use-divs-in-generated-radiobutton-instead-of-table
+# https://stackoverflow.com/questions/7456050/adding-radio-buttons-to-customised-form-in-web2py
+               ctrl_param= dict() 
+
+               ctrl_param['FORM_CLASS']=  e[2]['class'] 
+               ctrl_param['FORM_ID']=  e[2]['id'] 
+               #ctrl_param['FORM_CLASS']=  dict2string( e[2], 'class' )
+               ctrl_param['DBTBL'] =  form_db 
+               ctrl_param['CTRL'] = ctrl_nm 
+               ctrl_param['DIR'] = 'default'
+               ctrl_param['VIEW'] = view_form_file 
+               ctrl_param['BASETBL'] = db0_name 
+               ctrl_param['XFORM'] = form_name 
+               ctrl_param['FFFF'] = str(nn) 
+
+               ctrlsum += ctrl_new_form 
+               view_label= "<label for='FOR'>TEXT</label>" 
+
+               FileOper.put2yaml( form_name + '.des' , e[3]  )
+
+               data_fld_new= FileOper.get4yaml( form_name + '.new'  )
+               
+               data_fld = e[3] if data_fld_new is None else data_fld_new               
+
+               ii= 0
+               my_med_ctrl=[]
+               found_button = False
+               for eee in data_fld:
+               #for eee in e[3]:
+               #for i in xrange(0,len(e[3]),2):
+                    fld_name= 'f' + str(ii)
+                    elem= eee[0] #[3][i]
+                    elem_atrs= eee[1] #e[3][i+1][0]
+                    elem_label= eee[2] #e[3][i+1][1]
+                    select_opt= eee[3] #e[3][i+1][2]
+                    radio_opt= eee[4] #e[3][i+1][3]
+                    tmp_tbl_med= tbl_med_type[elem]
+                    #fld_type= fld_type_dict[elem]
+                    xin= xin_dict[elem]
+
+                    ok_in= ""
+                    if elem != 'button':
+                    #if elem == 'input' or elem == 'textarea' or elem == 'checkbox' or elem == 'select' or elem == 'radio':
+                        
+                       #print ( select_opt )
+                       #print ( radio_opt )
+                       LB= [ "l1-" + str( next(int_uniq_key4unk)) for i in [0,1,2] ]                     
+ 
+                       tbl_beg.append(  replace_in_obj  ( tmp_tbl_med, {'FLD': fld_name, 'LABEL':  fld_name, 'L0B': LB[0], 'L1B': LB[1] , 'L2B': LB[2]   }  ) )
+
+                       set_label = False
+                       if len(elem_label):
+                            view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text']} ))
+                            set_label = True
+
+                       if set_label == False and  elem == 'checkbox':
+                           view_beg.append("<div><label>")
+
+                       view_beg.append( replace_in_obj ( view_med, {'FLD': fld_name} ))
+
+                       if set_label == False and  elem == 'checkbox':
+                           view_beg.append(" w2p-check-%s</label> </div>" % str( next(int_uniq_key4unk)) )
+                         
+                       for k,v in elem_atrs.items():
+
+                             if k == 'type':
+                                continue
+                             if elem == 'select' or elem == 'radio':
+                                   if k == 'placeholder' or k == 'class' or k == 'id' or k == 'name' or k == 'value':
+                                        continue
+                             if k == 'placeholder':
+                                v= fld_name + ' ' + v
+                             ok_in= replace_in_obj ( xin, {'XX': k, 'VV': v,'XFORM': form_name, 'FLD': fld_name} )
+                             #ok_in= xin.replace('XX',k).replace('VV', v).replace('XFORM',form_name ).replace('FLD', fld_name)
+                             my_med_ctrl.append(ok_in)
+                             my_med_ctrl.append ( replace_in_obj ( xtitle, {'XFORM': form_name, } )  ) 
+                       ii += 1
+                    #elif elem == 'button':
+                    if elem == 'button':
+                       found_button = True 
+                       for k,v in elem_atrs.items():
+                             if k == 'placeholder': continue
+                             #ok_in= xin.replace('XX',k).replace('VV', v).replace('XFORM',form_name ).replace('FLD', fld_name)
+                             ok_in= replace_in_obj( xin, {'XX': k, 'VV': v,'XFORM': form_name, 'FLD': fld_name} )
+                             my_med_ctrl.append(ok_in)
+               pass
+               #print ("\n".join(  my_med_ctrl ))
+               ctrlsum += my_med_ctrl
+
+               if found_button == False:
+                  print ("button not found, skipped form")
+                  #return
+                  continue
+               #
+               if dbg:
+                  print (ctrl_param)
+               tbl_beg.append(tbl_end)
+               
+               if dbg_flash  == False:
+                   view_beg += view_end 
+               else:
+                   view_beg += view_debug 
+               ctrlsum += ctrl_if_form
+
+               ctrlsum= replace_in_list( ctrlsum  , ctrl_param  )
+
+               tbl_beg=  replace_in_list( tbl_beg  , ctrl_param  )
+               view_beg=  replace_in_list( view_beg  , ctrl_param  )
+               lay_beg =  replace_in_list( lay_beg  , ctrl_param  )
+               # --------------------------------------------------------------------
+               #ctrlsum.append(form_name)
+               ctrl_new_end += "XFORM= XFORM, ".replace('XFORM', form_name)
+             
+               if dbg:
+                  print ( "\n".join( view_beg) )
+                  print ( "\n".join( tbl_beg)  )
+                  print ( "\n".join( lay_beg) )
+                  print ( view_form_file  ) 
+                  print ("xxxx: ", fnm)
+             
+               if found_button == True: 
+                 #src_pat= get_form_pat(e[1])
+                 #print (src_pat)
+                 #print (re.escape(str(e[1])) )
+                 #repl_res =  FileOper.replace_pat(fnm , src_pat= src_pat, dst_pat= view_beg )
+                 repl_res =  FileOper.replace_pat(fnm , src_pat=r'(<form[^<]+)(.*?)(</form>)(.)', dst_pat= view_beg )
+                 if repl_res is None:
+                          prRed ( " replace src_pat=r'(<form[^<]+)(.*?)(</form>)(.)' error: file %s" % fnm )
+                          print ("ex! skip form in: ", fnm)
+                          continue
+                 FileOper.list2file( tbl_beg, '../../models/' + 'f' + form_db  + '.py' )
+                 #FileOper.list2file( view_beg, '../../views/default/' +  view_form_file  , 'a' )
+                 #print (str(e[2]))
+                 #FileOper.replace_pat(fnm , src_pat=r'(<form[^<]+)(.*?)(</form>)(.)', dst_pat= lay_beg )
+                 dst_view= os.path.join ( '../../views/', 'layout.html' ) if view_form_file == 'index.html' else \
+                                      os.path.join('../../views/default', view_form_file)
+                 shutil.copy2(fnm, dst_view  )
+ 
+                 #FileOper.func_off_in_file('../../controllers/default.py', ctrl_nm ,add_sym= 'F' )
+                 Z.table2myadd(form_db)
+            
+            ctrlsum += [ctrl_new_end + ')' ]
+            FileOper.func_off_in_file('../../controllers/default.py', ctrl_nm ,add_sym= 'F' )
+            FileOper.list2file( ctrlsum, '../../controllers/default.py', mode='a'  )
+           
+            if dbg: 
+                 print ("\n".join(ctrlsum) )
+
+      def table2myadd(Z, tbl_nm):
+              print ("+ table: ", tbl_nm)
+              fnm= '../../controllers/myadd.py'
+              if os.path.exists(fnm):
+                   ctrl_nm= tbl_nm + 'ctrl'
+                   view_nm= ctrl_nm + '.html'
+                   pat_dict= { 'FCTRL': ctrl_nm, 'DBTBL': tbl_nm, 'DIR': 'myadd', 'VIEW': view_nm }
+                   FileOper.pat_list2file(Z.ctrl4table ,  pat_dict, fnm  , mode='a')
+                   fnm= '../../views/myadd/' + view_nm
+                   FileOper.pat_list2file ( Z.view4mygrid , {'DBTBL': tbl_nm, 'MYAD': Z.myadd_app} , fnm,   )
+                   fnm= '../../views/myadd/'+ 'index.html'
+                   #fnm= Z.views_path  +  + '/index.html'
+                   FileOper.pat_list2file ( Z.menu_item,  {'DBTBL': tbl_nm  , 'MYAD' :  Z.myadd_app ,'FCTRL': ctrl_nm }, fnm,   'a'  )
+                   Z.table_counter += 1
+             
+
+      def run(Z):
+
+          #print ("sum report:")
+          #print (Z.db_file_tables)
+          #print ("uniq tables")
+          #print ( Z.db_uniq_tables  ) 
+          tbl_list= Z.cre_tbl_bs4()
+          #print ( "=======tbl_list: ", tbl_list )
+          for tbl_nm in  tbl_list:
+              Z.table2myadd(tbl_nm)
+
+          view_list= Z.replace_tables_in_file()
+          for e in view_list:
+             # expected f0.html.view
+             fnm0= e.split('.')[0] +  '.html'
+             dst_path= os.path.join('../../views/default', fnm0  )  
+             if fnm0 == 'index.html':
+                 dst_path= os.path.join('../../views/', 'layout.html'  )  
+             shutil.copy2(e, dst_path )
+
+          # ---------------------------------------- forms ----------------------------
+          Z.cre_form_bs4()
+          #-----------------------------------
+          prYellow("added tables: %s" % Z.table_counter )
+
+
+      def get_soup(Z, fnm):
+          fnm_tmp= fnm
+          fnm= fnm.split('.')[:2]
+          fnm= '.'.join(fnm)
+          with open(fnm ) as f: soup = bs.BeautifulSoup(  f.read(),'html5lib')
+          fnm= fnm_tmp
+          return soup
+
+      def fndtbles(Z, fnm):
+
+          soup= Z.get_soup(fnm)
+          Z.big_table_dict[fnm]=[]
+
+          def mk_table_nm(s1):
+              s1 = s1.replace('-','0')
+              return s1
+          
+          try:
+             tables = soup.findAll('table')
+             
+             for ii, table in enumerate(tables):
+                  try:
+                     table_attrs= { hard_clear(t): hard_clear(table.attrs[t]) for t in table.attrs  }
+                     #print ("++++ ", table_attrs)
+
+                     head= table.find('thead')
+                     headtext= [ i.text.strip()  for i in head.find_all('tr') ][0]
+                     headertext= [ hard_clear( i)  for i in headtext.split('\n') ]
+                     #headertext= [ i.strip()  for i in headtext.split('\n') ]
+                     table_data= [
+                          [hard_clear(cell.get_text()) for cell in row.find_all(['th', 'td'])]
+                          #[cell.get_text().strip() for cell in row.find_all(['th', 'td'])]
+                             for row in table.find_all('tr')
+                      ]
+                     
+                     table_size= { 'trows': len(table_data ), 'tcols': len (headertext) }           
+                     res_list= []
+                     header_set = set(headertext)
+
+                     table_des =  [ [ e, "string"]  for e in headertext ]
+
+                     mytbl_nm = mk_table_nm( fnm.split('.')[0] + 'table' + str(ii) )
+                     FileOper.put2yaml( mytbl_nm + '.des', table_des  , mode= 'w' ) 
+
+                     for num_ee, ee in enumerate(table_data):
+                        if num_ee == 0:
+                        #if set(ee) == header_set:
+                             ee= [   '0w2p'+ str(mm) + ' ' + hh   for  mm, hh in enumerate(headertext) ]
+                             ee[0]= '00 ' + mytbl_nm
+                        sres= ""
+                        sres += "      db.DBTBL.insert( "
+                        for k,e in enumerate(ee):
+                           sres += "f{}= '{}', ".format(k, e)   
+                        sres += ')'
+                        sres += ""
+                        res_list.append(sres)
+
+                     foot= table.find('tfoot')
+                     isfoot= False 
+                     if not foot is None:
+                         foottext= [ i.text.strip()  for i in foot.find_all('tr') ][0]
+                         footretext= [ hard_clear( i)  for i in foottext.split('\n') ]
+                         isfoot= True 
+                         #print ( footretext )
+        
+                     FileOper.list2file( res_list, mytbl_nm + '.bs4'  )
+                     #Z.add2report(fnm, headertext, 'table', nm_csv + str(ii)  , table_attrs, ) #table_size )
+                     
+                     Z.big_table_dict[fnm].append([fnm,   mytbl_nm  ,  mytbl_nm + '.bs4' ,  headertext , table_size , table_attrs, table_des, isfoot ])
+                     #Z.big_table_dict[fnm].append([fnm,   mytbl_nm  ,  nm_csv + str(ii) ,  headertext , table_size , table_attrs, table_des ])
+
+                     print ("bs4 <table: ", fnm, " ", mytbl_nm) 
+                  except AttributeError as e:
+                        raise
+          except AttributeError as e:
+                print ("except-bs4, no <table found: ", fnm)
+                return
+
+      def fndforms_with_button(Z, fnm, dbg= False):
+          
+          soup= Z.get_soup(fnm)
+          Z.big_form_dict[fnm]= [] 
+
+          try:
+             forms = soup.findAll('form')
+             if forms is None:
+                  print ("none forms ", fnm)
+             for ii, form in enumerate(forms):
+                 strii= str(ii)
+                 form_name= 'form' + strii
+                 #par= form.parent
+                 try:
+                     # https://gist.github.com/simonw/104413
+                     #print (form)
+                     form_attrs= { "id": "idUnk" + strii, "class": "classUnk" + strii }
+
+                     for fars in ['id', 'class']:
+                         iid=  form.attrs.get(fars) 
+                         #if iid is None:
+                         #    iid= par.attrs.get(fars)
+                         if iid :
+                             if isinstance(iid,(list,)): 
+                                 form_attrs[fars] = str( " ".join(iid ))
+                             else:
+                                 form_attrs[fars] = str( iid )
+                     
+                     #print ("---- ", form_name)
+                     #print ( form_attrs  )
+                     
+
+                     found_button = False
+                     new_list=[]
+ 
+                     for finput in ['input','textarea','select', 'button', 'a']:
+                          fi= form.find_all(finput)
+                          if fi is None: continue
+                          #print (fi)
+                          #par_attrs= dict() 
+                          for x in fi:
+                                  #inp_nm=  finput + str(nn)
+                                  lab_attrs= {}
+                                  all_val_dict= dict() # elem_attrs
+                                  opt_select_list=[]
+                                  opt_radio={}
+                                  
+                                  llb = None
+                                  if llb is None:
+                                      ppp= x.parent
+                                      ll1= ppp.select('label')
+                                      if ll1:
+                                          #print (ll1)
+                                          llb= ll1[0]
+                                  if llb is None:
+                                      llb= x.find_next_sibling("label")
+                                  if llb:
+                                       lab_attrs= {"for": "unkfor", "text": "textunk"}
+                                       ltext= hard_clear( llb.get_text()  )
+                                       if ltext :
+                                           lab_attrs['text'] = ltext
+                                       zatr= hard_clear ( llb.attrs.get('for') )
+                                       if zatr:
+                                            lab_attrs['for'] = zatr
+                                       #print ("-------------", llb)
+
+ 
+                                  new_finput = finput
+                                  if finput == 'a':
+                                      new_finput= 'button'
+                                      found_button = True
+                                      pass
+
+                                  if finput == 'select':
+                                       opt= x.select('option')
+                                       #opt= x.find_all('option')
+                                       if opt: 
+                                           opt_select_list =[   hard_clear( oo.get_text() )   for oo in opt   ]
+                                       #opt_select_list.append('select' )
+                                       opt_select_list.append(opt_select_list )
+                                       new_finput = 'select'
+                                  #all_val_dict[ "afld_type" ] = inp_nm + str(nn)
+                                  for firs in ['value', 'type', 'id','rows', 'class', 'text','placeholder']:
+                                      zatr= x.attrs.get(firs)
+                                      if zatr is None : continue
+
+                                      if firs == 'type' and ( zatr == 'radio' )  :
+                                         opt_radio = {}
+                                         #opt_radio = {"value": "unkvalue", "name": "unkname", "checked" : ""}
+                                         for firs in ['value', 'name',]:
+                                         #for firs in ['value', 'name', 'checked',]:
+                                                 zatr= x.attrs.get(firs)
+                                                 if zatr is None : continue
+                                                 opt_radio[firs]= hard_clear (zatr)
+                                         #print (opt_radio)
+                                         new_finput = 'radio'
+
+                                      if firs == 'type' and ( zatr == 'submit' or zatr == 'button' or zatr == 'reset' )  :
+                                         new_finput= 'button'
+                                         found_button = True
+                                      if firs == 'type' and  zatr == 'checkbox'   :
+                                         new_finput= 'checkbox'
+                                 
+                                      zatr= hard_clear( zatr)
+                                      if isinstance(zatr,(list,)): 
+                                          all_val_dict[firs ]= str( " ".join( zatr) )
+                                      else: 
+                                          all_val_dict[firs ]= str(  zatr )
+                                  if finput == 'button':
+                                      all_val_dict['value']= hard_clear( x.text)
+                                      all_val_dict['type']=  'submit'
+                                      #new_finput= 'button'
+                                      found_button = True
+                                  if 'placeholder' not in all_val_dict and new_finput != 'radio' :
+                                          all_val_dict['placeholder' ] = 'place_' + str(next(int_uniq_key4unk))
+                                  #new_list.append( new_finput )
+                                  new_list.append( [new_finput, all_val_dict, lab_attrs, opt_select_list, opt_radio ] )
+                                  
+
+                     #print ("-------- ",new_list)
+                     #print ("-------- ",label_list)
+                     if ( found_button == True ): 
+                         #minus_a_list= []
+                         #for i  in xrange(0, len( new_list),2)  :
+                         #    if new_list[i] == 'a': continue
+                         #    minus_a_list.append( new_list[i])
+                         #    minus_a_list.append( new_list[i + 1])
+                                
+                         #print ( fields_list )
+                         Z.big_form_dict[fnm].append( [form_name,  form, form_attrs , new_list, ] )
+                         #print ("----", fnm)
+                         #print ("-----", len(Z.big_form_dict[fnm]))
+                         #print (Z.big_form_dict[fnm])
+                     elif len (new_list) >= 1:
+                         import copy
+                         #if len (new_list) == 1:
+                         a0l= copy.deepcopy(  new_list[0]  )
+                         new_list.append( a0l )
+                         elem_val= new_list[-1][0]  # it's element name
+                         if 'palceholder' in  new_list[-1][1]:
+                                   del new_list[-1][1]['palceholder']
+                         new_list[-1][0] = 'button'
+                         new_list[-1][1]['value'] = 'submit '+ elem_val
+                         new_list[-1][1]['type'] = 'submit'
+                         new_list[-1][1]['class'] = 'unk-class'
+                         new_list[-1][1]['id'] = 'unk-id'
+                         #print ( new_list )
+                         Z.big_form_dict[fnm].append( [form_name,  form, form_attrs , new_list,  ] )
+                     else:
+                         #print ("break: button not found: %s %s " % (form_name, fnm) )
+                         break
+                         
+
+                     #print (res_list)
+                     #print (fields_list)
+                     if dbg :
+                         for k, e in Z.big_form_dict.items():
+                             print ( "0: ", k ) # file name
+                             print ( "1: ", e[0] ) # table name
+                             print ( "2: ", e[1] ) # form text src  from file
+                             print ( "3: ", e[2] ) # form attrs
+                             print ( "4: ", e[3] ) # fileds list # [finput,  pplace, par_attrs, x]
+                                   
+                         
+                 except AttributeError as e:
+                       print ("file: {} no form found".format(fnm))
+                       raise
+      
+          except AttributeError as e:
+                 print ("file: {} no form found".format(fnm))
+                 prRed(" ------------------ %s " % fnm)
+                 return
+#------------------------------------------------------------------------------------
+      
+      def extract_form_fields(Z, soup):
+          "Turn a BeautifulSoup form in to a dict of fields and default values"
+          fields = {}
+          for input in soup.findAll('input'):
+              # ignore submit/image with no name attribute
+              if input['type'] in ('submit', 'image') and not 'name' in input:
+                  continue
+      
+              # single element nome/value fields
+              if input['type'] in ('text', 'hidden', 'password', 'submit', 'image'):
+                  value = ''
+                  if 'value' in input:
+                      value = input['value']
+                  fields[input['name']] = value
+                  continue
+      
+              # checkboxes and radios
+              if input['type'] in ('checkbox', 'radio'):
+                  value = ''
+                  if input.has_attr("checked"):
+                      if input.has_attr('value'):
+                          value = input['value']
+                      else:
+                          value = 'on'
+                  if 'name' in input and value:
+                      fields[input['name']] = value
+      
+                  if not 'name' in input:
+                      fields[input['name']] = value
+      
+                  continue
+      
+              assert False, 'input type %s not supported' % input['type']
+      
+          # textareas
+          for textarea in soup.findAll('textarea'):
+              fields[textarea['name']] = textarea.string or ''
+      
+          # select fields
+          for select in soup.findAll('select'):
+              value = ''
+              options = select.findAll('option')
+              is_multiple = select.has_key('multiple')
+              selected_options = [
+                  option for option in options
+                  if option.has_key('selected')
+              ]
+      
+              # If no select options, go with the first one
+              if not selected_options and options:
+                  selected_options = [options[0]]
+      
+              if not is_multiple:
+                  assert(len(selected_options) < 2)
+                  if len(selected_options) == 1:
+                      value = selected_options[0]['value']
+              else:
+                  value = [option['value'] for option in selected_options]
+      
+              fields[select['name']] = value
+      
+          return fields
+      
+#------------------------------------------------------------------------------------        
+
+
+#db.person.insert(name=..., dob=..., ...)
+# db[tablename].insert(**{fieldname:value})
+
+class HtmlView( CheckEnv ):   
+#class HtmlView(StrDb):   
+    def __init__(Z,  plus_labels= True, ):
+        url_beg="{{=URL('static','%s/" % ( Z.wdir )
+        h0_beg= "{{=URL(c='default',f='"
+        url_end= h0_end= "')}}"
+        f0=None
+        file_db= None
+        Z.repl_ll= [ {"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">" }, 
+                     { "<html lang=\"en\">": "<html>" },
+                     { "<meta name=\"keywords\" content=\"\">": "<meta name=\"keywords\" content=\"my-keywords\">"  },
+                     { "<meta name=\"author\" content=\"\">": "<meta name=\"author\" content=\"my-author\">"},
+                     { r'(<title[^<]+)(.*?)(</title>)(.)': '<title>facew2p</title>\n'  } , ]
+
+        Z.repl_ll= FileOper.put_get_yaml( 'facew2p' + '.yaml'  , Z.repl_ll ,)
+
+
+        def r_hx(Z, ma, p2, num_str):
+            #print (ma.group(2), ma.group(3), ma.group(4))
+            ctr1= Z.get_from_db_fnm2ctrl( ma.group(2)  )
+            new_pat= "\g<1>%s%s%s\g<4>"  % (h0_beg, ctr1, h0_end)
+            #print (new_pat)
+            return ( new_pat, "" )
+
+        def r_h0(Z, ma, p2, num_str):
+            magrp2= ma.group(2)
+            ctr1= Z.get_from_db_fnm2ctrl( ma.group(2)  )
+            new_pat= "\g<1>%s%s%s\g<4>"  % (h0_beg, ctr1, h0_end)
+            return ( new_pat, "" )
+
+        def r_h1(Z, ma, p2, num_str):
+            ctr1= 'index'
+            new_pat= "\g<1>%s%s%s\g<4>"  % (h0_beg, ctr1, h0_end)
+            return ( new_pat, "" )
+
+        def check_add_css(fnm):
+            if fnm.endswith('.css'):
+                if os.path.exists(fnm):
+                     if not fnm in Z.db_css_files:
+                         Z.db_css_files.append(fnm)
+                else:
+                     if not fnm in Z.db_css_missed_files:
+                         Z.db_css_missed_files.append(fnm)
+                #print (magrp2)
+
+        def r_h2(Z, ma, p2, num_str):
+            magrp2=ma.group(2)
+            check_add_css(magrp2)
+            pat_l= magrp2.split('/')
+            for i in range(len(pat_l),-1,-1):
+                    x_nm=  "/".join(pat_l[i:])
+                    if os.path.isfile(x_nm):
+                        #print ("any4 corrected path for: ", x_nm)
+                        p2=p2.replace('\g<2>',x_nm)
+                        break
+                    if os.path.isdir(x_nm):
+                        #print ("found!!!", x_nm)
+                        new_pat= "\g<1>%s%s%s\g<4>\""  % (h0_beg, "index", h0_end)
+                        #print("xaxa: ",new_pat)
+                        return ( new_pat, "" )
+
+            new_pat= p2  % (url_beg,h0_end)
+            return ( new_pat, "" )
+
+        def r_url(Z, ma, p2, num_str):
+            magrp2= ma.group(2)
+            new_pat= p2  % (url_beg,h0_end)
+            check_add_img(magrp2)
+            return ( new_pat, "" )
+
+
+        r_v0= r_h2
+        r_u0= r_h2
+
+        def check_add_img(ma2):
+            if any( [ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(".jpeg"),
+                      ma2.endswith(".gif"), ma2.endswith(".svg")  ]):
+
+                pat_l= ma2.split('/')
+                x_nm= ""
+                for i in range(len(pat_l),-1,-1):
+                    x_nm=  "/".join(pat_l[i:])
+                    #print ( "xxx:", x_nm )
+                    if os.path.isfile(x_nm):
+                           break
+                if not os.path.exists(x_nm):
+                       return ""
+                if not x_nm in Z.db_src_myimg:
+                            Z.db_src_myimg.append(x_nm)
+                if not x_nm in Z.db_src_myimg_ctrl:
+                            Z.db_src_myimg_ctrl[ma2]=  Z.get_from_db_fnm2ctrl(Z.f0)
+                return x_nm
+
+
+        def r_src(Z, ma, p2, num_str):
+            gif1x1src= 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"'
+            gif1x1black= 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="'
+            magrp2= ma.group(2)
+            if '{' in magrp2 or '%' in magrp2  or 'ads' in magrp2:
+                print (Z.f0,": ", "maybe ads: ", magrp2) 
+            x_nm = ""
+            if not os.path.isfile( magrp2 ):
+                #print ("missed src: ", magrp2)
+                pat_l= magrp2.split('/')
+                #for i, e in enumerate(pat_l):
+                for i in range(len(pat_l),-1,-1):
+                    x_nm=  "/".join(pat_l[i:]) 
+                    #print ( x_nm )
+                    if os.path.isfile(x_nm):
+                        #print ("corrected path for: ", x_nm)
+                        #print (p2)
+                        p2=p2.replace('\g<2>', x_nm)
+                        check_add_img(x_nm)
+                        new_pat= p2  % (url_beg,h0_end)
+                        return ( new_pat, "" )
+                     
+                if not magrp2 in Z.db_src_not_exists:
+                      #print (magrp2)
+                      Z.db_src_not_exists.append(magrp2)
+            x_nm= check_add_img(magrp2)
+            if x_nm  and  x_nm != "":
+                 p2=p2.replace('\g<2>', x_nm)
+            new_pat= p2  % (url_beg,h0_end)
+            if not os.path.exists(magrp2):
+                if any ([ magrp2.endswith(".png"), magrp2.endswith(".jpg"), magrp2.endswith(".jpeg"), 
+                          magrp2.endswith(".gif"), magrp2.endswith(".svg") ] ):
+                      new_pat= gif1x1src 
+            return ( new_pat, "" )
+
+        def r_t0(Z, ma, p2, num_str):
+            new_pat= p2  % ('facew2p')
+            return ( new_pat, "" )
+
+        def r_head(Z, ma, p2, num_str):
+            new_pat=  '\n'.join(Z.head_add) +  ma.group(0) 
+            return ( new_pat, "" )
+
+        def ins2table(num_str , key_add, value ):
+            num_str= str(num_str)
+            value= hard_clear(value)
+            ins_str= "    db.{}.insert( f0= '{}{}', f1= '({}){}')".format(Z.file_db  ,key_add, num_str, num_str, value )
+            #ins_str= "    db.{}.insert( f0= '{}{}', f1= '({}){}')".format('DBTBL' ,key_add, str(num_str), str(num_str), value )
+            return ins_str 
+
+        def r_place(Z, ma, p2, num_str):
+            new_pat=  p2.format( 'DICT',  str(num_str),  )
+            s=p2
+            # !!! DANGER hack: create  unique key 
+            key_prefix= s[s.index('"')+1:s.index('"')+3]
+            ins_str= ins2table(num_str, key_prefix, ma.group(2) );
+            return ( new_pat, ins_str )
+
+        def r_div(Z, ma, p2, num_str):
+            #if ( '<' in ma.group(2)) or ('<' or ma.group(2)) :
+            #    return ("","")
+            #print (ma.group(2))
+            new_pat=  p2.format( 'DICT',  str(num_str),  )
+            s=p2
+            # !!! DANGER hack: create  unique key 
+            key_prefix= s[s.index('"')+1:s.index('"')+3]
+            ins_str= ins2table(num_str, key_prefix, ma.group(2) );
+            return ( new_pat, ins_str )
+
+        r_a0 = r_place
+        r_h5 = r_place
+        r_h6 = r_place
+        r_pp = r_place
+        r_sp = r_place
+
+        def ret_mail(Z,ma,  p2, num_str):
+          ma0= ma.group(0)
+          full_name, email_addr= parseaddr(ma0)
+          if (len( email_addr ) ==0 ) and (len( email_addr ) == 0): 
+                print ( "invalid email",  email_addr)
+                return ("", "")
+          #print ("found valid email: ", email_addr )
+          new_pat=  p2 % ('DICT',str(num_str))
+          s=p2
+          key_prefix= s[s.index('"')+1:s.index('"')+3]
+          ins_str= ins2table(num_str, key_prefix, ma0 );
+          return ( new_pat, ins_str )
+
+        def ret_tel(Z,ma,  p2, num_str):
+          ma0= ma.group(0)
+          ma0=ma0.strip()
+          cnt_par= cnt_space= cnt_minus = 0
+          for ch in ma0:
+            if ch not in '1234567890() +-':
+                    return ("", "")
+          if all ([ma0.count(' ') == 0 , ma0.count('-') == 0,  ma0.count('(')== 0]):
+                    return ("", "")
+                  
+          print ("is it tel?: ", ma0 ) 
+          new_pat=  p2 % ('DICT',str(num_str))
+          s=p2
+          key_prefix= s[s.index('"')+1:s.index('"')+3]
+          ins_str= ins2table(num_str, key_prefix, ma0 );
+          return ( new_pat, ins_str )
+
+        def ret_cp(Z, ma, p2, num_str):
+            #print (ma.group(1))
+            return ("", "")
+
+        def ret_0(Z, ma, p2, num_str):
+            print (ma.group(0))
+            print (len(ma.groups()))
+            for i in range(0, len(ma.groups()) ) :
+               print( "{} {} ".format(i, ma.group(i) ) )
+            return ("", "")
+
+
+        Z.convert= [
+           [ 'href_#',  re.compile(r'(href\s?=\s?")([^\.]+)(\.html[#]\s?)(")()'),  r'\g<1> %s \g<2> %s \g<4> ',  r_hx, True ],
+           [ 'href_html',  re.compile(r'(href\s?=\s?")([^\.]+)(\.html\s?)(")()'),  r'\g<1> %s \g<2> %s \g<4> ',  r_h0, True ],
+           [ 'href_root',  re.compile( r'(href\s?=\s?")([/])(")()')  ,             r'\1 \2 \3', r_h1, True ],
+           [ 'href_any',  re.compile(r'(href\s?=\s?")([^"]+)(")()'),              r'\g<1>%s\g<2>%s\g<3>', r_h2, True ],
+           [ 'src_any',   re.compile(r'(src\s?=\s?")([^"]+)(")()'),               r'\g<1>%s\g<2>%s\g<3>',  r_src, True ],
+           #[ 'data-src',   re.compile(r'(data-imgage-src\s?=\s?")([^"]+)(")()'),               r'\g<1>%s\g<2>%s\g<3>',  r_v0, True ],
+           [ 'data-bg',   re.compile(r'(data-setbg\s?=\s?")([^"]+)(")()'),               r'\g<1>%s\g<2>%s\g<3>',  r_v0, True ],
+           [ 'data-video',  re.compile(r'(data-video\s?=\s?")([^"]*)(")()') ,       r'\g<1>%s\g<2>%s\g<3>',   r_v0, False ],
+           [ 'url_img',   re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'),                r'\g<1>%s\g<2>%s\g<3>' ,  r_url, False ],
+           [ 'title',   re.compile(r'(<title>)([^<]*)(</title>)()'),            r'\1%s\3',  r_t0, False ],
+           [ '/head',   re.compile(r'(</head>)'),            r'\1%s\3',  r_head, False ],
+          ]
+
+        Z.convert_text=  [
+           [ 'strong',  re.compile(r'(<strong>)([^<]*)(</strong>)()'),  r'\g<1>{{{{={}["sp{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<b>',  re.compile(r'(<b>)([^<]*)(</b>)()'),          r'\g<1>{{{{={}["bb{}"]}}}}\g<3>'  ,  r_sp, True ],
+          # [ '<sup>',  re.compile(r'(<sup>)([^<]*)(</sup>)()'),          r'\g<1>{{{{={}["su{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<i>',  re.compile(r'(<i>)([^<]*)(</i>)()'),          r'\g<1>{{{{={}["ii{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '>...</i>',  re.compile(r'(>)([^<]*)(</i>)()'),          r'\g<1>{{{{={}["ix{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<small>',  re.compile(r'(<small>)([^<]*)(</small>)()'),          r'\g<1>{{{{={}["si{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<span>...<',  re.compile(r'(<span>)([^<]+)(</span>)()'),          r'\g<1>{{{{={}["sp{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '>...</span>',  re.compile(r'(>)([^<]+)(</span>)()'),          r'\g<1>{{{{={}["sx{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<p>...<',  re.compile(r'(<p>)([^<]*)(</p>)()'),          r'\g<1>{{{{={}["pa{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '>...</p>',  re.compile(r'(>)([^<]*)(</p>)()'),          r'\g<1>{{{{={}["pc{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<p>...<x',  re.compile(r'(<p>)([^<]*)(<)()'),          r'\g<1>{{{{={}["pf{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<br>...<',  re.compile(r'(<br>)([^<]*)(<)()'),          r'\g<1>{{{{={}["bd{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '>...<br>',  re.compile(r'(>)([^<]*)(<br>)()'),          r'\g<1>{{{{={}["ba{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ '<li>...<',  re.compile(r'(<li>)([^<]*)(</li>)()'),          r'\g<1>{{{{={}["la{}"]}}}}\g<3>'  ,  r_sp, True ],
+           [ 'place',  re.compile(r'(placeholder\s?=\s?\")([^"]+?)(")()'),   r'\g<1>{{{{={}["pb{}"]}}}}\g<3>'  , r_place, False ],
+           [ 'button',     re.compile("(<button[^>]+>)(.*?)(</button>)()" ),     r'\g<1>{{{{={}["bu{}"]}}}}\g<3>' , r_a0 , True],
+           [ '<li..>..<',     re.compile("(<li[^>].*?>)(.*?)(</li>)()" ),            r'\g<1>{{{{={}["lb{}"]}}}}\g<3>' , r_h6 , True],
+           [ '<p..>..<',     re.compile("(<p[^>].*?>)(.*?)(</p>)()" ),            r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
+           [ '<span..>..<',     re.compile("(<span[^>].*?>)(.*?)(</span>)()" ),  r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h6',     re.compile("(<h6[^>]+>)(.*?)(</h6>)()" ) ,              r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h5',     re.compile("(<h5[^>]+>)(.*?)(</h5>)()" ) ,              r'\g<1>{{{{={}["he{}"]}}}}\g<3>', r_h6 , True],
+           [ 'h4',     re.compile("(<h4[^>]+>)(.*?)(</h4>)()" ) ,              r'\g<1>{{{{={}["hd{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h3',     re.compile("(<h3[^>]+>)(.*?)(</h3>)()" ) ,              r'\g<1>{{{{={}["hc{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h2',     re.compile("(<h2[^>]+>)(.*?)(</h2>)()" ) ,              r'\g<1>{{{{={}["hb{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h1',     re.compile("(<h1[^>]+>)(.*?)(</h1>)()" ) ,              r'\g<1>{{{{={}["ha{}"]}}}}\g<3>' , r_h6 , True],
+           [ 'h1h6', re.compile( r'(<h1>|<h2>|<h3>|<h4>|<h5>|<h6>)((?!(?:<)).*?)((<.*?>))' ) , r'\g<1>{{{{={}["hh{}"]}}}}\g<3>', r_pp , True],
+           [ '<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()" ) ,                r'\g<1>{{{{={}["aa{}"]}}}}\g<3>' , r_a0 , True],
+           [ 'div',     re.compile("(<div[^>]+>)(.*?)(</div>)()" ) ,                r'\g<1>{{{{={}["di{}"]}}}}\g<3>' , r_a0 , True],
+           [ 'mail',   re.compile( r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False ],
+           [ 'bad_tel',  re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False ],
+           [ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
+          ]
+
+        if plus_labels == True:
+           Z.convert += Z.convert_text
+
+        Z.pat_cnt = dict((xpat, 0) for [xpat, _, _, _, _ ] in Z.convert)
+        Z.insert_list=[]   
+
+    def run (Z, html_fnm, dbg= True, pre_replace = True):
+        if pre_replace  and  Z.repl_ll:
+            if isinstance(Z.repl_ll , (list,)) :
+               for e in Z.repl_ll:
+                  if isinstance(e , (dict,)) :
+                      for k,v in e.items():
+                          #src_pat = k
+                          #dst_pat = v 
+                          FileOper.replace_pat( html_fnm  , src_pat= k, dst_pat= v )
+                          #FileOper.replace_pat( html_fnm  , src_pat=r'(<tfoot[^<]+)(.*?)(</tfoot>)(.)', dst_pat= metka )
+                  else:
+                     print ("bad dict in facew2p.new")
+                     print ("===========",Z.repl_ll, " ", html_fnm)
+            else:
+               print ("bad list in facew2p.new")
+               print ("===========",Z.repl_ll, " ", html_fnm)
+                    
+        Z.f0= html_fnm.split('.')[0] 
+        Z.file_db= Z.dbt_prefix  + Z.f0.replace('_','0').replace('-','0')
+
+        lines= replace_in_list ( FileOper.file2list(html_fnm )   , {  "'": '"',  "http://": "https://", r'\r':''  }  )
+        ctrl1= Z.get_from_db_fnm2ctrl( Z.f0 )
+        link_tbl_e=[ html_fnm + Z.myview_ext, html_fnm,  ctrl1 , Z.file_db  ] 
+
+        list_for_keys=[]
+
+        if dbg:
+            log_str=[]
+
+        for num_str, line in enumerate(lines):
+            for pat in Z.convert:
+                [pat_name, p1,p2, func_nm, contin_flag ] = pat
+                match= re.search(p1, line)
+                if match:
+                    if (contin_flag == True):
+                          grp0= match.group(2)
+                          grp000= match.group(0)
+
+                          if any ([( "#"      in grp0 ), ( "{{"         in grp0), ( '//'     in grp0), 
+                                   ( '<'      in grp0 ), ( '>'          in grp0), ( 'tel'    in grp0), 
+                                   ( "mailto" in grp0 ), ( "javascript" in grp0), ( len(grp0) ==0   ), ] ) :
+                                continue
+                          #print (grp000)
+                          if 'icon' in grp000 and '=' in grp000 and 'class' in grp000:
+                                 continue
+                    Z.pat_cnt[pat_name] += 1
+
+                    if dbg: 
+                        dbg_str= "--{} -- match  {} {}".format( html_fnm, pat_name ,  p2 ) 
+                        print ( dbg_str )
+                        log_str.append( dbg_str )
+
+                        for i in range(0, len(match.groups()) ) :
+                            dbg2_str= "{} {} ".format(i, match.group(i) ) 
+                            print ( dbg2_str )
+                            log_str.append( dbg2_str )
+
+                    (new_pat, data_str)=func_nm (Z,match , p2, next( int_uniq_key ))
+                    #(new_pat, data_str)=func_nm (Z,match , p2, num_str)
+                    result = re.sub(p1, new_pat, line)
+
+                    if len(data_str):
+                        list_for_keys.append(data_str)
+
+                    if dbg: 
+                           print ("source: ",line )
+                           print ("result: ", result)
+                           log_str.append (data_str)
+                           log_str.append("source: {}".format( line ))
+                           log_str.append("result: {}".format( result ))
+                    lines[num_str]= line= result
+    
+        if dbg: 
+              FileOper.list2file(log_str, html_fnm + Z.mylog_ext)
+        link_tbl_e.append(list_for_keys)
+        Z.link_table.append(link_tbl_e)
+        FileOper.list2file(lines, html_fnm + Z.myview_ext )
+        return 
+
+    def run_list(Z):
+        [ Z.run ( fnm, dbg= False) for fnm in glob.glob("*.html") ]
+        pprint.pprint ( Z.pat_cnt, ) # width =1)
+        prYellow ("replaced: %s" % sum( [int(v) for v in Z.pat_cnt.values() ] ) )
+        print ("uniq_key_value: %s" % next( int_uniq_key ) )
+#---------------------------------------------------------------------------------------------    
+def replace_in_list(l1, pat_dict, *add_lists):
+    s="\n".join(l1)
+    for k, v in pat_dict.items():
+         s= s.replace(k, v)
+    ret_list= s.split('\n')
+    if add_lists is not None:
+       for arg in  add_lists:
+          ret_list.extend(arg)
+    return ret_list 
+
+
+def repl2_in_lists(pat_dict, *ll ):
+    res_list= []
+    if ll is not None:
+        for l in ll:
+            s="\n".join(l)
+            for k, v in pat_dict.items():
+                 s= s.replace(k, v)
+            tmp_list= s.split('\n')
+
+            res_list.extend( tmp_list) 
+    return res_list
+#---------------------------------------------------------------------------------------------    
+
+class W2pApp(StrDb):
+      def __init__(Z,):
+          Z.app_tables= []
+          Z.app_controllers= []
+          Z.app_views= []
+ 
+      def create_new_tmp_files(Z):
+          shutil.copy2( Z.ctrl_file  + Z.sv_ext , Z.ctrl_tmp )
+          FileOper.replace_in_file ( Z.appadmin_file +  Z.sv_ext,  Z.appadmin_file,  Z.appadmin_change[0], Z.appadmin_change[1]  )
+          FileOper.replace_in_file ( Z.user_file +  Z.sv_ext,  Z.user_file,  Z.appadmin_change[0], Z.appadmin_change[1]  )
+          shutil.copy2( Z.origlayout + Z.sv_ext , Z.w2playout )
+
+      def build_db(Z, ctrl_nm,  db_nm, db_data):
+          pat_dict= { 'CONTROLLER': ctrl_nm ,  'DBTBL': db_nm }
+
+          if len(db_data) == 0:
+              dbfull= repl2_in_lists(pat_dict, Z.model_define, Z.model_popula,  Z.model_commit )
+          else:
+              dbfull= replace_in_list (Z.model_define, pat_dict,  db_data ,  Z.model_commit )
+
+          fpath= os.path.join( Z.db_path, Z.dbf_prefix + db_nm + '.py'  )
+          FileOper.list2file(dbfull, fpath )
+          return fpath
+
+      def get_func_list(Z, fnm):
+          with open(fnm)as f:
+              code= f.read()
+          tree = ast.parse(code)
+          return  [x.name for x in ast.walk(tree) if isinstance(x, ast.FunctionDef)]
+
+      def init_template_admin(Z, admin_nm ):
+          #FileOper.list2file(Z.main_menu, Z.menu_main_path)
+          menu_pat= { "#response.menu": "response.menu " } if len( Z.db_src_myimg) else {}
+          FileOper.pat_list2file( Z.main_menu, menu_pat, Z.menu_main_path, mode = 'w'  )
+          print ("template admin_nm: ", admin_nm )
+          admin_views_path= os.path.join( Z.views_path, admin_nm )
+          if not os.path.exists( admin_views_path  ):
+             os.mkdir(admin_views_path )
+          ctrl_fnm= Z.ctrl_path + admin_nm + '.py'
+          FileOper.list2file( Z.ctrl_mygrid , ctrl_fnm  )
+          FileOper.list2file( Z.ctrl_search , ctrl_fnm, 'a'  )
+          FileOper.list2file( Z.api_str, ctrl_fnm , 'a' )
+          fnm= os.path.join(admin_views_path, 'index.html')
+
+          FileOper.list2file( Z.menu4mygrid , fnm  )
+          FileOper.pat_list2file( Z.ctrl_dumb, { "key='value'":"form=search_site()",  'FCTRL' : 'index', 'DIR': admin_nm, 'VIEW': 'index.html'  }, ctrl_fnm, mode = 'a'  )
+          #print (fnm)
+          #print (Z.ctrl_dumb)
+          #sys.exit('stop')
+
+      def build_admin_controller_views(Z, view_nm, ctrl_nm, tbl_nm, len_db_data,  dict_nm= 'DICT' , dir_nm= 'myad'):
+           
+          if ctrl_nm == 'index':
+             ctrl_nm= 'table_index1'
+             view_nm= 'table_index1.html'
+          fnm= os.path.join(  Z.views_path, dir_nm  ,view_nm)
+          FileOper.pat_list2file ( Z.view4mygrid , {'DBTBL': tbl_nm, 'MYAD': Z.myadd_app} , fnm,   )
+
+          fnm= os.path.join(Z.ctrl_path, dir_nm + '.py' )
+          pat_dict= { 'FCTRL': ctrl_nm, 'DBTBL': tbl_nm, 'TABLEDICT':  dict_nm, 'DIR': dir_nm, 'VIEW': view_nm }
+          FileOper.pat_list2file ( Z.ctrl4mygrid, pat_dict , fnm,   'a'  )
+
+          fnm= Z.views_path  + dir_nm + '/index.html'
+          FileOper.pat_list2file ( Z.menu_item,  {'DBTBL': tbl_nm  , 'MYAD' : dir_nm,'FCTRL': ctrl_nm }, fnm,   'a'  )
+
+          #fnm= os.path.join(Z.admin_views_path, 'index.html')
+          #FileOper.list2file( Z.menu_item , fnm , 'a' )
+
+
+      def build_controller(Z, view_nm, ctrl_nm, tbl_nm, len_db_data,  dict_nm= 'DICT' , dir_nm= 'default'):
+          pat_dict= { 'FCTRL': ctrl_nm, 'DBTBL': tbl_nm, 'TABLEDICT':  dict_nm, 'DIR': dir_nm, 'VIEW': view_nm }
+          use_ctrl_pattern= Z.ctrl_dumb  if len_db_data == 0  else  Z.ctrl_plus
+          controller= replace_in_list( use_ctrl_pattern, pat_dict  )
+
+          for e in  Z.get_func_list(Z.ctrl_tmp ):
+                 if e ==  ctrl_nm:
+                    FileOper.func_off(Z.ctrl_tmp, ctrl_nm)
+
+          FileOper.list2file(controller,  Z.ctrl_tmp, 'a' )
+          shutil.copy2(Z.ctrl_tmp, Z.ctrl_file)
+      
+      def copy_view(Z, view_nm, html_nm, dir_nm= 'default'):
+          dir_dst= Z.views_path  + dir_nm
+          if not os.path.isdir(dir_dst):
+                    os.mkdir(dir_dst)
+ 
+          dst= os.path.join (Z.views_path, dir_nm,  html_nm)
+          if dir_nm == 'default':
+              if view_nm == Z.main_index + Z.myview_ext:   #'index.html.view':
+                   dst = Z.views_path  + 'layout.html' 
+                   # DEBUG
+                   ind_path= os.path.join(Z.views_path, dir_nm, 'index.html')
+                   FileOper.list2file( Z.index_html_header,  ind_path   , mode= 'w' )
+                   #print (Z.views_path + 'index.html' )
+          shutil.copy2(view_nm, dst)
+          #os.rename(view_nm, dst)
+    
+      def add_img_dir(Z):
+          img_dir= [] 
+          unk_files= [] 
+          for e in Z.db_src_myimg:
+              adir= e.split('/')[0]
+              if len(adir) and (not adir in img_dir):
+                    img_dir.append(adir) 
+          print ("base img dirs: ", img_dir)
+          #pprint.pprint ( Z.db_src_myimg_ctrl  )
+          for dd in img_dir:
+              for root, dirs, fnm in os.walk(dd):
+                  for f in fnm:
+                      if any( [f.endswith(".png"), f.endswith(".jpg"), f.endswith(".jpeg"), 
+                               f.endswith(".gif"), f.endswith(".svg") ]):
+                           unk_f= os.path.join(root, f)
+                           if not unk_f in Z.db_src_myimg:
+                                 # unk_files.append( unk_f )
+                                 Z.db_src_myimg.append (unk_f)
+          #print ("unk files: ", unk_files)
+              
+      def build_ima_app(Z):
+          # https://www.quackit.com/css/grid/examples/css_grid_photo_gallery_examples.cfm
+          view_beg= [ "{{extend 'w2playout.html'}}",
+                      "<h2>{{=T('site images' )}}</h2>",
+                      "<p>{{=T('select, pls, image for replace')}}<p>",
+                      "<style>",
+                      ".grid { ",
+                      "  display: grid;",
+                      "  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));",
+                      "  grid-gap: 20px;",
+                      "  align-items: stretch;",
+                      "  }",
+                      ".grid img {",
+                      "  border: 1px solid #ccc;",
+                      "  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);",
+                      "  max-width: 100%;",
+                      "}",
+                      "</style>",
+                      "<main class='grid'>",
+                    ]
+          view_end= "</main>"
+          #img_item= "{{=A(IMG(_src=URL('static/template', 'img/client1.jpg'),),_href=URL('default', 'index'))}}"
+          # <td>{{=A(uname, _href=URL(r=request, f='edit_user',vars=dict (uname=uname)))}}</td> 
+          # rows=db(db.....==request.vars.uname).select() 
+
+          img_item= "{{=A(IMG(_src=URL('static/%s', '%s'), ), _title= 'change the image', _href=URL('%s', '%s', vars= dict(imgnm='%s', imgctrl='%s')))}}"
+          #img_item= "{{=A(IMG(_src=URL('static/%s', '%s'), ), _title= 'change the image', _href=URL('%s', '%s', vars= dict(imgnm='%s')))}}"
+          img2_item= ["{{=A(IMG(_src=URL('static/WDIR', IMGPATH), ),_href=URL('MYIMA', 'UPCTRL'))}}"]
+
+          ima_up_view = [
+                    "{{extend 'w2playout.html'}}",
+                    "{{=A(T('To images list'), _title='return to images list', _href=URL( 'myima', 'index' ))}}",
+                    "<div >",
+                    "<p>Dear User! To see the downloaded image refresh the site page in the browser (Hold down the Shift key and left-click the Reload, or Shift-F5 ... etc )</p>",
+                    "<p>please, select new <strong>{{=ext}} </strong> image, old image will be replaced!</p>",
+                    "</div>",
+                    "{{=A(T('View image page'), _title=ctrl_ima, _href=URL( 'default', ctrl_ima ))}}",
+                    "{{=form}}",
+                    "<div >",
+                    "{{=param}} {{=size_str}}",
+                    "</div>",
+                    "{{=A(IMG(_src=URL('static/template', param), _title='view image page'),_href=URL('default', ctrl_ima))}}",
+                    ]
+
+          Z.add_img_dir()
+          if len (Z.db_src_myimg) == 0:
+               print ("iamge list is empty, myima does not generated:")
+               return
+
+
+          ima_dir = os.path.join(Z.views_path, Z.ima_app ) 
+          ima_index = os.path.join(Z.views_path, Z.ima_app, 'index.html' ) 
+          ctrl_nm= 'myupload'
+          if not os.path.exists(ima_dir):
+                   os.makedirs(ima_dir)
+          for e in Z.db_src_myimg:
+              ctrl_ima= 'index'
+              if e in Z.db_src_myimg_ctrl: 
+                   ctrl_ima = Z.db_src_myimg_ctrl[e]
+                   
+              view_beg.append( img_item % ( Z.wdir ,e, Z.ima_app, ctrl_nm , e, ctrl_ima ) )
+              #view_beg.append( img_item % ( Z.wdir ,e, Z.ima_app, ctrl_nm , e ) )
+              #view_beg.append( img_item % ( Z.wdir ,e, Z.ima_app, ctrl_nm , e , Z.db_src_myimg_ctrl[e]) )
+             
+          view_beg.append(view_end) 
+          FileOper.list2file(view_beg, ima_index ) 
+          ctrl_fnm= os.path.join(Z.ctrl_path, Z.ima_app + '.py' )
+          FileOper.pat_list2file(Z.ctrl_dumb,  pat={'FCTRL': 'index', 'DIR' : Z.ima_app, 'VIEW': 'index.html' }, fnm= ctrl_fnm  , mode='w')
+          up_folder= 'uploads'
+          ima_view = os.path.join(Z.views_path, Z.ima_app, ctrl_nm + '.html' ) 
+          FileOper.list2file(ima_up_view, ima_view )
+          pat={'FCTRL': 'myupload', 'DIR' : Z.ima_app, 'VIEW': ctrl_nm + '.html', 'UPFOLDER': up_folder  }
+          FileOper.pat_list2file(Z.ctrl_upload,  pat= pat, fnm= ctrl_fnm  , mode='a')
+          pass 
+
+      def app_builder(Z, e):
+          Z.app_tables= [ Z.build_db(e[2], e[3], e[4]) ]
+          Z.app_controllers= [ Z.build_controller(e[1], e[2], e[3], len( e[4] ) ) ]
+          Z.app_views= [ Z.copy_view(e[0], e[1],  ) ]
+          Z.build_admin_controller_views  (e[1], e[2], e[3], len( e[4] ), dir_nm= Z.myadd_app )
+
+      def build_replace_table(Z):
+
+          repl_tbl=dict()
+
+          def f2(fnm):
+             fnm_l= fnm.split('/')
+             for i in range(len (fnm_l),-1,-1):
+                 fnm2= '/'.join(fnm_l[i:])
+                 if os.path.isfile(fnm2): 
+                    return fnm2
+             return None 
+
+          for e in Z.db_html_forward_request:
+            repl_value=  f2(e  )
+            if repl_value :
+               repl_tbl[e ] = repl_value 
+              
+          for e in Z.db_src_not_exists:
+            repl_value=  f2(e  )
+            if repl_value :
+               repl_tbl[e] = repl_value 
+          
+          repl_tbl['../../../'] = '' 
+          repl_tbl['../../'] = '' 
+          repl_tbl['../'] = '' 
+
+          #print (repl_tbl )
+          html_file_list= [ fnm  for fnm in glob.glob("*.html")  ] 
+          for e in html_file_list:
+               with open(e) as f:
+                  text=f.read()
+               for k,v in repl_tbl.items():
+                    if text.find(k) != -1:
+                       text= text.replace(k, v)
+               shutil.copy2(e, e + '.orig')
+               with open(e , 'w') as f:
+                    f.write(text)
+               FileOper.diff_my_files(e, e + '.orig')
+
+      def gen1_ico(Z,):
+
+            from PIL import Image, ImageDraw
+            import base64
+            import math
+
+            size_tuples = [(256, 256), (128, 128), (64, 64), (48, 48), (32, 32), (24, 24), (16, 16)]
+
+            img = Image.new('RGBA', (190, 190), color= 'white')
+            d = ImageDraw.Draw(img)
+            d.ellipse((20, 20, 180, 180), fill = 'green', outline ='green')
+            img = img.resize((256,256))
+            #ld = img.load()
+            #for x in range(img.size[0]):
+            #      r = int(gaussian(x, 158.8242, 201, 87.0739) + gaussian(x, 158.8242, 402, 87.0739))
+            #      g = int(gaussian(x, 129.9851, 157.7571, 108.0298) + gaussian(x, 200.6831, 399.4535, 143.6828))
+            #      b = int(gaussian(x, 231.3135, 206.4774, 201.5447) + gaussian(x, 17.1017, 395.8819, 39.3148))
+            #      for y in range(img.size[1]):
+            #            ld[x, y] = (r, g, b)
+
+
+            img.save( Z.png_ico )
+            img.save( Z.orig_ico , sizes= size_tuples  )
+            del d
+            #with open(Z.orig_ico, 'rb') as f:
+            #      img=f.read()
+            #Z.basse64_ico= base64.encodestring(img) 
+            # https://mobiforge.com/design-development/adding-favicons-in-a-multi-browser-multi-platform-world
+               
+
+      def gen_ico(Z):
+
+        from PIL import Image, ImageDraw
+        #  https://stackoverflow.com/questions/7787375/python-imaging-library-pil-drawing-rounded-rectangle-with-gradient
+        
+        def channel(i, c, size, startFill, stopFill):
+            """calculate the value of a single color channel for a single pixel"""
+            return startFill[c] + int((i * 1.0 / size) * (stopFill[c] - startFill[c]))
+        
+        def color(i, size, startFill, stopFill):
+            """calculate the RGB value of a single pixel"""
+            return tuple([channel(i, c, size, startFill, stopFill) for c in range(3)])
+        
+        def round_corner(radius):
+            """Draw a round corner"""
+            corner = Image.new('RGBA', (radius, radius), (0, 0, 0, 0))
+            draw = ImageDraw.Draw(corner)
+            draw.pieslice((0, 0, radius * 2, radius * 2), 180, 270, fill="blue")
+            return corner
+        
+        def apply_grad_to_corner(corner, gradient, backwards = False, topBottom = True):
+            width, height = corner.size
+            widthIter = range(width)
+        
+            if backwards:
+                widthIter.reverse()
+        
+            for i in xrange(height):
+                gradPos = 0
+                for j in widthIter:
+                        if topBottom:
+                            pos = (i,j)
+                        else:
+                            pos = (j,i)
+                        pix = corner.getpixel(pos)
+                        gradPos+=1
+                        if pix[3] != 0:
+                             corner.putpixel(pos,gradient[gradPos])
+        
+            return corner
+        
+        def round_rectangle(size, radius, startFill, stopFill, runTopBottom = False):
+            """Draw a rounded rectangle"""
+            width, height = size
+            rectangle = Image.new('RGBA', size)
+        
+            if runTopBottom:
+              si = height
+            else:
+              si = width
+        
+            gradient = [ color(i, width, startFill, stopFill) for i in xrange(si) ]
+        
+            if runTopBottom:
+                modGrad = []
+                for i in xrange(height):
+                   modGrad += [gradient[i]] * width
+                rectangle.putdata(modGrad)
+            else:
+                rectangle.putdata(gradient*height)
+        
+            origCorner = round_corner(radius)
+        
+            # upper left
+            corner = origCorner
+            apply_grad_to_corner(corner,gradient,False,runTopBottom)
+            rectangle.paste(corner, (0, 0))
+        
+            # lower left
+            if runTopBottom: 
+                gradient.reverse()
+                backwards = True
+            else:
+                backwards = False
+        
+        
+            corner = origCorner.rotate(90)
+            apply_grad_to_corner(corner,gradient,backwards,runTopBottom)
+            rectangle.paste(corner, (0, height - radius))
+        
+            # lower right
+            if not runTopBottom: 
+                gradient.reverse()
+        
+            corner = origCorner.rotate(180)
+            apply_grad_to_corner(corner,gradient,True,runTopBottom)
+            rectangle.paste(corner, (width - radius, height - radius))
+        
+            # upper right
+            if runTopBottom: 
+                gradient.reverse()
+                backwards = False
+            else:
+                backwards = True
+        
+            corner = origCorner.rotate(270)
+            apply_grad_to_corner(corner,gradient,backwards,runTopBottom)
+            rectangle.paste(corner, (width - radius, 0))
+        
+            return rectangle
+        
+        img = round_rectangle((200, 200), 70, (255,0,0), (0,255,0), True)
+
+        size_tuples = [(256, 256), (128, 128), (64, 64), (48, 48), (32, 32), (24, 24), (16, 16)]
+
+        img = img.resize((256,256))
+        imgc = img.crop((0, 0, 256, 256))
+        imgc.save( Z.png_ico, 'PNG' )
+        imgc.save( Z.orig_ico , sizes= size_tuples  )
+
+        
+               
+      def build(Z, dbg= False, set_passwd= True, pat_pass= None):
+        prYellow ( "link_table size (== num html files): %s" % len(a.link_table) )
+        Z.create_new_tmp_files()
+        Z.init_template_admin( Z.myadd_app)
+        for e in Z.link_table:
+            Z.app_builder( e)
+            if dbg :
+                print("=====================================================================")
+                print (e[0]) # view name .html.view
+                print (e[1]) # html  name .html
+                print (e[2]) # controller_name
+                print (e[3]) # DBTABLE
+                print (e[4]) # insert table , list with real data for insert
+                print ( Z.link_table )
+        #print ( b.pat_cnt, )
+        Z.build_ima_app()
+        Z.gen_ico()
+
+        #if len(Z.db_html_error_request ) or len(Z.db_src_not_exists ):
+        #    Z.build_replace_table()
+
+
+
+        def commonprefix( m):
+            # https://stackoverflow.com/questions/6718196/python-determine-prefix-from-a-set-of-similar-strings
+            "Given a list of pathnames, returns the longest common leading component"
+            if not m: return ''
+            s1 = min(m)
+            s2 = max(m)
+            for i, c in enumerate(s1):
+                if c != s2[i]:
+                    return s1[:i]
+            return s1
+
+
+        if len(Z.db_html_forward_request):
+            Z.build_replace_table()
+            prRed ('====== found html files in subdirs! replace mode on! ===== !')
+            prRed ('====== href= and src= changed ===== !')
+            #if True:
+            #    prRed('rebuild and restart')
+            #    os.system (os.path.basename(__file__) )
+            #    sys.exit("exit after restart" )
+            #    return 
+            sys.exit("run prog again for finish!")
+            return
+
+        print ("html-files does not exist: ", Z.db_html_error_request)
+        print ("src does not exist: ",  Z.db_src_not_exists)
+        if len(Z.db_src_not_exists) != 0:
+               missed_dir=  commonprefix( Z.db_src_not_exists )
+               prRed ( "missed directory ? %s " % missed_dir )
+               x_dir = FileOper.fnd_missed_dir('.',missed_dir)
+               #print  (   x_dir)
+               if x_dir:
+                  prRed ( "put the dir %s on the right place ( with relative path )" %  x_dir  )
+                  print ("maybe : ~  mkdir {} && cp -a {}/* {} ?".format( missed_dir , x_dir,  missed_dir ))
+                  #FileOper.recursive_overwrite(y, missed_dir)
+        
+        #prYellow ("images in template: %s" %  len(Z.db_src_myimg) )
+        #print ("css in template: ",  Z.db_css_files)
+        print ("css does not exist: ",  Z.db_css_missed_files)
+        if len ( Z.db_css_files):
+             [ FileOper.unminify_css(e, replace = False) for e in Z.db_css_files ]
+        
+        #print ("view result http://localhost/",Z.app_nm)
+
+        
+class MyPassword(StrDb):
+      def __init__(Z, secure_pass= False):
+            Z.secure_pass= secure_pass
+
+
+      def randomStringDigits(Z, stringLength=6):
+          """Generate a random string of letters and digits """
+          lettersAndDigits = string.ascii_letters + string.digits
+          return ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
+
+      def run(Z, set_passwd= True, umail='nil@nill.com', cre_lock= True):
+        from datetime import datetime
+
+        fnmpass= os.path.join('../../models', datetime.now().strftime("%y%m%d%H%M%S") )
+        upass= Z.randomStringDigits(10)
+        FileOper.list2file([umail, upass],  fnmpass, 'w')
+        print ("recommended password: %s , was saved: %s" % (upass , fnmpass) )
+
+        if set_passwd:
+           fnm= '../../models/db.py'
+           tmplist= FileOper.file2list(fnm)
+           FileOper.list2file( Z.dbpy_https, fnm )
+           FileOper.list2file( tmplist, fnm, 'a' )
+           pass_pat= {'USERPASS8': 'xyz12345', 'USEREMAIL': 'nil@nil.com'}
+           if Z.secure_pass:
+                  pass_pat= {'USERPASS8': upass , 'USEREMAIL': umail}
+           FileOper.pat_list2file ( Z.auth_user, pass_pat , fnm,   'a'  )
+
+           for f in ['../../controllers/myadd.py','../../controllers/myima.py',]:
+               if os.path.isfile(f):
+                  FileOper.replace_in_file(f, f, '#@auth.requires_login()', '@auth.requires_login()')
+           prGreen("password for app/myadd, app/myima is set ")
+           pprint.pprint (pass_pat, )
+        else:
+           prRed("password for app/myadd, app/myima  is not set ;(")
+
+        if cre_lock:
+            FileOper.touch(Z.face_lock)
+            prGreen("touch FACELOCK")
+
+class MyTest(StrDb):
+      def __init__(Z, run_test= False):
+            Z.run_test = run_test
+            if run_test:
+                prYellow  ("== url tests ==")
+            else: 
+                prYellow  ("== url tests is off, it's controllers list  ==")
+                print ("for run tests set your url (at end of %s)" % os.path.basename(__file__) )
+            Z.app_nm= Z.get_app_nm()
+            Z.app_host= socket.gethostname()
+            [ Z.test_template_page(e[2]) for e in Z.link_table ]
+          
+            Z.test_admin_api()
+
+      def get_app_nm(Z):
+          s= os.getcwd().split('/')
+          return s[-3] if len(s) > 4 else 'unk'
+
+      def test_template_page(Z, ctrl_nm ):
+          url_name='https://{}/{}/default/{}'.format(Z.app_host, Z.app_nm, ctrl_nm)
+          if Z.run_test == False:
+              print ("{}".format(url_name) )
+              return
+              
+          response = requests.get( url_name,  headers= Z.req_headers, allow_redirects=False )
+          print ("{} - {}".format(url_name,response.status_code) )
+
+
+      def test_admin_api(Z, ):
+          #print(socket.gethostname())
+          strurl= [ 'https://{}/{}/appadmin', 'https://{}/{}/myadd/api/patterns.json', 'https://{}/{}/myadd', ]
+          if len (Z.db_src_myimg):
+               strurl.append ('https://{}/{}/myima')
+
+          for e in strurl:
+             url_name= e.format(Z.app_host,  Z.app_nm )
+             if Z.run_test == False:
+                  print ("{}".format(url_name) )
+                  continue
+             response = requests.get( url_name,  headers= Z.req_headers, allow_redirects=False )
+             #if url_name.endswith('.json') : 
+             #        print ("app api")
+             #        print (response.content)
+             print ("{} - {}".format(url_name, response.status_code) )
+
+def check_model (dbg= True):
+
+    db_tbl_list=[]
+    for e in [ fnm  for fnm in glob.glob("../../models/*.py")  ]:
+       for ss in  FileOper.file2list(e):
+            if ss.startswith( 'db.define_table' ) :
+               #list1=re.findall(regex,ss)
+               list1= re.findall("\'\s?(.+)\s?\'",ss)
+               if len( list1) ==1 :
+                  if '-' in list1[0] or ' ' in list1[0]:
+                      prRed("bad model-table name: %s " % list1[0])
+                      sys.exit('stop')
+                  if  list1[0] not in db_tbl_list:
+                      db_tbl_list.append( list1[0] )
+                  else:
+                      prRed("------- not unique model-table name -----: %s" % list1[0] )
+                      print (ss)
+                      sys.exit("stop!")
+    print ("all db table names are unique")
+    if dbg:
+        print (db_tbl_list )
+        print ( len(  db_tbl_list  )   )
+
+#------------------------------------------------------------------------------------        
+if __name__ == "__main__":
+        import time
+        start = time.time()
+        
+        plus_labels= False if  len(sys.argv) >=2 else True
+        plus_bs4=    False if  len(sys.argv) >=3 else True
+
+        a= CheckEnv(  backup_app = False ,unzip_restart= True)
+
+        HtmlView( plus_labels= plus_labels ).run_list()
+
+        W2pApp().build( )
+        print ("ignored html in subdirs: ", a.db_html_forward_request)
+        prYellow("images: %s" % len(a.db_src_myimg))
+
+        FindTables_bs4( plus_bs4 = plus_bs4 ).run()
+        MyTest(run_test= False)
+        MyPassword(secure_pass= False  ).run(set_passwd= True, cre_lock = False)
+        print ("uniq_key_4_unk: %s" % str( next( int_uniq_key4unk ) ) )
+
+
+        prGreen ( "= the web2py app %s was generated by %s =" % (a.app_nm, os.path.basename(__file__)) )
+        if plus_labels:
+             print ( "disable num-labels: ",  os.path.basename(__file__)," x" )
+        if plus_bs4:
+             print ( "disable bs4: ",  os.path.basename(__file__)," x  x" )
+
+        check_model(dbg= False)
+        #--------------------------------------------
+        end = time.time()
+        print("execution time: %.0f sec" % (end - start) )
+

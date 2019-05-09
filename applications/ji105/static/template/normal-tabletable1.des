@@ -1,0 +1,10 @@
+- - '#'
+  - string
+- - First Name
+  - string
+- - Last Name
+  - string
+- - Username
+  - string
+- - Nickname
+  - string

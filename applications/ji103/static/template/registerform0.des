@@ -1,0 +1,52 @@
+- - input
+  - class: form-control
+    id: firstName
+    placeholder: First name
+    type: text
+  - for: firstName
+    text: First name
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: lastName
+    placeholder: Last name
+    type: text
+  - for: lastName
+    text: Last name
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: inputEmail
+    placeholder: Email address
+    type: email
+  - for: inputEmail
+    text: Email address
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: inputPassword
+    placeholder: Password
+    type: password
+  - for: inputPassword
+    text: Password
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: confirmPassword
+    placeholder: Confirm password
+    type: password
+  - for: confirmPassword
+    text: Confirm password
+  - []
+  - {}
+- - button
+  - class: btn btn-primary btn-block
+    placeholder: place_0
+  - for: firstName
+    text: First name
+  - []
+  - {}

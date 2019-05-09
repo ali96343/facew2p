@@ -1,0 +1,861 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> name 'datatable0' is not defined"
+p3
+sS'layer'
+p4
+S'/home/w2p/web2py/applications/ji162/views/default/tables-data.html'
+p5
+sS'code'
+p6
+S'response.write(\'<!doctype html>\\n<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->\\n<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->\\n<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->\\n<!--[if gt IE 8]><!-->\\n<html class="no-js" lang="en">\\n<!--<![endif]-->\\n\\n<head>\\n    <meta charset="utf-8">\\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\\n    <title>face4web2py</title>\\n    <meta name="description" content="Sufee Admin - HTML5 Admin Template">\\n    <meta name="viewport" content="width=device-width, initial-scale=1">\\n\\n    <link rel="apple-touch-icon" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/apple-icon.png\'))\nresponse.write(\'">\\n    <link rel="shortcut icon" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/favicon.ico\'))\nresponse.write(\'">\\n\\n\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/bootstrap/dist/css/bootstrap.min.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/font-awesome/css/font-awesome.min.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/themify-icons/css/themify-icons.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/flag-icon-css/css/flag-icon.min.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/selectFX/css/cs-skin-elastic.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css\'))\nresponse.write(\'">\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css\'))\nresponse.write(\'">\\n\\n    <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'template/assets/css/style.css\'))\nresponse.write(\'">\\n\\n    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">\\n\\n\\n   <meta charset=\\\'utf-8\\\'>\\n   <link  rel="icon" type="image/x-icon" href="\', escape=False)\nresponse.write(URL(\'static\',\'images/favicon.ico\'))\nresponse.write(\'"  >\\n</head>\\n\\n<body>\\n    <!-- Left Panel -->\\n\\n    <aside id="left-panel" class="left-panel">\\n        <nav class="navbar navbar-expand-sm navbar-default">\\n\\n            <div class="navbar-header">\\n                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">\\n                    <i class="fa fa-bars"></i>\\n                </button>\\n                <a class="navbar-brand" href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'index\'))\nresponse.write(\'"><img src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/logo.png\'))\nresponse.write(\'" alt="Logo"></a>\\n                <a class="navbar-brand hidden" href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'index\'))\nresponse.write(\'"><img src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/logo2.png\'))\nresponse.write(\'" alt="Logo"></a>\\n            </div>\\n\\n            <div id="main-menu" class="main-menu collapse navbar-collapse">\\n                <ul class="nav navbar-nav">\\n                    <li>\\n                        <a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'index\'))\nresponse.write(\'"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>\\n                    </li>\\n                    <h3 class="menu-title">\', escape=False)\nresponse.write(DICT["hc435"])\nresponse.write(\'</h3><!-- /.menu-title -->\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="fa fa-puzzle-piece"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_buttons\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa437"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-id-badge"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_badges\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa439"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-bars"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_tabs\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa441"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-share-square-o"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_social_buttons\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa443"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-id-card-o"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_cards\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa445"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-exclamation-triangle"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_alerts\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa447"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-spinner"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_progressbar\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa449"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-fire"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_modals\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa451"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-book"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_switches\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa453"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-th"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_grids\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa455"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-file-word-o"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'ui_typgraphy\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa457"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n                    <li class="menu-item-has-children active dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="fa fa-table"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'tables_basic\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa459"])\nresponse.write(\'</a></li>\\n                            <li><i class="fa fa-table"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'tables_data\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa461"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="menu-icon fa fa-th"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'forms_basic\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa463"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-th"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'forms_advanced\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa465"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n\\n                    <h3 class="menu-title">\', escape=False)\nresponse.write(DICT["hc466"])\nresponse.write(\'</h3><!-- /.menu-title -->\\n\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'font_fontawesome\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa468"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon ti-themify-logo"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'font_themify\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa470"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n                    <li>\\n                        <a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'widgets\'))\nresponse.write(\'"> <i class="menu-icon ti-email"></i>Widgets </a>\\n                    </li>\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="menu-icon fa fa-line-chart"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'charts_chartjs\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa473"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-area-chart"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'charts_flot\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa475"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'charts_peity\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa477"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="menu-icon fa fa-map-o"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'maps_gmap\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa479"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-street-view"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'maps_vector\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa481"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n                    <h3 class="menu-title">\', escape=False)\nresponse.write(DICT["hc482"])\nresponse.write(\'</h3><!-- /.menu-title -->\\n                    <li class="menu-item-has-children dropdown">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>\\n                        <ul class="sub-menu children dropdown-menu">\\n                            <li><i class="menu-icon fa fa-sign-in"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'page_login\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa484"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-sign-in"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'page_register\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa486"])\nresponse.write(\'</a></li>\\n                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="\', escape=False)\nresponse.write(URL(c=\'default\',f=\'pages_forget\'))\nresponse.write(\'">\', escape=False)\nresponse.write(DICT["aa488"])\nresponse.write(\'</a></li>\\n                        </ul>\\n                    </li>\\n                </ul>\\n            </div><!-- /.navbar-collapse -->\\n        </nav>\\n    </aside><!-- /#left-panel -->\\n\\n    <!-- Left Panel -->\\n\\n    <!-- Right Panel -->\\n\\n    <div id="right-panel" class="right-panel">\\n\\n        <!-- Header-->\\n        <header id="header" class="header">\\n\\n            <div class="header-menu">\\n\\n                <div class="col-sm-7">\\n                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>\\n                    <div class="header-left">\\n                        <button class="search-trigger"><i class="fa fa-search"></i></button>\\n                        <div class="form-inline">\\n                            \\n\', escape=False)\nresponse.write(\'\\n\', escape=False)\nresponse.write(\'<script type="text/javascript"><!--\\n    // These variables are used by the web2py_ajax_init function in web2py_ajax.js (which is loaded below).\\n    \', escape=False)\nresponse.write(ASSIGNJS(\nw2p_ajax_confirm_message = T(\'Are you sure you want to delete this object?\'),\nw2p_ajax_disable_with_message = T(\'Working...\'),\nw2p_ajax_date_format = T(\'%Y-%m-%d\'),\nw2p_ajax_datetime_format = T(\'%Y-%m-%d %H:%M:%S\'),\najax_error_500 = T.M(\'An error occured, please [[reload %s]] the page\') % URL(args=request.args, vars=request.get_vars)\n))\nresponse.write(\'\\n    //--></script>\\n\', escape=False)\nresponse.files.insert(0,URL(\'static\',\'js/jquery.js\'))\nresponse.files.insert(1,URL(\'static\',\'css/calendar.css\'))\nresponse.files.insert(2,URL(\'static\',\'js/calendar.js\'))\nresponse.files.insert(3,URL(\'static\',\'js/web2py.js\'))\nresponse.include_meta()\nresponse.include_files()\nresponse.write(\'\\n\', escape=False)\nresponse.write(\'\\n\\n\', escape=False)\nresponse.write(tables_dataform0.custom.begin)\nresponse.write(\'\\n\', escape=False)\nresponse.write(tables_dataform0.custom.widget.f0)\nresponse.write(\'\\n\', escape=False)\nresponse.write(tables_dataform0.custom.submit)\nresponse.write(\'\\n\', escape=False)\nresponse.write(tables_dataform0.custom.end)\nresponse.write(\'\\n\\n<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >\\n                   <small>\', escape=False)\nresponse.write(response.flash0 or \'\')\nresponse.write("</small>\\n</div>\\n\\n <script>\\n setTimeout(function(){\\n  if ($(\'#divID0\').length > 0) {\\n    $(\'#divID0\').remove();\\n  } \\n}, 12000)\\n </script>\\n", escape=False)\nresponse.write(\'\\n\\n                        </div>\\n\\n                        <div class="dropdown for-notification">\\n                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\\n                                <i class="fa fa-bell"></i>\\n                                <span class="count bg-danger">\', escape=False)\nresponse.write(DICT["sx490"])\nresponse.write(\'</span>\\n                            </button>\\n                            <div class="dropdown-menu" aria-labelledby="notification">\\n                                <p class="red">\', escape=False)\nresponse.write(DICT["pc491"])\nresponse.write(\'</p>\\n                                <a class="dropdown-item media bg-flat-color-1" href="#">\\n                                <i class="fa fa-check"></i>\\n                                <p>Server #1 overloaded.</p>\\n                            </a>\\n                                <a class="dropdown-item media bg-flat-color-4" href="#">\\n                                <i class="fa fa-info"></i>\\n                                <p>Server #2 overloaded.</p>\\n                            </a>\\n                                <a class="dropdown-item media bg-flat-color-5" href="#">\\n                                <i class="fa fa-warning"></i>\\n                                <p>Server #3 overloaded.</p>\\n                            </a>\\n                            </div>\\n                        </div>\\n\\n                        <div class="dropdown for-message">\\n                            <button class="btn btn-secondary dropdown-toggle" type="button"\\n                                id="message"\\n                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\\n                                <i class="ti-email"></i>\\n                                <span class="count bg-primary">\', escape=False)\nresponse.write(DICT["sx492"])\nresponse.write(\'</span>\\n                            </button>\\n                            <div class="dropdown-menu" aria-labelledby="message">\\n                                <p class="red">\', escape=False)\nresponse.write(DICT["pc493"])\nresponse.write(\'</p>\\n                                <a class="dropdown-item media bg-flat-color-1" href="#">\\n                                <span class="photo media-left"><img alt="avatar" src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/avatar/1.jpg\'))\nresponse.write(\'"></span>\\n                                <span class="message media-body">\\n                                    <span class="name float-left">\', escape=False)\nresponse.write(DICT["sx495"])\nresponse.write(\'</span>\\n                                    <span class="time float-right">\', escape=False)\nresponse.write(DICT["sx496"])\nresponse.write(\'</span>\\n                                        <p>\', escape=False)\nresponse.write(DICT["pa497"])\nresponse.write(\'</p>\\n                                </span>\\n                            </a>\\n                                <a class="dropdown-item media bg-flat-color-4" href="#">\\n                                <span class="photo media-left"><img alt="avatar" src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/avatar/2.jpg\'))\nresponse.write(\'"></span>\\n                                <span class="message media-body">\\n                                    <span class="name float-left">\', escape=False)\nresponse.write(DICT["sx499"])\nresponse.write(\'</span>\\n                                    <span class="time float-right">\', escape=False)\nresponse.write(DICT["sx500"])\nresponse.write(\'</span>\\n                                        <p>\', escape=False)\nresponse.write(DICT["pa501"])\nresponse.write(\'</p>\\n                                </span>\\n                            </a>\\n                                <a class="dropdown-item media bg-flat-color-5" href="#">\\n                                <span class="photo media-left"><img alt="avatar" src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/avatar/3.jpg\'))\nresponse.write(\'"></span>\\n                                <span class="message media-body">\\n                                    <span class="name float-left">\', escape=False)\nresponse.write(DICT["sx503"])\nresponse.write(\'</span>\\n                                    <span class="time float-right">\', escape=False)\nresponse.write(DICT["sx504"])\nresponse.write(\'</span>\\n                                        <p>\', escape=False)\nresponse.write(DICT["pa505"])\nresponse.write(\'</p>\\n                                </span>\\n                            </a>\\n                                <a class="dropdown-item media bg-flat-color-3" href="#">\\n                                <span class="photo media-left"><img alt="avatar" src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/avatar/4.jpg\'))\nresponse.write(\'"></span>\\n                                <span class="message media-body">\\n                                    <span class="name float-left">\', escape=False)\nresponse.write(DICT["sx507"])\nresponse.write(\'</span>\\n                                    <span class="time float-right">\', escape=False)\nresponse.write(DICT["sx508"])\nresponse.write(\'</span>\\n                                        <p>\', escape=False)\nresponse.write(DICT["pa509"])\nresponse.write(\'</p>\\n                                </span>\\n                            </a>\\n                            </div>\\n                        </div>\\n                    </div>\\n                </div>\\n\\n                <div class="col-sm-5">\\n                    <div class="user-area dropdown float-right">\\n                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\\n                            <img class="user-avatar rounded-circle" src="\', escape=False)\nresponse.write(URL(\'static\',\'template/images/admin.jpg\'))\nresponse.write(\'" alt="User Avatar">\\n                        </a>\\n\\n                        <div class="user-menu dropdown-menu">\\n                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>\\n\\n                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">\', escape=False)\nresponse.write(DICT["sx511"])\nresponse.write(\'</span></a>\\n\\n                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>\\n\\n                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>\\n                        </div>\\n                    </div>\\n\\n                    <div class="language-select dropdown" id="language-select">\\n                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">\\n                            <i class="flag-icon flag-icon-us"></i>\\n                        </a>\\n                        <div class="dropdown-menu" aria-labelledby="language">\\n                            <div class="dropdown-item">\\n                                <span class="flag-icon flag-icon-fr"></span>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-es"></i>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-us"></i>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-it"></i>\\n                            </div>\\n                        </div>\\n                    </div>\\n\\n                </div>\\n            </div>\\n\\n        </header><!-- /header -->\\n        <!-- Header-->\\n\\n        <div class="breadcrumbs">\\n            <div class="col-sm-4">\\n                <div class="page-header float-left">\\n                    <div class="page-title">\\n                        <h1>\', escape=False)\nresponse.write(DICT["hh512"])\nresponse.write(\'</h1>\\n                    </div>\\n                </div>\\n            </div>\\n            <div class="col-sm-8">\\n                <div class="page-header float-right">\\n                    <div class="page-title">\\n                        <ol class="breadcrumb text-right">\\n                            <li><a href="#">\', escape=False)\nresponse.write(DICT["aa513"])\nresponse.write(\'</a></li>\\n                            <li><a href="#">\', escape=False)\nresponse.write(DICT["aa514"])\nresponse.write(\'</a></li>\\n                            <li class="active">\', escape=False)\nresponse.write(DICT["lb515"])\nresponse.write(\'</li>\\n                        </ol>\\n                    </div>\\n                </div>\\n            </div>\\n        </div>\\n\\n        <div class="content mt-3">\\n            <div class="animated fadeIn">\\n                <div class="row">\\n\\n                    <div class="col-md-12">\\n                        <div class="card">\\n                            <div class="card-header">\\n                                <strong class="card-title">Data Table</strong>\\n                            </div>\\n                            <div class="card-body">\\n                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">\\n                                    <thead>\\n                                        <tr>\\n                                            <th>Name</th>\\n                                            <th>Position</th>\\n                                            <th>Office</th>\\n                                            <th>Salary</th>\\n                                        </tr>\\n                                    </thead>\\n                                    \\n<tbody>\\n\', escape=False)\nquery= db.tables-datatable0.id > 0\nresponse.write(\'\\n\', escape=False)\nresults= db(query).select()\nresponse.write(\'\\n\', escape=False)\nif not None is results:\n    response.write(\'\\n\', escape=False)\n    for row in results:\n        response.write(\'\\n<tr>\\n    <td> \', escape=False)\n        response.write(row.f0)\n        response.write(\' </td>\\n    <td> \', escape=False)\n        response.write(row.f1)\n        response.write(\' </td>\\n    <td> \', escape=False)\n        response.write(row.f2)\n        response.write(\' </td>\\n    <td> \', escape=False)\n        response.write(row.f3)\n        response.write(\' </td>\\n</tr>\\n\', escape=False)\n        pass\n    response.write(\'\\n\', escape=False)\n    pass\nresponse.write(\'\\n</tbody>\\n\\n                                </table>\\n                            </div>\\n                        </div>\\n                    </div>\\n\\n\\n                </div>\\n            </div><!-- .animated -->\\n        </div><!-- .content -->\\n\\n\\n    </div><!-- /#right-panel -->\\n\\n    <!-- Right Panel -->\\n\\n\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/jquery/dist/jquery.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/popper.js/dist/umd/popper.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/bootstrap/dist/js/bootstrap.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/assets/js/main.js\'))\nresponse.write(\'"></script>\\n\\n\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net/js/jquery.dataTables.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons/js/dataTables.buttons.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/jszip/dist/jszip.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/pdfmake/build/pdfmake.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/pdfmake/build/vfs_fonts.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons/js/buttons.html5.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons/js/buttons.print.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/vendors/datatables.net-buttons/js/buttons.colVis.min.js\'))\nresponse.write(\'"></script>\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'template/assets/js/init-scripts/data-table/datatables-init.js\'))\nresponse.write(\'"></script>\\n\\n\\n</body>\\n\\n</html>\', escape=False)'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.NameError object>"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.NameError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.NameError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'message'
+p20
+S'"name \'datatable0\' is not defined"'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of exceptions.NameError object>'
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.NameError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.NameError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.NameError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.NameError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.NameError'>"
+p35
+sS'__doc__'
+p36
+S"'Name not found globally.'"
+p37
+sS'__getitem__'
+p38
+S"<method-wrapper '__getitem__' of exceptions.NameError object>"
+p39
+sS'__setstate__'
+p40
+S'<built-in method __setstate__ of exceptions.NameError object>'
+p41
+sS'__getattribute__'
+p42
+S"<method-wrapper '__getattribute__' of exceptions.NameError object>"
+p43
+sS'args'
+p44
+S'("name \'datatable0\' is not defined",)'
+p45
+sS'__subclasshook__'
+p46
+S'<built-in method __subclasshook__ of type object>'
+p47
+sS'__unicode__'
+p48
+S'<built-in method __unicode__ of exceptions.NameError object>'
+p49
+sS'__delattr__'
+p50
+S"<method-wrapper '__delattr__' of exceptions.NameError object>"
+p51
+sS'__repr__'
+p52
+S"<method-wrapper '__repr__' of exceptions.NameError object>"
+p53
+sS'__hash__'
+p54
+S"<method-wrapper '__hash__' of exceptions.NameError object>"
+p55
+ssS'evalue'
+p56
+S"name 'datatable0' is not defined"
+p57
+sS'request'
+p58
+cgluon.html
+XML_unpickle
+p59
+(S's<w\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">TawkConnectionTime</td><td style="vertical-align:top;">:</td><td><div>0<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-d27df484-2dcb-4fc6-b525-7c045b814efe<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji103</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-9bd15cfb-1855-4eef-a729-8f461b670118<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji104</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-160b1f4e-0a1f-4e6a-a136-ddb1e82f7511<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji105</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-79bb62c8-7ba5-4dd1-9ba3-758cb3259b81<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji161</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-cdabc162-3229-44d8-a9af-ebd081c4f50c<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji162</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_newlic</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-2a1e9b04-7b5c-4be6-84f5-d9ee9bf2d86e<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-4c83dbfd-a630-4452-8a2f-a400e526da1e<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=10.26.255.68-4c83dbfd-a630-4452-8a2f-a400e526da1e; session_id_newlic=10.26.255.68-2a1e9b04-7b5c-4be6-84f5-d9ee9bf2d86e; session_id_ji103=10.26.255.68-9bd15cfb-1855-4eef-a729-8f461b670118; session_id_ji104=10.26.255.68-160b1f4e-0a1f-4e6a-a136-ddb1e82f7511; session_id_admin=10.26.255.68-d27df484-2dcb-4fc6-b525-7c045b814efe; session_id_ji105=10.26.255.68-79bb62c8-7ba5-4dd1-9ba3-758cb3259b81; TawkConnectionTime=0; __tawkuuid=e::sun.minfindnr.ru::zlKwYSRXSNifl791TG4q1jABTt5JL8TdBKTZRu2rLUD1lDAWsev6n/HM3EUOLjV/::2; session_id_ji161=10.26.255.68-cdabc162-3229-44d8-a9af-ebd081c4f50c; session_id_ji162=10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>https://sun.minfindnr.ru/ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.1; rv:67.0) Gecko/20100101 Firefox/67.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_BY</td><td style="vertical-align:top;">:</td><td><div>92.242.125.188:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_FOR</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_PROTO</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_SSL</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_REAL_IP</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">RAW_URI</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>gunicorn/19.1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/w2p/web2py/applications/ji103/&#x27;, &#x27;/home/w2p/web2py/applications/lic/&#x27;, &#x27;/home/w2p/web2py/applications/admin/&#x27;, &#x27;/home/w2p/web2py/applications/ji162/&#x27;, &#x27;/home/w2p/web2py/applications/av03/&#x27;, &#x27;/home/w2p/web2py/applications/newlic/&#x27;, &#x27;/home/w2p/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gunicorn.socket</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._socketobject object at 0x7fe2cea5f910&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gunicorn_socket</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._socketobject object at 0x7fe2cea5f910&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=10.26.255.68-4c83dbfd-a630-4452-8a2f-a400e526da1e; session_id_newlic=10.26.255.68-2a1e9b04-7b5c-4be6-84f5-d9ee9bf2d86e; session_id_ji103=10.26.255.68-9bd15cfb-1855-4eef-a729-8f461b670118; session_id_ji104=10.26.255.68-160b1f4e-0a1f-4e6a-a136-ddb1e82f7511; session_id_admin=10.26.255.68-d27df484-2dcb-4fc6-b525-7c045b814efe; session_id_ji105=10.26.255.68-79bb62c8-7ba5-4dd1-9ba3-758cb3259b81; TawkConnectionTime=0; __tawkuuid=e::sun.minfindnr.ru::zlKwYSRXSNifl791TG4q1jABTt5JL8TdBKTZRu2rLUD1lDAWsev6n/HM3EUOLjV/::2; session_id_ji161=10.26.255.68-cdabc162-3229-44d8-a9af-ebd081c4f50c; session_id_ji162=10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>https://sun.minfindnr.ru/ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.1; rv:67.0) Gecko/20100101 Firefox/67.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_by</td><td style="vertical-align:top;">:</td><td><div>92.242.125.188:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_for</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_proto</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_ssl</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_real_ip</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>sun.minfindnr.ru</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>92.242.125.188</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_uri</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>gunicorn/19.1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.4-stable+timestamp.2017.09.02.04.02.22</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.wsgi.WSGIErrorsWraper object at 0x7fe2ce484a50&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class &#x27;gunicorn.http.wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.body.Body object at 0x7fe2ce484190&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.wsgi.WSGIErrorsWraper object at 0x7fe2ce484a50&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class &#x27;gunicorn.http.wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.body.Body object at 0x7fe2ce484190&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py/applications/ji162/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/w2p/web2py/applications/ji103/&#x27;, &#x27;/home/w2p/web2py/applications/lic/&#x27;, &#x27;/home/w2p/web2py/applications/admin/&#x27;, &#x27;/home/w2p/web2py/applications/ji162/&#x27;, &#x27;/home/w2p/web2py/applications/av03/&#x27;, &#x27;/home/w2p/web2py/applications/newlic/&#x27;, &#x27;/home/w2p/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>sun.minfindnr.ru</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>92.242.125.188</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.4-stable+timestamp.2017.09.02.04.02.22</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 5, 8, 16, 16, 29, 696666)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/ji162/default/tables_data</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 5, 8, 13, 16, 29, 696676)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7fe2ce484a10&gt;</div></td></tr></table></div>'
+tRp60
+sS'frames'
+p61
+(lp62
+(dp63
+S'file'
+p64
+S'/home/w2p/web2py/gluon/restricted.py'
+p65
+sS'dump'
+p66
+(dp67
+S'environment'
+p68
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p69
+sS'ccode'
+p70
+S'<code object <module> at 0x7fe2ce5ace30, file "/...ns/ji162/views/default/tables-data.html", line 1>'
+p71
+ssS'lnum'
+p72
+I219
+sS'lines'
+p73
+(dp74
+I214
+S'    if environment is None:'
+p75
+sI215
+S'        environment = {}'
+p76
+sI216
+S"    environment['__file__'] = layer"
+p77
+sI217
+S"    environment['__name__'] = '__restricted__'"
+p78
+sI218
+S'    try:'
+p79
+sI219
+S'        exec(ccode, environment)'
+p80
+sI220
+S'    except HTTP:'
+p81
+sI221
+S'        raise'
+p82
+sI222
+S'    except RestrictedError:'
+p83
+sI223
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p84
+ssS'call'
+p85
+S'(ccode=<code object <module> at 0x7fe2ce5ace30, file "/...ns/ji162/views/default/tables-data.html", line 1>, environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=\'/home/w2p/web2py/applications/ji162/views/default/tables-data.html\', scode=r"response.write(\'<!doctype html>\\n<!--[if lt IE 7...</script>\\n\\n\\n</body>\\n\\n</html>\', escape=False)")'
+p86
+sS'func'
+p87
+S'restricted'
+p88
+sa(dp89
+g64
+S'/home/w2p/web2py/applications/ji162/views/default/tables-data.html'
+p90
+sg66
+(dp91
+S'span'
+p92
+S'undefined'
+p93
+ssg72
+I223
+sg73
+(dp94
+I224
+S"response.write('\\n', escape=False)"
+p95
+sI225
+S'results= db(query).select()'
+p96
+sI226
+S"response.write('\\n', escape=False)"
+p97
+sI227
+S'if not None is results:'
+p98
+sI228
+S"    response.write('\\n', escape=False)"
+p99
+sI229
+S'    for row in results:'
+p100
+sI230
+S"        response.write('\\n<tr>\\n    <td> ', escape=False)"
+p101
+sI231
+S'        response.write(row.f0)'
+p102
+sI232
+S"        response.write(' </td>\\n    <td> ', escape=False)"
+p103
+sI233
+S'        response.write(row.f1)'
+p104
+sI214
+S'response.write(\'</span></a>\\n\\n                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>\\n\\n                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>\\n                        </div>\\n                    </div>\\n\\n                    <div class="language-select dropdown" id="language-select">\\n                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">\\n                            <i class="flag-icon flag-icon-us"></i>\\n                        </a>\\n                        <div class="dropdown-menu" aria-labelledby="language">\\n                            <div class="dropdown-item">\\n                                <span class="flag-icon flag-icon-fr"></span>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-es"></i>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-us"></i>\\n                            </div>\\n                            <div class="dropdown-item">\\n                                <i class="flag-icon flag-icon-it"></i>\\n                            </div>\\n                        </div>\\n                    </div>\\n\\n                </div>\\n            </div>\\n\\n        </header><!-- /header -->\\n        <!-- Header-->\\n\\n        <div class="breadcrumbs">\\n            <div class="col-sm-4">\\n                <div class="page-header float-left">\\n                    <div class="page-title">\\n                        <h1>\', escape=False)'
+p105
+sI215
+S'response.write(DICT["hh512"])'
+p106
+sI216
+S'response.write(\'</h1>\\n                    </div>\\n                </div>\\n            </div>\\n            <div class="col-sm-8">\\n                <div class="page-header float-right">\\n                    <div class="page-title">\\n                        <ol class="breadcrumb text-right">\\n                            <li><a href="#">\', escape=False)'
+p107
+sI217
+S'response.write(DICT["aa513"])'
+p108
+sI218
+S'response.write(\'</a></li>\\n                            <li><a href="#">\', escape=False)'
+p109
+sI219
+S'response.write(DICT["aa514"])'
+p110
+sI220
+S'response.write(\'</a></li>\\n                            <li class="active">\', escape=False)'
+p111
+sI221
+S'response.write(DICT["lb515"])'
+p112
+sI222
+S'response.write(\'</li>\\n                        </ol>\\n                    </div>\\n                </div>\\n            </div>\\n        </div>\\n\\n        <div class="content mt-3">\\n            <div class="animated fadeIn">\\n                <div class="row">\\n\\n                    <div class="col-md-12">\\n                        <div class="card">\\n                            <div class="card-header">\\n                                <strong class="card-title">Data Table</strong>\\n                            </div>\\n                            <div class="card-body">\\n                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">\\n                                    <thead>\\n                                        <tr>\\n                                            <th>Name</th>\\n                                            <th>Position</th>\\n                                            <th>Office</th>\\n                                            <th>Salary</th>\\n                                        </tr>\\n                                    </thead>\\n                                    \\n<tbody>\\n\', escape=False)'
+p113
+sI223
+S'query= db.tables-datatable0.id > 0'
+p114
+ssg85
+S'()'
+p115
+sg87
+S'<module>'
+p116
+sasS'pyver'
+p117
+S'Python 2.7.13: /home/w2p/.conda/envs/lic/bin/python (prefix: /home/w2p/.conda/envs/lic)'
+p118
+sS'session'
+p119
+g59
+(S's\x1a\x00\x00\x00<div><table></table></div>'
+tRp120
+sS'etype'
+p121
+S"<type 'exceptions.NameError'>"
+p122
+sS'date'
+p123
+S'Wed May  8 16:16:29 2019'
+p124
+sS'response'
+p125
+g59
+(S's\x96%\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7fe2ce4ea6f8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji162</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>/ji162/static/js/jquery.js</div></td></tr><tr><td><div>/ji162/static/css/calendar.css</div></td></tr><tr><td><div>/ji162/static/js/calendar.js</div></td></tr><tr><td><div>/ji162/static/js/web2py.js</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash0</td><td style="vertical-align:top;">:</td><td><div>form-name tables_dataform0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>xping</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Myima</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myima/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myadd</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myadd/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>My Sites</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/site</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>This App</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Design</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/design/ji162</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myadd ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji162/controllers/myadd.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myima ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji162/controllers/myima.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>default ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji162/controllers/default.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>DB Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji162/models/db.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/appadmin/index</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Errors</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/errors/ji162</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>About</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/about/ji162</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>auth</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/default/index</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>events</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myadd/auth_eventctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>users</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myadd/auth_userctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>groups</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myadd/auth_groupctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>member</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji162/myadd/auth_membershipctrl</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/tables_data/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/w2p/web2py/applications/ji162/sessions/10e/13a/10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d&#x27;, mode &#x27;rb+&#x27; at 0x7fe2cea58d20&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py/applications/ji162/sessions/10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>bd62dbfa7d05bc2619fe7d2ca07dd6db</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-c3f841af-3fa5-49bd-9969-50a9a666da4d</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>ji162</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/tables-data.html</div></td></tr></table></div>'
+tRp126
+sS'locals'
+p127
+(dp128
+S'Service'
+p129
+S"<class 'gluon.tools.Service'>"
+p130
+sS'PY2'
+p131
+S'True'
+p132
+sS'OBJECT'
+p133
+S"<class 'gluon.html.OBJECT'>"
+p134
+sS'SQLDB'
+p135
+S"<class 'pydal.base.DAL'>"
+p136
+sg119
+S"<Storage {'_formkey[dindexform0/create]': ['8e6f...ate]': ['ec26fedd-1d80-4381-b3dd-004a7b5b0006']}>"
+p137
+sS'LINK'
+p138
+S"<class 'gluon.html.LINK'>"
+p139
+sS'BR'
+p140
+S"<class 'gluon.html.BR'>"
+p141
+sS'local_import'
+p142
+S'<function <lambda>>'
+p143
+sS'OPTGROUP'
+p144
+S"<class 'gluon.html.OPTGROUP'>"
+p145
+sS'__package__'
+p146
+S'None'
+p147
+sS'PRE'
+p148
+S"<class 'gluon.html.PRE'>"
+p149
+sS'IS_INT_IN_RANGE'
+p150
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p151
+sS'to_bytes'
+p152
+S'<function to_bytes>'
+p153
+sS'IS_LOWER'
+p154
+S"<class 'gluon.validators.IS_LOWER'>"
+p155
+sS'IS_STRONG'
+p156
+S"<class 'gluon.validators.IS_STRONG'>"
+p157
+sS'cache'
+p158
+S'<gluon.cache.Cache object>'
+p159
+sS'IS_IN_DB'
+p160
+S"<class 'gluon.validators.IS_IN_DB'>"
+p161
+sS'TAG'
+p162
+S'<gluon.html.__TAG__ object>'
+p163
+sS'SQLField'
+p164
+S"<class 'pydal.objects.Field'>"
+p165
+sS'mail'
+p166
+S'<gluon.tools.Mail object>'
+p167
+sS'BODY'
+p168
+S"<class 'gluon.html.BODY'>"
+p169
+sS'IS_DATE_IN_RANGE'
+p170
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p171
+sS'IFRAME'
+p172
+S"<class 'gluon.html.IFRAME'>"
+p173
+sS'URL'
+p174
+S'<function URL>'
+p175
+sS'__file__'
+p176
+S"'/home/w2p/web2py/applications/ji162/views/default/tables-data.html'"
+p177
+sS'db'
+p178
+S'<DAL uri="sqlite://storage.sqlite">'
+p179
+sS'auth'
+p180
+S'<gluon.tools.Auth object>'
+p181
+sS'P'
+S"<class 'gluon.html.P'>"
+p182
+sS'TFOOT'
+p183
+S"<class 'gluon.html.TFOOT'>"
+p184
+sS'iteritems'
+p185
+S'<function <lambda>>'
+p186
+sS'XHTML'
+p187
+S"<class 'gluon.html.XHTML'>"
+p188
+sS'ON'
+p189
+g132
+sS'OL'
+p190
+S"<class 'gluon.html.OL'>"
+p191
+sS'TEXTAREA'
+p192
+S"<class 'gluon.html.TEXTAREA'>"
+p193
+sS'tables_dataform0'
+p194
+S'<gluon.sqlhtml.SQLFORM object>'
+p195
+sS'MENU'
+p196
+S"<class 'gluon.html.MENU'>"
+p197
+sS'IS_IMAGE'
+p198
+S"<class 'gluon.validators.IS_IMAGE'>"
+p199
+sS'add_myadd'
+p200
+S"[(<lazyT 'Myadd'>, False, '/ji162/myadd/index', [])]"
+p201
+sS'EM'
+p202
+S"<class 'gluon.html.EM'>"
+p203
+sS'CODE'
+p204
+S"<class 'gluon.html.CODE'>"
+p205
+sS'HTTP'
+p206
+S"<class 'gluon.http.HTTP'>"
+p207
+sS'HR'
+p208
+S"<class 'gluon.html.HR'>"
+p209
+sS'IS_DATETIME'
+p210
+S"<class 'gluon.validators.IS_DATETIME'>"
+p211
+sS'reduce'
+p212
+S'<built-in function reduce>'
+p213
+sS'STYLE'
+p214
+S"<class 'gluon.html.STYLE'>"
+p215
+sS'LABEL'
+p216
+S"<class 'gluon.html.LABEL'>"
+p217
+sS'CLEANUP'
+p218
+S"<class 'gluon.validators.CLEANUP'>"
+p219
+sS'plugins'
+p220
+S'<gluon.tools.PluginManager object>'
+p221
+sS'SELECT'
+p222
+S"<class 'gluon.html.SELECT'>"
+p223
+sS'CENTER'
+p224
+S"<class 'gluon.html.CENTER'>"
+p225
+sS'Auth'
+p226
+S"<class 'gluon.tools.Auth'>"
+p227
+sS'global_settings'
+p228
+S"<Storage {'debugging': False, 'is_pypy': False, ...+timestamp.2017.09.02.04.02.22', 'is_py2': True}>"
+p229
+sS'HTML'
+p230
+S"<class 'gluon.html.HTML'>"
+p231
+sS'SQLFORM'
+p232
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p233
+sS'LOAD'
+p234
+S'<function LOAD>'
+p235
+sS'redirect'
+p236
+S'<function redirect>'
+p237
+sS'FIELDSET'
+p238
+S"<class 'gluon.html.FIELDSET'>"
+p239
+sS'IS_EQUAL_TO'
+p240
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p241
+sS'embed64'
+p242
+S'<function embed64>'
+p243
+sS'IS_LIST_OF'
+p244
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p245
+sS'INPUT'
+p246
+S"<class 'gluon.html.INPUT'>"
+p247
+sS'EMBED'
+p248
+S"<class 'gluon.html.EMBED'>"
+p249
+sS'_'
+S'<function _>'
+p250
+sS'FORM'
+p251
+S"<class 'gluon.html.FORM'>"
+p252
+sS'myconf'
+p253
+S"{'forms': {'formstyle': 'bootstrap3_inline', 'se...': {'names': 'localhost:*, 127.0.0.1:*, *:*, *'}}"
+p254
+sS'H2'
+p255
+S"<class 'gluon.html.H2'>"
+p256
+sS'H3'
+p257
+S"<class 'gluon.html.H3'>"
+p258
+sS'AppConfig'
+p259
+S'<function AppConfig>'
+p260
+sS'H1'
+p261
+S"<class 'gluon.html.H1'>"
+p262
+sS'H6'
+p263
+S"<class 'gluon.html.H6'>"
+p264
+sS'H4'
+p265
+S"<class 'gluon.html.H4'>"
+p266
+sS'H5'
+p267
+S"<class 'gluon.html.H5'>"
+p268
+sS'UL'
+p269
+S"<class 'gluon.html.UL'>"
+p270
+sS'IS_UPPER'
+p271
+S"<class 'gluon.validators.IS_UPPER'>"
+p272
+sS'xmlescape'
+p273
+S'<function xmlescape>'
+p274
+sS'IS_TIME'
+p275
+S"<class 'gluon.validators.IS_TIME'>"
+p276
+sS'OPTION'
+p277
+S"<class 'gluon.html.OPTION'>"
+p278
+sS'TITLE'
+p279
+S"<class 'gluon.html.TITLE'>"
+p280
+sS'CRYPT'
+p281
+S"<class 'gluon.validators.CRYPT'>"
+p282
+sS'IS_EMPTY_OR'
+p283
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p284
+sS'MARKMIN'
+p285
+S"<class 'gluon.html.MARKMIN'>"
+p286
+sS'__name__'
+p287
+S"'__restricted__'"
+p288
+sS'STRONG'
+p289
+S"<class 'gluon.html.STRONG'>"
+p290
+sS'COL'
+p291
+S"<class 'gluon.html.COL'>"
+p292
+sS'service'
+p293
+S'<gluon.tools.Service object>'
+p294
+sS'SCRIPT'
+p295
+S"<class 'gluon.html.SCRIPT'>"
+p296
+sS'add_myima'
+p297
+S"[(<lazyT 'Myima'>, False, '/ji162/myima/index', [])]"
+p298
+sS'TABLE'
+p299
+S"<class 'gluon.html.TABLE'>"
+p300
+sS'IS_IPV4'
+p301
+S"<class 'gluon.validators.IS_IPV4'>"
+p302
+sS'IS_LENGTH'
+p303
+S"<class 'gluon.validators.IS_LENGTH'>"
+p304
+sS'IS_IPV6'
+p305
+S"<class 'gluon.validators.IS_IPV6'>"
+p306
+sS'XML'
+p307
+S"<class 'gluon.html.XML'>"
+p308
+sS'B'
+S"<class 'gluon.html.B'>"
+p309
+sS'IMG'
+p310
+S"<class 'gluon.html.IMG'>"
+p311
+sS'SQLTABLE'
+p312
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p313
+sS'IS_MATCH'
+p314
+S"<class 'gluon.validators.IS_MATCH'>"
+p315
+sS'IS_ALPHANUMERIC'
+p316
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p317
+sS'SPAN'
+p318
+S"<class 'gluon.html.SPAN'>"
+p319
+sS'IS_JSON'
+p320
+S"<class 'gluon.validators.IS_JSON'>"
+p321
+sS'IS_IPADDRESS'
+p322
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p323
+sS'IS_SLUG'
+p324
+S"<class 'gluon.validators.IS_SLUG'>"
+p325
+sS'BEAUTIFY'
+p326
+S"<class 'gluon.html.BEAUTIFY'>"
+p327
+sS'META'
+p328
+S"<class 'gluon.html.META'>"
+p329
+sS'check_initialize'
+p330
+S'<function check_initialize>'
+p331
+sS'BUTTON'
+p332
+S"<class 'gluon.html.BUTTON'>"
+p333
+sS'IS_DATE'
+p334
+S"<class 'gluon.validators.IS_DATE'>"
+p335
+sS'IS_EMAIL'
+p336
+S"<class 'gluon.validators.IS_EMAIL'>"
+p337
+sS'IS_NOT_EMPTY'
+p338
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p339
+sS'xrange'
+p340
+S"<type 'xrange'>"
+p341
+sS'TBODY'
+p342
+S"<class 'gluon.html.TBODY'>"
+p343
+sS'CAT'
+p344
+S"<class 'gluon.html.CAT'>"
+p345
+sS'Field'
+p346
+S"<class 'pydal.objects.Field'>"
+p347
+sS'IS_LIST_OF_EMAILS'
+p348
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p349
+sg58
+S"<Storage {'_vars': None, 'function': 'tables_dat...folder': '/home/w2p/web2py/applications/ji162/'}>"
+p350
+sS'DIV'
+p351
+S"<class 'gluon.html.DIV'>"
+p352
+sS'LEGEND'
+p353
+S"<class 'gluon.html.LEGEND'>"
+p354
+sS'to_native'
+p355
+S'<function to_native>'
+p356
+sS'COLGROUP'
+p357
+S"<class 'gluon.html.COLGROUP'>"
+p358
+sS'DAL'
+p359
+S"<class 'pydal.base.DAL'>"
+p360
+sS'ASSIGNJS'
+p361
+S'<function ASSIGNJS>'
+p362
+sS'TR'
+p363
+S"<class 'gluon.html.TR'>"
+p364
+sS'LI'
+p365
+S"<class 'gluon.html.LI'>"
+p366
+sS'TH'
+p367
+S"<class 'gluon.html.TH'>"
+p368
+sS'TD'
+p369
+S"<class 'gluon.html.TD'>"
+p370
+sS'PluginManager'
+p371
+S"<class 'gluon.tools.PluginManager'>"
+p372
+sS'IS_URL'
+p373
+S"<class 'gluon.validators.IS_URL'>"
+p374
+sS'A'
+S"<class 'gluon.html.A'>"
+p375
+sS'HEAD'
+p376
+S"<class 'gluon.html.HEAD'>"
+p377
+sS'IS_DATETIME_IN_RANGE'
+p378
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p379
+sS'populate'
+p380
+S'<function populate>'
+p381
+sS'I'
+S"<class 'gluon.html.I'>"
+p382
+sS'__builtins__'
+p383
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p384
+sS'IS_NOT_IN_DB'
+p385
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p386
+sg125
+S"<Storage {'body': <cStringIO.StringO object at 0...e2cee7b668>, 'view': 'default/tables-data.html'}>"
+p387
+sS'THEAD'
+p388
+S"<class 'gluon.html.THEAD'>"
+p389
+sS'ANY_OF'
+p390
+S"<class 'gluon.validators.ANY_OF'>"
+p391
+sS'IS_NULL_OR'
+p392
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p393
+sS'IS_FLOAT_IN_RANGE'
+p394
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p395
+sS'IS_EXPR'
+p396
+S"<class 'gluon.validators.IS_EXPR'>"
+p397
+sS'T'
+S'<gluon.languages.translator object>'
+p398
+sS'IS_IN_SET'
+p399
+S"<class 'gluon.validators.IS_IN_SET'>"
+p400
+sS'DICT'
+p401
+S"{'aa437': '(437)Buttons', 'aa439': '(439)Badges', 'aa441': '(441)Tabs', 'aa443': '(443)Social Buttons', 'aa445': '(445)Cards', 'aa447': '(447)Alerts', 'aa449': '(449)Progress Bars', 'aa451': '(451)Modals', 'aa453': '(453)Switches', 'aa455': '(455)Grids', ...}"
+p402
+sS'IS_UPLOAD_FILENAME'
+p403
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p404
+sS'TT'
+p405
+S"<class 'gluon.html.TT'>"
+p406
+sS'IS_DECIMAL_IN_RANGE'
+p407
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p408
+sssS'traceback'
+p409
+S'Traceback (most recent call last):\n  File "/home/w2p/web2py/gluon/restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "/home/w2p/web2py/applications/ji162/views/default/tables-data.html", line 223, in <module>\n    </span>\nNameError: name \'datatable0\' is not defined\n'
+p410
+s.

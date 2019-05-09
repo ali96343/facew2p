@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 invoicetable0', f1= '0w2p1 Item Title', f2= '0w2p2 Unit Price', f3= '0w2p3 Quantity', f4= '0w2p4 Total', )
+      db.DBTBL.insert( f0= '1', f1= 'Crusal Damperal', f2= '$500', f3= '05', f4= '$3000', )
+      db.DBTBL.insert( f0= '2', f1= 'Indriacal Superral', f2= '$650', f3= '06', f4= '$7000', )
+      db.DBTBL.insert( f0= '3', f1= 'Vidaska Adrioal', f2= '$400', f3= '03', f4= '$2000', )
+      db.DBTBL.insert( f0= '4', f1= 'Croustal Desrikal', f2= '$600', f3= '04', f4= '$7000', )

@@ -1,0 +1,123 @@
+timestamp: 2019-05-09T16:11:41.285891
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.305986
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.327521
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-05-09T16:11:41.347587
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2019-05-09T16:11:41.366846
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.388834
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2019-05-09T16:11:41.432173
+CREATE TABLE "dblog"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.579664
+CREATE TABLE "dblogform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.611028
+CREATE TABLE "dblogform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.633927
+CREATE TABLE "dindex"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.780124
+CREATE TABLE "dindexform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.803011
+CREATE TABLE "dindexform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.824219
+CREATE TABLE "dpost"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.910602
+CREATE TABLE "dpostform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-09T16:11:41.943486
+CREATE TABLE "dpostform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-09T16:11:41.964460
+CREATE TABLE "dpostform2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!

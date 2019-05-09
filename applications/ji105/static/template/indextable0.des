@@ -1,0 +1,6 @@
+- - ID
+  - string
+- - Name
+  - string
+- - Price
+  - string

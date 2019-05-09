@@ -1,0 +1,15 @@
+- - input
+  - id: email
+    placeholder: Type your email address
+    type: email
+  - {}
+  - []
+  - {}
+- - button
+  - class: submit
+    placeholder: place_11
+    type: submit
+    value: Subscribe
+  - {}
+  - []
+  - {}

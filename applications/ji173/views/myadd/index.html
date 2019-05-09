@@ -1,0 +1,39 @@
+{{extend 'w2playout.html'}}
+{{=form}}
+<style>
+   p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12pt; /* Размер шрифта в пунктах */ 
+   }
+  </style>
+<p>{{=T('site tables')}}</p>
+
+<p>{{=A('dreview', _href=URL(c='myadd',f='review'))}}</p>
+
+<p>{{=A('dsingle0blog', _href=URL(c='myadd',f='single_blog'))}}</p>
+
+<p>{{=A('dcontact', _href=URL(c='myadd',f='contact'))}}</p>
+
+<p>{{=A('dcategories', _href=URL(c='myadd',f='categories'))}}</p>
+
+<p>{{=A('dindex', _href=URL(c='myadd',f='table_index1'))}}</p>
+
+<p>{{=A('dcommunity', _href=URL(c='myadd',f='community'))}}</p>
+
+<p>{{=A('auth_event', _href=URL(c='myadd',f='auth_eventctrl'))}}</p>
+
+<p>{{=A('auth_user', _href=URL(c='myadd',f='auth_userctrl'))}}</p>
+
+<p>{{=A('auth_group', _href=URL(c='myadd',f='auth_groupctrl'))}}</p>
+
+<p>{{=A('auth_membership', _href=URL(c='myadd',f='auth_membershipctrl'))}}</p>
+
+<p>{{=A('dcategoriesform0', _href=URL(c='myadd',f='dcategoriesform0ctrl'))}}</p>
+
+<p>{{=A('dcontactform0', _href=URL(c='myadd',f='dcontactform0ctrl'))}}</p>
+
+<p>{{=A('dsingle_blogform0', _href=URL(c='myadd',f='dsingle_blogform0ctrl'))}}</p>
+
+<p>{{=A('dsingle_blogform1', _href=URL(c='myadd',f='dsingle_blogform1ctrl'))}}</p>
+
+<p>{{=A('dcommunityform0', _href=URL(c='myadd',f='dcommunityform0ctrl'))}}</p>

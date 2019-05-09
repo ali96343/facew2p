@@ -1,0 +1,31 @@
+- - input
+  - class: form-control
+    id: username
+    placeholder: Name
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: useremail
+    placeholder: Email Address (will not be published)
+    type: email
+  - {}
+  - []
+  - {}
+- - textarea
+  - class: form-control
+    id: usercomment
+    placeholder: Type your comment
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-secondary
+    placeholder: place_6
+    type: submit
+    value: Submit Comment
+  - {}
+  - []
+  - {}

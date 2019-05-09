@@ -1,0 +1,37 @@
+{{extend 'w2playout.html'}}
+{{=form}}
+<style>
+   p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12pt; /* Размер шрифта в пунктах */ 
+   }
+  </style>
+<p>{{=T('site tables')}}</p>
+
+<p>{{=A('dpost', _href=URL(c='myadd',f='post'))}}</p>
+
+<p>{{=A('dindex', _href=URL(c='myadd',f='table_index1'))}}</p>
+
+<p>{{=A('dblog', _href=URL(c='myadd',f='blog'))}}</p>
+
+<p>{{=A('auth_event', _href=URL(c='myadd',f='auth_eventctrl'))}}</p>
+
+<p>{{=A('auth_user', _href=URL(c='myadd',f='auth_userctrl'))}}</p>
+
+<p>{{=A('auth_group', _href=URL(c='myadd',f='auth_groupctrl'))}}</p>
+
+<p>{{=A('auth_membership', _href=URL(c='myadd',f='auth_membershipctrl'))}}</p>
+
+<p>{{=A('dblogform0', _href=URL(c='myadd',f='dblogform0ctrl'))}}</p>
+
+<p>{{=A('dblogform1', _href=URL(c='myadd',f='dblogform1ctrl'))}}</p>
+
+<p>{{=A('dindexform0', _href=URL(c='myadd',f='dindexform0ctrl'))}}</p>
+
+<p>{{=A('dindexform1', _href=URL(c='myadd',f='dindexform1ctrl'))}}</p>
+
+<p>{{=A('dpostform0', _href=URL(c='myadd',f='dpostform0ctrl'))}}</p>
+
+<p>{{=A('dpostform1', _href=URL(c='myadd',f='dpostform1ctrl'))}}</p>
+
+<p>{{=A('dpostform2', _href=URL(c='myadd',f='dpostform2ctrl'))}}</p>

@@ -1,0 +1,7 @@
+      db.DBTBL.insert( f0= '00 analyticstable0', f1= '0w2p1 Visitors', )
+      db.DBTBL.insert( f0= 'Google', f1= '3831', )
+      db.DBTBL.insert( f0= 'Bing', f1= '2123', )
+      db.DBTBL.insert( f0= 'Baidu', f1= '4375', )
+      db.DBTBL.insert( f0= 'Yahoo', f1= '4020', )
+      db.DBTBL.insert( f0= 'DuckDuckGo', f1= '2064', )
+      db.DBTBL.insert( f0= 'Yandex', f1= '936', )

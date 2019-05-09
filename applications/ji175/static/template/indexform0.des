@@ -1,0 +1,15 @@
+- - input
+  - id: search
+    placeholder: What are you looking for?
+    type: search
+  - {}
+  - []
+  - {}
+- - button
+  - class: submit
+    placeholder: place_10
+    type: submit
+    value: unk_9
+  - {}
+  - []
+  - {}

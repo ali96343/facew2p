@@ -1,0 +1,175 @@
+{{extend 'w2playout.html'}}
+{{=form}}
+<style>
+   p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12pt; /* Размер шрифта в пунктах */ 
+   }
+  </style>
+<p>{{=T('site tables')}}</p>
+
+<p>{{=A('dui0alerts', _href=URL(c='myadd',f='ui_alerts'))}}</p>
+
+<p>{{=A('dpage0register', _href=URL(c='myadd',f='page_register'))}}</p>
+
+<p>{{=A('dui0switches', _href=URL(c='myadd',f='ui_switches'))}}</p>
+
+<p>{{=A('dpage0login', _href=URL(c='myadd',f='page_login'))}}</p>
+
+<p>{{=A('dui0badges', _href=URL(c='myadd',f='ui_badges'))}}</p>
+
+<p>{{=A('dtables0data', _href=URL(c='myadd',f='tables_data'))}}</p>
+
+<p>{{=A('dcharts0peity', _href=URL(c='myadd',f='charts_peity'))}}</p>
+
+<p>{{=A('dui0tabs', _href=URL(c='myadd',f='ui_tabs'))}}</p>
+
+<p>{{=A('dtables0basic', _href=URL(c='myadd',f='tables_basic'))}}</p>
+
+<p>{{=A('dfont0themify', _href=URL(c='myadd',f='font_themify'))}}</p>
+
+<p>{{=A('dui0cards', _href=URL(c='myadd',f='ui_cards'))}}</p>
+
+<p>{{=A('dframe', _href=URL(c='myadd',f='frame'))}}</p>
+
+<p>{{=A('dui0typgraphy', _href=URL(c='myadd',f='ui_typgraphy'))}}</p>
+
+<p>{{=A('dforms0advanced', _href=URL(c='myadd',f='forms_advanced'))}}</p>
+
+<p>{{=A('dcharts0chartjs', _href=URL(c='myadd',f='charts_chartjs'))}}</p>
+
+<p>{{=A('dcharts0flot', _href=URL(c='myadd',f='charts_flot'))}}</p>
+
+<p>{{=A('dui0progressbar', _href=URL(c='myadd',f='ui_progressbar'))}}</p>
+
+<p>{{=A('dmaps0gmap', _href=URL(c='myadd',f='maps_gmap'))}}</p>
+
+<p>{{=A('dwidgets', _href=URL(c='myadd',f='widgets'))}}</p>
+
+<p>{{=A('dindex', _href=URL(c='myadd',f='table_index1'))}}</p>
+
+<p>{{=A('dui0buttons', _href=URL(c='myadd',f='ui_buttons'))}}</p>
+
+<p>{{=A('dforms0basic', _href=URL(c='myadd',f='forms_basic'))}}</p>
+
+<p>{{=A('dpages0forget', _href=URL(c='myadd',f='pages_forget'))}}</p>
+
+<p>{{=A('dui0social0buttons', _href=URL(c='myadd',f='ui_social_buttons'))}}</p>
+
+<p>{{=A('dui0grids', _href=URL(c='myadd',f='ui_grids'))}}</p>
+
+<p>{{=A('dui0modals', _href=URL(c='myadd',f='ui_modals'))}}</p>
+
+<p>{{=A('dfont0fontawesome', _href=URL(c='myadd',f='font_fontawesome'))}}</p>
+
+<p>{{=A('dmaps0vector', _href=URL(c='myadd',f='maps_vector'))}}</p>
+
+<p>{{=A('auth_event', _href=URL(c='myadd',f='auth_eventctrl'))}}</p>
+
+<p>{{=A('auth_user', _href=URL(c='myadd',f='auth_userctrl'))}}</p>
+
+<p>{{=A('auth_group', _href=URL(c='myadd',f='auth_groupctrl'))}}</p>
+
+<p>{{=A('auth_membership', _href=URL(c='myadd',f='auth_membershipctrl'))}}</p>
+
+<p>{{=A('ui0switchestable0', _href=URL(c='myadd',f='ui0switchestable0ctrl'))}}</p>
+
+<p>{{=A('tables0datatable0', _href=URL(c='myadd',f='tables0datatable0ctrl'))}}</p>
+
+<p>{{=A('tables0basictable0', _href=URL(c='myadd',f='tables0basictable0ctrl'))}}</p>
+
+<p>{{=A('tables0basictable1', _href=URL(c='myadd',f='tables0basictable1ctrl'))}}</p>
+
+<p>{{=A('tables0basictable2', _href=URL(c='myadd',f='tables0basictable2ctrl'))}}</p>
+
+<p>{{=A('tables0basictable3', _href=URL(c='myadd',f='tables0basictable3ctrl'))}}</p>
+
+<p>{{=A('tables0basictable4', _href=URL(c='myadd',f='tables0basictable4ctrl'))}}</p>
+
+<p>{{=A('tables0basictable5', _href=URL(c='myadd',f='tables0basictable5ctrl'))}}</p>
+
+<p>{{=A('dui_switchesform0', _href=URL(c='myadd',f='dui_switchesform0ctrl'))}}</p>
+
+<p>{{=A('dmaps_gmapform0', _href=URL(c='myadd',f='dmaps_gmapform0ctrl'))}}</p>
+
+<p>{{=A('dui_progressbarform0', _href=URL(c='myadd',f='dui_progressbarform0ctrl'))}}</p>
+
+<p>{{=A('dfont_fontawesomeform0', _href=URL(c='myadd',f='dfont_fontawesomeform0ctrl'))}}</p>
+
+<p>{{=A('dui_tabsform0', _href=URL(c='myadd',f='dui_tabsform0ctrl'))}}</p>
+
+<p>{{=A('dpage_registerform0', _href=URL(c='myadd',f='dpage_registerform0ctrl'))}}</p>
+
+<p>{{=A('dcharts_peityform0', _href=URL(c='myadd',f='dcharts_peityform0ctrl'))}}</p>
+
+<p>{{=A('dfont_themifyform0', _href=URL(c='myadd',f='dfont_themifyform0ctrl'))}}</p>
+
+<p>{{=A('dindexform0', _href=URL(c='myadd',f='dindexform0ctrl'))}}</p>
+
+<p>{{=A('dframeform0', _href=URL(c='myadd',f='dframeform0ctrl'))}}</p>
+
+<p>{{=A('dforms_advancedform0', _href=URL(c='myadd',f='dforms_advancedform0ctrl'))}}</p>
+
+<p>{{=A('dcharts_chartjsform0', _href=URL(c='myadd',f='dcharts_chartjsform0ctrl'))}}</p>
+
+<p>{{=A('dmaps_vectorform0', _href=URL(c='myadd',f='dmaps_vectorform0ctrl'))}}</p>
+
+<p>{{=A('dpages_forgetform0', _href=URL(c='myadd',f='dpages_forgetform0ctrl'))}}</p>
+
+<p>{{=A('dtables_dataform0', _href=URL(c='myadd',f='dtables_dataform0ctrl'))}}</p>
+
+<p>{{=A('dcharts_flotform0', _href=URL(c='myadd',f='dcharts_flotform0ctrl'))}}</p>
+
+<p>{{=A('dui_badgesform0', _href=URL(c='myadd',f='dui_badgesform0ctrl'))}}</p>
+
+<p>{{=A('dui_modalsform0', _href=URL(c='myadd',f='dui_modalsform0ctrl'))}}</p>
+
+<p>{{=A('dui_buttonsform0', _href=URL(c='myadd',f='dui_buttonsform0ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform0', _href=URL(c='myadd',f='dforms_basicform0ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform1', _href=URL(c='myadd',f='dforms_basicform1ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform2', _href=URL(c='myadd',f='dforms_basicform2ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform3', _href=URL(c='myadd',f='dforms_basicform3ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform4', _href=URL(c='myadd',f='dforms_basicform4ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform5', _href=URL(c='myadd',f='dforms_basicform5ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform6', _href=URL(c='myadd',f='dforms_basicform6ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform7', _href=URL(c='myadd',f='dforms_basicform7ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform8', _href=URL(c='myadd',f='dforms_basicform8ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform9', _href=URL(c='myadd',f='dforms_basicform9ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform10', _href=URL(c='myadd',f='dforms_basicform10ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform11', _href=URL(c='myadd',f='dforms_basicform11ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform12', _href=URL(c='myadd',f='dforms_basicform12ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform13', _href=URL(c='myadd',f='dforms_basicform13ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform14', _href=URL(c='myadd',f='dforms_basicform14ctrl'))}}</p>
+
+<p>{{=A('dforms_basicform15', _href=URL(c='myadd',f='dforms_basicform15ctrl'))}}</p>
+
+<p>{{=A('dui_gridsform0', _href=URL(c='myadd',f='dui_gridsform0ctrl'))}}</p>
+
+<p>{{=A('dui_social_buttonsform0', _href=URL(c='myadd',f='dui_social_buttonsform0ctrl'))}}</p>
+
+<p>{{=A('dui_typgraphyform0', _href=URL(c='myadd',f='dui_typgraphyform0ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform0', _href=URL(c='myadd',f='dwidgetsform0ctrl'))}}</p>
+
+<p>{{=A('dtables_basicform0', _href=URL(c='myadd',f='dtables_basicform0ctrl'))}}</p>
+
+<p>{{=A('dui_alertsform0', _href=URL(c='myadd',f='dui_alertsform0ctrl'))}}</p>
+
+<p>{{=A('dpage_loginform0', _href=URL(c='myadd',f='dpage_loginform0ctrl'))}}</p>
+
+<p>{{=A('dui_cardsform0', _href=URL(c='myadd',f='dui_cardsform0ctrl'))}}</p>

@@ -1,0 +1,7 @@
+      db.DBTBL.insert( f0= '00 analyticstable2', f1= '0w2p1 Counter', )
+      db.DBTBL.insert( f0= 'External Backlinks', f1= '54,302', )
+      db.DBTBL.insert( f0= 'Page Speed Score', f1= '87', )
+      db.DBTBL.insert( f0= 'Citation Flow', f1= '987', )
+      db.DBTBL.insert( f0= 'Mozrank', f1= '9.43', )
+      db.DBTBL.insert( f0= 'Domain Authority', f1= '455', )
+      db.DBTBL.insert( f0= 'Alexa Rank', f1= '342,234', )

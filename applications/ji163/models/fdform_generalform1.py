@@ -1,0 +1,11 @@
+db.define_table( 'dform_generalform1',
+   Field( 'f0', 'string', label= 'f0', default= 'w2p f0' ), 
+   Field( 'f1', 'string', label= 'f1', default= 'w2p f1' ), 
+   Field( 'f2', 'string', label= 'f2', default= 'w2p f2' ), 
+   Field( 'f3', 'string', label= 'f3', default= 'w2p f3' ), 
+   Field( 'f4', 'string', label= 'f4', default= 'w2p f4' ), 
+   Field( 'f5', 'string', label= 'f5', default= 'w2p f5' ), 
+   Field( 'f6', 'text', label= 'f6' , default= 'w2p f6'), 
+   Field( 'f7', 'text', label= 'f7' , default= 'w2p f7'), 
+   Field( 'f8', 'text', label= 'f8' , default= 'w2p f8'), 
+   )

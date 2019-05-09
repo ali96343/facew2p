@@ -1,0 +1,7 @@
+      db.DBTBL.insert( f0= '00 analyticstable1', f1= '0w2p1 Visitors', )
+      db.DBTBL.insert( f0= 'themeforest.net', f1= '620', )
+      db.DBTBL.insert( f0= 'codecanyon.net', f1= '432', )
+      db.DBTBL.insert( f0= 'google.com', f1= '8702', )
+      db.DBTBL.insert( f0= 'yahoo.com', f1= '683', )
+      db.DBTBL.insert( f0= 'youtube.com', f1= '253', )
+      db.DBTBL.insert( f0= 'bing.com', f1= '3018', )

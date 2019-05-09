@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>facew2p</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/font-awesome.min.css')}}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/css/owl.transitions.css')}}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/animate.css')}}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/normalize.css')}}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/main.css')}}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/morrisjs/morris.css')}}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/css/metisMenu/metisMenu-vertical.css')}}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/form/all-type-forms.css')}}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/style.css')}}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{=URL('static','template/css/responsive.css')}}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="color-line"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="back-link back-backend">
+                    <a href="{{=URL(c='default',f='index')}}" class="btn btn-primary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="text-center m-b-md custom-login">
+                    <h3>PLEASE LOGIN TO APP</h3>
+                    <p>This is the best app ever!</p>
+                </div>
+                <div class="hpanel">
+                    <div class="panel-body">
+                        
+{{block myloginform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=loginform0.custom.begin}}
+<label for='username'>Username</label>
+{{=loginform0.custom.widget.f0}}
+<label for='password'>Password</label>
+{{=loginform0.custom.widget.f1}}
+<div><label>
+{{=loginform0.custom.widget.f2}}
+ w2p-check-364</label> </div>
+{{=loginform0.custom.submit}}
+{{=loginform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery
+		============================================ -->
+    <script src="{{=URL('static','template/js/vendor/jquery-1.11.3.min.js')}}"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/bootstrap.min.js')}}"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/wow.min.js')}}"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/jquery-price-slider.js')}}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/jquery.meanmenu.js')}}"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/owl.carousel.min.js')}}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/jquery.sticky.js')}}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/jquery.scrollUp.min.js')}}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{=URL('static','template/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{=URL('static','template/js/metisMenu/metisMenu-active.js')}}"></script>
+    <!-- tab JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/tab.js')}}"></script>
+    <!-- icheck JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/icheck/icheck.min.js')}}"></script>
+    <script src="{{=URL('static','template/js/icheck/icheck-active.js')}}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/plugins.js')}}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{=URL('static','template/js/main.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+ctrl_nm1:
+  m2m 1:
+  - - string
+    - text
+    - radio
+    - select
+    - check
+  - - string
+    - text
+    - radio
+    - select
+    - check
+  o2m 1:
+  - - string
+    - text
+    - radio
+    - select
+    - check
+  - - string
+    - text
+    - radio
+    - select
+    - check
+  one 1:
+  - string
+  - text
+  - radio
+  - select
+  - check
+  opt:
+    foo: bar
+    key: value
+    the answer: 42
