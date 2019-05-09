@@ -1,10 +1,11 @@
 # facew2p
 
-The script generates web2py app from free (and not free) css template,
+Script generates web2py app  from css templates,
+
 using:
 
 0. install web2py http://web2py.com, copy the script to ~/bin,
-1. Create web2py new myapp,
+1. Create new web2py myapp,
 2. cd myapp/static && mkdir template && cd template,
 3. search and download free css template to myapp/static/template,
 4. run the script  (if template in zip,  the script will unzip the template),
@@ -14,5 +15,6 @@ using:
 8. view images in  url/myapp/myima,
 9. the script  expect a _relative_ (!) path in the css template!
 
-some test applications are in the application directory
+
+some test applications are in the applications directory
 
