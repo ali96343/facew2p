@@ -8,7 +8,7 @@ using:
 1. Create new web2py myapp,
 2. cd myapp/static && mkdir template && cd template,
 3. search and download free css template to myapp/static/template,
-4. run the script  (if template in zip,  the script will unzip the template),
+4. run the script  (if template in zip,  the script unzips the template),
 5. at every run the script delete ../../databases/*,
 6. view messages on screen,
 7. view url/myapp, view tables in  url/myapp/appadmin, view tables in  url/myapp/myadd,
