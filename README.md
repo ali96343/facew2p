@@ -17,4 +17,5 @@ using:
 
 
 some test applications are in the applications directory
+for test apps url/myapp/myadd  nil@nil.com xyz12345
 
