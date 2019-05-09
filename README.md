@@ -16,6 +16,6 @@ using:
 9. the script  expect a _relative_ (!) path in the css template!
 
 
-some test applications are in the applications directory
+some test applications are in the applications directory,
 for test apps url/myapp/myadd  nil@nil.com xyz12345
 
