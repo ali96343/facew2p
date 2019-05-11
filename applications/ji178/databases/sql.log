@@ -1,0 +1,334 @@
+timestamp: 2019-05-11T08:29:42.867084
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:42.903790
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:42.929488
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-05-11T08:29:42.957793
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2019-05-11T08:29:42.985893
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.011992
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2019-05-11T08:29:43.043598
+CREATE TABLE "d404"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.102671
+CREATE TABLE "dX404form0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.124099
+CREATE TABLE "dX404form1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.145495
+CREATE TABLE "dblank"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.192506
+CREATE TABLE "dblankform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.215707
+CREATE TABLE "dblankform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.242791
+CREATE TABLE "dbuttons"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.295438
+CREATE TABLE "dbuttonsform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.325550
+CREATE TABLE "dbuttonsform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.349732
+CREATE TABLE "dcards"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.407870
+CREATE TABLE "dcardsform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.434507
+CREATE TABLE "dcardsform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.464027
+CREATE TABLE "dcharts"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.511679
+CREATE TABLE "dchartsform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.532960
+CREATE TABLE "dchartsform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.556116
+CREATE TABLE "dforgot0password"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.601526
+CREATE TABLE "dforgot_passwordform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.629829
+CREATE TABLE "dindex"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.682172
+CREATE TABLE "dindexform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.705668
+CREATE TABLE "dindexform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.732683
+CREATE TABLE "dlogin"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.777677
+CREATE TABLE "dloginform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(1)
+);
+success!
+timestamp: 2019-05-11T08:29:43.804847
+CREATE TABLE "dregister"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.850079
+CREATE TABLE "dregisterform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512),
+    "f4" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.877258
+CREATE TABLE "dtables"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:43.926842
+CREATE TABLE "dtablesform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.950821
+CREATE TABLE "dtablesform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:43.978473
+CREATE TABLE "dutilities0animation"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:44.031059
+CREATE TABLE "dutilities0border"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:44.082038
+CREATE TABLE "dutilities0color"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:44.141921
+CREATE TABLE "dutilities0other"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1000),
+    "f1" TEXT,
+    "f2" TEXT
+);
+success!
+timestamp: 2019-05-11T08:29:44.209581
+CREATE TABLE "dutilities_animationform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.237502
+CREATE TABLE "dutilities_animationform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.265642
+CREATE TABLE "dutilities_borderform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.293180
+CREATE TABLE "dutilities_borderform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.318816
+CREATE TABLE "dutilities_colorform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.350407
+CREATE TABLE "dutilities_colorform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.384451
+CREATE TABLE "dutilities_otherform0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.410031
+CREATE TABLE "dutilities_otherform1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2019-05-11T08:29:44.440194
+CREATE TABLE "tablestable0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512),
+    "f4" CHAR(512),
+    "f5" CHAR(512)
+);
+success!

@@ -1,0 +1,188 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+# -------------------------------------------------------------------------
+# This is a sample controller
+# - index is the default action of any application
+# - user is required for authentication and authorization
+# - download is for downloading files uploaded in the db (does streaming)
+# -------------------------------------------------------------------------
+
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+
+
+#@auth.requires_login()
+def blank():
+    response.view = 'default/blank.html'
+    qu=db.dblank.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def charts():
+    response.view = 'default/charts.html'
+    qu=db.dcharts.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def buttons():
+    response.view = 'default/buttons.html'
+    qu=db.dbuttons.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def utilities_color():
+    response.view = 'default/utilities-color.html'
+    qu=db.dutilities0color.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def cards():
+    response.view = 'default/cards.html'
+    qu=db.dcards.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def utilities_other():
+    response.view = 'default/utilities-other.html'
+    qu=db.dutilities0other.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def tables():
+    response.view = 'default/tables.html'
+    qu=db.dtables.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def utilities_border():
+    response.view = 'default/utilities-border.html'
+    qu=db.dutilities0border.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def login():
+    response.view = 'default/login.html'
+    qu=db.dlogin.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def forgot_password():
+    response.view = 'default/forgot-password.html'
+    qu=db.dforgot0password.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def register():
+    response.view = 'default/register.html'
+    qu=db.dregister.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def utilities_animation():
+    response.view = 'default/utilities-animation.html'
+    qu=db.dutilities0animation.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+#@auth.requires_login()
+def index():
+    response.view = 'default/index.html'
+    qu=db.dindex.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def X404():
+    response.view = 'default/404.html'
+    qu=db.d404.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
