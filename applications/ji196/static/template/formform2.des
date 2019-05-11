@@ -1,0 +1,241 @@
+- - input
+  - class: form-control
+    id: text-input
+    placeholder: Text
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: email-input
+    placeholder: Enter Email
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: password-input
+    placeholder: Password
+    type: password
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: disabled-input
+    placeholder: Disabled
+    type: text
+  - {}
+  - []
+  - {}
+- - radio
+  - class: form-check-input
+    id: radio1
+    name: radios
+    value: option1
+  - {}
+  - []
+  - name: radios
+    value: option1
+- - radio
+  - class: form-check-input
+    id: radio2
+    name: radios
+    value: option2
+  - {}
+  - []
+  - name: radios
+    value: option2
+- - radio
+  - class: form-check-input
+    id: radio3
+    name: radios
+    value: option3
+  - {}
+  - []
+  - name: radios
+    value: option3
+- - radio
+  - class: form-check-input
+    id: inline-radio1
+    name: inline-radios
+    value: option1
+  - {}
+  - []
+  - name: inline-radios
+    value: option1
+- - radio
+  - class: form-check-input
+    id: inline-radio2
+    name: inline-radios
+    value: option2
+  - {}
+  - []
+  - name: inline-radios
+    value: option2
+- - radio
+  - class: form-check-input
+    id: inline-radio3
+    name: inline-radios
+    value: option3
+  - {}
+  - []
+  - name: inline-radios
+    value: option3
+- - checkbox
+  - class: form-check-input
+    id: checkbox1
+    placeholder: place_49
+    type: checkbox
+    value: option1
+  - {}
+  - []
+  - {}
+- - checkbox
+  - class: form-check-input
+    id: checkbox2
+    placeholder: place_50
+    type: checkbox
+    value: option2
+  - {}
+  - []
+  - {}
+- - checkbox
+  - class: form-check-input
+    id: checkbox3
+    placeholder: place_51
+    type: checkbox
+    value: option3
+  - {}
+  - []
+  - {}
+- - checkbox
+  - class: form-check-input
+    id: inline-checkbox1
+    placeholder: place_52
+    type: checkbox
+    value: option1
+  - {}
+  - []
+  - {}
+- - checkbox
+  - class: form-check-input
+    id: inline-checkbox2
+    placeholder: place_53
+    type: checkbox
+    value: option2
+  - {}
+  - []
+  - {}
+- - checkbox
+  - class: form-check-input
+    id: inline-checkbox3
+    placeholder: place_54
+    type: checkbox
+    value: option3
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control-file
+    id: file-input
+    placeholder: place_55
+    type: file
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control-file
+    id: file-multiple-input
+    placeholder: place_56
+    type: file
+  - {}
+  - []
+  - {}
+- - textarea
+  - class: form-control
+    id: textarea-input
+    placeholder: Content...
+    rows: '9'
+  - {}
+  - []
+  - {}
+- - select
+  - class: form-control
+    id: select
+    placeholder: place_57
+  - {}
+  - &id001
+    - Please select
+    - 'Option #1'
+    - 'Option #2'
+    - 'Option #3'
+    - *id001
+  - {}
+- - select
+  - class: form-control-lg form-control
+    id: selectLg
+    placeholder: place_58
+  - {}
+  - &id002
+    - Please select
+    - 'Option #1'
+    - 'Option #2'
+    - 'Option #3'
+    - *id002
+  - {}
+- - select
+  - class: form-control-sm form-control
+    id: SelectLm
+    placeholder: place_59
+  - {}
+  - &id003
+    - Please select
+    - 'Option #1'
+    - 'Option #2'
+    - 'Option #3'
+    - 'Option #4'
+    - 'Option #5'
+    - *id003
+  - {}
+- - select
+  - class: form-control
+    id: disabledSelect
+    placeholder: place_60
+  - {}
+  - &id004
+    - Please select
+    - 'Option #1'
+    - 'Option #2'
+    - 'Option #3'
+    - *id004
+  - {}
+- - select
+  - class: form-control
+    id: multiple-select
+    placeholder: place_61
+  - {}
+  - &id005
+    - 'Option #1'
+    - 'Option #2'
+    - 'Option #3'
+    - 'Option #4'
+    - 'Option #5'
+    - 'Option #6'
+    - 'Option #7'
+    - 'Option #8'
+    - 'Option #9'
+    - 'Option #10'
+    - *id005
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Text
+    type: submit
+    value: submit input
+  - {}
+  - []
+  - {}

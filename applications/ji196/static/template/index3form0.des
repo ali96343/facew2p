@@ -1,0 +1,15 @@
+- - input
+  - class: au-input--w300 au-input--style2
+    placeholder: Search for datas & reports...
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: au-btn--submit2
+    placeholder: place_130
+    type: submit
+    value: unk_129
+  - {}
+  - []
+  - {}

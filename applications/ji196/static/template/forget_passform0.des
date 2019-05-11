@@ -1,0 +1,17 @@
+- - input
+  - class: au-input au-input--full
+    placeholder: Email
+    type: email
+  - for: submit112
+    text: Email Address
+  - []
+  - {}
+- - button
+  - class: au-btn au-btn--block au-btn--green m-b-20
+    placeholder: place_114
+    type: submit
+    value: submit
+  - for: submit113
+    text: Email Address
+  - []
+  - {}

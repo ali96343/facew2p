@@ -1,0 +1,25 @@
+- - input
+  - class: form-control
+    id: hf-email
+    placeholder: Enter Email...
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: hf-password
+    placeholder: Enter Password...
+    type: password
+  - {}
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Enter Email...
+    type: submit
+    value: submit input
+  - {}
+  - []
+  - {}

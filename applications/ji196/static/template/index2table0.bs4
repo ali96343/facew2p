@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 index2table0', f1= '0w2p1 role', f2= '0w2p2 type', )
+      db.DBTBL.insert( f0= 'unk_7', f1= 'lori lynch johndoe@gmail.com', f2= 'admin', f3= 'Full Control Post Watch', f4= 'unk_8', )
+      db.DBTBL.insert( f0= 'unk_9', f1= 'lori lynch johndoe@gmail.com', f2= 'user', f3= 'Full Control Post Watch', f4= 'unk_10', )
+      db.DBTBL.insert( f0= 'unk_11', f1= 'lori lynch johndoe@gmail.com', f2= 'user', f3= 'Full Control Post Watch', f4= 'unk_12', )
+      db.DBTBL.insert( f0= 'unk_13', f1= 'lori lynch johndoe@gmail.com', f2= 'member', f3= 'Full Control Post Watch', f4= 'unk_14', )

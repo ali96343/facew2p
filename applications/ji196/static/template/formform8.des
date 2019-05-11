@@ -1,0 +1,33 @@
+- - input
+  - class: form-control
+    id: input1-group1
+    placeholder: Username
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input2-group1
+    placeholder: Email
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input3-group1
+    placeholder: ..
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Username
+    type: submit
+    value: submit input
+  - {}
+  - []
+  - {}

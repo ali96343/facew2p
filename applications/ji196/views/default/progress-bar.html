@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="au theme template">
+	<meta name="author" content="Hau Nguyen">
+	<meta name="keywords" content="au theme template">
+
+	<!-- Title Page-->
+	<title>facew2p</title>
+
+	<!-- Fontfaces CSS-->
+	<link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+
+	<!-- Bootstrap CSS-->
+	<link href="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+	<!-- Vendor CSS-->
+	<link href="{{=URL('static','template/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+	<link href="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+	<!-- Main CSS-->
+	<link href="{{=URL('static','template/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body class="animsition">
+	<div class="page-wrapper">
+		<!-- HEADER MOBILE-->
+		<header class="header-mobile d-block d-lg-none">
+			<div class="header-mobile__bar">
+				<div class="container-fluid">
+					<div class="header-mobile-inner">
+						<a class="logo" href="{{=URL(c='default',f='index')}}">
+							<img src="{{=URL('static','template/images/icon/logo.png')}}" alt="CoolAdmin" />
+						</a>
+						<button class="hamburger hamburger--slider" type="button">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<nav class="navbar-mobile">
+				<div class="container-fluid">
+					<ul class="navbar-mobile__list list-unstyled">
+						<li class="has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-tachometer-alt"></i>Dashboard</a>
+							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='index')}}">{{=DICT["aa1696"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa1698"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa1700"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa1702"]}}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='chart')}}">
+								<i class="fas fa-chart-bar"></i>Charts</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='table')}}">
+								<i class="fas fa-table"></i>Tables</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='form')}}">
+								<i class="far fa-check-square"></i>Forms</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fas fa-calendar-alt"></i>Calendar</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='map')}}">
+								<i class="fas fa-map-marker-alt"></i>Maps</a>
+						</li>
+						<li class="has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-copy"></i>Pages</a>
+							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='login')}}">{{=DICT["aa1708"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='register')}}">{{=DICT["aa1710"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa1712"]}}</a>
+								</li>
+							</ul>
+						</li>
+						<li class="has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-desktop"></i>UI Elements</a>
+							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='button')}}">{{=DICT["aa1714"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa1716"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa1718"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='card')}}">{{=DICT["aa1720"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa1722"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa1724"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa1726"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa1728"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa1730"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa1732"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa1734"]}}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- END HEADER MOBILE-->
+
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block">
+			<div class="logo">
+				<a href="#">
+					<img src="{{=URL('static','template/images/icon/logo.png')}}" alt="Cool Admin" />
+				</a>
+			</div>
+			<div class="menu-sidebar__content js-scrollbar1">
+				<nav class="navbar-sidebar">
+					<ul class="list-unstyled navbar__list">
+						<li class="has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-tachometer-alt"></i>Dashboard</a>
+							<ul class="list-unstyled navbar__sub-list js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='index')}}">{{=DICT["aa1737"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa1739"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa1741"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa1743"]}}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='chart')}}">
+								<i class="fas fa-chart-bar"></i>Charts</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='table')}}">
+								<i class="fas fa-table"></i>Tables</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='form')}}">
+								<i class="far fa-check-square"></i>Forms</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fas fa-calendar-alt"></i>Calendar</a>
+						</li>
+						<li>
+							<a href="{{=URL(c='default',f='map')}}">
+								<i class="fas fa-map-marker-alt"></i>Maps</a>
+						</li>
+						<li class="has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-copy"></i>Pages</a>
+							<ul class="list-unstyled navbar__sub-list js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='login')}}">{{=DICT["aa1749"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='register')}}">{{=DICT["aa1751"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa1753"]}}</a>
+								</li>
+							</ul>
+						</li>
+						<li class="active has-sub">
+							<a class="js-arrow" href="#">
+								<i class="fas fa-desktop"></i>UI Elements</a>
+							<ul class="list-unstyled navbar__sub-list js-sub-list">
+								<li>
+									<a href="{{=URL(c='default',f='button')}}">{{=DICT["aa1755"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa1757"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa1759"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='card')}}">{{=DICT["aa1761"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa1763"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa1765"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa1767"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa1769"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa1771"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa1773"]}}</a>
+								</li>
+								<li>
+									<a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa1775"]}}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop">
+				<div class="section__content section__content--p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							
+{{block myprogress_barform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=progress_barform0.custom.begin}}
+{{=progress_barform0.custom.widget.f0}}
+{{=progress_barform0.custom.submit}}
+{{=progress_barform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+							<div class="header-button">
+								<div class="noti-wrap">
+									<div class="noti__item js-item-menu">
+										<i class="zmdi zmdi-comment-more"></i>
+										<span class="quantity">{{=DICT["sx1777"]}}</span>
+										<div class="mess-dropdown js-dropdown">
+											<div class="mess__title">
+												<p>{{=DICT["pa1778"]}}</p>
+											</div>
+											<div class="mess__item">
+												<div class="image img-cir img-40">
+													<img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
+												</div>
+												<div class="content">
+													<h6>{{=DICT["hh1780"]}}</h6>
+													<p>{{=DICT["pa1781"]}}</p>
+													<span class="time">{{=DICT["sx1782"]}}</span>
+												</div>
+											</div>
+											<div class="mess__item">
+												<div class="image img-cir img-40">
+													<img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
+												</div>
+												<div class="content">
+													<h6>{{=DICT["hh1784"]}}</h6>
+													<p>{{=DICT["pa1785"]}}</p>
+													<span class="time">{{=DICT["sx1786"]}}</span>
+												</div>
+											</div>
+											<div class="mess__footer">
+												<a href="#">{{=DICT["aa1787"]}}</a>
+											</div>
+										</div>
+									</div>
+									<div class="noti__item js-item-menu">
+										<i class="zmdi zmdi-email"></i>
+										<span class="quantity">{{=DICT["sx1788"]}}</span>
+										<div class="email-dropdown js-dropdown">
+											<div class="email__title">
+												<p>{{=DICT["pa1789"]}}</p>
+											</div>
+											<div class="email__item">
+												<div class="image img-cir img-40">
+													<img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1791"]}}</p>
+													<span>{{=DICT["sp1792"]}}</span>
+												</div>
+											</div>
+											<div class="email__item">
+												<div class="image img-cir img-40">
+													<img src="{{=URL('static','template/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1794"]}}</p>
+													<span>{{=DICT["sp1795"]}}</span>
+												</div>
+											</div>
+											<div class="email__item">
+												<div class="image img-cir img-40">
+													<img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1797"]}}</p>
+													<span>{{=DICT["sp1798"]}}</span>
+												</div>
+											</div>
+											<div class="email__footer">
+												<a href="#">{{=DICT["aa1799"]}}</a>
+											</div>
+										</div>
+									</div>
+									<div class="noti__item js-item-menu">
+										<i class="zmdi zmdi-notifications"></i>
+										<span class="quantity">{{=DICT["sx1800"]}}</span>
+										<div class="notifi-dropdown js-dropdown">
+											<div class="notifi__title">
+												<p>{{=DICT["pa1801"]}}</p>
+											</div>
+											<div class="notifi__item">
+												<div class="bg-c1 img-cir img-40">
+													<i class="zmdi zmdi-email-open"></i>
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1802"]}}</p>
+													<span class="date">{{=DICT["sx1803"]}}</span>
+												</div>
+											</div>
+											<div class="notifi__item">
+												<div class="bg-c2 img-cir img-40">
+													<i class="zmdi zmdi-account-box"></i>
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1804"]}}</p>
+													<span class="date">{{=DICT["sx1805"]}}</span>
+												</div>
+											</div>
+											<div class="notifi__item">
+												<div class="bg-c3 img-cir img-40">
+													<i class="zmdi zmdi-file-text"></i>
+												</div>
+												<div class="content">
+													<p>{{=DICT["pa1806"]}}</p>
+													<span class="date">{{=DICT["sx1807"]}}</span>
+												</div>
+											</div>
+											<div class="notifi__footer">
+												<a href="#">{{=DICT["aa1808"]}}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="account-wrap">
+									<div class="account-item clearfix js-item-menu">
+										<div class="image">
+											<img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+										</div>
+										<div class="content">
+											<a class="js-acc-btn" href="#">{{=DICT["aa1810"]}}</a>
+										</div>
+										<div class="account-dropdown js-dropdown">
+											<div class="info clearfix">
+												<div class="image">
+													<a href="#">
+														<img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+													</a>
+												</div>
+												<div class="content">
+													<h5 class="name">
+														<a href="#">{{=DICT["aa1812"]}}</a>
+													</h5>
+													<span class="email">{{=DICT["sx1813"]}}</span>
+												</div>
+											</div>
+											<div class="account-dropdown__body">
+												<div class="account-dropdown__item">
+													<a href="#">
+														<i class="zmdi zmdi-account"></i>Account</a>
+												</div>
+												<div class="account-dropdown__item">
+													<a href="#">
+														<i class="zmdi zmdi-settings"></i>Setting</a>
+												</div>
+												<div class="account-dropdown__item">
+													<a href="#">
+														<i class="zmdi zmdi-money-box"></i>Billing</a>
+												</div>
+											</div>
+											<div class="account-dropdown__footer">
+												<a href="#">
+													<i class="zmdi zmdi-power"></i>Logout</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- END HEADER DESKTOP-->
+
+			<!-- MAIN CONTENT-->
+			<div class="main-content">
+				<div class="section__content section__content--p30">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1814"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a default progress bar, add a
+											<code>.progress</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1815"]}}</p>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /# card -->
+
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1816"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a default progress bar, add a
+											<code>.progress</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1817"]}}</p>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{=DICT["di1818"]}}</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{=DICT["di1819"]}}</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{=DICT["di1820"]}}</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">{{=DICT["di1821"]}}</div>
+										</div>
+									</div>
+								</div>
+								<!-- /# card -->
+
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1822"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a default progress bar, add a
+											<code>.progress-bar-striped</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1823"]}}</p>
+										<div class="progress mb-2">
+											<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+											 aria-valuemax="100">25%</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+											 aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+											 aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+											 aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /# card -->
+							</div>
+
+
+							<div class="col-lg-6">
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1824"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a default progress bar, add a
+											<code>.progress-bar-striped and .progress-bar-animated</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1825"]}}</p>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25"
+											 aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50"
+											 aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75"
+											 aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100"
+											 aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /# card -->
+
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1826"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a default progress bar, add a
+											<code>.progress-bar-striped and .progress-bar-animated</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1827"]}}</p>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25"
+											 aria-valuemin="0" aria-valuemax="100">25%</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50"
+											 aria-valuemin="0" aria-valuemax="100">50%</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75"
+											 aria-valuemin="0" aria-valuemax="100">75%</div>
+										</div>
+										<div class="progress mb-2">
+											<div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90"
+											 aria-valuemin="0" aria-valuemax="100">90%</div>
+										</div>
+									</div>
+								</div>
+								<!-- /# card -->
+
+								<div class="card">
+									<div class="card-header">
+										<h4>{{=DICT["hh1828"]}}</h4>
+									</div>
+									<div class="card-body">
+										<p class="muted">To create a height progress bar, add a
+											<code>.progress-bar</code> class to a
+											<code>&lt;div&gt;</code>{{=DICT["pc1829"]}}</p>
+										<div class="progress mb-2" style="height: 5px;">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-2" style="height: 5px;">
+											<div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-2" style="height: 5px;">
+											<div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progress mb-2" style="height: 5px;">
+											<div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE CONTAINER-->
+
+	</div>
+
+	<!-- Jquery JS-->
+	<script src="{{=URL('static','template/vendor/jquery-3.2.1.min.js')}}"></script>
+	<!-- Bootstrap JS-->
+	<script src="{{=URL('static','template/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+	<!-- Vendor JS       -->
+	<script src="{{=URL('static','template/vendor/slick/slick.min.js')}}">
+	</script>
+	<script src="{{=URL('static','template/vendor/wow/wow.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/animsition/animsition.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+	</script>
+	<script src="{{=URL('static','template/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/counter-up/jquery.counterup.min.js')}}">
+	</script>
+	<script src="{{=URL('static','template/vendor/circle-progress/circle-progress.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
+	<script src="{{=URL('static','template/vendor/select2/select2.min.js')}}">
+	</script>
+
+	<!-- Main JS-->
+	<script src="{{=URL('static','template/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

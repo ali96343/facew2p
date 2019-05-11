@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>facew2p</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{{=URL('static','template/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{=URL('static','template/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="{{=URL(c='default',f='index')}}">
+                            <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa374"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa376"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa378"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa380"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='chart')}}">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='table')}}">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='form')}}">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='map')}}">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa386"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa388"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa390"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa392"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa394"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa396"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa398"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa400"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa402"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa404"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa406"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa408"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa410"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa412"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa415"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa417"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa419"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa421"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='chart')}}">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='table')}}">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li class="active">
+                            <a href="{{=URL(c='default',f='form')}}">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='map')}}">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa427"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa429"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa431"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa433"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa435"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa437"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa439"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa441"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa443"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa445"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa447"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa449"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa451"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa453"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            
+{{block myformform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform0.custom.begin}}
+{{=formform0.custom.widget.f0}}
+{{=formform0.custom.submit}}
+{{=formform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <span class="quantity">{{=DICT["sx455"]}}</span>
+                                        <div class="mess-dropdown js-dropdown">
+                                            <div class="mess__title">
+                                                <p>{{=DICT["pa456"]}}</p>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>{{=DICT["hh458"]}}</h6>
+                                                    <p>{{=DICT["pa459"]}}</p>
+                                                    <span class="time">{{=DICT["sx460"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>{{=DICT["hh462"]}}</h6>
+                                                    <p>{{=DICT["pa463"]}}</p>
+                                                    <span class="time">{{=DICT["sx464"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__footer">
+                                                <a href="#">{{=DICT["aa465"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="quantity">{{=DICT["sx466"]}}</span>
+                                        <div class="email-dropdown js-dropdown">
+                                            <div class="email__title">
+                                                <p>{{=DICT["pa467"]}}</p>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa469"]}}</p>
+                                                    <span>{{=DICT["sp470"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa472"]}}</p>
+                                                    <span>{{=DICT["sp473"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa475"]}}</p>
+                                                    <span>{{=DICT["sp476"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__footer">
+                                                <a href="#">{{=DICT["aa477"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">{{=DICT["sx478"]}}</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>{{=DICT["pa479"]}}</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa480"]}}</p>
+                                                    <span class="date">{{=DICT["sx481"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa482"]}}</p>
+                                                    <span class="date">{{=DICT["sx483"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa484"]}}</p>
+                                                    <span class="date">{{=DICT["sx485"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">{{=DICT["aa486"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">{{=DICT["aa488"]}}</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">{{=DICT["aa490"]}}</a>
+                                                    </h5>
+                                                    <span class="email">{{=DICT["sx491"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">{{=DICT["di492"]}}</div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center title-2">{{=DICT["hc493"]}}</h3>
+                                        </div>
+                                        <hr>
+                                        
+{{block myformform1}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform1.custom.begin}}
+<label for='cc-payment'>Payment amount</label>
+{{=formform1.custom.widget.f0}}
+<label for='cc-name'>Name on card</label>
+{{=formform1.custom.widget.f1}}
+<label for='cc-number'>Card number</label>
+{{=formform1.custom.widget.f2}}
+<label for='cc-exp'>Expiration</label>
+{{=formform1.custom.widget.f3}}
+{{=formform1.custom.widget.f4}}
+{{=formform1.custom.submit}}
+{{=formform1.custom.end}}
+
+<div  id=divID1 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash1 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID1').length > 0) {
+    $('#divID1').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp497"]}}</strong>
+                                        <small>{{=DICT["si498"]}}</small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="form-group">
+                                            <label for="company" class=" form-control-label">Company</label>
+                                            <input type="text" id="company" placeholder="{{=DICT["pb499"]}}" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vat" class=" form-control-label">VAT</label>
+                                            <input type="text" id="vat" placeholder="{{=DICT["pb500"]}}" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Street</label>
+                                            <input type="text" id="street" placeholder="{{=DICT["pb501"]}}" class="form-control">
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="city" class=" form-control-label">City</label>
+                                                    <input type="text" id="city" placeholder="{{=DICT["pb502"]}}" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="postal-code" class=" form-control-label">Postal Code</label>
+                                                    <input type="text" id="postal-code" placeholder="{{=DICT["pb503"]}}" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="country" class=" form-control-label">Country</label>
+                                            <input type="text" id="country" placeholder="{{=DICT["pb504"]}}" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp505"]}}</strong> Elements
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform2}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform2.custom.begin}}
+{{=formform2.custom.widget.f0}}
+{{=formform2.custom.widget.f1}}
+{{=formform2.custom.widget.f2}}
+{{=formform2.custom.widget.f3}}
+{{=formform2.custom.widget.f4}}
+{{=formform2.custom.widget.f5}}
+{{=formform2.custom.widget.f6}}
+{{=formform2.custom.widget.f7}}
+{{=formform2.custom.widget.f8}}
+{{=formform2.custom.widget.f9}}
+<div><label>
+{{=formform2.custom.widget.f10}}
+ w2p-check-266</label> </div>
+<div><label>
+{{=formform2.custom.widget.f11}}
+ w2p-check-270</label> </div>
+<div><label>
+{{=formform2.custom.widget.f12}}
+ w2p-check-274</label> </div>
+<div><label>
+{{=formform2.custom.widget.f13}}
+ w2p-check-278</label> </div>
+<div><label>
+{{=formform2.custom.widget.f14}}
+ w2p-check-282</label> </div>
+<div><label>
+{{=formform2.custom.widget.f15}}
+ w2p-check-286</label> </div>
+{{=formform2.custom.widget.f16}}
+{{=formform2.custom.widget.f17}}
+{{=formform2.custom.widget.f18}}
+{{=formform2.custom.widget.f19}}
+{{=formform2.custom.widget.f20}}
+{{=formform2.custom.widget.f21}}
+{{=formform2.custom.widget.f22}}
+{{=formform2.custom.widget.f23}}
+{{=formform2.custom.submit}}
+{{=formform2.custom.end}}
+
+<div  id=divID2 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash2 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID2').length > 0) {
+    $('#divID2').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp512"]}}</strong> Form
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform3}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform3.custom.begin}}
+<label for='exampleInputName2'>Name</label>
+{{=formform3.custom.widget.f0}}
+<label for='exampleInputEmail2'>Email</label>
+{{=formform3.custom.widget.f1}}
+{{=formform3.custom.submit}}
+{{=formform3.custom.end}}
+
+<div  id=divID3 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash3 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID3').length > 0) {
+    $('#divID3').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp515"]}}</strong> Form
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform4}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform4.custom.begin}}
+{{=formform4.custom.widget.f0}}
+{{=formform4.custom.widget.f1}}
+{{=formform4.custom.submit}}
+{{=formform4.custom.end}}
+
+<div  id=divID4 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash4 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID4').length > 0) {
+    $('#divID4').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp520"]}}</strong> Form
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform5}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform5.custom.begin}}
+<label for='nf-email'>Email</label>
+{{=formform5.custom.widget.f0}}
+<label for='nf-password'>Password</label>
+{{=formform5.custom.widget.f1}}
+{{=formform5.custom.submit}}
+{{=formform5.custom.end}}
+
+<div  id=divID5 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash5 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID5').length > 0) {
+    $('#divID5').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Input
+                                        <strong>{{=DICT["sp525"]}}</strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform6}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform6.custom.begin}}
+{{=formform6.custom.widget.f0}}
+{{=formform6.custom.widget.f1}}
+{{=formform6.custom.widget.f2}}
+{{=formform6.custom.widget.f3}}
+{{=formform6.custom.widget.f4}}
+{{=formform6.custom.widget.f5}}
+{{=formform6.custom.widget.f6}}
+{{=formform6.custom.widget.f7}}
+{{=formform6.custom.widget.f8}}
+{{=formform6.custom.widget.f9}}
+{{=formform6.custom.submit}}
+{{=formform6.custom.end}}
+
+<div  id=divID6 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash6 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID6').length > 0) {
+    $('#divID6').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-user"></i> Login
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Input
+                                        <strong>{{=DICT["sp536"]}}</strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform7}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform7.custom.begin}}
+{{=formform7.custom.widget.f0}}
+{{=formform7.custom.widget.f1}}
+{{=formform7.custom.widget.f2}}
+{{=formform7.custom.submit}}
+{{=formform7.custom.end}}
+
+<div  id=divID7 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash7 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID7').length > 0) {
+    $('#divID7').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp540"]}}</strong> Form
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="has-success form-group">
+                                            <label for="inputIsValid" class=" form-control-label">Input is valid</label>
+                                            <input type="text" id="inputIsValid" class="is-valid form-control-success form-control">
+                                        </div>
+                                        <div class="has-warning form-group">
+                                            <label for="inputIsInvalid" class=" form-control-label">Input is invalid</label>
+                                            <input type="text" id="inputIsInvalid" class="is-invalid form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp541"]}}</strong> with optional icons
+                                        <em>(deprecated)</em>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="has-success form-group">
+                                            <label for="inputSuccess2i" class=" form-control-label">Input with success</label>
+                                            <input type="text" id="inputSuccess2i" class="form-control-success form-control">
+                                        </div>
+                                        <div class="has-warning form-group">
+                                            <label for="inputWarning2i" class=" form-control-label">Input with warning</label>
+                                            <input type="text" id="inputWarning2i" class="form-control-warning form-control">
+                                        </div>
+                                        <div class="has-danger has-feedback form-group">
+                                            <label for="inputError2i" class=" form-control-label">Input with error</label>
+                                            <input type="text" id="inputError2i" class="form-control-danger form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp542"]}}</strong> Groups
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform8}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform8.custom.begin}}
+{{=formform8.custom.widget.f0}}
+{{=formform8.custom.widget.f1}}
+{{=formform8.custom.widget.f2}}
+{{=formform8.custom.submit}}
+{{=formform8.custom.end}}
+
+<div  id=divID8 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash8 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID8').length > 0) {
+    $('#divID8').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-success btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp547"]}}</strong> Groups
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform9}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform9.custom.begin}}
+{{=formform9.custom.widget.f0}}
+{{=formform9.custom.widget.f1}}
+{{=formform9.custom.widget.f2}}
+{{=formform9.custom.submit}}
+{{=formform9.custom.end}}
+
+<div  id=divID9 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash9 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID9').length > 0) {
+    $('#divID9').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-success btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>{{=DICT["sp552"]}}</strong> Groups
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform10}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform10.custom.begin}}
+{{=formform10.custom.widget.f0}}
+{{=formform10.custom.widget.f1}}
+{{=formform10.custom.widget.f2}}
+{{=formform10.custom.submit}}
+{{=formform10.custom.end}}
+
+<div  id=divID10 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash10 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID10').length > 0) {
+    $('#divID10').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-success btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Use the grid for big devices!
+                                        <small>
+                                            <code>.col-lg-*</code>
+                                            <code>.col-md-*</code>
+                                            <code>.col-sm-*</code>
+                                        </small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform11}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform11.custom.begin}}
+{{=formform11.custom.widget.f0}}
+{{=formform11.custom.widget.f1}}
+{{=formform11.custom.widget.f2}}
+{{=formform11.custom.widget.f3}}
+{{=formform11.custom.widget.f4}}
+{{=formform11.custom.widget.f5}}
+{{=formform11.custom.widget.f6}}
+{{=formform11.custom.widget.f7}}
+{{=formform11.custom.widget.f8}}
+{{=formform11.custom.widget.f9}}
+{{=formform11.custom.submit}}
+{{=formform11.custom.end}}
+
+<div  id=divID11 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash11 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID11').length > 0) {
+    $('#divID11').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">{{=DICT["bu582"]}}</button>
+                                        <button class="btn btn-danger btn-sm">{{=DICT["bu583"]}}</button>
+                                        <button class="btn btn-warning btn-sm">{{=DICT["bu584"]}}</button>
+                                        <button class="btn btn-info btn-sm">{{=DICT["bu585"]}}</button>
+                                        <button class="btn btn-success btn-sm">{{=DICT["bu586"]}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Input Grid for small devices!
+                                        <small>
+                                            <code>.col-*</code>
+                                        </small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform12}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform12.custom.begin}}
+{{=formform12.custom.widget.f0}}
+{{=formform12.custom.widget.f1}}
+{{=formform12.custom.widget.f2}}
+{{=formform12.custom.widget.f3}}
+{{=formform12.custom.widget.f4}}
+{{=formform12.custom.widget.f5}}
+{{=formform12.custom.widget.f6}}
+{{=formform12.custom.widget.f7}}
+{{=formform12.custom.widget.f8}}
+{{=formform12.custom.widget.f9}}
+{{=formform12.custom.submit}}
+{{=formform12.custom.end}}
+
+<div  id=divID12 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash12 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID12').length > 0) {
+    $('#divID12').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">{{=DICT["bu597"]}}</button>
+                                        <button class="btn btn-danger btn-sm">{{=DICT["bu598"]}}</button>
+                                        <button class="btn btn-warning btn-sm">{{=DICT["bu599"]}}</button>
+                                        <button class="btn btn-info btn-sm">{{=DICT["bu600"]}}</button>
+                                        <button class="btn btn-success btn-sm">{{=DICT["bu601"]}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">{{=DICT["di602"]}}</div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform13}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform13.custom.begin}}
+{{=formform13.custom.widget.f0}}
+{{=formform13.custom.widget.f1}}
+{{=formform13.custom.widget.f2}}
+{{=formform13.custom.submit}}
+{{=formform13.custom.end}}
+
+<div  id=divID13 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash13 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID13').length > 0) {
+    $('#divID13').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">{{=DICT["di607"]}}</div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform14}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform14.custom.begin}}
+{{=formform14.custom.widget.f0}}
+{{=formform14.custom.widget.f1}}
+{{=formform14.custom.widget.f2}}
+{{=formform14.custom.submit}}
+{{=formform14.custom.end}}
+
+<div  id=divID14 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash14 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID14').length > 0) {
+    $('#divID14').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">{{=DICT["di612"]}}</div>
+                                    <div class="card-body card-block">
+                                        
+{{block myformform15}}
+{{include 'web2py_ajax.html'}}
+
+{{=formform15.custom.begin}}
+{{=formform15.custom.widget.f0}}
+{{=formform15.custom.widget.f1}}
+{{=formform15.custom.widget.f2}}
+{{=formform15.custom.submit}}
+{{=formform15.custom.end}}
+
+<div  id=divID15 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash15 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID15').length > 0) {
+    $('#divID15').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>{{=DICT["pf618"]}}<a href="https://colorlib.com">{{=DICT["aa619"]}}</a>{{=DICT["pc617"]}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{=URL('static','template/vendor/jquery-3.2.1.min.js')}}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{=URL('static','template/vendor/slick/slick.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/wow/wow.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/animsition/animsition.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.counterup.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/select2/select2.min.js')}}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{{=URL('static','template/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

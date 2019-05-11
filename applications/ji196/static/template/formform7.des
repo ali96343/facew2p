@@ -1,0 +1,33 @@
+- - input
+  - class: input-sm form-control-sm form-control
+    id: input-small
+    placeholder: .form-control-sm
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input-normal
+    placeholder: Normal
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: input-lg form-control-lg form-control
+    id: input-large
+    placeholder: .form-control-lg
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: .form-control-sm
+    type: submit
+    value: submit input
+  - {}
+  - []
+  - {}

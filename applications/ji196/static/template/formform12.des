@@ -1,0 +1,79 @@
+- - input
+  - class: form-control
+    placeholder: .col-4
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-8
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-5
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-7
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-6
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-6
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-5
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-5
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-8
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    placeholder: .col-4
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: .col-4
+    type: submit
+    value: submit input
+  - {}
+  - []
+  - {}

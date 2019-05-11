@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>facew2p</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{{=URL('static','template/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/vector-map/jqvmap.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{=URL('static','template/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar2">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{=URL('static','template/images/icon/logo-white.png')}}" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar2__content js-scrollbar1">
+                <div class="account2">
+                    <div class="image img-cir img-120">
+                        <img src="{{=URL('static','template/images/icon/avatar-big-01.jpg')}}" alt="John Doe" />
+                    </div>
+                    <h4 class="name">{{=DICT["hd791"]}}</h4>
+                    <a href="#">{{=DICT["aa792"]}}</a>
+                </div>
+                <nav class="navbar-sidebar2">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='index')}}">
+                                        <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index2')}}">
+                                        <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index3')}}">
+                                        <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index4')}}">
+                                        <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='inbox')}}">
+                                <i class="fas fa-chart-bar"></i>Inbox</a>
+                            <span class="inbox-num">{{=DICT["sx798"]}}</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-trophy"></i>Features
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='table')}}">
+                                        <i class="fas fa-table"></i>Tables</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='form')}}">
+                                        <i class="far fa-check-square"></i>Forms</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='map')}}">
+                                        <i class="fas fa-map-marker-alt"></i>Maps</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='login')}}">
+                                        <i class="fas fa-sign-in-alt"></i>Login</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='register')}}">
+                                        <i class="fas fa-user"></i>Register</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='forget_pass')}}">
+                                        <i class="fas fa-unlock-alt"></i>Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='button')}}">
+                                        <i class="fab fa-flickr"></i>Button</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='badge')}}">
+                                        <i class="fas fa-comment-alt"></i>Badges</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='tab')}}">
+                                        <i class="far fa-window-maximize"></i>Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='card')}}">
+                                        <i class="far fa-id-card"></i>Cards</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='alert')}}">
+                                        <i class="far fa-bell"></i>Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='progress_bar')}}">
+                                        <i class="fas fa-tasks"></i>Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='modal')}}">
+                                        <i class="far fa-window-restore"></i>Modals</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='switch')}}">
+                                        <i class="fas fa-toggle-on"></i>Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='grid')}}">
+                                        <i class="fas fa-th-large"></i>Grids</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='fontawesome')}}">
+                                        <i class="fab fa-font-awesome"></i>FontAwesome</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='typo')}}">
+                                        <i class="fas fa-font"></i>Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container2">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop2">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap2">
+                            <div class="logo d-block d-lg-none">
+                                <a href="#">
+                                    <img src="{{=URL('static','template/images/icon/logo-white.png')}}" alt="CoolAdmin" />
+                                </a>
+                            </div>
+                            <div class="header-button2">
+                                <div class="header-button-item js-item-menu">
+                                    <i class="zmdi zmdi-search"></i>
+                                    <div class="search-dropdown js-dropdown">
+                                        
+{{block myindex2form0}}
+{{include 'web2py_ajax.html'}}
+
+{{=index2form0.custom.begin}}
+{{=index2form0.custom.widget.f0}}
+{{=index2form0.custom.submit}}
+{{=index2form0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                                    </div>
+                                </div>
+                                <div class="header-button-item has-noti js-item-menu">
+                                    <i class="zmdi zmdi-notifications"></i>
+                                    <div class="notifi-dropdown js-dropdown">
+                                        <div class="notifi__title">
+                                            <p>{{=DICT["pa818"]}}</p>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c1 img-cir img-40">
+                                                <i class="zmdi zmdi-email-open"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>{{=DICT["pa819"]}}</p>
+                                                <span class="date">{{=DICT["sx820"]}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c2 img-cir img-40">
+                                                <i class="zmdi zmdi-account-box"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>{{=DICT["pa821"]}}</p>
+                                                <span class="date">{{=DICT["sx822"]}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c3 img-cir img-40">
+                                                <i class="zmdi zmdi-file-text"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>{{=DICT["pa823"]}}</p>
+                                                <span class="date">{{=DICT["sx824"]}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__footer">
+                                            <a href="#">{{=DICT["aa825"]}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-button-item mr-0 js-sidebar-btn">
+                                    <i class="zmdi zmdi-menu"></i>
+                                </div>
+                                <div class="setting-menu js-right-sidebar d-none d-lg-block">
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-globe"></i>Language</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-pin"></i>Location</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-email"></i>Email</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-notifications"></i>Notifications</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
+                <div class="logo">
+                    <a href="#">
+                        <img src="{{=URL('static','template/images/icon/logo-white.png')}}" alt="Cool Admin" />
+                    </a>
+                </div>
+                <div class="menu-sidebar2__content js-scrollbar2">
+                    <div class="account2">
+                        <div class="image img-cir img-120">
+                            <img src="{{=URL('static','template/images/icon/avatar-big-01.jpg')}}" alt="John Doe" />
+                        </div>
+                        <h4 class="name">{{=DICT["hd828"]}}</h4>
+                        <a href="#">{{=DICT["aa829"]}}</a>
+                    </div>
+                    <nav class="navbar-sidebar2">
+                        <ul class="list-unstyled navbar__list">
+                            <li class="active has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{=URL(c='default',f='index')}}">
+                                            <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='index2')}}">
+                                            <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='index3')}}">
+                                            <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='index4')}}">
+                                            <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{=URL(c='default',f='inbox')}}">
+                                    <i class="fas fa-chart-bar"></i>Inbox</a>
+                                <span class="inbox-num">{{=DICT["sx835"]}}</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                            </li>
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-trophy"></i>Features
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{=URL(c='default',f='table')}}">
+                                            <i class="fas fa-table"></i>Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='form')}}">
+                                            <i class="far fa-check-square"></i>Forms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='map')}}">
+                                            <i class="fas fa-map-marker-alt"></i>Maps</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-copy"></i>Pages
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{=URL(c='default',f='login')}}">
+                                            <i class="fas fa-sign-in-alt"></i>Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='register')}}">
+                                            <i class="fas fa-user"></i>Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='forget_pass')}}">
+                                            <i class="fas fa-unlock-alt"></i>Forget Password</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-desktop"></i>UI Elements
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{=URL(c='default',f='button')}}">
+                                            <i class="fab fa-flickr"></i>Button</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='badge')}}">
+                                            <i class="fas fa-comment-alt"></i>Badges</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='tab')}}">
+                                            <i class="far fa-window-maximize"></i>Tabs</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='card')}}">
+                                            <i class="far fa-id-card"></i>Cards</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='alert')}}">
+                                            <i class="far fa-bell"></i>Alerts</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='progress_bar')}}">
+                                            <i class="fas fa-tasks"></i>Progress Bars</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='modal')}}">
+                                            <i class="far fa-window-restore"></i>Modals</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='switch')}}">
+                                            <i class="fas fa-toggle-on"></i>Switchs</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='grid')}}">
+                                            <i class="fas fa-th-large"></i>Grids</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='fontawesome')}}">
+                                            <i class="fab fa-font-awesome"></i>FontAwesome</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{=URL(c='default',f='typo')}}">
+                                            <i class="fas fa-font"></i>Typography</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb m-t-75">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="au-breadcrumb-content">
+                                    <div class="au-breadcrumb-left">
+                                        <span class="au-breadcrumb-span">{{=DICT["sx853"]}}</span>
+                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                            <li class="list-inline-item active">
+                                                <a href="#">{{=DICT["aa854"]}}</a>
+                                            </li>
+                                            <li class="list-inline-item seprate">
+                                                <span>{{=DICT["sp855"]}}</span>
+                                            </li>
+                                            <li class="list-inline-item">{{=DICT["lb856"]}}</li>
+                                        </ul>
+                                    </div>
+                                    <button class="au-btn au-btn-icon au-btn--green">
+                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+
+            <!-- STATISTIC-->
+            <section class="statistic">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="statistic__item">
+                                    <h2 class="number">{{=DICT["hb857"]}}</h2>
+                                    <span class="desc">{{=DICT["sx858"]}}</span>
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-account-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="statistic__item">
+                                    <h2 class="number">{{=DICT["hb859"]}}</h2>
+                                    <span class="desc">{{=DICT["sx860"]}}</span>
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="statistic__item">
+                                    <h2 class="number">{{=DICT["hb861"]}}</h2>
+                                    <span class="desc">{{=DICT["sx862"]}}</span>
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-calendar-note"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="statistic__item">
+                                    <h2 class="number">{{=DICT["hb863"]}}</h2>
+                                    <span class="desc">{{=DICT["sx864"]}}</span>
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-money"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC-->
+
+            <section>
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <!-- RECENT REPORT 2-->
+                                <div class="recent-report2">
+                                    <h3 class="title-3">{{=DICT["hc865"]}}</h3>
+                                    <div class="chart-info">
+                                        <div class="chart-info__left">
+                                            <div class="chart-note">
+                                                <span class="dot dot--blue"></span>
+                                                <span>{{=DICT["sp866"]}}</span>
+                                            </div>
+                                            <div class="chart-note">
+                                                <span class="dot dot--green"></span>
+                                                <span>{{=DICT["sp867"]}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-info-right">
+                                            <div class="rs-select2--dark rs-select2--md m-r-10">
+                                                <select class="js-select2" name="property">
+                                                    <option selected="selected">All Properties</option>
+                                                    <option value="">Products</option>
+                                                    <option value="">Services</option>
+                                                </select>
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                            <div class="rs-select2--dark rs-select2--sm">
+                                                <select class="js-select2 au-select-dark" name="time">
+                                                    <option selected="selected">All Time</option>
+                                                    <option value="">By Month</option>
+                                                    <option value="">By Day</option>
+                                                </select>
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recent-report__chart">
+                                        <canvas id="recent-rep2-chart"></canvas>
+                                    </div>
+                                </div>
+                                <!-- END RECENT REPORT 2             -->
+                            </div>
+                            <div class="col-xl-4">
+                                <!-- TASK PROGRESS-->
+                                <div class="task-progress">
+                                    <h3 class="title-3">{{=DICT["hc868"]}}</h3>
+                                    <div class="au-skill-container">
+                                        <div class="au-progress">
+                                            <span class="au-progress__title">{{=DICT["sx869"]}}</span>
+                                            <div class="au-progress__bar">
+                                                <div class="au-progress__inner js-progressbar-simple" role="progressbar" data-transitiongoal="90">
+                                                    <span class="au-progress__value js-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="au-progress">
+                                            <span class="au-progress__title">{{=DICT["sx870"]}}</span>
+                                            <div class="au-progress__bar">
+                                                <div class="au-progress__inner js-progressbar-simple" role="progressbar" data-transitiongoal="85">
+                                                    <span class="au-progress__value js-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="au-progress">
+                                            <span class="au-progress__title">{{=DICT["sx871"]}}</span>
+                                            <div class="au-progress__bar">
+                                                <div class="au-progress__inner js-progressbar-simple" role="progressbar" data-transitiongoal="95">
+                                                    <span class="au-progress__value js-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="au-progress">
+                                            <span class="au-progress__title">{{=DICT["sx872"]}}</span>
+                                            <div class="au-progress__bar">
+                                                <div class="au-progress__inner js-progressbar-simple" role="progressbar" data-transitiongoal="95">
+                                                    <span class="au-progress__value js-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END TASK PROGRESS-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <!-- USER DATA-->
+                                <div class="user-data m-b-40">
+                                    <h3 class="title-3 m-b-30">
+                                        <i class="zmdi zmdi-account-calendar"></i>user data</h3>
+                                    <div class="filters m-b-45">
+                                        <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">All Properties</option>
+                                                <option value="">Products</option>
+                                                <option value="">Services</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+                                            <select class="js-select2 au-select-dark" name="time">
+                                                <option selected="selected">All Time</option>
+                                                <option value="">By Month</option>
+                                                <option value="">By Day</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive table-data">
+                                        <table class="table">
+                                            
+<thead>
+<tr>
+    <th>name</th>
+    <th>role</th>
+    <th>type</th>
+</tr>
+</thead>
+
+<tbody>
+{{query146= db.index2table0.id > 0}}
+{{results146= db(query146).select()}}
+{{if not results146 is None: }}
+{{for row in results146:}}
+<tr>
+    <td>{{=row.f0}}</td>
+    <td>{{=row.f1}}</td>
+    <td>{{=row.f2}}</td>
+</tr>
+{{pass}}
+{{pass}}
+</tbody>
+
+                                        </table>
+<div  id=divID147 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>index2table0</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID147').length > 0) {
+    $('#divID147').remove();
+  } 
+}, 15000)
+ </script>
+                                    </div>
+                                    <div class="user-data__footer">
+                                        <button class="au-btn au-btn-load">{{=DICT["bu885"]}}</button>
+                                    </div>
+                                </div>
+                                <!-- END USER DATA-->
+                            </div>
+                            <div class="col-xl-6">
+                                <!-- MAP DATA-->
+                                <div class="map-data m-b-40">
+                                    <h3 class="title-3 m-b-30">
+                                        <i class="zmdi zmdi-map"></i>map data</h3>
+                                    <div class="filters">
+                                        <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">All Worldwide</option>
+                                                <option value="">Products</option>
+                                                <option value="">Services</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+                                            <select class="js-select2 au-select-dark" name="time">
+                                                <option selected="selected">All Time</option>
+                                                <option value="">By Month</option>
+                                                <option value="">By Day</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="map-wrap m-t-45 m-b-80">
+                                        <div id="vmap" style="height: 284px;"></div>
+                                    </div>
+                                    <div class="table-wrap">
+                                        <div class="table-responsive table-style1">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>United States</td>
+                                                        <tdtd>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Australia</td>
+                                                        <tdtd>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>United Kingdom</td>
+                                                        <tdtd>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive table-style1">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Germany</td>
+                                                        <tdtd>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>France</td>
+                                                        <tdtd>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Russian</td>
+                                                        <td>$5,366.96</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END MAP DATA-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>{{=DICT["pf892"]}}<a href="https://colorlib.com">{{=DICT["aa893"]}}</a>{{=DICT["pc891"]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{=URL('static','template/vendor/jquery-3.2.1.min.js')}}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{=URL('static','template/vendor/slick/slick.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/wow/wow.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/animsition/animsition.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.counterup.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/select2/select2.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/vector-map/jquery.vmap.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/vector-map/jquery.vmap.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/vector-map/jquery.vmap.sampledata.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/vector-map/jquery.vmap.world.js')}}"></script>
+
+    <!-- Main JS-->
+    <script src="{{=URL('static','template/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

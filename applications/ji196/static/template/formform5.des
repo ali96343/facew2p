@@ -1,0 +1,28 @@
+- - input
+  - class: form-control
+    id: nf-email
+    placeholder: Enter Email..
+    type: email
+  - for: nf-email
+    text: Email
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: nf-password
+    placeholder: Enter Password..
+    type: password
+  - for: nf-password
+    text: Password
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Enter Email..
+    type: submit
+    value: submit input
+  - for: nf-email
+    text: Email
+  - []
+  - {}

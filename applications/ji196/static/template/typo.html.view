@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="au theme template">
+  <meta name="author" content="Hau Nguyen">
+  <meta name="keywords" content="au theme template">
+
+  <!-- Title Page-->
+  <title>facew2p</title>
+
+  <!-- Fontfaces CSS-->
+  <link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+
+  <!-- Bootstrap CSS-->
+  <link href="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+  <!-- Vendor CSS-->
+  <link href="{{=URL('static','template/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+  <link href="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+  <!-- Main CSS-->
+  <link href="{{=URL('static','template/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body class="animsition">
+  <div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar">
+        <div class="container-fluid">
+          <div class="header-mobile-inner">
+            <a class="logo" href="{{=URL(c='default',f='index')}}">
+              <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="CoolAdmin" />
+            </a>
+            <button class="hamburger hamburger--slider" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar-mobile">
+        <div class="container-fluid">
+          <ul class="navbar-mobile__list list-unstyled">
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa3096"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa3098"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa3100"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa3102"]}}</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='chart')}}">
+                <i class="fas fa-chart-bar"></i>Charts</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='table')}}">
+                <i class="fas fa-table"></i>Tables</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='form')}}">
+                <i class="far fa-check-square"></i>Forms</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-calendar-alt"></i>Calendar</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='map')}}">
+                <i class="fas fa-map-marker-alt"></i>Maps</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Pages</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa3108"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa3110"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa3112"]}}</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-desktop"></i>UI Elements</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa3114"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa3116"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa3118"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa3120"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa3122"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa3124"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa3126"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa3128"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa3130"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa3132"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa3134"]}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+      <div class="logo">
+        <a href="#">
+          <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="Cool Admin" />
+        </a>
+      </div>
+      <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+          <ul class="list-unstyled navbar__list">
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa3137"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa3139"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa3141"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa3143"]}}</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='chart')}}">
+                <i class="fas fa-chart-bar"></i>Charts</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='table')}}">
+                <i class="fas fa-table"></i>Tables</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='form')}}">
+                <i class="far fa-check-square"></i>Forms</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-calendar-alt"></i>Calendar</a>
+            </li>
+            <li>
+              <a href="{{=URL(c='default',f='map')}}">
+                <i class="fas fa-map-marker-alt"></i>Maps</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Pages</a>
+              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa3149"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa3151"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa3153"]}}</a>
+                </li>
+              </ul>
+            </li>
+            <li class="active has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-desktop"></i>UI Elements</a>
+              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li>
+                  <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa3155"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa3157"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa3159"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa3161"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa3163"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa3165"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa3167"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa3169"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa3171"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa3173"]}}</a>
+                </li>
+                <li>
+                  <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa3175"]}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+      <!-- HEADER DESKTOP-->
+      <header class="header-desktop">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+              
+{{block mytypoform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=typoform0.custom.begin}}
+{{=typoform0.custom.widget.f0}}
+{{=typoform0.custom.submit}}
+{{=typoform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+              <div class="header-button">
+                <div class="noti-wrap">
+                  <div class="noti__item js-item-menu">
+                    <i class="zmdi zmdi-comment-more"></i>
+                    <span class="quantity">{{=DICT["sx3177"]}}</span>
+                    <div class="mess-dropdown js-dropdown">
+                      <div class="mess__title">
+                        <p>{{=DICT["pa3178"]}}</p>
+                      </div>
+                      <div class="mess__item">
+                        <div class="image img-cir img-40">
+                          <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
+                        </div>
+                        <div class="content">
+                          <h6>{{=DICT["hh3180"]}}</h6>
+                          <p>{{=DICT["pa3181"]}}</p>
+                          <span class="time">{{=DICT["sx3182"]}}</span>
+                        </div>
+                      </div>
+                      <div class="mess__item">
+                        <div class="image img-cir img-40">
+                          <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
+                        </div>
+                        <div class="content">
+                          <h6>{{=DICT["hh3184"]}}</h6>
+                          <p>{{=DICT["pa3185"]}}</p>
+                          <span class="time">{{=DICT["sx3186"]}}</span>
+                        </div>
+                      </div>
+                      <div class="mess__footer">
+                        <a href="#">{{=DICT["aa3187"]}}</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="noti__item js-item-menu">
+                    <i class="zmdi zmdi-email"></i>
+                    <span class="quantity">{{=DICT["sx3188"]}}</span>
+                    <div class="email-dropdown js-dropdown">
+                      <div class="email__title">
+                        <p>{{=DICT["pa3189"]}}</p>
+                      </div>
+                      <div class="email__item">
+                        <div class="image img-cir img-40">
+                          <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3191"]}}</p>
+                          <span>{{=DICT["sp3192"]}}</span>
+                        </div>
+                      </div>
+                      <div class="email__item">
+                        <div class="image img-cir img-40">
+                          <img src="{{=URL('static','template/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3194"]}}</p>
+                          <span>{{=DICT["sp3195"]}}</span>
+                        </div>
+                      </div>
+                      <div class="email__item">
+                        <div class="image img-cir img-40">
+                          <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3197"]}}</p>
+                          <span>{{=DICT["sp3198"]}}</span>
+                        </div>
+                      </div>
+                      <div class="email__footer">
+                        <a href="#">{{=DICT["aa3199"]}}</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="noti__item js-item-menu">
+                    <i class="zmdi zmdi-notifications"></i>
+                    <span class="quantity">{{=DICT["sx3200"]}}</span>
+                    <div class="notifi-dropdown js-dropdown">
+                      <div class="notifi__title">
+                        <p>{{=DICT["pa3201"]}}</p>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c1 img-cir img-40">
+                          <i class="zmdi zmdi-email-open"></i>
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3202"]}}</p>
+                          <span class="date">{{=DICT["sx3203"]}}</span>
+                        </div>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c2 img-cir img-40">
+                          <i class="zmdi zmdi-account-box"></i>
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3204"]}}</p>
+                          <span class="date">{{=DICT["sx3205"]}}</span>
+                        </div>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c3 img-cir img-40">
+                          <i class="zmdi zmdi-file-text"></i>
+                        </div>
+                        <div class="content">
+                          <p>{{=DICT["pa3206"]}}</p>
+                          <span class="date">{{=DICT["sx3207"]}}</span>
+                        </div>
+                      </div>
+                      <div class="notifi__footer">
+                        <a href="#">{{=DICT["aa3208"]}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="account-wrap">
+                  <div class="account-item clearfix js-item-menu">
+                    <div class="image">
+                      <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                    </div>
+                    <div class="content">
+                      <a class="js-acc-btn" href="#">{{=DICT["aa3210"]}}</a>
+                    </div>
+                    <div class="account-dropdown js-dropdown">
+                      <div class="info clearfix">
+                        <div class="image">
+                          <a href="#">
+                            <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h5 class="name">
+                            <a href="#">{{=DICT["aa3212"]}}</a>
+                          </h5>
+                          <span class="email">{{=DICT["sx3213"]}}</span>
+                        </div>
+                      </div>
+                      <div class="account-dropdown__body">
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-account"></i>Account</a>
+                        </div>
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-settings"></i>Setting</a>
+                        </div>
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-money-box"></i>Billing</a>
+                        </div>
+                      </div>
+                      <div class="account-dropdown__footer">
+                        <a href="#">
+                          <i class="zmdi zmdi-power"></i>Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- END HEADER DESKTOP-->
+
+      <!-- MAIN CONTENT-->
+      <div class="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+
+
+                <div class="card">
+                  <div class="card-header">
+                    <strong class="card-title">Typography</strong>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="typo-headers">
+                      <h1 class="pb-2 display-4">{{=DICT["ha3214"]}}</h1>
+                      <h2 class="pb-2 display-5">{{=DICT["hb3215"]}}</h2>
+                      <h3 class="pb-2 display-5">{{=DICT["hc3216"]}}</h3>
+                      <h4 class="pb-2 display-5">{{=DICT["hd3217"]}}</h4>
+                      <h5 class="pb-2 display-5">{{=DICT["he3218"]}}</h5>
+                      <h6 class="pb-4 display-5">{{=DICT["hf3219"]}}</h6>
+                    </div>
+                    <div class="typo-articles">
+                      <p>
+                        The unique stripes of zebras make them one of the animals most familiar to people. They occur in a variety of habitats, such
+                        as grasslands, savannas,
+                        <span class="bg-flat-color-1 text-light">{{=DICT["sx3220"]}}</span>, thorny scrublands,
+                        <span class="clickable-text">{{=DICT["sx3221"]}}</span>
+                        , and coastal hills. However, various anthropogenic factors have had a severe impact on zebra populations, in particular
+                        hunting for skins and habitat destruction. Grévy"s zebra and the mountain
+                        <mark>highlighted text</mark>{{=DICT["pc3222"]}}</p>
+                      <blockquote class="blockquote mt-3 text-right">
+                        <p>
+                          Blockquotes. However, various anthropogenic factors have had a severe impact on zebra populations, in particular hunting
+                          for skins. </p>
+                        <footer class="blockquote-footer">Jefferey Lebowski</footer>
+                      </blockquote>
+                      <p>
+                        lthough zebra species may have overlapping ranges, they do not interbreed. In captivity, plains zebras have been crossed
+                        with mountain zebras. The hybrid foals
+                        <span class="bg-flat-color-1 text-light">{{=DICT["sx3223"]}}</span> lacked a dewlap and resembled their
+                      </p>
+                    </div>
+                    <div class="vue-lists">
+                      <h2 class="mb-4">{{=DICT["hb3224"]}}</h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h3>{{=DICT["hh3225"]}}</h3>
+                          <ul>
+                            <li>
+                              A wide variety of hypotheses have been proposed to account for the evolution of the striking stripes of zebras.
+                            </li>
+                            <li>{{=DICT["la3226"]}}</li>
+                            <li>{{=DICT["la3227"]}}</li>
+                            <li>
+                              In addition, even at moderate distances, the striking striping merges to an apparent grey.
+                              <ul class="vue-list-inner">
+                                <li>{{=DICT["la3228"]}}</li>
+                                <li>{{=DICT["la3229"]}}</li>
+                                <li>{{=DICT["la3230"]}}</li>
+                              </ul>
+                            </li>
+                            <li>{{=DICT["la3231"]}}</li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 text-left">
+                          <div>
+                            <h3>{{=DICT["hh3232"]}}</h3>
+                            <ol class="vue-ordered">
+                              <li>
+                                A wide variety of hypotheses have been proposed to account for the evolution of the striking stripes of zebras.
+                              </li>
+                              <li>{{=DICT["la3233"]}}</li>
+                              <li>{{=DICT["la3234"]}}</li>
+                              <li>
+                                In addition, even at moderate distances, the striking striping merges to an apparent grey.
+                                <ul class="vue-list-inner">
+                                  <li>However, the camouflage has been contested with arguments that most of a zebra"s predator.
+                                  </li>
+                                  <li>{{=DICT["la3235"]}}</li>
+                                  <li>{{=DICT["la3236"]}}</li>
+                                </ul>
+                              </li>
+                              <li>{{=DICT["la3237"]}}</li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vue-misc">
+                      <h2 class="display-5 my-3">{{=DICT["hb3238"]}}</h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h3>{{=DICT["hh3239"]}}</h3>
+                          <address class="mt-3">
+                            <strong>{{=DICT["sp3240"]}}</strong>
+                            <br> Nezalezhnasti Ave, 13 - 28A
+                            <br> Minsk, Belarus, 220141
+                            <br>{{=DICT["te3241"]}}-98
+                            <br>
+                            <br>
+                            <b>{{=DICT["bb3242"]}}</b>
+                            <br>
+                            <a href="mailto">{{=DICT["aa3243"]}}</a>
+
+                          </address>
+                        </div>
+                        <div class="col-md-6">
+                          <h3 class="mb-3">{{=DICT["hc3244"]}}</h3>
+                          <div class="jumbotron">
+                            Zebras have excellent eyesight. It is believed that they can see in color. Like most ungulates, the zebra"s eyes are on the
+                            sides of its head, giving it a wide field of view.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+
+  </div>
+
+  <!-- Jquery JS-->
+  <script src="{{=URL('static','template/vendor/jquery-3.2.1.min.js')}}"></script>
+  <!-- Bootstrap JS-->
+  <script src="{{=URL('static','template/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+  <!-- Vendor JS       -->
+  <script src="{{=URL('static','template/vendor/slick/slick.min.js')}}">
+  </script>
+  <script src="{{=URL('static','template/vendor/wow/wow.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/animsition/animsition.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+  </script>
+  <script src="{{=URL('static','template/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/counter-up/jquery.counterup.min.js')}}">
+  </script>
+  <script src="{{=URL('static','template/vendor/circle-progress/circle-progress.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
+  <script src="{{=URL('static','template/vendor/select2/select2.min.js')}}">
+  </script>
+
+  <!-- Main JS-->
+  <script src="{{=URL('static','template/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

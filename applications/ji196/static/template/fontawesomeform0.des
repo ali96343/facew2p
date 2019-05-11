@@ -1,0 +1,15 @@
+- - input
+  - class: au-input au-input--xl
+    placeholder: Search for datas & reports...
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: au-btn--submit
+    placeholder: place_122
+    type: submit
+    value: unk_121
+  - {}
+  - []
+  - {}

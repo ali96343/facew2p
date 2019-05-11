@@ -1,0 +1,15 @@
+- - input
+  - class: au-input au-input--full au-input--h65
+    placeholder: Type a message
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: au-input-icon
+    placeholder: place_109
+    type: submit
+    value: unk_108
+  - {}
+  - []
+  - {}

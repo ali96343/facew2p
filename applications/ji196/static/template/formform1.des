@@ -1,0 +1,57 @@
+- - input
+  - class: form-control
+    id: cc-pament
+    placeholder: place_41
+    type: text
+    value: '100.00'
+  - for: cc-payment
+    text: Payment amount
+  - []
+  - {}
+- - input
+  - class: form-control cc-name valid
+    id: cc-name
+    placeholder: place_42
+    type: text
+  - for: cc-name
+    text: Name on card
+  - []
+  - {}
+- - input
+  - class: form-control cc-number identified visa
+    id: cc-number
+    placeholder: place_44
+    type: tel
+    value: unk_43
+  - for: cc-number
+    text: Card number
+  - []
+  - {}
+- - input
+  - class: form-control cc-exp
+    id: cc-exp
+    placeholder: MM / YY
+    type: tel
+    value: unk_45
+  - for: cc-exp
+    text: Expiration
+  - []
+  - {}
+- - input
+  - class: form-control cc-cvc
+    id: x_card_code
+    placeholder: place_47
+    type: tel
+    value: unk_46
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-lg btn-info btn-block
+    id: payment-button
+    placeholder: place_48
+    type: submit
+    value: Pay $100.00 Sending
+  - {}
+  - []
+  - {}

@@ -1,0 +1,12 @@
+- - date
+  - string
+- - order ID
+  - string
+- - name
+  - string
+- - price
+  - string
+- - quantity
+  - string
+- - total
+  - string

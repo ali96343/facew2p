@@ -1,0 +1,28 @@
+- - input
+  - class: form-control
+    id: exampleInputName2
+    placeholder: Jane Doe
+    type: text
+  - for: exampleInputName2
+    text: Name
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: exampleInputEmail2
+    placeholder: jane.doe@example.com
+    type: email
+  - for: exampleInputEmail2
+    text: Email
+  - []
+  - {}
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Jane Doe
+    type: submit
+    value: submit input
+  - for: exampleInputName2
+    text: Name
+  - []
+  - {}

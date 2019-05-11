@@ -1,0 +1,184 @@
+- - input
+  - class: form-control
+    id: input1-group3
+    placeholder: Username
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input2-group3
+    placeholder: Email
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input3-group3
+    placeholder: ..
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-toggle btn btn-primary
+    placeholder: place_68
+    type: submit
+    value: Dropdown
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_69
+    type: submit
+    value: Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_70
+    type: submit
+    value: Another Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_71
+    type: submit
+    value: Something else here
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_72
+    type: submit
+    value: Separated link
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-toggle btn btn-primary
+    placeholder: place_73
+    type: submit
+    value: Dropdown
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_74
+    type: submit
+    value: Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_75
+    type: submit
+    value: Another Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_76
+    type: submit
+    value: Something else here
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_77
+    type: submit
+    value: Separated link
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-toggle btn btn-primary
+    placeholder: place_78
+    type: submit
+    value: Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_79
+    type: submit
+    value: Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_80
+    type: submit
+    value: Another Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_81
+    type: submit
+    value: Something else here
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_82
+    type: submit
+    value: Separated link
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-toggle btn btn-primary
+    placeholder: place_83
+    type: submit
+    value: Dropdown
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_84
+    type: submit
+    value: Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_85
+    type: submit
+    value: Another Action
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_86
+    type: submit
+    value: Something else here
+  - {}
+  - []
+  - {}
+- - button
+  - class: dropdown-item
+    placeholder: place_87
+    type: submit
+    value: Separated link
+  - {}
+  - []
+  - {}

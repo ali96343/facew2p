@@ -1,0 +1,56 @@
+- - input
+  - class: form-control
+    id: input1-group2
+    placeholder: Username
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input2-group2
+    placeholder: Email
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: input3-group2
+    placeholder: Search
+    type: text
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-primary
+    placeholder: place_62
+    type: submit
+    value: Search
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-primary
+    placeholder: place_63
+    type: submit
+    value: Submit
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-primary
+    placeholder: place_65
+    type: submit
+    value: unk_64
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-primary
+    placeholder: place_67
+    type: submit
+    value: unk_66
+  - {}
+  - []
+  - {}

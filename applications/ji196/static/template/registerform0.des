@@ -1,0 +1,55 @@
+- - input
+  - class: au-input au-input--full
+    placeholder: Username
+    type: text
+  - for: submit17
+    text: Username
+  - []
+  - {}
+- - input
+  - class: au-input au-input--full
+    placeholder: Email
+    type: email
+  - for: submit18
+    text: Email Address
+  - []
+  - {}
+- - input
+  - class: au-input au-input--full
+    placeholder: Password
+    type: password
+  - for: submit19
+    text: Password
+  - []
+  - {}
+- - checkbox
+  - placeholder: place_20
+    type: checkbox
+  - {}
+  - []
+  - {}
+- - button
+  - class: au-btn au-btn--block au-btn--green m-b-20
+    placeholder: place_22
+    type: submit
+    value: register
+  - for: submit21
+    text: Username
+  - []
+  - {}
+- - button
+  - class: au-btn au-btn--block au-btn--blue m-b-20
+    placeholder: place_23
+    type: submit
+    value: register with facebook
+  - {}
+  - []
+  - {}
+- - button
+  - class: au-btn au-btn--block au-btn--blue2
+    placeholder: place_24
+    type: submit
+    value: register with twitter
+  - {}
+  - []
+  - {}

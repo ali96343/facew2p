@@ -1,0 +1,32 @@
+- - input
+  - class: form-control
+    id: username3
+    placeholder: place_88
+    type: text
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: email3
+    placeholder: place_89
+    type: email
+  - {}
+  - []
+  - {}
+- - input
+  - class: form-control
+    id: password3
+    placeholder: place_90
+    type: password
+  - {}
+  - []
+  - {}
+- - button
+  - class: btn btn-primary btn-sm
+    placeholder: place_91
+    type: submit
+    value: Submit
+  - {}
+  - []
+  - {}

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>facew2p</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{{=URL('static','template/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{=URL('static','template/css/theme.css')}}" rel="stylesheet" media="all">
+
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="{{=URL(c='default',f='index')}}">
+                            <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa1862"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa1864"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa1866"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa1868"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='chart')}}">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='table')}}">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='form')}}">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='map')}}">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa1874"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa1876"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa1878"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa1880"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa1882"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa1884"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa1886"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa1888"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa1890"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa1892"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa1894"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa1896"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa1898"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa1900"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{=URL('static','template/images/icon/logo.png')}}" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='index')}}">{{=DICT["aa1903"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index2')}}">{{=DICT["aa1905"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index3')}}">{{=DICT["aa1907"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='index4')}}">{{=DICT["aa1909"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='chart')}}">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li class="active">
+                            <a href="{{=URL(c='default',f='table')}}">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='form')}}">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="{{=URL(c='default',f='map')}}">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa1915"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='register')}}">{{=DICT["aa1917"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='forget_pass')}}">{{=DICT["aa1919"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{=URL(c='default',f='button')}}">{{=DICT["aa1921"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='badge')}}">{{=DICT["aa1923"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='tab')}}">{{=DICT["aa1925"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='card')}}">{{=DICT["aa1927"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa1929"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='progress_bar')}}">{{=DICT["aa1931"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='modal')}}">{{=DICT["aa1933"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='switch')}}">{{=DICT["aa1935"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='grid')}}">{{=DICT["aa1937"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='fontawesome')}}">{{=DICT["aa1939"]}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{=URL(c='default',f='typo')}}">{{=DICT["aa1941"]}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            
+{{block mytableform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=tableform0.custom.begin}}
+{{=tableform0.custom.widget.f0}}
+{{=tableform0.custom.submit}}
+{{=tableform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <span class="quantity">{{=DICT["sx1943"]}}</span>
+                                        <div class="mess-dropdown js-dropdown">
+                                            <div class="mess__title">
+                                                <p>{{=DICT["pa1944"]}}</p>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>{{=DICT["hh1946"]}}</h6>
+                                                    <p>{{=DICT["pa1947"]}}</p>
+                                                    <span class="time">{{=DICT["sx1948"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>{{=DICT["hh1950"]}}</h6>
+                                                    <p>{{=DICT["pa1951"]}}</p>
+                                                    <span class="time">{{=DICT["sx1952"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__footer">
+                                                <a href="#">{{=DICT["aa1953"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="quantity">{{=DICT["sx1954"]}}</span>
+                                        <div class="email-dropdown js-dropdown">
+                                            <div class="email__title">
+                                                <p>{{=DICT["pa1955"]}}</p>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1957"]}}</p>
+                                                    <span>{{=DICT["sp1958"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1960"]}}</p>
+                                                    <span>{{=DICT["sp1961"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1963"]}}</p>
+                                                    <span>{{=DICT["sp1964"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__footer">
+                                                <a href="#">{{=DICT["aa1965"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">{{=DICT["sx1966"]}}</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>{{=DICT["pa1967"]}}</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1968"]}}</p>
+                                                    <span class="date">{{=DICT["sx1969"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1970"]}}</p>
+                                                    <span class="date">{{=DICT["sx1971"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>{{=DICT["pa1972"]}}</p>
+                                                    <span class="date">{{=DICT["sx1973"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">{{=DICT["aa1974"]}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">{{=DICT["aa1976"]}}</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">{{=DICT["aa1978"]}}</a>
+                                                    </h5>
+                                                    <span class="email">{{=DICT["sx1979"]}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="table-responsive table--no-card m-b-30">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        
+<thead>
+<tr>
+    <th>date</th>
+    <th>order ID</th>
+    <th>name</th>
+    <th>price</th>
+    <th>quantity</th>
+    <th>total</th>
+</tr>
+</thead>
+
+<tbody>
+{{query137= db.tabletable0.id > 0}}
+{{results137= db(query137).select()}}
+{{if not results137 is None: }}
+{{for row in results137:}}
+<tr>
+    <td>{{=row.f0}}</td>
+    <td>{{=row.f1}}</td>
+    <td>{{=row.f2}}</td>
+    <td>{{=row.f3}}</td>
+    <td>{{=row.f4}}</td>
+    <td>{{=row.f5}}</td>
+</tr>
+{{pass}}
+{{pass}}
+</tbody>
+
+                                    </table>
+<div  id=divID138 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>tabletable0</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID138').length > 0) {
+    $('#divID138').remove();
+  } 
+}, 15000)
+ </script>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>United States</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Australia</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>United Kingdom</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Turkey</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Germany</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>France</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Australia</td>
+                                                        <td class="text-right">$5,366.96</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Italy</td>
+                                                        <td class="text-right"td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- USER DATA-->
+                                <div class="user-data m-b-30">
+                                    <h3 class="title-3 m-b-30">
+                                        <i class="zmdi zmdi-account-calendar"></i>user data</h3>
+                                    <div class="filters m-b-45">
+                                        <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">All Properties</option>
+                                                <option value="">Products</option>
+                                                <option value="">Services</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+                                            <select class="js-select2 au-select-dark" name="time">
+                                                <option selected="selected">All Time</option>
+                                                <option value="">By Month</option>
+                                                <option value="">By Day</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive table-data">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>name</td>
+                                                    <td>role</td>
+                                                    <td>type</td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data__info">
+                                                            <h6>{{=DICT["hh2006"]}}</h6>
+                                                            <span>
+                                                                <a href="#">{{=DICT["aa2007"]}}</a>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="role admin">{{=DICT["sx2008"]}}</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rs-select2--trans rs-select2--sm">
+                                                            <select class="js-select2" name="property">
+                                                                <option selected="selected">Full Control</option>
+                                                                <option value="">Post</option>
+                                                                <option value="">Watch</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="more">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox" checked="checked">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data__info">
+                                                            <h6>{{=DICT["hh2009"]}}</h6>
+                                                            <span>
+                                                                <a href="#">{{=DICT["aa2010"]}}</a>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="role user">{{=DICT["sx2011"]}}</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rs-select2--trans rs-select2--sm">
+                                                            <select class="js-select2" name="property">
+                                                                <option value="">Full Control</option>
+                                                                <option value="" selected="selected">Post</option>
+                                                                <option value="">Watch</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="more">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data__info">
+                                                            <h6>{{=DICT["hh2012"]}}</h6>
+                                                            <span>
+                                                                <a href="#">{{=DICT["aa2013"]}}</a>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="role user">{{=DICT["sx2014"]}}</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rs-select2--trans rs-select2--sm">
+                                                            <select class="js-select2" name="property">
+                                                                <option value="">Full Control</option>
+                                                                <option value="" selected="selected">Post</option>
+                                                                <option value="">Watch</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="more">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data__info">
+                                                            <h6>{{=DICT["hh2015"]}}</h6>
+                                                            <span>
+                                                                <a href="#">{{=DICT["aa2016"]}}</a>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="role member">{{=DICT["sx2017"]}}</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rs-select2--trans rs-select2--sm">
+                                                            <select class="js-select2" name="property">
+                                                                <option selected="selected">Full Control</option>
+                                                                <option value="">Post</option>
+                                                                <option value="">Watch</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="more">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="user-data__footer">
+                                        <button class="au-btn au-btn-load">{{=DICT["bu2018"]}}</button>
+                                    </div>
+                                </div>
+                                <!-- END USER DATA-->
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- TOP CAMPAIGN-->
+                                <div class="top-campaign">
+                                    <h3 class="title-3 m-b-30">{{=DICT["hc2019"]}}</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                                            <tbody>
+                                                <tr>
+                                                    <td>1. Australia</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>2. United Kingdom</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>3. Turkey</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>4. Germany</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>5. France</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>3. Turkey</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>4. Germany</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>5. France</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>3. Turkey</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>4. Germany</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>5. France</td>
+                                                    <tdtd>
+                                                </tr>
+                                                <tr>
+                                                    <td>4. Germany</td>
+                                                    <tdtd>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--  END TOP CAMPAIGN-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">{{=DICT["hc2032"]}}</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">All Properties</option>
+                                                <option value="">Option 1</option>
+                                                <option value="">Option 2</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--sm">
+                                            <select class="js-select2" name="time">
+                                                <option selected="selected">Today</option>
+                                                <option value="">3 Days</option>
+                                                <option value="">1 Week</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <button class="au-btn-filter">
+                                            <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                    </div>
+                                    <div class="table-data__tool-right">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                            <i class="zmdi zmdi-plus"></i>add item</button>
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                            <select class="js-select2" name="type">
+                                                <option selected="selected">Export</option>
+                                                <option value="">Option 1</option>
+                                                <option value="">Option 2</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </th>
+                                                <th>name</th>
+                                                <th>email</th>
+                                                <th>description</th>
+                                                <th>date</th>
+                                                <th>status</th>
+                                                <th>price</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tr-shadow">
+                                                <td>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td>Lori Lynch</td>
+                                                <td>
+                                                    <span class="block-email">{{=DICT["sx2033"]}}</span>
+                                                </td>
+                                                <td class="desc">Samsung S8 Black</td>
+                                                <t 02:12</td>
+                                                <td>
+                                                    <span class="status--process">{{=DICT["sx2035"]}}</span>
+                                                </td>
+                                                <td>$679.00</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td>Lori Lynch</td>
+                                                <td>
+                                                    <span class="block-email">{{=DICT["sx2036"]}}</span>
+                                                </td>
+                                                <td class="desc">iPhone X 64Gb Grey</td>
+                                                <t 05:57</td>
+                                                <td>
+                                                    <span class="status--process">{{=DICT["sx2038"]}}</span>
+                                                </td>
+                                                <td>$999.00</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td>Lori Lynch</td>
+                                                <td>
+                                                    <span class="block-email">{{=DICT["sx2039"]}}</span>
+                                                </td>
+                                                <td class="desc">iPhone X 256Gb Black</td>
+                                                <t 19:03</td>
+                                                <td>
+                                                    <span class="status--denied">{{=DICT["sx2041"]}}</span>
+                                                </td>
+                                                <tdtd>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td>Lori Lynch</td>
+                                                <td>
+                                                    <span class="block-email">{{=DICT["sx2043"]}}</span>
+                                                </td>
+                                                <td class="desc">Camera C430W 4k</td>
+                                                <t 19:10</td>
+                                                <td>
+                                                    <span class="status--process">{{=DICT["sx2045"]}}</span>
+                                                </td>
+                                                <td>$699.00</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE-->
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                            <tr>
+                                                <th>date</th>
+                                                <th>type</th>
+                                                <th>description</th>
+                                                <th>status</th>
+                                                <th>price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <t 05:57</td>
+                                                <td>Mobile</td>
+                                                <td>iPhone X 64Gb Grey</td>
+                                                <td class="process">Processed</td>
+                                                <td>$999.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 01:22</td>
+                                                <td>Mobile</td>
+                                                <td>Samsung S8 Black</td>
+                                                <td class="process">Processed</td>
+                                                <td>$756.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 02:12</td>
+                                                <td>Game</td>
+                                                <td>Game Console Controller</td>
+                                                <td class="denied">Denied</td>
+                                                <td>$22.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 23:06</td>
+                                                <td>Mobile</td>
+                                                <td>iPhone X 256Gb Black</td>
+                                                <td class="denied">Denied</td>
+                                                <tdtd>
+                                            </tr>
+                                            <tr>
+                                                <t 19:03</td>
+                                                <td>Accessories</td>
+                                                <td>USB 3.0 Cable</td>
+                                                <td class="process">Processed</td>
+                                                <td>$10.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 05:57</td>
+                                                <td>Accesories</td>
+                                                <td>Smartwatch 4.0 LTE Wifi</td>
+                                                <td class="denied">Denied</td>
+                                                <td>$199.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 19:10</td>
+                                                <td>Camera</td>
+                                                <td>Camera C430W 4k</td>
+                                                <td class="process">Processed</td>
+                                                <td>$699.00</td>
+                                            </tr>
+                                            <tr>
+                                                <t 00:43</td>
+                                                <td>Computer</td>
+                                                <td>Macbook Pro Retina 2017</td>
+                                                <td class="process">Processed</td>
+                                                <td>$10.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>{{=DICT["pf2056"]}}<a href="https://colorlib.com">{{=DICT["aa2057"]}}</a>{{=DICT["pc2055"]}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{=URL('static','template/vendor/jquery-3.2.1.min.js')}}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{=URL('static','template/vendor/slick/slick.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/wow/wow.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/animsition/animsition.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/counter-up/jquery.counterup.min.js')}}">
+    </script>
+    <script src="{{=URL('static','template/vendor/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
+    <script src="{{=URL('static','template/vendor/select2/select2.min.js')}}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{{=URL('static','template/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

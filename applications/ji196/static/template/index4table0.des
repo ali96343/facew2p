@@ -1,0 +1,10 @@
+- - date
+  - string
+- - type
+  - string
+- - description
+  - string
+- - status
+  - string
+- - price
+  - string

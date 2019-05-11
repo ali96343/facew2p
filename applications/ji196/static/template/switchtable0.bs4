@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 switchtable0', f1= '0w2p1 Example', f2= '0w2p2 CSS Class', )
+      db.DBTBL.insert( f0= 'Large', f1= 'unk_0', f2= 'Add following code size= lg', )
+      db.DBTBL.insert( f0= 'Default', f1= 'unk_1', f2= 'unk_2', )
+      db.DBTBL.insert( f0= 'Small', f1= 'unk_3', f2= 'Add following code size= sm', )
+      db.DBTBL.insert( f0= 'Extra small', f1= 'unk_4', f2= 'Add following code size= xs', )

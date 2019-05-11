@@ -1,0 +1,32 @@
+{{extend 'w2playout.html'}}
+<h2>{{=T('site images' )}}</h2>
+<p>{{=T('select, pls, image for replace')}}<p>
+<style>
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  }
+.grid img {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
+}
+</style>
+<main class='grid'>
+{{=A(IMG(_src=URL('static/template', 'images/icon/logo.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/logo.png', imgctrl='grid')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-06.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-06.jpg', imgctrl='grid')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-04.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-04.jpg', imgctrl='grid')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-05.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-05.jpg', imgctrl='grid')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-01.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-01.jpg', imgctrl='grid')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/logo-blue.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/logo-blue.png', imgctrl='index4')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-02.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-02.jpg', imgctrl='index4')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/logo-white.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/logo-white.png', imgctrl='index2')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-big-01.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-big-01.jpg', imgctrl='index2')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/avatar-03.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/avatar-03.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/bg-title-01.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/bg-title-01.jpg', imgctrl='card')))}}
+{{=A(IMG(_src=URL('static/template', 'images/bg-title-02.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/bg-title-02.jpg', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/logo-mini.png'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/logo-mini.png', imgctrl='index')))}}
+{{=A(IMG(_src=URL('static/template', 'images/icon/Untitled-1.jpg'), ), _title= 'change the image', _href=URL('myima', 'myupload', vars= dict(imgnm='images/icon/Untitled-1.jpg', imgctrl='index')))}}
+</main>
