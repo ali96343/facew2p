@@ -155,17 +155,17 @@ def hard_clear(ob, ):
 
 #--------------------------------------------------------------------------------------------
 
-fld_double=    "   Field( 'FLD', 'double', label= 'LABEL', default= 0.0 ), "
+fld_double=     "   Field( 'FLD', 'double',  label= 'LABEL', default= 0.0 ), "
 fld_integer=    "   Field( 'FLD', 'integer', label= 'LABEL', default= 0 ), "
-fld_date=    "   Field( 'FLD', 'date', label= 'LABEL', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), "
-fld_datetime=    "   Field( 'FLD', 'datetime', label= 'LABEL', default = request.now, requires = IS_DATETIME(format=T('%d.%m.%Y %H:%M:%S') )), "
-fld_str=    "   Field( 'FLD', 'string', label= 'LABEL', default= 'w2p FLD' ), "
-fld_txt=    "   Field( 'FLD', 'text', label= 'LABEL' , default= 'w2p FLD'), "
-fld_bool=   "   Field( 'FLD', 'boolean', label= 'LABEL' , default= True), "
-fld_select= "   Field( 'FLD', requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),"
-fld_radio=  "   Field( 'FLD', requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),"
+fld_date=       "   Field( 'FLD', 'date',    label= 'LABEL', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), "
+fld_datetime=   "   Field( 'FLD', 'datetime',label= 'LABEL', default = request.now, requires = IS_DATETIME(format=T('%d.%m.%Y %H:%M:%S') )), "
+fld_str=        "   Field( 'FLD', 'string',  label= 'LABEL', default= 'w2p FLD' ), "
+fld_txt=        "   Field( 'FLD', 'text',    label= 'LABEL' , default= 'w2p FLD'), "
+fld_bool=       "   Field( 'FLD', 'boolean', label= 'LABEL' , default= True), "
+fld_select=     "   Field( 'FLD', requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),"
+fld_radio=      "   Field( 'FLD', requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),"
 tbl_med_type= { 'input':fld_str, 'string': fld_str,'textarea': fld_txt, 'radio': fld_radio, 'select': fld_select, 'checkbox': fld_bool, 'button': None ,
-                'integer': fld_integer, 'double': fld_double, 'datetime': fld_datetime , 'date': fld_date, 'boolean': fld_bool }
+                'integer': fld_integer, 'double': fld_double, 'datetime': fld_datetime , 'date': fld_date, 'boolean': fld_bool, }
 
 #---------------------------------------------------------------------------------------------
 class FileOper:
@@ -188,8 +188,11 @@ class FileOper:
 
         @staticmethod
         def put_get_yaml( fnm, data_fld ,  ):
+             newfnm= fnm.split('.')[0] + '.new' 
              FileOper.put2yaml( fnm, data_fld , )
-             return FileOper.get4yaml ( fnm.split('.')[0] + '.new' )  
+             if not os.path.isfile(newfnm):
+                return data_fld
+             return FileOper.get4yaml ( newfnm )  
 
 
         @staticmethod
@@ -509,7 +512,7 @@ class FileOper:
         @staticmethod
         def list2file(str_list, fnm, mode='w'):
             if not str_list:
-               return
+               return None
             with open(fnm, mode) as f:
                    f.write("\n".join(str_list))
             return fnm
@@ -1165,7 +1168,8 @@ class CheckEnv (StrDb):
         if Z.mydir != Z.wdir:
             for e in help_text:
                 print (e) 
-            sys.exit("pls, run programm from {} dir".format(Z.wdir))
+            prRed( "pls, run programm from %s dir web2py app" % Z.wdir)
+            sys.exit("stop: bad env!")
         
         for e in Z.w2p_files:
              if not os.path.exists(e):
@@ -1785,6 +1789,7 @@ class FindTables_bs4 (StrDb , ):
                #fld_type_dict= {'input': 'string', 'select': 'string', 'textarea': 'text', 'button': 'unktype', 
                #                 'radio':'string','checkbox':'boolean', 'a': 'unka',}
                # http://www.web2pyslices.com/slice/show/1370/modify-form-elements-and-attributes
+               #  form.custom.label[fieldname]
 
 
                ctrl_if_form = [
@@ -2322,7 +2327,6 @@ class FindTables_bs4 (StrDb , ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView( CheckEnv ):   
-#class HtmlView(StrDb):   
     def __init__(Z,  plus_labels= True, ):
         url_beg="{{=URL('static','%s/" % ( Z.wdir )
         h0_beg= "{{=URL(c='default',f='"
@@ -2336,6 +2340,9 @@ class HtmlView( CheckEnv ):
                      { r'(<title[^<]+)(.*?)(</title>)(.)': '<title>facew2p</title>\n'  } , ]
 
         Z.repl_ll= FileOper.put_get_yaml( 'facew2p' + '.yaml'  , Z.repl_ll ,)
+
+        Z.continue_all = [ 'sparkline-bar-stat', '000</span>', '6</span' ] 
+        Z.continue_all= FileOper.put_get_yaml( 'facew2pconti' + '.yaml'  , Z.continue_all ,)
 
 
         def r_hx(Z, ma, p2, num_str):
@@ -2564,8 +2571,8 @@ class HtmlView( CheckEnv ):
            [ 'place',  re.compile(r'(placeholder\s?=\s?\")([^"]+?)(")()'),   r'\g<1>{{{{={}["pb{}"]}}}}\g<3>'  , r_place, False ],
            [ 'button',     re.compile("(<button[^>]+>)(.*?)(</button>)()" ),     r'\g<1>{{{{={}["bu{}"]}}}}\g<3>' , r_a0 , True],
            [ '<li..>..<',     re.compile("(<li[^>].*?>)(.*?)(</li>)()" ),            r'\g<1>{{{{={}["lb{}"]}}}}\g<3>' , r_h6 , True],
-           [ '<p..>..<',     re.compile("(<p[^>].*?>)(.*?)(</p>)()" ),            r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
-           [ '<span..>..<',     re.compile("(<span[^>].*?>)(.*?)(</span>)()" ),  r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
+           [ '<p..>..<',     re.compile("(<p[^>].*?>)(.*?)(</p>)()" ),            r'\g<1>{{{{={}["hh{}"]}}}}\g<3>' , r_h6 , True],
+           [ '<span..>..<',     re.compile("(<span[^>].*?>)(.*?)(</span>)()" ),  r'\g<1>{{{{={}["hg{}"]}}}}\g<3>' , r_h6 , True],
            [ 'h6',     re.compile("(<h6[^>]+>)(.*?)(</h6>)()" ) ,              r'\g<1>{{{{={}["hf{}"]}}}}\g<3>' , r_h6 , True],
            [ 'h5',     re.compile("(<h5[^>]+>)(.*?)(</h5>)()" ) ,              r'\g<1>{{{{={}["he{}"]}}}}\g<3>', r_h6 , True],
            [ 'h4',     re.compile("(<h4[^>]+>)(.*?)(</h4>)()" ) ,              r'\g<1>{{{{={}["hd{}"]}}}}\g<3>' , r_h6 , True],
@@ -2576,7 +2583,7 @@ class HtmlView( CheckEnv ):
            [ '<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()" ) ,                r'\g<1>{{{{={}["aa{}"]}}}}\g<3>' , r_a0 , True],
            [ 'div',     re.compile("(<div[^>]+>)(.*?)(</div>)()" ) ,                r'\g<1>{{{{={}["di{}"]}}}}\g<3>' , r_a0 , True],
            [ 'mail',   re.compile( r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False ],
-           [ 'bad_tel',  re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False ],
+           [ 'maybe_tel',  re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False ],
            #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
           ]
 
@@ -2624,13 +2631,16 @@ class HtmlView( CheckEnv ):
                           grp0= match.group(2)
                           grp000= match.group(0)
 
+                                   #( '&lt'    in grp0 ), ('&gt'  in grp0 ),   ('&quot'   in grp0 ),  ('&amp'  in grp0 ),  ('&nbsp'   in grp0 ),
                           if any ([( "#"      in grp0 ), ( "{{"         in grp0), ( '//'     in grp0), 
+                                   ('Colorlib' in grp0),  ('Bootstrapious' in grp0),
                                    ( '<'      in grp0 ), ( '>'          in grp0), ( 'tel'    in grp0), 
-                                   ( "mailto" in grp0 ), ( "javascript" in grp0), ( len(grp0) ==0   ), ] ) :
+                                   ( "mailto" in grp0 ), ( "javascript" in grp0), ( len(grp0) <=1   ), ] ) :
                                 continue
-                          #print (grp000)
-                          if( 'icon' in grp000 or 'fa' in grp000 ) and ( '=' in grp000 and 'class' in grp000) :
-                                 continue
+
+                          if len( [x  for x in Z.continue_all if x in grp000  ] ):
+                                continue
+
                     Z.pat_cnt[pat_name] += 1
 
                     if dbg: 
@@ -3143,8 +3153,9 @@ class W2pApp(StrDb):
 
         
 class MyPassword(StrDb):
-      def __init__(Z, secure_pass= False):
+      def __init__(Z, secure_pass= False, app_name = 'xapp'):
             Z.secure_pass= secure_pass
+            Z.app_name= app_name
 
 
       def randomStringDigits(Z, stringLength=6):
@@ -3173,7 +3184,7 @@ class MyPassword(StrDb):
            for f in ['../../controllers/myadd.py','../../controllers/myima.py',]:
                if os.path.isfile(f):
                   FileOper.replace_in_file(f, f, '#@auth.requires_login()', '@auth.requires_login()')
-           prGreen("password for app/myadd, app/myima is set ")
+           prGreen("password for %s/myadd, %s/myima is set " % ( Z.app_name, Z.app_name) )
            pprint.pprint (pass_pat, )
         else:
            prRed("password for app/myadd, app/myima  is not set ;(")
@@ -3267,12 +3278,12 @@ if __name__ == "__main__":
         prYellow("images: %s" % len(a.db_src_myimg))
 
         FindTables_bs4( plus_bs4 = plus_bs4 ).run()
-        MyTest(run_test= True)
-        MyPassword(secure_pass= False  ).run(set_passwd= True, cre_lock = False)
+        #MyTest(run_test= False)
+        MyPassword(secure_pass= False, app_name = a.app_nm  ).run(set_passwd= True, cre_lock = False)
         print ("uniq_key_4_unk: %s" % str( next( int_uniq_key4unk ) ) )
 
 
-        prGreen ( "= the web2py app %s was generated by %s =" % (a.app_nm, os.path.basename(__file__)) )
+        prGreen ( "= the web2py app     %s     was generated by %s =" % (a.app_nm, os.path.basename(__file__)) )
         if plus_labels:
              print ( "disable num-labels: ",  os.path.basename(__file__)," x  (for the best view) " )
         if plus_bs4:
