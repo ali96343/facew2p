@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -54,45 +54,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc293"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa295"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa297"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa299"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa301"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa303"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa305"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa307"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa309"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa311"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa313"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa315"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa317"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa319"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa321"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa323"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc324"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa326"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa328"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -101,26 +101,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa331"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa333"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa335"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa337"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa339"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc340"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa342"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa344"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa346"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +149,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=ui_badgesform0.custom.begin}}
+<div><label for='id416'>txt417</label></div>
 {{=ui_badgesform0.custom.widget.f0}}
 {{=ui_badgesform0.custom.submit}}
 {{=ui_badgesform0.custom.end}}
@@ -174,7 +175,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc348"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -198,37 +199,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc349"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx351"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx352"]}}</span>
+                                        <p>{{=DICT["pa353"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx355"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx356"]}}</span>
+                                        <p>{{=DICT["pa357"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx359"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx360"]}}</span>
+                                        <p>{{=DICT["pa361"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx363"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx364"]}}</span>
+                                        <p>{{=DICT["pa365"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -245,7 +246,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx367"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -283,7 +284,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh368"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -291,9 +292,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">UI Elements</a></li>
-                            <li class="active">Badges</li>
+                            <li><a href="#">{{=DICT["aa369"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa370"]}}</a></li>
+                            <li class="active">{{=DICT["lb371"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -309,7 +310,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Badges</strong>
+                                    <strong>{{=DICT["sp372"]}}</strong>
                                     <small>Use <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:
                                     </small>
                                 </div>
@@ -317,7 +318,7 @@
 
                                     <a href="#">News <span class="badge badge-primary">5</span></a>
                                     <br>
-                                    <a href="#">Comments <span class="badge badge-warning">10</span></a>
+                                    <a href="#">Comments <span class="badge badge-warning">{{=DICT["sx373"]}}</span></a>
                                     <br>
                                     <a href="#">Updates <span class="badge badge-success">2</span></a>
                                 </div>
@@ -326,18 +327,18 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Labels</strong>
+                                    <strong>{{=DICT["sp374"]}}</strong>
                                 </div>
                                 <div class="card-body">
                                     <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
-                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
+                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code>{{=DICT["pc375"]}}</p>
 
-                                    <h1>Example heading <span class="badge badge-secondary">New</span></h1>
-                                    <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-                                    <h3>Example heading <span class="badge badge-secondary">New</span></h3>
-                                    <h4>Example heading <span class="badge badge-secondary">New</span></h4>
-                                    <h5>Example heading <span class="badge badge-secondary">New</span></h5>
-                                    <h6>Example heading <span class="badge badge-secondary">New</span></h6>
+                                    <h1>{{=DICT["hh377"]}}<span class="badge badge-secondary">{{=DICT["sx376"]}}</span></h1>
+                                    <h2>{{=DICT["hh379"]}}<span class="badge badge-secondary">{{=DICT["sx378"]}}</span></h2>
+                                    <h3>{{=DICT["hh381"]}}<span class="badge badge-secondary">{{=DICT["sx380"]}}</span></h3>
+                                    <h4>{{=DICT["hh383"]}}<span class="badge badge-secondary">{{=DICT["sx382"]}}</span></h4>
+                                    <h5>{{=DICT["hh385"]}}<span class="badge badge-secondary">{{=DICT["sx384"]}}</span></h5>
+                                    <h6>{{=DICT["hh387"]}}<span class="badge badge-secondary">{{=DICT["sx386"]}}</span></h6>
                                 </div>
                             </div>
 
@@ -347,10 +348,10 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Badges  in Buttons</strong>
+                                    <strong>{{=DICT["sp388"]}}</strong>
                                 </div>
                                 <div class="card-body">
-                                    <p class="text-muted m-b-15">Use the <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:</p>
+                                    <p class="text-muted m-b-15">Use the <code>.badge</code> class within <code>&lt;span&gt;</code>{{=DICT["pc389"]}}</p>
 
                                     <button type="button" class="btn btn-primary m-l-10 m-b-10">Primary <span class="badge badge-light">7</span></button>
                                     <button type="button" class="btn btn-success m-l-10 m-b-10">Success <span class="badge badge-light">7</span></button>
@@ -362,20 +363,20 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Labels</strong>
+                                    <strong>{{=DICT["sp390"]}}</strong>
                                 </div>
                                 <div class="card-body">
                                     <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
-                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
+                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code>{{=DICT["pc391"]}}</p>
 
-                                    <span class="badge badge-primary">Primary</span>
-                                    <span class="badge badge-secondary">Secondary</span>
-                                    <span class="badge badge-success">Success</span>
-                                    <span class="badge badge-danger">Danger</span>
-                                    <span class="badge badge-warning">Warning</span>
-                                    <span class="badge badge-info">Info</span>
-                                    <span class="badge badge-light">Light</span>
-                                    <span class="badge badge-dark">Dark</span>
+                                    <span class="badge badge-primary">{{=DICT["sx392"]}}</span>
+                                    <span class="badge badge-secondary">{{=DICT["sx393"]}}</span>
+                                    <span class="badge badge-success">{{=DICT["sx394"]}}</span>
+                                    <span class="badge badge-danger">{{=DICT["sx395"]}}</span>
+                                    <span class="badge badge-warning">{{=DICT["sx396"]}}</span>
+                                    <span class="badge badge-info">{{=DICT["sx397"]}}</span>
+                                    <span class="badge badge-light">{{=DICT["sx398"]}}</span>
+                                    <span class="badge badge-dark">{{=DICT["sx399"]}}</span>
 
 
                                 </div>

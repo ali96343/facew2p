@@ -2,15 +2,16 @@
 <html lang="zxx">
 <head>
 	<title>facew2p</title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content="Game Warrior Template">
 	<meta name="keywords" content="warrior, game, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="{{=URL('static','template/img/favicon.ico')}}" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboti,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}"/>
@@ -44,7 +45,7 @@
 				<img src="{{=URL('static','template/img/logo.png')}}" alt="">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+				<a href="#">{{=DICT["aa374"]}}</a>  /  <a href="#">{{=DICT["aa374"]}}</a>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
@@ -53,11 +54,11 @@
 			<!-- site menu -->
 			<nav class="main-menu">
 				<ul>
-					<li><a href="{{=URL(c='default',f='index')}}">Home</a></li>
-					<li><a href="{{=URL(c='default',f='review')}}">Games</a></li>
-					<li><a href="{{=URL(c='default',f='categories')}}">Blog</a></li>
-					<li><a href="{{=URL(c='default',f='community')}}">Forums</a></li>
-					<li><a href="{{=URL(c='default',f='contact')}}">Contact</a></li>
+					<li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa376"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='review')}}">{{=DICT["aa378"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='categories')}}">{{=DICT["aa380"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='community')}}">{{=DICT["aa382"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa384"]}}</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -67,12 +68,12 @@
 
 	<!-- Latest news section -->
 	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
+		<div class="ln-title">{{=DICT["di385"]}}</div>
 		<div class="news-ticker">
 			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="new">{{=DICT["sx386"]}}</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="strategy">{{=DICT["sx387"]}}</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="racing">{{=DICT["sx388"]}}</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
 			</div>
 		</div>
 	</div>
@@ -85,8 +86,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Video Gallery</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</p>
+						<h2>{{=DICT["hh390"]}}</h2>
+						<p>{{=DICT["pa391"]}}</p>
 					</div>
 				</div>
 			</div>
@@ -104,15 +105,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/1.jpg')}}">
-									<div class="cata new">racing</div>
+									<div class="cata new">{{=DICT["di393"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Suspendisse ut justo tem por, rutrum</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh394"]}}</h5>
+									<p>{{=DICT["pa395"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa396"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -120,15 +121,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/2.jpg')}}">
-									<div class="cata racing">racing</div>
+									<div class="cata racing">{{=DICT["di400"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh401"]}}</h5>
+									<p>{{=DICT["pa402"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa403"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -136,15 +137,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/3.jpg')}}">
-									<div class="cata adventure">Adventure</div>
+									<div class="cata adventure">{{=DICT["di407"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh408"]}}</h5>
+									<p>{{=DICT["pa409"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa410"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -152,15 +153,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/4.jpg')}}">
-									<div class="cata new">racing</div>
+									<div class="cata new">{{=DICT["di414"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Suspendisse ut justo tem por, rutrum</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh415"]}}</h5>
+									<p>{{=DICT["pa416"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa417"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -168,15 +169,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/5.jpg')}}">
-									<div class="cata racing">racing</div>
+									<div class="cata racing">{{=DICT["di421"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh422"]}}</h5>
+									<p>{{=DICT["pa423"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa424"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -184,15 +185,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/6.jpg')}}">
-									<div class="cata adventure">Adventure</div>
+									<div class="cata adventure">{{=DICT["di428"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh429"]}}</h5>
+									<p>{{=DICT["pa430"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa431"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -200,15 +201,15 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/7.jpg')}}">
-									<div class="cata new">racing</div>
+									<div class="cata new">{{=DICT["di435"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Suspendisse ut justo tem por, rutrum</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh436"]}}</h5>
+									<p>{{=DICT["pa437"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa438"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
@@ -216,24 +217,24 @@
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/8.jpg')}}">
-									<div class="cata racing">racing</div>
+									<div class="cata racing">{{=DICT["di442"]}}</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-									<a href="#" class="comment">3 Comments</a>
+									<h5>{{=DICT["hh443"]}}</h5>
+									<p>{{=DICT["pa444"]}}</p>
+									<a href="#" class="comment">{{=DICT["aa445"]}}</a>
 									<div class="rgi-extra">
-										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+										<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+										<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 									</div>
 								</div>
 							</div>	
 						</div>
 					</div>
 					<div class="site-pagination">
-						<span class="active">01.</span>
-						<a href="#">02.</a>
-						<a href="#">03.</a>
+						<span class="active">{{=DICT["sx448"]}}</span>
+						<a href="#">{{=DICT["aa449"]}}</a>
+						<a href="#">{{=DICT["aa450"]}}</a>
 					</div>
 				</div>
 				<!-- sidebar -->
@@ -245,6 +246,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=categoriesform0.custom.begin}}
+<div><label for='id20'>txt21</label></div>
 {{=categoriesform0.custom.widget.f0}}
 {{=categoriesform0.custom.submit}}
 {{=categoriesform0.custom.end}}
@@ -265,57 +267,57 @@
 					</div>
 					<!-- widget -->
 					<div class="widget-item">
-						<h4 class="widget-title">Latest Posts</h4>
+						<h4 class="widget-title">{{=DICT["hd452"]}}</h4>
 						<div class="latest-blog">
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/1.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di454"]}}</div>
+									<p>{{=DICT["pa455"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa456"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/2.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di458"]}}</div>
+									<p>{{=DICT["pa459"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa460"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/3.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di462"]}}</div>
+									<p>{{=DICT["pa463"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa464"]}}</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- widget -->
 					<div class="widget-item">
-						<h4 class="widget-title">Top Comments</h4>
+						<h4 class="widget-title">{{=DICT["hd465"]}}</h4>
 						<div class="top-comment">
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/1.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem consec ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa469"]}}</a> <span>{{=DICT["sp467"]}}</span>{{=DICT["pc468"]}}</p>
+									<div class="tc-date">{{=DICT["di470"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/2.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">Michael James</a> <span>on</span>Cras sit amet sapien aliquam</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa474"]}}</a> <span>{{=DICT["sp472"]}}</span>{{=DICT["pc473"]}}</p>
+									<div class="tc-date">{{=DICT["di475"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/3.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">Justin More</a> <span>on</span> Lorem ipsum dolor consecsit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa479"]}}</a> <span>{{=DICT["sp477"]}}</span>{{=DICT["pc478"]}}</p>
+									<div class="tc-date">{{=DICT["di480"]}}</div>
 								</div>
 							</div>
 						</div>
@@ -323,11 +325,11 @@
 					<!-- widget -->
 					<div class="widget-item">
 						<div class="feature-item set-bg" data-setbg="{{=URL('static','template/img/features/1.jpg')}}">
-							<span class="cata new">new</span>
+							<span class="cata new">{{=DICT["sx482"]}}</span>
 							<div class="fi-content text-white">
-								<h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-								<a href="#" class="fi-comment">3 Comments</a>
+								<h5><a href="#">{{=DICT["aa483"]}}</a></h5>
+								<p>{{=DICT["pa484"]}}</p>
+								<a href="#" class="fi-comment">{{=DICT["aa485"]}}</a>
 							</div>
 						</div>
 					</div>
@@ -335,11 +337,11 @@
 					<div class="widget-item">
 						<div class="review-item">
 							<div class="review-cover set-bg" data-setbg="{{=URL('static','template/img/review/1.jpg')}}">
-								<div class="score yellow">9.3</div>
+								<div class="score yellow">{{=DICT["di487"]}}</div>
 							</div>
 							<div class="review-text">
-								<h5>Assasin’’s Creed</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+								<h5>{{=DICT["hh488"]}}</h5>
+								<p>{{=DICT["pa489"]}}</p>
 							</div>
 						</div>
 					</div>
@@ -360,35 +362,35 @@
 				<div class="col-lg-4">
 					<div class="footer-logo text-white">
 						<img src="{{=URL('static','template/img/footer-logo.png')}}" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+						<p>{{=DICT["pa492"]}}</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
+						<h4 class="fw-title">{{=DICT["hd493"]}}</h4>
 						<div class="latest-blog">
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/1.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di495"]}}</div>
+									<p>{{=DICT["pa496"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa497"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/2.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di499"]}}</div>
+									<p>{{=DICT["pa500"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa501"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/3.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di503"]}}</div>
+									<p>{{=DICT["pa504"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa505"]}}</a>
 								</div>
 							</div>
 						</div>
@@ -396,34 +398,34 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
+						<h4 class="fw-title">{{=DICT["hd506"]}}</h4>
 						<div class="top-comment">
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/1.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa510"]}}</a> <span>{{=DICT["sp508"]}}</span>{{=DICT["pc509"]}}</p>
+									<div class="tc-date">{{=DICT["di511"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/2.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa515"]}}</a> <span>{{=DICT["sp513"]}}</span>{{=DICT["pc514"]}}</p>
+									<div class="tc-date">{{=DICT["di516"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/3.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa520"]}}</a> <span>{{=DICT["sp518"]}}</span>{{=DICT["pc519"]}}</p>
+									<div class="tc-date">{{=DICT["di521"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/4.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa525"]}}</a> <span>{{=DICT["sp523"]}}</span>{{=DICT["pc524"]}}</p>
+									<div class="tc-date">{{=DICT["di526"]}}</div>
 								</div>
 							</div>
 						</div>
@@ -439,11 +441,11 @@
 	<footer class="footer-section">
 		<div class="container">
 			<ul class="footer-menu">
-				<li><a href="{{=URL(c='default',f='index')}}">Home</a></li>
-				<li><a href="{{=URL(c='default',f='review')}}">Games</a></li>
-				<li><a href="{{=URL(c='default',f='categories')}}">Blog</a></li>
-				<li><a href="{{=URL(c='default',f='community')}}">Forums</a></li>
-				<li><a href="{{=URL(c='default',f='contact')}}">Contact</a></li>
+				<li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa528"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='review')}}">{{=DICT["aa530"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='categories')}}">{{=DICT["aa532"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='community')}}">{{=DICT["aa534"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa536"]}}</a></li>
 			</ul>
 			<p class="copyright"><!-- Link back to Colorlib can"t be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

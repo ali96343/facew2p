@@ -12,10 +12,10 @@ db.define_table('d503',
 #
 
 if not db(db.d503.id ).count():
-    db.d503.insert( f0= 'hh3025', f1= '(3025)503')
-    db.d503.insert( f0= 'pc3026', f1= '(3026)Oops, an error has occurred. Service unavailable!')
-    db.d503.insert( f0= 'pb3027', f1= '(3027)search ...')
-    db.d503.insert( f0= 'aa3029', f1= '(3029)Return Dashboard')
-    db.d503.insert( f0= 'aa3031', f1= '(3031)Return Website')
+    db.d503.insert( f0= 'hh2919', f1= '(2919)503')
+    db.d503.insert( f0= 'pc2920', f1= '(2920)Oops, an error has occurred. Service unavailable!')
+    db.d503.insert( f0= 'pb2921', f1= '(2921)search ...')
+    db.d503.insert( f0= 'aa2923', f1= '(2923)Return Dashboard')
+    db.d503.insert( f0= 'aa2925', f1= '(2925)Return Website')
     db.commit()
 #

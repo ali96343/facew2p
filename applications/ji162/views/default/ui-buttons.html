@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -54,45 +54,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2714"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children active dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa2716"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa2718"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa2720"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa2722"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa2724"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa2726"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa2728"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa2730"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa2732"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa2734"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa2736"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa2738"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa2740"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa2742"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa2744"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2745"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa2747"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa2749"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -101,26 +101,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa2752"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa2754"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa2756"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa2758"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa2760"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2761"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa2763"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa2765"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa2767"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +149,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=ui_buttonsform0.custom.begin}}
+<div><label for='id334'>txt335</label></div>
 {{=ui_buttonsform0.custom.widget.f0}}
 {{=ui_buttonsform0.custom.submit}}
 {{=ui_buttonsform0.custom.end}}
@@ -174,7 +175,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc2769"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -198,37 +199,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc2770"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2772"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2773"]}}</span>
+                                        <p>{{=DICT["pa2774"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2776"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2777"]}}</span>
+                                        <p>{{=DICT["pa2778"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2780"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2781"]}}</span>
+                                        <p>{{=DICT["pa2782"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2784"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2785"]}}</span>
+                                        <p>{{=DICT["pa2786"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -245,7 +246,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx2788"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -283,7 +284,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh2789"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -291,9 +292,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">UI Elements</a></li>
-                            <li class="active">Buttons</li>
+                            <li><a href="#">{{=DICT["aa2790"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa2791"]}}</a></li>
+                            <li class="active">{{=DICT["lb2792"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -311,33 +312,33 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Badges </strong>
+                                    <strong>{{=DICT["sp2793"]}}</strong>
                                     <small>Use this class
                                         <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code>
                                     </small>
                                 </div>
                                 <div class="card-body">
-                                    <button type="button" class="btn btn-primary">Primary</button>
-                                    <button type="button" class="btn btn-secondary">Secondary</button>
-                                    <button type="button" class="btn btn-success">Success</button>
-                                    <button type="button" class="btn btn-danger">Danger</button>
-                                    <button type="button" class="btn btn-warning">Warning</button>
-                                    <button type="button" class="btn btn-info">Info</button>
-                                    <button type="button" class="btn btn-link">Link</button>
+                                    <button type="button" class="btn btn-primary">{{=DICT["bu2794"]}}</button>
+                                    <button type="button" class="btn btn-secondary">{{=DICT["bu2795"]}}</button>
+                                    <button type="button" class="btn btn-success">{{=DICT["bu2796"]}}</button>
+                                    <button type="button" class="btn btn-danger">{{=DICT["bu2797"]}}</button>
+                                    <button type="button" class="btn btn-warning">{{=DICT["bu2798"]}}</button>
+                                    <button type="button" class="btn btn-info">{{=DICT["bu2799"]}}</button>
+                                    <button type="button" class="btn btn-link">{{=DICT["bu2800"]}}</button>
                                 </div>
                             </div><!-- /# card -->
 
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Button tags </strong>
+                                    <strong>{{=DICT["sp2801"]}}</strong>
                                     <small>Use this class
                                         <code>.btn</code> or <code>&lt;button&gt;</code>
                                     </small>
                                 </div>
                                 <div class="card-body">
-                                    <a class="btn btn-primary" href="#" role="button">Link</a>
-                                    <button class="btn btn-danger" type="submit">Button</button>
+                                    <a class="btn btn-primary" href="#" role="button">{{=DICT["aa2802"]}}</a>
+                                    <button class="btn btn-danger" type="submit">{{=DICT["bu2803"]}}</button>
                                     <input class="btn btn-info" type="button" value="Input">
                                     <input class="btn btn-success" type="submit" value="Submit">
                                     <input class="btn btn-warning" type="reset" value="Reset">
@@ -346,26 +347,26 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Disabled state </strong>
+                                        <strong>{{=DICT["sp2804"]}}</strong>
                                         <small>Use this class
                                         <code>disabled="disabled"</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary" disabled>Primary</button>
-                                        <button type="button" class="btn btn-secondary" disabled>Secondary</button>
-                                        <button type="button" class="btn btn-success" disabled>Success</button>
-                                        <button type="button" class="btn btn-danger" disabled>Danger</button>
-                                        <button type="button" class="btn btn-warning" disabled>Warning</button>
-                                        <button type="button" class="btn btn-info" disabled>Info</button>
-                                        <button type="button" class="btn btn-link" disabled>Link</button>
+                                        <button type="button" class="btn btn-primary" disabled>{{=DICT["bu2805"]}}</button>
+                                        <button type="button" class="btn btn-secondary" disabled>{{=DICT["bu2806"]}}</button>
+                                        <button type="button" class="btn btn-success" disabled>{{=DICT["bu2807"]}}</button>
+                                        <button type="button" class="btn btn-danger" disabled>{{=DICT["bu2808"]}}</button>
+                                        <button type="button" class="btn btn-warning" disabled>{{=DICT["bu2809"]}}</button>
+                                        <button type="button" class="btn btn-info" disabled>{{=DICT["bu2810"]}}</button>
+                                        <button type="button" class="btn btn-link" disabled>{{=DICT["bu2811"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
 
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Button with Icons </strong>
+                                        <strong>{{=DICT["sp2812"]}}</strong>
                                         <small>Use <code>&lt;i&gt;</code></small>
                                     </div>
                                     <div class="card-body">
@@ -381,24 +382,24 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Small Button </strong>
+                                        <strong>{{=DICT["sp2813"]}}</strong>
                                         <small>Use this class
                                         <code>.btn-sm</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary btn-sm">Primary</button>
-                                        <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
-                                        <button type="button" class="btn btn-success btn-sm">Success</button>
-                                        <button type="button" class="btn btn-warning btn-sm">Warning</button>
-                                        <button type="button" class="btn btn-danger btn-sm">Danger</button>
-                                        <button type="button" class="btn btn-link btn-sm">Link</button>
+                                        <button type="button" class="btn btn-primary btn-sm">{{=DICT["bu2814"]}}</button>
+                                        <button type="button" class="btn btn-secondary btn-sm">{{=DICT["bu2815"]}}</button>
+                                        <button type="button" class="btn btn-success btn-sm">{{=DICT["bu2816"]}}</button>
+                                        <button type="button" class="btn btn-warning btn-sm">{{=DICT["bu2817"]}}</button>
+                                        <button type="button" class="btn btn-danger btn-sm">{{=DICT["bu2818"]}}</button>
+                                        <button type="button" class="btn btn-link btn-sm">{{=DICT["bu2819"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Small Button with Icons </strong>
+                                        <strong>{{=DICT["sp2820"]}}</strong>
                                         <small>Use this class
                                         <code>.btn-sm</code>
                                     </small>
@@ -415,55 +416,55 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Large Button </strong>
+                                        <strong>{{=DICT["sp2821"]}}</strong>
                                         <small>Use this class
                                         <code>.btn-lg</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary btn-lg">Primary</button>
-                                        <button type="button" class="btn btn-secondary btn-lg">Secondary</button>
-                                        <button type="button" class="btn btn-success btn-lg">Success</button>
-                                        <button type="button" class="btn btn-warning btn-lg">Warning</button>
-                                        <button type="button" class="btn btn-danger btn-lg">Danger</button>
-                                        <button type="button" class="btn btn-link btn-lg">Link</button>
+                                        <button type="button" class="btn btn-primary btn-lg">{{=DICT["bu2822"]}}</button>
+                                        <button type="button" class="btn btn-secondary btn-lg">{{=DICT["bu2823"]}}</button>
+                                        <button type="button" class="btn btn-success btn-lg">{{=DICT["bu2824"]}}</button>
+                                        <button type="button" class="btn btn-warning btn-lg">{{=DICT["bu2825"]}}</button>
+                                        <button type="button" class="btn btn-danger btn-lg">{{=DICT["bu2826"]}}</button>
+                                        <button type="button" class="btn btn-link btn-lg">{{=DICT["bu2827"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Large Active Button </strong>
+                                        <strong>{{=DICT["sp2828"]}}</strong>
                                         <small>Use this class
                                         <code>.btn-lg .active</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary btn-lg active">Primary</button>
-                                        <button type="button" class="btn btn-secondary btn-lg active">Secondary</button>
-                                        <button type="button" class="btn btn-success btn-lg active">Success</button>
-                                        <button type="button" class="btn btn-warning btn-lg active">Warning</button>
-                                        <button type="button" class="btn btn-danger btn-lg active">Danger</button>
-                                        <button type="button" class="btn btn-link btn-lg active">Link</button>
+                                        <button type="button" class="btn btn-primary btn-lg active">{{=DICT["bu2829"]}}</button>
+                                        <button type="button" class="btn btn-secondary btn-lg active">{{=DICT["bu2830"]}}</button>
+                                        <button type="button" class="btn btn-success btn-lg active">{{=DICT["bu2831"]}}</button>
+                                        <button type="button" class="btn btn-warning btn-lg active">{{=DICT["bu2832"]}}</button>
+                                        <button type="button" class="btn btn-danger btn-lg active">{{=DICT["bu2833"]}}</button>
+                                        <button type="button" class="btn btn-link btn-lg active">{{=DICT["bu2834"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Block Level Buttons </strong>
+                                        <strong>{{=DICT["sp2835"]}}</strong>
                                         <small>Use this class
                                         <code>.btn-block</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                                        <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block">{{=DICT["bu2836"]}}</button>
+                                        <button type="button" class="btn btn-secondary btn-lg btn-block">{{=DICT["bu2837"]}}</button>
 
-                                        <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
-                                        <button type="button" class="btn btn-secondary btn-lg btn-block">Secondary</button>
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Success</button>
-                                        <button type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
-                                        <button type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
-                                        <button type="button" class="btn btn-link btn-lg btn-block">Link</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block">{{=DICT["bu2838"]}}</button>
+                                        <button type="button" class="btn btn-secondary btn-lg btn-block">{{=DICT["bu2839"]}}</button>
+                                        <button type="button" class="btn btn-success btn-lg btn-block">{{=DICT["bu2840"]}}</button>
+                                        <button type="button" class="btn btn-warning btn-lg btn-block">{{=DICT["bu2841"]}}</button>
+                                        <button type="button" class="btn btn-danger btn-lg btn-block">{{=DICT["bu2842"]}}</button>
+                                        <button type="button" class="btn btn-link btn-lg btn-block">{{=DICT["bu2843"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
                             </div>
@@ -475,33 +476,33 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Outline Buttons </strong>
+                                        <strong>{{=DICT["sp2844"]}}</strong>
                                         <small>Use this class
                                         <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-outline-primary">Primary</button>
-                                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                                        <button type="button" class="btn btn-outline-success">Success</button>
-                                        <button type="button" class="btn btn-outline-danger">Danger</button>
-                                        <button type="button" class="btn btn-outline-warning">Warning</button>
-                                        <button type="button" class="btn btn-outline-info">Info</button>
-                                        <button type="button" class="btn btn-outline-link">Link</button>
+                                        <button type="button" class="btn btn-outline-primary">{{=DICT["bu2845"]}}</button>
+                                        <button type="button" class="btn btn-outline-secondary">{{=DICT["bu2846"]}}</button>
+                                        <button type="button" class="btn btn-outline-success">{{=DICT["bu2847"]}}</button>
+                                        <button type="button" class="btn btn-outline-danger">{{=DICT["bu2848"]}}</button>
+                                        <button type="button" class="btn btn-outline-warning">{{=DICT["bu2849"]}}</button>
+                                        <button type="button" class="btn btn-outline-info">{{=DICT["bu2850"]}}</button>
+                                        <button type="button" class="btn btn-outline-link">{{=DICT["bu2851"]}}</button>
                                     </div>
                                 </div><!-- /# card -->
 
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Button tags </strong>
+                                        <strong>{{=DICT["sp2852"]}}</strong>
                                         <small>Use this class
                                         <code>.btn</code> or <code>&lt;button&gt;</code>
                                     </small>
                                     </div>
                                     <div class="card-body">
-                                        <a class="btn btn-outline-primary" href="#" role="button">Link</a>
-                                        <button class="btn btn-outline-danger" type="submit">Button</button>
+                                        <a class="btn btn-outline-primary" href="#" role="button">{{=DICT["aa2853"]}}</a>
+                                        <button class="btn btn-outline-danger" type="submit">{{=DICT["bu2854"]}}</button>
                                         <input class="btn btn-outline-info" type="button" value="Input">
                                         <input class="btn btn-outline-success" type="submit" value="Submit">
                                         <input class="btn btn-outline-warning" type="reset" value="Reset">
@@ -510,26 +511,26 @@
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Disabled state </strong>
+                                            <strong>{{=DICT["sp2855"]}}</strong>
                                             <small>Use this class
                                         <code>disabled="disabled"</code>
                                     </small>
                                         </div>
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-outline-primary" disabled>Primary</button>
-                                            <button type="button" class="btn btn-outline-secondary" disabled>Secondary</button>
-                                            <button type="button" class="btn btn-outline-success" disabled>Success</button>
-                                            <button type="button" class="btn btn-outline-danger" disabled>Danger</button>
-                                            <button type="button" class="btn btn-outline-warning" disabled>Warning</button>
-                                            <button type="button" class="btn btn-outline-info" disabled>Info</button>
-                                            <button type="button" class="btn btn-outline-link" disabled>Link</button>
+                                            <button type="button" class="btn btn-outline-primary" disabled>{{=DICT["bu2856"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary" disabled>{{=DICT["bu2857"]}}</button>
+                                            <button type="button" class="btn btn-outline-success" disabled>{{=DICT["bu2858"]}}</button>
+                                            <button type="button" class="btn btn-outline-danger" disabled>{{=DICT["bu2859"]}}</button>
+                                            <button type="button" class="btn btn-outline-warning" disabled>{{=DICT["bu2860"]}}</button>
+                                            <button type="button" class="btn btn-outline-info" disabled>{{=DICT["bu2861"]}}</button>
+                                            <button type="button" class="btn btn-outline-link" disabled>{{=DICT["bu2862"]}}</button>
                                         </div>
                                     </div><!-- /# card -->
 
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Button with Icons </strong>
+                                            <strong>{{=DICT["sp2863"]}}</strong>
                                             <small>Use <code>&lt;i&gt;</code></small>
                                         </div>
                                         <div class="card-body">
@@ -545,24 +546,24 @@
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Small Button </strong>
+                                            <strong>{{=DICT["sp2864"]}}</strong>
                                             <small>Use this class
                                         <code>.btn-sm</code>
                                     </small>
                                         </div>
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-outline-primary btn-sm">Primary</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-sm">Secondary</button>
-                                            <button type="button" class="btn btn-outline-success btn-sm">Success</button>
-                                            <button type="button" class="btn btn-outline-warning btn-sm">Warning</button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm">Danger</button>
-                                            <button type="button" class="btn btn-outline-link btn-sm">Link</button>
+                                            <button type="button" class="btn btn-outline-primary btn-sm">{{=DICT["bu2865"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm">{{=DICT["bu2866"]}}</button>
+                                            <button type="button" class="btn btn-outline-success btn-sm">{{=DICT["bu2867"]}}</button>
+                                            <button type="button" class="btn btn-outline-warning btn-sm">{{=DICT["bu2868"]}}</button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">{{=DICT["bu2869"]}}</button>
+                                            <button type="button" class="btn btn-outline-link btn-sm">{{=DICT["bu2870"]}}</button>
                                         </div>
                                     </div><!-- /# card -->
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Small Button with Icons </strong>
+                                            <strong>{{=DICT["sp2871"]}}</strong>
                                             <small>Use this class
                                         <code>.btn-sm</code>
                                     </small>
@@ -579,55 +580,55 @@
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Large Button </strong>
+                                            <strong>{{=DICT["sp2872"]}}</strong>
                                             <small>Use this class
                                         <code>.btn-lg</code>
                                     </small>
                                         </div>
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-outline-primary btn-lg">Primary</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-lg">Secondary</button>
-                                            <button type="button" class="btn btn-outline-success btn-lg">Success</button>
-                                            <button type="button" class="btn btn-outline-warning btn-lg">Warning</button>
-                                            <button type="button" class="btn btn-outline-danger btn-lg">Danger</button>
-                                            <button type="button" class="btn btn-outline-link btn-lg">Link</button>
+                                            <button type="button" class="btn btn-outline-primary btn-lg">{{=DICT["bu2873"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-lg">{{=DICT["bu2874"]}}</button>
+                                            <button type="button" class="btn btn-outline-success btn-lg">{{=DICT["bu2875"]}}</button>
+                                            <button type="button" class="btn btn-outline-warning btn-lg">{{=DICT["bu2876"]}}</button>
+                                            <button type="button" class="btn btn-outline-danger btn-lg">{{=DICT["bu2877"]}}</button>
+                                            <button type="button" class="btn btn-outline-link btn-lg">{{=DICT["bu2878"]}}</button>
                                         </div>
                                     </div><!-- /# card -->
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Large Active Button </strong>
+                                            <strong>{{=DICT["sp2879"]}}</strong>
                                             <small>Use this class
                                         <code>.btn-lg .active</code>
                                     </small>
                                         </div>
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-outline-primary btn-lg active">Primary</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-lg active">Secondary</button>
-                                            <button type="button" class="btn btn-outline-success btn-lg active">Success</button>
-                                            <button type="button" class="btn btn-outline-warning btn-lg active">Warning</button>
-                                            <button type="button" class="btn btn-outline-danger btn-lg active">Danger</button>
-                                            <button type="button" class="btn btn-outline-link btn-lg active">Link</button>
+                                            <button type="button" class="btn btn-outline-primary btn-lg active">{{=DICT["bu2880"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-lg active">{{=DICT["bu2881"]}}</button>
+                                            <button type="button" class="btn btn-outline-success btn-lg active">{{=DICT["bu2882"]}}</button>
+                                            <button type="button" class="btn btn-outline-warning btn-lg active">{{=DICT["bu2883"]}}</button>
+                                            <button type="button" class="btn btn-outline-danger btn-lg active">{{=DICT["bu2884"]}}</button>
+                                            <button type="button" class="btn btn-outline-link btn-lg active">{{=DICT["bu2885"]}}</button>
                                         </div>
                                     </div><!-- /# card -->
 
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Block Level Buttons </strong>
+                                            <strong>{{=DICT["sp2886"]}}</strong>
                                             <small>Use this class
                                         <code>.btn-block</code>
                                     </small>
                                         </div>
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-outline-primary btn-lg btn-block">Block level button</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">Block level button</button>
+                                            <button type="button" class="btn btn-outline-primary btn-lg btn-block">{{=DICT["bu2887"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">{{=DICT["bu2888"]}}</button>
 
-                                            <button type="button" class="btn btn-outline-primary btn-lg btn-block">Primary</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">Secondary</button>
-                                            <button type="button" class="btn btn-outline-success btn-lg btn-block">Success</button>
-                                            <button type="button" class="btn btn-outline-warning btn-lg btn-block">Warning</button>
-                                            <button type="button" class="btn btn-outline-danger btn-lg btn-block">Danger</button>
-                                            <button type="button" class="btn btn-outline-link btn-lg btn-block">Link</button>
+                                            <button type="button" class="btn btn-outline-primary btn-lg btn-block">{{=DICT["bu2889"]}}</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">{{=DICT["bu2890"]}}</button>
+                                            <button type="button" class="btn btn-outline-success btn-lg btn-block">{{=DICT["bu2891"]}}</button>
+                                            <button type="button" class="btn btn-outline-warning btn-lg btn-block">{{=DICT["bu2892"]}}</button>
+                                            <button type="button" class="btn btn-outline-danger btn-lg btn-block">{{=DICT["bu2893"]}}</button>
+                                            <button type="button" class="btn btn-outline-link btn-lg btn-block">{{=DICT["bu2894"]}}</button>
                                         </div>
                                     </div><!-- /# card -->
                                 </div>

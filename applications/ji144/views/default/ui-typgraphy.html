@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
    <meta charset='utf-8'>
@@ -51,45 +51,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc1635"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa1637"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa1639"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa1641"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa1643"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa1645"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa1647"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa1649"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa1651"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa1653"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa1655"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa1657"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa1659"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa1661"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa1663"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa1665"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc1666"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa1668"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa1670"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -98,26 +98,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa1673"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa1675"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa1677"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa1679"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa1681"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc1682"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa1684"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa1686"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa1688"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -146,6 +146,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=ui_typgraphyform0.custom.begin}}
+<div><label for='id328'>txt329</label></div>
 {{=ui_typgraphyform0.custom.widget.f0}}
 {{=ui_typgraphyform0.custom.submit}}
 {{=ui_typgraphyform0.custom.end}}
@@ -171,7 +172,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc1690"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -195,37 +196,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc1691"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx1693"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx1694"]}}</span>
+                                        <p>{{=DICT["pa1695"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx1697"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx1698"]}}</span>
+                                        <p>{{=DICT["pa1699"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx1701"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx1702"]}}</span>
+                                        <p>{{=DICT["pa1703"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx1705"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx1706"]}}</span>
+                                        <p>{{=DICT["pa1707"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -242,7 +243,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx1709"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -280,7 +281,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh1710"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -288,9 +289,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">UI Elements</a></li>
-                            <li class="active">Typography</li>
+                            <li><a href="#">{{=DICT["aa1711"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa1712"]}}</a></li>
+                            <li class="active">{{=DICT["lb1713"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -313,19 +314,19 @@
                                 <div class="card-body">
 
                                     <div class="typo-headers">
-                                        <h1 class="pb-2 display-4">Very Important Information H1</h1>
-                                        <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
-                                        <h3 class="pb-2 display-5">Articles & Block Headings H3</h3>
-                                        <h4 class="pb-2 display-5">Random Tiny Heading H4</h4>
-                                        <h5 class="pb-2 display-5">Random Tiny Heading H5</h5>
-                                        <h6 class="pb-4 display-5">Random Tiny Heading H6</h6>
+                                        <h1 class="pb-2 display-4">{{=DICT["ha1714"]}}</h1>
+                                        <h2 class="pb-2 display-5">{{=DICT["hb1715"]}}</h2>
+                                        <h3 class="pb-2 display-5">{{=DICT["hc1716"]}}</h3>
+                                        <h4 class="pb-2 display-5">{{=DICT["hd1717"]}}</h4>
+                                        <h5 class="pb-2 display-5">{{=DICT["he1718"]}}</h5>
+                                        <h6 class="pb-4 display-5">{{=DICT["hf1719"]}}</h6>
                                     </div>
                                     <div class="typo-articles">
                                         <p>
                                             The unique stripes of zebras make them one of the animals most familiar to people.
                                             They occur in a variety of habitats, such as grasslands, savannas,
-                                            <span class="bg-flat-color-1 text-light">woodlands</span>, thorny scrublands,
-                                            <span class="clickable-text">mountains</span>
+                                            <span class="bg-flat-color-1 text-light">{{=DICT["sx1720"]}}</span>, thorny scrublands,
+                                            <span class="clickable-text">{{=DICT["sx1721"]}}</span>
                                             , and coastal hills. However, various anthropogenic factors have had a severe impact on zebra populations, in particular hunting for skins and habitat destruction. Grévy"s zebra and the mountain <mark>highlighted text</mark>
                                             zebra are endangered.</p>
                                         <blockquote class="blockquote mt-3 text-right">
@@ -336,72 +337,72 @@
                                         <p>
                                             lthough zebra species may have overlapping ranges, they do not interbreed.
                                             In captivity, plains zebras have been crossed with mountain zebras. The hybrid foals
-                                            <span class="bg-flat-color-1 text-light">selected text</span> lacked a dewlap and resembled their
+                                            <span class="bg-flat-color-1 text-light">{{=DICT["sx1722"]}}</span> lacked a dewlap and resembled their
                                         </p>
                                     </div>
                                     <div class="vue-lists">
-                                        <h2 class="mb-4">Lists</h2>
+                                        <h2 class="mb-4">{{=DICT["hb1723"]}}</h2>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h3>Unordered</h3>
+                                                <h3>{{=DICT["hh1724"]}}</h3>
                                                 <ul>
                                                     <li>
                                                         A wide variety of hypotheses have been proposed to account for the evolution of the striking stripes of zebras.
                                                     </li>
-                                                    <li>The more traditional of these (1 and 2, below) relate to camouflage.</li>
-                                                    <li>The vertical striping may help the zebra hide in the grass by disrupting its outline.</li>
+                                                    <li>{{=DICT["la1725"]}}</li>
+                                                    <li>{{=DICT["la1726"]}}</li>
                                                     <li>
                                                         In addition, even at moderate distances, the striking striping merges to an apparent grey.
                                                         <ul class="vue-list-inner">
-                                                            <li>However, the camouflage has been contested with arguments that most of a zebra"s predator.</li>
-                                                            <li>Such as lions and hyenas cannot see well at a distance.</li>
-                                                            <li>More likely to have smelled or heard a zebra.</li>
+                                                            <li>{{=DICT["la1727"]}}</li>
+                                                            <li>{{=DICT["la1728"]}}</li>
+                                                            <li>{{=DICT["la1729"]}}</li>
                                                         </ul>
                                                     </li>
-                                                    <li>Before seeing it from a distance, especially at night.</li>
+                                                    <li>{{=DICT["la1730"]}}</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 text-left">
                                                 <div>
-                                                    <h3>Ordered</h3>
+                                                    <h3>{{=DICT["hh1731"]}}</h3>
                                                     <ol class="vue-ordered">
                                                         <li>
                                                             A wide variety of hypotheses have been proposed to account for the evolution of the striking stripes of zebras.
                                                         </li>
-                                                        <li>The more traditional of these (1 and 2, below) relate to camouflage.</li>
-                                                        <li>The vertical striping may help the zebra hide in the grass by disrupting its outline.</li>
+                                                        <li>{{=DICT["la1732"]}}</li>
+                                                        <li>{{=DICT["la1733"]}}</li>
                                                         <li>
                                                             In addition, even at moderate distances, the striking striping merges to an apparent grey.
                                                             <ul class="vue-list-inner">
                                                                 <li>However, the camouflage has been contested with arguments that most of a zebra"s predator.
                                                                 </li>
-                                                                <li>Such as lions and hyenas cannot see well at a distance.</li>
-                                                                <li>More likely to have smelled or heard a zebra.</li>
+                                                                <li>{{=DICT["la1734"]}}</li>
+                                                                <li>{{=DICT["la1735"]}}</li>
                                                             </ul>
                                                         </li>
-                                                        <li>Before seeing it from a distance, especially at night.</li>
+                                                        <li>{{=DICT["la1736"]}}</li>
                                                     </ol>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="vue-misc">
-                                        <h2 class="display-5 my-3">Misc</h2>
+                                        <h2 class="display-5 my-3">{{=DICT["hb1737"]}}</h2>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h3>Address</h3>
+                                                <h3>{{=DICT["hh1738"]}}</h3>
                                                 <address class="mt-3">
-                                                    <strong>SJØNNA</strong><br>
+                                                    <strong>{{=DICT["sp1739"]}}</strong><br>
                                                     Nezalezhnasti Ave, 13 - 28A<br>
-                                                    Minsk, Belarus, 220141<br>
-                                                    +375 29 319-53-98<br>
+                                                    Minsk, Belarusr>
+                                                   {{=DICT["te1741"]}}-98<br>
                                                     <br>
-                                                    <b>Vasili Savitski</b><br>
-                                                    <a href="mailto">hello@examplemail.com</a>
+                                                    <b>{{=DICT["bb1742"]}}</b><br>
+                                                    <a href="mailto">{{=DICT["aa1743"]}}</a>
                                                 </address>
                                             </div>
                                             <div class="col-md-6">
-                                                <h3 class="mb-3">Well</h3>
+                                                <h3 class="mb-3">{{=DICT["hc1744"]}}</h3>
                                                 <div class="jumbotron">
                                                     Zebras have excellent eyesight. It is believed that they can see in color. Like most ungulates, the zebra"s eyes are on the sides of its head, giving it a wide field of view.
                                                 </div>

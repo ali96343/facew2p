@@ -61,12 +61,13 @@ def index():
     indexform0 = SQLFORM(db.dindexform0, _class = 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0', _id= 'idUnk0' )
 
     indexform0.element('input[name=f0]')['_placeholder']='f0 Search for...'
-    indexform0.custom.submit['_title'] = 'submit indexform0'
     indexform0.element('input[name=f0]')['_class']='form-control'
-    indexform0.custom.submit['_title'] = 'submit indexform0'
+    indexform0.element('input[name=f0]')['_id']='id48'
     indexform0.custom.submit['_type'] = 'submit'
     indexform0.custom.submit['_class'] = 'btn btn-primary'
-    indexform0.custom.submit['_value'] = 'unk_11'
+    indexform0.custom.submit['_value'] = 'unk_52'
+    indexform0.custom.submit['_id'] = 'id50'
+    indexform0.custom.submit['_title'] = 'submit indexform0'
 
     if indexform0.accepts(request,session): 
         response.flash0 = 'submitted indexform0' 
@@ -90,12 +91,13 @@ def blank():
     blankform0 = SQLFORM(db.dblankform0, _class = 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0', _id= 'idUnk0' )
 
     blankform0.element('input[name=f0]')['_placeholder']='f0 Search for...'
-    blankform0.custom.submit['_title'] = 'submit blankform0'
     blankform0.element('input[name=f0]')['_class']='form-control'
-    blankform0.custom.submit['_title'] = 'submit blankform0'
+    blankform0.element('input[name=f0]')['_id']='id30'
     blankform0.custom.submit['_type'] = 'submit'
     blankform0.custom.submit['_class'] = 'btn btn-primary'
-    blankform0.custom.submit['_value'] = 'unk_5'
+    blankform0.custom.submit['_value'] = 'unk_34'
+    blankform0.custom.submit['_id'] = 'id32'
+    blankform0.custom.submit['_title'] = 'submit blankform0'
 
     if blankform0.accepts(request,session): 
         response.flash0 = 'submitted blankform0' 
@@ -119,22 +121,17 @@ def login():
     loginform0 = SQLFORM(db.dloginform0, _class = 'classUnk0', _id= 'idUnk0' )
 
     loginform0.element('input[name=f0]')['_placeholder']='f0 Email address'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.element('input[name=f0]')['_id']='inputEmail'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.element('input[name=f0]')['_class']='form-control'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.element('input[name=f1]')['_placeholder']='f1 Password'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.element('input[name=f1]')['_id']='inputPassword'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.element('input[name=f1]')['_class']='form-control'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
-    loginform0.element('input[name=f2]')['_placeholder']='f2 place_3'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
+    loginform0.element('input[name=f2]')['_placeholder']='f2 place_26'
+    loginform0.element('input[name=f2]')['_id']='id23'
     loginform0.element('input[name=f2]')['_value']='remember-me'
-    loginform0.custom.submit['_title'] = 'submit loginform0'
     loginform0.custom.submit['_class'] = 'btn btn-primary btn-block'
+    loginform0.custom.submit['_id'] = 'id27'
+    loginform0.custom.submit['_title'] = 'submit loginform0'
 
     if loginform0.accepts(request,session): 
         response.flash0 = 'submitted loginform0' 
@@ -158,36 +155,23 @@ def register():
     registerform0 = SQLFORM(db.dregisterform0, _class = 'classUnk0', _id= 'idUnk0' )
 
     registerform0.element('input[name=f0]')['_placeholder']='f0 First name'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f0]')['_id']='firstName'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f0]')['_class']='form-control'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f1]')['_placeholder']='f1 Last name'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f1]')['_id']='lastName'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f1]')['_class']='form-control'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f2]')['_placeholder']='f2 Email address'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f2]')['_id']='inputEmail'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f2]')['_class']='form-control'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f3]')['_placeholder']='f3 Password'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f3]')['_id']='inputPassword'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f3]')['_class']='form-control'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f4]')['_placeholder']='f4 Confirm password'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f4]')['_id']='confirmPassword'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.element('input[name=f4]')['_class']='form-control'
-    registerform0.custom.submit['_title'] = 'submit registerform0'
     registerform0.custom.submit['_class'] = 'btn btn-primary btn-block'
+    registerform0.custom.submit['_id'] = 'id10'
+    registerform0.custom.submit['_title'] = 'submit registerform0'
 
     if registerform0.accepts(request,session): 
         response.flash0 = 'submitted registerform0' 
@@ -211,12 +195,13 @@ def tables():
     tablesform0 = SQLFORM(db.dtablesform0, _class = 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0', _id= 'idUnk0' )
 
     tablesform0.element('input[name=f0]')['_placeholder']='f0 Search for...'
-    tablesform0.custom.submit['_title'] = 'submit tablesform0'
     tablesform0.element('input[name=f0]')['_class']='form-control'
-    tablesform0.custom.submit['_title'] = 'submit tablesform0'
+    tablesform0.element('input[name=f0]')['_id']='id13'
     tablesform0.custom.submit['_type'] = 'submit'
     tablesform0.custom.submit['_class'] = 'btn btn-primary'
-    tablesform0.custom.submit['_value'] = 'unk_1'
+    tablesform0.custom.submit['_value'] = 'unk_17'
+    tablesform0.custom.submit['_id'] = 'id15'
+    tablesform0.custom.submit['_title'] = 'submit tablesform0'
 
     if tablesform0.accepts(request,session): 
         response.flash0 = 'submitted tablesform0' 
@@ -240,12 +225,13 @@ def X404():
     X404form0 = SQLFORM(db.dX404form0, _class = 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0', _id= 'idUnk0' )
 
     X404form0.element('input[name=f0]')['_placeholder']='f0 Search for...'
-    X404form0.custom.submit['_title'] = 'submit X404form0'
     X404form0.element('input[name=f0]')['_class']='form-control'
-    X404form0.custom.submit['_title'] = 'submit X404form0'
+    X404form0.element('input[name=f0]')['_id']='id36'
     X404form0.custom.submit['_type'] = 'submit'
     X404form0.custom.submit['_class'] = 'btn btn-primary'
-    X404form0.custom.submit['_value'] = 'unk_7'
+    X404form0.custom.submit['_value'] = 'unk_40'
+    X404form0.custom.submit['_id'] = 'id38'
+    X404form0.custom.submit['_title'] = 'submit X404form0'
 
     if X404form0.accepts(request,session): 
         response.flash0 = 'submitted X404form0' 
@@ -269,12 +255,13 @@ def charts():
     chartsform0 = SQLFORM(db.dchartsform0, _class = 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0', _id= 'idUnk0' )
 
     chartsform0.element('input[name=f0]')['_placeholder']='f0 Search for...'
-    chartsform0.custom.submit['_title'] = 'submit chartsform0'
     chartsform0.element('input[name=f0]')['_class']='form-control'
-    chartsform0.custom.submit['_title'] = 'submit chartsform0'
+    chartsform0.element('input[name=f0]')['_id']='id42'
     chartsform0.custom.submit['_type'] = 'submit'
     chartsform0.custom.submit['_class'] = 'btn btn-primary'
-    chartsform0.custom.submit['_value'] = 'unk_9'
+    chartsform0.custom.submit['_value'] = 'unk_46'
+    chartsform0.custom.submit['_id'] = 'id44'
+    chartsform0.custom.submit['_title'] = 'submit chartsform0'
 
     if chartsform0.accepts(request,session): 
         response.flash0 = 'submitted chartsform0' 
@@ -298,12 +285,11 @@ def forgot_password():
     forgot_passwordform0 = SQLFORM(db.dforgot_passwordform0, _class = 'classUnk0', _id= 'idUnk0' )
 
     forgot_passwordform0.element('input[name=f0]')['_placeholder']='f0 Enter email address'
-    forgot_passwordform0.custom.submit['_title'] = 'submit forgot_passwordform0'
     forgot_passwordform0.element('input[name=f0]')['_id']='inputEmail'
-    forgot_passwordform0.custom.submit['_title'] = 'submit forgot_passwordform0'
     forgot_passwordform0.element('input[name=f0]')['_class']='form-control'
-    forgot_passwordform0.custom.submit['_title'] = 'submit forgot_passwordform0'
     forgot_passwordform0.custom.submit['_class'] = 'btn btn-primary btn-block'
+    forgot_passwordform0.custom.submit['_id'] = 'id56'
+    forgot_passwordform0.custom.submit['_title'] = 'submit forgot_passwordform0'
 
     if forgot_passwordform0.accepts(request,session): 
         response.flash0 = 'submitted forgot_passwordform0' 

@@ -13,18 +13,18 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -51,45 +51,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3677"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa3679"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa3681"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa3683"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa3685"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa3687"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa3689"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa3691"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa3693"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa3695"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa3697"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa3699"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa3701"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa3703"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa3705"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa3707"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3708"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa3710"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa3712"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -98,26 +98,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa3715"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa3717"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa3719"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa3721"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa3723"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3724"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa3726"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa3728"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa3730"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -146,6 +146,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=font_fontawesomeform0.custom.begin}}
+<div><label for='id466'>txt467</label></div>
 {{=font_fontawesomeform0.custom.widget.f0}}
 {{=font_fontawesomeform0.custom.submit}}
 {{=font_fontawesomeform0.custom.end}}
@@ -171,7 +172,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc3732"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -195,37 +196,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc3733"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx3735"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3736"]}}</span>
+                                        <p>{{=DICT["pa3737"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx3739"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3740"]}}</span>
+                                        <p>{{=DICT["pa3741"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx3743"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3744"]}}</span>
+                                        <p>{{=DICT["pa3745"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx3747"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3748"]}}</span>
+                                        <p>{{=DICT["pa3749"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -242,7 +243,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx3751"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -280,7 +281,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh3752"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -288,9 +289,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Icons</a></li>
-                            <li class="active">FontAwesome</li>
+                            <li><a href="#">{{=DICT["aa3753"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa3754"]}}</a></li>
+                            <li class="active">{{=DICT["lb3755"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -311,14 +312,14 @@
                         <div class="fontawesome-icon-list">
 
                             <div id="new">
-                                <h2 class="page-header">11 New Icons in 4.0</h2>
+                                <h2 class="page-header">{{=DICT["hb3756"]}}</h2>
                                 <div class="row fontawesome-icon-list">
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-rub"></i> fa-rub</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-ruble"></i> fa-ruble <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-ruble"></i> fa-ruble <span class="text-muted">{{=DICT["sx3757"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-rouble"></i> fa-rouble <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-rouble"></i> fa-rouble <span class="text-muted">{{=DICT["sx3758"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-pagelines"></i> fa-pagelines</a></div>
 
@@ -330,7 +331,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-caret-square-o-left"></i> fa-caret-square-o-left</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">{{=DICT["sx3759"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-dot-circle-o"></i> fa-dot-circle-o</a></div>
 
@@ -340,7 +341,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-try"></i> fa-try</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span class="text-muted">{{=DICT["sx3760"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-plus-square-o"></i> fa-plus-square-o</a></div>
 
@@ -348,7 +349,7 @@
                             </div>
 
                             <section id="web-application">
-                                <h2 class="page-header">Web Application Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3761"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
@@ -468,7 +469,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-cutlery"></i> fa-cutlery</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-dashboard"></i> fa-dashboard <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-dashboard"></i> fa-dashboard <span class="text-muted">{{=DICT["sx3762"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-desktop"></i> fa-desktop</a></div>
 
@@ -476,7 +477,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-download"></i> fa-download</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-edit"></i> fa-edit <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-edit"></i> fa-edit <span class="text-muted">{{=DICT["sx3763"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-ellipsis-h"></i> fa-ellipsis-h</a></div>
 
@@ -522,7 +523,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-flag-o"></i> fa-flag-o</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-flash"></i> fa-flash <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-flash"></i> fa-flash <span class="text-muted">{{=DICT["sx3764"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-flask"></i> fa-flask</a></div>
 
@@ -540,9 +541,9 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gavel"></i> fa-gavel</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gear"></i> fa-gear <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gear"></i> fa-gear <span class="text-muted">{{=DICT["sx3765"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gears"></i> fa-gears <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gears"></i> fa-gears <span class="text-muted">{{=DICT["sx3766"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-gift"></i> fa-gift</a></div>
 
@@ -550,7 +551,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-globe"></i> fa-globe</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-group"></i> fa-group <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-group"></i> fa-group <span class="text-muted">{{=DICT["sx3767"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#"><i class="fa fa-hdd-o"></i> fa-hdd-o</a></div>
 
@@ -576,7 +577,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#leaf"><i class="fa fa-leaf"></i> fa-leaf</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#gavel"><i class="fa fa-legal"></i> fa-legal <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#gavel"><i class="fa fa-legal"></i> fa-legal <span class="text-muted">{{=DICT["sx3768"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#lemon-o"><i class="fa fa-lemon-o"></i> fa-lemon-o</a></div>
 
@@ -594,9 +595,9 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#magnet"><i class="fa fa-magnet"></i> fa-magnet</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#share"><i class="fa fa-mail-forward"></i> fa-mail-forward <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#share"><i class="fa fa-mail-forward"></i> fa-mail-forward <span class="text-muted">{{=DICT["sx3769"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#reply"><i class="fa fa-mail-reply"></i> fa-mail-reply <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#reply"><i class="fa fa-mail-reply"></i> fa-mail-reply <span class="text-muted">{{=DICT["sx3770"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#mail-reply-all"><i class="fa fa-mail-reply-all"></i> fa-mail-reply-all</a></div>
 
@@ -620,7 +621,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#mobile"><i class="fa fa-mobile"></i> fa-mobile</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#mobile"><i class="fa fa-mobile-phone"></i> fa-mobile-phone <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#mobile"><i class="fa fa-mobile-phone"></i> fa-mobile-phone <span class="text-muted">{{=DICT["sx3771"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#money"><i class="fa fa-money"></i> fa-money</a></div>
 
@@ -724,13 +725,13 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-desc"><i class="fa fa-sort-desc"></i> fa-sort-desc</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-asc"><i class="fa fa-sort-down"></i> fa-sort-down <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-asc"><i class="fa fa-sort-down"></i> fa-sort-down <span class="text-muted">{{=DICT["sx3772"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-numeric-asc"><i class="fa fa-sort-numeric-asc"></i> fa-sort-numeric-asc</a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-numeric-desc"><i class="fa fa-sort-numeric-desc"></i> fa-sort-numeric-desc</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-desc"><i class="fa fa-sort-up"></i> fa-sort-up <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort-desc"><i class="fa fa-sort-up"></i> fa-sort-up <span class="text-muted">{{=DICT["sx3773"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#spinner"><i class="fa fa-spinner"></i> fa-spinner</a></div>
 
@@ -742,9 +743,9 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half"><i class="fa fa-star-half"></i> fa-star-half</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half-o"><i class="fa fa-star-half-empty"></i> fa-star-half-empty <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half-o"><i class="fa fa-star-half-empty"></i> fa-star-half-empty <span class="text-muted">{{=DICT["sx3774"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half-o"><i class="fa fa-star-half-full"></i> fa-star-half-full <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half-o"><i class="fa fa-star-half-full"></i> fa-star-half-full <span class="text-muted">{{=DICT["sx3775"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#star-half-o"><i class="fa fa-star-half-o"></i> fa-star-half-o</a></div>
 
@@ -790,13 +791,13 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#tint"><i class="fa fa-tint"></i> fa-tint</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-down"><i class="fa fa-toggle-down"></i> fa-toggle-down <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-down"><i class="fa fa-toggle-down"></i> fa-toggle-down <span class="text-muted">{{=DICT["sx3776"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-left"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-left"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">{{=DICT["sx3777"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-right"><i class="fa fa-toggle-right"></i> fa-toggle-right <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-right"><i class="fa fa-toggle-right"></i> fa-toggle-right <span class="text-muted">{{=DICT["sx3778"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-up"><i class="fa fa-toggle-up"></i> fa-toggle-up <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-up"><i class="fa fa-toggle-up"></i> fa-toggle-up <span class="text-muted">{{=DICT["sx3779"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#trash-o"><i class="fa fa-trash-o"></i> fa-trash-o</a></div>
 
@@ -810,7 +811,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#unlock-alt"><i class="fa fa-unlock-alt"></i> fa-unlock-alt</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort"><i class="fa fa-unsorted"></i> fa-unsorted <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#sort"><i class="fa fa-unsorted"></i> fa-unsorted <span class="text-muted">{{=DICT["sx3780"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#upload"><i class="fa fa-upload"></i> fa-upload</a></div>
 
@@ -826,7 +827,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#volume-up"><i class="fa fa-volume-up"></i> fa-volume-up</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#exclamation-triangle"><i class="fa fa-warning"></i> fa-warning <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#exclamation-triangle"><i class="fa fa-warning"></i> fa-warning <span class="text-muted">{{=DICT["sx3781"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#wheelchair"><i class="fa fa-wheelchair"></i> fa-wheelchair</a></div>
 
@@ -837,7 +838,7 @@
                             </section>
 
                             <section id="form-control">
-                                <h2 class="page-header">Form Control Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3782"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
@@ -869,23 +870,23 @@
                             </section>
 
                             <section id="currency">
-                                <h2 class="page-header">Currency Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3783"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
 
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-bitcoin"></i> fa-bitcoin <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-bitcoin"></i> fa-bitcoin <span class="text-muted">{{=DICT["sx3784"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-btc"></i> fa-btc</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-cny"></i> fa-cny <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-cny"></i> fa-cny <span class="text-muted">{{=DICT["sx3785"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#usd"><i class="fa fa-dollar"></i> fa-dollar <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#usd"><i class="fa fa-dollar"></i> fa-dollar <span class="text-muted">{{=DICT["sx3786"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#eur"><i class="fa fa-eur"></i> fa-eur</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#eur"><i class="fa fa-euro"></i> fa-euro <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#eur"><i class="fa fa-euro"></i> fa-euro <span class="text-muted">{{=DICT["sx3787"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#gbp"><i class="fa fa-gbp"></i> fa-gbp</a></div>
 
@@ -897,32 +898,32 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#money"><i class="fa fa-money"></i> fa-money</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-rmb"></i> fa-rmb <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-rmb"></i> fa-rmb <span class="text-muted">{{=DICT["sx3788"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#rub"><i class="fa fa-rouble"></i> fa-rouble <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#rub"><i class="fa fa-rouble"></i> fa-rouble <span class="text-muted">{{=DICT["sx3789"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#rub"><i class="fa fa-rub"></i> fa-rub</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#rub"><i class="fa fa-ruble"></i> fa-ruble <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#rub"><i class="fa fa-ruble"></i> fa-ruble <span class="text-muted">{{=DICT["sx3790"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#inr"><i class="fa fa-rupee"></i> fa-rupee <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#inr"><i class="fa fa-rupee"></i> fa-rupee <span class="text-muted">{{=DICT["sx3791"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#try"><i class="fa fa-try"></i> fa-try</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#try"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#try"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span class="text-muted">{{=DICT["sx3792"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#usd"><i class="fa fa-usd"></i> fa-usd</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#krw"><i class="fa fa-won"></i> fa-won <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#krw"><i class="fa fa-won"></i> fa-won <span class="text-muted">{{=DICT["sx3793"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-yen"></i> fa-yen <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#jpy"><i class="fa fa-yen"></i> fa-yen <span class="text-muted">{{=DICT["sx3794"]}}</span></a></div>
 
                                 </div>
 
                             </section>
 
                             <section id="text-editor">
-                                <h2 class="page-header">Text Editor Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3795"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
@@ -938,7 +939,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#bold"><i class="fa fa-bold"></i> fa-bold</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#link"><i class="fa fa-chain"></i> fa-chain <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#link"><i class="fa fa-chain"></i> fa-chain <span class="text-muted">{{=DICT["sx3796"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#chain-broken"><i class="fa fa-chain-broken"></i> fa-chain-broken</a></div>
 
@@ -946,11 +947,11 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#columns"><i class="fa fa-columns"></i> fa-columns</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#files-o"><i class="fa fa-copy"></i> fa-copy <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#files-o"><i class="fa fa-copy"></i> fa-copy <span class="text-muted">{{=DICT["sx3797"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#scissors"><i class="fa fa-cut"></i> fa-cut <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#scissors"><i class="fa fa-cut"></i> fa-cut <span class="text-muted">{{=DICT["sx3798"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#outdent"><i class="fa fa-dedent"></i> fa-dedent <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#outdent"><i class="fa fa-dedent"></i> fa-dedent <span class="text-muted">{{=DICT["sx3799"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#eraser"><i class="fa fa-eraser"></i> fa-eraser</a></div>
 
@@ -986,15 +987,15 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#paperclip"><i class="fa fa-paperclip"></i> fa-paperclip</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#clipboard"><i class="fa fa-paste"></i> fa-paste <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#clipboard"><i class="fa fa-paste"></i> fa-paste <span class="text-muted">{{=DICT["sx3800"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#repeat"><i class="fa fa-repeat"></i> fa-repeat</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#undo"><i class="fa fa-rotate-left"></i> fa-rotate-left <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#undo"><i class="fa fa-rotate-left"></i> fa-rotate-left <span class="text-muted">{{=DICT["sx3801"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#repeat"><i class="fa fa-rotate-right"></i> fa-rotate-right <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#repeat"><i class="fa fa-rotate-right"></i> fa-rotate-right <span class="text-muted">{{=DICT["sx3802"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#floppy-o"><i class="fa fa-save"></i> fa-save <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#floppy-o"><i class="fa fa-save"></i> fa-save <span class="text-muted">{{=DICT["sx3803"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#scissors"><i class="fa fa-scissors"></i> fa-scissors</a></div>
 
@@ -1016,14 +1017,14 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#undo"><i class="fa fa-undo"></i> fa-undo</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#chain-broken"><i class="fa fa-unlink"></i> fa-unlink <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#chain-broken"><i class="fa fa-unlink"></i> fa-unlink <span class="text-muted">{{=DICT["sx3804"]}}</span></a></div>
 
                                 </div>
 
                             </section>
 
                             <section id="directional">
-                                <h2 class="page-header">Directional Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3805"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
@@ -1125,20 +1126,20 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#long-arrow-up"><i class="fa fa-long-arrow-up"></i> fa-long-arrow-up</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-down"><i class="fa fa-toggle-down"></i> fa-toggle-down <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-down"><i class="fa fa-toggle-down"></i> fa-toggle-down <span class="text-muted">{{=DICT["sx3806"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-left"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-left"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">{{=DICT["sx3807"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-right"><i class="fa fa-toggle-right"></i> fa-toggle-right <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-right"><i class="fa fa-toggle-right"></i> fa-toggle-right <span class="text-muted">{{=DICT["sx3808"]}}</span></a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-up"><i class="fa fa-toggle-up"></i> fa-toggle-up <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#caret-square-o-up"><i class="fa fa-toggle-up"></i> fa-toggle-up <span class="text-muted">{{=DICT["sx3809"]}}</span></a></div>
 
                                 </div>
 
                             </section>
 
                             <section id="video-player">
-                                <h2 class="page-header">Video Player Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3810"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 
@@ -1181,12 +1182,12 @@
                             </section>
 
                             <section id="brand">
-                                <h2 class="page-header">Brand Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3811"]}}</h2>
 
                                 <div class="alert alert-success">
                                     <ul class="margin-bottom-none padding-left-lg">
-                                        <li>All brand icons are trademarks of their respective owners.</li>
-                                        <li>The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.</li>
+                                        <li>{{=DICT["la3812"]}}</li>
+                                        <li>{{=DICT["la3813"]}}</li>
                                     </ul>
 
                                 </div>
@@ -1205,7 +1206,7 @@
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#bitbucket-square"><i class="fa fa-bitbucket-square"></i> fa-bitbucket-square</a></div>
 
-                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-bitcoin"></i> fa-bitcoin <span class="text-muted">(alias)</span></a></div>
+                                    <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-bitcoin"></i> fa-bitcoin <span class="text-muted">{{=DICT["sx3814"]}}</span></a></div>
 
                                     <div class="fa-hover col-lg-3 col-md-6"><a href="#btc"><i class="fa fa-btc"></i> fa-btc</a></div>
 
@@ -1293,7 +1294,7 @@
                             </section>
 
                             <section id="medical">
-                                <h2 class="page-header">Medical Icons</h2>
+                                <h2 class="page-header">{{=DICT["hb3815"]}}</h2>
 
                                 <div class="row fontawesome-icon-list">
 

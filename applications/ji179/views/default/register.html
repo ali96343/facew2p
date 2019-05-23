@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="my-content">
+  <meta name="author" content="my-author">
 
   <title>facew2p</title>
 
@@ -27,22 +27,22 @@
 
   <div class="container">
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">{{=DICT["di234"]}}</div>
+      <div class="card-header">{{=DICT["di258"]}}</div>
       <div class="card-body">
         
 {{block myregisterform0}}
 {{include 'web2py_ajax.html'}}
 
 {{=registerform0.custom.begin}}
-<label for='firstName'>First name</label>
+<div><label for='firstName'>First name</label></div>
 {{=registerform0.custom.widget.f0}}
-<label for='lastName'>Last name</label>
+<div><label for='lastName'>Last name</label></div>
 {{=registerform0.custom.widget.f1}}
-<label for='inputEmail'>Email address</label>
+<div><label for='inputEmail'>Email address</label></div>
 {{=registerform0.custom.widget.f2}}
-<label for='inputPassword'>Password</label>
+<div><label for='inputPassword'>Password</label></div>
 {{=registerform0.custom.widget.f3}}
-<label for='confirmPassword'>Confirm password</label>
+<div><label for='confirmPassword'>Confirm password</label></div>
 {{=registerform0.custom.widget.f4}}
 {{=registerform0.custom.submit}}
 {{=registerform0.custom.end}}
@@ -61,8 +61,8 @@
 {{end}}
 
         <div class="text-center">
-          <a class="d-block small mt-3" href="{{=URL(c='default',f='login')}}">Login Page</a>
-          <a class="d-block small" href="{{=URL(c='default',f='forgot_password')}}">Forgot Password?</a>
+          <a class="d-block small mt-3" href="{{=URL(c='default',f='login')}}">{{=DICT["aa267"]}}</a>
+          <a class="d-block small" href="{{=URL(c='default',f='forgot_password')}}">{{=DICT["aa269"]}}</a>
         </div>
       </div>
     </div>

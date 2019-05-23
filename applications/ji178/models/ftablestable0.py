@@ -1,11 +1,11 @@
 
 db.define_table('tablestable0',
-   Field( 'f0', 'string', label= 'Name', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Position', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Office', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Age', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Start date', default= 'w2p f4' ), 
-   Field( 'f5', 'string', label= 'Salary', default= 'w2p f5' ), 
+   Field( 'f0', 'string',  label= 'Name', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Position', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Office', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Age', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Start date', default= 'w2p f4' ), 
+   Field( 'f5', 'string',  label= 'Salary', default= 'w2p f5' ), 
       )
 if not db(db.tablestable0.id ).count():
       db.tablestable0.insert( f0= '00 tablestable0', f1= '0w2p1 Position', f2= '0w2p2 Office', f3= '0w2p3 Age', f4= '0w2p4 Start date', f5= '0w2p5 Salary', )

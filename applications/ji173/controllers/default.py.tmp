@@ -52,39 +52,57 @@ def call():
 #@auth.requires_login()
 def review():
     response.view = 'default/review.html'
-    return dict(key='value')
-
+    qu=db.dreview.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def single_blog():
     response.view = 'default/single-blog.html'
-    return dict(key='value')
-
+    qu=db.dsingle0blog.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def contact():
     response.view = 'default/contact.html'
-    return dict(key='value')
-
+    qu=db.dcontact.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def categories():
     response.view = 'default/categories.html'
-    return dict(key='value')
-
+    qu=db.dcategories.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 #@auth.requires_login()
 def index():
     response.view = 'default/index.html'
-    return dict(key='value')
-
+    qu=db.dindex.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def community():
     response.view = 'default/community.html'
-    return dict(key='value')
-
+    qu=db.dcommunity.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#

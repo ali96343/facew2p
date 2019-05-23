@@ -12,11 +12,13 @@ db.define_table('dregister',
 #
 
 if not db(db.dregister.id ).count():
-    db.dregister.insert( f0= 'ha663', f1= '(663)Create an Account!')
-    db.dregister.insert( f0= 'pb664', f1= '(664)First Name')
-    db.dregister.insert( f0= 'pb665', f1= '(665)Last Name')
-    db.dregister.insert( f0= 'pb666', f1= '(666)Email Address')
-    db.dregister.insert( f0= 'pb667', f1= '(667)Password')
-    db.dregister.insert( f0= 'pb668', f1= '(668)Repeat Password')
+    db.dregister.insert( f0= 'ha761', f1= '(761)Create an Account!')
+    db.dregister.insert( f0= 'pb762', f1= '(762)First Name')
+    db.dregister.insert( f0= 'pb763', f1= '(763)Last Name')
+    db.dregister.insert( f0= 'pb764', f1= '(764)Email Address')
+    db.dregister.insert( f0= 'pb765', f1= '(765)Password')
+    db.dregister.insert( f0= 'pb766', f1= '(766)Repeat Password')
+    db.dregister.insert( f0= 'aa771', f1= '(771)Forgot Password?')
+    db.dregister.insert( f0= 'aa773', f1= '(773)Already have an account? Login!')
     db.commit()
 #

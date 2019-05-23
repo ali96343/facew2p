@@ -1,8 +1,8 @@
 
 db.define_table('ui0switchestable0',
-   Field( 'f0', 'string', label= 'Size', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Example', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'CSS Class', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'Size', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Example', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'CSS Class', default= 'w2p f2' ), 
       )
 if not db(db.ui0switchestable0.id ).count():
       db.ui0switchestable0.insert( f0= '00 ui0switchestable0', f1= '0w2p1 Example', f2= '0w2p2 CSS Class', )
@@ -11,10 +11,10 @@ if not db(db.ui0switchestable0.id ).count():
       db.ui0switchestable0.insert( f0= 'Small', f1= 'unk_3', f2= 'Add following code size= sm', )
       db.ui0switchestable0.insert( f0= 'Extra small', f1= 'unk_4', f2= 'Add following code size= xs', )
 db.define_table('tables0datatable0',
-   Field( 'f0', 'string', label= 'Name', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Position', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Office', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Salary', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= 'Name', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Position', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Office', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Salary', default= 'w2p f3' ), 
       )
 if not db(db.tables0datatable0.id ).count():
       db.tables0datatable0.insert( f0= '00 tables0datatable0', f1= '0w2p1 Position', f2= '0w2p2 Office', f3= '0w2p3 Salary', )
@@ -76,10 +76,10 @@ if not db(db.tables0datatable0.id ).count():
       db.tables0datatable0.insert( f0= 'Michael Bruce', f1= 'Javascript Developer', f2= 'Singapore', f3= '$183,000', )
       db.tables0datatable0.insert( f0= 'Donna Snider', f1= 'Customer Support', f2= 'New York', f3= '$112,000', )
 db.define_table('tables0basictable0',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable0.id ).count():
       db.tables0basictable0.insert( f0= '00 tables0basictable0', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )
@@ -87,10 +87,10 @@ if not db(db.tables0basictable0.id ).count():
       db.tables0basictable0.insert( f0= '2', f1= 'Jacob', f2= 'Thornton', f3= '@fat', )
       db.tables0basictable0.insert( f0= '3', f1= 'Larry', f2= 'the Bird', f3= '@twitter', )
 db.define_table('tables0basictable1',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable1.id ).count():
       db.tables0basictable1.insert( f0= '00 tables0basictable1', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )
@@ -98,10 +98,10 @@ if not db(db.tables0basictable1.id ).count():
       db.tables0basictable1.insert( f0= '2', f1= 'Jacob', f2= 'Thornton', f3= '@fat', )
       db.tables0basictable1.insert( f0= '3', f1= 'Larry', f2= 'the Bird', f3= '@twitter', )
 db.define_table('tables0basictable2',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable2.id ).count():
       db.tables0basictable2.insert( f0= '00 tables0basictable2', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )
@@ -109,10 +109,10 @@ if not db(db.tables0basictable2.id ).count():
       db.tables0basictable2.insert( f0= '2', f1= 'Jacob', f2= 'Thornton', f3= '@fat', )
       db.tables0basictable2.insert( f0= '3', f1= 'Larry', f2= 'the Bird', f3= '@twitter', )
 db.define_table('tables0basictable3',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable3.id ).count():
       db.tables0basictable3.insert( f0= '00 tables0basictable3', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )
@@ -120,10 +120,10 @@ if not db(db.tables0basictable3.id ).count():
       db.tables0basictable3.insert( f0= '2', f1= 'Jacob', f2= 'Thornton', f3= '@fat', )
       db.tables0basictable3.insert( f0= '3', f1= 'Larry', f2= 'the Bird', f3= '@twitter', )
 db.define_table('tables0basictable4',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable4.id ).count():
       db.tables0basictable4.insert( f0= '00 tables0basictable4', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )
@@ -131,10 +131,10 @@ if not db(db.tables0basictable4.id ).count():
       db.tables0basictable4.insert( f0= '2', f1= 'Jacob', f2= 'Thornton', f3= '@fat', )
       db.tables0basictable4.insert( f0= '3', f1= 'Larry the Bird', f2= '@twitter', )
 db.define_table('tables0basictable5',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Handle', default= 'w2p f3' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Handle', default= 'w2p f3' ), 
       )
 if not db(db.tables0basictable5.id ).count():
       db.tables0basictable5.insert( f0= '00 tables0basictable5', f1= '0w2p1 First', f2= '0w2p2 Last', f3= '0w2p3 Handle', )

@@ -12,10 +12,10 @@ db.define_table('doffline',
 #
 
 if not db(db.doffline.id ).count():
-    db.doffline.insert( f0= 'hh6367', f1= '(6367)Offline')
-    db.doffline.insert( f0= 'pc6368', f1= '(6368)We will back shortly')
-    db.doffline.insert( f0= 'pb6369', f1= '(6369)search ...')
-    db.doffline.insert( f0= 'aa6371', f1= '(6371)Return Dashboard')
-    db.doffline.insert( f0= 'aa6373', f1= '(6373)Return Website')
+    db.doffline.insert( f0= 'hh6093', f1= '(6093)Offline')
+    db.doffline.insert( f0= 'pc6094', f1= '(6094)We will back shortly')
+    db.doffline.insert( f0= 'pb6095', f1= '(6095)search ...')
+    db.doffline.insert( f0= 'aa6097', f1= '(6097)Return Dashboard')
+    db.doffline.insert( f0= 'aa6099', f1= '(6099)Return Website')
     db.commit()
 #

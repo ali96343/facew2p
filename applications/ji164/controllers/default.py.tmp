@@ -52,354 +52,507 @@ def call():
 #@auth.requires_login()
 def index_2():
     response.view = 'default/index-2.html'
-    return dict(key='value')
-
+    qu=db.dindex02.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def rounded_chart():
     response.view = 'default/rounded-chart.html'
-    return dict(key='value')
-
+    qu=db.drounded0chart.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def product_detail():
     response.view = 'default/product-detail.html'
-    return dict(key='value')
-
+    qu=db.dproduct0detail.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def dual_list_box():
     response.view = 'default/dual-list-box.html'
-    return dict(key='value')
-
+    qu=db.ddual0list0box.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def tabs():
     response.view = 'default/tabs.html'
-    return dict(key='value')
-
+    qu=db.dtabs.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def password_recovery():
     response.view = 'default/password-recovery.html'
-    return dict(key='value')
-
+    qu=db.dpassword0recovery.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def product_list():
     response.view = 'default/product-list.html'
-    return dict(key='value')
-
+    qu=db.dproduct0list.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def sparkline():
     response.view = 'default/sparkline.html'
-    return dict(key='value')
-
+    qu=db.dsparkline.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def product_payment():
     response.view = 'default/product-payment.html'
-    return dict(key='value')
-
+    qu=db.dproduct0payment.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def alerts():
     response.view = 'default/alerts.html'
-    return dict(key='value')
-
+    qu=db.dalerts.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def x_editable():
     response.view = 'default/x-editable.html'
-    return dict(key='value')
-
+    qu=db.dx0editable.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def accordion():
     response.view = 'default/accordion.html'
-    return dict(key='value')
-
+    qu=db.daccordion.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def modals():
     response.view = 'default/modals.html'
-    return dict(key='value')
-
+    qu=db.dmodals.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def code_editor():
     response.view = 'default/code-editor.html'
-    return dict(key='value')
-
+    qu=db.dcode0editor.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def file_manager():
     response.view = 'default/file-manager.html'
-    return dict(key='value')
-
+    qu=db.dfile0manager.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def c3():
     response.view = 'default/c3.html'
-    return dict(key='value')
-
+    qu=db.dc3.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def product_edit():
     response.view = 'default/product-edit.html'
-    return dict(key='value')
-
+    qu=db.dproduct0edit.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def tinymc():
     response.view = 'default/tinymc.html'
-    return dict(key='value')
-
+    qu=db.dtinymc.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def buttons():
     response.view = 'default/buttons.html'
-    return dict(key='value')
-
+    qu=db.dbuttons.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def analytics():
     response.view = 'default/analytics.html'
-    return dict(key='value')
-
+    qu=db.danalytics.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def preloader():
     response.view = 'default/preloader.html'
-    return dict(key='value')
-
+    qu=db.dpreloader.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def mailbox_view():
     response.view = 'default/mailbox-view.html'
-    return dict(key='value')
-
+    qu=db.dmailbox0view.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def static_table():
     response.view = 'default/static-table.html'
-    return dict(key='value')
-
+    qu=db.dstatic0table.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def bar_charts():
     response.view = 'default/bar-charts.html'
-    return dict(key='value')
-
+    qu=db.dbar0charts.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def mailbox_compose():
     response.view = 'default/mailbox-compose.html'
-    return dict(key='value')
-
+    qu=db.dmailbox0compose.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def login():
     response.view = 'default/login.html'
-    return dict(key='value')
-
+    qu=db.dlogin.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def multi_upload():
     response.view = 'default/multi-upload.html'
-    return dict(key='value')
-
+    qu=db.dmulti0upload.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def data_maps():
     response.view = 'default/data-maps.html'
-    return dict(key='value')
-
+    qu=db.ddata0maps.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def mailbox():
     response.view = 'default/mailbox.html'
-    return dict(key='value')
-
+    qu=db.dmailbox.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def area_charts():
     response.view = 'default/area-charts.html'
-    return dict(key='value')
-
+    qu=db.darea0charts.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def notifications():
     response.view = 'default/notifications.html'
-    return dict(key='value')
-
+    qu=db.dnotifications.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def basic_form_element():
     response.view = 'default/basic-form-element.html'
-    return dict(key='value')
-
+    qu=db.dbasic0form0element.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def product_cart():
     response.view = 'default/product-cart.html'
-    return dict(key='value')
-
+    qu=db.dproduct0cart.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def line_charts():
     response.view = 'default/line-charts.html'
-    return dict(key='value')
-
+    qu=db.dline0charts.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def advance_form_element():
     response.view = 'default/advance-form-element.html'
-    return dict(key='value')
-
+    qu=db.dadvance0form0element.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def register():
     response.view = 'default/register.html'
-    return dict(key='value')
-
+    qu=db.dregister.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def pdf_viewer():
     response.view = 'default/pdf-viewer.html'
-    return dict(key='value')
-
+    qu=db.dpdf0viewer.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def password_meter():
     response.view = 'default/password-meter.html'
-    return dict(key='value')
-
+    qu=db.dpassword0meter.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def widgets():
     response.view = 'default/widgets.html'
-    return dict(key='value')
-
+    qu=db.dwidgets.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def peity():
     response.view = 'default/peity.html'
-    return dict(key='value')
-
+    qu=db.dpeity.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def tree_view():
     response.view = 'default/tree-view.html'
-    return dict(key='value')
-
+    qu=db.dtree0view.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 #@auth.requires_login()
 def index():
     response.view = 'default/index.html'
-    return dict(key='value')
-
+    qu=db.dindex.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def index_1():
     response.view = 'default/index-1.html'
-    return dict(key='value')
-
+    qu=db.dindex01.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def X500():
     response.view = 'default/500.html'
-    return dict(key='value')
-
+    qu=db.d500.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def blog_details():
     response.view = 'default/blog-details.html'
-    return dict(key='value')
-
+    qu=db.dblog0details.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def lock():
     response.view = 'default/lock.html'
-    return dict(key='value')
-
+    qu=db.dlock.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def google_map():
     response.view = 'default/google-map.html'
-    return dict(key='value')
-
+    qu=db.dgoogle0map.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def data_table():
     response.view = 'default/data-table.html'
-    return dict(key='value')
-
+    qu=db.ddata0table.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def blog():
     response.view = 'default/blog.html'
-    return dict(key='value')
-
+    qu=db.dblog.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def images_cropper():
     response.view = 'default/images-cropper.html'
-    return dict(key='value')
-
+    qu=db.dimages0cropper.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
 
 
 #@auth.requires_login()
 def X404():
     response.view = 'default/404.html'
-    return dict(key='value')
-
+    qu=db.d404.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#

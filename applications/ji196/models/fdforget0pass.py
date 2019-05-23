@@ -12,7 +12,7 @@ db.define_table('dforget0pass',
 #
 
 if not db(db.dforget0pass.id ).count():
-    db.dforget0pass.insert( f0= 'pb3275', f1= '(3275)Email')
-    db.dforget0pass.insert( f0= 'bu3276', f1= '(3276)submit')
+    db.dforget0pass.insert( f0= 'pb3198', f1= '(3198)Email')
+    db.dforget0pass.insert( f0= 'bu3199', f1= '(3199)submit')
     db.commit()
 #

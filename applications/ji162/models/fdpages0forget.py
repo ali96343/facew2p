@@ -12,6 +12,7 @@ db.define_table('dpages0forget',
 #
 
 if not db(db.dpages0forget.id ).count():
-    populate(db.dpages0forget, 5)
+    db.dpages0forget.insert( f0= 'pb3125', f1= '(3125)Email')
+    db.dpages0forget.insert( f0= 'bu3126', f1= '(3126)Submit')
     db.commit()
 #

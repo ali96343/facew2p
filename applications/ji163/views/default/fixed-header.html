@@ -11,7 +11,7 @@
     <title>facew2p</title>
     
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
-    <meta name="author" content="">
+    <meta name="author" content="my-author">
     
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
@@ -96,12 +96,12 @@
                                     <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
                                        class="btn btn-default btn-sm">
                                         <i class="fa fa-envelope"></i>
-                                        <span class="label label-warning">{{=DICT["sx13"]}}</span>
+                                        <span class="label label-warning">5</span>
                                     </a>
                                     <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
                                        class="btn btn-default btn-sm">
                                         <i class="fa fa-comments"></i>
-                                        <span class="label label-danger">{{=DICT["sx14"]}}</span>
+                                        <span class="label label-danger">4</span>
                                     </a>
                                     <a data-toggle="modal" data-original-title="Help" data-placement="bottom"
                                        class="btn btn-default btn-sm"
@@ -134,17 +134,17 @@
                     
                                 <!-- .nav -->
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{{=URL(c='default',f='dashboard')}}">{{=DICT["aa17"]}}</a></li>
-                                    <li><a href="{{=URL(c='default',f='table')}}">{{=DICT["aa19"]}}</a></li>
+                                    <li><a href="{{=URL(c='default',f='dashboard')}}">{{=DICT["aa15"]}}</a></li>
+                                    <li><a href="{{=URL(c='default',f='table')}}">{{=DICT["aa17"]}}</a></li>
                                     <li class="dropdown ">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                             Form Elements <b class="caret"></b>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{=URL(c='default',f='form_general')}}">{{=DICT["aa21"]}}</a></li>
-                                            <li><a href="{{=URL(c='default',f='form_validation')}}">{{=DICT["aa23"]}}</a></li>
-                                            <li><a href="{{=URL(c='default',f='form_wysiwyg')}}">{{=DICT["aa25"]}}</a></li>
-                                            <li><a href="{{=URL(c='default',f='form_wizard')}}">{{=DICT["aa27"]}}</a></li>
+                                            <li><a href="{{=URL(c='default',f='form_general')}}">{{=DICT["aa19"]}}</a></li>
+                                            <li><a href="{{=URL(c='default',f='form_validation')}}">{{=DICT["aa21"]}}</a></li>
+                                            <li><a href="{{=URL(c='default',f='form_wysiwyg')}}">{{=DICT["aa23"]}}</a></li>
+                                            <li><a href="{{=URL(c='default',f='form_wizard')}}">Wizard &amp; File Upload</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -161,6 +161,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=fixed_headerform0.custom.begin}}
+<div><label for='id132'>txt133</label></div>
 {{=fixed_headerform0.custom.widget.f0}}
 {{=fixed_headerform0.custom.submit}}
 {{=fixed_headerform0.custom.end}}
@@ -199,14 +200,14 @@
                             <div class="user-wrapper bg-dark">
                                 <a class="user-link" href="">
                                     <img class="media-object img-thumbnail user-img" alt="User Picture" src="{{=URL('static','template/assets/img/user.gif')}}">
-                                    <span class="label label-danger user-label">{{=DICT["sx30"]}}</span>
+                                    <span class="label label-danger user-label">16</span>
                                 </a>
                         
                                 <div class="media-body">
-                                    <h5 class="media-heading">{{=DICT["he31"]}}</h5>
+                                    <h5 class="media-heading">{{=DICT["he27"]}}</h5>
                                     <ul class="list-unstyled user-info">
-                                        <li><a href="">{{=DICT["aa32"]}}</a></li>
-                                        <li>{{=DICT["ba33"]}}<br>
+                                        <li><a href="">{{=DICT["aa28"]}}</a></li>
+                                        <li>{{=DICT["ba29"]}}<br>
                                             <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
                                         </li>
                                     </ul>
@@ -215,17 +216,17 @@
                         </div>
                         <!-- #menu -->
                         <ul id="menu" class="bg-blue dker">
-                                  <li class="nav-header">{{=DICT["lb34"]}}</li>
+                                  <li class="nav-header">{{=DICT["lb30"]}}</li>
                                   <li class="nav-divider"></li>
                                   <li class="">
                                     <a href="{{=URL(c='default',f='dashboard')}}">
-                                      <i class="fa fa-dashboard"></i><span class="link-title">{{=DICT["sx36"]}}</span>
+                                      <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
                                     </a>
                                   </li>
                                   <li class="">
                                     <a href="javascript:;">
                                       <i class="fa fa-building "></i>
-                                      <span class="link-title">{{=DICT["sx37"]}}</span>
+                                      <span class="link-title">{{=DICT["sx32"]}}</span>
                                       <span class="fa arrow"></span>
                                     </a>
                                     <ul class="collapse">
@@ -306,7 +307,7 @@
                                   <li class="">
                                     <a href="javascript:;">
                                       <i class="fa fa-tasks"></i>
-                                      <span class="link-title">{{=DICT["sx56"]}}</span>
+                                      <span class="link-title">{{=DICT["sx51"]}}</span>
                                       <span class="fa arrow"></span>
                                     </a>
                                     <ul class="collapse">
@@ -366,7 +367,7 @@
                                   <li>
                                     <a href="{{=URL(c='default',f='table')}}">
                                       <i class="fa fa-table"></i>
-                                      <span class="link-title">{{=DICT["sx68"]}}</span>
+                                      <span class="link-title">{{=DICT["sx63"]}}</span>
                                     </a>
                                   </li>
                                   <li>
@@ -475,41 +476,41 @@
                                       <li>
                                         <a href="javascript:;">Level 1  <span class="fa arrow"></span>  </a>
                                         <ul class="collapse">
-                                          <li> <a href="javascript:;">{{=DICT["aa83"]}}</a>  </li>
-                                          <li> <a href="javascript:;">{{=DICT["aa84"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa78"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa79"]}}</a>  </li>
                                           <li>
                                             <a href="javascript:;">Level 2  <span class="fa arrow"></span>  </a>
                                             <ul class="collapse">
-                                              <li> <a href="javascript:;">{{=DICT["aa85"]}}</a>  </li>
-                                              <li> <a href="javascript:;">{{=DICT["aa86"]}}</a>  </li>
+                                              <li> <a href="javascript:;">{{=DICT["aa80"]}}</a>  </li>
+                                              <li> <a href="javascript:;">{{=DICT["aa81"]}}</a>  </li>
                                               <li>
                                                 <a href="javascript:;">Level 3  <span class="fa arrow"></span>  </a>
                                                 <ul class="collapse">
-                                                  <li> <a href="javascript:;">{{=DICT["aa87"]}}</a>  </li>
-                                                  <li> <a href="javascript:;">{{=DICT["aa88"]}}</a>  </li>
+                                                  <li> <a href="javascript:;">{{=DICT["aa82"]}}</a>  </li>
+                                                  <li> <a href="javascript:;">{{=DICT["aa83"]}}</a>  </li>
                                                   <li>
                                                     <a href="javascript:;">Level 4  <span class="fa arrow"></span>  </a>
                                                     <ul class="collapse">
-                                                      <li> <a href="javascript:;">{{=DICT["aa89"]}}</a>  </li>
-                                                      <li> <a href="javascript:;">{{=DICT["aa90"]}}</a>  </li>
-                                                      <li> <a href="javascript:;">{{=DICT["aa91"]}}</a>  </li>
+                                                      <li> <a href="javascript:;">{{=DICT["aa84"]}}</a>  </li>
+                                                      <li> <a href="javascript:;">{{=DICT["aa85"]}}</a>  </li>
+                                                      <li> <a href="javascript:;">{{=DICT["aa86"]}}</a>  </li>
                                                     </ul>
                                                   </li>
                                                 </ul>
                                               </li>
-                                              <li> <a href="javascript:;">{{=DICT["aa92"]}}</a>  </li>
+                                              <li> <a href="javascript:;">{{=DICT["aa87"]}}</a>  </li>
                                             </ul>
                                           </li>
-                                          <li> <a href="javascript:;">{{=DICT["aa93"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa88"]}}</a>  </li>
                                         </ul>
                                       </li>
-                                      <li> <a href="javascript:;">{{=DICT["aa94"]}}</a>  </li>
+                                      <li> <a href="javascript:;">{{=DICT["aa89"]}}</a>  </li>
                                       <li>
                                         <a href="javascript:;">Level 1  <span class="fa arrow"></span>  </a>
                                         <ul class="collapse">
-                                          <li> <a href="javascript:;">{{=DICT["aa95"]}}</a>  </li>
-                                          <li> <a href="javascript:;">{{=DICT["aa96"]}}</a>  </li>
-                                          <li> <a href="javascript:;">{{=DICT["aa97"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa90"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa91"]}}</a>  </li>
+                                          <li> <a href="javascript:;">{{=DICT["aa92"]}}</a>  </li>
                                         </ul>
                                       </li>
                                     </ul>
@@ -521,7 +522,7 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
-                            <h2>{{=DICT["hh98"]}}</h2>
+                            <h2>{{=DICT["hh93"]}}</h2>
 <pre><code class="language-markup">&lt;nav class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
 ...
 &lt;/nav&gt;
@@ -538,54 +539,54 @@
                         <br>
                         <br>
                         <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">{{=DICT["bu99"]}}</button>
-                            <strong>{{=DICT["sp100"]}}</strong> Best check yo self, you"re not looking too good.
+                            <button type="button" class="close" data-dismiss="alert">{{=DICT["bu94"]}}</button>
+                            <strong>{{=DICT["sp95"]}}</strong> Best check yo self, you"re not looking too good.
                         </div>
                         <!-- .well well-small -->
                         <div class="well well-small dark">
                             <ul class="list-unstyled">
-                                <li>Visitor <span class="inlinesparkline pull-right">{{=DICT["sx101"]}}</span></li>
-                                <li>Online Visitor <span class="dynamicsparkline pull-right">{{=DICT["sx102"]}}</span></li>
-                                <li>Popularity <span class="dynamicbar pull-right">{{=DICT["sx103"]}}</span></li>
-                                <li>New Users <span class="inlinebar pull-right">{{=DICT["sx104"]}}</span></li>
+                                <li>Visitor <span class="inlinesparkline pull-right">{{=DICT["sx96"]}}</span></li>
+                                <li>Online Visitor <span class="dynamicsparkline pull-right">{{=DICT["sx97"]}}</span></li>
+                                <li>Popularity <span class="dynamicbar pull-right">{{=DICT["sx98"]}}</span></li>
+                                <li>New Users <span class="inlinebar pull-right">{{=DICT["sx99"]}}</span></li>
                             </ul>
                         </div>
                         <!-- /.well well-small -->
                         <!-- .well well-small -->
                         <div class="well well-small dark">
-                            <button class="btn btn-block">{{=DICT["bu105"]}}</button>
-                            <button class="btn btn-primary btn-block">{{=DICT["bu106"]}}</button>
-                            <button class="btn btn-info btn-block">{{=DICT["bu107"]}}</button>
-                            <button class="btn btn-success btn-block">{{=DICT["bu108"]}}</button>
-                            <button class="btn btn-danger btn-block">{{=DICT["bu109"]}}</button>
-                            <button class="btn btn-warning btn-block">{{=DICT["bu110"]}}</button>
-                            <button class="btn btn-inverse btn-block">{{=DICT["bu111"]}}</button>
-                            <button class="btn btn-metis-1 btn-block">{{=DICT["bu112"]}}</button>
-                            <button class="btn btn-metis-2 btn-block">{{=DICT["bu113"]}}</button>
-                            <button class="btn btn-metis-3 btn-block">{{=DICT["bu114"]}}</button>
-                            <button class="btn btn-metis-4 btn-block">{{=DICT["bu115"]}}</button>
-                            <button class="btn btn-metis-5 btn-block">{{=DICT["bu116"]}}</button>
-                            <button class="btn btn-metis-6 btn-block">{{=DICT["bu117"]}}</button>
+                            <button class="btn btn-block">{{=DICT["bu100"]}}</button>
+                            <button class="btn btn-primary btn-block">{{=DICT["bu101"]}}</button>
+                            <button class="btn btn-info btn-block">{{=DICT["bu102"]}}</button>
+                            <button class="btn btn-success btn-block">{{=DICT["bu103"]}}</button>
+                            <button class="btn btn-danger btn-block">{{=DICT["bu104"]}}</button>
+                            <button class="btn btn-warning btn-block">{{=DICT["bu105"]}}</button>
+                            <button class="btn btn-inverse btn-block">{{=DICT["bu106"]}}</button>
+                            <button class="btn btn-metis-1 btn-block">{{=DICT["bu107"]}}</button>
+                            <button class="btn btn-metis-2 btn-block">{{=DICT["bu108"]}}</button>
+                            <button class="btn btn-metis-3 btn-block">{{=DICT["bu109"]}}</button>
+                            <button class="btn btn-metis-4 btn-block">{{=DICT["bu110"]}}</button>
+                            <button class="btn btn-metis-5 btn-block">{{=DICT["bu111"]}}</button>
+                            <button class="btn btn-metis-6 btn-block">{{=DICT["bu112"]}}</button>
                         </div>
                         <!-- /.well well-small -->
                         <!-- .well well-small -->
                         <div class="well well-small dark">
-                            <span>{{=DICT["sp119"]}}</span><span class="pull-right"><small>{{=DICT["si118"]}}</small></span>
+                            <span>{{=DICT["sp114"]}}</span><span class="pull-right"><small>{{=DICT["si113"]}}</small></span>
                         
                             <div class="progress xs">
                                 <div class="progress-bar progress-bar-info" style="width: 20%"></div>
                             </div>
-                            <span>{{=DICT["sp121"]}}</span><span class="pull-right"><small>{{=DICT["si120"]}}</small></span>
+                            <span>{{=DICT["sp116"]}}</span><span class="pull-right"><small>{{=DICT["si115"]}}</small></span>
                         
                             <div class="progress xs">
                                 <div class="progress-bar progress-bar-success" style="width: 40%"></div>
                             </div>
-                            <span>{{=DICT["sp123"]}}</span><span class="pull-right"><small>{{=DICT["si122"]}}</small></span>
+                            <span>{{=DICT["sp118"]}}</span><span class="pull-right"><small>{{=DICT["si117"]}}</small></span>
                         
                             <div class="progress xs">
                                 <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
                             </div>
-                            <span>{{=DICT["sp125"]}}</span><span class="pull-right"><small>{{=DICT["si124"]}}</small></span>
+                            <span>{{=DICT["sp120"]}}</span><span class="pull-right"><small>{{=DICT["si119"]}}</small></span>
                         
                             <div class="progress xs">
                                 <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
@@ -596,7 +597,7 @@
             </div>
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>{{=DICT["pa126"]}}</p>
+                <p>{{=DICT["pa121"]}}</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->
@@ -604,8 +605,8 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">{{=DICT["bu127"]}}</button>
-                            <h4 class="modal-title">{{=DICT["hd128"]}}</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">{{=DICT["bu122"]}}</button>
+                            <h4 class="modal-title">{{=DICT["hd123"]}}</h4>
                         </div>
                         <div class="modal-body">
                             <p>
@@ -617,7 +618,7 @@
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">{{=DICT["bu129"]}}</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">{{=DICT["bu124"]}}</button>
                         </div>
                     </div>
                     <!-- /.modal-content -->

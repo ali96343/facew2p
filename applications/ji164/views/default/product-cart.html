@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
@@ -67,7 +68,7 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp12837"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa12839"]}}</a>{{=DICT["pc12838"]}}</p>
         <![endif]-->
 
     <div class="left-sidebar-pro">
@@ -82,103 +83,103 @@
                         <li class="active">
                             <a class="has-arrow" href="{{=URL(c='default',f='index')}}">
 								   <i class="fa big-icon fa-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>
+								   <span class="mini-click-non">{{=DICT["sx12844"]}}</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{=URL(c='default',f='index')}}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                                <li><a title="Dashboard v.2" href="{{=URL(c='default',f='index_1')}}"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.2</span></a></li>
-                                <li><a title="Dashboard v.3" href="{{=URL(c='default',f='index_2')}}"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.3</span></a></li>
-                                <li><a title="Product List" href="{{=URL(c='default',f='product_list')}}"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product List</span></a></li>
-                                <li><a title="Product Edit" href="{{=URL(c='default',f='product_edit')}}"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Edit</span></a></li>
-                                <li><a title="Product Detail" href="{{=URL(c='default',f='product_detail')}}"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Detail</span></a></li>
-                                <li><a title="Product Cart" href="{{=URL(c='default',f='product_cart')}}"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Cart</span></a></li>
-                                <li><a title="Product Payment" href="{{=URL(c='default',f='product_payment')}}"><i class="fa fa-location-arrow sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Payment</span></a></li>
-                                <li><a title="Analytics" href="{{=URL(c='default',f='analytics')}}"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Analytics</span></a></li>
-                                <li><a title="Widgets" href="{{=URL(c='default',f='widgets')}}"><i class="fa fa-magnet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Widgets</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{=URL(c='default',f='index')}}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12846"]}}</span></a></li>
+                                <li><a title="Dashboard v.2" href="{{=URL(c='default',f='index_1')}}"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12848"]}}</span></a></li>
+                                <li><a title="Dashboard v.3" href="{{=URL(c='default',f='index_2')}}"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12850"]}}</span></a></li>
+                                <li><a title="Product List" href="{{=URL(c='default',f='product_list')}}"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12852"]}}</span></a></li>
+                                <li><a title="Product Edit" href="{{=URL(c='default',f='product_edit')}}"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12854"]}}</span></a></li>
+                                <li><a title="Product Detail" href="{{=URL(c='default',f='product_detail')}}"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12856"]}}</span></a></li>
+                                <li><a title="Product Cart" href="{{=URL(c='default',f='product_cart')}}"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12858"]}}</span></a></li>
+                                <li><a title="Product Payment" href="{{=URL(c='default',f='product_payment')}}"><i class="fa fa-location-arrow sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12860"]}}</span></a></li>
+                                <li><a title="Analytics" href="{{=URL(c='default',f='analytics')}}"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12862"]}}</span></a></li>
+                                <li><a title="Widgets" href="{{=URL(c='default',f='widgets')}}"><i class="fa fa-magnet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12864"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12866"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="{{=URL(c='default',f='mailbox')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Inbox</span></a></li>
-                                <li><a title="View Mail" href="{{=URL(c='default',f='mailbox_view')}}"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="Compose Mail" href="{{=URL(c='default',f='mailbox_compose')}}"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Compose Mail</span></a></li>
+                                <li><a title="Inbox" href="{{=URL(c='default',f='mailbox')}}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12868"]}}</span></a></li>
+                                <li><a title="View Mail" href="{{=URL(c='default',f='mailbox_view')}}"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12870"]}}</span></a></li>
+                                <li><a title="Compose Mail" href="{{=URL(c='default',f='mailbox_compose')}}"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12872"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12874"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Google Map" href="{{=URL(c='default',f='google_map')}}"><i class="fa fa-map-marker sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Google Map</span></a></li>
-                                <li><a title="Data Maps" href="{{=URL(c='default',f='data_maps')}}"><i class="fa fa-map-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Data Maps</span></a></li>
-                                <li><a title="Pdf Viewer" href="{{=URL(c='default',f='pdf_viewer')}}"><i class="fa fa-file-pdf-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Pdf Viewer</span></a></li>
-                                <li><a title="X-Editable" href="{{=URL(c='default',f='x_editable')}}"><i class="fa fa-fighter-jet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">X-Editable</span></a></li>
-                                <li><a title="Code Editor" href="{{=URL(c='default',f='code_editor')}}"><i class="fa fa-code sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Code Editor</span></a></li>
-                                <li><a title="Tree View" href="{{=URL(c='default',f='tree_view')}}"><i class="fa fa-frown-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Tree View</span></a></li>
-                                <li><a title="Preloader" href="{{=URL(c='default',f='preloader')}}"><i class="fa fa-circle sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Preloader</span></a></li>
-                                <li><a title="Images Cropper" href="{{=URL(c='default',f='images_cropper')}}"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Images Cropper</span></a></li>
+                                <li><a title="Google Map" href="{{=URL(c='default',f='google_map')}}"><i class="fa fa-map-marker sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12876"]}}</span></a></li>
+                                <li><a title="Data Maps" href="{{=URL(c='default',f='data_maps')}}"><i class="fa fa-map-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12878"]}}</span></a></li>
+                                <li><a title="Pdf Viewer" href="{{=URL(c='default',f='pdf_viewer')}}"><i class="fa fa-file-pdf-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12880"]}}</span></a></li>
+                                <li><a title="X-Editable" href="{{=URL(c='default',f='x_editable')}}"><i class="fa fa-fighter-jet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12882"]}}</span></a></li>
+                                <li><a title="Code Editor" href="{{=URL(c='default',f='code_editor')}}"><i class="fa fa-code sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12884"]}}</span></a></li>
+                                <li><a title="Tree View" href="{{=URL(c='default',f='tree_view')}}"><i class="fa fa-frown-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12886"]}}</span></a></li>
+                                <li><a title="Preloader" href="{{=URL(c='default',f='preloader')}}"><i class="fa fa-circle sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12888"]}}</span></a></li>
+                                <li><a title="Images Cropper" href="{{=URL(c='default',f='images_cropper')}}"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12890"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12892"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="File Manager" href="{{=URL(c='default',f='file_manager')}}"><i class="fa fa-folder sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">File Manager</span></a></li>
-                                <li><a title="Blog" href="{{=URL(c='default',f='blog')}}"><i class="fa fa-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Blog</span></a></li>
-                                <li><a title="Blog Details" href="{{=URL(c='default',f='blog_details')}}"><i class="fa fa-tags sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Blog Details</span></a></li>
-                                <li><a title="404 Page" href="{{=URL(c='default',f='X404')}}"><i class="fa fa-tint sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">404 Page</span></a></li>
-                                <li><a title="500 Page" href="{{=URL(c='default',f='X500')}}"><i class="fa fa-tree sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">500 Page</span></a></li>
+                                <li><a title="File Manager" href="{{=URL(c='default',f='file_manager')}}"><i class="fa fa-folder sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12894"]}}</span></a></li>
+                                <li><a title="Blog" href="{{=URL(c='default',f='blog')}}"><i class="fa fa-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12896"]}}</span></a></li>
+                                <li><a title="Blog Details" href="{{=URL(c='default',f='blog_details')}}"><i class="fa fa-tags sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12898"]}}</span></a></li>
+                                <li><a title="404 Page" href="{{=URL(c='default',f='X404')}}"><i class="fa fa-tint sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12900"]}}</span></a></li>
+                                <li><a title="500 Page" href="{{=URL(c='default',f='X500')}}"><i class="fa fa-tree sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12902"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12904"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Bar Charts" href="{{=URL(c='default',f='bar_charts')}}"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bar Charts</span></a></li>
-                                <li><a title="Line Charts" href="{{=URL(c='default',f='line_charts')}}"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Line Charts</span></a></li>
-                                <li><a title="Area Charts" href="{{=URL(c='default',f='area_charts')}}"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Area Charts</span></a></li>
-                                <li><a title="Rounded Charts" href="{{=URL(c='default',f='rounded_chart')}}"><i class="fa fa-signal sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                <li><a title="C3 Charts" href="{{=URL(c='default',f='c3')}}"><i class="fa fa-barcode sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">C3 Charts</span></a></li>
-                                <li><a title="Sparkline Charts" href="{{=URL(c='default',f='sparkline')}}"><i class="fa fa-sort-amount-desc sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Sparkline Charts</span></a></li>
-                                <li><a title="Peity Charts" href="{{=URL(c='default',f='peity')}}"><i class="fa fa-object-ungroup sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Peity Charts</span></a></li>
+                                <li><a title="Bar Charts" href="{{=URL(c='default',f='bar_charts')}}"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12906"]}}</span></a></li>
+                                <li><a title="Line Charts" href="{{=URL(c='default',f='line_charts')}}"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12908"]}}</span></a></li>
+                                <li><a title="Area Charts" href="{{=URL(c='default',f='area_charts')}}"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12910"]}}</span></a></li>
+                                <li><a title="Rounded Charts" href="{{=URL(c='default',f='rounded_chart')}}"><i class="fa fa-signal sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12912"]}}</span></a></li>
+                                <li><a title="C3 Charts" href="{{=URL(c='default',f='c3')}}"><i class="fa fa-barcode sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12914"]}}</span></a></li>
+                                <li><a title="Sparkline Charts" href="{{=URL(c='default',f='sparkline')}}"><i class="fa fa-sort-amount-desc sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12916"]}}</span></a></li>
+                                <li><a title="Peity Charts" href="{{=URL(c='default',f='peity')}}"><i class="fa fa-object-ungroup sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12918"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12920"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Peity Charts" href="{{=URL(c='default',f='static_table')}}"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Static Table</span></a></li>
-                                <li><a title="Data Table" href="{{=URL(c='default',f='data_table')}}"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Data Table</span></a></li>
+                                <li><a title="Peity Charts" href="{{=URL(c='default',f='static_table')}}"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12922"]}}</span></a></li>
+                                <li><a title="Data Table" href="{{=URL(c='default',f='data_table')}}"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12924"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Forms Elements</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12926"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Basic Form Elements" href="{{=URL(c='default',f='basic_form_element')}}"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bc Form Elements</span></a></li>
-                                <li><a title="Advance Form Elements" href="{{=URL(c='default',f='advance_form_element')}}"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ad Form Elements</span></a></li>
-                                <li><a title="Password Meter" href="{{=URL(c='default',f='password_meter')}}"><i class="fa fa-hourglass sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Password Meter</span></a></li>
-                                <li><a title="Multi Upload" href="{{=URL(c='default',f='multi_upload')}}"><i class="fa fa-hdd-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Multi Upload</span></a></li>
-                                <li><a title="Text Editor" href="{{=URL(c='default',f='tinymc')}}"><i class="fa fa-globe sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Text Editor</span></a></li>
-                                <li><a title="Dual List Box" href="{{=URL(c='default',f='dual_list_box')}}"><i class="fa fa-hand-paper-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dual List Box</span></a></li>
+                                <li><a title="Basic Form Elements" href="{{=URL(c='default',f='basic_form_element')}}"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12928"]}}</span></a></li>
+                                <li><a title="Advance Form Elements" href="{{=URL(c='default',f='advance_form_element')}}"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12930"]}}</span></a></li>
+                                <li><a title="Password Meter" href="{{=URL(c='default',f='password_meter')}}"><i class="fa fa-hourglass sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12932"]}}</span></a></li>
+                                <li><a title="Multi Upload" href="{{=URL(c='default',f='multi_upload')}}"><i class="fa fa-hdd-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12934"]}}</span></a></li>
+                                <li><a title="Text Editor" href="{{=URL(c='default',f='tinymc')}}"><i class="fa fa-globe sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12936"]}}</span></a></li>
+                                <li><a title="Dual List Box" href="{{=URL(c='default',f='dual_list_box')}}"><i class="fa fa-hand-paper-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12938"]}}</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-desktop icon-wrap"></i> <span class="mini-click-non">App views</span></a>
+                            <a class="has-arrow" href="{{=URL(c='default',f='mailbox')}}" aria-expanded="false"><i class="fa big-icon fa-desktop icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12940"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Notifications" href="{{=URL(c='default',f='notifications')}}"><i class="fa fa-external-link-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Notifications</span></a></li>
-                                <li><a title="Alerts" href="{{=URL(c='default',f='alerts')}}"><i class="fa fa-crop sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Alerts</span></a></li>
-                                <li><a title="Modals" href="{{=URL(c='default',f='modals')}}"><i class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modals</span></a></li>
-                                <li><a title="Buttons" href="{{=URL(c='default',f='buttons')}}"><i class="fa fa-adjust sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Buttons</span></a></li>
-                                <li><a title="Tabs" href="{{=URL(c='default',f='tabs')}}"><i class="fa fa-eye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Tabs</span></a></li>
-                                <li><a title="Accordion" href="{{=URL(c='default',f='accordion')}}"><i class="fa fa-life-ring sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Accordion</span></a></li>
+                                <li><a title="Notifications" href="{{=URL(c='default',f='notifications')}}"><i class="fa fa-external-link-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12942"]}}</span></a></li>
+                                <li><a title="Alerts" href="{{=URL(c='default',f='alerts')}}"><i class="fa fa-crop sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12944"]}}</span></a></li>
+                                <li><a title="Modals" href="{{=URL(c='default',f='modals')}}"><i class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12946"]}}</span></a></li>
+                                <li><a title="Buttons" href="{{=URL(c='default',f='buttons')}}"><i class="fa fa-adjust sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12948"]}}</span></a></li>
+                                <li><a title="Tabs" href="{{=URL(c='default',f='tabs')}}"><i class="fa fa-eye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12950"]}}</span></a></li>
+                                <li><a title="Accordion" href="{{=URL(c='default',f='accordion')}}"><i class="fa fa-life-ring sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">{{=DICT["sx12952"]}}</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">{{=DICT["sx12953"]}}</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Login" href="{{=URL(c='default',f='login')}}"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Login</span></a></li>
-                                <li><a title="Register" href="{{=URL(c='default',f='register')}}"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Register</span></a></li>
-                                <li><a title="Lock" href="{{=URL(c='default',f='lock')}}"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Lock</span></a></li>
-                                <li><a title="Password Recovery" href="{{=URL(c='default',f='password_recovery')}}"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Password Recovery</span></a></li>
+                                <li><a title="Login" href="{{=URL(c='default',f='login')}}"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">{{=DICT["sx12955"]}}</span></a></li>
+                                <li><a title="Register" href="{{=URL(c='default',f='register')}}"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">{{=DICT["sx12957"]}}</span></a></li>
+                                <li><a title="Lock" href="{{=URL(c='default',f='lock')}}"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">{{=DICT["sx12959"]}}</span></a></li>
+                                <li><a title="Password Recovery" href="{{=URL(c='default',f='password_recovery')}}"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">{{=DICT["sx12961"]}}</span></a></li>
                             </ul>
                         </li>
-                        <li><a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
+                        <li><a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">{{=DICT["sx12962"]}}</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -212,13 +213,13 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">{{=DICT["aa12965"]}}</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">About</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">{{=DICT["aa12966"]}}</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">{{=DICT["aa12967"]}}</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">{{=DICT["aa12968"]}}</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -230,7 +231,7 @@
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
                                                     <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
                                                         <div class="message-single-top">
-                                                            <h1>Message</h1>
+                                                            <h1>{{=DICT["hh12969"]}}</h1>
                                                         </div>
                                                         <ul class="message-menu">
                                                             <li>
@@ -239,9 +240,9 @@
                                                                         <img src="{{=URL('static','template/img/contact/1.jpg')}}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="message-date">{{=DICT["sx12971"]}}</span>
+                                                                        <h2>{{=DICT["hh12972"]}}</h2>
+                                                                        <p>{{=DICT["pa12973"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -251,9 +252,9 @@
                                                                         <img src="{{=URL('static','template/img/contact/4.jpg')}}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="message-date">{{=DICT["sx12975"]}}</span>
+                                                                        <h2>{{=DICT["hh12976"]}}</h2>
+                                                                        <p>{{=DICT["pa12977"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -263,9 +264,9 @@
                                                                         <img src="{{=URL('static','template/img/contact/3.jpg')}}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="message-date">{{=DICT["sx12979"]}}</span>
+                                                                        <h2>{{=DICT["hh12980"]}}</h2>
+                                                                        <p>{{=DICT["pa12981"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -275,22 +276,22 @@
                                                                         <img src="{{=URL('static','template/img/contact/2.jpg')}}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="message-date">{{=DICT["sx12983"]}}</span>
+                                                                        <h2>{{=DICT["hh12984"]}}</h2>
+                                                                        <p>{{=DICT["pa12985"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
                                                         </ul>
                                                         <div class="message-view">
-                                                            <a href="#">View All Messages</a>
+                                                            <a href="#">{{=DICT["aa12986"]}}</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
+                                                            <h1>{{=DICT["hh12987"]}}</h1>
                                                         </div>
                                                         <ul class="notification-menu">
                                                             <li>
@@ -299,9 +300,9 @@
                                                                         <i class="fa fa-check adminpro-checked-pro admin-check-pro" aria-hidden="true"></i>
                                                                     </div>
                                                                     <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="notification-date">{{=DICT["sx12988"]}}</span>
+                                                                        <h2>{{=DICT["hh12989"]}}</h2>
+                                                                        <p>{{=DICT["pa12990"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -311,9 +312,9 @@
                                                                         <i class="fa fa-cloud adminpro-cloud-computing-down" aria-hidden="true"></i>
                                                                     </div>
                                                                     <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="notification-date">{{=DICT["sx12991"]}}</span>
+                                                                        <h2>{{=DICT["hh12992"]}}</h2>
+                                                                        <p>{{=DICT["pa12993"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -323,9 +324,9 @@
                                                                         <i class="fa fa-eraser adminpro-shield" aria-hidden="true"></i>
                                                                     </div>
                                                                     <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="notification-date">{{=DICT["sx12994"]}}</span>
+                                                                        <h2>{{=DICT["hh12995"]}}</h2>
+                                                                        <p>{{=DICT["pa12996"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
@@ -335,22 +336,22 @@
                                                                         <i class="fa fa-line-chart adminpro-analytics-arrow" aria-hidden="true"></i>
                                                                     </div>
                                                                     <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
+                                                                        <span class="notification-date">{{=DICT["sx12997"]}}</span>
+                                                                        <h2>{{=DICT["hh12998"]}}</h2>
+                                                                        <p>{{=DICT["pa12999"]}}</p>
                                                                     </div>
                                                                 </a>
                                                             </li>
                                                         </ul>
                                                         <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
+                                                            <a href="#">{{=DICT["aa13000"]}}</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
-															<span class="admin-name">Advanda Cro</span>
+															<span class="admin-name">{{=DICT["sx13001"]}}</span>
 															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
@@ -370,11 +371,11 @@
 
                                                     <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                         <ul class="nav nav-tabs custon-set-tab">
-                                                            <li class="active"><a data-toggle="tab" href="#Notes">News</a>
+                                                            <li class="active"><a data-toggle="tab" href="#Notes">{{=DICT["aa13005"]}}</a>
                                                             </li>
-                                                            <li><a data-toggle="tab" href="#Projects">Activity</a>
+                                                            <li><a data-toggle="tab" href="#Projects">{{=DICT["aa13006"]}}</a>
                                                             </li>
-                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                            <li><a data-toggle="tab" href="#Settings">{{=DICT["aa13007"]}}</a>
                                                             </li>
                                                         </ul>
 
@@ -383,7 +384,7 @@
                                                                 <div class="notes-area-wrap">
                                                                     <div class="note-heading-indicate">
                                                                         <h2><i class="fa fa-comments-o"></i> Latest News</h2>
-                                                                        <p>You have 10 New News.</p>
+                                                                        <p>{{=DICT["pa13008"]}}</p>
                                                                     </div>
                                                                     <div class="notes-list-area notes-menu-scrollbar">
                                                                         <ul class="notes-menu-list">
@@ -394,8 +395,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/4.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13010"]}}</p>
+                                                                                            <span>{{=DICT["sp13011"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -407,8 +408,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/1.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13013"]}}</p>
+                                                                                            <span>{{=DICT["sp13014"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -420,8 +421,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/2.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13016"]}}</p>
+                                                                                            <span>{{=DICT["sp13017"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -433,8 +434,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/3.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13019"]}}</p>
+                                                                                            <span>{{=DICT["sp13020"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -446,8 +447,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/4.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13022"]}}</p>
+                                                                                            <span>{{=DICT["sp13023"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -459,8 +460,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/1.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13025"]}}</p>
+                                                                                            <span>{{=DICT["sp13026"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -472,8 +473,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/2.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13028"]}}</p>
+                                                                                            <span>{{=DICT["sp13029"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -485,8 +486,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/1.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13031"]}}</p>
+                                                                                            <span>{{=DICT["sp13032"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -498,8 +499,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/2.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13034"]}}</p>
+                                                                                            <span>{{=DICT["sp13035"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -511,8 +512,8 @@
                                                                                             <img src="{{=URL('static','template/img/contact/3.jpg')}}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                            <p>{{=DICT["pa13037"]}}</p>
+                                                                                            <span>{{=DICT["sp13038"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -525,7 +526,7 @@
                                                                 <div class="projects-settings-wrap">
                                                                     <div class="note-heading-indicate">
                                                                         <h2><i class="fa fa-cube"></i> Recent Activity</h2>
-                                                                        <p> You have 20 Recent Activity.</p>
+                                                                        <p>{{=DICT["pa13039"]}}</p>
                                                                     </div>
                                                                     <div class="project-st-list-area project-st-menu-scrollbar">
                                                                         <ul class="projects-st-menu-list">
@@ -533,9 +534,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">1 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13040"]}}</h2>
+                                                                                            <p>{{=DICT["pa13041"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13042"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -544,9 +545,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">2 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13043"]}}</h2>
+                                                                                            <p>{{=DICT["pa13044"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13045"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -555,9 +556,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">3 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13046"]}}</h2>
+                                                                                            <p>{{=DICT["pa13047"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13048"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -566,9 +567,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">4 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13049"]}}</h2>
+                                                                                            <p>{{=DICT["pa13050"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13051"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -577,9 +578,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">5 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13052"]}}</h2>
+                                                                                            <p>{{=DICT["pa13053"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13054"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -588,9 +589,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">6 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13055"]}}</h2>
+                                                                                            <p>{{=DICT["pa13056"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13057"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -599,9 +600,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New User</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">7 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13058"]}}</h2>
+                                                                                            <p>{{=DICT["pa13059"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13060"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -610,9 +611,9 @@
                                                                                 <a href="#">
                                                                                     <div class="project-list-flow">
                                                                                         <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">9 hours ago</span>
+                                                                                            <h2>{{=DICT["hh13061"]}}</h2>
+                                                                                            <p>{{=DICT["pa13062"]}}</p>
+                                                                                            <span class="project-st-time">{{=DICT["sx13063"]}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </a>
@@ -625,13 +626,13 @@
                                                                 <div class="setting-panel-area">
                                                                     <div class="note-heading-indicate">
                                                                         <h2><i class="fa fa-gears"></i> Settings Panel</h2>
-                                                                        <p> You have 20 Settings. 5 not completed.</p>
+                                                                        <p>{{=DICT["pa13064"]}}</p>
                                                                     </div>
                                                                     <ul class="setting-panel-list">
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Show notifications</h2>
+                                                                                    <h2>{{=DICT["hh13065"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
@@ -647,7 +648,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Disable Chat</h2>
+                                                                                    <h2>{{=DICT["hh13066"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
@@ -663,7 +664,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Enable history</h2>
+                                                                                    <h2>{{=DICT["hh13067"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
@@ -679,7 +680,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Show charts</h2>
+                                                                                    <h2>{{=DICT["hh13068"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
@@ -695,7 +696,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Update everyday</h2>
+                                                                                    <h2>{{=DICT["hh13069"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
@@ -711,7 +712,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Global search</h2>
+                                                                                    <h2>{{=DICT["hh13070"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
@@ -727,7 +728,7 @@
                                                                         <li>
                                                                             <div class="checkbox-setting-pro">
                                                                                 <div class="checkbox-title-pro">
-                                                                                    <h2>Offline users</h2>
+                                                                                    <h2>{{=DICT["hh13071"]}}</h2>
                                                                                     <div class="ts-custom-check">
                                                                                         <div class="onoffswitch">
                                                                                             <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
@@ -766,127 +767,127 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='index')}}">Dashboard v.1</a></li>
-                                                <li><a href="{{=URL(c='default',f='index_1')}}">Dashboard v.2</a></li>
-                                                <li><a href="{{=URL(c='default',f='index')}}">Dashboard v.3</a></li>
-                                                <li><a href="{{=URL(c='default',f='product_list')}}">Product List</a></li>
-                                                <li><a href="{{=URL(c='default',f='product_edit')}}">Product Edit</a></li>
-                                                <li><a href="{{=URL(c='default',f='product_detail')}}">Product Detail</a></li>
-                                                <li><a href="{{=URL(c='default',f='product_cart')}}">Product Cart</a></li>
-                                                <li><a href="{{=URL(c='default',f='product_payment')}}">Product Payment</a></li>
-                                                <li><a href="{{=URL(c='default',f='analytics')}}">Analytics</a></li>
-                                                <li><a href="{{=URL(c='default',f='widgets')}}">Widgets</a></li>
+                                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa13073"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='index_1')}}">{{=DICT["aa13075"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa13077"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='product_list')}}">{{=DICT["aa13079"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='product_edit')}}">{{=DICT["aa13081"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='product_detail')}}">{{=DICT["aa13083"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='product_cart')}}">{{=DICT["aa13085"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='product_payment')}}">{{=DICT["aa13087"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='analytics')}}">{{=DICT["aa13089"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='widgets')}}">{{=DICT["aa13091"]}}</a></li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="demo" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='mailbox')}}">Inbox</a>
+                                                <li><a href="{{=URL(c='default',f='mailbox')}}">{{=DICT["aa13093"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='mailbox_view')}}">View Mail</a>
+                                                <li><a href="{{=URL(c='default',f='mailbox_view')}}">{{=DICT["aa13095"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='mailbox_compose')}}">Compose Mail</a>
+                                                <li><a href="{{=URL(c='default',f='mailbox_compose')}}">{{=DICT["aa13097"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='file_manager')}}">File Manager</a></li>
-                                                <li><a href="{{=URL(c='default',f='index')}}">Contacts Client</a></li>
-                                                <li><a href="{{=URL(c='default',f='index')}}">Project</a></li>
-                                                <li><a href="{{=URL(c='default',f='index')}}">Project Details</a></li>
-                                                <li><a href="{{=URL(c='default',f='blog')}}">Blog</a></li>
-                                                <li><a href="{{=URL(c='default',f='blog_details')}}">Blog Details</a></li>
-                                                <li><a href="{{=URL(c='default',f='X404')}}">404 Page</a></li>
-                                                <li><a href="{{=URL(c='default',f='X500')}}">500 Page</a></li>
+                                                <li><a href="{{=URL(c='default',f='file_manager')}}">{{=DICT["aa13099"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa13101"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa13103"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa13105"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='blog')}}">{{=DICT["aa13107"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='blog_details')}}">{{=DICT["aa13109"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='X404')}}">{{=DICT["aa13111"]}}</a></li>
+                                                <li><a href="{{=URL(c='default',f='X500')}}">{{=DICT["aa13113"]}}</a></li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='google_map')}}">Google Map</a>
+                                                <li><a href="{{=URL(c='default',f='google_map')}}">{{=DICT["aa13115"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='data_maps')}}">Data Maps</a>
+                                                <li><a href="{{=URL(c='default',f='data_maps')}}">{{=DICT["aa13117"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='pdf_viewer')}}">Pdf Viewer</a>
+                                                <li><a href="{{=URL(c='default',f='pdf_viewer')}}">{{=DICT["aa13119"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='x_editable')}}">X-Editable</a>
+                                                <li><a href="{{=URL(c='default',f='x_editable')}}">{{=DICT["aa13121"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='code_editor')}}">Code Editor</a>
+                                                <li><a href="{{=URL(c='default',f='code_editor')}}">{{=DICT["aa13123"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='tree_view')}}">Tree View</a>
+                                                <li><a href="{{=URL(c='default',f='tree_view')}}">{{=DICT["aa13125"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='preloader')}}">Preloader</a>
+                                                <li><a href="{{=URL(c='default',f='preloader')}}">{{=DICT["aa13127"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='images_cropper')}}">Images Cropper</a>
+                                                <li><a href="{{=URL(c='default',f='images_cropper')}}">{{=DICT["aa13129"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='bar_charts')}}">Bar Charts</a>
+                                                <li><a href="{{=URL(c='default',f='bar_charts')}}">{{=DICT["aa13131"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='line_charts')}}">Line Charts</a>
+                                                <li><a href="{{=URL(c='default',f='line_charts')}}">{{=DICT["aa13133"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='area_charts')}}">Area Charts</a>
+                                                <li><a href="{{=URL(c='default',f='area_charts')}}">{{=DICT["aa13135"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='rounded_chart')}}">Rounded Charts</a>
+                                                <li><a href="{{=URL(c='default',f='rounded_chart')}}">{{=DICT["aa13137"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='c3')}}">C3 Charts</a>
+                                                <li><a href="{{=URL(c='default',f='c3')}}">{{=DICT["aa13139"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='sparkline')}}">Sparkline Charts</a>
+                                                <li><a href="{{=URL(c='default',f='sparkline')}}">{{=DICT["aa13141"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='peity')}}">Peity Charts</a>
+                                                <li><a href="{{=URL(c='default',f='peity')}}">{{=DICT["aa13143"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='static_table')}}">Static Table</a>
+                                                <li><a href="{{=URL(c='default',f='static_table')}}">{{=DICT["aa13145"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='data_table')}}">Data Table</a>
+                                                <li><a href="{{=URL(c='default',f='data_table')}}">{{=DICT["aa13147"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='basic_form_element')}}">Basic Form Elements</a>
+                                                <li><a href="{{=URL(c='default',f='basic_form_element')}}">{{=DICT["aa13149"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='advance_form_element')}}">Advanced Form Elements</a>
+                                                <li><a href="{{=URL(c='default',f='advance_form_element')}}">{{=DICT["aa13151"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='password_meter')}}">Password Meter</a>
+                                                <li><a href="{{=URL(c='default',f='password_meter')}}">{{=DICT["aa13153"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='multi_upload')}}">Multi Upload</a>
+                                                <li><a href="{{=URL(c='default',f='multi_upload')}}">{{=DICT["aa13155"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='tinymc')}}">Text Editor</a>
+                                                <li><a href="{{=URL(c='default',f='tinymc')}}">{{=DICT["aa13157"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='dual_list_box')}}">Dual List Box</a>
+                                                <li><a href="{{=URL(c='default',f='dual_list_box')}}">{{=DICT["aa13159"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='basic_form_element')}}">Basic Form Elements</a>
+                                                <li><a href="{{=URL(c='default',f='basic_form_element')}}">{{=DICT["aa13161"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='advance_form_element')}}">Advanced Form Elements</a>
+                                                <li><a href="{{=URL(c='default',f='advance_form_element')}}">{{=DICT["aa13163"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='password_meter')}}">Password Meter</a>
+                                                <li><a href="{{=URL(c='default',f='password_meter')}}">{{=DICT["aa13165"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='multi_upload')}}">Multi Upload</a>
+                                                <li><a href="{{=URL(c='default',f='multi_upload')}}">{{=DICT["aa13167"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='tinymc')}}">Text Editor</a>
+                                                <li><a href="{{=URL(c='default',f='tinymc')}}">{{=DICT["aa13169"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='dual_list_box')}}">Dual List Box</a>
+                                                <li><a href="{{=URL(c='default',f='dual_list_box')}}">{{=DICT["aa13171"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="{{=URL(c='default',f='login')}}">Login</a>
+                                                <li><a href="{{=URL(c='default',f='login')}}">{{=DICT["aa13173"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='register')}}">Register</a>
+                                                <li><a href="{{=URL(c='default',f='register')}}">{{=DICT["aa13175"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='lock')}}">Lock</a>
+                                                <li><a href="{{=URL(c='default',f='lock')}}">{{=DICT["aa13177"]}}</a>
                                                 </li>
-                                                <li><a href="{{=URL(c='default',f='password_recovery')}}">Password Recovery</a>
+                                                <li><a href="{{=URL(c='default',f='password_recovery')}}">{{=DICT["aa13179"]}}</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -911,6 +912,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=product_cartform0.custom.begin}}
+<div><label for='id89'>txt90</label></div>
 {{=product_cartform0.custom.widget.f0}}
 {{=product_cartform0.custom.submit}}
 {{=product_cartform0.custom.end}}
@@ -932,9 +934,9 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">{{=DICT["aa13181"]}}</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Product Cart</span>
+                                            <li><span class="bread-blod">{{=DICT["sx13182"]}}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -951,9 +953,9 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-cart-inner">
                             <div id="example-basic">
-                                <h3>Shopping Cart</h3>
+                                <h3>{{=DICT["hh13183"]}}</h3>
                                 <section>
-                                    <h3 class="product-cart-dn">Shopping</h3>
+                                    <h3 class="product-cart-dn">{{=DICT["hc13184"]}}</h3>
                                     <div class="product-list-cart">
                                         <div class="product-status-wrap border-pdt-ct">
                                             <table>
@@ -967,8 +969,8 @@
                                                 <tr>
                                                     <td><img src="{{=URL('static','template/img/product/1.jpg')}}" alt="" /></td>
                                                     <td>
-                                                        <h3>Jewelery Title 1</h3>
-                                                        <p>Lorem ipsum dolor sit consec te imperdiet iaculis ipsum.</p>
+                                                        <h3>{{=DICT["hh13186"]}}</h3>
+                                                        <p>{{=DICT["pa13187"]}}</p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="2">
@@ -982,8 +984,8 @@
                                                 <tr>
                                                     <td><img src="{{=URL('static','template/img/product/2.jpg')}}" alt="" /></td>
                                                     <td>
-                                                        <h3>Jewelery Title 2</h3>
-                                                        <p>Lorem ipsum dolor sit consec te imperdiet iaculis ipsum.</p>
+                                                        <h3>{{=DICT["hh13189"]}}</h3>
+                                                        <p>{{=DICT["pa13190"]}}</p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="1">
@@ -997,8 +999,8 @@
                                                 <tr>
                                                     <td><img src="{{=URL('static','template/img/product/3.jpg')}}" alt="" /></td>
                                                     <td>
-                                                        <h3>Jewelery Title 3</h3>
-                                                        <p>Lorem ipsum dolor sit consec te imperdiet iaculis ipsum.</p>
+                                                        <h3>{{=DICT["hh13192"]}}</h3>
+                                                        <p>{{=DICT["pa13193"]}}</p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="3">
@@ -1012,8 +1014,8 @@
                                                 <tr>
                                                     <td><img src="{{=URL('static','template/img/product/2.jpg')}}" alt="" /></td>
                                                     <td>
-                                                        <h3>Jewelery Title 4</h3>
-                                                        <p>Lorem ipsum dolor sit consec te imperdiet iaculis ipsum.</p>
+                                                        <h3>{{=DICT["hh13195"]}}</h3>
+                                                        <p>{{=DICT["pa13196"]}}</p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="2">
@@ -1027,8 +1029,8 @@
                                                 <tr>
                                                     <td><img src="{{=URL('static','template/img/product/1.jpg')}}" alt="" /></td>
                                                     <td>
-                                                        <h3>Jewelery Title 5</h3>
-                                                        <p>Lorem ipsum dolor sit consec te imperdiet iaculis ipsum.</p>
+                                                        <h3>{{=DICT["hh13198"]}}</h3>
+                                                        <p>{{=DICT["pa13199"]}}</p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="1">
@@ -1043,9 +1045,9 @@
                                         </div>
                                     </div>
                                 </section>
-                                <h3>Delivery Details</h3>
+                                <h3>{{=DICT["hh13200"]}}</h3>
                                 <section>
-                                    <h3 class="product-cart-dn">Shopping</h3>
+                                    <h3 class="product-cart-dn">{{=DICT["hc13201"]}}</h3>
                                     <div class="product-delivary">
                                         <div class="form-group">
                                             <label for="card-number" class="form-label">First name *</label>
@@ -1080,9 +1082,9 @@
                                         </div>
                                     </div>
                                 </section>
-                                <h3>Payment Details</h3>
+                                <h3>{{=DICT["hh13202"]}}</h3>
                                 <section>
-                                    <h3 class="product-cart-dn">Shopping</h3>
+                                    <h3 class="product-cart-dn">{{=DICT["hc13203"]}}</h3>
                                     <div class="payment-details">
                                         <select id="hello-single" class="form-control">
 												<option value="">---- Select card ----</option>
@@ -1122,27 +1124,27 @@
                                                         <div class="form-group">
                                                             <select id="expdate-year" class="form-control" name="expdate_year">
 																	<option value="" selected="selected">Year</option>
-																	<option value="2016">2016</option>
-																	<option value="2017">2017</option>
-																	<option value="2018">2018</option>
-																	<option value="2019">2019</option>
-																	<option value="2020">2020</option>
-																	<option value="2021">2021</option>
-																	<option value="2022">2022</option>
-																	<option value="2023">2023</option>
-																	<option value="2024">2024</option>
-																	<option value="2025">2025</option>
-																	<option value="2026">2026</option>
-																	<option value="2027">2027</option>
-																	<option value="2028">2028</option>
-																	<option value="2029">2029</option>
-																	<option value="2030">2030</option>
-																	<option value="2031">2031</option>
-																	<option value="2032">2032</option>
-																	<option value="2033">2033</option>
-																	<option value="2034">2034</option>
-																	<option value="2035">2035</option>
-																	<option value="2036">2036</option>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
+																	<option valueoption>
 																</select>
                                                         </div>
                                                     </div>
@@ -1163,16 +1165,16 @@
                                             <label for="promotional-code" class="control-label">Promotional code</label>
                                             <input id="promotional-code" class="form-control" type="text" name="promotional_code">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-block">{{=DICT["bu13225"]}}</button>
                                     </div>
                                 </section>
-                                <h3>Confirmation</h3>
+                                <h3>{{=DICT["hh13226"]}}</h3>
                                 <section>
                                     <div class="product-confarmation">
-                                        <h2>Congratulations! Your Order is accepted.</h2>
+                                        <h2>{{=DICT["hh13227"]}}</h2>
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                                             it to make a type specimen book.</p>
-                                        <button class="btn btn-primary m-y">Track Order</button>
+                                        <button class="btn btn-primary m-y">{{=DICT["bu13228"]}}</button>
                                     </div>
                                 </section>
                             </div>
@@ -1186,7 +1188,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>{{=DICT["pf13230"]}}<a href="https://colorlib.com/wp/templates/">Colorlib</a>{{=DICT["pc13229"]}}</p>
                         </div>
                     </div>
                 </div>

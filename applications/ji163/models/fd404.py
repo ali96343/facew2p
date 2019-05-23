@@ -12,10 +12,10 @@ db.define_table('d404',
 #
 
 if not db(db.d404.id ).count():
-    db.d404.insert( f0= 'hh5513', f1= '(5513)404')
-    db.d404.insert( f0= 'pc5514', f1= '(5514)Nope, not here.')
-    db.d404.insert( f0= 'pb5515', f1= '(5515)search ...')
-    db.d404.insert( f0= 'aa5517', f1= '(5517)Return Dashboard')
-    db.d404.insert( f0= 'aa5519', f1= '(5519)Return Website')
+    db.d404.insert( f0= 'hh5319', f1= '(5319)404')
+    db.d404.insert( f0= 'pc5320', f1= '(5320)Nope, not here.')
+    db.d404.insert( f0= 'pb5321', f1= '(5321)search ...')
+    db.d404.insert( f0= 'aa5323', f1= '(5323)Return Dashboard')
+    db.d404.insert( f0= 'aa5325', f1= '(5325)Return Website')
     db.commit()
 #

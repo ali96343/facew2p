@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Robot,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}">
@@ -59,16 +59,16 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp12098"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa12100"]}}</a>{{=DICT["pc12099"]}}</p>
         <![endif]-->
     <!-- 404 Page area Start-->
     <div class="error-page-area">
         <div class="error-page-wrap">
             <i class="notika-icon notika-close"></i>
-            <h2>ERROR <span class="counter">404</span></h2>
-            <p>Sorry, but the page you are looking for has note been found. Try checking the URL for an error, then hit the refresh button on your browser or try found something else in our app.</p>
-            <a href="{{=URL(c='default',f='index')}}" class="btn">Dashboard</a>
-            <a href="#" class="btn error-btn-mg">Report Problem</a>
+            <h2>{{=DICT["hh12102"]}}<span class="counter">{{=DICT["sx12101"]}}</span></h2>
+            <p>{{=DICT["pa12103"]}}</p>
+            <a href="{{=URL(c='default',f='index')}}" class="btn">{{=DICT["aa12105"]}}</a>
+            <a href="#" class="btn error-btn-mg">{{=DICT["aa12106"]}}</a>
         </div>
     </div>
     <!-- 404 Page area End-->

@@ -12,11 +12,12 @@ db.define_table('dlogin',
 #
 
 if not db(db.dlogin.id ).count():
-    db.dlogin.insert( f0= 'pb1090', f1= '(1090)Email')
-    db.dlogin.insert( f0= 'pb1091', f1= '(1091)Password')
-    db.dlogin.insert( f0= 'aa1092', f1= '(1092)Forgotten Password?')
-    db.dlogin.insert( f0= 'bu1093', f1= '(1093)sign in')
-    db.dlogin.insert( f0= 'bu1094', f1= '(1094)sign in with twitter')
-    db.dlogin.insert( f0= 'aa1095', f1= '(1095)Sign Up Here')
+    db.dlogin.insert( f0= 'pb1065', f1= '(1065)Email')
+    db.dlogin.insert( f0= 'pb1066', f1= '(1066)Password')
+    db.dlogin.insert( f0= 'aa1067', f1= '(1067)Forgotten Password?')
+    db.dlogin.insert( f0= 'bu1068', f1= '(1068)sign in')
+    db.dlogin.insert( f0= 'bu1069', f1= '(1069)sign in with facebook')
+    db.dlogin.insert( f0= 'bu1070', f1= '(1070)sign in with twitter')
+    db.dlogin.insert( f0= 'aa1071', f1= '(1071)Sign Up Here')
     db.commit()
 #

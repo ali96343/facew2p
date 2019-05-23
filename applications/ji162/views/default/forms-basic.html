@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -54,45 +54,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2915"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa2917"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa2919"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa2921"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa2923"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa2925"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa2927"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa2929"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa2931"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa2933"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa2935"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa2937"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa2939"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa2941"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa2943"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa2945"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2946"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa2948"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa2950"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -101,26 +101,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa2953"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa2955"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa2957"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa2959"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa2961"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2962"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa2964"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa2966"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa2968"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +149,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform0.custom.begin}}
+<div><label for='id17'>txt18</label></div>
 {{=forms_basicform0.custom.widget.f0}}
 {{=forms_basicform0.custom.submit}}
 {{=forms_basicform0.custom.end}}
@@ -174,7 +175,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc2970"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -198,37 +199,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc2971"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2973"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2974"]}}</span>
+                                        <p>{{=DICT["pa2975"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2977"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2978"]}}</span>
+                                        <p>{{=DICT["pa2979"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2981"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2982"]}}</span>
+                                        <p>{{=DICT["pa2983"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2985"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2986"]}}</span>
+                                        <p>{{=DICT["pa2987"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -245,7 +246,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx2989"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -283,7 +284,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh2990"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -291,9 +292,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Forms</a></li>
-                            <li class="active">Basic</li>
+                            <li><a href="#">{{=DICT["aa2991"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa2992"]}}</a></li>
+                            <li class="active">{{=DICT["lb2993"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -315,7 +316,7 @@
                                 <div id="pay-invoice">
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3 class="text-center">Pay Invoice</h3>
+                                            <h3 class="text-center">{{=DICT["hc2994"]}}</h3>
                                         </div>
                                         <hr>
                                         
@@ -323,14 +324,15 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform1.custom.begin}}
-<label for='cc-payment'>Payment amount</label>
+<div><label for='cc-payment'>Payment amount</label></div>
 {{=forms_basicform1.custom.widget.f0}}
-<label for='cc-name'>Name on card</label>
+<div><label for='cc-name'>Name on card</label></div>
 {{=forms_basicform1.custom.widget.f1}}
-<label for='cc-number'>Card number</label>
+<div><label for='cc-number'>Card number</label></div>
 {{=forms_basicform1.custom.widget.f2}}
-<label for='cc-exp'>Expiration</label>
+<div><label for='cc-exp'>Expiration</label></div>
 {{=forms_basicform1.custom.widget.f3}}
+<div><label for='x_card_code'>txt37</label></div>
 {{=forms_basicform1.custom.widget.f4}}
 {{=forms_basicform1.custom.submit}}
 {{=forms_basicform1.custom.end}}
@@ -359,20 +361,20 @@
 
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header"><strong>Company</strong><small> Form</small></div>
+                            <div class="card-header"><strong>{{=DICT["sp2998"]}}</strong><small>{{=DICT["si2999"]}}</small></div>
                             <div class="card-body card-block">
-                                <div class="form-group"><label for="company" class=" form-control-label">Company</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
-                                    <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control"></div>
-                                        <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+                                <div class="form-group"><label for="company" class=" form-control-label">Company</label><input type="text" id="company" placeholder="{{=DICT["pb3000"]}}" class="form-control"></div>
+                                    <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="{{=DICT["pb3001"]}}" class="form-control"></div>
+                                        <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="{{=DICT["pb3002"]}}" class="form-control"></div>
                                             <div class="row form-group">
                                                 <div class="col-8">
-                                                    <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="Enter your city" class="form-control"></div>
+                                                    <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="{{=DICT["pb3003"]}}" class="form-control"></div>
                                                     </div>
                                                     <div class="col-8">
-                                                        <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                                                        <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="{{=DICT["pb3004"]}}" class="form-control"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="Country name" class="form-control"></div>
+                                                    <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="{{=DICT["pb3005"]}}" class="form-control"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -380,7 +382,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Basic Form</strong> Elements
+                                                        <strong>{{=DICT["sp3006"]}}</strong> Elements
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -388,41 +390,53 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform2.custom.begin}}
+<div><label for='text-input'>txt44</label></div>
 {{=forms_basicform2.custom.widget.f0}}
+<div><label for='email-input'>txt46</label></div>
 {{=forms_basicform2.custom.widget.f1}}
+<div><label for='password-input'>txt48</label></div>
 {{=forms_basicform2.custom.widget.f2}}
+<div><label for='disabled-input'>txt50</label></div>
 {{=forms_basicform2.custom.widget.f3}}
+<div><label for='radio1'>Option 1</label></div>
 {{=forms_basicform2.custom.widget.f4}}
+<div><label for='radio2'>Option 2</label></div>
 {{=forms_basicform2.custom.widget.f5}}
+<div><label for='radio3'>Option 3</label></div>
 {{=forms_basicform2.custom.widget.f6}}
+<div><label for='inline-radio1'>One</label></div>
 {{=forms_basicform2.custom.widget.f7}}
+<div><label for='inline-radio2'>Two</label></div>
 {{=forms_basicform2.custom.widget.f8}}
+<div><label for='inline-radio3'>Three</label></div>
 {{=forms_basicform2.custom.widget.f9}}
-<div><label>
+<div><label for='checkbox1'>Option 1</label></div>
 {{=forms_basicform2.custom.widget.f10}}
- w2p-check-271</label> </div>
-<div><label>
+<div><label for='checkbox2'>Option 2</label></div>
 {{=forms_basicform2.custom.widget.f11}}
- w2p-check-275</label> </div>
-<div><label>
+<div><label for='checkbox3'>Option 3</label></div>
 {{=forms_basicform2.custom.widget.f12}}
- w2p-check-279</label> </div>
-<div><label>
+<div><label for='inline-checkbox1'>One</label></div>
 {{=forms_basicform2.custom.widget.f13}}
- w2p-check-283</label> </div>
-<div><label>
+<div><label for='inline-checkbox2'>Two</label></div>
 {{=forms_basicform2.custom.widget.f14}}
- w2p-check-287</label> </div>
-<div><label>
+<div><label for='inline-checkbox3'>Three</label></div>
 {{=forms_basicform2.custom.widget.f15}}
- w2p-check-291</label> </div>
+<div><label for='file-input'>txt82</label></div>
 {{=forms_basicform2.custom.widget.f16}}
+<div><label for='file-multiple-input'>txt85</label></div>
 {{=forms_basicform2.custom.widget.f17}}
+<div><label for='textarea-input'>txt88</label></div>
 {{=forms_basicform2.custom.widget.f18}}
+<div><label for='select'>txt90</label></div>
 {{=forms_basicform2.custom.widget.f19}}
+<div><label for='selectLg'>txt93</label></div>
 {{=forms_basicform2.custom.widget.f20}}
+<div><label for='SelectLm'>txt96</label></div>
 {{=forms_basicform2.custom.widget.f21}}
+<div><label for='disabledSelect'>txt99</label></div>
 {{=forms_basicform2.custom.widget.f22}}
+<div><label for='multiple-select'>txt102</label></div>
 {{=forms_basicform2.custom.widget.f23}}
 {{=forms_basicform2.custom.submit}}
 {{=forms_basicform2.custom.end}}
@@ -452,7 +466,7 @@
                                                 </div>
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Inline</strong> Form
+                                                        <strong>{{=DICT["sp3013"]}}</strong> Form
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -460,9 +474,9 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform3.custom.begin}}
-<label for='exampleInputName2'>Name</label>
+<div><label for='exampleInputName2'>Name</label></div>
 {{=forms_basicform3.custom.widget.f0}}
-<label for='exampleInputEmail2'>Email</label>
+<div><label for='exampleInputEmail2'>Email</label></div>
 {{=forms_basicform3.custom.widget.f1}}
 {{=forms_basicform3.custom.submit}}
 {{=forms_basicform3.custom.end}}
@@ -495,7 +509,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Horizontal</strong> Form
+                                                        <strong>{{=DICT["sp3016"]}}</strong> Form
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -503,7 +517,9 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform4.custom.begin}}
+<div><label for='hf-email'>txt109</label></div>
 {{=forms_basicform4.custom.widget.f0}}
+<div><label for='hf-password'>txt111</label></div>
 {{=forms_basicform4.custom.widget.f1}}
 {{=forms_basicform4.custom.submit}}
 {{=forms_basicform4.custom.end}}
@@ -533,7 +549,7 @@
                                                 </div>
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Normal</strong> Form
+                                                        <strong>{{=DICT["sp3021"]}}</strong> Form
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -541,9 +557,9 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform5.custom.begin}}
-<label for='nf-email'>Email</label>
+<div><label for='nf-email'>Email</label></div>
 {{=forms_basicform5.custom.widget.f0}}
-<label for='nf-password'>Password</label>
+<div><label for='nf-password'>Password</label></div>
 {{=forms_basicform5.custom.widget.f1}}
 {{=forms_basicform5.custom.submit}}
 {{=forms_basicform5.custom.end}}
@@ -573,7 +589,7 @@
                                                 </div>
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        Input <strong>Grid</strong>
+                                                        Input <strong>{{=DICT["sp3026"]}}</strong>
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -581,15 +597,25 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform6.custom.begin}}
+<div><label for='id116'>txt117</label></div>
 {{=forms_basicform6.custom.widget.f0}}
+<div><label for='id118'>txt119</label></div>
 {{=forms_basicform6.custom.widget.f1}}
+<div><label for='id120'>txt121</label></div>
 {{=forms_basicform6.custom.widget.f2}}
+<div><label for='id122'>txt123</label></div>
 {{=forms_basicform6.custom.widget.f3}}
+<div><label for='id124'>txt125</label></div>
 {{=forms_basicform6.custom.widget.f4}}
+<div><label for='id126'>txt127</label></div>
 {{=forms_basicform6.custom.widget.f5}}
+<div><label for='id128'>txt129</label></div>
 {{=forms_basicform6.custom.widget.f6}}
+<div><label for='id130'>txt131</label></div>
 {{=forms_basicform6.custom.widget.f7}}
+<div><label for='id132'>txt133</label></div>
 {{=forms_basicform6.custom.widget.f8}}
+<div><label for='id134'>txt135</label></div>
 {{=forms_basicform6.custom.widget.f9}}
 {{=forms_basicform6.custom.submit}}
 {{=forms_basicform6.custom.end}}
@@ -619,7 +645,7 @@
                                                 </div>
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        Input <strong>Sizes</strong>
+                                                        Input <strong>{{=DICT["sp3037"]}}</strong>
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -627,8 +653,11 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform7.custom.begin}}
+<div><label for='input-small'>txt137</label></div>
 {{=forms_basicform7.custom.widget.f0}}
+<div><label for='input-normal'>txt139</label></div>
 {{=forms_basicform7.custom.widget.f1}}
+<div><label for='input-large'>txt141</label></div>
 {{=forms_basicform7.custom.widget.f2}}
 {{=forms_basicform7.custom.submit}}
 {{=forms_basicform7.custom.end}}
@@ -661,7 +690,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Validation states</strong> Form
+                                                        <strong>{{=DICT["sp3041"]}}</strong> Form
                                                     </div>
                                                     <div class="card-body card-block">
                                                         <div class="has-success form-group"><label for="inputIsValid" class=" form-control-label">Input is valid</label><input type="text" id="inputIsValid" class="is-valid form-control-success form-control"></div>
@@ -673,7 +702,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Validation states</strong> with optional icons<em>(deprecated)</em>
+                                                        <strong>{{=DICT["sp3042"]}}</strong> with optional icons<em>(deprecated)</em>
                                                     </div>
                                                     <div class="card-body card-block">
                                                         <div class="has-success form-group"><label for="inputSuccess2i" class=" form-control-label">Input with success</label><input type="text" id="inputSuccess2i" class="form-control-success form-control"></div>
@@ -686,7 +715,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Icon/Text</strong> Groups
+                                                        <strong>{{=DICT["sp3043"]}}</strong> Groups
                                                     </div>
                                                     <div class="card-body card-block">
                                                         
@@ -694,8 +723,11 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform8.custom.begin}}
+<div><label for='input1-group1'>txt143</label></div>
 {{=forms_basicform8.custom.widget.f0}}
+<div><label for='input2-group1'>txt145</label></div>
 {{=forms_basicform8.custom.widget.f1}}
+<div><label for='input3-group1'>txt147</label></div>
 {{=forms_basicform8.custom.widget.f2}}
 {{=forms_basicform8.custom.submit}}
 {{=forms_basicform8.custom.end}}
@@ -728,7 +760,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <strong>Buttons</strong> Groups
+                                                            <strong>{{=DICT["sp3048"]}}</strong> Groups
                                                         </div>
                                                         <div class="card-body card-block">
                                                             
@@ -736,8 +768,11 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform9.custom.begin}}
+<div><label for='input1-group2'>txt149</label></div>
 {{=forms_basicform9.custom.widget.f0}}
+<div><label for='input2-group2'>txt151</label></div>
 {{=forms_basicform9.custom.widget.f1}}
+<div><label for='input3-group2'>txt153</label></div>
 {{=forms_basicform9.custom.widget.f2}}
 {{=forms_basicform9.custom.submit}}
 {{=forms_basicform9.custom.end}}
@@ -770,7 +805,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <strong>Dropdowns</strong> Groups
+                                                            <strong>{{=DICT["sp3053"]}}</strong> Groups
                                                         </div>
                                                         <div class="card-body card-block">
                                                             
@@ -778,8 +813,11 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform10.custom.begin}}
+<div><label for='input1-group3'>txt169</label></div>
 {{=forms_basicform10.custom.widget.f0}}
+<div><label for='input2-group3'>txt171</label></div>
 {{=forms_basicform10.custom.widget.f1}}
+<div><label for='input3-group3'>txt173</label></div>
 {{=forms_basicform10.custom.widget.f2}}
 {{=forms_basicform10.custom.submit}}
 {{=forms_basicform10.custom.end}}
@@ -823,15 +861,25 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform11.custom.begin}}
+<div><label for='id234'>txt235</label></div>
 {{=forms_basicform11.custom.widget.f0}}
+<div><label for='id236'>txt237</label></div>
 {{=forms_basicform11.custom.widget.f1}}
+<div><label for='id238'>txt239</label></div>
 {{=forms_basicform11.custom.widget.f2}}
+<div><label for='id240'>txt241</label></div>
 {{=forms_basicform11.custom.widget.f3}}
+<div><label for='id242'>txt243</label></div>
 {{=forms_basicform11.custom.widget.f4}}
+<div><label for='id244'>txt245</label></div>
 {{=forms_basicform11.custom.widget.f5}}
+<div><label for='id246'>txt247</label></div>
 {{=forms_basicform11.custom.widget.f6}}
+<div><label for='id248'>txt249</label></div>
 {{=forms_basicform11.custom.widget.f7}}
+<div><label for='id250'>txt251</label></div>
 {{=forms_basicform11.custom.widget.f8}}
+<div><label for='id252'>txt253</label></div>
 {{=forms_basicform11.custom.widget.f9}}
 {{=forms_basicform11.custom.submit}}
 {{=forms_basicform11.custom.end}}
@@ -850,7 +898,7 @@
 {{end}}
 
                                                         </div>
-                                                        <div class="card-footer"><button type="submit" class="btn btn-primary btn-sm">Action</button><button class="btn btn-danger btn-sm">Action</button><button class="btn btn-warning btn-sm">Action</button><button class="btn btn-info btn-sm">Action</button><button class="btn btn-success btn-sm">Action</button></div>
+                                                        <div class="card-footer"><button type="submit" class="btn btn-primary btn-sm">{{=DICT["bu3079"]}}</button><button class="btn btn-danger btn-sm">{{=DICT["bu3079"]}}</button><button class="btn btn-warning btn-sm">{{=DICT["bu3079"]}}</button><button class="btn btn-info btn-sm">{{=DICT["bu3079"]}}</button><button class="btn btn-success btn-sm">{{=DICT["bu3079"]}}</button></div>
                                                     </div>
                                                 </div>
 
@@ -865,15 +913,25 @@
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform12.custom.begin}}
+<div><label for='id254'>txt255</label></div>
 {{=forms_basicform12.custom.widget.f0}}
+<div><label for='id256'>txt257</label></div>
 {{=forms_basicform12.custom.widget.f1}}
+<div><label for='id258'>txt259</label></div>
 {{=forms_basicform12.custom.widget.f2}}
+<div><label for='id260'>txt261</label></div>
 {{=forms_basicform12.custom.widget.f3}}
+<div><label for='id262'>txt263</label></div>
 {{=forms_basicform12.custom.widget.f4}}
+<div><label for='id264'>txt265</label></div>
 {{=forms_basicform12.custom.widget.f5}}
+<div><label for='id266'>txt267</label></div>
 {{=forms_basicform12.custom.widget.f6}}
+<div><label for='id268'>txt269</label></div>
 {{=forms_basicform12.custom.widget.f7}}
+<div><label for='id270'>txt271</label></div>
 {{=forms_basicform12.custom.widget.f8}}
+<div><label for='id272'>txt273</label></div>
 {{=forms_basicform12.custom.widget.f9}}
 {{=forms_basicform12.custom.submit}}
 {{=forms_basicform12.custom.end}}
@@ -892,21 +950,24 @@
 {{end}}
 
                                                         </div>
-                                                        <div class="card-footer"><button type="submit" class="btn btn-primary btn-sm">Action</button><button class="btn btn-danger btn-sm">Action</button><button class="btn btn-warning btn-sm">Action</button><button class="btn btn-info btn-sm">Action</button><button class="btn btn-success btn-sm">Action</button></div>
+                                                        <div class="card-footer"><button type="submit" class="btn btn-primary btn-sm">{{=DICT["bu3090"]}}</button><button class="btn btn-danger btn-sm">{{=DICT["bu3090"]}}</button><button class="btn btn-warning btn-sm">{{=DICT["bu3090"]}}</button><button class="btn btn-info btn-sm">{{=DICT["bu3090"]}}</button><button class="btn btn-success btn-sm">{{=DICT["bu3090"]}}</button></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6">
                                                     <div class="card">
-                                                        <div class="card-header">Example Form</div>
+                                                        <div class="card-header">{{=DICT["di3091"]}}</div>
                                                         <div class="card-body card-block">
                                                             
 {{block myforms_basicform13}}
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform13.custom.begin}}
+<div><label for='username3'>txt275</label></div>
 {{=forms_basicform13.custom.widget.f0}}
+<div><label for='email3'>txt278</label></div>
 {{=forms_basicform13.custom.widget.f1}}
+<div><label for='password3'>txt281</label></div>
 {{=forms_basicform13.custom.widget.f2}}
 {{=forms_basicform13.custom.submit}}
 {{=forms_basicform13.custom.end}}
@@ -930,15 +991,18 @@
 
                                                 <div class="col-lg-6">
                                                     <div class="card">
-                                                        <div class="card-header">Example Form</div>
+                                                        <div class="card-header">{{=DICT["di3096"]}}</div>
                                                         <div class="card-body card-block">
                                                             
 {{block myforms_basicform14}}
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform14.custom.begin}}
+<div><label for='username2'>txt287</label></div>
 {{=forms_basicform14.custom.widget.f0}}
+<div><label for='email2'>txt289</label></div>
 {{=forms_basicform14.custom.widget.f1}}
+<div><label for='password2'>txt291</label></div>
 {{=forms_basicform14.custom.widget.f2}}
 {{=forms_basicform14.custom.submit}}
 {{=forms_basicform14.custom.end}}
@@ -962,15 +1026,18 @@
 
                                                 <div class="col-lg-6">
                                                     <div class="card">
-                                                        <div class="card-header">Example Form</div>
+                                                        <div class="card-header">{{=DICT["di3101"]}}</div>
                                                         <div class="card-body card-block">
                                                             
 {{block myforms_basicform15}}
 {{include 'web2py_ajax.html'}}
 
 {{=forms_basicform15.custom.begin}}
+<div><label for='username'>txt296</label></div>
 {{=forms_basicform15.custom.widget.f0}}
+<div><label for='email'>txt298</label></div>
 {{=forms_basicform15.custom.widget.f1}}
+<div><label for='password'>txt300</label></div>
 {{=forms_basicform15.custom.widget.f2}}
 {{=forms_basicform15.custom.submit}}
 {{=forms_basicform15.custom.end}}

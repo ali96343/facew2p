@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Robot,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}">
@@ -65,7 +65,7 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp9905"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa9907"]}}</a>{{=DICT["pc9906"]}}</p>
         <![endif]-->
     <!-- Start Header Top Area -->
     <div class="header-top-area">
@@ -92,7 +92,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Messages</h2>
+                                        <h2>{{=DICT["hh9909"]}}</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -101,8 +101,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9911"]}}</h3>
+                                                    <p>{{=DICT["pa9912"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -112,8 +112,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9914"]}}</h3>
+                                                    <p>{{=DICT["pa9915"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -123,8 +123,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9917"]}}</h3>
+                                                    <p>{{=DICT["pa9918"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -134,8 +134,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9920"]}}</h3>
+                                                    <p>{{=DICT["pa9921"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -145,21 +145,21 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9923"]}}</h3>
+                                                    <p>{{=DICT["pa9924"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa9925"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Notification</h2>
+                                        <h2>{{=DICT["hh9926"]}}</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -168,8 +168,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9928"]}}</h3>
+                                                    <p>{{=DICT["pa9929"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -179,8 +179,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9931"]}}</h3>
+                                                    <p>{{=DICT["pa9932"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -190,8 +190,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9934"]}}</h3>
+                                                    <p>{{=DICT["pa9935"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -201,8 +201,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9937"]}}</h3>
+                                                    <p>{{=DICT["pa9938"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -212,70 +212,70 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh9940"]}}</h3>
+                                                    <p>{{=DICT["pa9941"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa9942"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Tasks</h2>
+                                        <h2>{{=DICT["hh9943"]}}</h2>
                                     </div>
                                     <div class="hd-message-info hd-task-info">
                                         <div class="skill">
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>HTML5 Validation Report</p>
+                                                    <p>{{=DICT["pa9944"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>{{=DICT["sp9945"]}}</span>
                                                 </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Google Chrome Extension</p>
+                                                    <p>{{=DICT["pa9946"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp9947"]}}</span> </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Social Internet Projects</p>
+                                                    <p>{{=DICT["pa9948"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>75%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp9949"]}}</span> </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Bootstrap Admin</p>
+                                                    <p>{{=DICT["pa9950"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>65%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp9951"]}}</span> </div>
                                             </div>
                                             <div class="progress progress-bt">
                                                 <div class="lead-content">
-                                                    <p>Youtube App</p>
+                                                    <p>{{=DICT["pa9952"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>55%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp9953"]}}</span> </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa9954"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Chat</h2>
+                                        <h2>{{=DICT["hh9955"]}}</h2>
                                     </div>
                                     <div class="search-people">
                                         <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" placeholder="Search People" />
+                                        <input type="text" placeholder="{{=DICT["pb9956"]}}" />
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -285,8 +285,8 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh9958"]}}</h3>
+                                                    <p>{{=DICT["pa9959"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -296,8 +296,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Last seen 3 hours ago</p>
+                                                    <h3>{{=DICT["hh9961"]}}</h3>
+                                                    <p>{{=DICT["pa9962"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -307,8 +307,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Last seen 2 minutes ago</p>
+                                                    <h3>{{=DICT["hh9964"]}}</h3>
+                                                    <p>{{=DICT["pa9965"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -319,8 +319,8 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh9967"]}}</h3>
+                                                    <p>{{=DICT["pa9968"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -331,14 +331,14 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh9970"]}}</h3>
+                                                    <p>{{=DICT["pa9971"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa9972"]}}</a>
                                     </div>
                                 </div>
                             </li>
@@ -357,91 +357,91 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">{{=DICT["aa9973"]}}</a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='index')}}">Dashboard One</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_2')}}">Dashboard Two</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_3')}}">Dashboard Three</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_4')}}">Dashboard Four</a></li>
-                                        <li><a href="{{=URL(c='default',f='analytics')}}">Analytics</a></li>
-                                        <li><a href="{{=URL(c='default',f='widgets')}}">Widgets</a></li>
+                                        <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa9975"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_2')}}">{{=DICT["aa9977"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_3')}}">{{=DICT["aa9979"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_4')}}">{{=DICT["aa9981"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='analytics')}}">{{=DICT["aa9983"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='widgets')}}">{{=DICT["aa9985"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">{{=DICT["aa9986"]}}</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='inbox')}}">Inbox</a></li>
-                                        <li><a href="{{=URL(c='default',f='view_email')}}">View Email</a></li>
-                                        <li><a href="{{=URL(c='default',f='compose_email')}}">Compose Email</a></li>
+                                        <li><a href="{{=URL(c='default',f='inbox')}}">{{=DICT["aa9988"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='view_email')}}">{{=DICT["aa9990"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='compose_email')}}">{{=DICT["aa9992"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                <li><a data-toggle="collapse" data-target="#democrou" href="#">{{=DICT["aa9993"]}}</a>
                                     <ul id="democrou" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='animations')}}">Animations</a></li>
-                                        <li><a href="{{=URL(c='default',f='google_map')}}">Google Map</a></li>
-                                        <li><a href="{{=URL(c='default',f='data_map')}}">Data Maps</a></li>
-                                        <li><a href="{{=URL(c='default',f='code_editor')}}">Code Editor</a></li>
-                                        <li><a href="{{=URL(c='default',f='image_cropper')}}">Images Cropper</a></li>
-                                        <li><a href="{{=URL(c='default',f='wizard')}}">Wizard</a></li>
+                                        <li><a href="{{=URL(c='default',f='animations')}}">{{=DICT["aa9995"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='google_map')}}">{{=DICT["aa9997"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='data_map')}}">{{=DICT["aa9999"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='code_editor')}}">{{=DICT["aa10001"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='image_cropper')}}">{{=DICT["aa10003"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='wizard')}}">{{=DICT["aa10005"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">{{=DICT["aa10006"]}}</a>
                                     <ul id="demolibra" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='flot_charts')}}">Flot Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='bar_charts')}}">Bar Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='line_charts')}}">Line Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='area_charts')}}">Area Charts</a></li>
+                                        <li><a href="{{=URL(c='default',f='flot_charts')}}">{{=DICT["aa10008"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='bar_charts')}}">{{=DICT["aa10010"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='line_charts')}}">{{=DICT["aa10012"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='area_charts')}}">{{=DICT["aa10014"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">{{=DICT["aa10015"]}}</a>
                                     <ul id="demodepart" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='normal_table')}}">Normal Table</a></li>
-                                        <li><a href="{{=URL(c='default',f='data_table')}}">Data Table</a></li>
+                                        <li><a href="{{=URL(c='default',f='normal_table')}}">{{=DICT["aa10017"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='data_table')}}">{{=DICT["aa10019"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                <li><a data-toggle="collapse" data-target="#demo" href="#">{{=DICT["aa10020"]}}</a>
                                     <ul id="demo" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='form_elements')}}">Form Elements</a></li>
-                                        <li><a href="{{=URL(c='default',f='form_components')}}">Form Components</a></li>
-                                        <li><a href="{{=URL(c='default',f='form_examples')}}">Form Examples</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_elements')}}">{{=DICT["aa10022"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_components')}}">{{=DICT["aa10024"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_examples')}}">{{=DICT["aa10026"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">{{=DICT["aa10027"]}}</a>
                                     <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='notification')}}">Notifications</a>
+                                        <li><a href="{{=URL(c='default',f='notification')}}">{{=DICT["aa10029"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='alert')}}">Alerts</a>
+                                        <li><a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa10031"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='modals')}}">Modals</a>
+                                        <li><a href="{{=URL(c='default',f='modals')}}">{{=DICT["aa10033"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='buttons')}}">Buttons</a>
+                                        <li><a href="{{=URL(c='default',f='buttons')}}">{{=DICT["aa10035"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='tabs')}}">Tabs</a>
+                                        <li><a href="{{=URL(c='default',f='tabs')}}">{{=DICT["aa10037"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='accordion')}}">Accordion</a>
+                                        <li><a href="{{=URL(c='default',f='accordion')}}">{{=DICT["aa10039"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='dialog')}}">Dialogs</a>
+                                        <li><a href="{{=URL(c='default',f='dialog')}}">{{=DICT["aa10041"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='popovers')}}">Popovers</a>
+                                        <li><a href="{{=URL(c='default',f='popovers')}}">{{=DICT["aa10043"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='tooltips')}}">Tooltips</a>
+                                        <li><a href="{{=URL(c='default',f='tooltips')}}">{{=DICT["aa10045"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='dropdown')}}">Dropdowns</a>
+                                        <li><a href="{{=URL(c='default',f='dropdown')}}">{{=DICT["aa10047"]}}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">{{=DICT["aa10048"]}}</a>
                                     <ul id="Pagemob" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='contact')}}">Contact</a>
+                                        <li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa10050"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='invoice')}}">Invoice</a>
+                                        <li><a href="{{=URL(c='default',f='invoice')}}">{{=DICT["aa10052"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='typography')}}">Typography</a>
+                                        <li><a href="{{=URL(c='default',f='typography')}}">{{=DICT["aa10054"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='color')}}">Color</a>
+                                        <li><a href="{{=URL(c='default',f='color')}}">{{=DICT["aa10056"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='login_register')}}">Login Register</a>
+                                        <li><a href="{{=URL(c='default',f='login_register')}}">{{=DICT["aa10058"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='X404')}}">404 Page</a>
+                                        <li><a href="{{=URL(c='default',f='X404')}}">{{=DICT["aa10060"]}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -479,113 +479,113 @@
                     <div class="tab-content custom-menu-content">
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='index')}}">Dashboard One</a>
+                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa10062"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_2')}}">Dashboard Two</a>
+                                <li><a href="{{=URL(c='default',f='index_2')}}">{{=DICT["aa10064"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_3')}}">Dashboard Three</a>
+                                <li><a href="{{=URL(c='default',f='index_3')}}">{{=DICT["aa10066"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_4')}}">Dashboard Four</a>
+                                <li><a href="{{=URL(c='default',f='index_4')}}">{{=DICT["aa10068"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='analytics')}}">Analytics</a>
+                                <li><a href="{{=URL(c='default',f='analytics')}}">{{=DICT["aa10070"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='widgets')}}">Widgets</a>
+                                <li><a href="{{=URL(c='default',f='widgets')}}">{{=DICT["aa10072"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='inbox')}}">Inbox</a>
+                                <li><a href="{{=URL(c='default',f='inbox')}}">{{=DICT["aa10074"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='view_email')}}">View Email</a>
+                                <li><a href="{{=URL(c='default',f='view_email')}}">{{=DICT["aa10076"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='compose_email')}}">Compose Email</a>
+                                <li><a href="{{=URL(c='default',f='compose_email')}}">{{=DICT["aa10078"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='animations')}}">Animations</a>
+                                <li><a href="{{=URL(c='default',f='animations')}}">{{=DICT["aa10080"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='google_map')}}">Google Map</a>
+                                <li><a href="{{=URL(c='default',f='google_map')}}">{{=DICT["aa10082"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='data_map')}}">Data Maps</a>
+                                <li><a href="{{=URL(c='default',f='data_map')}}">{{=DICT["aa10084"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='code_editor')}}">Code Editor</a>
+                                <li><a href="{{=URL(c='default',f='code_editor')}}">{{=DICT["aa10086"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='image_cropper')}}">Images Cropper</a>
+                                <li><a href="{{=URL(c='default',f='image_cropper')}}">{{=DICT["aa10088"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='wizard')}}">Wizard</a>
+                                <li><a href="{{=URL(c='default',f='wizard')}}">{{=DICT["aa10090"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='flot_charts')}}">Flot Charts</a>
+                                <li><a href="{{=URL(c='default',f='flot_charts')}}">{{=DICT["aa10092"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='bar_charts')}}">Bar Charts</a>
+                                <li><a href="{{=URL(c='default',f='bar_charts')}}">{{=DICT["aa10094"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='line_charts')}}">Line Charts</a>
+                                <li><a href="{{=URL(c='default',f='line_charts')}}">{{=DICT["aa10096"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='area_charts')}}">Area Charts</a>
+                                <li><a href="{{=URL(c='default',f='area_charts')}}">{{=DICT["aa10098"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='normal_table')}}">Normal Table</a>
+                                <li><a href="{{=URL(c='default',f='normal_table')}}">{{=DICT["aa10100"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='data_table')}}">Data Table</a>
+                                <li><a href="{{=URL(c='default',f='data_table')}}">{{=DICT["aa10102"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='form_elements')}}">Form Elements</a>
+                                <li><a href="{{=URL(c='default',f='form_elements')}}">{{=DICT["aa10104"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='form_components')}}">Form Components</a>
+                                <li><a href="{{=URL(c='default',f='form_components')}}">{{=DICT["aa10106"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='form_examples')}}">Form Examples</a>
+                                <li><a href="{{=URL(c='default',f='form_examples')}}">{{=DICT["aa10108"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='notification')}}">Notifications</a>
+                                <li><a href="{{=URL(c='default',f='notification')}}">{{=DICT["aa10110"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='alert')}}">Alerts</a>
+                                <li><a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa10112"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='modals')}}">Modals</a>
+                                <li><a href="{{=URL(c='default',f='modals')}}">{{=DICT["aa10114"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='buttons')}}">Buttons</a>
+                                <li><a href="{{=URL(c='default',f='buttons')}}">{{=DICT["aa10116"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='tabs')}}">Tabs</a>
+                                <li><a href="{{=URL(c='default',f='tabs')}}">{{=DICT["aa10118"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='accordion')}}">Accordion</a>
+                                <li><a href="{{=URL(c='default',f='accordion')}}">{{=DICT["aa10120"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='dialog')}}">Dialogs</a>
+                                <li><a href="{{=URL(c='default',f='dialog')}}">{{=DICT["aa10122"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='popovers')}}">Popovers</a>
+                                <li><a href="{{=URL(c='default',f='popovers')}}">{{=DICT["aa10124"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='tooltips')}}">Tooltips</a>
+                                <li><a href="{{=URL(c='default',f='tooltips')}}">{{=DICT["aa10126"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='dropdown')}}">Dropdowns</a>
+                                <li><a href="{{=URL(c='default',f='dropdown')}}">{{=DICT["aa10128"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='contact')}}">Contact</a>
+                                <li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa10130"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='invoice')}}">Invoice</a>
+                                <li><a href="{{=URL(c='default',f='invoice')}}">{{=DICT["aa10132"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='typography')}}">Typography</a>
+                                <li><a href="{{=URL(c='default',f='typography')}}">{{=DICT["aa10134"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='color')}}">Color</a>
+                                <li><a href="{{=URL(c='default',f='color')}}">{{=DICT["aa10136"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='login_register')}}">Login Register</a>
+                                <li><a href="{{=URL(c='default',f='login_register')}}">{{=DICT["aa10138"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='X404')}}">404 Page</a>
+                                <li><a href="{{=URL(c='default',f='X404')}}">{{=DICT["aa10140"]}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -612,7 +612,7 @@
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter">90,000</span>k</h2>
-                            <p>Website Impressions</p>
+                            <p>{{=DICT["pa10141"]}}</p>
                         </div>
                         <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
                     </div>
@@ -630,7 +630,7 @@
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter">1,000</span></h2>
-                            <p>Total Support Tickets</p>
+                            <p>{{=DICT["pa10142"]}}</p>
                         </div>
                         <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
                     </div>
@@ -647,8 +647,8 @@
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
                         <div class="curved-inner-pro">
                             <div class="curved-ctn">
-                                <h2>Sales Statistics</h2>
-                                <p>Vestibulum purus quam scelerisque, mollis nonummy metus</p>
+                                <h2>{{=DICT["hh10143"]}}</h2>
+                                <p>{{=DICT["pa10144"]}}</p>
                             </div>
                         </div>
                         <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
@@ -657,14 +657,14 @@
                 <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
                     <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                            <h2>For The Past 30 Days</h2>
-                            <p>Fusce eget dolor id justo luctus the commodo vel pharetra nisi. Donec velit of libero.</p>
+                            <h2>{{=DICT["hh10145"]}}</h2>
+                            <p>{{=DICT["pa10146"]}}</p>
                         </div>
 						<div class="dash-widget-visits"></div>
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
                                 <h3><span class="counter">3,20,000</span></h3>
-                                <p>Page Views</p>
+                                <p>{{=DICT["pa10147"]}}</p>
                             </div>
                             <div class="past-statistic-graph">
                                 <div class="stats-bar"></div>
@@ -673,7 +673,7 @@
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
                                 <h3><span class="counter">1,03,000</span></h3>
-                                <p>Total Clicks</p>
+                                <p>{{=DICT["pa10148"]}}</p>
                             </div>
                             <div class="past-statistic-graph">
                                 <div class="stats-line"></div>
@@ -681,8 +681,8 @@
                         </div>
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
-                                <h3><span class="counter">24,00,000</span></h3>
-                                <p>Site Visitors</p>
+                                <h3><span class="counterspan></h3>
+                                <p>{{=DICT["pa10150"]}}</p>
                             </div>
                             <div class="past-statistic-graph">
                                 <div class="stats-bar-2"></div>
@@ -702,14 +702,14 @@
                     <div class="email-statis-inner notika-shadow">
                         <div class="email-ctn-round">
                             <div class="email-rdn-hd">
-								<h2>Email Statistics</h2>
+								<h2>{{=DICT["hh10151"]}}</h2>
 							</div>
                             <div class="email-statis-wrap">
                                 <div class="email-round-nock">
                                     <input type="text" class="knob" value="0" data-rel="55" data-linecap="round" data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true">
                                 </div>
                                 <div class="email-ctn-nock">
-                                    <p>Total Emails Sent</p>
+                                    <p>{{=DICT["pa10152"]}}</p>
                                 </div>
                             </div>
                             <div class="email-round-gp">
@@ -718,7 +718,7 @@
                                         <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
                                     </div>
                                     <div class="email-ctn-nock">
-                                        <p>Bounce Rate</p>
+                                        <p>{{=DICT["pa10153"]}}</p>
                                     </div>
                                 </div>
                                 <div class="email-round-pro">
@@ -726,7 +726,7 @@
                                         <input type="text" class="knob" value="0" data-rel="35" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
                                     </div>
                                     <div class="email-ctn-nock">
-                                        <p>Total Opened</p>
+                                        <p>{{=DICT["pa10154"]}}</p>
                                     </div>
                                 </div>
                                 <div class="email-round-pro sm-res-ds-n lg-res-mg-bl">
@@ -734,7 +734,7 @@
                                         <input type="text" class="knob" value="0" data-rel="45" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
                                     </div>
                                     <div class="email-ctn-nock">
-                                        <p>Total Ignored</p>
+                                        <p>{{=DICT["pa10155"]}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -745,7 +745,7 @@
                     <div class="recent-post-wrapper notika-shadow sm-res-mg-t-30 tb-res-ds-n dk-res-ds">
                         <div class="recent-post-ctn">
                             <div class="recent-post-title">
-                                <h2>Recent Posts</h2>
+                                <h2>{{=DICT["hh10156"]}}</h2>
                             </div>
                         </div>
                         <div class="recent-post-items">
@@ -756,8 +756,8 @@
                                             <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                         </div>
                                         <div class="recent-post-it-ctn">
-                                            <h2>Smith</h2>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                            <h2>{{=DICT["hh10158"]}}</h2>
+                                            <p>{{=DICT["pa10159"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -769,8 +769,8 @@
                                             <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                         </div>
                                         <div class="recent-post-it-ctn">
-                                            <h2>John Deo</h2>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                            <h2>{{=DICT["hh10161"]}}</h2>
+                                            <p>{{=DICT["pa10162"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -782,8 +782,8 @@
                                             <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                         </div>
                                         <div class="recent-post-it-ctn">
-                                            <h2>Malika</h2>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                            <h2>{{=DICT["hh10164"]}}</h2>
+                                            <p>{{=DICT["pa10165"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -795,8 +795,8 @@
                                             <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                         </div>
                                         <div class="recent-post-it-ctn">
-                                            <h2>Smith</h2>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                            <h2>{{=DICT["hh10167"]}}</h2>
+                                            <p>{{=DICT["pa10168"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -808,8 +808,8 @@
                                             <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                         </div>
                                         <div class="recent-post-it-ctn">
-                                            <h2>John Deo</h2>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                            <h2>{{=DICT["hh10170"]}}</h2>
+                                            <p>{{=DICT["pa10171"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -818,7 +818,7 @@
                                 <a href="#">
                                     <div class="recent-post-flex rc-ps-vw">
                                         <div class="recent-post-line rct-pt-mg">
-                                            <p>View All</p>
+                                            <p>{{=DICT["pa10172"]}}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -831,7 +831,7 @@
                         <div class="rc-it-ltd">
                             <div class="recent-items-ctn">
                                 <div class="recent-items-title">
-                                    <h2>Recent Items</h2>
+                                    <h2>{{=DICT["hh10173"]}}</h2>
                                 </div>
                             </div>
                             <div class="recent-items-inn">
@@ -840,6 +840,7 @@
 <thead>
 <tr>
     <th>ID</th>
+    <th>зззззз</th>
     <th>Name</th>
     <th>Price</th>
 </tr>
@@ -854,6 +855,7 @@
     <td>{{=row.f0}}</td>
     <td>{{=row.f1}}</td>
     <td>{{=row.f2}}</td>
+    <td>{{=row.f3}}</td>
 </tr>
 {{pass}}
 {{pass}}
@@ -888,61 +890,61 @@
                     <div class="realtime-wrap notika-shadow mg-t-30">
                         <div class="realtime-ctn">
                             <div class="realtime-title">
-                                <h2>Realtime Visitors</h2>
+                                <h2>{{=DICT["hh10174"]}}</h2>
                             </div>
                         </div>
                         <div class="realtime-visitor-ctn">
                             <div class="realtime-vst-sg">
                                 <h4><span class="counter">4,35,456</span></h4>
-                                <p>Visitors last 24h</p>
+                                <p>{{=DICT["pa10175"]}}</p>
                             </div>
                             <div class="realtime-vst-sg">
                                 <h4><span class="counter">4,566</span></h4>
-                                <p>Visitors last 30m</p>
+                                <p>{{=DICT["pa10176"]}}</p>
                             </div>
                         </div>
                         <div class="realtime-map">
                             <div class="vectorjsmarp" id="world-map"></div>
                         </div>
                         <div class="realtime-country-ctn realtime-ltd-mg">
-                            <h5>September 4, 21:44:02 (2 Mins 56 Seconds)</h5>
+                            <h5>{{=DICT["hh10177"]}}</h5>
                             <div class="realtime-ctn-bw">
                                 <div class="realtime-ctn-st">
-                                    <span><img src="{{=URL('static','template/img/country/1.png')}}" alt="" /></span> <span>United States</span>
+                                    <span><img src="{{=URL('static','template/img/country/1.png')}}" alt="" /></span> <span>{{=DICT["sp10179"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Firefox</span>
+                                    <span>{{=DICT["sp10180"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Mac OSX</span>
+                                    <span>{{=DICT["sp10181"]}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="realtime-country-ctn">
-                            <h5>September 7, 20:44:02 (5 Mins 56 Seconds)</h5>
+                            <h5>{{=DICT["hh10182"]}}</h5>
                             <div class="realtime-ctn-bw">
                                 <div class="realtime-ctn-st">
-                                    <span><img src="{{=URL('static','template/img/country/2.png')}}" alt="" /></span> <span>Australia</span>
+                                    <span><img src="{{=URL('static','template/img/country/2.png')}}" alt="" /></span> <span>{{=DICT["sp10184"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Firefox</span>
+                                    <span>{{=DICT["sp10185"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Mac OSX</span>
+                                    <span>{{=DICT["sp10186"]}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="realtime-country-ctn">
-                            <h5>September 9, 19:44:02 (10 Mins 56 Seconds)</h5>
+                            <h5>{{=DICT["hh10187"]}}</h5>
                             <div class="realtime-ctn-bw">
                                 <div class="realtime-ctn-st">
-                                    <span><img src="{{=URL('static','template/img/country/3.png')}}" alt="" /></span> <span>Brazil</span>
+                                    <span><img src="{{=URL('static','template/img/country/3.png')}}" alt="" /></span> <span>{{=DICT["sp10189"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Firefox</span>
+                                    <span>{{=DICT["sp10190"]}}</span>
                                 </div>
                                 <div class="realtime-bw">
-                                    <span>Mac OSX</span>
+                                    <span>{{=DICT["sp10191"]}}</span>
                                 </div>
                             </div>
                         </div>
@@ -952,7 +954,7 @@
                     <div class="add-todo-list notika-shadow mg-t-30">
                         <div class="realtime-ctn">
                             <div class="realtime-title">
-                                <h2>Add Todo</h2>
+                                <h2>{{=DICT["hh10192"]}}</h2>
                             </div>
                         </div>
                         <div class="card-box">
@@ -963,7 +965,7 @@
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="notika-todo-btn">
-                                            <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
+                                            <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">{{=DICT["aa10193"]}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -975,10 +977,10 @@
                                         <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 todo-inputbar">
                                             <div class="form-group todo-flex">
                                                 <div class="nk-int-st">
-                                                    <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
+                                                    <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="{{=DICT["pb10194"]}}">
                                                 </div>
                                                 <div class="todo-send">
-                                                    <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Add</button>
+                                                    <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">{{=DICT["bu10195"]}}</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -992,7 +994,7 @@
                     <div class="notika-chat-list notika-shadow mg-t-30 tb-res-ds-n dk-res-ds">
                         <div class="realtime-ctn">
                             <div class="realtime-title">
-                                <h2>Chat Box</h2>
+                                <h2>{{=DICT["hh10196"]}}</h2>
                             </div>
                         </div>
                         <div class="card-box">
@@ -1002,11 +1004,11 @@
                                         <li class="clearfix">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="male">
-                                                <i>10:00</i>
+                                                <i>{{=DICT["ii10198"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap">
-                                                    <i>John Deo</i>
+                                                    <i>{{=DICT["ii10199"]}}</i>
                                                     <p>
                                                         Hello!
                                                     </p>
@@ -1016,11 +1018,11 @@
                                         <li class="clearfix odd">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="Female">
-                                                <i>10:01</i>
+                                                <i>{{=DICT["ii10201"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap chat-widgets-cn">
-                                                    <i>Smith</i>
+                                                    <i>{{=DICT["ii10202"]}}</i>
                                                     <p>
                                                         Hi, How are you? What about our next meeting?
                                                     </p>
@@ -1030,11 +1032,11 @@
                                         <li class="clearfix">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="male">
-                                                <i>10:01</i>
+                                                <i>{{=DICT["ii10204"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap">
-                                                    <i>John Deo</i>
+                                                    <i>{{=DICT["ii10205"]}}</i>
                                                     <p>
                                                         Yeah everything is fine
                                                     </p>
@@ -1044,11 +1046,11 @@
                                         <li class="clearfix odd">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="male">
-                                                <i>10:02</i>
+                                                <i>{{=DICT["ii10207"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap chat-widgets-cn">
-                                                    <i>Smith</i>
+                                                    <i>{{=DICT["ii10208"]}}</i>
                                                     <p>
                                                         Wow that"s great
                                                     </p>
@@ -1058,11 +1060,11 @@
                                         <li class="clearfix">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="male">
-                                                <i>10:01</i>
+                                                <i>{{=DICT["ii10210"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap">
-                                                    <i>John Deo</i>
+                                                    <i>{{=DICT["ii10211"]}}</i>
                                                     <p>
                                                         Doing Better i am thinking about that..
                                                     </p>
@@ -1072,11 +1074,11 @@
                                         <li class="clearfix odd">
                                             <div class="chat-avatar">
                                                 <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="male">
-                                                <i>10:02</i>
+                                                <i>{{=DICT["ii10213"]}}</i>
                                             </div>
                                             <div class="conversation-text">
                                                 <div class="ctext-wrap chat-widgets-cn">
-                                                    <i>Smith</i>
+                                                    <i>{{=DICT["ii10214"]}}</i>
                                                     <p>
                                                         Wow, You also tallent man...
                                                     </p>
@@ -1090,10 +1092,10 @@
                                         <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 chat-inputbar">
                                             <div class="form-group todo-flex">
                                                 <div class="nk-int-st">
-                                                    <input type="text" class="form-control chat-input" placeholder="Enter your text">
+                                                    <input type="text" class="form-control chat-input" placeholder="{{=DICT["pb10215"]}}">
                                                 </div>
                                                 <div class="chat-send">
-                                                    <button type="submit" class="btn btn-md btn-primary btn-block notika-chat-btn">Send</button>
+                                                    <button type="submit" class="btn btn-md btn-primary btn-block notika-chat-btn">{{=DICT["bu10216"]}}</button>
                                                 </div>
                                             </div>
                                         </div>

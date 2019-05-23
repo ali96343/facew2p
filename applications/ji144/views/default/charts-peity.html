@@ -13,18 +13,18 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -51,45 +51,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc532"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa534"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa536"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa538"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa540"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa542"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa544"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa546"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa548"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa550"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa552"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa554"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa556"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa558"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa560"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa562"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc563"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa565"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa567"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -98,26 +98,26 @@
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa570"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa572"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa574"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa576"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa578"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc579"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa581"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa583"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa585"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -146,6 +146,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=charts_peityform0.custom.begin}}
+<div><label for='id322'>txt323</label></div>
 {{=charts_peityform0.custom.widget.f0}}
 {{=charts_peityform0.custom.submit}}
 {{=charts_peityform0.custom.end}}
@@ -171,7 +172,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc587"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -195,37 +196,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc588"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx590"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx591"]}}</span>
+                                        <p>{{=DICT["pa592"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx594"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx595"]}}</span>
+                                        <p>{{=DICT["pa596"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx598"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx599"]}}</span>
+                                        <p>{{=DICT["pa600"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx602"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx603"]}}</span>
+                                        <p>{{=DICT["pa604"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -242,7 +243,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx606"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -280,7 +281,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh607"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -288,9 +289,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Charts</a></li>
-                            <li class="active">Peity Chart</li>
+                            <li><a href="#">{{=DICT["aa608"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa609"]}}</a></li>
+                            <li class="active">{{=DICT["lb610"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -309,27 +310,27 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Pie Chart</h4>
+                                <h4>{{=DICT["hh611"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#13dafe", "#f2f2f2"]}">1/5</span>
+                                        <span class="pie" data-peity="{ "fill": ["#13dafe", "#f2f2f2"]}">{{=DICT["sx612"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#6164C1", "#f2f2f2"]}">226/360</span>
+                                        <span class="pie" data-peity="{ "fill": ["#6164C1", "#f2f2f2"]}">{{=DICT["sx613"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">0.52/1.561</span>
+                                        <span class="pie" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">{{=DICT["sx614"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#99D683", "#f2f2f2"]}">1,4</span>
+                                        <span class="pie" data-peity="{ "fill": ["#99D683", "#f2f2f2"]}">{{=DICT["sx615"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#FFCA4A", "#f2f2f2"]}">226,134</span>
+                                        <span class="pie" data-peity="{ "fill": ["#FFCA4A", "#f2f2f2"]}">{{=DICT["sx616"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="pie" data-peity="{ "fill": ["#4C5667", "#f2f2f2"]}">0.52,1.041</span>
+                                        <span class="pie" data-peity="{ "fill": ["#4C5667", "#f2f2f2"]}">{{=DICT["sx617"]}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -343,27 +344,27 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Donut Charts</h4>
+                                <h4>{{=DICT["hh618"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#13DAFE", "#f2f2f2"]}">1/5</span>
+                                        <span class="donut" data-peity="{ "fill": ["#13DAFE", "#f2f2f2"]}">{{=DICT["sx619"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#6164C1", "#f2f2f2"]}">226/360</span>
+                                        <span class="donut" data-peity="{ "fill": ["#6164C1", "#f2f2f2"]}">{{=DICT["sx620"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">0.52/1.561</span>
+                                        <span class="donut" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">{{=DICT["sx621"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#99D683", "#f2f2f2"]}">1,4</span>
+                                        <span class="donut" data-peity="{ "fill": ["#99D683", "#f2f2f2"]}">{{=DICT["sx622"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#FFCA4A", "#f2f2f2"]}">226,134</span>
+                                        <span class="donut" data-peity="{ "fill": ["#FFCA4A", "#f2f2f2"]}">{{=DICT["sx623"]}}</span>
                                     </div>
                                     <div class="col-lg-2">
-                                        <span class="donut" data-peity="{ "fill": ["#4C5667", "#f2f2f2"]}">0.52,1.041</span>
+                                        <span class="donut" data-peity="{ "fill": ["#4C5667", "#f2f2f2"]}">{{=DICT["sx624"]}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -377,18 +378,18 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Line Charts</h4>
+                                <h4>{{=DICT["hh625"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <span class="peity-line" data-width="100%">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        <span class="peity-line" data-width="100%">{{=DICT["sx626"]}}</span>
                                     </div>
                                     <div class="col-lg-4">
-                                        <span class="peity-line" data-width="100%">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
+                                        <span class="peity-line" data-width="100%">{{=DICT["sx627"]}}</span>
                                     </div>
                                     <div class="col-lg-4">
-                                        <span class="peity-line" data-width="100%">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        <span class="peity-line" data-width="100%">{{=DICT["sx628"]}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -402,18 +403,18 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Bar Charts</h4>
+                                <h4>{{=DICT["hh629"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <span class="bar" data-peity="{ "fill": ["#13DAFE", "#6164C1"]}">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        <span class="bar" data-peity="{ "fill": ["#13DAFE", "#6164C1"]}">{{=DICT["sx630"]}}</span>
                                     </div>
                                     <div class="col-lg-4">
-                                        <span class="bar" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
+                                        <span class="bar" data-peity="{ "fill": ["#F96262", "#f2f2f2"]}">{{=DICT["sx631"]}}</span>
                                     </div>
                                     <div class="col-lg-4">
-                                        <span class="bar" data-peity="{ "fill": ["#99D683", "#4C5667"]}">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        <span class="bar" data-peity="{ "fill": ["#99D683", "#4C5667"]}">{{=DICT["sx632"]}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -427,38 +428,38 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Data attributes</h4>
+                                <h4>{{=DICT["hh633"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["#13DAFE", "#eeeeee"],    "innerRadius": 10, "radius": 40 }">1/7</span>
+                                            <span data-peity="{ "fill": ["#13DAFE", "#eeeeee"],    "innerRadius": 10, "radius": 40 }">{{=DICT["sx634"]}}</span>
                                         </p>
                                     </div>
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["#6164C1", "#eeeeee"], "innerRadius": 14, "radius": 36 }">2/7</span>
+                                            <span data-peity="{ "fill": ["#6164C1", "#eeeeee"], "innerRadius": 14, "radius": 36 }">{{=DICT["sx635"]}}</span>
                                         </p>
                                     </div>
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["#F96262", "#eeeeee"], "innerRadius": 16, "radius": 32 }">3/7</span>
+                                            <span data-peity="{ "fill": ["#F96262", "#eeeeee"], "innerRadius": 16, "radius": 32 }">{{=DICT["sx636"]}}</span>
                                         </p>
                                     </div>
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["#99D683", "#eeeeee"],  "innerRadius": 18, "radius": 28 }">4/7</span>
+                                            <span data-peity="{ "fill": ["#99D683", "#eeeeee"],  "innerRadius": 18, "radius": 28 }">{{=DICT["sx637"]}}</span>
                                         </p>
                                     </div>
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["#FFCA4A", "#eeeeee"],   "innerRadius": 20, "radius": 24 }">5/7</span>
+                                            <span data-peity="{ "fill": ["#FFCA4A", "#eeeeee"],   "innerRadius": 20, "radius": 24 }">{{=DICT["sx638"]}}</span>
                                         </p>
                                     </div>
                                     <div class="col-lg-2">
                                         <p class="data-attributes">
-                                            <span data-peity="{ "fill": ["indigo", "#eeeeee"], "innerRadius": 18, "radius": 20 }">6/7</span>
+                                            <span data-peity="{ "fill": ["indigo", "#eeeeee"], "innerRadius": 18, "radius": 20 }">{{=DICT["sx639"]}}</span>
                                         </p>
                                     </div>
                                 </div>
@@ -473,21 +474,21 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Setting Colours Dynamically</h4>
+                                <h4>{{=DICT["hh640"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-3">
-                                        <span class="bar-colours-1">5,3,9,6,5,9,7,3,5,2</span>
+                                        <span class="bar-colours-1">{{=DICT["sx641"]}}</span>
                                     </div>
                                     <div class="col-lg-3">
-                                        <span class="bar-colours-2">5,3,2,-1,-3,-2,2,3,5,2</span>
+                                        <span class="bar-colours-2">{{=DICT["sx642"]}}</span>
                                     </div>
                                     <div class="col-lg-3">
-                                        <span class="bar-colours-3">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span>
+                                        <span class="bar-colours-3">{{=DICT["sx643"]}}</span>
                                     </div>
                                     <div class="col-lg-3">
-                                        <span class="pie-colours-2">5,3,9,6,5</span>
+                                        <span class="pie-colours-2">{{=DICT["sx644"]}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -500,10 +501,10 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Updating Charts</h4>
+                                <h4>{{=DICT["hh645"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <span class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span>
+                                <span class="updating-chart">{{=DICT["sx646"]}}</span>
                             </div>
                         </div>
                         <!-- /# card -->

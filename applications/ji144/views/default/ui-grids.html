@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -54,45 +54,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3403"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa3405"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa3407"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa3409"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa3411"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa3413"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa3415"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa3417"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa3419"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa3421"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa3423"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa3425"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa3427"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa3429"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa3431"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa3433"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3434"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa3436"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa3438"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -101,26 +101,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa3441"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa3443"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa3445"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa3447"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa3449"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc3450"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa3452"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa3454"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa3456"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +149,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=ui_gridsform0.custom.begin}}
+<div><label for='id478'>txt479</label></div>
 {{=ui_gridsform0.custom.widget.f0}}
 {{=ui_gridsform0.custom.submit}}
 {{=ui_gridsform0.custom.end}}
@@ -174,7 +175,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc3458"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -198,37 +199,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc3459"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx3461"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3462"]}}</span>
+                                        <p>{{=DICT["pa3463"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx3465"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3466"]}}</span>
+                                        <p>{{=DICT["pa3467"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx3469"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3470"]}}</span>
+                                        <p>{{=DICT["pa3471"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx3473"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx3474"]}}</span>
+                                        <p>{{=DICT["pa3475"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -245,7 +246,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx3477"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -283,7 +284,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh3478"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -291,9 +292,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">UI Elements</a></li>
-                            <li class="active">Grids</li>
+                            <li><a href="#">{{=DICT["aa3479"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa3480"]}}</a></li>
+                            <li class="active">{{=DICT["lb3481"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -303,21 +304,21 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
 
-                <h5 class="heading-title mb-1 text-secondary">Fixed Grid</h5>
+                <h5 class="heading-title mb-1 text-secondary">{{=DICT["he3482"]}}</h5>
                 <div class="row">
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3483"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3484"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3485"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -325,32 +326,32 @@
                 <div class="row">
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3486"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3487"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3488"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3489"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3490"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3491"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -358,73 +359,73 @@
                 <div class="row">
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3492"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3493"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3494"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3495"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3496"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3497"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3498"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3499"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3500"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3501"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3502"]}}</div>
                         </section>
                     </div>
                     <div class="col">
                         <section class="card">
-                            <div class="card-body text-secondary">.col</div>
+                            <div class="card-body text-secondary">{{=DICT["di3503"]}}</div>
                         </section>
                     </div>
                 </div>
 
 
 
-                <h5 class="heading-title mb-1 mt-4 text-secondary">Desktop Grid</h5>
+                <h5 class="heading-title mb-1 mt-4 text-secondary">{{=DICT["he3504"]}}</h5>
                 <div class="row">
                     <div class="col col-lg-12">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-12</div>
+                            <div class="card-body text-secondary">{{=DICT["di3505"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -432,12 +433,12 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
+                            <div class="card-body text-secondary">{{=DICT["di3506"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-6 ">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
+                            <div class="card-body text-secondary">{{=DICT["di3507"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -446,17 +447,17 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3508"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3509"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3510"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -464,22 +465,22 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3511"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3512"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3513"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3514"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -487,53 +488,53 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3515"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3516"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3517"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3518"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3519"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3520"]}}</div>
                         </section>
                     </div>
                 </div>
 
 
-                <h4 class="heading-title mt-5 mb-3 text-secondary">Mobile, Tablet, and Desktop</h4>
+                <h4 class="heading-title mt-5 mb-3 text-secondary">{{=DICT["hd3521"]}}</h4>
 
                 <div class="row">
                     <div class="col-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3522"]}}</div>
                         </section>
                     </div>
                     <div class="col-2">
                         <section class="card">
-                            <div class="card-body text-secondary">col-2</div>
+                            <div class="card-body text-secondary">{{=DICT["di3523"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-8">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-8</div>
+                            <div class="card-body text-secondary">{{=DICT["di3524"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -541,17 +542,17 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-sm-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3525"]}}</div>
                         </section>
                     </div>
                     <div class="col-sm-3">
                         <section class="card">
-                            <div class="card-body text-secondary">col-sm-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3526"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-6">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
+                            <div class="card-body text-secondary">{{=DICT["di3527"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -559,17 +560,17 @@
                 <div class="row">
                     <div class="col-md-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-md-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3528"]}}</div>
                         </section>
                     </div>
                     <div class="col-md-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-md-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3529"]}}</div>
                         </section>
                     </div>
                     <div class="col-lg-4">
                         <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
+                            <div class="card-body text-secondary">{{=DICT["di3530"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -577,23 +578,23 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <section class="card">
-                            <div class="card-body text-secondary">col-sm-6</div>
+                            <div class="card-body text-secondary">{{=DICT["di3531"]}}</div>
                         </section>
                     </div>
                     <div class="col-sm-6">
                         <section class="card">
-                            <div class="card-body text-secondary">col-sm-6</div>
+                            <div class="card-body text-secondary">{{=DICT["di3532"]}}</div>
                         </section>
                     </div>
                 </div>
 
 
-                <h5 class="heading-title mb-1 mt-4 text-secondary">Offset Grid</h5>
+                <h5 class="heading-title mb-1 mt-4 text-secondary">{{=DICT["he3533"]}}</h5>
 
                 <div class="row">
                     <div class="col-md-6 offset-md-6 col-sm-6 ml-auto">
                         <section class="card">
-                            <div class="card-body text-secondary">col-md-6 offset-md-6 col-sm-6 </div>
+                            <div class="card-body text-secondary">{{=DICT["di3534"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -601,7 +602,7 @@
                 <div class="row">
                     <div class="col-md-6 offset-md-3 mr-auto ml-auto">
                         <section class="card">
-                            <div class="card-body text-secondary">.col-md-6 .offset-md-3</div>
+                            <div class="card-body text-secondary">{{=DICT["di3535"]}}</div>
                         </section>
                     </div>
                 </div>
@@ -609,12 +610,12 @@
                 <div class="row">
                     <div class="col-md-4">
                         <section class="card">
-                            <div class="card-body text-secondary"> .col-md-4 </div>
+                            <div class="card-body text-secondary">{{=DICT["di3536"]}}</div>
                         </section>
                     </div>
                     <div class="col-md-4 ml-auto">
                         <section class="card">
-                            <div class="card-body text-secondary">.col-md-4 .ml-auto</div>
+                            <div class="card-body text-secondary">{{=DICT["di3537"]}}</div>
                         </section>
                     </div>
                 </div>

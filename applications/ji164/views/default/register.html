@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
@@ -67,7 +68,7 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp14135"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa14137"]}}</a>{{=DICT["pc14136"]}}</p>
         <![endif]-->
 
     <div class="color-line"></div>
@@ -75,7 +76,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="back-link back-backend">
-                    <a href="{{=URL(c='default',f='index')}}" class="btn btn-primary">Back to Dashboard</a>
+                    <a href="{{=URL(c='default',f='index')}}" class="btn btn-primary">{{=DICT["aa14139"]}}</a>
                 </div>
             </div>
         </div>
@@ -85,8 +86,8 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
             <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="text-center custom-login">
-                    <h3>Registration</h3>
-                    <p>Admin template with very clean and aesthetic style prepared for your next app. </p>
+                    <h3>{{=DICT["hh14140"]}}</h3>
+                    <p>{{=DICT["pa14141"]}}</p>
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
@@ -95,19 +96,18 @@
 {{include 'web2py_ajax.html'}}
 
 {{=registerform0.custom.begin}}
-<label for='submit63'>Username</label>
+<div><label for='submit111'>Username</label></div>
 {{=registerform0.custom.widget.f0}}
-<label for='submit65'>Password</label>
+<div><label for='submit115'>Password</label></div>
 {{=registerform0.custom.widget.f1}}
-<label for='submit67'>Repeat Password</label>
+<div><label for='submit119'>Repeat Password</label></div>
 {{=registerform0.custom.widget.f2}}
-<label for='submit69'>Email Address</label>
+<div><label for='submit123'>Email Address</label></div>
 {{=registerform0.custom.widget.f3}}
-<label for='submit71'>Repeat Email Address</label>
+<div><label for='submit127'>Repeat Email Address</label></div>
 {{=registerform0.custom.widget.f4}}
-<div><label>
+<div><label for='id129'>txt130</label></div>
 {{=registerform0.custom.widget.f5}}
- w2p-check-705</label> </div>
 {{=registerform0.custom.submit}}
 {{=registerform0.custom.end}}
 
@@ -131,7 +131,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                <p>{{=DICT["pf14145"]}}<a href="https://colorlib.com/wp/templates/">Colorlib</a>{{=DICT["pc14144"]}}</p>
             </div>
         </div>
     </div>

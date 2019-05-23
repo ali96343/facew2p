@@ -13,19 +13,19 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -54,45 +54,45 @@
                     <li>
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc669"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa671"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa673"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa675"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa677"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa679"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa681"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa683"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa685"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa687"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa689"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa691"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa693"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa695"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa697"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa699"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc700"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa702"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa704"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -101,26 +101,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa707"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa709"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa711"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa713"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa715"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc716"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa718"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa720"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa722"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +149,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=ui_tabsform0.custom.begin}}
+<div><label for='id472'>txt473</label></div>
 {{=ui_tabsform0.custom.widget.f0}}
 {{=ui_tabsform0.custom.submit}}
 {{=ui_tabsform0.custom.end}}
@@ -174,7 +175,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc724"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -198,37 +199,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc725"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx727"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx728"]}}</span>
+                                        <p>{{=DICT["pa729"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx731"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx732"]}}</span>
+                                        <p>{{=DICT["pa733"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx735"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx736"]}}</span>
+                                        <p>{{=DICT["pa737"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx739"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx740"]}}</span>
+                                        <p>{{=DICT["pa741"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -245,7 +246,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx743"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -283,7 +284,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh744"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -291,9 +292,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">UI Elements</a></li>
-                            <li class="active">Tab</li>
+                            <li><a href="#">{{=DICT["aa745"]}}</a></li>
+                            <li><a href="#">{{=DICT["aa746"]}}</a></li>
+                            <li class="active">{{=DICT["lb747"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -307,16 +308,16 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Menus</h4>
+                                <h4>{{=DICT["hh748"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">In HTML, a menu is often defined in an unordered list <code>&lt;ul&gt;</code> (and styled afterwards), like this:</p>
+                                <p class="text-muted m-b-15">In HTML, a menu is often defined in an unordered list <code>&lt;ul&gt;</code>{{=DICT["pc749"]}}</p>
 
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Menu 1</a></li>
-                                    <li><a href="#">Menu 2</a></li>
-                                    <li><a href="#">Menu 3</a></li>
+                                    <li><a href="#">{{=DICT["aa750"]}}</a></li>
+                                    <li><a href="#">{{=DICT["aa751"]}}</a></li>
+                                    <li><a href="#">{{=DICT["aa752"]}}</a></li>
+                                    <li><a href="#">{{=DICT["aa753"]}}</a></li>
                                 </ul>
 
                             </div>
@@ -327,16 +328,16 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Inline List</h4>
+                                <h4>{{=DICT["hh754"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">In HTML, a menu is often defined in an unordered list <code>&lt;ul&gt;</code> (and styled afterwards), like this:</p>
+                                <p class="text-muted m-b-15">In HTML, a menu is often defined in an unordered list <code>&lt;ul&gt;</code>{{=DICT["pc755"]}}</p>
 
                                 <ul class="list-inline">
-                                    <li class="list-inline-item"><a href="#">Home</a></li>
-                                    <li class="list-inline-item"><a href="#">Menu 1</a></li>
-                                    <li class="list-inline-item"><a href="#">Menu 2</a></li>
-                                    <li class="list-inline-item"><a href="#">Menu 3</a></li>
+                                    <li class="list-inline-item"><a href="#">{{=DICT["aa756"]}}</a></li>
+                                    <li class="list-inline-item"><a href="#">{{=DICT["aa757"]}}</a></li>
+                                    <li class="list-inline-item"><a href="#">{{=DICT["aa758"]}}</a></li>
+                                    <li class="list-inline-item"><a href="#">{{=DICT["aa759"]}}</a></li>
                                 </ul>
 
                             </div>
@@ -350,28 +351,28 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Tabs With Dropdown Menu</h4>
+                                <h4>{{=DICT["hh760"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">The following example adds a dropdown menu to "Menu 1":</p>
+                                <p class="text-muted m-b-15">{{=DICT["pc761"]}}</p>
 
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">Home</a>
+                                        <a class="nav-link active" href="#">{{=DICT["aa762"]}}</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu 1 <span class="caret"></span></a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Submenu 1-1</a>
-                                            <a class="dropdown-item" href="#">Submenu 1-2</a>
-                                            <a class="dropdown-item" href="#">Submenu 1-3</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa763"]}}</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa764"]}}</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa765"]}}</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 2</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa766"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 3</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa767"]}}</a>
                                     </li>
                                 </ul>
 
@@ -382,7 +383,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Pills</h4>
+                                <h4>{{=DICT["hh768"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <p class="text-muted m-b-15">Pills are created with <code>&lt;ul class="nav nav-pills"&gt;</code>. Also mark the current page with
@@ -390,13 +391,13 @@
 
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{=DICT["aa769"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{=DICT["aa770"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">{{=DICT["aa771"]}}</a>
                                     </li>
                                 </ul>
 
@@ -409,16 +410,16 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Vertical Pills</h4>
+                                <h4>{{=DICT["hh772"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">Pills can also be displayed vertically. Just add the <code>.nav-stacked</code> class:</p>
+                                <p class="text-muted m-b-15">Pills can also be displayed vertically. Just add the <code>.nav-stacked</code>{{=DICT["pc773"]}}</p>
 
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Menu 1</a>
-                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Menu 2</a>
-                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Menu 3</a>
+                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">{{=DICT["aa774"]}}</a>
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">{{=DICT["aa775"]}}</a>
+                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">{{=DICT["aa776"]}}</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">{{=DICT["aa777"]}}</a>
                                 </div>
                             </div>
                         </div>
@@ -427,31 +428,31 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Pills With Dropdown Menu</h4>
+                                <h4>{{=DICT["hh778"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">The following example adds a dropdown menu to "Menu 1":</p>
+                                <p class="text-muted m-b-15">{{=DICT["pc779"]}}</p>
 
                                 <ul class="nav nav-pills">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">Home</a>
+                                        <a class="nav-link active" href="#">{{=DICT["aa780"]}}</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu 1</a>
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{=DICT["aa781"]}}</a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Submenu 1-1</a>
-                                            <a class="dropdown-item" href="#">Submenu 1-2</a>
-                                            <a class="dropdown-item" href="#">Submenu 1-3</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa782"]}}</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa783"]}}</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa784"]}}</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa785"]}}</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
+                                            <a class="dropdown-item" href="#">{{=DICT["aa786"]}}</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 2</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa787"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 3</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa788"]}}</a>
                                     </li>
                                 </ul>
 
@@ -464,39 +465,39 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Centered Tabs and Pills</h4>
+                                <h4>{{=DICT["hh789"]}}</h4>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted m-b-15">To center/justify the tabs and pills, use the <code>.nav-justified</code> class.</p>
+                                <p class="text-muted m-b-15">To center/justify the tabs and pills, use the <code>.nav-justified</code>{{=DICT["pc790"]}}</p>
 
                                 <!-- Centered Tabs -->
                                 <ul class="nav nav-tabs nav-justified">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">Home</a>
+                                        <a class="nav-link active" href="#">{{=DICT["aa791"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 1</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa792"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 2</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa793"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Menu 3</a>
+                                        <a class="nav-link" href="#">{{=DICT["aa794"]}}</a>
                                     </li>
                                 </ul>
 
                                 <ul class="nav nav-pills nav-justified mb-3 mt-2" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{=DICT["aa795"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Menu 1</a>
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{=DICT["aa796"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Menu 2</a>
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{=DICT["aa797"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Menu 3</a>
+                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">{{=DICT["aa798"]}}</a>
                                     </li>
                                 </ul>
 
@@ -508,7 +509,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Toggleable / Dynamic Tabs</h4>
+                                <h4>{{=DICT["hh799"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <p class="text-muted m-b-15">To make the tabs toggleable, add the <code>data-toggle="tab"</code> attribute to each link. Then add a <code>.tab-pane</code> class with a unique ID for every tab and wrap them inside a
@@ -516,27 +517,27 @@
 
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{=DICT["aa800"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Menu 1</a>
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{=DICT["aa801"]}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Menu 2</a>
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">{{=DICT["aa802"]}}</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content pl-3 p-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <h3>Home</h3>
-                                        <p>Some content here.</p>
+                                        <h3>{{=DICT["hh803"]}}</h3>
+                                        <p>{{=DICT["pa804"]}}</p>
                                     </div>
                                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <h3>Menu 1</h3>
-                                        <p>Some content here.</p>
+                                        <h3>{{=DICT["hh805"]}}</h3>
+                                        <p>{{=DICT["pa806"]}}</p>
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                        <h3>Menu 2</h3>
-                                        <p>Some content here.</p>
+                                        <h3>{{=DICT["hh807"]}}</h3>
+                                        <p>{{=DICT["pa808"]}}</p>
                                     </div>
                                 </div>
 
@@ -551,15 +552,15 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Default Tab</h4>
+                                <h4>{{=DICT["hh809"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="default-tab">
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{=DICT["aa810"]}}</a>
+                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{{=DICT["aa811"]}}</a>
+                                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">{{=DICT["aa812"]}}</a>
                                         </div>
                                     </nav>
                                     <div class="tab-content pl-3 pt-2" id="nav-tabContent">
@@ -585,16 +586,16 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Custom Tab</h4>
+                                <h4>{{=DICT["hh813"]}}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="custom-tab">
 
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true">Home</a>
-                                            <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">Profile</a>
-                                            <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#custom-nav-contact" role="tab" aria-controls="custom-nav-contact" aria-selected="false">Contact</a>
+                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true">{{=DICT["aa814"]}}</a>
+                                            <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">{{=DICT["aa815"]}}</a>
+                                            <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#custom-nav-contact" role="tab" aria-controls="custom-nav-contact" aria-selected="false">{{=DICT["aa816"]}}</a>
                                         </div>
                                     </nav>
                                     <div class="tab-content pl-3 pt-2" id="nav-tabContent">

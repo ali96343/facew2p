@@ -2,15 +2,16 @@
 <html lang="zxx">
 <head>
 	<title>facew2p</title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content="Game Warrior Template">
 	<meta name="keywords" content="warrior, game, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="{{=URL('static','template/img/favicon.ico')}}" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboti,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}"/>
@@ -44,7 +45,7 @@
 				<img src="{{=URL('static','template/img/logo.png')}}" alt="">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+				<a href="#">{{=DICT["aa136"]}}</a>  /  <a href="#">{{=DICT["aa136"]}}</a>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
@@ -53,11 +54,11 @@
 			<!-- site menu -->
 			<nav class="main-menu">
 				<ul>
-					<li><a href="{{=URL(c='default',f='index')}}">Home</a></li>
-					<li><a href="{{=URL(c='default',f='review')}}">Games</a></li>
-					<li><a href="{{=URL(c='default',f='categories')}}">Blog</a></li>
-					<li><a href="{{=URL(c='default',f='community')}}">Forums</a></li>
-					<li><a href="{{=URL(c='default',f='contact')}}">Contact</a></li>
+					<li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa138"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='review')}}">{{=DICT["aa140"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='categories')}}">{{=DICT["aa142"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='community')}}">{{=DICT["aa144"]}}</a></li>
+					<li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa146"]}}</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -67,12 +68,12 @@
 
 	<!-- Latest news section -->
 	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
+		<div class="ln-title">{{=DICT["di147"]}}</div>
 		<div class="news-ticker">
 			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="new">{{=DICT["sx148"]}}</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="strategy">{{=DICT["sx149"]}}</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="racing">{{=DICT["sx150"]}}</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
 			</div>
 		</div>
 	</div>
@@ -85,8 +86,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Genji - The Game</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</p>
+						<h2>{{=DICT["hh152"]}}</h2>
+						<p>{{=DICT["pa153"]}}</p>
 					</div>
 				</div>
 			</div>
@@ -101,28 +102,28 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="blog-thumb set-bg" data-setbg="{{=URL('static','template/img/recent-game/big.jpg')}}">
-						<div class="cata new">new</div>
+						<div class="cata new">{{=DICT["di155"]}}</div>
 						<div class="rgi-extra">
-							<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-							<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+							<div class="rgi-star"><img src="{{=URL('static','template/img/icons/star.png')}}" alt=""></div>
+							<div class="rgi-heart"><img src="{{=URL('static','template/img/icons/heart.png')}}" alt=""></div>
 						</div>
 					</div>
 					<div class="blog-content">
-						<h3>Genji: Suspendisse ut justo tem porrutrum</h3>
-						<a href="" class="meta-comment">3 comment</a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque id nibh ac congue. Nullam dignissim egestas velit eget tempor. Morbi nec dolor neque. Maecenas quis tincidunt turpis. Cras ultricies pulvinar odio, sit amet lobortis lorem consectetur at. Vivamus risus erat, eleifend a nunc non, lacinia ultrices ante. Suspendisse a lacus at metus convallis maximus. Vivamus fringilla ipsum dolor. Cras pellentesque turpis id lacus condimentum condimentum. Sed tincidunt velit et urna eleifend imperdiet. Quisque euismod nibh at urna pellentesque, sit amet bibendum nibh fringilla. Sed dignissim varius blandit.</p>
-						<p>Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. Aenean lectus felis, rutrum non quam eu, accumsan semper ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan, mauris nec venenatis gravida, lacus est gravida augue, eu egestas lorem nisi nec nibh. Mauris luctus porttitor elit, ac efficitur nulla consectetur a. Pellentesque scelerisque pulvinar magna sit amet auctor. Fusce tincidunt convallis elit ante, nec ullamcorper ante rhoncus mollis. </p>
+						<h3>{{=DICT["hh158"]}}</h3>
+						<a href="" class="meta-comment">{{=DICT["aa159"]}}</a>
+						<p>{{=DICT["pa160"]}}</p>
+						<p>{{=DICT["pa161"]}}</p>
 					</div>
 					<div class="comment-warp">
-						<h4 class="comment-title">Top Coments</h4>
+						<h4 class="comment-title">{{=DICT["hd162"]}}</h4>
 						<ul class="comment-list">
 							<li>
 								<div class="comment">
 									<div class="comment-avator set-bg" data-setbg="{{=URL('static','template/img/authors/1.jpg')}}"></div>
 									<div class="comment-content">
-										<h5>James Smith <span>June 21, 2018</span></h5>
-										<p>Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. </p>
-										<a href="" class="reply">Reply</a>
+										<h5>{{=DICT["hh165"]}}<span>{{=DICT["sp164"]}}</span></h5>
+										<p>{{=DICT["pa166"]}}</p>
+										<a href="" class="reply">{{=DICT["aa167"]}}</a>
 									</div>
 								</div>
 							</li>
@@ -130,24 +131,28 @@
 								<div class="comment">
 									<div class="comment-avator set-bg" data-setbg="{{=URL('static','template/img/authors/2.jpg')}}"></div>
 									<div class="comment-content">
-										<h5>James Smith <span>June 21, 2018</span></h5>
-										<p>Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. </p>
-										<a href="" class="reply">Reply</a>
+										<h5>{{=DICT["hh170"]}}<span>{{=DICT["sp169"]}}</span></h5>
+										<p>{{=DICT["pa171"]}}</p>
+										<a href="" class="reply">{{=DICT["aa172"]}}</a>
 									</div>
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div class="comment-form-warp">
-						<h4 class="comment-title">Leave Your Comment</h4>
+						<h4 class="comment-title">{{=DICT["hd173"]}}</h4>
 						
 {{block mysingle_blogform0}}
 {{include 'web2py_ajax.html'}}
 
 {{=single_blogform0.custom.begin}}
+<div><label for='id0'>txt1</label></div>
 {{=single_blogform0.custom.widget.f0}}
+<div><label for='id2'>txt3</label></div>
 {{=single_blogform0.custom.widget.f1}}
+<div><label for='id4'>txt5</label></div>
 {{=single_blogform0.custom.widget.f2}}
+<div><label for='id6'>txt7</label></div>
 {{=single_blogform0.custom.widget.f3}}
 {{=single_blogform0.custom.submit}}
 {{=single_blogform0.custom.end}}
@@ -176,6 +181,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=single_blogform1.custom.begin}}
+<div><label for='id11'>txt12</label></div>
 {{=single_blogform1.custom.widget.f0}}
 {{=single_blogform1.custom.submit}}
 {{=single_blogform1.custom.end}}
@@ -196,57 +202,57 @@
 					</div>
 					<!-- widget -->
 					<div class="widget-item">
-						<h4 class="widget-title">Latest Posts</h4>
+						<h4 class="widget-title">{{=DICT["hd180"]}}</h4>
 						<div class="latest-blog">
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/1.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di182"]}}</div>
+									<p>{{=DICT["pa183"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa184"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/2.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di186"]}}</div>
+									<p>{{=DICT["pa187"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa188"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/3.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Ipsum dolor sit amet, consectetur adipisc ing consecips</p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di190"]}}</div>
+									<p>{{=DICT["pa191"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa192"]}}</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- widget -->
 					<div class="widget-item">
-						<h4 class="widget-title">Top Comments</h4>
+						<h4 class="widget-title">{{=DICT["hd193"]}}</h4>
 						<div class="top-comment">
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/1.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem consec ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa197"]}}</a> <span>{{=DICT["sp195"]}}</span>{{=DICT["pc196"]}}</p>
+									<div class="tc-date">{{=DICT["di198"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/2.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">Michael James</a> <span>on</span>Cras sit amet sapien aliquam</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa202"]}}</a> <span>{{=DICT["sp200"]}}</span>{{=DICT["pc201"]}}</p>
+									<div class="tc-date">{{=DICT["di203"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/3.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">Justin More</a> <span>on</span> Lorem ipsum dolor consecsit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa207"]}}</a> <span>{{=DICT["sp205"]}}</span>{{=DICT["pc206"]}}</p>
+									<div class="tc-date">{{=DICT["di208"]}}</div>
 								</div>
 							</div>
 						</div>
@@ -254,11 +260,11 @@
 					<!-- widget -->
 					<div class="widget-item">
 						<div class="feature-item set-bg" data-setbg="{{=URL('static','template/img/features/1.jpg')}}">
-							<span class="cata new">new</span>
+							<span class="cata new">{{=DICT["sx210"]}}</span>
 							<div class="fi-content text-white">
-								<h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-								<a href="#" class="fi-comment">3 Comments</a>
+								<h5><a href="#">{{=DICT["aa211"]}}</a></h5>
+								<p>{{=DICT["pa212"]}}</p>
+								<a href="#" class="fi-comment">{{=DICT["aa213"]}}</a>
 							</div>
 						</div>
 					</div>
@@ -266,11 +272,11 @@
 					<div class="widget-item">
 						<div class="review-item">
 							<div class="review-cover set-bg" data-setbg="{{=URL('static','template/img/review/1.jpg')}}">
-								<div class="score yellow">9.3</div>
+								<div class="score yellow">{{=DICT["di215"]}}</div>
 							</div>
 							<div class="review-text">
-								<h5>Assasin’’s Creed</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+								<h5>{{=DICT["hh216"]}}</h5>
+								<p>{{=DICT["pa217"]}}</p>
 							</div>
 						</div>
 					</div>
@@ -291,35 +297,35 @@
 				<div class="col-lg-4">
 					<div class="footer-logo text-white">
 						<img src="{{=URL('static','template/img/footer-logo.png')}}" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+						<p>{{=DICT["pa220"]}}</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
+						<h4 class="fw-title">{{=DICT["hd221"]}}</h4>
 						<div class="latest-blog">
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/1.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di223"]}}</div>
+									<p>{{=DICT["pa224"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa225"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/2.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di227"]}}</div>
+									<p>{{=DICT["pa228"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa229"]}}</a>
 								</div>
 							</div>
 							<div class="lb-item">
 								<div class="lb-thumb set-bg" data-setbg="{{=URL('static','template/img/latest-blog/3.jpg')}}"></div>
 								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
+									<div class="lb-date">{{=DICT["di231"]}}</div>
+									<p>{{=DICT["pa232"]}}</p>
+									<a href="#" class="lb-author">{{=DICT["aa233"]}}</a>
 								</div>
 							</div>
 						</div>
@@ -327,34 +333,34 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
+						<h4 class="fw-title">{{=DICT["hd234"]}}</h4>
 						<div class="top-comment">
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/1.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa238"]}}</a> <span>{{=DICT["sp236"]}}</span>{{=DICT["pc237"]}}</p>
+									<div class="tc-date">{{=DICT["di239"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/2.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa243"]}}</a> <span>{{=DICT["sp241"]}}</span>{{=DICT["pc242"]}}</p>
+									<div class="tc-date">{{=DICT["di244"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/3.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa248"]}}</a> <span>{{=DICT["sp246"]}}</span>{{=DICT["pc247"]}}</p>
+									<div class="tc-date">{{=DICT["di249"]}}</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="{{=URL('static','template/img/authors/4.jpg')}}"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">{{=DICT["aa253"]}}</a> <span>{{=DICT["sp251"]}}</span>{{=DICT["pc252"]}}</p>
+									<div class="tc-date">{{=DICT["di254"]}}</div>
 								</div>
 							</div>
 						</div>
@@ -370,11 +376,11 @@
 	<footer class="footer-section">
 		<div class="container">
 			<ul class="footer-menu">
-				<li><a href="{{=URL(c='default',f='index')}}">Home</a></li>
-				<li><a href="{{=URL(c='default',f='review')}}">Games</a></li>
-				<li><a href="{{=URL(c='default',f='categories')}}">Blog</a></li>
-				<li><a href="{{=URL(c='default',f='community')}}">Forums</a></li>
-				<li><a href="{{=URL(c='default',f='contact')}}">Contact</a></li>
+				<li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa256"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='review')}}">{{=DICT["aa258"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='categories')}}">{{=DICT["aa260"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='community')}}">{{=DICT["aa262"]}}</a></li>
+				<li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa264"]}}</a></li>
 			</ul>
 			<p class="copyright"><!-- Link back to Colorlib can"t be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

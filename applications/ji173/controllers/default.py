@@ -81,9 +81,11 @@ def categories():
     categoriesform0 = SQLFORM(db.dcategoriesform0, _class = 'search-widget', _id= 'idUnk0' )
 
     categoriesform0.element('input[name=f0]')['_placeholder']='f0 Search'
-    categoriesform0.custom.submit['_title'] = 'submit categoriesform0'
+    categoriesform0.element('input[name=f0]')['_id']='id20'
     categoriesform0.custom.submit['_type'] = 'submit'
-    categoriesform0.custom.submit['_value'] = 'unk_4'
+    categoriesform0.custom.submit['_id'] = 'id22'
+    categoriesform0.custom.submit['_value'] = 'unk_24'
+    categoriesform0.custom.submit['_title'] = 'submit categoriesform0'
 
     if categoriesform0.accepts(request,session): 
         response.flash0 = 'submitted categoriesform0' 
@@ -107,16 +109,18 @@ def contact():
     contactform0 = SQLFORM(db.dcontactform0, _class = 'comment-form', _id= 'idUnk0' )
 
     contactform0.element('input[name=f0]')['_placeholder']='f0 Name'
-    contactform0.custom.submit['_title'] = 'submit contactform0'
+    contactform0.element('input[name=f0]')['_id']='id26'
     contactform0.element('input[name=f1]')['_placeholder']='f1 Email'
-    contactform0.custom.submit['_title'] = 'submit contactform0'
+    contactform0.element('input[name=f1]')['_id']='id28'
     contactform0.element('input[name=f2]')['_placeholder']='f2 Subject'
-    contactform0.custom.submit['_title'] = 'submit contactform0'
+    contactform0.element('input[name=f2]')['_id']='id30'
     contactform0.element('textarea[name=f3]')['_placeholder']='f3 Message'
-    contactform0.custom.submit['_title'] = 'submit contactform0'
+    contactform0.element('textarea[name=f3]')['_id']='id32'
     contactform0.custom.submit['_type'] = 'submit'
     contactform0.custom.submit['_class'] = 'site-btn btn-sm'
     contactform0.custom.submit['_value'] = 'Send'
+    contactform0.custom.submit['_id'] = 'id34'
+    contactform0.custom.submit['_title'] = 'submit contactform0'
 
     if contactform0.accepts(request,session): 
         response.flash0 = 'submitted contactform0' 
@@ -140,16 +144,18 @@ def single_blog():
     single_blogform0 = SQLFORM(db.dsingle_blogform0, _class = 'comment-form', _id= 'idUnk0' )
 
     single_blogform0.element('input[name=f0]')['_placeholder']='f0 Name'
-    single_blogform0.custom.submit['_title'] = 'submit single_blogform0'
+    single_blogform0.element('input[name=f0]')['_id']='id0'
     single_blogform0.element('input[name=f1]')['_placeholder']='f1 Email'
-    single_blogform0.custom.submit['_title'] = 'submit single_blogform0'
+    single_blogform0.element('input[name=f1]')['_id']='id2'
     single_blogform0.element('input[name=f2]')['_placeholder']='f2 Subject'
-    single_blogform0.custom.submit['_title'] = 'submit single_blogform0'
+    single_blogform0.element('input[name=f2]')['_id']='id4'
     single_blogform0.element('textarea[name=f3]')['_placeholder']='f3 Message'
-    single_blogform0.custom.submit['_title'] = 'submit single_blogform0'
+    single_blogform0.element('textarea[name=f3]')['_id']='id6'
     single_blogform0.custom.submit['_type'] = 'submit'
     single_blogform0.custom.submit['_class'] = 'site-btn btn-sm'
     single_blogform0.custom.submit['_value'] = 'Send'
+    single_blogform0.custom.submit['_id'] = 'id8'
+    single_blogform0.custom.submit['_title'] = 'submit single_blogform0'
 
     if single_blogform0.accepts(request,session): 
         response.flash0 = 'submitted single_blogform0' 
@@ -163,9 +169,11 @@ def single_blog():
     single_blogform1 = SQLFORM(db.dsingle_blogform1, _class = 'search-widget', _id= 'idUnk1' )
 
     single_blogform1.element('input[name=f0]')['_placeholder']='f0 Search'
-    single_blogform1.custom.submit['_title'] = 'submit single_blogform1'
+    single_blogform1.element('input[name=f0]')['_id']='id11'
     single_blogform1.custom.submit['_type'] = 'submit'
-    single_blogform1.custom.submit['_value'] = 'unk_1'
+    single_blogform1.custom.submit['_id'] = 'id13'
+    single_blogform1.custom.submit['_value'] = 'unk_15'
+    single_blogform1.custom.submit['_title'] = 'submit single_blogform1'
 
     if single_blogform1.accepts(request,session): 
         response.flash1 = 'submitted single_blogform1' 
@@ -192,6 +200,7 @@ def community():
     communityform0.custom.submit['_id'] = 'unk-id'
     communityform0.custom.submit['_value'] = 'submit select'
     communityform0.custom.submit['_class'] = 'unk-class'
+    communityform0.custom.submit['_title'] = 'submit communityform0'
 
     if communityform0.accepts(request,session): 
         response.flash0 = 'submitted communityform0' 

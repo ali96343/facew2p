@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Robot,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{=URL('static','template/css/bootstrap.min.css')}}">
@@ -66,7 +66,7 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp2106"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa2108"]}}</a>{{=DICT["pc2107"]}}</p>
         <![endif]-->
     <!-- Start Header Top Area -->
     <div class="header-top-area">
@@ -93,7 +93,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Messages</h2>
+                                        <h2>{{=DICT["hh2110"]}}</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -102,8 +102,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2112"]}}</h3>
+                                                    <p>{{=DICT["pa2113"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -113,8 +113,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2115"]}}</h3>
+                                                    <p>{{=DICT["pa2116"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -124,8 +124,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2118"]}}</h3>
+                                                    <p>{{=DICT["pa2119"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -135,8 +135,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2121"]}}</h3>
+                                                    <p>{{=DICT["pa2122"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -146,21 +146,21 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2124"]}}</h3>
+                                                    <p>{{=DICT["pa2125"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa2126"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Notification</h2>
+                                        <h2>{{=DICT["hh2127"]}}</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -169,8 +169,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2129"]}}</h3>
+                                                    <p>{{=DICT["pa2130"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -180,8 +180,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2132"]}}</h3>
+                                                    <p>{{=DICT["pa2133"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -191,8 +191,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2135"]}}</h3>
+                                                    <p>{{=DICT["pa2136"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -202,8 +202,8 @@
                                                     <img src="{{=URL('static','template/img/post/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2138"]}}</h3>
+                                                    <p>{{=DICT["pa2139"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -213,70 +213,70 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                    <h3>{{=DICT["hh2141"]}}</h3>
+                                                    <p>{{=DICT["pa2142"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa2143"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Tasks</h2>
+                                        <h2>{{=DICT["hh2144"]}}</h2>
                                     </div>
                                     <div class="hd-message-info hd-task-info">
                                         <div class="skill">
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>HTML5 Validation Report</p>
+                                                    <p>{{=DICT["pa2145"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>{{=DICT["sp2146"]}}</span>
                                                 </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Google Chrome Extension</p>
+                                                    <p>{{=DICT["pa2147"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp2148"]}}</span> </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Social Internet Projects</p>
+                                                    <p>{{=DICT["pa2149"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp2150"]}}</span> </div>
                                             </div>
                                             <div class="progress">
                                                 <div class="lead-content">
-                                                    <p>Bootstrap Admin Template</p>
+                                                    <p>{{=DICT["pa2151"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp2152"]}}</span> </div>
                                             </div>
                                             <div class="progress progress-bt">
                                                 <div class="lead-content">
-                                                    <p>Youtube Client App</p>
+                                                    <p>{{=DICT["pa2153"]}}</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>{{=DICT["sp2154"]}}</span> </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa2155"]}}</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Chat</h2>
+                                        <h2>{{=DICT["hh2156"]}}</h2>
                                     </div>
                                     <div class="search-people">
                                         <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" placeholder="Search People" />
+                                        <input type="text" placeholder="{{=DICT["pb2157"]}}" />
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -286,8 +286,8 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh2159"]}}</h3>
+                                                    <p>{{=DICT["pa2160"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -297,8 +297,8 @@
                                                     <img src="{{=URL('static','template/img/post/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Last seen 3 hours ago</p>
+                                                    <h3>{{=DICT["hh2162"]}}</h3>
+                                                    <p>{{=DICT["pa2163"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -308,8 +308,8 @@
                                                     <img src="{{=URL('static','template/img/post/4.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Last seen 2 minutes ago</p>
+                                                    <h3>{{=DICT["hh2165"]}}</h3>
+                                                    <p>{{=DICT["pa2166"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -320,8 +320,8 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh2168"]}}</h3>
+                                                    <p>{{=DICT["pa2169"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -332,14 +332,14 @@
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Available</p>
+                                                    <h3>{{=DICT["hh2171"]}}</h3>
+                                                    <p>{{=DICT["pa2172"]}}</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">{{=DICT["aa2173"]}}</a>
                                     </div>
                                 </div>
                             </li>
@@ -358,91 +358,91 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">{{=DICT["aa2174"]}}</a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='index')}}">Dashboard One</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_2')}}">Dashboard Two</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_3')}}">Dashboard Three</a></li>
-                                        <li><a href="{{=URL(c='default',f='index_4')}}">Dashboard Four</a></li>
-                                        <li><a href="{{=URL(c='default',f='analytics')}}">Analytics</a></li>
-                                        <li><a href="{{=URL(c='default',f='widgets')}}">Widgets</a></li>
+                                        <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa2176"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_2')}}">{{=DICT["aa2178"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_3')}}">{{=DICT["aa2180"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='index_4')}}">{{=DICT["aa2182"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='analytics')}}">{{=DICT["aa2184"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='widgets')}}">{{=DICT["aa2186"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">{{=DICT["aa2187"]}}</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='inbox')}}">Inbox</a></li>
-                                        <li><a href="{{=URL(c='default',f='view_email')}}">View Email</a></li>
-                                        <li><a href="{{=URL(c='default',f='compose_email')}}">Compose Email</a></li>
+                                        <li><a href="{{=URL(c='default',f='inbox')}}">{{=DICT["aa2189"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='view_email')}}">{{=DICT["aa2191"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='compose_email')}}">{{=DICT["aa2193"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                <li><a data-toggle="collapse" data-target="#democrou" href="#">{{=DICT["aa2194"]}}</a>
                                     <ul id="democrou" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='animations')}}">Animations</a></li>
-                                        <li><a href="{{=URL(c='default',f='google_map')}}">Google Map</a></li>
-                                        <li><a href="{{=URL(c='default',f='data_map')}}">Data Maps</a></li>
-                                        <li><a href="{{=URL(c='default',f='code_editor')}}">Code Editor</a></li>
-                                        <li><a href="{{=URL(c='default',f='image_cropper')}}">Images Cropper</a></li>
-                                        <li><a href="{{=URL(c='default',f='wizard')}}">Wizard</a></li>
+                                        <li><a href="{{=URL(c='default',f='animations')}}">{{=DICT["aa2196"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='google_map')}}">{{=DICT["aa2198"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='data_map')}}">{{=DICT["aa2200"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='code_editor')}}">{{=DICT["aa2202"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='image_cropper')}}">{{=DICT["aa2204"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='wizard')}}">{{=DICT["aa2206"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">{{=DICT["aa2207"]}}</a>
                                     <ul id="demolibra" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='flot_charts')}}">Flot Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='bar_charts')}}">Bar Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='line_charts')}}">Line Charts</a></li>
-                                        <li><a href="{{=URL(c='default',f='area_charts')}}">Area Charts</a></li>
+                                        <li><a href="{{=URL(c='default',f='flot_charts')}}">{{=DICT["aa2209"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='bar_charts')}}">{{=DICT["aa2211"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='line_charts')}}">{{=DICT["aa2213"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='area_charts')}}">{{=DICT["aa2215"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">{{=DICT["aa2216"]}}</a>
                                     <ul id="demodepart" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='normal_table')}}">Normal Table</a></li>
-                                        <li><a href="{{=URL(c='default',f='data_table')}}">Data Table</a></li>
+                                        <li><a href="{{=URL(c='default',f='normal_table')}}">{{=DICT["aa2218"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='data_table')}}">{{=DICT["aa2220"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                <li><a data-toggle="collapse" data-target="#demo" href="#">{{=DICT["aa2221"]}}</a>
                                     <ul id="demo" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='form_elements')}}">Form Elements</a></li>
-                                        <li><a href="{{=URL(c='default',f='form_components')}}">Form Components</a></li>
-                                        <li><a href="{{=URL(c='default',f='form_examples')}}">Form Examples</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_elements')}}">{{=DICT["aa2223"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_components')}}">{{=DICT["aa2225"]}}</a></li>
+                                        <li><a href="{{=URL(c='default',f='form_examples')}}">{{=DICT["aa2227"]}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">{{=DICT["aa2228"]}}</a>
                                     <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='notification')}}">Notifications</a>
+                                        <li><a href="{{=URL(c='default',f='notification')}}">{{=DICT["aa2230"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='alert')}}">Alerts</a>
+                                        <li><a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa2232"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='modals')}}">Modals</a>
+                                        <li><a href="{{=URL(c='default',f='modals')}}">{{=DICT["aa2234"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='buttons')}}">Buttons</a>
+                                        <li><a href="{{=URL(c='default',f='buttons')}}">{{=DICT["aa2236"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='tabs')}}">Tabs</a>
+                                        <li><a href="{{=URL(c='default',f='tabs')}}">{{=DICT["aa2238"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='accordion')}}">Accordion</a>
+                                        <li><a href="{{=URL(c='default',f='accordion')}}">{{=DICT["aa2240"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='dialog')}}">Dialogs</a>
+                                        <li><a href="{{=URL(c='default',f='dialog')}}">{{=DICT["aa2242"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='popovers')}}">Popovers</a>
+                                        <li><a href="{{=URL(c='default',f='popovers')}}">{{=DICT["aa2244"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='tooltips')}}">Tooltips</a>
+                                        <li><a href="{{=URL(c='default',f='tooltips')}}">{{=DICT["aa2246"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='dropdown')}}">Dropdowns</a>
+                                        <li><a href="{{=URL(c='default',f='dropdown')}}">{{=DICT["aa2248"]}}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">{{=DICT["aa2249"]}}</a>
                                     <ul id="Pagemob" class="collapse dropdown-header-top">
-                                        <li><a href="{{=URL(c='default',f='contact')}}">Contact</a>
+                                        <li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa2251"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='invoice')}}">Invoice</a>
+                                        <li><a href="{{=URL(c='default',f='invoice')}}">{{=DICT["aa2253"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='typography')}}">Typography</a>
+                                        <li><a href="{{=URL(c='default',f='typography')}}">{{=DICT["aa2255"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='color')}}">Color</a>
+                                        <li><a href="{{=URL(c='default',f='color')}}">{{=DICT["aa2257"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='login_register')}}">Login Register</a>
+                                        <li><a href="{{=URL(c='default',f='login_register')}}">{{=DICT["aa2259"]}}</a>
                                         </li>
-                                        <li><a href="{{=URL(c='default',f='X404')}}">404 Page</a>
+                                        <li><a href="{{=URL(c='default',f='X404')}}">{{=DICT["aa2261"]}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -480,113 +480,113 @@
                     <div class="tab-content custom-menu-content">
                         <div id="Home" class="tab-pane in notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='index')}}">Dashboard One</a>
+                                <li><a href="{{=URL(c='default',f='index')}}">{{=DICT["aa2263"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_2')}}">Dashboard Two</a>
+                                <li><a href="{{=URL(c='default',f='index_2')}}">{{=DICT["aa2265"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_3')}}">Dashboard Three</a>
+                                <li><a href="{{=URL(c='default',f='index_3')}}">{{=DICT["aa2267"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='index_4')}}">Dashboard Four</a>
+                                <li><a href="{{=URL(c='default',f='index_4')}}">{{=DICT["aa2269"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='analytics')}}">Analytics</a>
+                                <li><a href="{{=URL(c='default',f='analytics')}}">{{=DICT["aa2271"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='widgets')}}">Widgets</a>
+                                <li><a href="{{=URL(c='default',f='widgets')}}">{{=DICT["aa2273"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='inbox')}}">Inbox</a>
+                                <li><a href="{{=URL(c='default',f='inbox')}}">{{=DICT["aa2275"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='view_email')}}">View Email</a>
+                                <li><a href="{{=URL(c='default',f='view_email')}}">{{=DICT["aa2277"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='compose_email')}}">Compose Email</a>
+                                <li><a href="{{=URL(c='default',f='compose_email')}}">{{=DICT["aa2279"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='animations')}}">Animations</a>
+                                <li><a href="{{=URL(c='default',f='animations')}}">{{=DICT["aa2281"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='google_map')}}">Google Map</a>
+                                <li><a href="{{=URL(c='default',f='google_map')}}">{{=DICT["aa2283"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='data_map')}}">Data Maps</a>
+                                <li><a href="{{=URL(c='default',f='data_map')}}">{{=DICT["aa2285"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='code_editor')}}">Code Editor</a>
+                                <li><a href="{{=URL(c='default',f='code_editor')}}">{{=DICT["aa2287"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='image_cropper')}}">Images Cropper</a>
+                                <li><a href="{{=URL(c='default',f='image_cropper')}}">{{=DICT["aa2289"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='wizard')}}">Wizard</a>
+                                <li><a href="{{=URL(c='default',f='wizard')}}">{{=DICT["aa2291"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='flot_charts')}}">Flot Charts</a>
+                                <li><a href="{{=URL(c='default',f='flot_charts')}}">{{=DICT["aa2293"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='bar_charts')}}">Bar Charts</a>
+                                <li><a href="{{=URL(c='default',f='bar_charts')}}">{{=DICT["aa2295"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='line_charts')}}">Line Charts</a>
+                                <li><a href="{{=URL(c='default',f='line_charts')}}">{{=DICT["aa2297"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='area_charts')}}">Area Charts</a>
+                                <li><a href="{{=URL(c='default',f='area_charts')}}">{{=DICT["aa2299"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='normal_table')}}">Normal Table</a>
+                                <li><a href="{{=URL(c='default',f='normal_table')}}">{{=DICT["aa2301"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='data_table')}}">Data Table</a>
+                                <li><a href="{{=URL(c='default',f='data_table')}}">{{=DICT["aa2303"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='form_elements')}}">Form Elements</a>
+                                <li><a href="{{=URL(c='default',f='form_elements')}}">{{=DICT["aa2305"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='form_components')}}">Form Components</a>
+                                <li><a href="{{=URL(c='default',f='form_components')}}">{{=DICT["aa2307"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='form_examples')}}">Form Examples</a>
+                                <li><a href="{{=URL(c='default',f='form_examples')}}">{{=DICT["aa2309"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='notification')}}">Notifications</a>
+                                <li><a href="{{=URL(c='default',f='notification')}}">{{=DICT["aa2311"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='alert')}}">Alerts</a>
+                                <li><a href="{{=URL(c='default',f='alert')}}">{{=DICT["aa2313"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='modals')}}">Modals</a>
+                                <li><a href="{{=URL(c='default',f='modals')}}">{{=DICT["aa2315"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='buttons')}}">Buttons</a>
+                                <li><a href="{{=URL(c='default',f='buttons')}}">{{=DICT["aa2317"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='tabs')}}">Tabs</a>
+                                <li><a href="{{=URL(c='default',f='tabs')}}">{{=DICT["aa2319"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='accordion')}}">Accordion</a>
+                                <li><a href="{{=URL(c='default',f='accordion')}}">{{=DICT["aa2321"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='dialog')}}">Dialogs</a>
+                                <li><a href="{{=URL(c='default',f='dialog')}}">{{=DICT["aa2323"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='popovers')}}">Popovers</a>
+                                <li><a href="{{=URL(c='default',f='popovers')}}">{{=DICT["aa2325"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='tooltips')}}">Tooltips</a>
+                                <li><a href="{{=URL(c='default',f='tooltips')}}">{{=DICT["aa2327"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='dropdown')}}">Dropdowns</a>
+                                <li><a href="{{=URL(c='default',f='dropdown')}}">{{=DICT["aa2329"]}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{=URL(c='default',f='contact')}}">Contact</a>
+                                <li><a href="{{=URL(c='default',f='contact')}}">{{=DICT["aa2331"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='invoice')}}">Invoice</a>
+                                <li><a href="{{=URL(c='default',f='invoice')}}">{{=DICT["aa2333"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='typography')}}">Typography</a>
+                                <li><a href="{{=URL(c='default',f='typography')}}">{{=DICT["aa2335"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='color')}}">Color</a>
+                                <li><a href="{{=URL(c='default',f='color')}}">{{=DICT["aa2337"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='login_register')}}">Login Register</a>
+                                <li><a href="{{=URL(c='default',f='login_register')}}">{{=DICT["aa2339"]}}</a>
                                 </li>
-                                <li><a href="{{=URL(c='default',f='X404')}}">404 Page</a>
+                                <li><a href="{{=URL(c='default',f='X404')}}">{{=DICT["aa2341"]}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -609,8 +609,8 @@
 										<i class="notika-icon notika-support"></i>
 									</div>
 									<div class="breadcomb-ctn">
-										<h2>Typography</h2>
-										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+										<h2>{{=DICT["hh2342"]}}</h2>
+										<p>{{=DICT["pf2344"]}}<span class="bread-ntd">{{=DICT["sx2343"]}}</span></p>
 									</div>
 								</div>
 							</div>
@@ -632,38 +632,38 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="typography-list typography-mgn">
-                        <h2>Body Copy</h2>
+                        <h2>{{=DICT["hh2345"]}}</h2>
                         <div class="typography-bd">
-                            <h3>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</h3>
+                            <h3>{{=DICT["hh2346"]}}</h3>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
-                            <p class="tab-mg-b-0">Integer eu lectus sollicitudin, hendrerit est ac, sollicitudin nisl. Quisque viverra sodales lectus nec ultrices. Fusce elit dolor, dignissim a nunc id, varius suscipit turpis. Cras porttitor turpis vitae leo accumsan molestie. Morbi vitae luctus leo. Sed nec scelerisque magna, et adipiscing est. Proin lobortis lectus eu sem ullamcorper, commodo malesuada quam fringilla. Curabitur ac nunc dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sagittis enim eu est lacinia, ut egestas ligula imperdiet, ute egestas ligulan imperdiet.</p>
+                            <p class="tab-mg-b-0">{{=DICT["pc2347"]}}</p>
                         </div>
                     </div>
                     <div class="typography-heading typography-mgn mg-t-30">
-                        <h2 class="mn-hd-s">Headings</h2>
+                        <h2 class="mn-hd-s">{{=DICT["hb2348"]}}</h2>
                         <div class="typography-hd-cr-1">
-                            <h1>This is a Heading 1</h1>
+                            <h1>{{=DICT["hh2349"]}}</h1>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
                         </div>
                         <div class="typography-hd-cr-2">
-                            <h2>This is a Heading 2</h2>
+                            <h2>{{=DICT["hh2350"]}}</h2>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
                         </div>
                         <div class="typography-hd-cr-3">
-                            <h3>This is a Heading 3</h3>
+                            <h3>{{=DICT["hh2351"]}}</h3>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
                         </div>
                         <div class="typography-hd-cr-4">
-                            <h4>This is a Heading 4</h4>
+                            <h4>{{=DICT["hh2352"]}}</h4>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
                         </div>
                         <div class="typography-hd-cr-5">
-                            <h5>This is a Heading 5</h5>
+                            <h5>{{=DICT["hh2353"]}}</h5>
                             <p>Suspendisse vel quam malesuada, aliquet sem sit amet, fringilla elit. Morbi tempor tincidunt tempor. Etiam id turpis viverra, vulputate sapien nec, varius sem. Curabitur ullamcorper fringilla eleifend. In ut eros hendrerit
                                 est consequat posuere et at velit.</p>
                         </div>
                         <div class="typography-hd-cr-6 typography-mg-b-0">
-                            <h6>This is a Heading 6</h6>
+                            <h6>{{=DICT["hh2354"]}}</h6>
                             <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
                         </div>
                     </div>
@@ -673,58 +673,58 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="typography-inline-pro mg-t-30">
                         <div class="typography-in-hd typography-mgn">
-                            <h2 class="mn-hd-s">Inline Text Elements</h2>
+                            <h2 class="mn-hd-s">{{=DICT["hb2355"]}}</h2>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-ele-tx">
-                                    <h2>Marked text</h2>
-                                    <p>For highlighting a run of text due to its relevance in another context, use the <code>mark</code> tag.</p>
+                                    <h2>{{=DICT["hh2356"]}}</h2>
+                                    <p>{{=DICT["pf2358"]}}<code>mark</code>{{=DICT["pc2357"]}}</p>
                                     <mark>This is marked text</mark>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-ele-tx">
-                                    <h2>Deleted Text</h2>
-                                    <p>For indicating blocks of text that have been deleted use the <code>del</code> tag.</p>
+                                    <h2>{{=DICT["hh2359"]}}</h2>
+                                    <p>{{=DICT["pf2361"]}}<code>del</code>{{=DICT["pc2360"]}}</p>
                                     <del>This is Deleted Text</del>
                                 </div>
                                 <div class="tpgp-ele-tx">
-                                    <h2>Inserted Text</h2>
-                                    <p>For indicating additions to the document use the <code>ins</code> tag.</p>
+                                    <h2>{{=DICT["hh2362"]}}</h2>
+                                    <p>{{=DICT["pf2364"]}}<code>ins</code>{{=DICT["pc2363"]}}</p>
                                     <ins>This is Inserted Text</ins>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-ele-tx">
-                                    <h2>Strikethrough text</h2>
-                                    <p>For indicating blocks of text that are no longer relevant use the <code>s</code> tag.</p>
+                                    <h2>{{=DICT["hh2365"]}}</h2>
+                                    <p>{{=DICT["pf2367"]}}<code>s</code>{{=DICT["pc2366"]}}</p>
                                     <s>This is Deleted Text</s>
                                 </div>
                                 <div class="tpgp-ele-tx">
-                                    <h2>Underlined Text</h2>
-                                    <p>To underline text use the <code>u</code> tag.</p>
+                                    <h2>{{=DICT["hh2368"]}}</h2>
+                                    <p>{{=DICT["pf2370"]}}<code>u</code>{{=DICT["pc2369"]}}</p>
                                     <u>This is Underlined Text</u>
                                 </div>
                                 <div class="tpgp-ele-tx">
-                                    <h2>Small Text</h2>
-                                    <p>For de-emphasizing inline or blocks of text, use the <code>small</code> tag.</p>
-                                    <small>This is Small Text</small>
+                                    <h2>{{=DICT["hh2371"]}}</h2>
+                                    <p>{{=DICT["pf2373"]}}<code>small</code>{{=DICT["pc2372"]}}</p>
+                                    <small>{{=DICT["si2374"]}}</small>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="tpgp-ele-tx">
-                                    <h2>Bold Text</h2>
-                                    <p>For emphasizing a snippet of text that have been bold use the <code>strong</code> tag.</p>
-                                    <strong>This is Bold Text</strong>
+                                    <h2>{{=DICT["hh2375"]}}</h2>
+                                    <p>{{=DICT["pf2377"]}}<code>strong</code>{{=DICT["pc2376"]}}</p>
+                                    <strong>{{=DICT["sp2378"]}}</strong>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="tpgp-ele-tx">
-                                    <h2>Underline Text</h2>
-                                    <p>For emphasizing a snippet of text with italics use <code>em</code> tag..</p>
+                                    <h2>{{=DICT["hh2379"]}}</h2>
+                                    <p>{{=DICT["pf2381"]}}<code>em</code>{{=DICT["pc2380"]}}</p>
                                     <em>This is Underline Text</em>
                                 </div>
                             </div>
@@ -736,38 +736,38 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tpgp-helper mg-t-30">
                         <div class="tpgp-hp-hd typography-mgn">
-                            <h2 class="mn-hd-s">Helper Classes</h2>
+                            <h2 class="mn-hd-s">{{=DICT["hb2382"]}}</h2>
                         </div>
                         <div class="tpgp-al-cl">
-                            <h3>Alignment Classes</h3>
-                            <p>Easily realign text to components with text alignment classes (<code>.text-left, .text-center, .text-right, .text-justify</code>).</p>
-                            <p class="text-left">Left aligned text.</p>
-                            <p class="text-center">Center aligned text.</p>
-                            <p class="text-right">Right aligned text.</p>
-                            <p class="text-justify">Justified text.</p>
-                            <p class="text-nowrap">No wrap text.</p>
-                            <p class="text-lowercase">Lowercased text.</p>
-                            <p class="text-uppercase">Uppercased text.</p>
-                            <p class="text-capitalize">Capitalized text.</p>
+                            <h3>{{=DICT["hh2383"]}}</h3>
+                            <p>{{=DICT["pf2385"]}}<code>.text-left, .text-center, .text-right, .text-justify</code>{{=DICT["pc2384"]}}</p>
+                            <p class="text-left">{{=DICT["pc2386"]}}</p>
+                            <p class="text-center">{{=DICT["pc2387"]}}</p>
+                            <p class="text-right">{{=DICT["pc2388"]}}</p>
+                            <p class="text-justify">{{=DICT["pc2389"]}}</p>
+                            <p class="text-nowrap">{{=DICT["pc2390"]}}</p>
+                            <p class="text-lowercase">{{=DICT["pc2391"]}}</p>
+                            <p class="text-uppercase">{{=DICT["pc2392"]}}</p>
+                            <p class="text-capitalize">{{=DICT["pc2393"]}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tpgp-helper mg-t-30">
                         <div class="tpgp-hp-hd typography-mgn">
-                            <h2 class="mn-hd-s">Abbreviations</h2>
+                            <h2 class="mn-hd-s">{{=DICT["hb2394"]}}</h2>
                         </div>
                         <div class="tpgp-al-cl">
-                            <h3>Abbreviations attribute </h3>
-                            <p>Stylized implementation of HTML"s <code>abbr</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a <code>title</code> attribute have a light dotted bottom border and a help cursor on hover, providing
+                            <h3>{{=DICT["hh2395"]}}</h3>
+                            <p>{{=DICT["pf2396"]}}<code>abbr</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a <code>title</code> attribute have a light dotted bottom border and a help cursor on hover, providing
                                 additional context on hover and to users of assistive technologies.</p>
                             <div class="abvi-act">
-                                <h2>Basic abbreviation</h2>
-                                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+                                <h2>{{=DICT["hh2397"]}}</h2>
+                                <p>{{=DICT["pf2398"]}}<abbr title="attribute">attr</abbr>.</p>
                             </div>
                             <div class="abvi-act abvi-mg-nk">
-                                <h2>Initialism</h2>
-                                <p>Add <abbr title="Initialism" class="initialism">Initialism</abbr> to an abbreviation for a slightly smaller font-size.</p>
+                                <h2>{{=DICT["hh2399"]}}</h2>
+                                <p>{{=DICT["pf2401"]}}<abbr title="Initialism" class="initialism">Initialism</abbr>{{=DICT["pc2400"]}}</p>
                             </div>
                         </div>
                     </div>
@@ -777,20 +777,20 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="tpgp-helper mg-t-30">
                         <div class="tpgp-hp-hd typography-mgn">
-                            <h2 class="mn-hd-s">Blockquotes</h2>
+                            <h2 class="mn-hd-s">{{=DICT["hb2402"]}}</h2>
                         </div>
                         <div class="tpgp-al-cl">
-                            <h3>Blockquotes Attribute</h3>
-                            <p>For quoting blocks of content from another source within your document.</p>
+                            <h3>{{=DICT["hh2403"]}}</h3>
+                            <p>{{=DICT["pa2404"]}}</p>
                             <blockquote>
-                                <p class="blockquote-nk">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p class="blockquote-nk">{{=DICT["pc2405"]}}</p>
                             </blockquote>
                             <blockquote>
-                                <p class="blockquote-nk">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p class="blockquote-nk">{{=DICT["pc2406"]}}</p>
                                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
                             <blockquote class="blockquote-reverse m-b-25">
-                                <p class="blockquote-nk">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <p class="blockquote-nk">{{=DICT["pc2407"]}}</p>
                                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
                         </div>
@@ -801,32 +801,32 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="tpgp-helper mg-t-30">
                         <div class="tpgp-hp-hd typography-mgn">
-                            <h2 class="mn-hd-s">List</h2>
+                            <h2 class="mn-hd-s">{{=DICT["hb2408"]}}</h2>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-al-cl">
-                                    <h3>Unordered</h3>
+                                    <h3>{{=DICT["hh2409"]}}</h3>
                                     <ul class="tpdg-ul-circle">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>{{=DICT["la2410"]}}</li>
+                                        <li>{{=DICT["la2411"]}}</li>
+                                        <li>{{=DICT["la2412"]}}</li>
+                                        <li>{{=DICT["la2413"]}}</li>
                                         <li>Nulla volutpat aliquam velit
                                             <ul class="tpdg-ul-circle-2">
-                                                <li>Phasellus iaculis neque</li>
-                                                <li>Purus sodales ultricies</li>
-                                                <li>Vestibulum laoreet porttitor sem</li>
-                                                <li>Ac tristique libero volutpat at</li>
+                                                <li>{{=DICT["la2414"]}}</li>
+                                                <li>{{=DICT["la2415"]}}</li>
+                                                <li>{{=DICT["la2416"]}}</li>
+                                                <li>{{=DICT["la2417"]}}</li>
                                             </ul>
                                         </li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
+                                        <li>{{=DICT["la2418"]}}</li>
+                                        <li>{{=DICT["la2419"]}}</li>
+                                        <li>{{=DICT["la2420"]}}</li>
                                     </ul>
                                 </div>
                                 <div class="tpgp-al-cl mg-t-20">
-                                    <h3>Custom 1</h3>
+                                    <h3>{{=DICT["hh2421"]}}</h3>
                                     <ul class="tpgp-ctm-angle">
                                         <li><i class="notika-icon notika-next-pro"></i> Lorem ipsum dolor sit amet</li>
                                         <li><i class="notika-icon notika-next-pro"></i> Consectetur adipiscing elit</li>
@@ -845,24 +845,24 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-al-cl">
-                                    <h3>Ordered</h3>
+                                    <h3>{{=DICT["hh2422"]}}</h3>
                                     <ol class="tpgp-orders">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Spretium nisl aliquet lorem ipsum</li>
-                                        <li>Linking best ttoth bellorem</li>
+                                        <li>{{=DICT["la2423"]}}</li>
+                                        <li>{{=DICT["la2424"]}}</li>
+                                        <li>{{=DICT["la2425"]}}</li>
+                                        <li>{{=DICT["la2426"]}}</li>
+                                        <li>{{=DICT["la2427"]}}</li>
+                                        <li>{{=DICT["la2428"]}}</li>
+                                        <li>{{=DICT["la2429"]}}</li>
+                                        <li>{{=DICT["la2430"]}}</li>
+                                        <li>{{=DICT["la2431"]}}</li>
+                                        <li>{{=DICT["la2432"]}}</li>
+                                        <li>{{=DICT["la2433"]}}</li>
+                                        <li>{{=DICT["la2434"]}}</li>
                                     </ol>
                                 </div>
                                 <div class="tpgp-al-cl mg-t-20">
-                                    <h3>Custom 2</h3>
+                                    <h3>{{=DICT["hh2435"]}}</h3>
                                     <ul class="tpgp-ctm-angle">
                                         <li><i class="notika-icon notika-checked"></i> Lorem ipsum dolor sit amet</li>
                                         <li><i class="notika-icon notika-checked"></i> Consectetur adipiscing elit</li>
@@ -881,24 +881,24 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="tpgp-al-cl">
-                                    <h3>Ordered - Roman</h3>
+                                    <h3>{{=DICT["hh2436"]}}</h3>
                                     <ol class="order-roman" type="i">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Phasellus iaculis neque</li>
-                                        <li>Purus sodales ultricies</li>
-                                        <li>Vestibulum laoreet porttitor sem</li>
-                                        <li>Ac tristique libero volutpat at</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
+                                        <li>{{=DICT["la2437"]}}</li>
+                                        <li>{{=DICT["la2438"]}}</li>
+                                        <li>{{=DICT["la2439"]}}</li>
+                                        <li>{{=DICT["la2440"]}}</li>
+                                        <li>{{=DICT["la2441"]}}</li>
+                                        <li>{{=DICT["la2442"]}}</li>
+                                        <li>{{=DICT["la2443"]}}</li>
+                                        <li>{{=DICT["la2444"]}}</li>
+                                        <li>{{=DICT["la2445"]}}</li>
+                                        <li>{{=DICT["la2446"]}}</li>
+                                        <li>{{=DICT["la2447"]}}</li>
+                                        <li>{{=DICT["la2448"]}}</li>
                                     </ol>
                                 </div>
                                 <div class="tpgp-al-cl mg-t-20">
-                                    <h3>Custom 2</h3>
+                                    <h3>{{=DICT["hh2449"]}}</h3>
                                     <ul class="tpgp-ctm-angle">
                                         <li><i class="notika-icon notika-star"></i> Lorem ipsum dolor sit amet</li>
                                         <li><i class="notika-icon notika-star"></i> Consectetur adipiscing elit</li>

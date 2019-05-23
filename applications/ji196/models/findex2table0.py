@@ -1,11 +1,11 @@
 
 db.define_table('indextable0',
-   Field( 'f0', 'string', label= 'date', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'order ID', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'price', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'quantity', default= 'w2p f4' ), 
-   Field( 'f5', 'string', label= 'total', default= 'w2p f5' ), 
+   Field( 'f0', 'string',  label= 'date', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'order ID', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'price', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'quantity', default= 'w2p f4' ), 
+   Field( 'f5', 'string',  label= 'total', default= 'w2p f5' ), 
       )
 if not db(db.indextable0.id ).count():
       db.indextable0.insert( f0= '00 indextable0', f1= '0w2p1 order ID', f2= '0w2p2 name', f3= '0w2p3 price', f4= '0w2p4 quantity', f5= '0w2p5 total', )
@@ -18,12 +18,12 @@ if not db(db.indextable0.id ).count():
       db.indextable0.insert( f0= '2018-09-24 19:10', f1= '100391', f2= 'Camera C430W 4k', f3= '$699.00', f4= '1', f5= '$699.00', )
       db.indextable0.insert( f0= '2018-09-22 00:43', f1= '100393', f2= 'USB 3.0 Cable', f3= '$10.00', f4= '3', f5= '$30.00', )
 db.define_table('tabletable0',
-   Field( 'f0', 'string', label= 'date', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'order ID', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'price', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'quantity', default= 'w2p f4' ), 
-   Field( 'f5', 'string', label= 'total', default= 'w2p f5' ), 
+   Field( 'f0', 'string',  label= 'date', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'order ID', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'price', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'quantity', default= 'w2p f4' ), 
+   Field( 'f5', 'string',  label= 'total', default= 'w2p f5' ), 
       )
 if not db(db.tabletable0.id ).count():
       db.tabletable0.insert( f0= '00 tabletable0', f1= '0w2p1 order ID', f2= '0w2p2 name', f3= '0w2p3 price', f4= '0w2p4 quantity', f5= '0w2p5 total', )
@@ -36,11 +36,11 @@ if not db(db.tabletable0.id ).count():
       db.tabletable0.insert( f0= '2018-09-24 19:10', f1= '100391', f2= 'Camera C430W 4k', f3= '$699.00', f4= '1', f5= '$699.00', )
       db.tabletable0.insert( f0= '2018-09-22 00:43', f1= '100393', f2= 'USB 3.0 Cable', f3= '$10.00', f4= '3', f5= '$30.00', )
 db.define_table('index4table0',
-   Field( 'f0', 'string', label= 'date', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'type', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'description', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'status', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'price', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= 'date', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'type', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'description', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'status', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'price', default= 'w2p f4' ), 
       )
 if not db(db.index4table0.id ).count():
       db.index4table0.insert( f0= '00 index4table0', f1= '0w2p1 type', f2= '0w2p2 description', f3= '0w2p3 status', f4= '0w2p4 price', )
@@ -53,9 +53,9 @@ if not db(db.index4table0.id ).count():
       db.index4table0.insert( f0= '2018-09-24 19:10', f1= 'Camera', f2= 'Camera C430W 4k', f3= 'Processed', f4= '$699.00', )
       db.index4table0.insert( f0= '2018-09-22 00:43', f1= 'Computer', f2= 'Macbook Pro Retina 2017', f3= 'Processed', f4= '$10.00', )
 db.define_table('switchtable0',
-   Field( 'f0', 'string', label= 'Size', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Example', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'CSS Class', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'Size', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Example', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'CSS Class', default= 'w2p f2' ), 
       )
 if not db(db.switchtable0.id ).count():
       db.switchtable0.insert( f0= '00 switchtable0', f1= '0w2p1 Example', f2= '0w2p2 CSS Class', )
@@ -64,9 +64,9 @@ if not db(db.switchtable0.id ).count():
       db.switchtable0.insert( f0= 'Small', f1= 'unk_3', f2= 'Add following code size= sm', )
       db.switchtable0.insert( f0= 'Extra small', f1= 'unk_4', f2= 'Add following code size= xs', )
 db.define_table('index2table0',
-   Field( 'f0', 'string', label= 'name', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'role', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'type', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'name', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'role', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'type', default= 'w2p f2' ), 
       )
 if not db(db.index2table0.id ).count():
       db.index2table0.insert( f0= '00 index2table0', f1= '0w2p1 role', f2= '0w2p2 type', )

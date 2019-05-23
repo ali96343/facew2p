@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>facew2p</title>
-    <meta name="description" content="">
+
+    <meta name="description" content="my-content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{=URL('static','template/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
@@ -64,7 +65,7 @@
 
 <body>
     <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>{{=DICT["sp17175"]}}</strong> browser. Please <a href="https://browsehappy.com/">{{=DICT["aa17177"]}}</a>{{=DICT["pc17176"]}}</p>
         <![endif]-->
 
     <div class="color-line"></div>
@@ -72,7 +73,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="back-link back-backend">
-                    <a href="{{=URL(c='default',f='index')}}" class="btn btn-primary">Back to Dashboard</a>
+                    <a href="{{=URL(c='default',f='index')}}" class="btn btn-primary">{{=DICT["aa17179"]}}</a>
                 </div>
             </div>
         </div>
@@ -82,16 +83,16 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
             <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="content-error">
-                    <h1>Internal Server Error <span class="counter"> 500</span></h1>
-                    <p>The server encountered something unexpected that didn"t allow it to complete the request. We apologize.</p>
-                    <a href="#">Report Problem</a>
+                    <h1>{{=DICT["hh17181"]}}<span class="counter">{{=DICT["sx17180"]}}</span></h1>
+                    <p>{{=DICT["pa17182"]}}</p>
+                    <a href="#">{{=DICT["aa17183"]}}</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
         </div>
         <div class="row">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center login-footer">
-                <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                <p>{{=DICT["pf17185"]}}<a href="https://colorlib.com/wp/templates/">Colorlib</a>{{=DICT["pc17184"]}}</p>
             </div>
         </div>
     </div>

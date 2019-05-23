@@ -13,20 +13,20 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="{{=URL('static','template/apple-icon.png')}}">
+    <link rel="shortcut icon" href="{{=URL('static','template/favicon.ico')}}">
 
     <link rel="stylesheet" href="{{=URL('static','template/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','template/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/selectFX/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/vendors/jqvmap/dist/jqvmap.min.css')}}">
 
 
     <link rel="stylesheet" href="{{=URL('static','template/assets/css/style.css')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+San" rel="stylesheet" type="text/css">
 
 
 
@@ -55,45 +55,45 @@
                     <li class="active">
                         <a href="{{=URL(c='default',f='index')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2547"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">Typography</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{=URL(c='default',f='ui_buttons')}}">{{=DICT["aa2549"]}}</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{=URL(c='default',f='ui_badges')}}">{{=DICT["aa2551"]}}</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{=URL(c='default',f='ui_tabs')}}">{{=DICT["aa2553"]}}</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="{{=URL(c='default',f='ui_social_buttons')}}">{{=DICT["aa2555"]}}</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{=URL(c='default',f='ui_cards')}}">{{=DICT["aa2557"]}}</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{=URL(c='default',f='ui_alerts')}}">{{=DICT["aa2559"]}}</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="{{=URL(c='default',f='ui_progressbar')}}">{{=DICT["aa2561"]}}</a></li>
+                            <li><i class="fa fa-fire"></i><a href="{{=URL(c='default',f='ui_modals')}}">{{=DICT["aa2563"]}}</a></li>
+                            <li><i class="fa fa-book"></i><a href="{{=URL(c='default',f='ui_switches')}}">{{=DICT["aa2565"]}}</a></li>
+                            <li><i class="fa fa-th"></i><a href="{{=URL(c='default',f='ui_grids')}}">{{=DICT["aa2567"]}}</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{=URL(c='default',f='ui_typgraphy')}}">{{=DICT["aa2569"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_basic')}}">{{=DICT["aa2571"]}}</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{=URL(c='default',f='tables_data')}}">{{=DICT["aa2573"]}}</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_basic')}}">{{=DICT["aa2575"]}}</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{=URL(c='default',f='forms_advanced')}}">{{=DICT["aa2577"]}}</a></li>
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2578"]}}</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{=URL(c='default',f='font_fontawesome')}}">{{=DICT["aa2580"]}}</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="{{=URL(c='default',f='font_themify')}}">{{=DICT["aa2582"]}}</a></li>
                         </ul>
                     </li>
                     <li>
@@ -102,26 +102,26 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{=URL(c='default',f='charts_chartjs')}}">{{=DICT["aa2585"]}}</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{=URL(c='default',f='charts_flot')}}">{{=DICT["aa2587"]}}</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{{=URL(c='default',f='charts_peity')}}">{{=DICT["aa2589"]}}</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{=URL(c='default',f='maps_gmap')}}">{{=DICT["aa2591"]}}</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{=URL(c='default',f='maps_vector')}}">{{=DICT["aa2593"]}}</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">{{=DICT["hc2594"]}}</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_login')}}">{{=DICT["aa2596"]}}</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{=URL(c='default',f='page_register')}}">{{=DICT["aa2598"]}}</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{=URL(c='default',f='pages_forget')}}">{{=DICT["aa2600"]}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -150,6 +150,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=indexform0.custom.begin}}
+<div><label for='id460'>txt461</label></div>
 {{=indexform0.custom.widget.f0}}
 {{=indexform0.custom.submit}}
 {{=indexform0.custom.end}}
@@ -175,7 +176,7 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">{{=DICT["pc2602"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <i class="fa fa-check"></i>
                                 <p>Server #1 overloaded.</p>
@@ -199,37 +200,37 @@
                                 <span class="count bg-primary">9</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">{{=DICT["pc2603"]}}</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2605"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2606"]}}</span>
+                                        <p>{{=DICT["pa2607"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2609"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2610"]}}</span>
+                                        <p>{{=DICT["pa2611"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                    <span class="name float-left">{{=DICT["sx2613"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2614"]}}</span>
+                                        <p>{{=DICT["pa2615"]}}</p>
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="{{=URL('static','template/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <span class="name float-left">{{=DICT["sx2617"]}}</span>
+                                    <span class="time float-right">{{=DICT["sx2618"]}}</span>
+                                        <p>{{=DICT["pa2619"]}}</p>
                                 </span>
                             </a>
                             </div>
@@ -246,7 +247,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">{{=DICT["sx2621"]}}</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -284,7 +285,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>{{=DICT["hh2622"]}}</h1>
                     </div>
                 </div>
             </div>
@@ -292,7 +293,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
+                            <li class="active">{{=DICT["lb2623"]}}</li>
                         </ol>
                     </div>
                 </div>
@@ -303,9 +304,9 @@
 
             <div class="col-sm-12">
                 <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                    <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                    <span class="badge badge-pill badge-success">{{=DICT["sx2624"]}}</span> You successfully read this important alert message.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">{{=DICT["sx2625"]}}</span>
                     </button>
                 </div>
             </div>
@@ -320,16 +321,16 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2626"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2627"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2628"]}}</a>
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">{{=DICT["sx2629"]}}</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">{{=DICT["pc2630"]}}</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart1"></canvas>
@@ -350,16 +351,16 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2631"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2632"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2633"]}}</a>
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">{{=DICT["sx2634"]}}</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">{{=DICT["pc2635"]}}</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart2"></canvas>
@@ -379,16 +380,16 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2636"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2637"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2638"]}}</a>
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">{{=DICT["sx2639"]}}</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">{{=DICT["pc2640"]}}</p>
 
                     </div>
 
@@ -408,16 +409,16 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2641"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2642"]}}</a>
+                                    <a class="dropdown-item" href="#">{{=DICT["aa2643"]}}</a>
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">{{=DICT["sx2644"]}}</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">{{=DICT["pc2645"]}}</p>
 
                         <div class="chart-wrapper px-3" style="height:70px;" height="70">
                             <canvas id="widgetChart4"></canvas>
@@ -433,12 +434,12 @@
                     <i class="fa fa-facebook"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> k
-                            <span>friends</span>
+                            <span class="count">{{=DICT["sx2646"]}}</span> k
+                            <span>{{=DICT["sp2647"]}}</span>
                         </li>
                         <li>
-                            <span class="count">450</span>
-                            <span>feeds</span>
+                            <span class="count">{{=DICT["sx2648"]}}</span>
+                            <span>{{=DICT["sp2649"]}}</span>
                         </li>
                     </ul>
                 </div>
@@ -452,12 +453,12 @@
                     <i class="fa fa-twitter"></i>
                     <ul>
                         <li>
-                            <span class="count">30</span> k
-                            <span>friends</span>
+                            <span class="count">{{=DICT["sx2650"]}}</span> k
+                            <span>{{=DICT["sp2651"]}}</span>
                         </li>
                         <li>
-                            <span class="count">450</span>
-                            <span>tweets</span>
+                            <span class="count">{{=DICT["sx2652"]}}</span>
+                            <span>{{=DICT["sp2653"]}}</span>
                         </li>
                     </ul>
                 </div>
@@ -471,12 +472,12 @@
                     <i class="fa fa-linkedin"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> +
-                            <span>contacts</span>
+                            <span class="count">{{=DICT["sx2654"]}}</span> +
+                            <span>{{=DICT["sp2655"]}}</span>
                         </li>
                         <li>
-                            <span class="count">250</span>
-                            <span>feeds</span>
+                            <span class="count">{{=DICT["sx2656"]}}</span>
+                            <span>{{=DICT["sp2657"]}}</span>
                         </li>
                     </ul>
                 </div>
@@ -490,12 +491,12 @@
                     <i class="fa fa-google-plus"></i>
                     <ul>
                         <li>
-                            <span class="count">94</span> k
-                            <span>followers</span>
+                            <span class="count">{{=DICT["sx2658"]}}</span> k
+                            <span>{{=DICT["sp2659"]}}</span>
                         </li>
                         <li>
-                            <span class="count">92</span>
-                            <span>circles</span>
+                            <span class="count">{{=DICT["sx2660"]}}</span>
+                            <span>{{=DICT["sp2661"]}}</span>
                         </li>
                     </ul>
                 </div>
@@ -508,8 +509,8 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-4">
-                                <h4 class="card-title mb-0">Traffic</h4>
-                                <div class="small text-muted">October 2017</div>
+                                <h4 class="card-title mb-0">{{=DICT["hd2662"]}}</h4>
+                                <div class="small text-muted">{{=DICT["di2663"]}}</div>
                             </div>
                             <!--/.col-->
                             <div class="col-sm-8 hidden-sm-down">
@@ -541,36 +542,36 @@
                     <div class="card-footer">
                         <ul>
                             <li>
-                                <div class="text-muted">Visits</div>
-                                <strong>29.703 Users (40%)</strong>
+                                <div class="text-muted">{{=DICT["di2664"]}}</div>
+                                <strong>{{=DICT["sp2665"]}}</strong>
                                 <div class="progress progress-xs mt-2" style="height: 5px;">
                                     <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </li>
                             <li class="hidden-sm-down">
-                                <div class="text-muted">Unique</div>
-                                <strong>24.093 Users (20%)</strong>
+                                <div class="text-muted">{{=DICT["di2666"]}}</div>
+                                <strong>{{=DICT["sp2667"]}}</strong>
                                 <div class="progress progress-xs mt-2" style="height: 5px;">
                                     <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </li>
                             <li>
-                                <div class="text-muted">Pageviews</div>
-                                <strong>78.706 Views (60%)</strong>
+                                <div class="text-muted">{{=DICT["di2668"]}}</div>
+                                <strong>{{=DICT["sp2669"]}}</strong>
                                 <div class="progress progress-xs mt-2" style="height: 5px;">
                                     <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </li>
                             <li class="hidden-sm-down">
-                                <div class="text-muted">New Users</div>
-                                <strong>22.123 Users (80%)</strong>
+                                <div class="text-muted">{{=DICT["di2670"]}}</div>
+                                <strong>{{=DICT["sp2671"]}}</strong>
                                 <div class="progress progress-xs mt-2" style="height: 5px;">
                                     <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </li>
                             <li class="hidden-sm-down">
-                                <div class="text-muted">Bounce Rate</div>
-                                <strong>40.15%</strong>
+                                <div class="text-muted">{{=DICT["di2672"]}}</div>
+                                <strong>{{=DICT["sp2673"]}}</strong>
                                 <div class="progress progress-xs mt-2" style="height: 5px;">
                                     <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
@@ -593,29 +594,29 @@
                                 <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{=URL('static','template/images/admin.jpg')}}">
                             </a>
                             <div class="media-body">
-                                <h2 class="text-white display-6">Jim Doe</h2>
-                                <p class="text-light">Project Manager</p>
+                                <h2 class="text-white display-6">{{=DICT["hb2675"]}}</h2>
+                                <p class="text-light">{{=DICT["pc2676"]}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="weather-category twt-category">
                         <ul>
                             <li class="active">
-                                <h5>750</h5>
+                                <h5>{{=DICT["hh2677"]}}</h5>
                                 Tweets
                             </li>
                             <li>
-                                <h5>865</h5>
+                                <h5>{{=DICT["hh2678"]}}</h5>
                                 Following
                             </li>
                             <li>
-                                <h5>3645</h5>
+                                <h5>{{=DICT["hh2679"]}}</h5>
                                 Followers
                             </li>
                         </ul>
                     </div>
                     <div class="twt-write col-sm-12">
-                        <textarea placeholder="Write your Tweet and Enter" rows="1" class="form-control t-text-area"></textarea>
+                        <textarea placeholder="{{=DICT["pb2680"]}}" rows="1" class="form-control t-text-area"></textarea>
                     </div>
                     <footer class="twt-footer">
                         <a href="#"><i class="fa fa-camera"></i></a>
@@ -635,8 +636,8 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,012</div>
+                                <div class="stat-text">{{=DICT["di2681"]}}</div>
+                                <div class="stat-digit">{{=DICT["di2682"]}}</div>
                             </div>
                         </div>
                     </div>
@@ -650,8 +651,8 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">New Customer</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-text">{{=DICT["di2683"]}}</div>
+                                <div class="stat-digit">{{=DICT["di2684"]}}</div>
                             </div>
                         </div>
                     </div>
@@ -664,8 +665,8 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Active Projects</div>
-                                <div class="stat-digit">770</div>
+                                <div class="stat-text">{{=DICT["di2685"]}}</div>
+                                <div class="stat-digit">{{=DICT["di2686"]}}</div>
                             </div>
                         </div>
                     </div>
@@ -675,7 +676,7 @@
             <div class="col-xl-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4>World</h4>
+                        <h4>{{=DICT["hh2687"]}}</h4>
                     </div>
                     <div class="Vector-map-js">
                         <div id="vmap" class="vmap" style="height: 265px;"></div>

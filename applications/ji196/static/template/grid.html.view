@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <!-- Required meta tags-->
@@ -11,6 +11,7 @@
 
   <!-- Title Page-->
   <title>facew2p</title>
+
 
   <!-- Fontfaces CSS-->
   <link href="{{=URL('static','template/css/font-face.css')}}" rel="stylesheet" media="all">
@@ -278,6 +279,7 @@
 {{include 'web2py_ajax.html'}}
 
 {{=gridform0.custom.begin}}
+<div><label for='id440'>txt441</label></div>
 {{=gridform0.custom.widget.f0}}
 {{=gridform0.custom.submit}}
 {{=gridform0.custom.end}}
@@ -299,19 +301,19 @@
                 <div class="noti-wrap">
                   <div class="noti__item js-item-menu">
                     <i class="zmdi zmdi-comment-more"></i>
-                    <span class="quantity">{{=DICT["sx99"]}}</span>
+                    <span class="quantity">1</span>
                     <div class="mess-dropdown js-dropdown">
                       <div class="mess__title">
-                        <p>{{=DICT["pa100"]}}</p>
+                        <p>{{=DICT["pa99"]}}</p>
                       </div>
                       <div class="mess__item">
                         <div class="image img-cir img-40">
                           <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
                         </div>
                         <div class="content">
-                          <h6>{{=DICT["hh102"]}}</h6>
-                          <p>{{=DICT["pa103"]}}</p>
-                          <span class="time">{{=DICT["sx104"]}}</span>
+                          <h6>{{=DICT["hh101"]}}</h6>
+                          <p>{{=DICT["pa102"]}}</p>
+                          <span class="time">{{=DICT["sx103"]}}</span>
                         </div>
                       </div>
                       <div class="mess__item">
@@ -319,30 +321,30 @@
                           <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
                         </div>
                         <div class="content">
-                          <h6>{{=DICT["hh106"]}}</h6>
-                          <p>{{=DICT["pa107"]}}</p>
-                          <span class="time">{{=DICT["sx108"]}}</span>
+                          <h6>{{=DICT["hh105"]}}</h6>
+                          <p>{{=DICT["pa106"]}}</p>
+                          <span class="time">{{=DICT["sx107"]}}</span>
                         </div>
                       </div>
                       <div class="mess__footer">
-                        <a href="#">{{=DICT["aa109"]}}</a>
+                        <a href="#">{{=DICT["aa108"]}}</a>
                       </div>
                     </div>
                   </div>
                   <div class="noti__item js-item-menu">
                     <i class="zmdi zmdi-email"></i>
-                    <span class="quantity">{{=DICT["sx110"]}}</span>
+                    <span class="quantity">1</span>
                     <div class="email-dropdown js-dropdown">
                       <div class="email__title">
-                        <p>{{=DICT["pa111"]}}</p>
+                        <p>{{=DICT["pa109"]}}</p>
                       </div>
                       <div class="email__item">
                         <div class="image img-cir img-40">
                           <img src="{{=URL('static','template/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa113"]}}</p>
-                          <span>{{=DICT["sp114"]}}</span>
+                          <p>{{=DICT["pa111"]}}</p>
+                          <span>{{=DICT["sp112"]}}</span>
                         </div>
                       </div>
                       <div class="email__item">
@@ -350,8 +352,8 @@
                           <img src="{{=URL('static','template/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa116"]}}</p>
-                          <span>{{=DICT["sp117"]}}</span>
+                          <p>{{=DICT["pa114"]}}</p>
+                          <span>{{=DICT["sp115"]}}</span>
                         </div>
                       </div>
                       <div class="email__item">
@@ -359,29 +361,29 @@
                           <img src="{{=URL('static','template/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa119"]}}</p>
-                          <span>{{=DICT["sp120"]}}</span>
+                          <p>{{=DICT["pa117"]}}</p>
+                          <span>{{=DICT["sp118"]}}</span>
                         </div>
                       </div>
                       <div class="email__footer">
-                        <a href="#">{{=DICT["aa121"]}}</a>
+                        <a href="#">{{=DICT["aa119"]}}</a>
                       </div>
                     </div>
                   </div>
                   <div class="noti__item js-item-menu">
                     <i class="zmdi zmdi-notifications"></i>
-                    <span class="quantity">{{=DICT["sx122"]}}</span>
+                    <span class="quantity">3</span>
                     <div class="notifi-dropdown js-dropdown">
                       <div class="notifi__title">
-                        <p>{{=DICT["pa123"]}}</p>
+                        <p>{{=DICT["pa120"]}}</p>
                       </div>
                       <div class="notifi__item">
                         <div class="bg-c1 img-cir img-40">
                           <i class="zmdi zmdi-email-open"></i>
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa124"]}}</p>
-                          <span class="date">{{=DICT["sx125"]}}</span>
+                          <p>{{=DICT["pa121"]}}</p>
+                          <span class="date">{{=DICT["sx122"]}}</span>
                         </div>
                       </div>
                       <div class="notifi__item">
@@ -389,8 +391,8 @@
                           <i class="zmdi zmdi-account-box"></i>
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa126"]}}</p>
-                          <span class="date">{{=DICT["sx127"]}}</span>
+                          <p>{{=DICT["pa123"]}}</p>
+                          <span class="date">{{=DICT["sx124"]}}</span>
                         </div>
                       </div>
                       <div class="notifi__item">
@@ -398,12 +400,12 @@
                           <i class="zmdi zmdi-file-text"></i>
                         </div>
                         <div class="content">
-                          <p>{{=DICT["pa128"]}}</p>
-                          <span class="date">{{=DICT["sx129"]}}</span>
+                          <p>{{=DICT["pa125"]}}</p>
+                          <span class="date">{{=DICT["sx126"]}}</span>
                         </div>
                       </div>
                       <div class="notifi__footer">
-                        <a href="#">{{=DICT["aa130"]}}</a>
+                        <a href="#">{{=DICT["aa127"]}}</a>
                       </div>
                     </div>
                   </div>
@@ -414,7 +416,7 @@
                       <img src="{{=URL('static','template/images/icon/avatar-01.jpg')}}" alt="John Doe" />
                     </div>
                     <div class="content">
-                      <a class="js-acc-btn" href="#">{{=DICT["aa132"]}}</a>
+                      <a class="js-acc-btn" href="#">{{=DICT["aa129"]}}</a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                       <div class="info clearfix">
@@ -425,9 +427,9 @@
                         </div>
                         <div class="content">
                           <h5 class="name">
-                            <a href="#">{{=DICT["aa134"]}}</a>
+                            <a href="#">{{=DICT["aa131"]}}</a>
                           </h5>
-                          <span class="email">{{=DICT["sx135"]}}</span>
+                          <span class="email">{{=DICT["sx132"]}}</span>
                         </div>
                       </div>
                       <div class="account-dropdown__body">
@@ -462,7 +464,25 @@
       <div class="main-content">
         <div class="section__content section__content--p30">
           <div class="container-fluid">
-            <h5 class="heading-title">{{=DICT["he136"]}}</h5>
+            <h5 class="heading-title">{{=DICT["he133"]}}</h5>
+            <div class="row">
+              <div class="col">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di134"]}}</div>
+                </section>
+              </div>
+              <div class="col">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di135"]}}</div>
+                </section>
+              </div>
+              <div class="col">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di136"]}}</div>
+                </section>
+              </div>
+            </div>
+
             <div class="row">
               <div class="col">
                 <section class="card">
@@ -479,9 +499,6 @@
                   <div class="card-body text-secondary">{{=DICT["di139"]}}</div>
                 </section>
               </div>
-            </div>
-
-            <div class="row">
               <div class="col">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di140"]}}</div>
@@ -497,6 +514,9 @@
                   <div class="card-body text-secondary">{{=DICT["di142"]}}</div>
                 </section>
               </div>
+            </div>
+
+            <div class="row">
               <div class="col">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di143"]}}</div>
@@ -512,9 +532,6 @@
                   <div class="card-body text-secondary">{{=DICT["di145"]}}</div>
                 </section>
               </div>
-            </div>
-
-            <div class="row">
               <div class="col">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di146"]}}</div>
@@ -560,28 +577,13 @@
                   <div class="card-body text-secondary">{{=DICT["di154"]}}</div>
                 </section>
               </div>
-              <div class="col">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di155"]}}</div>
-                </section>
-              </div>
-              <div class="col">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di156"]}}</div>
-                </section>
-              </div>
-              <div class="col">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di157"]}}</div>
-                </section>
-              </div>
             </div>
 
-            <h5 class="heading-title">{{=DICT["he158"]}}</h5>
+            <h5 class="heading-title">{{=DICT["he155"]}}</h5>
             <div class="row">
               <div class="col col-lg-12">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di159"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di156"]}}</div>
                 </section>
               </div>
             </div>
@@ -589,59 +591,74 @@
             <div class="row">
               <div class="col-lg-6">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di160"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di157"]}}</div>
                 </section>
               </div>
               <div class="col-lg-6 ">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di158"]}}</div>
+                </section>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-lg-4">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di159"]}}</div>
+                </section>
+              </div>
+              <div class="col-lg-4">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di160"]}}</div>
+                </section>
+              </div>
+              <div class="col-lg-4">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di161"]}}</div>
                 </section>
               </div>
             </div>
 
-
             <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di162"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di163"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di164"]}}</div>
                 </section>
               </div>
-            </div>
-
-            <div class="row">
               <div class="col-lg-3">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di165"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-3">
+            </div>
+
+            <div class="row">
+              <div class="col-lg-2">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di166"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-2">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di167"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-2">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di168"]}}</div>
                 </section>
               </div>
-            </div>
-
-            <div class="row">
               <div class="col-lg-2">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di169"]}}</div>
@@ -657,38 +674,41 @@
                   <div class="card-body text-secondary">{{=DICT["di171"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-2">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di172"]}}</div>
-                </section>
-              </div>
-              <div class="col-lg-2">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di173"]}}</div>
-                </section>
-              </div>
-              <div class="col-lg-2">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di174"]}}</div>
-                </section>
-              </div>
             </div>
 
 
-            <h4 class="heading-title">{{=DICT["hd175"]}}</h4>
+            <h4 class="heading-title">{{=DICT["hd172"]}}</h4>
 
             <div class="row">
               <div class="col-2">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di176"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di173"]}}</div>
                 </section>
               </div>
               <div class="col-2">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di177"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di174"]}}</div>
                 </section>
               </div>
               <div class="col-lg-8">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di175"]}}</div>
+                </section>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di176"]}}</div>
+                </section>
+              </div>
+              <div class="col-sm-3">
+                <section class="card">
+                  <div class="card-body text-secondary">{{=DICT["di177"]}}</div>
+                </section>
+              </div>
+              <div class="col-lg-6">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di178"]}}</div>
                 </section>
@@ -696,17 +716,17 @@
             </div>
 
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-md-4">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di179"]}}</div>
                 </section>
               </div>
-              <div class="col-sm-3">
+              <div class="col-md-4">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di180"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-4">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di181"]}}</div>
                 </section>
@@ -714,43 +734,25 @@
             </div>
 
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-sm-6">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di182"]}}</div>
                 </section>
               </div>
-              <div class="col-md-4">
+              <div class="col-sm-6">
                 <section class="card">
                   <div class="card-body text-secondary">{{=DICT["di183"]}}</div>
                 </section>
               </div>
-              <div class="col-lg-4">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di184"]}}</div>
-                </section>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di185"]}}</div>
-                </section>
-              </div>
-              <div class="col-sm-6">
-                <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di186"]}}</div>
-                </section>
-              </div>
             </div>
 
 
-            <h5 class="heading-title">{{=DICT["he187"]}}</h5>
+            <h5 class="heading-title">{{=DICT["he184"]}}</h5>
 
             <div class="row">
               <div class="col-md-6 offset-md-6 col-sm-6 ml-auto">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di188"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di185"]}}</div>
                 </section>
               </div>
             </div>
@@ -758,7 +760,7 @@
             <div class="row">
               <div class="col-md-6 offset-md-3 mr-auto ml-auto">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di189"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di186"]}}</div>
                 </section>
               </div>
             </div>
@@ -766,12 +768,12 @@
             <div class="row">
               <div class="col-md-4">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di190"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di187"]}}</div>
                 </section>
               </div>
               <div class="col-md-4 ml-auto">
                 <section class="card">
-                  <div class="card-body text-secondary">{{=DICT["di191"]}}</div>
+                  <div class="card-body text-secondary">{{=DICT["di188"]}}</div>
                 </section>
               </div>
             </div>

@@ -1831,7 +1831,7 @@ class FindTables_bs4 (StrDb , ):
                ctrl_param['FFFF'] = str(nn) 
 
                ctrlsum += ctrl_new_form 
-               view_label= "<label for='FOR'>TEXT</label>" 
+               view_label= "<div><label for='FOR'>TEXT</label></div>" 
 
                FileOper.put2yaml( form_name + '.des' , e[3]  )
 
@@ -1854,6 +1854,9 @@ class FindTables_bs4 (StrDb , ):
                     tmp_tbl_med= tbl_med_type[elem]
                     #fld_type= fld_type_dict[elem]
                     xin= xin_dict[elem]
+                    if len(elem_label) == 0:
+                             elem_label = {'for': 'fk_for', 'text': 'label error'}
+                             print ("----------------------------------",elem)
 
                     ok_in= ""
                     if elem != 'button':
@@ -1861,22 +1864,17 @@ class FindTables_bs4 (StrDb , ):
                         
                        #print ( select_opt )
                        #print ( radio_opt )
+                       #if len (select_opt):
+                       #    print ("=============",elem_label)
                        LB= [ "l1-" + str( next(int_uniq_key4unk)) for i in [0,1,2] ]                     
  
                        tbl_beg.append(  replace_in_obj  ( tmp_tbl_med, {'FLD': fld_name, 'LABEL':  fld_name, 'L0B': LB[0], 'L1B': LB[1] , 'L2B': LB[2]   }  ) )
 
-                       set_label = False
-                       if len(elem_label):
-                            view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text']} ))
-                            set_label = True
+                       view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text']} ))
 
-                       if set_label == False and  elem == 'checkbox':
-                           view_beg.append("<div><label>")
 
                        view_beg.append( replace_in_obj ( view_med, {'FLD': fld_name} ))
 
-                       if set_label == False and  elem == 'checkbox':
-                           view_beg.append(" w2p-check-%s</label> </div>" % str( next(int_uniq_key4unk)) )
                          
                        for k,v in elem_atrs.items():
 
@@ -2129,16 +2127,30 @@ class FindTables_bs4 (StrDb , ):
                                   all_val_dict= dict() # elem_attrs
                                   opt_select_list=[]
                                   opt_radio={}
+                                  llb= None
+
+                                  unk_id= 'id' + str( next(int_uniq_key4unk) )
+                                  unk_txt= 'txt' + str( next(int_uniq_key4unk) )
                                   
-                                  llb = None
-                                  if llb is None:
-                                      ppp= x.parent
-                                      ll1= ppp.select('label')
-                                      if ll1:
+                                  ppp= x.parent
+                                      #x.find_parent('label')
+                                  ll1= ppp.select('label')
+                                  if ll1:
                                           #print (ll1)
                                           llb= ll1[0]
+
+                                  if llb is None:
+                                      llb=x.find_parent('label')
+
                                   if llb is None:
                                       llb= x.find_next_sibling("label")
+
+                                  #if llb is None:
+                                  #    lldiv= x.find_parent("div")
+                                  #    llb= lldiv.find_next_sibling("label")
+                                  #    print (llb)
+
+                                       
                                   if llb:
                                        lab_attrs= {"for": "unkfor", "text": "textunk"}
                                        ltext= hard_clear( llb.get_text()  )
@@ -2185,6 +2197,10 @@ class FindTables_bs4 (StrDb , ):
                                          found_button = True
                                       if firs == 'type' and  zatr == 'checkbox'   :
                                          new_finput= 'checkbox'
+                                         #llb= x.find_parent('label') 
+                                         #if llb:
+                                         #   ltext= hard_clear( llb.get_text()  )
+                                         #   print ( "------------------", ltext )
                                  
                                       zatr= hard_clear( zatr)
                                       if isinstance(zatr,(list,)): 
@@ -2199,7 +2215,22 @@ class FindTables_bs4 (StrDb , ):
                                   if 'placeholder' not in all_val_dict and new_finput != 'radio' :
                                           all_val_dict['placeholder' ] = 'place_' + str(next(int_uniq_key4unk))
                                   #new_list.append( new_finput )
+                                  if 'id' not in all_val_dict:
+                                          all_val_dict['id'] = unk_id 
+                                  else:
+                                     unk_id = all_val_dict['id']
+                                  if len(lab_attrs) == 0: 
+                                       lab_attrs= {"for":  unk_id, "text": unk_txt}
+                                  else:
+                                     if 'for' not in lab_attrs:
+                                         lab_attrs['for'] = unk_id
+                                     if 'text' not in lab_attrs:
+                                         lab_attrs['text'] = unk_txt
+                                  
                                   new_list.append( [new_finput, all_val_dict, lab_attrs, opt_select_list, opt_radio ] )
+                     #for finput in ['label']:
+                     #     fi= form.find_all(finput)
+                     #     print (fi)
                                   
 
                      #print ("-------- ",new_list)
@@ -2633,7 +2664,7 @@ class HtmlView( CheckEnv ):
 
                           if any ([( "#"      in grp0 ), ( "{{"         in grp0), ( '//'     in grp0), \
                                    ('Colorlib' in grp0),  ('Bootstrapious' in grp0),\
-                                   #( '&lt;'    in grp0 ), ('&gt;'in grp0 ), ('&quot;' in grp0 ),  ('&amp;' in grp0 ), ('&nbsp;' in grp0 ),  ('&larr;' in grp0 ),
+                                   ( '&lt;'    in grp0 ), ('&gt;'in grp0 ), ('&quot;' in grp0 ),  ('&amp;' in grp0 ), ('&nbsp;' in grp0 ),  ('&larr;' in grp0 ),
                                    ( '<'      in grp0 ), ( '>'          in grp0), ( 'tel'    in grp0), \
                                    ( "mailto" in grp0 ), ( "javascript" in grp0), ( len(grp0) <=1   ), ] ) :
                                 continue

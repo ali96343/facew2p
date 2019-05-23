@@ -1,8 +1,8 @@
 
 db.define_table('index03table0',
-   Field( 'f0', 'string', label= 'ID', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Price', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'ID', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Price', default= 'w2p f2' ), 
       )
 if not db(db.index03table0.id ).count():
       db.index03table0.insert( f0= '00 index03table0', f1= '0w2p1 Name', f2= '0w2p2 Price', )
@@ -12,23 +12,21 @@ if not db(db.index03table0.id ).count():
       db.index03table0.insert( f0= '5667', f1= 'Samsung Galaxy Alpha', f2= '$870', )
       db.index03table0.insert( f0= '7886', f1= 'LG G3', f2= '$790', )
 db.define_table('indextable0',
-   Field( 'f0', 'string', label= 'ID', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Price', default= 'w2p f2' ), 
+   Field( 'f0', 'date',    label= 'ID', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), 
+   Field( 'f1', 'datetime',label= 'зззззз', default = request.now, requires = IS_DATETIME(format=T('%d.%m.%Y %H:%M:%S') )), 
+   Field( 'f2', 'string',  label= 'Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Price', default= 'w2p f3' ), 
       )
 if not db(db.indextable0.id ).count():
-      db.indextable0.insert( f0= '00 indextable0', f1= '0w2p1 Name', f2= '0w2p2 Price', )
-      db.indextable0.insert( f0= '4555', f1= 'Samsung Galaxy Mega', f2= '$921', )
-      db.indextable0.insert( f0= '4556', f1= 'Huawei Ascend P6', f2= '$240', )
-      db.indextable0.insert( f0= '8778', f1= 'HTC One M8', f2= '$400', )
-      db.indextable0.insert( f0= '5667', f1= 'Samsung Galaxy Alpha', f2= '$870', )
-      db.indextable0.insert( f0= '7886', f1= 'LG G3', f2= '$790', )
+         from gluon.contrib.populate import populate
+         populate(db.indextable0  , 6) 
+
 db.define_table('invoicetable0',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Item Title', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Unit Price', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Quantity', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Total', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Item Title', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Unit Price', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Quantity', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Total', default= 'w2p f4' ), 
       )
 if not db(db.invoicetable0.id ).count():
       db.invoicetable0.insert( f0= '00 invoicetable0', f1= '0w2p1 Item Title', f2= '0w2p2 Unit Price', f3= '0w2p3 Quantity', f4= '0w2p4 Total', )
@@ -37,11 +35,11 @@ if not db(db.invoicetable0.id ).count():
       db.invoicetable0.insert( f0= '3', f1= 'Vidaska Adrioal', f2= '$400', f3= '03', f4= '$2000', )
       db.invoicetable0.insert( f0= '4', f1= 'Croustal Desrikal', f2= '$600', f3= '04', f4= '$7000', )
 db.define_table('normal0tabletable0',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable0.id ).count():
       db.normal0tabletable0.insert( f0= '00 normal0tabletable0', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -54,11 +52,11 @@ if not db(db.normal0tabletable0.id ).count():
       db.normal0tabletable0.insert( f0= '7', f1= 'Katherine', f2= 'Buckland', f3= '@anitabelle', f4= 'Wokie', )
       db.normal0tabletable0.insert( f0= '8', f1= 'Nicholas', f2= 'Walmart', f3= '@mwalmart', f4= 'Spike', )
 db.define_table('normal0tabletable1',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable1.id ).count():
       db.normal0tabletable1.insert( f0= '00 normal0tabletable1', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -71,11 +69,11 @@ if not db(db.normal0tabletable1.id ).count():
       db.normal0tabletable1.insert( f0= '7', f1= 'Katherine', f2= 'Buckland', f3= '@anitabelle', f4= 'Wokie', )
       db.normal0tabletable1.insert( f0= '8', f1= 'Nicholas', f2= 'Walmart', f3= '@mwalmart', f4= 'Spike', )
 db.define_table('normal0tabletable2',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable2.id ).count():
       db.normal0tabletable2.insert( f0= '00 normal0tabletable2', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -88,11 +86,11 @@ if not db(db.normal0tabletable2.id ).count():
       db.normal0tabletable2.insert( f0= '7', f1= 'Katherine', f2= 'Buckland', f3= '@anitabelle', f4= 'Wokie', )
       db.normal0tabletable2.insert( f0= '8', f1= 'Nicholas', f2= 'Walmart', f3= '@mwalmart', f4= 'Spike', )
 db.define_table('normal0tabletable3',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable3.id ).count():
       db.normal0tabletable3.insert( f0= '00 normal0tabletable3', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -105,11 +103,11 @@ if not db(db.normal0tabletable3.id ).count():
       db.normal0tabletable3.insert( f0= '7', f1= 'Katherine', f2= 'Buckland', f3= '@anitabelle', f4= 'Wokie', )
       db.normal0tabletable3.insert( f0= '8', f1= 'Nicholas', f2= 'Walmart', f3= '@mwalmart', f4= 'Spike', )
 db.define_table('normal0tabletable4',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable4.id ).count():
       db.normal0tabletable4.insert( f0= '00 normal0tabletable4', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -122,11 +120,11 @@ if not db(db.normal0tabletable4.id ).count():
       db.normal0tabletable4.insert( f0= '7', f1= 'Katherine', f2= 'Buckland', f3= '@anitabelle', f4= 'Wokie', )
       db.normal0tabletable4.insert( f0= '8', f1= 'Nicholas', f2= 'Walmart', f3= '@mwalmart', f4= 'Spike', )
 db.define_table('normal0tabletable5',
-   Field( 'f0', 'string', label= '#', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'First Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Last Name', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Username', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Nickname', default= 'w2p f4' ), 
+   Field( 'f0', 'string',  label= '#', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'First Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Last Name', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Username', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Nickname', default= 'w2p f4' ), 
       )
 if not db(db.normal0tabletable5.id ).count():
       db.normal0tabletable5.insert( f0= '00 normal0tabletable5', f1= '0w2p1 First Name', f2= '0w2p2 Last Name', f3= '0w2p3 Username', f4= '0w2p4 Nickname', )
@@ -136,9 +134,9 @@ if not db(db.normal0tabletable5.id ).count():
       db.normal0tabletable5.insert( f0= '2', f1= 'Madeleine', f2= 'Hollaway', f3= '@hollway', f4= 'Cheese', )
       db.normal0tabletable5.insert( f0= '5', f1= 'Elizabeth', f2= 'Belkitt', f3= '@belkitt', f4= 'Goat', )
 db.define_table('index02table0',
-   Field( 'f0', 'string', label= 'ID', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Price', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'ID', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Price', default= 'w2p f2' ), 
       )
 if not db(db.index02table0.id ).count():
       db.index02table0.insert( f0= '00 index02table0', f1= '0w2p1 Name', f2= '0w2p2 Price', )
@@ -148,9 +146,9 @@ if not db(db.index02table0.id ).count():
       db.index02table0.insert( f0= '5667', f1= 'Samsung Galaxy Alpha', f2= '$870', )
       db.index02table0.insert( f0= '7886', f1= 'LG G3', f2= '$790', )
 db.define_table('index04table0',
-   Field( 'f0', 'string', label= 'ID', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Name', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Price', default= 'w2p f2' ), 
+   Field( 'f0', 'string',  label= 'ID', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Name', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Price', default= 'w2p f2' ), 
       )
 if not db(db.index04table0.id ).count():
       db.index04table0.insert( f0= '00 index04table0', f1= '0w2p1 Name', f2= '0w2p2 Price', )
@@ -160,12 +158,12 @@ if not db(db.index04table0.id ).count():
       db.index04table0.insert( f0= '5667', f1= 'Samsung Galaxy Alpha', f2= '$870', )
       db.index04table0.insert( f0= '7886', f1= 'LG G3', f2= '$790', )
 db.define_table('data0tabletable0',
-   Field( 'f0', 'string', label= 'Name', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Position', default= 'w2p f1' ), 
-   Field( 'f2', 'string', label= 'Office', default= 'w2p f2' ), 
-   Field( 'f3', 'string', label= 'Age', default= 'w2p f3' ), 
-   Field( 'f4', 'string', label= 'Start date', default= 'w2p f4' ), 
-   Field( 'f5', 'string', label= 'Salary', default= 'w2p f5' ), 
+   Field( 'f0', 'string',  label= 'Name', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Position', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Office', default= 'w2p f2' ), 
+   Field( 'f3', 'string',  label= 'Age', default= 'w2p f3' ), 
+   Field( 'f4', 'string',  label= 'Start date', default= 'w2p f4' ), 
+   Field( 'f5', 'string',  label= 'Salary', default= 'w2p f5' ), 
       )
 if not db(db.data0tabletable0.id ).count():
       db.data0tabletable0.insert( f0= '00 data0tabletable0', f1= '0w2p1 Position', f2= '0w2p2 Office', f3= '0w2p3 Age', f4= '0w2p4 Start date', f5= '0w2p5 Salary', )
@@ -228,20 +226,18 @@ if not db(db.data0tabletable0.id ).count():
       db.data0tabletable0.insert( f0= 'Donna Snider', f1= 'Customer Support', f2= 'New York', f3= '27', f4= '2011/01/25', f5= '$112,000', )
       db.data0tabletable0.insert( f0= 'Name', f1= 'Position', f2= 'Office', f3= 'Age', f4= 'Start date', f5= 'Salary', )
 db.define_table('analyticstable0',
-   Field( 'f0', 'string', label= 'Search Engine', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Visitors', default= 'w2p f1' ), 
+   Field( 'f0', 'string',  label= 'Search Engine', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Visitors', default= 'w2p f1' ), 
+   Field( 'f2', 'string',  label= 'Vi2', default= 'w2p f2' ), 
+   Field( 'f3', 'date',    label= 'Vi3', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), 
       )
 if not db(db.analyticstable0.id ).count():
-      db.analyticstable0.insert( f0= '00 analyticstable0', f1= '0w2p1 Visitors', )
-      db.analyticstable0.insert( f0= 'Google', f1= '3831', )
-      db.analyticstable0.insert( f0= 'Bing', f1= '2123', )
-      db.analyticstable0.insert( f0= 'Baidu', f1= '4375', )
-      db.analyticstable0.insert( f0= 'Yahoo', f1= '4020', )
-      db.analyticstable0.insert( f0= 'DuckDuckGo', f1= '2064', )
-      db.analyticstable0.insert( f0= 'Yandex', f1= '936', )
+         from gluon.contrib.populate import populate
+         populate(db.analyticstable0  , 7) 
+
 db.define_table('analyticstable1',
-   Field( 'f0', 'string', label= 'Website', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Visitors', default= 'w2p f1' ), 
+   Field( 'f0', 'string',  label= 'Website', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Visitors', default= 'w2p f1' ), 
       )
 if not db(db.analyticstable1.id ).count():
       db.analyticstable1.insert( f0= '00 analyticstable1', f1= '0w2p1 Visitors', )
@@ -252,8 +248,8 @@ if not db(db.analyticstable1.id ).count():
       db.analyticstable1.insert( f0= 'youtube.com', f1= '253', )
       db.analyticstable1.insert( f0= 'bing.com', f1= '3018', )
 db.define_table('analyticstable2',
-   Field( 'f0', 'string', label= 'Work Flow', default= 'w2p f0' ), 
-   Field( 'f1', 'string', label= 'Counter', default= 'w2p f1' ), 
+   Field( 'f0', 'string',  label= 'Work Flow', default= 'w2p f0' ), 
+   Field( 'f1', 'string',  label= 'Counter', default= 'w2p f1' ), 
       )
 if not db(db.analyticstable2.id ).count():
       db.analyticstable2.insert( f0= '00 analyticstable2', f1= '0w2p1 Counter', )

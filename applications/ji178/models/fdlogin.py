@@ -12,8 +12,10 @@ db.define_table('dlogin',
 #
 
 if not db(db.dlogin.id ).count():
-    db.dlogin.insert( f0= 'ha631', f1= '(631)Welcome Back!')
-    db.dlogin.insert( f0= 'pb632', f1= '(632)Enter Email Address...')
-    db.dlogin.insert( f0= 'pb633', f1= '(633)Password')
+    db.dlogin.insert( f0= 'ha725', f1= '(725)Welcome Back!')
+    db.dlogin.insert( f0= 'pb726', f1= '(726)Enter Email Address...')
+    db.dlogin.insert( f0= 'pb727', f1= '(727)Password')
+    db.dlogin.insert( f0= 'aa732', f1= '(732)Forgot Password?')
+    db.dlogin.insert( f0= 'aa734', f1= '(734)Create an Account!')
     db.commit()
 #
