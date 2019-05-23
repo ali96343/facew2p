@@ -1854,7 +1854,7 @@ class FindTables_bs4 (StrDb , ):
                     tmp_tbl_med= tbl_med_type[elem]
                     #fld_type= fld_type_dict[elem]
                     xin= xin_dict[elem]
-                    if len(elem_label) == 0:
+                    if len(elem_label) < 2:
                              elem_label = {'for': 'fk_for', 'text': 'label error'}
                              print ("----------------------------------",elem)
 
