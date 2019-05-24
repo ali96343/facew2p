@@ -9,11 +9,10 @@ using:
 2. cd myapp/static && mkdir template && cd template,
 3. search and download free css template to myapp/static/template,
 4. run the script from template dir  (if template in zip,  the script unzips the template),
-5. at every run the script delete ../../databases/*,
+5. at every run the script delete myapp/databases/*,
 6. view messages on screen,
 7. view url/myapp, view tables in  url/myapp/appadmin, view tables in  url/myapp/myadd,
 8. view images in  url/myapp/myima,
-9. the script  expect a _relative_ (!) path in the css template!
 
 
 some test applications (for admin dashboards) are in the applications directory,
