@@ -1895,7 +1895,8 @@ class FindTables_bs4 (StrDb , ):
  
                        tbl_beg.append(  replace_in_obj  ( tmp_tbl_med, {'FLD': fld_name, 'LABEL':  fld_name, 'L0B': LB[0], 'L1B': LB[1] , 'L2B': LB[2]   }  ) )
 
-                       view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text']} ))
+                       if 'label' not in elem_label['text']:
+                           view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text']} ))
 
 
                        view_beg.append( replace_in_obj ( view_med, {'FLD': fld_name} ))
@@ -2147,6 +2148,7 @@ class FindTables_bs4 (StrDb , ):
                           #print (fi)
                           #par_attrs= dict() 
                           for x in fi:
+                                  #print ("++++++", yyy.find_next_sibling("label") )
                                   #inp_nm=  finput + str(nn)
                                   unk_id= 'id_for' + str( next(int_uniq_key4unk) )
                                   unk_txt= 'label' + str( next(int_uniq_key4unk) )
@@ -2160,18 +2162,31 @@ class FindTables_bs4 (StrDb , ):
                                   llb= None
 
                                   
-                                  ppp= x.parent
+                                  #ppp= x.parent
                                       #x.find_parent('label')
+                                  #ll1= ppp.select('label')
+                                  #if ll1:
+                                          #print (ll1)
+                                  #        llb= ll1[0]
+
+                                  #if llb is None:
+                                  #    llb=x.find_parent('label')
+
+                                  #if llb is None:
+                                  #    llb= x.find_next_sibling("label")
+
+                                  #if llb is None: 
+                                  ppp= x.parent 
                                   ll1= ppp.select('label')
                                   if ll1:
-                                          #print (ll1)
-                                          llb= ll1[0]
+                                     llb=ll1[0]
+                                  else:
+                                     ll1=  ppp.parent.select('label')
+                                     if ll1:
+                                         llb= ll1[0]
 
-                                  if llb is None:
-                                      llb=x.find_parent('label')
-
-                                  if llb is None:
-                                      llb= x.find_next_sibling("label")
+                                  #if llb is None:
+                                  #   print ("-----------------", llb)
 
                                   #if llb is None:
                                   #    lldiv= x.find_parent("div")
