@@ -1839,6 +1839,29 @@ class FindTables_bs4 (StrDb , ):
                
                data_fld = e[3] if data_fld_new is None else data_fld_new               
 
+
+               shema1= [ "<type 'list'>",  "<type 'str'>",  "<type 'dict'>",  "<type 'dict'>",  "<type 'int'>",  "<type 'int'>", ]
+
+               for x1 in data_fld:
+                    kk = 0
+                    if str(type(x1)) !=  shema1[kk]:
+                        print (type(x1))
+                        print (kk)
+                        print ( shema1[kk] ) 
+                        sys.exit('types error in *.new file')
+                    kk += 1
+                    for x2 in x1:
+                        if str(type(x2)) != shema1[kk]:
+                            sys.exit('types2 error in *.new file')
+                        kk += 1
+               #for x1 in data_fld:
+               #   print ( str(type(x1) ))
+               #   for x2 in x1:
+               #       print (type(x2))
+                      
+                         
+ 
+
                ii= 0
                my_med_ctrl=[]
                found_button = False
@@ -1849,8 +1872,10 @@ class FindTables_bs4 (StrDb , ):
                     elem= eee[0] #[3][i]
                     elem_atrs= eee[1] #e[3][i+1][0]
                     elem_label= eee[2] #e[3][i+1][1]
-                    select_opt= eee[3] #e[3][i+1][2]
-                    radio_opt= eee[4] #e[3][i+1][3]
+                    #select_opt= eee[3] #e[3][i+1][2]
+                    #radio_opt= eee[4] #e[3][i+1][3]
+                    len_select= eee[3] #e[3][i+1][2]
+                    len_radio= eee[4] #e[3][i+1][3]
                     tmp_tbl_med= tbl_med_type[elem]
                     #fld_type= fld_type_dict[elem]
                     xin= xin_dict[elem]
@@ -2123,14 +2148,17 @@ class FindTables_bs4 (StrDb , ):
                           #par_attrs= dict() 
                           for x in fi:
                                   #inp_nm=  finput + str(nn)
-                                  lab_attrs= {}
-                                  all_val_dict= dict() # elem_attrs
+                                  unk_id= 'id_for' + str( next(int_uniq_key4unk) )
+                                  unk_txt= 'label' + str( next(int_uniq_key4unk) )
+
+                                  lab_attrs= { 'for': unk_id , 'text': unk_txt}
+                                  all_val_dict= {'id': unk_id} # elem_attrs
                                   opt_select_list=[]
                                   opt_radio={}
+                                  len_radio= 0
+                                  len_select= 0
                                   llb= None
 
-                                  unk_id= 'id' + str( next(int_uniq_key4unk) )
-                                  unk_txt= 'txt' + str( next(int_uniq_key4unk) )
                                   
                                   ppp= x.parent
                                       #x.find_parent('label')
@@ -2152,7 +2180,7 @@ class FindTables_bs4 (StrDb , ):
 
                                        
                                   if llb:
-                                       lab_attrs= {"for": "unkfor", "text": "textunk"}
+                                       #lab_attrs= {"for": "unkfor", "text": "textunk"}
                                        ltext= hard_clear( llb.get_text()  )
                                        if ltext :
                                            lab_attrs['text'] = ltext
@@ -2176,12 +2204,13 @@ class FindTables_bs4 (StrDb , ):
                                        #opt_select_list.append('select' )
                                        opt_select_list.append(opt_select_list )
                                        new_finput = 'select'
+                                       len_select=5
                                   #all_val_dict[ "afld_type" ] = inp_nm + str(nn)
                                   for firs in ['value', 'type', 'id','rows', 'class', 'text','placeholder']:
                                       zatr= x.attrs.get(firs)
                                       if zatr is None : continue
 
-                                      if firs == 'type' and ( zatr == 'radio' )  :
+                                      if firs == 'type' and  zatr == 'radio'   :
                                          opt_radio = {}
                                          #opt_radio = {"value": "unkvalue", "name": "unkname", "checked" : ""}
                                          for firs in ['value', 'name',]:
@@ -2191,6 +2220,7 @@ class FindTables_bs4 (StrDb , ):
                                                  opt_radio[firs]= hard_clear (zatr)
                                          #print (opt_radio)
                                          new_finput = 'radio'
+                                         len_radio=3
 
                                       if firs == 'type' and ( zatr == 'submit' or zatr == 'button' or zatr == 'reset' )  :
                                          new_finput= 'button'
@@ -2215,19 +2245,22 @@ class FindTables_bs4 (StrDb , ):
                                   if 'placeholder' not in all_val_dict and new_finput != 'radio' :
                                           all_val_dict['placeholder' ] = 'place_' + str(next(int_uniq_key4unk))
                                   #new_list.append( new_finput )
-                                  if 'id' not in all_val_dict:
-                                          all_val_dict['id'] = unk_id 
-                                  else:
-                                     unk_id = all_val_dict['id']
-                                  if len(lab_attrs) == 0: 
-                                       lab_attrs= {"for":  unk_id, "text": unk_txt}
-                                  else:
-                                     if 'for' not in lab_attrs:
-                                         lab_attrs['for'] = unk_id
-                                     if 'text' not in lab_attrs:
-                                         lab_attrs['text'] = unk_txt
+                                  #if 'id' not in all_val_dict:
+                                  #        all_val_dict['id'] = unk_id 
+                                  #else:
+                                  #   unk_id = all_val_dict['id']
+                                  #if len(lab_attrs) == 0: 
+                                  #     lab_attrs= {"for":  unk_id, "text": unk_txt}
+                                  #else:
+                                  #   if 'for' not in lab_attrs:
+                                  #       lab_attrs['for'] = unk_id
+                                  #   if 'text' not in lab_attrs:
+                                  #       lab_attrs['text'] = unk_txt
+                                  if len ( lab_attrs ) != 2:
+                                           prRed(" lab_attrs bad len ")
+                                  lab_attrs['for'] = all_val_dict ['id']
                                   
-                                  new_list.append( [new_finput, all_val_dict, lab_attrs, opt_select_list, opt_radio ] )
+                                  new_list.append( [new_finput, all_val_dict, lab_attrs, len_select, len_radio ])   #opt_select_list, opt_radio ] )
                      #for finput in ['label']:
                      #     fi= form.find_all(finput)
                      #     print (fi)
@@ -2663,7 +2696,7 @@ class HtmlView( CheckEnv ):
                           grp000= match.group(0)
 
                           if any ([( "#"      in grp0 ), ( "{{"         in grp0), ( '//'     in grp0), \
-                                   ('Colorlib' in grp0),  ('Bootstrapious' in grp0),\
+                                   ('Colorlib' in grp0),  ('Bootstrapious' in grp0), ('©' in grp0),  \
                                    ( '&lt;'    in grp0 ), ('&gt;'in grp0 ), ('&quot;' in grp0 ),  ('&amp;' in grp0 ), ('&nbsp;' in grp0 ),  ('&larr;' in grp0 ),
                                    ( '<'      in grp0 ), ( '>'          in grp0), ( 'tel'    in grp0), \
                                    ( "mailto" in grp0 ), ( "javascript" in grp0), ( len(grp0) <=1   ), ] ) :
