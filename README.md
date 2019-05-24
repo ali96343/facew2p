@@ -1,8 +1,6 @@
 # facew2p
 
-Python script generates web2py app  from css templates,
-
-using:
+Python script generates web2py app  from css templates
 
 0. install web2py http://web2py.com, copy the script to ~/bin,
 1. Create new web2py myapp,
