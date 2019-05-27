@@ -5,12 +5,15 @@
 
 
 from __future__ import print_function
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from css template project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.0"
+__version__ = "0.1.2" # 25.05.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -27,6 +30,7 @@ __status__ = "Dev"
 # https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
 # https://github.com/BlackrockDigital/startbootstrap-agency
 # https://startbootstrap.com/themes/
+
 
 
 import time
@@ -47,10 +51,7 @@ import pprint
 import io
 import yaml
 from email.utils import parseaddr
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-
+from inspect import currentframe, getframeinfo
 
 help_text = [
     "The script generates web2py app from free (and not free) css template",
@@ -59,10 +60,10 @@ help_text = [
     "2. cd myapp/static && mkdir template && cd template",
     "3. download free css template to myapp/static/template",
     "4. run the script  (if template is zipped,  the script will unzips the template)",
-    "5. the script deletes ../../databases/* by running",
+    "5. the script deletes myapp/databases/* by running",
     "6. look at the messages on the screen",
     "7. look at url/myapp, look the tables in  url/myapp/appadmin, url/myapp/myadd",
-    "8. look at images in  url/myapp/myima",
+    "8. look at images in url/myapp/myima",
 ]
 
 
@@ -71,16 +72,30 @@ def handler(signum, frame):
         'Pls, wait for the program to finish! signal handler called with signal: %s' %
         signum)
 
-
-# Set the signal handler
 signal.signal(signal.SIGINT, handler)
 
 try:
     import bs4 as bs
-    #from PIL import Image
     from PIL import Image, ImageDraw
 except BaseException:
     sys.exit('pls, install bs4, PIL: pip install bs4, pip install PIL')
+
+
+import linecache
+
+def PrintException():
+    exc_type, exc_obj, tb = sys.exc_info()
+    f = tb.tb_frame
+    lineno = tb.tb_lineno
+    filename = f.f_code.co_filename
+    linecache.checkcache(filename)
+    line = linecache.getline(filename, lineno, f.f_globals)
+    print ( 'EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj) )
+
+#try:
+#    print( 1/0 )
+#except:
+#    PrintException()
 
 # ---------------------------------------------------------------------------------------------
 
@@ -143,7 +158,7 @@ def hard_clear(ob, ):
             s1 = s1.replace(e, ' ')
 
         data = " ".join(s1.split())
-        s1 = (data[:1000] + '..') if len(data) > 1000 else data
+        s1 = (data[:995] + '...') if len(data) > 1000 else data
         if len(s1) == 0:
             return "unk_" + str(next(int_uniq_key4unk))
         return s1.encode('ascii', errors='ignore')
@@ -276,6 +291,7 @@ class FileOper:
 
         with open(fnm, 'w') as f:
             f.write(result)
+        return fnm
 
     @staticmethod
     def preprocess_hp(hard_hp=False):
@@ -334,7 +350,7 @@ class FileOper:
                     f.write(result)
                 return fnm
         except BaseException:
-            print ("xxxxxxxxxxxx: ", dst_pat)
+            print ("error replace_pat(): ", dst_pat)
             return None
         return fnm
 
@@ -474,6 +490,7 @@ class FileOper:
             filedata = file.read().replace(src_str, dst_str)
         with open(dst_file, 'w') as file:
             file.write(filedata)
+        return 'ok'
 
     @staticmethod
     def func_off(fnm, func_nm, add_sym='X'):
@@ -538,9 +555,9 @@ class FileOper:
             return s.split('\n')
 
         if fnm is None:
-            return
+            return None
         if not str_list:
-            return
+            return None
 
         res = replace_in_list(str_list, pat)
 
@@ -569,6 +586,7 @@ class FileOper:
         with open(fnm, mode) as f:
             f.write("\n")
             pprint.pprint(rep_dict, width=1, stream=f)
+        return fnm
 
     @staticmethod
     def diff_my_files(file1, file2):
@@ -582,6 +600,7 @@ class FileOper:
                 lineterm='',
                 n=0):
             print (line)
+        return 'ok'
 
 
 # ------------------------------------------------------------------------------------
@@ -816,6 +835,7 @@ class StrDb:
         "       Field('search', label='search for unique text ( or number label) from screen', requires=IS_NOT_EMPTY(),  ),",
         "       Field('replace', 'text', label='replace with new text', requires=IS_NOT_EMPTY(), length= 1000, ),",
         "       )",
+        "    form.element('textarea[name=replace]')['_rows']='4'",
         "    if form.process( keepvalues = True  ).accepted: ",
         "        search  = form.vars.search",
         "        replace  = form.vars.replace",
@@ -1798,8 +1818,8 @@ class FindTables_bs4 (StrDb, ):
                 #    print ("one form on file!")
                 #    return
 
-                dst_view0 = 'layout.html' if view_form_file == 'index.html' else view_form_file
-                dst_view_path = os.path.join('../../views/', dst_view0)
+                #dst_view0 = 'layout.html' if view_form_file == 'index.html' else view_form_file
+                #dst_view_path = os.path.join('../../views/', dst_view0)
                 # -----------------------------------------------------------------------------------------
 
                 lay_beg = [
@@ -1904,7 +1924,7 @@ class FindTables_bs4 (StrDb, ):
                 ]
 
                 tbl_beg = ["db.define_table( 'DBTBL',", ]
-                tbl_med = "   Field( 'FLD', 'TYPE', label= 'LABEL' ), "
+                #tbl_med = "   Field( 'FLD', 'TYPE', label= 'LABEL' ), "
                 tbl_end = "   )"
 
                 #fld_str=    "   Field( 'FLD', 'string', label= 'LABEL', default= 'w2p FLD' ), "
@@ -1939,31 +1959,35 @@ class FindTables_bs4 (StrDb, ):
 
                 data_fld = e[3] if data_fld_new is None else data_fld_new
 
-                shema1 = [
-                    "<type 'list'>",
-                    "<type 'str'>",
-                    "<type 'dict'>",
-                    "<type 'dict'>",
-                    "<type 'int'>",
-                    "<type 'int'>",
-                ]
+                def check_form_des_file(data_fld):
 
-                for x1 in data_fld:
-                    kk = 0
-                    if str(type(x1)) != shema1[kk]:
-                        print (type(x1))
-                        print (kk)
-                        print (shema1[kk])
-                        sys.exit('types error in *.new file')
-                    kk += 1
-                    for x2 in x1:
-                        if str(type(x2)) != shema1[kk]:
-                            sys.exit('types2 error in *.new file')
+                    shema1 = [
+                        "<type 'list'>",
+                        "<type 'str'>",
+                        "<type 'dict'>",
+                        "<type 'dict'>",
+                        "<type 'int'>",
+                        "<type 'int'>",
+                    ]
+    
+                    for x1 in data_fld:
+                        kk = 0
+                        if str(type(x1)) != shema1[kk]:
+                            print (type(x1))
+                            print (kk)
+                            print (shema1[kk])
+                            sys.exit('types error in *.new file')
+                        if not x1[0] in ['input',  'textarea', 'checkbox', 'select', 'radio', 'button']:
+                                 prRed('unk_type: %s: ' % x1[0])
+                                 sys.exit(x1)
                         kk += 1
-                # for x1 in data_fld:
-                #   print ( str(type(x1) ))
-                #   for x2 in x1:
-                #       print (type(x2))
+                        for x2 in x1:
+                            if str(type(x2)) != shema1[kk]:
+                                sys.exit('types2 error in *.new file')
+                            kk += 1
+                    return True
+
+                #check_form_des_file(data_fld)
 
                 ii = 0
                 my_med_ctrl = []
@@ -1975,10 +1999,8 @@ class FindTables_bs4 (StrDb, ):
                     elem = eee[0]  # [3][i]
                     elem_atrs = eee[1]  # e[3][i+1][0]
                     elem_label = eee[2]  # e[3][i+1][1]
-                    # select_opt= eee[3] #e[3][i+1][2]
-                    # radio_opt= eee[4] #e[3][i+1][3]
-                    len_select = eee[3]  # e[3][i+1][2]
-                    len_radio = eee[4]  # e[3][i+1][3]
+                    select_opt= eee[3] #e[3][i+1][2]
+                    radio_opt= eee[4] #e[3][i+1][3]
                     tmp_tbl_med = tbl_med_type[elem]
                     #fld_type= fld_type_dict[elem]
                     xin = xin_dict[elem]
@@ -2003,11 +2025,11 @@ class FindTables_bs4 (StrDb, ):
                                 tmp_tbl_med, {
                                     'FLD': fld_name, 'LABEL': fld_name, 'L0B': LB[0], 'L1B': LB[1], 'L2B': LB[2]}))
 
-                        # if 'label' not in elem_label['text']:
-                        view_beg.append(
-                            replace_in_obj(
-                                view_label, {
-                                    'FOR': elem_label['for'], 'TEXT': elem_label['text'], }))
+                        if 'label' not in elem_label['text']:
+                            view_beg.append(
+                                replace_in_obj(
+                                    view_label, {
+                                        'FOR': elem_label['for'], 'TEXT': elem_label['text'], }))
                         #view_beg.append( replace_in_obj ( view_label, {'FOR': elem_label['for'], 'TEXT': elem_label['text'], 'CLASS' : elem_label['class'] } ))
 
                         view_beg.append(
@@ -2206,7 +2228,7 @@ class FindTables_bs4 (StrDb, ):
                         'trows': len(table_data),
                         'tcols': len(headertext)}
                     res_list = []
-                    header_set = set(headertext)
+                    #header_set = set(headertext)
 
                     table_des = [[e, "string"] for e in headertext]
 
@@ -2295,6 +2317,7 @@ class FindTables_bs4 (StrDb, ):
 
                     found_button = False
                     new_list = []
+                    radio_names= {} 
 
                     for finput in [
                         'input',
@@ -2316,10 +2339,8 @@ class FindTables_bs4 (StrDb, ):
                             lab_attrs = {
                                 'for': unk_id, 'text': unk_txt, 'class': ''}
                             all_val_dict = {'id': unk_id}  # elem_attrs
-                            opt_select_list = []
-                            opt_radio = {}
-                            len_radio = 0
-                            len_select = 0
+                            opt_select_list = None 
+                            opt_radio = None
                             llb = None
 
                             #ppp= x.parent
@@ -2386,7 +2407,6 @@ class FindTables_bs4 (StrDb, ):
                                 #opt_select_list.append('select' )
                                 opt_select_list.append(opt_select_list)
                                 new_finput = 'select'
-                                len_select = 5
                             #all_val_dict[ "afld_type" ] = inp_nm + str(nn)
                             for firs in [
                                 'value',
@@ -2401,18 +2421,21 @@ class FindTables_bs4 (StrDb, ):
                                     continue
 
                                 if firs == 'type' and zatr == 'radio':
-                                    opt_radio = {}
-                                    #opt_radio = {"value": "unkvalue", "name": "unkname", "checked" : ""}
-                                    for firs in ['value', 'name', ]:
-                                        # for firs in ['value', 'name',
-                                        # 'checked',]:
-                                        zatr = x.attrs.get(firs)
-                                        if zatr is None:
-                                            continue
-                                        opt_radio[firs] = hard_clear(zatr)
-                                    #print (opt_radio)
+
+                                    rname= x.attrs.get('name')
+                                    rval= x.attrs.get('value')
+                                    
+                                    if rname and rval :
+                                       rname= hard_clear(rname)
+                                       if rname in radio_names:
+                                           opt_radio= rname
+                                           radio_names[rname].append(hard_clear(  rval ) )
+                                       else:
+                                           opt_radio= None 
+                                           radio_names[rname]=[ hard_clear( rval) ]
+                                       #radio_names['rname'].append( rval )
+                                    #print (opt_radio)A
                                     new_finput = 'radio'
-                                    len_radio = 3
 
                                 if firs == 'type' and (
                                         zatr == 'submit' or zatr == 'button' or zatr == 'reset'):
@@ -2455,14 +2478,28 @@ class FindTables_bs4 (StrDb, ):
                             lab_attrs['for'] = all_val_dict['id']
 
                             # opt_select_list, opt_radio ] )
+                            if new_finput == 'radio' and opt_radio == None: 
+                                    continue
                             new_list.append(
-                                [new_finput, all_val_dict, lab_attrs, len_select, len_radio])
+                                [new_finput, all_val_dict, lab_attrs, opt_select_list, opt_radio])
+
                     # for finput in ['label']:
                     #     fi= form.find_all(finput)
                     #     print (fi)
 
                     #print ("-------- ",new_list)
                     #print ("-------- ",label_list)
+                    for ii, xxx in enumerate(new_list):
+                        if xxx[0] == 'radio':
+                            #if xxx[4] == '':
+                            #   print ('----------------emplty name')
+                            #else:
+                               new_radio_dict= { xxx[4] : radio_names[xxx[4]]   }
+                              # print ('----------------',xxx[4] )
+                              # print (new_radio_dict )
+                               new_list[ii][4]= new_radio_dict
+                               #new_list[ii][4] = 
+                    #print (radio_names)
                     if (found_button):
                         #minus_a_list= []
                         # for i  in xrange(0, len( new_list),2)  :
@@ -2596,8 +2633,8 @@ class HtmlView(CheckEnv):
         url_beg = "{{=URL('static','%s/" % (Z.wdir)
         h0_beg = "{{=URL(c='default',f='"
         url_end = "')}}"
-        f0 = None
-        file_db = None
+        #f0 = None
+        #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
                      {"<html lang=\"en\">": "<html>"},
                      {"<meta name=\"keywords\" content=\"\">": "<meta name=\"keywords\" content=\"my-keywords\">"},
@@ -2618,7 +2655,7 @@ class HtmlView(CheckEnv):
             return (new_pat, "")
 
         def r_h0(Z, ma, p2, num_str):
-            magrp2 = ma.group(2)
+            #magrp2 = ma.group(2)
             ctr1 = Z.get_from_db_fnm2ctrl(ma.group(2))
             new_pat = r"\g<1>%s%s%s\g<4>" % (h0_beg, ctr1, url_end)
             return (new_pat, "")
@@ -2688,7 +2725,7 @@ class HtmlView(CheckEnv):
 
         def r_src(Z, ma, p2, num_str):
             gif1x1src = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"'
-            gif1x1black = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="'
+            #gif1x1black = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="'
             magrp2 = ma.group(2)
             if '{' in magrp2 or '%' in magrp2 or 'ads' in magrp2:
                 print (Z.f0, ": ", "maybe ads: ", magrp2)
@@ -2781,7 +2818,6 @@ class HtmlView(CheckEnv):
         def ret_tel(Z, ma, p2, num_str):
             ma0 = ma.group(0)
             ma0 = ma0.strip()
-            cnt_par = cnt_space = cnt_minus = 0
             for ch in ma0:
                 if ch not in '1234567890() +-':
                     return ("", "")
@@ -2847,11 +2883,11 @@ class HtmlView(CheckEnv):
             ['h3', re.compile("(<h3[^>]+>)(.*?)(</h3>)()"), r'\g<1>{{{{={}["hc{}"]}}}}\g<3>', r_h6, True],
             ['h2', re.compile("(<h2[^>]+>)(.*?)(</h2>)()"), r'\g<1>{{{{={}["hb{}"]}}}}\g<3>', r_h6, True],
             ['h1', re.compile("(<h1[^>]+>)(.*?)(</h1>)()"), r'\g<1>{{{{={}["ha{}"]}}}}\g<3>', r_h6, True],
-            ['h1h6', re.compile( r'(<h1>|<h2>|<h3>|<h4>|<h5>|<h6>)((?!(?:<)).*?)((<.*?>))'), r'\g<1>{{{{={}["hh{}"]}}}}\g<3>', r_pp, True],
+            ['h1h6', re.compile(r'(<h1>|<h2>|<h3>|<h4>|<h5>|<h6>)((?!(?:<)).*?)((<.*?>))'), r'\g<1>{{{{={}["hh{}"]}}}}\g<3>', r_pp, True],
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False],
-            ['maybe_tel', re.compile( r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False],
+            ['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False],
             #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
         ]
 
@@ -3148,7 +3184,7 @@ class W2pApp(StrDb):
 
     def add_img_dir(Z):
         img_dir = []
-        unk_files = []
+        #unk_files = []
         for e in Z.db_src_myimg:
             adir = e.split('/')[0]
             if len(adir) and (adir not in img_dir):
@@ -3194,8 +3230,8 @@ class W2pApp(StrDb):
 
         img_item = "{{=A(IMG(_src=URL('static/%s', '%s'), ), _title= 'change the image', _href=URL('%s', '%s', vars= dict(imgnm='%s', imgctrl='%s')))}}"
         #img_item= "{{=A(IMG(_src=URL('static/%s', '%s'), ), _title= 'change the image', _href=URL('%s', '%s', vars= dict(imgnm='%s')))}}"
-        img2_item = [
-            "{{=A(IMG(_src=URL('static/WDIR', IMGPATH), ),_href=URL('MYIMA', 'UPCTRL'))}}"]
+        #img2_item = [
+        #    "{{=A(IMG(_src=URL('static/WDIR', IMGPATH), ),_href=URL('MYIMA', 'UPCTRL'))}}"]
 
         ima_up_view = [
             "{{extend 'w2playout.html'}}",
