@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from css template project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.2" # 25.05.2019
+__version__ = "0.1.3" # 28.05.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -197,6 +197,10 @@ tbl_med_type = {
     'date': fld_date,
     'boolean': fld_bool,
 }
+
+
+table_types= ['string', 'textarea', 'integer', 'double', 'datetime', 'date', 'boolean']
+
 
 # ---------------------------------------------------------------------------------------------
 
@@ -1537,9 +1541,21 @@ class FindTables_bs4 (StrDb, ):
                 tbl_fld_list = []
                 new_type_found = True
                 table_fld_new = FileOper.get4yaml(e[1] + '.new')
+
+                def check_tbl_yaml(yaml_fld):
+                     table_types= ['string', 'textarea', 'integer', 'double', 'datetime', 'date', 'boolean']
+                     for ee in yaml_fld:
+                       if ee[1] not in table_types:
+                            print (ee[1], ' not in ', table_types) 
+                            sys.exit('des error')
+                     return True
+
+
                 if table_fld_new is None:
                     table_fld_new = e[6]
                     new_type_found = False
+
+                check_tbl_yaml(  table_fld_new   )
                 #print ( "++++++ ",table_fld_new  )
                 #print ("+++++++", e[4]['trows'])
                 #trows= e[4]['trows']
@@ -1961,33 +1977,14 @@ class FindTables_bs4 (StrDb, ):
 
                 def check_form_des_file(data_fld):
 
-                    shema1 = [
-                        "<type 'list'>",
-                        "<type 'str'>",
-                        "<type 'dict'>",
-                        "<type 'dict'>",
-                        "<type 'int'>",
-                        "<type 'int'>",
-                    ]
-    
                     for x1 in data_fld:
-                        kk = 0
-                        if str(type(x1)) != shema1[kk]:
-                            print (type(x1))
-                            print (kk)
-                            print (shema1[kk])
-                            sys.exit('types error in *.new file')
-                        if not x1[0] in ['input',  'textarea', 'checkbox', 'select', 'radio', 'button']:
+                        if isinstance (x1, list) and ( not x1[0] in [
+                                 'input',  'textarea', 'checkbox', 'select', 'radio', 'button'] ):
                                  prRed('unk_type: %s: ' % x1[0])
                                  sys.exit(x1)
-                        kk += 1
-                        for x2 in x1:
-                            if str(type(x2)) != shema1[kk]:
-                                sys.exit('types2 error in *.new file')
-                            kk += 1
                     return True
 
-                #check_form_des_file(data_fld)
+                check_form_des_file(data_fld)
 
                 ii = 0
                 my_med_ctrl = []
@@ -2343,20 +2340,6 @@ class FindTables_bs4 (StrDb, ):
                             opt_radio = None
                             llb = None
 
-                            #ppp= x.parent
-                            # x.find_parent('label')
-                            #ll1= ppp.select('label')
-                            # if ll1:
-                            #print (ll1)
-                            #        llb= ll1[0]
-
-                            # if llb is None:
-                            #    llb=x.find_parent('label')
-
-                            # if llb is None:
-                            #    llb= x.find_next_sibling("label")
-
-                            # if llb is None:
                             ppp = x.parent
                             ll1 = ppp.select('label')
                             if ll1:
@@ -2365,14 +2348,6 @@ class FindTables_bs4 (StrDb, ):
                                 ll1 = ppp.parent.select('label')
                                 if ll1:
                                     llb = ll1[0]
-
-                            # if llb is None:
-                            #   print ("-----------------", llb)
-
-                            # if llb is None:
-                            #    lldiv= x.find_parent("div")
-                            #    llb= lldiv.find_next_sibling("label")
-                            #    print (llb)
 
                             if llb:
                                 #lab_attrs= {"for": "unkfor", "text": "textunk"}
@@ -2421,7 +2396,6 @@ class FindTables_bs4 (StrDb, ):
                                     continue
 
                                 if firs == 'type' and zatr == 'radio':
-
                                     rname= x.attrs.get('name')
                                     rval= x.attrs.get('value')
                                     
@@ -2433,8 +2407,6 @@ class FindTables_bs4 (StrDb, ):
                                        else:
                                            opt_radio= None 
                                            radio_names[rname]=[ hard_clear( rval) ]
-                                       #radio_names['rname'].append( rval )
-                                    #print (opt_radio)A
                                     new_finput = 'radio'
 
                                 if firs == 'type' and (
@@ -2461,23 +2433,10 @@ class FindTables_bs4 (StrDb, ):
                             if 'placeholder' not in all_val_dict and new_finput != 'radio':
                                 all_val_dict['placeholder'] = 'place_' + \
                                     str(next(int_uniq_key4unk))
-                            #new_list.append( new_finput )
-                            # if 'id' not in all_val_dict:
-                            #        all_val_dict['id'] = unk_id
-                            # else:
-                            #   unk_id = all_val_dict['id']
-                            # if len(lab_attrs) == 0:
-                            #     lab_attrs= {"for":  unk_id, "text": unk_txt}
-                            # else:
-                            #   if 'for' not in lab_attrs:
-                            #       lab_attrs['for'] = unk_id
-                            #   if 'text' not in lab_attrs:
-                            #       lab_attrs['text'] = unk_txt
                             if len(lab_attrs) < 2:
                                 prRed(" lab_attrs bad len ")
                             lab_attrs['for'] = all_val_dict['id']
 
-                            # opt_select_list, opt_radio ] )
                             if new_finput == 'radio' and opt_radio == None: 
                                     continue
                             new_list.append(
