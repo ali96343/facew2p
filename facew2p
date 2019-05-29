@@ -201,7 +201,7 @@ tbl_med_type = {
 
 table_types= ['string', 'textarea', 'integer', 'double', 'datetime', 'date', 'boolean']
 
-
+form_types= ['input',  'textarea', 'checkbox', 'select', 'radio']
 # ---------------------------------------------------------------------------------------------
 
 
@@ -1124,6 +1124,10 @@ class CheckEnv (StrDb):
             ctrlnm = f0 = fnm.split('.')[0]
             if '-' in ctrlnm:
                 ctrlnm = ctrlnm.replace('-', '_')
+            if '[' in ctrlnm:
+                ctrlnm = ctrlnm.replace('[', '0')
+            if ']' in ctrlnm:
+                ctrlnm = ctrlnm.replace(']', '0')
             if ctrlnm[0].isdigit():
                 ctrlnm = 'X' + ctrlnm
 
@@ -3682,6 +3686,9 @@ if __name__ == "__main__":
             " x  (for the best view) ")
     if plus_bs4:
         print ("disable bs4 and labels: ", os.path.basename(__file__), " x  x")
+        print ('for change form or table : cp form_or_table.des form_or_table.new ')
+        print ('table.new  table_types: ', table_types  )
+        print ('form.new form_types: ', form_types  )
 
     check_model(dbg=False)
     # --------------------------------------------
