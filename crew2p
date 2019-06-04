@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+from __future__ import print_function
+import os, sys, shutil
+
+def recursive_overwrite(src, dest, ignore=None):
+
+            if os.path.isdir(src):
+                if not os.path.isdir(dest):
+                    os.makedirs(dest)
+                files = os.listdir(src)
+                if ignore is not None:
+                    ignored = ignore(src, files)
+                else:
+                    ignored = set()
+                for f in files:
+                    if f not in ignored:
+                        recursive_overwrite(os.path.join(src, f), os.path.join(dest, f), ignore)
+            else:
+                shutil.copyfile(src, dest)
+
+HOME= os.path.expanduser("~")
+#new_app_src= 'welcome.new'
+new_app_src= 'ji10'
+
+w2p_app_dir=os.path.join(HOME,"web2py/applications")
+srcdir= os.path.join (w2p_app_dir, new_app_src )
+
+if not os.path.exists( srcdir ):
+     print ("not exists: ", srcdir)
+     sys.exit("set dir for script")
+
+#os.chdir(w2p_app_dir)
+#print (os.getcwd())
+
+if len(sys.argv) != 2:
+    print ("unk-arg")
+    sys.exit( "set name for new web2py app" )
+
+dstdir = os.path.join(w2p_app_dir, sys.argv[1] )
+if os.path.exists(dstdir):
+    print ("app: ", sys.argv[1], " exists")
+    sys.exit('error')
+
+os.mkdir(dstdir)
+recursive_overwrite (srcdir, dstdir)
+templdir=os.path.join (dstdir,'static/template' )
+os.mkdir(templdir)
+print ("created web2py app: ", sys.argv[1] )      
+print ("dir for template: ", templdir)
+

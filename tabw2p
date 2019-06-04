@@ -1,0 +1,369 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+from __future__ import print_function
+import glob
+import json
+import os
+import io
+import yaml
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+__author__ = "Alex Beskopilny"
+__copyright__ = "Copyright 2019, The web2py table generator"
+__credits__ = ["Alex Beskopilny"]
+__license__ = "MIT"
+__version__ = "0.1.0"
+__maintainer__ = "Alex Beskopilny"
+__email__ = "ab96343@gmail.com"
+__status__ = "Dev"
+
+
+fnm_config = "tabw2p.yaml"
+#fnm2_config = "tabw2p.json"
+
+
+def replace_in_obj(ob, dd):
+    if isinstance(ob, (list,)):
+        newl = []
+        for e in ob:
+            for k, v in dd.items():
+                e = e.replace(k, v)
+            newl.append(e)
+        return newl
+
+    if isinstance(ob, (dict,)):
+        newdict = dict()
+        for k1, v1 in ob.items():
+            for k, v in dd.items():
+                v1 = v1.replace(k, v)
+            newdict[k1] = v1
+        return newdict
+
+    ss = ob
+    for k, v in dd.items():
+        ss = ss.replace(k, v)
+
+    return ss
+
+
+def list2file(str_list, fnm, mode='a'):
+    if not str_list:
+        return
+    with open(fnm, mode) as f:
+        f.write("\n".join(str_list))
+    return fnm
+
+
+models_dir = '../../models'
+controllers_dir = '../../controllers'
+views_dir = '../../views'
+
+dir_list = [models_dir, controllers_dir, views_dir, '../template']
+
+
+def check_env():
+    # if  not os.getcwd().endswith ( 'template') :
+    #   sys.exit('error: does not template dir')
+
+    for e in dir_list:
+        if not os.path.exists(e):
+            sys.exit('does not web2py app with template dir')
+
+
+def check_facew2p_config():
+    if not os.path.isfile(fnm_config):
+        data = {
+            'ctrl_nm': {
+                'one 1': ['string', 'text', 'radio', 'select', 'check'],
+                'one 2': ['string', 'text', 'radio', 'select', 'check'],
+                'o2m 1': [['string', 'text', 'radio', 'select', 'check'], ['string', 'text', 'radio', 'select', 'check']],
+                'o2m 2': [['string', 'text', 'radio', 'select', 'check'], ['string', 'text', 'radio', 'select', 'check']],
+                'm2m 1': [['string', 'text', 'radio', 'select', 'check'], ['string', 'text', 'radio', 'select', 'check']],
+                'opt': {'restapi': 'False', 'mail': 'False', 'comment': 'ctrl for task 1'}
+            },
+
+            'ctrl_nm2': {
+                'one 1': ['string', 'text', 'radio', 'select', 'check'],
+                'o2m 1': [['string', 'text', 'radio', 'select', 'check'], ['string', 'text', 'radio', 'select', 'check']],
+                'm2m 1': [['string', 'text', 'radio', 'select', 'check'], ['string', 'text', 'radio', 'select', 'check']],
+                'opt': {'restapi': 'False', 'mail': 'False', 'comment': 'ctrl for task 2'}
+            }
+        }
+
+        data = {
+            'ctrl_nm1': {
+                'one 1': [ 'integer', 'text', 'radio', 'select', 'check'], 
+                'o2m 1': [ [ 'string', 'text', 'radio', 'select', 'check'], [ 'string', 'text', 'radio', 'select', 'check']], 
+                'm2m 1': [ [ 'string', 'text', 'radio', 'select', 'check'], [ 'string', 'text', 'radio', 'select', 'check']], 
+                'opt': { 'restapi': 'False', 'mail': 'False', 'comment': 'ctrl for task 1', 'ctrl_login' : 'False'}}, 
+             }
+
+        with io.open(fnm_config, 'w', encoding='utf8') as outfile:
+            yaml.dump(
+                data,
+                outfile,
+                default_flow_style=False,
+                allow_unicode=True)
+        # with open(fnm2_config, 'w') as outfile:
+        #           json.dump(data, outfile, ensure_ascii=False , indent=4)
+        return False
+    return True
+
+
+ctrl_mygrid = [
+    "",
+    "",
+    "#@auth.requires_login()",
+    "def mygrid(tnm):",
+    "   return SQLFORM.grid(db[tnm], deletable= True, user_signature=False,  buttons_placement = 'left', showbuttontext=False, csv=False )",
+    "# ",
+    "",
+]
+
+ctrl4mygrid = [
+    "",
+    "",
+    "#@auth.requires_login()",
+    "def FCTRL():",
+    "    #db.DBTBL.f0.writable = True",
+    "    response.view = 'DIR/VIEW'",
+    "    return dict(grid= mygrid('DBTBL'))",
+    "#",
+    "",
+]
+ctrl4table = [
+    "",
+    "",
+    "#@auth.requires_login()",
+    "def FCTRL():",
+    "    response.view = 'DIR/VIEW'",
+    "    return dict(grid= mygrid('DBTBL'))",
+    "#",
+    "",
+]
+
+ctrl_if_form = [
+    "",
+    "    if XFORM.accepts(request,session): ",
+    "        response.flashFFFF = 'submitted XFORM ' ",
+    "    elif XFORM.errors:",
+    "        response.flashFFFF = '!Errors! XFORM' ",
+    "    else: ",
+    "        pass",
+    "        response.flashFFFF = 'XFORM - press submit' ",
+    "",
+    "",
+]
+
+menu_item = ["",
+             "<p>{{=A('DBTBL', _href=URL(c='MYAD',f='FCTRL'))}}</p>",
+             "",
+             ]
+
+
+tbl_beg = "db.define_table( 'DBTBL',"
+tbl_end = "   )"
+
+
+fld_ref = "   Field( 'FLD', 'reference REFTBL', label= 'ref REFTBL', requires=IS_EMPTY_OR(IS_IN_DB(db, 'REFTBL.id', db.REFTBL._format)) ),"
+#fld_ref=    "   Field( 'FLD', 'reference REFTBL', label= 'ref REFTBL', requires=None ),"
+fld_date = "   Field( 'FLD', 'date', label= 'LABEL', default = request.now, requires = IS_DATE(format=('%d.%m.%Y')),  ), "
+fld_datetime = "   Field( 'FLD', 'datetime', label= 'LABEL', default = request.now, requires = IS_DATETIME(format=T('%d.%m.%Y %H:%M:%S') )), "
+fld_dt = "   Field( 'FLD', 'datetime', label= 'LABEL', ),"
+fld_float = "   Field( 'FLD', 'float', label= 'LABEL', default= 0.0 ),"
+fld_int = "   Field( 'FLD', 'integer', label= 'LABEL', default= 0 ),"
+fld_str = "   Field( 'FLD', 'string', label= 'LABEL', default= 'w2p FLD' ),"
+fld_txt = "   Field( 'FLD', 'text', label= 'LABEL' , default= 'w2p FLD'),"
+fld_bool = "   Field( 'FLD', 'boolean', label= 'LABEL' , default= True),"
+fld_select = "   Field( 'FLD',  requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),"
+fld_radio = "   Field( 'FLD',  requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),"
+
+tbl_med_type = {
+    'input': fld_str,
+    'textarea': fld_txt,
+    'radio': fld_radio,
+    'select': fld_select,
+    'checkbox': fld_bool,
+    'button': None}
+tbl_med2 = {
+    'string': fld_str,
+    'text': fld_txt,
+    'radio': fld_radio,
+    'select': fld_select,
+    'check': fld_bool,
+    'date': fld_date,
+    'datetime': fld_dt,
+    'float': fld_float,
+    'integer': fld_int,
+     }
+
+str_uniq_key4unk = (str(n) for n in range(100000))
+
+tables_names_list = []
+
+index_list = {}
+
+
+def mk_tname(tnm):
+    return tnm.replace(' ', '') + next(str_uniq_key4unk)
+
+
+def tnam2ctrlnm(tnm):
+    return 'ctrl' + tnm
+
+
+def build_tables_from_config():
+
+    with open(fnm_config, 'r') as stream:
+        data_loaded = yaml.load(stream)
+
+    def mk_tab(tnm, fl, fnm=None, mode='w'):
+
+        new_tab = [""]
+        new_tab.append(replace_in_obj(tbl_beg, {'DBTBL': tnm}))
+        for ii, e in enumerate(fl):
+            iistr = str(ii)
+            if e in tbl_med2:
+                new_tab.append(
+                    replace_in_obj(
+                        tbl_med2[e], {
+                            'FLD': 'f' + iistr, 'LABEL': 'lab' + iistr}))
+            else:
+                new_tab.append(replace_in_obj(
+                    e, {'FLD': 'f' + iistr, 'LABEL': 'lab' + iistr}))
+
+        new_tab.append(tbl_end)
+        new_tab.append("")
+        if fnm:
+            list2file(new_tab, fnm, mode)
+        tables_names_list.append(tnm)
+        return True
+
+    def add_ctrl_view(ctrl_nm, ctrl_opt, tnm, fl, fnm=None, ):
+        ctrl_file_nm = os.path.join(controllers_dir, ctrl_nm + '.py')
+        if not os.path.isfile(ctrl_file_nm):
+            list2file(ctrl_mygrid, ctrl_file_nm, 'w')
+            index_ctrl = [
+                "",
+                "#@auth.requires_login()",
+                "def index():",
+                "    response.view = 'CTRL/index.html'",
+                "    mydict=dict()",
+                "    return dict(mydict=mydict)",
+                "",
+            ]
+            list2file(
+                replace_in_obj(
+                    index_ctrl, {
+                        'CTRL': ctrl_nm, }), ctrl_file_nm,)
+
+        list2file(replace_in_obj(ctrl4mygrid,
+                                 {'FCTRL': 'ctrl' + tnm,
+                                  'DBTBL': tnm,
+                                  'DIR': ctrl_nm,
+                                  'VIEW': 'ctrl' + tnm + '.html'}),
+                  ctrl_file_nm,
+                  )
+        ctrl_view_dir = '../../views/' + ctrl_nm
+        index_file_nm = os.path.join(ctrl_view_dir, 'index.html')
+        #print ( ctrl_view_dir )
+        ctrl_view_file = ctrl_view_dir + '/' + 'ctrl' + tnm + '.html'
+        #print ( ctrl_view_file )
+        ctrl_view_list = ["{{extend 'w2playout.html'}}", "{{=grid}}", ""]
+        if not os.path.isdir(ctrl_view_dir):
+            os.mkdir(ctrl_view_dir)
+            index_header = ["{{extend 'w2playout.html'}}", "", ]
+            list2file(index_header, index_file_nm, "w")
+        list2file(ctrl_view_list, ctrl_view_file)
+        list2file(
+            replace_in_obj(
+                menu_item, {
+                    'FCTRL': 'ctrl' + tnm, 'DBTBL': tnm, 'MYAD': ctrl_nm, }), index_file_nm,)
+        index_list[ctrl_nm].append('ctrl' + tnm)
+
+    def mk_one(ctrl_nm, ctrl_opt, tnm, fl):
+        tnm1 = mk_tname(tnm)
+        fnm = os.path.join(models_dir, 'f' + tnm1 + '.py')
+        mk_tab(tnm1, fl, fnm)
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm1, fl, fnm=None,)
+
+    def mk_o2m(ctrl_nm, ctrl_opt, tnm, fl):
+        if len(fl) != 2:
+            sys.exit("error: o2m")
+
+        tnm1 = mk_tname(tnm) + 'o'
+        fnm = os.path.join(models_dir, 'f' + tnm1 + '.py')
+        tnm2 = mk_tname(tnm) + 'm'
+        mk_tab(tnm1, fl[0], fnm, 'w')
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm1, fl, fnm=None,)
+        fl[1].append(replace_in_obj(fld_ref, {'REFTBL': tnm1}))
+        mk_tab(tnm2, fl[1], fnm, 'a')
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm2, fl, fnm=None,)
+        #print (fnm)
+
+    def mk_m2m(ctrl_nm, ctrl_opt, tnm, fl):
+        if len(fl) != 2:
+            sys.exit("error: m2m")
+        tnm1 = mk_tname(tnm)
+        fnm = os.path.join(models_dir, 'f' + tnm1 + '.py')
+        tnm2 = mk_tname(tnm)
+        tnm3 = mk_tname(tnm) + 'ref'
+        mk_tab(tnm1, fl[0], fnm, 'w')
+        mk_tab(tnm2, fl[1], fnm, 'a')
+        ref_list = [
+            replace_in_obj(
+                fld_ref, {
+                    'REFTBL': tnm1}), replace_in_obj(
+                fld_ref, {
+                    'REFTBL': tnm2})]
+        mk_tab(tnm3, ref_list, fnm, 'a')
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm1, fl, fnm=None,)
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm2, fl, fnm=None,)
+        add_ctrl_view(ctrl_nm, ctrl_opt, tnm3, fl, fnm=None,)
+        #print (fnm)
+
+    def mk_error(ctrl_nm, ctrl_opt, tnm, flds):
+        return
+        print (tnm)
+        print (flds)
+        print ('key error')
+
+    def print_report(ctrl_nm):
+        print (" index_list ", index_list[ctrl_nm],)
+        print ('------', index_list)
+        print ("created tables: ", tables_names_list)
+
+    print ("---------------------------- db config data_loaded  -----------------------------------------")
+    func_dict = {'one': mk_one, 'o2m': mk_o2m, 'm2m': mk_m2m, 'opt': mk_error}
+    for ctrl_nm, v in data_loaded.items():
+        print ("ctrl-name: ", ctrl_nm)
+        print ("ctrl-opt: ", v['opt'])
+        if ctrl_nm not in index_list:
+            index_list[ctrl_nm] = []
+        ctrl_file_nm = os.path.join(controllers_dir, ctrl_nm + '.py')
+        ctrl_views_dir = os.path.join(views_dir, ctrl_nm)
+
+        if os.path.isfile(ctrl_file_nm):
+            os.remove(ctrl_file_nm)
+        if os.path.isdir(ctrl_views_dir):
+            [os.remove(ctrl_views_dir + '/' + e)
+             for e in os.listdir(ctrl_views_dir)]
+            os.rmdir(ctrl_views_dir)
+
+        for table, flds in v.items():
+            func = func_dict.get(table[:3], mk_error)
+            func(ctrl_nm, v['opt'], table, flds)
+
+        print_report(ctrl_nm)
+
+
+# ----------------------------------------------------------------------------------------------------------------------------------
+if __name__ == "__main__":
+    check_env()
+    check_facew2p_config()
+    build_tables_from_config()
+    print ("app name: ", os.getcwd().split('/')[-3])
