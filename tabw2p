@@ -22,8 +22,18 @@ __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
 
-fnm_config = "tabw2p.yaml"
+help_text= ["tabw2p generate web2py tables from tabw2p.yml", ""]
+
+
+fnm_config = "tabw2p.yml"
+app_name= os.getcwd().split('/')[-3]
 #fnm2_config = "tabw2p.json"
+
+# tabw2p - generate tables, controllers, views from "tabw2p.yaml" 
+
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
 
 
 def replace_in_obj(ob, dd):
@@ -62,7 +72,7 @@ models_dir = '../../models'
 controllers_dir = '../../controllers'
 views_dir = '../../views'
 
-dir_list = [models_dir, controllers_dir, views_dir, '../template']
+dir_list = [models_dir, controllers_dir, views_dir, '../template', '../../views/w2playout.html']
 
 
 def check_env():
@@ -71,7 +81,14 @@ def check_env():
 
     for e in dir_list:
         if not os.path.exists(e):
-            sys.exit('does not web2py app with template dir')
+            sys.exit('does not web2py app with template dir and w2playout.html')
+
+
+    if os.path.isdir( models_dir ):
+        print ('found files' )
+        prYellow ( [e for e in os.listdir(models_dir) if any( [ ( 'one' in e), ('o2m' in e), ('m2m' in e) ] ) ] )
+        #os.remove( )
+
 
 
 def check_facew2p_config():
@@ -114,12 +131,53 @@ def check_facew2p_config():
     return True
 
 
+api_str = [
+        "",
+        "",
+        "#https://stackoverflow.com/questions/37806801/can-not-post-data-via-ajax-to-web2py-rest-api-possible-cors-issue/37859336",
+        "#url_name='https://sun.minfindnr.ru/ji15/default/api/t0_tables.json'",
+        "#url_name='https://sun.minfindnr.ru/ji15/default/api/patterns.json'",
+        "",
+        "#@auth.requires_login()",
+        "@request.restful()",
+        "def api():",
+        "    from gluon.serializers import json",
+        "    response.view = 'generic.' + request.extension",
+        "    def GET(*args,**vars):",
+        "         patterns = 'auto'",
+        "         parser = db.parse_as_rest(patterns,args,vars)",
+        "         if parser.status == 200:",
+        "            return dict(content=parser.response)",
+        "         else:",
+        "            raise HTTP(parser.status,parser.error)",
+        "    def POST(table_name,**vars):",
+        "        #return db[table_name].validate_and_insert(**vars)",
+        "        #data = gluon.contrib.simplejson.loads(request.body.read())",
+        "        return json(db[table_name].validate_and_insert(**vars))",
+        "        return dict()",
+        "    def PUT(table_name,record_id,**vars):",
+        "        return db(db[table_name]._id==record_id).update(**vars)",
+        "    def DELETE(table_name,record_id):",
+        "        return db(db[table_name]._id==record_id).delete()",
+        "    def OPTIONS(*args,**vars):",
+        "        print ( 'OPTION called') ",
+        "        return True",
+        "    return dict(GET=GET,POST=POST,PUT=PUT,DELETE=DELETE,OPTIONS=OPTIONS)",
+        "",
+    ]
+
+
 ctrl_mygrid = [
     "",
     "",
     "#@auth.requires_login()",
     "def mygrid(tnm):",
     "   return SQLFORM.grid(db[tnm], deletable= True, user_signature=False,  buttons_placement = 'left', showbuttontext=False, csv=False )",
+    "# ",
+    "",
+    "#@auth.requires_login()",
+    "def myform(tnm):",
+    "   return SQLFORM(db[tnm])",
     "# ",
     "",
 ]
@@ -163,6 +221,8 @@ menu_item = ["",
              "<p>{{=A('DBTBL', _href=URL(c='MYAD',f='FCTRL'))}}</p>",
              "",
              ]
+
+# {{=A('Изменить им пароли',_href=URL('poisk_login' , args= [name]),_class="btn btn-danger", _title="Изменить пароли списку пользователей")}}
 
 
 tbl_beg = "db.define_table( 'DBTBL',"
@@ -247,6 +307,8 @@ def build_tables_from_config():
         ctrl_file_nm = os.path.join(controllers_dir, ctrl_nm + '.py')
         if not os.path.isfile(ctrl_file_nm):
             list2file(ctrl_mygrid, ctrl_file_nm, 'w')
+            if 'restapi' in ctrl_opt and ctrl_opt['restapi'] == 'True':
+                 list2file(api_str, ctrl_file_nm,)
             index_ctrl = [
                 "",
                 "#@auth.requires_login()",
@@ -268,7 +330,7 @@ def build_tables_from_config():
                                   'VIEW': 'ctrl' + tnm + '.html'}),
                   ctrl_file_nm,
                   )
-        ctrl_view_dir = '../../views/' + ctrl_nm
+        ctrl_view_dir = views_dir + '/'  + ctrl_nm
         index_file_nm = os.path.join(ctrl_view_dir, 'index.html')
         #print ( ctrl_view_dir )
         ctrl_view_file = ctrl_view_dir + '/' + 'ctrl' + tnm + '.html'
@@ -333,9 +395,11 @@ def build_tables_from_config():
         print ('key error')
 
     def print_report(ctrl_nm):
-        print (" index_list ", index_list[ctrl_nm],)
-        print ('------', index_list)
-        print ("created tables: ", tables_names_list)
+        
+        #print (" index_list ", index_list[ctrl_nm],)
+        print ('controllers: ', index_list)
+        print ("tables: ", tables_names_list)
+        prGreen ("app name: %s/%s" % (app_name,ctrl_nm) )
 
     print ("---------------------------- db config data_loaded  -----------------------------------------")
     func_dict = {'one': mk_one, 'o2m': mk_o2m, 'm2m': mk_m2m, 'opt': mk_error}
@@ -350,10 +414,9 @@ def build_tables_from_config():
         if os.path.isfile(ctrl_file_nm):
             os.remove(ctrl_file_nm)
         if os.path.isdir(ctrl_views_dir):
-            [os.remove(ctrl_views_dir + '/' + e)
-             for e in os.listdir(ctrl_views_dir)]
+            [os.remove(ctrl_views_dir + '/' + e) for e in os.listdir(ctrl_views_dir)]
             os.rmdir(ctrl_views_dir)
-
+            
         for table, flds in v.items():
             func = func_dict.get(table[:3], mk_error)
             func(ctrl_nm, v['opt'], table, flds)
@@ -366,4 +429,4 @@ if __name__ == "__main__":
     check_env()
     check_facew2p_config()
     build_tables_from_config()
-    print ("app name: ", os.getcwd().split('/')[-3])
+

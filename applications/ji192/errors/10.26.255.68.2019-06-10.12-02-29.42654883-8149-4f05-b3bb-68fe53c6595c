@@ -1,0 +1,421 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'Framework'
+p4
+sS'code'
+p5
+S''
+sS'snapshot'
+p6
+(dp7
+S'exception'
+p8
+(dp9
+S'__getslice__'
+p10
+S"<method-wrapper '__getslice__' of exceptions.SyntaxError object>"
+p11
+sS'text'
+p12
+S"'value:levels\\n'"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.SyntaxError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.SyntaxError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'__sizeof__'
+p20
+S'<built-in method __sizeof__ of exceptions.SyntaxError object>'
+p21
+sS'message'
+p22
+S"''"
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.SyntaxError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.SyntaxError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.SyntaxError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.SyntaxError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.SyntaxError'>"
+p35
+sS'filename'
+p36
+S"'/home/w2p/web2py/applications/ji192/views/default/inline.html'"
+p37
+sS'lineno'
+p38
+S'398'
+p39
+sS'msg'
+p40
+S"'invalid syntax'"
+p41
+sS'__doc__'
+p42
+S"'Invalid syntax.'"
+p43
+sS'__getitem__'
+p44
+S"<method-wrapper '__getitem__' of exceptions.SyntaxError object>"
+p45
+sS'__setstate__'
+p46
+S'<built-in method __setstate__ of exceptions.SyntaxError object>'
+p47
+sS'__getattribute__'
+p48
+S"<method-wrapper '__getattribute__' of exceptions.SyntaxError object>"
+p49
+sS'print_file_and_line'
+p50
+S'None'
+p51
+sS'args'
+p52
+S"('invalid syntax', ('/home/w2p/web2py/applications/ji192/views/default/inline.html', 398, 6, 'value:levels\\n'))"
+p53
+sS'__subclasshook__'
+p54
+S'<built-in method __subclasshook__ of type object>'
+p55
+sS'offset'
+p56
+S'6'
+sS'__unicode__'
+p57
+S'<built-in method __unicode__ of exceptions.SyntaxError object>'
+p58
+sS'__delattr__'
+p59
+S"<method-wrapper '__delattr__' of exceptions.SyntaxError object>"
+p60
+sS'__repr__'
+p61
+S"<method-wrapper '__repr__' of exceptions.SyntaxError object>"
+p62
+sS'__hash__'
+p63
+S"<method-wrapper '__hash__' of exceptions.SyntaxError object>"
+p64
+ssS'evalue'
+p65
+S'invalid syntax (inline.html, line 398)'
+p66
+sS'request'
+p67
+cgluon.html
+XML_unpickle
+p68
+(S's\xb6\\\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>ji192</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji191</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-d4ab1836-2718-48da-a2fa-bc68068d8b30<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji192</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_ji191=10.26.255.68-d4ab1836-2718-48da-a2fa-bc68068d8b30; session_id_ji192=10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>https://sun.minfindnr.ru/ji192/default/flot</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.1; rv:68.0) Gecko/20100101 Firefox/68.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_BY</td><td style="vertical-align:top;">:</td><td><div>92.242.125.188:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_FOR</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_PROTO</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_FORWARDED_SSL</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_X_REAL_IP</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">RAW_URI</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>gunicorn/19.1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/w2p/web2py/applications/ji137/&#x27;, &#x27;/home/w2p/web2py/applications/ji103/&#x27;, &#x27;/home/w2p/web2py/applications/ji142/&#x27;, &#x27;/home/w2p/web2py/applications/admin/&#x27;, &#x27;/home/w2p/web2py/applications/ji157/&#x27;, &#x27;/home/w2p/web2py/applications/ji164/&#x27;, &#x27;/home/w2p/web2py/applications/ji105/&#x27;, &#x27;/home/w2p/web2py/applications/ylic/&#x27;, &#x27;/home/w2p/web2py/applications/dmlic/&#x27;, &#x27;/home/w2p/web2py/applications/welcome/&#x27;, &#x27;/home/w2p/web2py/applications/ji140/&#x27;, &#x27;/home/w2p/web2py/applications/ji174/&#x27;, &#x27;/home/w2p/web2py/applications/newlic/&#x27;, &#x27;/home/w2p/web2py/applications/ji162/&#x27;, &#x27;/home/w2p/web2py/applications/ji191/&#x27;, &#x27;/home/w2p/web2py/applications/aji163/&#x27;, &#x27;/home/w2p/web2py/applications/upag/&#x27;, &#x27;/home/w2p/web2py/applications/ji108/&#x27;, &#x27;/home/w2p/web2py/applications/ji118/&#x27;, &#x27;/home/w2p/web2py/applications/ji197/&#x27;, &#x27;/home/w2p/web2py/applications/ji179/&#x27;, &#x27;/home/w2p/web2py/applications/lic/&#x27;, &#x27;/home/w2p/web2py/applications/ji178/&#x27;, &#x27;/home/w2p/web2py/applications/ji173/&#x27;, &#x27;/home/w2p/web2py/applications/ji104/&#x27;, &#x27;/home/w2p/web2py/applications/ji132/&#x27;, &#x27;/home/w2p/web2py/applications/ji163/&#x27;, &#x27;/home/w2p/web2py/applications/ji175/&#x27;, &#x27;/home/w2p/web2py/applications/gae/&#x27;, &#x27;/home/w2p/web2py/applications/fmbnk/&#x27;, &#x27;/home/w2p/web2py/applications/ji190/&#x27;, &#x27;/home/w2p/web2py/applications/up1/&#x27;, &#x27;/home/w2p/web2py/applications/ji192/&#x27;, &#x27;/home/w2p/web2py/applications/ji196/&#x27;, &#x27;/home/w2p/web2py/applications/ji184/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gunicorn.socket</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._socketobject object at 0x7fe2cb300c20&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gunicorn_socket</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._socketobject object at 0x7fe2cb300c20&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_ji191=10.26.255.68-d4ab1836-2718-48da-a2fa-bc68068d8b30; session_id_ji192=10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>https://sun.minfindnr.ru/ji192/default/flot</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.1; rv:68.0) Gecko/20100101 Firefox/68.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_by</td><td style="vertical-align:top;">:</td><td><div>92.242.125.188:443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_for</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_proto</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_forwarded_ssl</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_x_real_ip</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>sun.minfindnr.ru</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>92.242.125.188</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_uri</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>sun.minfindnr.ru</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>gunicorn/19.1.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.4-stable+timestamp.2017.09.02.04.02.22</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.wsgi.WSGIErrorsWraper object at 0x7fe2cbb56090&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class &#x27;gunicorn.http.wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.body.Body object at 0x7fe2cbb564d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.wsgi.WSGIErrorsWraper object at 0x7fe2cbb56090&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class &#x27;gunicorn.http.wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;gunicorn.http.body.Body object at 0x7fe2cbb564d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py/applications/ji192/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/w2p/web2py/applications/ji137/&#x27;, &#x27;/home/w2p/web2py/applications/ji103/&#x27;, &#x27;/home/w2p/web2py/applications/ji142/&#x27;, &#x27;/home/w2p/web2py/applications/admin/&#x27;, &#x27;/home/w2p/web2py/applications/ji157/&#x27;, &#x27;/home/w2p/web2py/applications/ji164/&#x27;, &#x27;/home/w2p/web2py/applications/ji105/&#x27;, &#x27;/home/w2p/web2py/applications/ylic/&#x27;, &#x27;/home/w2p/web2py/applications/dmlic/&#x27;, &#x27;/home/w2p/web2py/applications/welcome/&#x27;, &#x27;/home/w2p/web2py/applications/ji140/&#x27;, &#x27;/home/w2p/web2py/applications/ji174/&#x27;, &#x27;/home/w2p/web2py/applications/newlic/&#x27;, &#x27;/home/w2p/web2py/applications/ji162/&#x27;, &#x27;/home/w2p/web2py/applications/ji191/&#x27;, &#x27;/home/w2p/web2py/applications/aji163/&#x27;, &#x27;/home/w2p/web2py/applications/upag/&#x27;, &#x27;/home/w2p/web2py/applications/ji108/&#x27;, &#x27;/home/w2p/web2py/applications/ji118/&#x27;, &#x27;/home/w2p/web2py/applications/ji197/&#x27;, &#x27;/home/w2p/web2py/applications/ji179/&#x27;, &#x27;/home/w2p/web2py/applications/lic/&#x27;, &#x27;/home/w2p/web2py/applications/ji178/&#x27;, &#x27;/home/w2p/web2py/applications/ji173/&#x27;, &#x27;/home/w2p/web2py/applications/ji104/&#x27;, &#x27;/home/w2p/web2py/applications/ji132/&#x27;, &#x27;/home/w2p/web2py/applications/ji163/&#x27;, &#x27;/home/w2p/web2py/applications/ji175/&#x27;, &#x27;/home/w2p/web2py/applications/gae/&#x27;, &#x27;/home/w2p/web2py/applications/fmbnk/&#x27;, &#x27;/home/w2p/web2py/applications/ji190/&#x27;, &#x27;/home/w2p/web2py/applications/up1/&#x27;, &#x27;/home/w2p/web2py/applications/ji192/&#x27;, &#x27;/home/w2p/web2py/applications/ji196/&#x27;, &#x27;/home/w2p/web2py/applications/ji184/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>sun.minfindnr.ru</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>92.242.125.188</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.15.4-stable+timestamp.2017.09.02.04.02.22</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 6, 10, 12, 2, 29, 515452)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/ji192/default/inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 6, 10, 9, 2, 29, 515468)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7fe2ccedd7d0&gt;</div></td></tr></table></div>'
+tRp69
+sS'frames'
+p70
+(lp71
+(dp72
+S'file'
+p73
+S'/home/w2p/web2py/gluon/main.py'
+p74
+sS'dump'
+p75
+(dp76
+S'global serve_controller'
+p77
+S'<function serve_controller>'
+p78
+sS'session'
+p79
+S"<Storage {'_formkey[dindexform2/create]': ['2458...ate]': ['22b02a30-d8e6-4b9c-a77b-a57e8a69dbbc']}>"
+p80
+sS'request'
+p81
+S"<Storage {'_vars': None, 'function': 'inline', '...folder': '/home/w2p/web2py/applications/ji192/'}>"
+p82
+sS'response'
+p83
+S"<Storage {'body': <cStringIO.StringO object at 0... 0x7fe2cd2ea500>, 'view': 'default/inline.html'}>"
+p84
+ssS'lnum'
+p85
+I445
+sS'lines'
+p86
+(dp87
+I448
+S''
+sI449
+S'                if static_file:'
+p88
+sI440
+S'                if global_settings.debugging and app != "admin":'
+p89
+sI441
+S'                    import gluon.debug'
+p90
+sI442
+S'                    # activate the debugger'
+p91
+sI443
+S'                    gluon.debug.dbg.do_debug(mainpyfile=request.folder)'
+p92
+sI444
+S''
+sI445
+S'                serve_controller(request, response, session)'
+p93
+sI446
+S'            except HTTP as hr:'
+p94
+sI447
+S'                http_response = hr'
+p95
+ssS'call'
+p96
+S"(environ={'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br', 'HTTP_ACCEPT_LANGUAGE': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'HTTP_CONNECTION': 'close', 'HTTP_COOKIE': 'session_id_ji191=10.26.255.68-d4ab1836-2718-48da...10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad', 'HTTP_HOST': 'sun.minfindnr.ru', 'HTTP_REFERER': 'https://sun.minfindnr.ru/ji192/default/flot', 'HTTP_UPGRADE_INSECURE_REQUESTS': '1', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; rv:68.0) Gecko/20100101 Firefox/68.0', 'HTTP_X_FORWARDED_BY': '92.242.125.188:443', ...}, responder=<bound method Response.start_response of <gunicorn.http.wsgi.Response object>>)"
+p97
+sS'func'
+p98
+S'wsgibase'
+p99
+sa(dp100
+g73
+S'/home/w2p/web2py/gluon/main.py'
+p101
+sg75
+(dp102
+S'response._view_environment'
+p103
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p104
+sS'page'
+p105
+S"{'DICT': {'aa24': '(24)See All Messages', 'aa27': '(27)View all', 'aa33': '(33)View all tasks', 'aa38': '(38)Followers', 'aa39': '(39)Sales', 'aa40': '(40)Friends', 'aa41': '(41)Profile', 'aa42': '(42)Sign out', 'aa97': '(97)Charts', 'bb10': '(10)Admin', ...}, 'inlineform0': <gluon.sqlhtml.SQLFORM object>, 'inlineform1': <gluon.sqlhtml.SQLFORM object>}"
+p106
+sS'global run_view_in'
+p107
+S'<function run_view_in>'
+p108
+sS'response'
+p109
+S"<Storage {'body': <cStringIO.StringO object at 0... 0x7fe2cd2ea500>, 'view': 'default/inline.html'}>"
+p110
+ssg85
+I184
+sg86
+(dp111
+I179
+S'    response._view_environment = copy.copy(environment)'
+p112
+sI180
+S'    page = run_controller_in(request.controller, request.function, environment)'
+p113
+sI181
+S'    if isinstance(page, dict):'
+p114
+sI182
+S'        response._vars = page'
+p115
+sI183
+S'        response._view_environment.update(page)'
+p116
+sI184
+S'        page = run_view_in(response._view_environment)'
+p117
+sI185
+S''
+sI186
+S'    # logic to garbage collect after exec, not always, once every 100 requests'
+p118
+sI187
+S'    global requests'
+p119
+sI188
+S"    requests = ('requests' in globals()) and (requests + 1) % 100 or 0"
+p120
+ssg96
+S"(request=<Storage {'_vars': None, 'function': 'inline', '...folder': '/home/w2p/web2py/applications/ji192/'}>, response=<Storage {'body': <cStringIO.StringO object at 0... 0x7fe2cd2ea500>, 'view': 'default/inline.html'}>, session=<Storage {'_formkey[dindexform2/create]': ['2458...ate]': ['22b02a30-d8e6-4b9c-a77b-a57e8a69dbbc']}>)"
+p121
+sg98
+S'serve_controller'
+p122
+sa(dp123
+g73
+S'/home/w2p/web2py/gluon/compileapp.py'
+p124
+sg75
+(dp125
+S'filename'
+p126
+S"'/home/w2p/web2py/applications/ji192/views/default/inline.html'"
+p127
+sS'global compile2'
+p128
+S'<function compile2>'
+p129
+sS'ccode'
+p130
+S'undefined'
+p131
+sS'scode'
+p132
+S'r"response.write(\'<!DOCTYPE html>\\n<html>\\n<head>\\...n  }\\n</script>\\n</body>\\n</html>\', escape=False)"'
+p133
+ssg85
+I727
+sg86
+(dp134
+I722
+S'            # Parse template'
+p135
+sI723
+S'            scode = parse_template(view,'
+p136
+sI724
+S"                                   pjoin(folder, 'views'),"
+p137
+sI725
+S'                                   context=environment)'
+p138
+sI726
+S'            # Compile template'
+p139
+sI727
+S'            ccode = compile2(scode, filename)'
+p140
+sI728
+S'        layer = filename'
+p141
+sI729
+S'    restricted(ccode, environment, layer=layer, scode=scode)'
+p142
+sI730
+S'    # parse_template saves everything in response body'
+p143
+sI731
+S"    return environment['response'].body.getvalue()"
+p144
+ssg96
+S"(environment={'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...})"
+p145
+sg98
+S'run_view_in'
+p146
+sa(dp147
+g73
+S'/home/w2p/web2py/gluon/restricted.py'
+p148
+sg75
+(dp149
+S'builtincompile'
+p150
+S'<built-in function compile>'
+p151
+sS'code'
+p152
+S'r"response.write(\'<!DOCTYPE html>\\n<html>\\n<head>\\...n  }\\n</script>\\n</body>\\n</html>\', escape=False)"'
+p153
+sS'layer'
+p154
+S"'/home/w2p/web2py/applications/ji192/views/default/inline.html'"
+p155
+ssg85
+I205
+sg86
+(dp156
+I200
+S'            output = ""'
+p157
+sI201
+S'        return output'
+p158
+sI202
+S''
+sI203
+S''
+sI204
+S'def compile2(code, layer):'
+p159
+sI205
+S"    return compile(code, layer, 'exec')"
+p160
+sI206
+S''
+sI207
+S''
+sI208
+S"def restricted(ccode, environment=None, layer='Unknown', scode=None):"
+p161
+sI209
+S'    """'
+p162
+ssg96
+S'(code=r"response.write(\'<!DOCTYPE html>\\n<html>\\n<head>\\...n  }\\n</script>\\n</body>\\n</html>\', escape=False)", layer=\'/home/w2p/web2py/applications/ji192/views/default/inline.html\')'
+p163
+sg98
+S'compile2'
+p164
+sasS'pyver'
+p165
+S'Python 2.7.13: /home/w2p/.conda/envs/lic/bin/python (prefix: /home/w2p/.conda/envs/lic)'
+p166
+sS'session'
+p167
+g68
+(S's\x1a\x00\x00\x00<div><table></table></div>'
+tRp168
+sS'etype'
+p169
+S"<type 'exceptions.SyntaxError'>"
+p170
+sS'date'
+p171
+S'Mon Jun 10 12:02:29 2019'
+p172
+sS'response'
+p173
+g68
+(S's%%\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7fe2d2591c00&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_ji192</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash0</td><td style="vertical-align:top;">:</td><td><div>inlineform0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash1</td><td style="vertical-align:top;">:</td><td><div>inlineform1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>xping</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Myima</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myima/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myadd</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myadd/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>My Sites</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/site</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>This App</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Design</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/design/ji192</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myadd ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji192/controllers/myadd.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Myima ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji192/controllers/myima.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>default ctrl</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji192/controllers/default.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>DB Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/ji192/models/db.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/appadmin/index</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Errors</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/errors/ji192</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>About</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/about/ji192</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>auth</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/default/index</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>events</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myadd/auth_eventctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>users</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myadd/auth_userctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>groups</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myadd/auth_groupctrl</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>member</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/ji192/myadd/auth_membershipctrl</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/inline/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_ji192</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/w2p/web2py/applications/ji192/sessions/1d9/0c7/10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad&#x27;, mode &#x27;rb+&#x27; at 0x7fe2cbb5a660&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/w2p/web2py/applications/ji192/sessions/10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>20814bae41cc81f7da733ae1797c059c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>10.26.255.68-1495a423-6a04-445e-9bc6-53d75de101ad</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_ji192</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>ji192</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/inline.html</div></td></tr></table></div>'
+tRp174
+sS'locals'
+p175
+(dp176
+g3
+S"'/home/w2p/web2py/applications/ji192/views/default/inline.html'"
+p177
+sg5
+S'r"response.write(\'<!DOCTYPE html>\\n<html>\\n<head>\\...n  }\\n</script>\\n</body>\\n</html>\', escape=False)"'
+p178
+sssS'traceback'
+p179
+S'Traceback (most recent call last):\n  File "/home/w2p/web2py/gluon/main.py", line 445, in wsgibase\n    serve_controller(request, response, session)\n  File "/home/w2p/web2py/gluon/main.py", line 184, in serve_controller\n    page = run_view_in(response._view_environment)\n  File "/home/w2p/web2py/gluon/compileapp.py", line 727, in run_view_in\n    ccode = compile2(scode, filename)\n  File "/home/w2p/web2py/gluon/restricted.py", line 205, in compile2\n    return compile(code, layer, \'exec\')\n  File "/home/w2p/web2py/applications/ji192/views/default/inline.html", line 398\n    value:levels\n         ^\nSyntaxError: invalid syntax\n'
+p180
+s.

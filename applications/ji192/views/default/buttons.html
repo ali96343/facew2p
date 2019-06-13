@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>facew2p</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/font-awesome/css/font-awesome.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/Ionicons/css/ionicons.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/skins/_all-skins.min.css')}}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn"t work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pr,300italic,400italic,600italic">
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="{{=URL(c='default',f='index2')}}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>{{=DICT["sx1671"]}}</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>{{=DICT["bb1672"]}}</b>{{=DICT["sx1673"]}}</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">{{=DICT["sx1674"]}}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb1675"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib1677"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa1678"]}}</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib1680"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa1681"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib1683"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa1684"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib1686"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa1687"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib1689"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa1690"]}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">{{=DICT["aa1691"]}}</a></li>
+            </ul>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">{{=DICT["sx1692"]}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb1693"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">{{=DICT["aa1694"]}}</a></li>
+            </ul>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb1695"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">{{=DICT["ic1696"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx1697"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Create a nice theme
+                        <small class="pull-right">{{=DICT["ic1698"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx1699"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Some task I need to do
+                        <small class="pull-right">{{=DICT["ic1700"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx1701"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Make beautiful transitions
+                        <small class="pull-right">{{=DICT["ic1702"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx1703"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">{{=DICT["aa1704"]}}</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{=DICT["sx1706"]}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>{{=DICT["ic1708"]}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa1709"]}}</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa1710"]}}</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa1711"]}}</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">{{=DICT["aa1712"]}}</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">{{=DICT["aa1713"]}}</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{=DICT["pa1715"]}}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i>{{=DICT["ia1716"]}}</a>
+        </div>
+      </div>
+      <!-- search form -->
+      
+{{block mybuttonsform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=buttonsform0.custom.begin}}
+{{=buttonsform0.custom.widget.f0}}
+{{=buttonsform0.custom.submit}}
+{{=buttonsform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">{{=DICT["lb1718"]}}</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>{{=DICT["sp1719"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='index')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1721"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='index2')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1723"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>{{=DICT["sp1724"]}}</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='top_nav')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1726"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='boxed')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1728"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='fixed')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1730"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='collapsed_sidebar')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1732"]}}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='widgets')}}">
+            <i class="fa fa-th"></i> <span>{{=DICT["sp1734"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">{{=DICT["ic1735"]}}</small>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>{{=DICT["sp1736"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='chartjs')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1738"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='morris')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1740"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='flot')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1742"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='inline')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1744"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview active">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>{{=DICT["sp1745"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='general')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1747"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='icons')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1749"]}}</a></li>
+            <li class="active"><a href="{{=URL(c='default',f='buttons')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1751"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='sliders')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1753"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='timeline')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1755"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='modals')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1757"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>{{=DICT["sp1758"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='general')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1760"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='advanced')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1762"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='editors')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1764"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>{{=DICT["sp1765"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='simple')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1767"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='data')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1769"]}}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='calendar')}}">
+            <i class="fa fa-calendar"></i> <span>{{=DICT["sp1771"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red">3</small>
+              <small class="label pull-right bg-blue">{{=DICT["ic1772"]}}</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='mailbox')}}">
+            <i class="fa fa-envelope"></i> <span>{{=DICT["sp1774"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-yellow">{{=DICT["ic1775"]}}</small>
+              <small class="label pull-right bg-green">{{=DICT["ic1776"]}}</small>
+              <small class="label pull-right bg-red">5</small>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>{{=DICT["sp1777"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='invoice')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1779"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='profile')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1781"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='login')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1783"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='register')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1785"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='lockscreen')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1787"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='X404')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1789"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='X500')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1791"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='blank')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1793"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='pace')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia1795"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>{{=DICT["sp1796"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia1797"]}}</a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Level One
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia1798"]}}</a></li>
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia1799"]}}</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia1800"]}}</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia1801"]}}</a></li>
+          </ul>
+        </li>
+        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>{{=DICT["sp1802"]}}</span></a></li>
+        <li class="header">{{=DICT["lb1803"]}}</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>{{=DICT["sp1804"]}}</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>{{=DICT["sp1805"]}}</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>{{=DICT["sp1806"]}}</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Buttons
+        <small>{{=DICT["ic1807"]}}</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>{{=DICT["ia1808"]}}</a></li>
+        <li><a href="#">{{=DICT["aa1809"]}}</a></li>
+        <li class="active">{{=DICT["lb1810"]}}</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">{{=DICT["hc1811"]}}</h3>
+            </div>
+            <div class="box-body pad table-responsive">
+              <p>{{=DICT["pf1812"]}}<code>.btn</code></p>
+              <table class="table table-bordered text-center">
+                <tr>
+                  <th>Normal</th>
+                  <th>Large <code>.btn-lg</code></th>
+                  <th>Small <code>.btn-sm</code></th>
+                  <th>X-Small <code>.btn-xs</code></th>
+                  <th>Flat <code>.btn-flat</code></th>
+                  <th>Disabled <code>.disabled</code></th>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default">{{=DICT["bu1813"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default btn-lg">{{=DICT["bu1814"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default btn-sm">{{=DICT["bu1815"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default btn-xs">{{=DICT["bu1816"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default btn-flat">{{=DICT["bu1817"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-default disabled">{{=DICT["bu1818"]}}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary">{{=DICT["bu1819"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary btn-lg">{{=DICT["bu1820"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary btn-sm">{{=DICT["bu1821"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary btn-xs">{{=DICT["bu1822"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary btn-flat">{{=DICT["bu1823"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-primary disabled">{{=DICT["bu1824"]}}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success">{{=DICT["bu1825"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success btn-lg">{{=DICT["bu1826"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success btn-sm">{{=DICT["bu1827"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success btn-xs">{{=DICT["bu1828"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success btn-flat">{{=DICT["bu1829"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-success disabled">{{=DICT["bu1830"]}}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info">{{=DICT["bu1831"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info btn-lg">{{=DICT["bu1832"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info btn-sm">{{=DICT["bu1833"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info btn-xs">{{=DICT["bu1834"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info btn-flat">{{=DICT["bu1835"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info disabled">{{=DICT["bu1836"]}}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger">{{=DICT["bu1837"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger btn-lg">{{=DICT["bu1838"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger btn-sm">{{=DICT["bu1839"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger btn-xs">{{=DICT["bu1840"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger btn-flat">{{=DICT["bu1841"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-danger disabled">{{=DICT["bu1842"]}}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning">{{=DICT["bu1843"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning btn-lg">{{=DICT["bu1844"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning btn-sm">{{=DICT["bu1845"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning btn-xs">{{=DICT["bu1846"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning btn-flat">{{=DICT["bu1847"]}}</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-warning disabled">{{=DICT["bu1848"]}}</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.box -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- ./row -->
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Block buttons -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1849"]}}</h3>
+            </div>
+            <div class="box-body">
+              <button type="button" class="btn btn-default btn-block">{{=DICT["bu1850"]}}</button>
+              <button type="button" class="btn btn-default btn-block btn-flat">{{=DICT["bu1851"]}}</button>
+              <button type="button" class="btn btn-default btn-block btn-sm">{{=DICT["bu1852"]}}</button>
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <!-- Horizontal grouping -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1853"]}}</h3>
+            </div>
+            <div class="box-body table-responsive pad">
+              <p>
+                Horizontal button groups are easy to create with bootstrap. Just add your buttons
+                inside <code>&lt;div class="btn-group"&gt;&lt;/div&gt;</code>
+              </p>
+
+              <table class="table table-bordered">
+                <tr>
+                  <th>Button</th>
+                  <th>Icons</th>
+                  <th>Flat</th>
+                  <th>Dropdown</th>
+                </tr>
+                <!-- Default -->
+                <tr>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">{{=DICT["bu1854"]}}</button>
+                      <button type="button" class="btn btn-default">{{=DICT["bu1855"]}}</button>
+                      <button type="button" class="btn btn-default">{{=DICT["bu1856"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1</button>
+                      <button type="button" class="btn btn-default">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1857"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1858"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- ./default -->
+                <!-- Info -->
+                <tr>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info">{{=DICT["bu1859"]}}</button>
+                      <button type="button" class="btn btn-info">{{=DICT["bu1860"]}}</button>
+                      <button type="button" class="btn btn-info">{{=DICT["bu1861"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info">1</button>
+                      <button type="button" class="btn btn-info">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1862"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1863"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /. info -->
+                <!-- /.danger -->
+                <tr>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1864"]}}</button>
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1865"]}}</button>
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1866"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger">1</button>
+                      <button type="button" class="btn btn-danger">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1867"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1868"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.danger -->
+                <!-- warning -->
+                <tr>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1869"]}}</button>
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1870"]}}</button>
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1871"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-warning">1</button>
+                      <button type="button" class="btn btn-warning">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1872"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1873"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.warning -->
+                <!-- success -->
+                <tr>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-success">{{=DICT["bu1874"]}}</button>
+                      <button type="button" class="btn btn-success">{{=DICT["bu1875"]}}</button>
+                      <button type="button" class="btn btn-success">{{=DICT["bu1876"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-success">1</button>
+                      <button type="button" class="btn btn-success">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1877"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1878"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.success -->
+              </table>
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1879"]}}</h3>
+            </div>
+            <div class="box-body">
+              <p>{{=DICT["pa1880"]}}</p>
+
+              <div class="input-group margin">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action
+                    <span class="fa fa-caret-down"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">{{=DICT["aa1881"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1882"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1883"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1884"]}}</a></li>
+                  </ul>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <!-- /input-group -->
+              <p>{{=DICT["pa1885"]}}</p>
+
+              <div class="input-group margin">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-danger">{{=DICT["bu1886"]}}</button>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <!-- /input-group -->
+              <p>{{=DICT["pa1887"]}}</p>
+
+              <div class="input-group margin">
+                <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-info btn-flat">{{=DICT["bu1888"]}}</button>
+                    </span>
+              </div>
+              <!-- /input-group -->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+          <!-- split buttons box -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1889"]}}</h3>
+            </div>
+            <div class="box-body">
+              <!-- Split button -->
+              <p>{{=DICT["pa1890"]}}</p>
+
+              <div class="margin">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">{{=DICT["bu1891"]}}</button>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1892"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1893"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1894"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1895"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1896"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-info">{{=DICT["bu1897"]}}</button>
+                  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1898"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1899"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1900"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1901"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1902"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger">{{=DICT["bu1903"]}}</button>
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1904"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1905"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1906"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1907"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1908"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success">{{=DICT["bu1909"]}}</button>
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1910"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1911"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1912"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1913"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1914"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning">{{=DICT["bu1915"]}}</button>
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1916"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1917"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1918"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1919"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1920"]}}</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- flat split buttons -->
+              <p>{{=DICT["pa1921"]}}</p>
+
+              <div class="margin">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-flat">{{=DICT["bu1922"]}}</button>
+                  <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1923"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1924"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1925"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1926"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1927"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-info btn-flat">{{=DICT["bu1928"]}}</button>
+                  <button type="button" class="btn btn-info btn-flat dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1929"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1930"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1931"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1932"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1933"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger btn-flat">{{=DICT["bu1934"]}}</button>
+                  <button type="button" class="btn btn-danger btn-flat dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1935"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1936"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1937"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1938"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1939"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success btn-flat">{{=DICT["bu1940"]}}</button>
+                  <button type="button" class="btn btn-success btn-flat dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1941"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1942"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1943"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1944"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1945"]}}</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning btn-flat">{{=DICT["bu1946"]}}</button>
+                  <button type="button" class="btn btn-warning btn-flat dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">{{=DICT["sx1947"]}}</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{=DICT["aa1948"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1949"]}}</a></li>
+                    <li><a href="#">{{=DICT["aa1950"]}}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">{{=DICT["aa1951"]}}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- end split buttons box -->
+
+          <!-- social buttons -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Social Buttons (By <a href="https://github.com/lipis/bootstrap-social">{{=DICT["aa1952"]}}</a>)
+              </h3>
+            </div>
+            <div class="box-body">
+              <a class="btn btn-block btn-social btn-bitbucket">
+                <i class="fa fa-bitbucket"></i> Sign in with Bitbucket
+              </a>
+              <a class="btn btn-block btn-social btn-dropbox">
+                <i class="fa fa-dropbox"></i> Sign in with Dropbox
+              </a>
+              <a class="btn btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
+              </a>
+              <a class="btn btn-block btn-social btn-flickr">
+                <i class="fa fa-flickr"></i> Sign in with Flickr
+              </a>
+              <a class="btn btn-block btn-social btn-foursquare">
+                <i class="fa fa-foursquare"></i> Sign in with Foursquare
+              </a>
+              <a class="btn btn-block btn-social btn-github">
+                <i class="fa fa-github"></i> Sign in with GitHub
+              </a>
+              <a class="btn btn-block btn-social btn-google">
+                <i class="fa fa-google-plus"></i> Sign in with Google
+              </a>
+              <a class="btn btn-block btn-social btn-instagram">
+                <i class="fa fa-instagram"></i> Sign in with Instagram
+              </a>
+              <a class="btn btn-block btn-social btn-linkedin">
+                <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+              </a>
+              <a class="btn btn-block btn-social btn-tumblr">
+                <i class="fa fa-tumblr"></i> Sign in with Tumblr
+              </a>
+              <a class="btn btn-block btn-social btn-twitter">
+                <i class="fa fa-twitter"></i> Sign in with Twitter
+              </a>
+              <a class="btn btn-block btn-social btn-vk">
+                <i class="fa fa-vk"></i> Sign in with VK
+              </a>
+              <br>
+
+              <div class="text-center">
+                <a class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a>
+                <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+                <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-social-icon btn-flickr"><i class="fa fa-flickr"></i></a>
+                <a class="btn btn-social-icon btn-foursquare"><i class="fa fa-foursquare"></i></a>
+                <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                <a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
+                <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+                <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
+                <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <!-- Application buttons -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1953"]}}</h3>
+            </div>
+            <div class="box-body">
+              <p>{{=DICT["pf1955"]}}<code>.btn.btn-app</code> to an <code>&lt;a></code>{{=DICT["pc1954"]}}</p>
+              <a class="btn btn-app">
+                <i class="fa fa-edit"></i> Edit
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-play"></i> Play
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-repeat"></i> Repeat
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-pause"></i> Pause
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-save"></i> Save
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-yellow">3</span>
+                <i class="fa fa-bullhorn"></i> Notifications
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-green">{{=DICT["sx1956"]}}</span>
+                <i class="fa fa-barcode"></i> Products
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-purple">{{=DICT["sx1957"]}}</span>
+                <i class="fa fa-users"></i> Users
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-teal">{{=DICT["sx1958"]}}</span>
+                <i class="fa fa-inbox"></i> Orders
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-aqua">{{=DICT["sx1959"]}}</span>
+                <i class="fa fa-envelope"></i> Inbox
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-red">{{=DICT["sx1960"]}}</span>
+                <i class="fa fa-heart-o"></i> Likes
+              </a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+          <!-- Various colors -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1961"]}}</h3>
+            </div>
+            <div class="box-body">
+              <p>{{=DICT["pf1962"]}}<code>.btn</code> and add any available
+                <code>.bg-*</code>{{=DICT["pc1963"]}}</p>
+              <!-- You may notice a .margin class added
+              here but that"s only to make the content
+              display correctly without having to use a table-->
+              <p>
+                <button type="button" class="btn bg-maroon btn-flat margin">{{=DICT["bu1964"]}}</button>
+                <button type="button" class="btn bg-purple btn-flat margin">{{=DICT["bu1965"]}}</button>
+                <button type="button" class="btn bg-navy btn-flat margin">{{=DICT["bu1966"]}}</button>
+                <button type="button" class="btn bg-orange btn-flat margin">{{=DICT["bu1967"]}}</button>
+                <button type="button" class="btn bg-olive btn-flat margin">{{=DICT["bu1968"]}}</button>
+              </p>
+
+              <p>
+                <button type="button" class="btn bg-maroon margin">{{=DICT["bu1969"]}}</button>
+                <button type="button" class="btn bg-purple margin">{{=DICT["bu1970"]}}</button>
+                <button type="button" class="btn bg-navy margin">{{=DICT["bu1971"]}}</button>
+                <button type="button" class="btn bg-orange margin">{{=DICT["bu1972"]}}</button>
+                <button type="button" class="btn bg-olive margin">{{=DICT["bu1973"]}}</button>
+              </p>
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <!-- Vertical grouping -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{=DICT["hc1974"]}}</h3>
+            </div>
+            <div class="box-body table-responsive pad">
+
+              <p>
+                Vertical button groups are easy to create with bootstrap. Just add your buttons
+                inside <code>&lt;div class="btn-group-vertical"&gt;&lt;/div&gt;</code>
+              </p>
+
+              <table class="table table-bordered">
+                <tr>
+                  <th>Button</th>
+                  <th>Icons</th>
+                  <th>Flat</th>
+                  <th>Dropdown</th>
+                </tr>
+                <!-- Default -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-default">{{=DICT["bu1975"]}}</button>
+                      <button type="button" class="btn btn-default">{{=DICT["bu1976"]}}</button>
+                      <button type="button" class="btn btn-default">{{=DICT["bu1977"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-default btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-default">1</button>
+                      <button type="button" class="btn btn-default">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1978"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1979"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- ./default -->
+                <!-- Info -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-info">{{=DICT["bu1980"]}}</button>
+                      <button type="button" class="btn btn-info">{{=DICT["bu1981"]}}</button>
+                      <button type="button" class="btn btn-info">{{=DICT["bu1982"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-info"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-info btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-info">1</button>
+                      <button type="button" class="btn btn-info">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1983"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1984"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /. info -->
+                <!-- /.danger -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1985"]}}</button>
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1986"]}}</button>
+                      <button type="button" class="btn btn-danger">{{=DICT["bu1987"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-danger btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-danger">1</button>
+                      <button type="button" class="btn btn-danger">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1988"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1989"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.danger -->
+                <!-- warning -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1990"]}}</button>
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1991"]}}</button>
+                      <button type="button" class="btn btn-warning">{{=DICT["bu1992"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-warning btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-warning">1</button>
+                      <button type="button" class="btn btn-warning">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1993"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1994"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.warning -->
+                <!-- success -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-success">{{=DICT["bu1995"]}}</button>
+                      <button type="button" class="btn btn-success">{{=DICT["bu1996"]}}</button>
+                      <button type="button" class="btn btn-success">{{=DICT["bu1997"]}}</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-success"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-success btn-flat"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn-group-vertical">
+                      <button type="button" class="btn btn-success">1</button>
+                      <button type="button" class="btn btn-success">2</button>
+
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">{{=DICT["aa1998"]}}</a></li>
+                          <li><a href="#">{{=DICT["aa1999"]}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- /.success -->
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /. row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>{{=DICT["bb2000"]}}</b> 2.4.0
+    </div>
+    <strong>Copyright &copya href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">{{=DICT["hc2002"]}}</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd2003"]}}</h4>
+
+                <p>{{=DICT["pa2004"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd2005"]}}</h4>
+
+                <p>{{=DICT["pa2006"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd2007"]}}</h4>
+
+                <p>{{=DICT["pa2008"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd2009"]}}</h4>
+
+                <p>{{=DICT["pa2010"]}}</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">{{=DICT["hc2011"]}}</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">{{=DICT["sx2012"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">{{=DICT["sx2013"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">{{=DICT["sx2014"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">{{=DICT["sx2015"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">{{=DICT["di2016"]}}</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        
+{{block mybuttonsform1}}
+{{include 'web2py_ajax.html'}}
+
+{{=buttonsform1.custom.begin}}
+<div><label for='id_for6'>Report panel usage</label></div>
+{{=buttonsform1.custom.widget.f0}}
+<div><label for='id_for10'>Allow mail redirect</label></div>
+{{=buttonsform1.custom.widget.f1}}
+<div><label for='id_for14'>Expose author name in posts</label></div>
+{{=buttonsform1.custom.widget.f2}}
+<div><label for='id_for18'>Show me as online</label></div>
+{{=buttonsform1.custom.widget.f3}}
+<div><label for='id_for22'>Turn off notifications</label></div>
+{{=buttonsform1.custom.widget.f4}}
+{{=buttonsform1.custom.submit}}
+{{=buttonsform1.custom.end}}
+
+<div  id=divID1 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash1 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID1').length > 0) {
+    $('#divID1').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar"s background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="{{=URL('static','template/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{=URL('static','template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{=URL('static','template/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{=URL('static','template/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{=URL('static','template/dist/js/demo.js')}}"></script>
+</body>
+</html>

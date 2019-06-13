@@ -1,0 +1,8 @@
+      db.DBTBL.insert( f0= '00 index2table0', f1= '0w2p1 Item', f2= '0w2p2 Status', f3= '0w2p3 Popularity', )
+      db.DBTBL.insert( f0= 'OR9842', f1= 'Call of Duty IV', f2= 'Shipped', f3= '90,80,90,-70,61,-83,63', )
+      db.DBTBL.insert( f0= 'OR1848', f1= 'Samsung Smart TV', f2= 'Pending', f3= '90,80,-90,70,61,-83,68', )
+      db.DBTBL.insert( f0= 'OR7429', f1= 'iPhone 6 Plus', f2= 'Delivered', f3= '90,-80,90,70,-61,83,63', )
+      db.DBTBL.insert( f0= 'OR7429', f1= 'Samsung Smart TV', f2= 'Processing', f3= '90,80,-90,70,-61,83,63', )
+      db.DBTBL.insert( f0= 'OR1848', f1= 'Samsung Smart TV', f2= 'Pending', f3= '90,80,-90,70,61,-83,68', )
+      db.DBTBL.insert( f0= 'OR7429', f1= 'iPhone 6 Plus', f2= 'Delivered', f3= '90,-80,90,70,-61,83,63', )
+      db.DBTBL.insert( f0= 'OR9842', f1= 'Call of Duty IV', f2= 'Shipped', f3= '90,80,90,-70,61,-83,63', )

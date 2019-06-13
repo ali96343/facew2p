@@ -1,0 +1,21 @@
+- - input
+  - class: form-control
+    id: navbar-search-input
+    placeholder: Search
+    type: text
+  - class: ''
+    for: navbar-search-input
+    text: label525
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Search
+    type: submit
+    value: submit input
+  - class: ''
+    for: navbar-search-input
+    text: label525
+  - null
+  - null

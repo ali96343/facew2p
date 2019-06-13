@@ -1,0 +1,21 @@
+- - input
+  - class: form-control input-sm
+    id: id_for58
+    placeholder: Press enter to post comment
+    type: text
+  - class: ''
+    for: id_for58
+    text: label59
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Press enter to post comment
+    type: submit
+    value: submit input
+  - class: ''
+    for: id_for58
+    text: label59
+  - null
+  - null

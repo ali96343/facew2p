@@ -1,0 +1,21 @@
+- - textarea
+  - id: editor1
+    placeholder: place_654
+    rows: '10'
+  - class: ''
+    for: editor1
+    text: label653
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_654
+    rows: '10'
+    type: submit
+    value: submit textarea
+  - class: ''
+    for: editor1
+    text: label653
+  - null
+  - null

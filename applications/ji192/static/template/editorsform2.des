@@ -1,0 +1,20 @@
+- - textarea
+  - class: textarea
+    id: id_for655
+    placeholder: Place some text here
+  - class: ''
+    for: id_for655
+    text: label656
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Place some text here
+    type: submit
+    value: submit textarea
+  - class: ''
+    for: id_for655
+    text: label656
+  - null
+  - null

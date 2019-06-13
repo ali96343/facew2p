@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>facew2p</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/font-awesome/css/font-awesome.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{=URL('static','template/bower_components/Ionicons/css/ionicons.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/skins/_all-skins.min.css')}}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn"t work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pr,300italic,400italic,600italic">
+  <style>
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+  </style>
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="{{=URL(c='default',f='index2')}}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>{{=DICT["sx589"]}}</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>{{=DICT["bb590"]}}</b>{{=DICT["sx591"]}}</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">{{=DICT["sx592"]}}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb593"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib595"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa596"]}}</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib598"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa599"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib601"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa602"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib604"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa605"]}}</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="{{=URL('static','template/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i>{{=DICT["ib607"]}}</small>
+                      </h4>
+                      <p>{{=DICT["pa608"]}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">{{=DICT["aa609"]}}</a></li>
+            </ul>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">{{=DICT["sx610"]}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb611"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">{{=DICT["aa612"]}}</a></li>
+            </ul>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">{{=DICT["lb613"]}}</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">{{=DICT["ic614"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx615"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Create a nice theme
+                        <small class="pull-right">{{=DICT["ic616"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx617"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Some task I need to do
+                        <small class="pull-right">{{=DICT["ic618"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx619"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Make beautiful transitions
+                        <small class="pull-right">{{=DICT["ic620"]}}</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">{{=DICT["sx621"]}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">{{=DICT["aa622"]}}</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{=DICT["sx624"]}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>{{=DICT["ic626"]}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa627"]}}</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa628"]}}</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">{{=DICT["aa629"]}}</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">{{=DICT["aa630"]}}</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">{{=DICT["aa631"]}}</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{=DICT["pa633"]}}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i>{{=DICT["ia634"]}}</a>
+        </div>
+      </div>
+      <!-- search form -->
+      
+{{block mymodalsform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=modalsform0.custom.begin}}
+{{=modalsform0.custom.widget.f0}}
+{{=modalsform0.custom.submit}}
+{{=modalsform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">{{=DICT["lb636"]}}</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>{{=DICT["sp637"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='index')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia639"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='index2')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia641"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>{{=DICT["sp642"]}}</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='top_nav')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia644"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='boxed')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia646"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='fixed')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia648"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='collapsed_sidebar')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia650"]}}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='widgets')}}">
+            <i class="fa fa-th"></i> <span>{{=DICT["sp652"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">{{=DICT["ic653"]}}</small>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>{{=DICT["sp654"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='chartjs')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia656"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='morris')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia658"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='flot')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia660"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='inline')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia662"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview active">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>{{=DICT["sp663"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='general')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia665"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='icons')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia667"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='buttons')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia669"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='sliders')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia671"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='timeline')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia673"]}}</a></li>
+            <li class="active"><a href="{{=URL(c='default',f='modals')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia675"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>{{=DICT["sp676"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='general')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia678"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='advanced')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia680"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='editors')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia682"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>{{=DICT["sp683"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='simple')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia685"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='data')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia687"]}}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='calendar')}}">
+            <i class="fa fa-calendar"></i> <span>{{=DICT["sp689"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red">3</small>
+              <small class="label pull-right bg-blue">{{=DICT["ic690"]}}</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{=URL(c='default',f='mailbox')}}">
+            <i class="fa fa-envelope"></i> <span>{{=DICT["sp692"]}}</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-yellow">{{=DICT["ic693"]}}</small>
+              <small class="label pull-right bg-green">{{=DICT["ic694"]}}</small>
+              <small class="label pull-right bg-red">5</small>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>{{=DICT["sp695"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{=URL(c='default',f='invoice')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia697"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='profile')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia699"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='login')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia701"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='register')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia703"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='lockscreen')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia705"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='X404')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia707"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='X500')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia709"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='blank')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia711"]}}</a></li>
+            <li><a href="{{=URL(c='default',f='pace')}}"><i class="fa fa-circle-o"></i>{{=DICT["ia713"]}}</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>{{=DICT["sp714"]}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia715"]}}</a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Level One
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia716"]}}</a></li>
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia717"]}}</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia718"]}}</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>{{=DICT["ia719"]}}</a></li>
+          </ul>
+        </li>
+        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>{{=DICT["sp720"]}}</span></a></li>
+        <li class="header">{{=DICT["lb721"]}}</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>{{=DICT["sp722"]}}</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>{{=DICT["sp723"]}}</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>{{=DICT["sp724"]}}</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Modals
+        <small>{{=DICT["ic725"]}}</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>{{=DICT["ia726"]}}</a></li>
+        <li><a href="#">{{=DICT["aa727"]}}</a></li>
+        <li class="active">{{=DICT["lb728"]}}</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="callout callout-info">
+        <h4>{{=DICT["hh729"]}}</h4>
+        Instructions for how to use modals are available on the
+        <a href="https://getbootstrap.com/javascript/#modals">{{=DICT["aa730"]}}</a>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">{{=DICT["hc731"]}}</h3>
+            </div>
+            <div class="box-body">
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                Launch Default Modal
+              </button>
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
+                Launch Info Modal
+              </button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
+                Launch Danger Modal
+              </button>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning">
+                Launch Warning Modal
+              </button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success">
+                Launch Success Modal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx732"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd733"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa734"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{=DICT["bu735"]}}</button>
+                <button type="button" class="btn btn-primary">{{=DICT["bu736"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal modal-primary fade" id="modal-primary">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx737"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd738"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa739"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">{{=DICT["bu740"]}}</button>
+                <button type="button" class="btn btn-outline">{{=DICT["bu741"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal modal-info fade" id="modal-info">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx742"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd743"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa744"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">{{=DICT["bu745"]}}</button>
+                <button type="button" class="btn btn-outline">{{=DICT["bu746"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal modal-warning fade" id="modal-warning">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx747"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd748"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa749"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">{{=DICT["bu750"]}}</button>
+                <button type="button" class="btn btn-outline">{{=DICT["bu751"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal modal-success fade" id="modal-success">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx752"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd753"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa754"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">{{=DICT["bu755"]}}</button>
+                <button type="button" class="btn btn-outline">{{=DICT["bu756"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal modal-danger fade" id="modal-danger">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">{{=DICT["sx757"]}}</span></button>
+                <h4 class="modal-title">{{=DICT["hd758"]}}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{=DICT["pa759"]}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">{{=DICT["bu760"]}}</button>
+                <button type="button" class="btn btn-outline">{{=DICT["bu761"]}}</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>{{=DICT["bb762"]}}</b> 2.4.0
+    </div>
+    <strong>Copyright &copya href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">{{=DICT["hc764"]}}</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd765"]}}</h4>
+
+                <p>{{=DICT["pa766"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd767"]}}</h4>
+
+                <p>{{=DICT["pa768"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd769"]}}</h4>
+
+                <p>{{=DICT["pa770"]}}</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">{{=DICT["hd771"]}}</h4>
+
+                <p>{{=DICT["pa772"]}}</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">{{=DICT["hc773"]}}</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">{{=DICT["sx774"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">{{=DICT["sx775"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">{{=DICT["sx776"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">{{=DICT["sx777"]}}</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">{{=DICT["di778"]}}</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        
+{{block mymodalsform1}}
+{{include 'web2py_ajax.html'}}
+
+{{=modalsform1.custom.begin}}
+<div><label for='id_for228'>Report panel usage</label></div>
+{{=modalsform1.custom.widget.f0}}
+<div><label for='id_for232'>Allow mail redirect</label></div>
+{{=modalsform1.custom.widget.f1}}
+<div><label for='id_for236'>Expose author name in posts</label></div>
+{{=modalsform1.custom.widget.f2}}
+<div><label for='id_for240'>Show me as online</label></div>
+{{=modalsform1.custom.widget.f3}}
+<div><label for='id_for244'>Turn off notifications</label></div>
+{{=modalsform1.custom.widget.f4}}
+{{=modalsform1.custom.submit}}
+{{=modalsform1.custom.end}}
+
+<div  id=divID1 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash1 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID1').length > 0) {
+    $('#divID1').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar"s background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="{{=URL('static','template/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{=URL('static','template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{=URL('static','template/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{=URL('static','template/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{=URL('static','template/dist/js/demo.js')}}"></script>
+</body>
+</html>

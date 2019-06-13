@@ -1,0 +1,40 @@
+- - input
+  - class: form-control
+    id: id_for168
+    placeholder: Email
+    type: email
+  - class: ''
+    for: id_for168
+    text: Remember Me
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for171
+    placeholder: Password
+    type: password
+  - class: ''
+    for: id_for171
+    text: Remember Me
+  - null
+  - null
+- - checkbox
+  - id: id_for174
+    placeholder: place_177
+    type: checkbox
+  - class: ''
+    for: id_for174
+    text: Remember Me
+  - null
+  - null
+- - button
+  - class: btn btn-primary btn-block btn-flat
+    id: id_for178
+    placeholder: place_181
+    type: submit
+    value: Sign In
+  - class: ''
+    for: id_for178
+    text: Remember Me
+  - null
+  - null

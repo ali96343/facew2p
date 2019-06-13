@@ -1,0 +1,21 @@
+- - checkbox
+  - class: pull-right
+    id: id_for218
+    placeholder: place_221
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for218
+    text: Report panel usage
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_221
+    type: submit
+    value: submit checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for218
+    text: Report panel usage
+  - null
+  - null
