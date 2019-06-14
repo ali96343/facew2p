@@ -532,7 +532,6 @@ class FileOper:
 
     @staticmethod
     def recursive_overwrite(src, dest, ignore=None):
-
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -1213,6 +1212,7 @@ class CheckEnv (StrDb):
 
             srcdir = findInSubdirectory(Z.main_index)
             if srcdir is not None:
+                print ('copy ... pls, wait')
                 FileOper.recursive_overwrite(srcdir, dstdir)
                 # sys.exit("stop")
 
@@ -2890,10 +2890,12 @@ class HtmlView(CheckEnv):
         lines = replace_in_list(
             FileOper.file2list(html_fnm), {
                 "'": '"', "http://": "https://", r'\r': ''})
-
+  
         for e in lines:
              if (e.find('{{') != -1)   or  (e.find('}}') != -1):
                   prRed ("--- %s: found {{ or }} - : %s" %  (html_fnm, e))
+
+        lines= [ e for e in lines if '{{' not in e ]
 
         ctrl1 = Z.get_from_db_fnm2ctrl(Z.f0)
         link_tbl_e = [html_fnm + Z.myview_ext, html_fnm, ctrl1, Z.file_db]
@@ -3511,6 +3513,19 @@ class W2pApp(StrDb):
             return
 
         print ("html-files does not exist: ", Z.db_html_error_request)
+        # https://stackoverflow.com/questions/1724693/find-a-file-in-python
+        def find(name, path):
+               for root, dirs, files in os.walk(path):
+                    if name in files:
+                       return os.path.join(root, name)
+               return None
+        if len(  Z.db_html_error_request  ):
+            print ('search for missed files ... wait')
+            for e in  Z.db_html_error_request:
+                  miss_file= find (e+ '.html', './') 
+                  if miss_file:
+                     print ("----found: ", miss_file )
+                     shutil.copy(miss_file, './')
         print ("src does not exist: ", Z.db_src_not_exists)
         if len(Z.db_src_not_exists) != 0:
             missed_dir = commonprefix(Z.db_src_not_exists)
