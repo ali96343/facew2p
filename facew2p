@@ -2890,6 +2890,11 @@ class HtmlView(CheckEnv):
         lines = replace_in_list(
             FileOper.file2list(html_fnm), {
                 "'": '"', "http://": "https://", r'\r': ''})
+
+        for e in lines:
+             if (e.find('{{') != -1)   or  (e.find('}}') != -1):
+                  prRed ("--- %s: found {{ or }} - : %s" %  (html_fnm, e))
+
         ctrl1 = Z.get_from_db_fnm2ctrl(Z.f0)
         link_tbl_e = [html_fnm + Z.myview_ext, html_fnm, ctrl1, Z.file_db]
 
