@@ -2893,7 +2893,7 @@ class HtmlView(CheckEnv):
   
         for e in lines:
              if (e.find('{{') != -1)   or  (e.find('}}') != -1):
-                  prRed ("--- %s: found {{ or }} - : %s" %  (html_fnm, e))
+                  prRed ("--- %s: found {{ or }} and removed line- : %s" %  (html_fnm, e))
 
         lines= [ e for e in lines if '{{' not in e ]
 
@@ -3628,6 +3628,8 @@ class MyTest(StrDb):
             headers=Z.req_headers,
             allow_redirects=False)
         print ("{} - {}".format(url_name, response.status_code))
+        if response.status_code != 200:
+            prRed(" --- %s --- "  %  url_name)
 
     def test_admin_api(Z, ):
         # print(socket.gethostname())
@@ -3696,7 +3698,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
