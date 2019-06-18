@@ -13,12 +13,12 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from css template project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.3" # 28.05.2019
+__version__ = "0.1.5" # 13.06.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
-
+# https://webdesign.tutsplus.com/ru/tutorials/how-to-build-web-form-layouts-with-css-grid--cms-28776
 # https://github.com/flatlogic/sing-app
 # https://github.com/BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template
 # $ cd MyApp
@@ -532,6 +532,7 @@ class FileOper:
 
     @staticmethod
     def recursive_overwrite(src, dest, ignore=None):
+        print ('  copy, pls wait ...', end='\r')
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -1181,7 +1182,7 @@ class CheckEnv (StrDb):
                 if filename in names:
                     isitpath = os.path.join(root, filename).lower()
                     prRed(
-                        "found index.html! is it index for template ?: %s " %
+                        "found index.html! is it template index ?: %s " %
                         os.path.join(
                             root, filename))
                     if 'help' in isitpath or 'doc' in isitpath:
@@ -1212,7 +1213,7 @@ class CheckEnv (StrDb):
 
             srcdir = findInSubdirectory(Z.main_index)
             if srcdir is not None:
-                print ('copy ... pls, wait')
+                #print ('copy ... pls, wait')
                 FileOper.recursive_overwrite(srcdir, dstdir)
                 # sys.exit("stop")
 
@@ -1599,67 +1600,9 @@ class FindTables_bs4 (StrDb, ):
                 '.py')
         return tbl_names
 
-    def bs4_view_build(Z, attr_dict, header_list, db_name_str,):
-
-            # {{=SQLTABLE(results, orderby=True, headers='labels',truncate=200,  _class='table table-bordered', _width="100%", _style="white-space:wrap")}}
-        def mk_sqltable_class(attr_dict):
-            attrs_table_str = ""
-            for k, v in attr_dict.items():
-                attrs_table_str += " _{}=\"".format(k)
-                if isinstance(v, (list,)):
-                    attrs_table_str += " ".join(v) + "\", "
-                elif isinstance(v, (str,)):
-                    attrs_table_str += v + "\","
-                else:
-                    attrs_table_str += "unk_type" + "\","
-            return attrs_table_str
-
-        #print ( mk_sqltable_class(  attr_dict  ) )
-
-        res_beg = [
-            "",
-            "<tbody>",
-            "{{queryNNNN= db.DBTBL.id > 0}}",
-            "{{resultsNNNN= db(queryNNNN).select()}}",
-            "{{if not resultsNNNN is None: }}",
-            "{{for row in resultsNNNN:}}",
-            "<tr>",
-        ]
-        res_end = [
-            "</tr>",
-            "{{pass}}",
-            "{{pass}}",
-            "</tbody>",
-            "",
-            "",
-        ]
-        res_t = []
-        res_num = str(next(int_uniq_key4unk))
-        new_ll = FileOper.get4yaml(db_name_str + '.new')
-        if new_ll:
-            header_list = [e[0] for e in new_ll]
-        #print (header_list)
-        for i, e in enumerate(header_list):
-            res_t.append("    <td>{{=row.f%s}}</td>" % i)
-        res_beg.extend(res_t)
-        res_beg.extend(res_end)
-        tmp1 = ["", "<thead>", "<tr>"]
-        new_header = ['    <th>' + str(i) + '</th>' for i in header_list]
-        tmp1 += new_header
-        tmp1 += ["</tr>", "</thead>", ]
-        #print ( "\n".join( tmp1 ) )
-        tmp1 += res_beg
-        #FileOper.list2file(res_beg, 'my' + str_num )
-        return "\n".join(
-            replace_in_obj(
-                tmp1, {
-                    'DBTBL': db_name_str, "NNNN": res_num}))
-
-    def replace_tables_in_file(Z, multi_table=True):
-        #Z.db_file_tables.append( {fnm: ( dbindex, t, what, data_fnm,  dict_attrs)} )
+    def bs4_view_build(Z, attr_dict, header_list, db_name_str,  sqlta= False):
         tbl_name_script = [
             ""
-            "</table>",
             ""
             "<div  id=divIDFFFF style=\"heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;\" >",
             "                   <small>DBTBL</small>",
@@ -1672,8 +1615,96 @@ class FindTables_bs4 (StrDb, ):
             "  } ",
             "}, 15000)",
             " </script>",
+            "",
         ]
 
+        def mk_sqltable_class(attr_dict):
+            attrs_table_str = ""
+            for k, v in attr_dict.items():
+                attrs_table_str += " _{}=\"".format(k)
+                if isinstance(v, (list,)):
+                    attrs_table_str += " ".join(v) + "\", "
+                elif isinstance(v, (str,)):
+                    attrs_table_str += v + "\","
+                else:
+                    attrs_table_str += "unk_type" + "\","
+            return attrs_table_str
+
+        res_num = str(next(int_uniq_key4unk))
+        new_ll = FileOper.get4yaml(db_name_str + '.new')
+        if new_ll:
+            header_list = [e[0] for e in new_ll]
+        #hhhh= str(header_list) 
+        hdict_str="{'%s.id':'id', " % db_name_str
+
+        for i, e in enumerate(header_list):
+             hdict_str += "'{}.f{}':'{}', ".format( db_name_str,str(i), e )
+        hdict_str += '}'
+
+        new_atrs= mk_sqltable_class(  attr_dict ).rstrip()[0:-1]
+        if sqlta == True:
+            sqltable= "=SQLTABLE(resultsNNNN, orderby=True, headers=hdictNNNN, ATTRS)"
+            qqq= replace_in_obj ( sqltable, { 'ATTRS':new_atrs , 'NNNN': res_num }  ) 
+            res_new = [
+                "",
+                "{{",
+                "queryNNNN= db.DBTBL.id > 0",
+                "resultsNNNN= db(queryNNNN).select()",
+                "if resultsNNNN:",
+                "hdictNNNN=HHHH",
+                "QQQ",
+                "pass",
+                "}}",
+                "",
+            ]
+
+            res_new += tbl_name_script
+    
+            nnn= replace_in_obj( res_new, {'QQQ': qqq, 'DBTBL': db_name_str,
+                       "NNNN": res_num, 'HHHH': hdict_str, 'FFFF': res_num  } ) 
+            return '\n'.join(nnn)
+    
+        res_beg = [
+            "",
+            "<tbody>",
+            "{{queryNNNN= db.DBTBL.id > 0}}",
+            "{{resultsNNNN= db(queryNNNN).select()}}",
+            "{{if resultsNNNN: }}",
+            "{{for row in resultsNNNN:}}",
+            "<tr>",
+        ]
+        res_end = [
+            "</tr>",
+            "{{pass}}",
+            "{{pass}}",
+            "</tbody>",
+            "</table>",
+            "",
+            "",
+        ]
+        res_t = []
+        atrs2= new_atrs.replace('_','').replace(',','')
+        atrs2= atrs2.strip()
+        #print (header_list)
+        for i, e in enumerate(header_list):
+            res_t.append("    <td>{{=row.f%s}}</td>" % i)
+        res_beg.extend(res_t)
+        res_beg.extend(res_end)
+        tmp1 = ["", "<table ATRS>",  "<thead>", "<tr>"]
+        new_header = ['    <th>' + str(i) + '</th>' for i in header_list]
+        tmp1 += new_header
+        tmp1 += ["</tr>", "</thead>", ]
+        #print ( "\n".join( tmp1 ) )
+        tmp1 += res_beg
+        tmp1 += tbl_name_script
+        #FileOper.list2file(res_beg, 'my' + str_num )
+        return "\n".join(
+            replace_in_obj(
+                tmp1, {
+                    'DBTBL': db_name_str, "NNNN": res_num, 'ATRS': atrs2, 'FFFF': res_num}))
+
+    def replace_tables_in_file(Z, multi_table=True):
+        #Z.db_file_tables.append( {fnm: ( dbindex, t, what, data_fnm,  dict_attrs)} )
         res_l = []
         metka_l = []
         file_l = []
@@ -1701,44 +1732,31 @@ class FindTables_bs4 (StrDb, ):
                 cnt = next(int_uniq_key4unk)  # + 10000 # 1000
                 metka = "<meka{}>mytest{}</metka{}>".format(
                     str(cnt), str(cnt), str(cnt))
-                #metka= "<meka{}> mytest <metka{}>".format(str(cnt), str(cnt))
 
                 fnm1 = FileOper.replace_pat(
-                    fnm=k, src_pat=r'(<thead[^<]+)(.*?)(</tbody>)(.)', dst_pat=metka)
+                    fnm=k, src_pat=r'(<table[^<]+)(.*?)(</table>)(.)', dst_pat=metka)
                 #fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)', dst_pat= metka )
                 if fnm1 is None:
-                    prRed(
-                        " replace src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)' error: file%s, dst_pat=%s" %
-                        (k, metka))
+                    prRed( "error <table> replace" )
                     break
 
-                if os.path.isfile(e[1] + '.new') and e[7]:
-                    FileOper.replace_pat(
-                        fnm=k, src_pat=r'(<tfoot[^<]+)(.*?)(</tfoot>)(.)', dst_pat=metka)
+                #if os.path.isfile(e[1] + '.new') and e[7] and sqt_flag == False:
+                #    FileOper.replace_pat(
+                #        fnm=k, src_pat=r'(<tfoot[^<]+)(.*?)(</tfoot>)(.)', dst_pat=metka)
 
                 if fnm1 not in res_l:
                     res_l.append(fnm1)
 
-                text_table_body = Z.bs4_view_build(e[5], e[3], e[1],)
+                sqt_flag= False
+                if os.path.isfile(e[1] + '.sqt'):
+                      sqt_flag= True
+                      #print ("-------------- found SQLTABLE")
+
+                text_table_body = Z.bs4_view_build(e[5], e[3], e[1], sqt_flag)
                 metka_l.append(metka)
                 file_l.append(k)
                 text_l.append(text_table_body)
 
-                cnt = next(int_uniq_key4unk)  # + 10000 # 1000
-                metka = "<meka{}>mytest{}</metka{}>".format(
-                    str(cnt), str(cnt), str(cnt))
-                fnm1 = FileOper.replace_pat(
-                    fnm=k, src_pat=r'(</table>)', dst_pat=metka)
-                #fnm1= FileOper.replace_pat(fnm= k , src_pat=r'(<tbody[^<]+)(.*?)(</tbody>)(.)', dst_pat= metka )
-                if fnm1 is None:
-                    prRed(" error %s  src_pat=r'(</table>)'" % k)
-                    break
-
-                text_table_body = replace_in_obj(
-                    tbl_name_script, {'DBTBL': e[1], 'FFFF': str(cnt)})
-                metka_l.append(metka)
-                file_l.append(k)
-                text_l.append(text_table_body)
 
         for ii, e in enumerate(file_l):
             src1 = metka_l[ii]
@@ -3698,7 +3716,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=True)
+    MyTest(run_test=False)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
@@ -3715,7 +3733,7 @@ if __name__ == "__main__":
             " x  (for the best view) ")
     if plus_bs4:
         print ("disable bs4 and labels: ", os.path.basename(__file__), " x  x")
-        print ('for change form or table : cp form_or_table.des form_or_table.new ')
+        print ('for change form or table : cp form_or_table.des form_or_table.new (table.sqt - for SQLTABLE)')
         print ('table.new  table_types: ', table_types  )
         print ('form.new form_types: ', form_types  )
 
