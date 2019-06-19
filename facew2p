@@ -1122,12 +1122,13 @@ class CheckEnv (StrDb):
                 os.chmod(fnm, 0o664)
 
             ctrlnm = f0 = fnm.split('.')[0]
-            if '-' in ctrlnm:
-                ctrlnm = ctrlnm.replace('-', '_')
-            if '[' in ctrlnm:
-                ctrlnm = ctrlnm.replace('[', '0')
-            if ']' in ctrlnm:
-                ctrlnm = ctrlnm.replace(']', '0')
+            ctrlnm = re.sub('[^0-9a-zA-Z]+', 'II', ctrlnm)
+            #if '-' in ctrlnm:
+            #    ctrlnm = ctrlnm.replace('-', '_')
+            #if '[' in ctrlnm:
+            #    ctrlnm = ctrlnm.replace('[', '0')
+            #if ']' in ctrlnm:
+            #    ctrlnm = ctrlnm.replace(']', '0')
             if ctrlnm[0].isdigit():
                 ctrlnm = 'X' + ctrlnm
 
@@ -1248,6 +1249,7 @@ class CheckEnv (StrDb):
 
         if os.path.exists(Z.face_lock):
             sys.exit("found FACELOCK!, can not continue! ")
+        prGreen("FACELOCK not found, working .... ")
 
         if Z.mydir != Z.wdir:
             for e in help_text:
@@ -3716,7 +3718,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
