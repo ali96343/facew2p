@@ -1622,15 +1622,20 @@ class FindTables_bs4 (StrDb, ):
 
         def mk_sqltable_class(attr_dict):
             attrs_table_str = ""
+            xattrs_str = ""
             for k, v in attr_dict.items():
                 attrs_table_str += " _{}=\"".format(k)
+                xattrs_str += " {}=\"".format(k)
                 if isinstance(v, (list,)):
-                    attrs_table_str += " ".join(v) + "\", "
+                    attrs_table_str += " ".join(v) + "\","
+                    xattrs_str += " ".join(v) + "\","
                 elif isinstance(v, (str,)):
                     attrs_table_str += v + "\","
+                    xattrs_str += v + "\","
                 else:
                     attrs_table_str += "unk_type" + "\","
-            return attrs_table_str
+                    xattrs_str += "unk_type" + "\","
+            return ( attrs_table_str[0:-1], xattrs_str[0:-1])
 
         res_num = str(next(int_uniq_key4unk))
         new_ll = FileOper.get4yaml(db_name_str + '.new')
@@ -1643,7 +1648,7 @@ class FindTables_bs4 (StrDb, ):
              hdict_str += "'{}.f{}':'{}', ".format( db_name_str,str(i), e )
         hdict_str += '}'
 
-        new_atrs= mk_sqltable_class(  attr_dict ).rstrip()[0:-1]
+        (new_atrs, atrs2 )= mk_sqltable_class(  attr_dict )
         if sqlta == True:
             sqltable= "=SQLTABLE(resultsNNNN, orderby=True, headers=hdictNNNN, ATTRS)"
             qqq= replace_in_obj ( sqltable, { 'ATTRS':new_atrs , 'NNNN': res_num }  ) 
@@ -1685,8 +1690,6 @@ class FindTables_bs4 (StrDb, ):
             "",
         ]
         res_t = []
-        atrs2= new_atrs.replace('_','').replace(',','')
-        atrs2= atrs2.strip()
         #print (header_list)
         for i, e in enumerate(header_list):
             res_t.append("    <td>{{=row.f%s}}</td>" % i)
