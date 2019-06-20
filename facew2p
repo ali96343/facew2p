@@ -116,6 +116,7 @@ def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
 
 int_uniq_key = (n for n in range(100000))
 int_uniq_key4unk = (n for n in range(100000))
+# https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python/
 
 
 def replace_in_obj(ob, dd):
@@ -1620,22 +1621,17 @@ class FindTables_bs4 (StrDb, ):
             "",
         ]
 
-        def mk_sqltable_class(attr_dict):
+        def mk_sqltable_class(attr_dict, ss= " _{}=\""):
             attrs_table_str = ""
-            xattrs_str = ""
             for k, v in attr_dict.items():
-                attrs_table_str += " _{}=\"".format(k)
-                xattrs_str += " {}=\"".format(k)
+                attrs_table_str += ss.format(k)
                 if isinstance(v, (list,)):
                     attrs_table_str += " ".join(v) + "\","
-                    xattrs_str += " ".join(v) + "\","
                 elif isinstance(v, (str,)):
                     attrs_table_str += v + "\","
-                    xattrs_str += v + "\","
                 else:
                     attrs_table_str += "unk_type" + "\","
-                    xattrs_str += "unk_type" + "\","
-            return ( attrs_table_str[0:-1], xattrs_str[0:-1])
+            return  attrs_table_str[0:-1]
 
         res_num = str(next(int_uniq_key4unk))
         new_ll = FileOper.get4yaml(db_name_str + '.new')
@@ -1648,7 +1644,7 @@ class FindTables_bs4 (StrDb, ):
              hdict_str += "'{}.f{}':'{}', ".format( db_name_str,str(i), e )
         hdict_str += '}'
 
-        (new_atrs, atrs2 )= mk_sqltable_class(  attr_dict )
+        new_atrs= mk_sqltable_class(  attr_dict )
         if sqlta == True:
             sqltable= "=SQLTABLE(resultsNNNN, orderby=True, headers=hdictNNNN, ATTRS)"
             qqq= replace_in_obj ( sqltable, { 'ATTRS':new_atrs , 'NNNN': res_num }  ) 
@@ -1671,6 +1667,7 @@ class FindTables_bs4 (StrDb, ):
                        "NNNN": res_num, 'HHHH': hdict_str, 'FFFF': res_num  } ) 
             return '\n'.join(nnn)
     
+        atrs2= mk_sqltable_class(attr_dict, ss= " {}=\"")
         res_beg = [
             "",
             "<tbody>",
@@ -1749,13 +1746,11 @@ class FindTables_bs4 (StrDb, ):
                 #    FileOper.replace_pat(
                 #        fnm=k, src_pat=r'(<tfoot[^<]+)(.*?)(</tfoot>)(.)', dst_pat=metka)
 
-                if fnm1 not in res_l:
-                    res_l.append(fnm1)
+                fnm1 not in res_l and res_l.append(fnm1)
+                #if fnm1 not in res_l:
+                #    res_l.append(fnm1)
 
-                sqt_flag= False
-                if os.path.isfile(e[1] + '.sqt'):
-                      sqt_flag= True
-                      #print ("-------------- found SQLTABLE")
+                sqt_flag=  os.path.isfile(e[1] + '.sqt')
 
                 text_table_body = Z.bs4_view_build(e[5], e[3], e[1], sqt_flag)
                 metka_l.append(metka)
@@ -2653,12 +2648,20 @@ class HtmlView(CheckEnv):
 
         def check_add_css(fnm):
             if fnm.endswith('.css'):
-                if os.path.exists(fnm):
-                    if fnm not in Z.db_css_files:
-                        Z.db_css_files.append(fnm)
+                pat_l = fnm.split('/')
+                x_nm=""
+                for i in range(len(pat_l), -1, -1):
+                     x_nm = "/".join(pat_l[i:])
+                     if os.path.isfile(x_nm):
+                         #print ("-------------------------found: ", x_nm)
+                         break
+
+                if len(x_nm) and os.path.exists(x_nm):
+                    if x_nm not in Z.db_css_files:
+                        Z.db_css_files.append(x_nm)
                 else:
-                    if fnm not in Z.db_css_missed_files:
-                        Z.db_css_missed_files.append(fnm)
+                    if x_nm not in Z.db_css_missed_files:
+                        Z.db_css_missed_files.append(x_nm)
                 #print (magrp2)
 
         def r_h2(Z, ma, p2, num_str):
@@ -2915,8 +2918,8 @@ class HtmlView(CheckEnv):
                 "'": '"', "http://": "https://", r'\r': ''})
   
         for e in lines:
-             if (e.find('{{') != -1)   or  (e.find('}}') != -1):
-                  prRed ("--- %s: found {{ or }} and removed line- : %s" %  (html_fnm, e))
+             if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
+                  prRed ("--- %s: found {{ and removed the line- : %s" %  (html_fnm, e))
 
         lines= [ e for e in lines if '{{' not in e ]
 
@@ -3543,12 +3546,13 @@ class W2pApp(StrDb):
                        return os.path.join(root, name)
                return None
         if len(  Z.db_html_error_request  ):
-            print ('search for missed files ... wait')
+            print ('search for missed html=files ... wait')
             for e in  Z.db_html_error_request:
                   miss_file= find (e+ '.html', './') 
                   if miss_file:
                      print ("----found: ", miss_file )
                      shutil.copy(miss_file, './')
+                     print ( "at next run will be included in ctrl-list")
         print ("src does not exist: ", Z.db_src_not_exists)
         if len(Z.db_src_not_exists) != 0:
             missed_dir = commonprefix(Z.db_src_not_exists)
@@ -3562,6 +3566,16 @@ class W2pApp(StrDb):
                 print (
                     "maybe : ~  mkdir {} && cp -a {}/* {} ?".format(missed_dir, x_dir, missed_dir))
                 #FileOper.recursive_overwrite(y, missed_dir)
+            for e in Z.db_src_not_exists:
+                  e1= e.split("/")
+                  if e1[-1]:
+                      print ("--find ", e1[-1], end = "")
+                      miss_file= find (e1[-1], "./") 
+                      if miss_file:
+                            print ("----found: ", miss_file )
+                      else:
+                            print ("   - not found ")
+
 
         #prYellow ("images in template: %s" %  len(Z.db_src_myimg) )
         #print ("css in template: ",  Z.db_css_files)
@@ -3721,7 +3735,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=True)
+    MyTest(run_test=False)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
@@ -3737,10 +3751,11 @@ if __name__ == "__main__":
             os.path.basename(__file__),
             " x  (for the best view) ")
     if plus_bs4:
-        print ("disable bs4 and labels: ", os.path.basename(__file__), " x  x")
-        print ('for change form or table : cp form_or_table.des form_or_table.new (table.sqt - for SQLTABLE)')
-        print ('table.new  table_types: ', table_types  )
-        print ('form.new form_types: ', form_types  )
+        print ("------------")
+        print ("   disable bs4 and labels: ", os.path.basename(__file__), " x  x")
+        print ('   for change form or table : cp form_or_table.des form_or_table.new (table.sqt - for SQLTABLE)')
+        print ('   table.new  table_types: ', table_types  )
+        print ('   form.new form_types: ', form_types  )
 
     check_model(dbg=False)
     # --------------------------------------------
