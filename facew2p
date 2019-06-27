@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from css template project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.9" # 27.06.2019
+__version__ = "0.1.8" # 21.06.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -188,7 +188,7 @@ def check_in_cur_dir( fnm ):
     if os.path.isfile(fnm1):
           return fnm1
     x_nm=""
-    for i in range(len(pat_fnm), -1, -1):
+    for i in range(len(pat_fnm)-1, -1, -1):
          x_nm = "/".join(pat_fnm[i:])
          if '..' in x_nm:
                x_nm= ''
@@ -2700,7 +2700,7 @@ class HtmlView(CheckEnv):
             if fnm.endswith('.css'):
                 pat_l = fnm.split('/')
                 x_nm=""
-                for i in range(len(pat_l), -1, -1):
+                for i in range(len(pat_l) -1, -1, -1):
                      x_nm = "/".join(pat_l[i:])
                      if os.path.isfile(x_nm):
                          #print ("-------------------------found: ", x_nm)
@@ -2718,7 +2718,7 @@ class HtmlView(CheckEnv):
             magrp2 = ma.group(2)
             check_add_css(magrp2)
             pat_l = magrp2.split('/')
-            for i in range(len(pat_l), -1, -1):
+            for i in range(len(pat_l) -1, -1, -1):
                 x_nm = "/".join(pat_l[i:])
                 if os.path.isfile(x_nm):
                     #print ("any4 corrected path for: ", x_nm)
@@ -2752,7 +2752,7 @@ class HtmlView(CheckEnv):
 
                 pat_l = ma2.split('/')
                 x_nm = ""
-                for i in range(len(pat_l), -1, -1):
+                for i in range(len(pat_l) -1, -1, -1):
                     x_nm = "/".join(pat_l[i:])
                     #print ( "xxx:", x_nm )
                     if os.path.isfile(x_nm):
@@ -2776,7 +2776,7 @@ class HtmlView(CheckEnv):
                 #print ("missed src: ", magrp2)
                 pat_l = magrp2.split('/')
                 # for i, e in enumerate(pat_l):
-                for i in range(len(pat_l), -1, -1):
+                for i in range(len(pat_l) -1, -1, -1):
                     x_nm = "/".join(pat_l[i:])
                     #print ( x_nm )
                     if os.path.isfile(x_nm):
@@ -3363,7 +3363,7 @@ class W2pApp(StrDb):
 
         def f2(fnm):
             fnm_l = fnm.split('/')
-            for i in range(len(fnm_l), -1, -1):
+            for i in range(len(fnm_l) -1, -1, -1):
                 fnm2 = '/'.join(fnm_l[i:])
                 if os.path.isfile(fnm2):
                     return fnm2
