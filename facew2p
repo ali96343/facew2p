@@ -13,11 +13,13 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from css template project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.6" # 25.06.2019
+__version__ = "0.1.9" # 27.06.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
+
+#  <title.*?>(.+?)</title>    r'<title[^>]*>([^<]+)</title>'
 # https://webdesign.tutsplus.com/ru/tutorials/how-to-build-web-form-layouts-with-css-grid--cms-28776
 # https://github.com/flatlogic/sing-app
 # https://github.com/BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template
@@ -174,6 +176,52 @@ def hard_clear(ob, ):
 
 # --------------------------------------------------------------------------------------------
 
+def find(name, path):
+               for root, dirs, files in os.walk(path):
+                    if name in files:
+                       return os.path.join(root, name)
+               return None
+
+def check_in_cur_dir( fnm ):
+    pat_fnm = fnm.split('/')
+    fnm1= pat_fnm[-1]
+    if os.path.isfile(fnm1):
+          return fnm1
+    x_nm=""
+    for i in range(len(pat_fnm), -1, -1):
+         x_nm = "/".join(pat_fnm[i:])
+         if '..' in x_nm:
+               x_nm= ''
+               break
+         if os.path.isfile(x_nm):
+               shutil.copy(x_nm, './')
+               return fnm1
+
+    miss_file= find ( fnm1, './')
+    if miss_file:
+              shutil.copy(miss_file, './')
+              return fnm1 
+
+    shutil.copyfile('index.html', fnm1 )
+    prRed("not found: %s, replaced by index.html" % fnm1)
+    return fnm1
+
+def check_all_htmls( htmls_list ):
+
+     for e in htmls_list:
+
+         with open(e,) as f:
+            html = f.read().decode('utf-8')
+
+         soup = bs.BeautifulSoup(html, "lxml")
+        
+         for link in soup.find_all('a', href=True):
+               href= (link['href'])
+               if '.html' in href:
+                   found_file=  check_in_cur_dir (  href )
+                   found_file in htmls_list or htmls_list.append( found_file )               
+
+# --------------------------------------------------------------------------------------------
 
 fld_double = "   Field( 'FLD', 'double',  label= 'LABEL', default= 0.0 ), "
 fld_integer = "   Field( 'FLD', 'integer', label= 'LABEL', default= 0 ), "
@@ -533,7 +581,7 @@ class FileOper:
 
     @staticmethod
     def recursive_overwrite(src, dest, ignore=None):
-        print ('  copy, pls wait ...', end='\r')
+        print ('  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -1005,8 +1053,8 @@ class StrDb:
     base64_ico = ""
     w2playout = '../../views/w2playout.html'
     req_headers = {
-        'User-Agent': 'My User Agent 1.0',
-        'From': 'youremail@domain.com'}
+        'User-Agent': 'Mytest facew2p Agent 1.0',
+        'From': 'ab96343@gmail.com'}
 
     HOME = None
     app_nm = None
@@ -1059,6 +1107,12 @@ class StrDb:
 
 # ------------------------------------------------------------------------------------
 
+def convert_file_name( file_name_html, rep_sym= 'II'):
+
+            ctrlnm = re.sub('[^0-9a-zA-Z]+',  rep_sym , file_name_html.split('.')[0]   )
+            if ctrlnm[0].isdigit():
+                ctrlnm = 'X' + ctrlnm
+            return ctrlnm
 
 class CheckEnv (StrDb):
     def __init__(Z, backup_app=False, unzip_restart=True):
@@ -1122,26 +1176,18 @@ class CheckEnv (StrDb):
             if oct(os.stat(fnm).st_mode & 0o777) != 0o664:
                 os.chmod(fnm, 0o664)
 
-            ctrlnm = f0 = fnm.split('.')[0]
-            ctrlnm = re.sub('[^0-9a-zA-Z]+', 'II', ctrlnm)
-            #if '-' in ctrlnm:
-            #    ctrlnm = ctrlnm.replace('-', '_')
-            #if '[' in ctrlnm:
-            #    ctrlnm = ctrlnm.replace('[', '0')
-            #if ']' in ctrlnm:
-            #    ctrlnm = ctrlnm.replace(']', '0')
-            if ctrlnm[0].isdigit():
-                ctrlnm = 'X' + ctrlnm
+            f0 = fnm.split('.')[0]
 
-            Z.db_fnm2ctrl[f0] = ctrlnm
-        #Z.db_ctrl2fnm = {value: key for (key, value) in Z.db_fnm2ctrl.items()}
-        #Z.db_fnm2dbname= {  k :  'd' + v.replace('_','0').replace('-','0') for (k,v) in Z.db_fnm2ctrl.items() }
+            Z.db_fnm2ctrl[f0] = convert_file_name( fnm)
 
     def get_from_db_fnm2ctrl(Z, fnm0):
+        fnm0= fnm0.split('/')[-1]
+        #print("--------------", fnm0)
         try:
             fnm0 = fnm0.strip()
             return Z.db_fnm2ctrl[fnm0]
         except Exception as e:
+            print ('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   except ctrl name ', fnm0)
             x_ctrl = fnm0.split('/')
             for i, e in enumerate(x_ctrl):
                 x_nm = "/".join(x_ctrl[i:])
@@ -1183,7 +1229,7 @@ class CheckEnv (StrDb):
             for root, dirs, names in os.walk(path):
                 if filename in names:
                     isitpath = os.path.join(root, filename).lower()
-                    prRed(
+                    prYellow(
                         "found index.html! is it template index ?: %s " %
                         os.path.join(
                             root, filename))
@@ -1194,6 +1240,7 @@ class CheckEnv (StrDb):
                     # return os.path.join(root, filename)
             #raise 'File not found'
             return None
+            prRed("------------")
             sys.exit('{} not found!'.format(filename))
 
         Z.ind = os.path.join(os.getcwd(), Z.main_index)
@@ -1217,7 +1264,9 @@ class CheckEnv (StrDb):
             if srcdir is not None:
                 #print ('copy ... pls, wait')
                 FileOper.recursive_overwrite(srcdir, dstdir)
-                # sys.exit("stop")
+                html_file_list= ['index.html']
+                check_all_htmls( html_file_list )
+                #sys.exit("stop")
 
         if not os.path.isfile(Z.main_index):
             cntsubdir = len(
@@ -1232,7 +1281,7 @@ class CheckEnv (StrDb):
                         zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
                         zip_ref.extractall('./')
                         zip_ref.close()
-                        prRed('=== unzipped file, is index.html in it ? ===')
+                        prYellow('=== unzipped file, is index.html in it ? ===')
                         # if Z.unzip_restart:
                         #      prRed('unzip and restart')
                         #      os.system (os.path.basename(__file__) )
@@ -1241,7 +1290,8 @@ class CheckEnv (StrDb):
                         sys.exit(
                             'run {} again for search index.html'.format(
                                 os.path.basename(__file__)))
-
+                     
+            print ( os.listdir(os.listdir(path=".") ) )
             sys.exit("not found: %s" % (Z.main_index))
 
     def check_env_save_orig(Z, ):
@@ -2694,8 +2744,11 @@ class HtmlView(CheckEnv):
         r_u0 = r_h2
 
         def check_add_img(ma2):
-            if any([ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(
-                    ".jpeg"), ma2.endswith(".gif"), ma2.endswith(".svg")]):
+            ma2end= ma2.split('.')[-1].lower()
+            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg']
+            #if any([ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(
+            #        ".jpeg"), ma2.endswith(".gif"), ma2.endswith(".svg")]):
+            if ma2end in ima_end:
 
                 pat_l = ma2.split('/')
                 x_nm = ""
@@ -2915,7 +2968,7 @@ class HtmlView(CheckEnv):
 
         lines = replace_in_list(
             FileOper.file2list(html_fnm), {
-                "'": '"', "http://": "https://", r'\r': ''})
+                "'": '"', "http://": "https://", r'\r': '',  '../':''})
   
         for e in lines:
              if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
@@ -3002,6 +3055,8 @@ class HtmlView(CheckEnv):
         return
 
     def run_list(Z):
+
+
         [Z.run(fnm, dbg=False) for fnm in glob.glob("*.html")]
         pprint.pprint(Z.pat_cnt, )  # width =1)
         prYellow("replaced: %s" % sum([int(v) for v in Z.pat_cnt.values()]))
@@ -3735,7 +3790,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
@@ -3743,8 +3798,8 @@ if __name__ == "__main__":
         cre_lock=False)
     print ("uniq_key_4_unk: %s" % str(next(int_uniq_key4unk)))
 
-    prGreen("= the web2py app     %s     was generated by %s =" %
-            (a.app_nm, os.path.basename(__file__)))
+    prGreen("= the web2py app     %s     was generated by %s vers= %s =" %
+            (a.app_nm, os.path.basename(__file__), __version__))
     if plus_labels:
         print (
             "disable num-labels: ",
@@ -3759,5 +3814,4 @@ if __name__ == "__main__":
 
     check_model(dbg=False)
     # --------------------------------------------
-    end = time.time()
-    print("execution time: %.0f sec" % (end - start))
+    print("execution time: %.0f sec" % (time.time() - start))
