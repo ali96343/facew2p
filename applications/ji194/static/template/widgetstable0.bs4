@@ -1,0 +1,6 @@
+      db.DBTBL.insert( f0= '00 widgetstable0', f1= '0w2p1 unk_2', f2= '0w2p2 unk_3', f3= '0w2p3 unk_4', f4= '0w2p4 @', f5= '0w2p5 Email', f6= '0w2p6 unk_5', f7= '0w2p7 Status', )
+      db.DBTBL.insert( f0= 'Alex', f1= 'alex@email.com', f2= 'Pending', )
+      db.DBTBL.insert( f0= 'Fred', f1= 'fred@email.com', f2= 'Approved', )
+      db.DBTBL.insert( f0= 'Jack', f1= 'jack@email.com', f2= 'Pending', )
+      db.DBTBL.insert( f0= 'John', f1= 'john@email.com', f2= 'Blocked', )
+      db.DBTBL.insert( f0= 'James', f1= 'james@email.com', f2= 'Online', )

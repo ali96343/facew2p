@@ -1,0 +1,21 @@
+- - input
+  - class: form-control
+    id: id_for196
+    placeholder: Email
+    type: email
+  - class: ''
+    for: id_for196
+    text: label197
+  - null
+  - null
+- - button
+  - class: width-35 pull-right btn btn-sm btn-danger
+    id: id_for198
+    placeholder: place_202
+    type: submit
+    value: Send Me!
+  - class: 'block clearfix '
+    for: id_for198
+    text: unk_200
+  - null
+  - null

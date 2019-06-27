@@ -1,0 +1,952 @@
+- - input
+  - class: col-xs-10 col-sm-5
+    id: form-field-1
+    placeholder: Username
+    type: text
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-1
+    text: Text Field
+  - null
+  - null
+- - input
+  - class: form-control
+    id: form-field-1-1
+    placeholder: Text Field
+    type: text
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-1-1
+    text: Full Length
+  - null
+  - null
+- - input
+  - class: col-xs-10 col-sm-5
+    id: form-field-2
+    placeholder: Password
+    type: password
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-2
+    text: Password Field
+  - null
+  - null
+- - input
+  - class: col-xs-10 col-sm-5
+    id: form-input-readonly
+    placeholder: place_240
+    type: text
+    value: This text field is readonly!
+  - class: 'middle '
+    for: form-input-readonly
+    text: Disable it!
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id-disable-check
+    placeholder: place_244
+    type: checkbox
+  - class: 'middle '
+    for: id-disable-check
+    text: Disable it!
+  - null
+  - null
+- - input
+  - class: input-sm
+    id: form-field-4
+    placeholder: .input-sm
+    type: text
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-4
+    text: Relative Sizing
+  - null
+  - null
+- - input
+  - class: col-xs-1
+    id: form-field-5
+    placeholder: .col-xs-1
+    type: text
+  - class: ''
+    for: form-field-5
+    text: label248
+  - null
+  - null
+- - input
+  - id: form-field-icon-1
+    placeholder: place_251
+    type: text
+  - class: ''
+    for: form-field-icon-1
+    text: label250
+  - null
+  - null
+- - input
+  - id: form-field-icon-2
+    placeholder: place_254
+    type: text
+  - class: ''
+    for: form-field-icon-2
+    text: label253
+  - null
+  - null
+- - input
+  - id: form-field-6
+    placeholder: Tooltip on hover
+    type: text
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-6
+    text: Tooltip and help button
+  - null
+  - null
+- - input
+  - id: form-field-tags
+    placeholder: Enter tags ...
+    type: text
+    value: Tag Input Control
+  - class: ''
+    for: form-field-tags
+    text: label258
+  - null
+  - null
+- - input
+  - class: form-control input-mask-date
+    id: form-field-mask-1
+    placeholder: place_261
+    type: text
+  - class: ''
+    for: form-field-mask-1
+    text: Date 99/99/9999
+  - null
+  - null
+- - input
+  - class: form-control input-mask-phone
+    id: form-field-mask-2
+    placeholder: place_264
+    type: text
+  - class: ''
+    for: form-field-mask-2
+    text: Phone (999) 999-9999
+  - null
+  - null
+- - input
+  - class: form-control input-mask-product
+    id: form-field-mask-3
+    placeholder: place_267
+    type: text
+  - class: ''
+    for: form-field-mask-3
+    text: Product Key a*-999-a999
+  - null
+  - null
+- - input
+  - class: input-medium input-mask-eyescript
+    id: form-field-mask-4
+    placeholder: place_270
+    type: text
+  - class: ''
+    for: form-field-mask-4
+    text: Eye Script ~9.99 ~9.99 999
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for277
+    placeholder: place_280
+    type: checkbox
+  - class: ''
+    for: id_for277
+    text: choice 1
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for281
+    placeholder: place_284
+    type: checkbox
+  - class: ''
+    for: id_for281
+    text: choice 2
+  - null
+  - null
+- - checkbox
+  - class: ace ace-checkbox-2
+    id: id_for285
+    placeholder: place_288
+    type: checkbox
+  - class: ''
+    for: id_for285
+    text: choice 3
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for289
+    placeholder: place_292
+    type: checkbox
+  - class: 'block '
+    for: id_for289
+    text: disabled
+  - null
+  - null
+- - checkbox
+  - class: ace input-lg
+    id: id_for293
+    placeholder: place_296
+    type: checkbox
+  - class: 'block '
+    for: id_for293
+    text: large checkbox
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch
+    id: id_for312
+    placeholder: place_316
+    type: checkbox
+  - class: ''
+    for: id_for312
+    text: unk_314
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-2
+    id: id_for317
+    placeholder: place_321
+    type: checkbox
+  - class: ''
+    for: id_for317
+    text: unk_319
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-3
+    id: id_for322
+    placeholder: place_326
+    type: checkbox
+  - class: ''
+    for: id_for322
+    text: unk_324
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch
+    id: id_for327
+    placeholder: place_331
+    type: checkbox
+  - class: ''
+    for: id_for327
+    text: unk_329
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-4
+    id: id_for332
+    placeholder: place_336
+    type: checkbox
+  - class: ''
+    for: id_for332
+    text: unk_334
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-5
+    id: id_for337
+    placeholder: place_341
+    type: checkbox
+  - class: ''
+    for: id_for337
+    text: unk_339
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-6
+    id: id_for342
+    placeholder: place_346
+    type: checkbox
+  - class: ''
+    for: id_for342
+    text: unk_344
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-7
+    id: id_for347
+    placeholder: place_351
+    type: checkbox
+  - class: ''
+    for: id_for347
+    text: unk_349
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch btn-rotate
+    id: id_for352
+    placeholder: place_356
+    type: checkbox
+  - class: ''
+    for: id_for352
+    text: unk_354
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-4 btn-rotate
+    id: id_for357
+    placeholder: place_361
+    type: checkbox
+  - class: ''
+    for: id_for357
+    text: unk_359
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-4 btn-empty
+    id: id_for362
+    placeholder: place_366
+    type: checkbox
+  - class: ''
+    for: id_for362
+    text: unk_364
+  - null
+  - null
+- - checkbox
+  - class: ace ace-switch ace-switch-4 btn-flat
+    id: id_for367
+    placeholder: place_371
+    type: checkbox
+  - class: ''
+    for: id_for367
+    text: unk_369
+  - null
+  - null
+- - input
+  - id: id-input-file-2
+    placeholder: place_374
+    type: file
+  - class: ''
+    for: id-input-file-2
+    text: label373
+  - null
+  - null
+- - input
+  - id: id-input-file-3
+    placeholder: place_377
+    type: file
+  - class: ''
+    for: id-input-file-3
+    text: label376
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id-file-format
+    placeholder: place_381
+    type: checkbox
+  - class: ''
+    for: id-file-format
+    text: Allow only images
+  - null
+  - null
+- - input
+  - id: spinner1
+    placeholder: place_384
+    type: text
+  - class: ''
+    for: spinner1
+    text: label383
+  - null
+  - null
+- - input
+  - class: input-sm
+    id: spinner2
+    placeholder: place_387
+    type: text
+  - class: ''
+    for: spinner2
+    text: label386
+  - null
+  - null
+- - input
+  - id: spinner3
+    placeholder: place_390
+    type: text
+  - class: ''
+    for: spinner3
+    text: label389
+  - null
+  - null
+- - input
+  - class: input-lg
+    id: spinner4
+    placeholder: place_393
+    type: text
+  - class: ''
+    for: spinner4
+    text: label392
+  - null
+  - null
+- - input
+  - class: form-control date-picker
+    id: id-date-picker-1
+    placeholder: place_396
+    type: text
+  - class: ''
+    for: id-date-picker-1
+    text: label395
+  - null
+  - null
+- - input
+  - class: input-sm form-control
+    id: id_for397
+    placeholder: place_399
+    type: text
+  - class: ''
+    for: id_for397
+    text: label398
+  - null
+  - null
+- - input
+  - class: input-sm form-control
+    id: id_for400
+    placeholder: place_402
+    type: text
+  - class: ''
+    for: id_for400
+    text: label401
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id-date-range-picker-1
+    placeholder: place_405
+    type: text
+  - class: ''
+    for: id-date-range-picker-1
+    text: label404
+  - null
+  - null
+- - input
+  - class: form-control
+    id: timepicker1
+    placeholder: place_408
+    type: text
+  - class: ''
+    for: timepicker1
+    text: Date Picker
+  - null
+  - null
+- - input
+  - class: form-control
+    id: date-timepicker1
+    placeholder: place_411
+    type: text
+  - class: ''
+    for: date-timepicker1
+    text: Date Picker
+  - null
+  - null
+- - input
+  - class: input-small
+    id: colorpicker1
+    placeholder: place_414
+    type: text
+  - class: ''
+    for: colorpicker1
+    text: label413
+  - null
+  - null
+- - input
+  - class: input-small knob
+    id: id_for415
+    placeholder: place_417
+    type: text
+    value: '15'
+  - class: ''
+    for: id_for415
+    text: label416
+  - null
+  - null
+- - input
+  - class: input-small knob
+    id: id_for418
+    placeholder: place_420
+    type: text
+    value: '41'
+  - class: ''
+    for: id_for418
+    text: label419
+  - null
+  - null
+- - input
+  - class: input-small knob
+    id: id_for421
+    placeholder: place_423
+    type: text
+    value: '1'
+  - class: ''
+    for: id_for421
+    text: label422
+  - null
+  - null
+- - textarea
+  - class: form-control
+    id: form-field-8
+    placeholder: Default Text
+  - class: ''
+    for: form-field-8
+    text: Default
+  - null
+  - null
+- - textarea
+  - class: form-control limited
+    id: form-field-9
+    placeholder: place_428
+  - class: ''
+    for: form-field-9
+    text: With Character Limit
+  - null
+  - null
+- - textarea
+  - class: autosize-transition form-control
+    id: form-field-11
+    placeholder: place_431
+  - class: ''
+    for: form-field-11
+    text: Autosize
+  - null
+  - null
+- - select
+  - class: form-control
+    id: form-field-select-1
+    placeholder: place_435
+  - class: ''
+    for: form-field-select-1
+    text: Default
+  - &id001
+    - unk_434
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id001
+  - null
+- - select
+  - class: form-control
+    id: form-field-select-2
+    placeholder: place_438
+  - class: ''
+    for: form-field-select-2
+    text: Multiple
+  - &id002
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id002
+  - null
+- - select
+  - class: chosen-select form-control
+    id: form-field-select-3
+    placeholder: place_442
+  - class: ''
+    for: form-field-select-3
+    text: Chosen
+  - &id003
+    - unk_441
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id003
+  - null
+- - select
+  - class: chosen-select form-control
+    id: form-field-select-4
+    placeholder: place_446
+  - class: 'btn btn-xs btn-yellow active '
+    for: form-field-select-4
+    text: '1'
+  - &id004
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id004
+  - null
+- - select
+  - class: hide
+    id: simple-colorpicker-1
+    placeholder: place_449
+  - class: ''
+    for: simple-colorpicker-1
+    text: Custom Color Picker
+  - &id005
+    - '#ac725e'
+    - '#d06b64'
+    - '#f83a22'
+    - '#fa573c'
+    - '#ff7537'
+    - '#ffad46'
+    - '#42d692'
+    - '#16a765'
+    - '#7bd148'
+    - '#b3dc6c'
+    - '#fbe983'
+    - '#fad165'
+    - '#92e1c0'
+    - '#9fe1e7'
+    - '#9fc6e7'
+    - '#4986e7'
+    - '#9a9cff'
+    - '#b99aff'
+    - '#c2c2c2'
+    - '#cabdbf'
+    - '#cca6ac'
+    - '#f691b2'
+    - '#cd74e6'
+    - '#a47ae2'
+    - '#555'
+    - *id005
+  - null
+- - button
+  - class: btn btn-info
+    id: id_for450
+    placeholder: place_452
+    type: submit
+    value: Submit
+  - class: ''
+    for: id_for450
+    text: label451
+  - null
+  - null
+- - button
+  - class: btn
+    id: id_for453
+    placeholder: place_455
+    type: submit
+    value: Reset
+  - class: ''
+    for: id_for453
+    text: label454
+  - null
+  - null
+- - button
+  - class: btn btn-sm btn-default
+    id: id_for456
+    placeholder: place_458
+    type: submit
+    value: Go!
+  - class: ''
+    for: id_for456
+    text: label457
+  - null
+  - null
+- - button
+  - id: id_for459
+    placeholder: place_461
+  - class: ''
+    for: id_for459
+    text: label460
+  - null
+  - null
+- - button
+  - id: id_for462
+    placeholder: place_464
+  - class: ''
+    for: id_for462
+    text: label463
+  - null
+  - null
+- - button
+  - id: id_for465
+    placeholder: place_467
+  - class: ''
+    for: id_for465
+    text: label466
+  - null
+  - null
+- - button
+  - id: id_for468
+    placeholder: place_470
+  - class: ''
+    for: id_for468
+    text: label469
+  - null
+  - null
+- - button
+  - id: id_for471
+    placeholder: place_473
+  - class: ''
+    for: id_for471
+    text: label472
+  - null
+  - null
+- - button
+  - id: id_for474
+    placeholder: place_476
+  - class: ''
+    for: id_for474
+    text: label475
+  - null
+  - null
+- - button
+  - id: id_for477
+    placeholder: place_479
+  - class: ''
+    for: id_for477
+    text: label478
+  - null
+  - null
+- - button
+  - id: id_for480
+    placeholder: place_482
+  - class: ''
+    for: id_for480
+    text: label481
+  - null
+  - null
+- - button
+  - id: id_for483
+    placeholder: place_485
+  - class: ''
+    for: id_for483
+    text: label484
+  - null
+  - null
+- - button
+  - id: id_for486
+    placeholder: place_488
+  - class: ''
+    for: id_for486
+    text: label487
+  - null
+  - null
+- - button
+  - id: id_for489
+    placeholder: place_491
+  - class: ''
+    for: id_for489
+    text: label490
+  - null
+  - null
+- - button
+  - id: id_for492
+    placeholder: place_494
+  - class: ''
+    for: id_for492
+    text: label493
+  - null
+  - null
+- - button
+  - id: id_for495
+    placeholder: place_497
+  - class: ''
+    for: id_for495
+    text: label496
+  - null
+  - null
+- - button
+  - id: id_for498
+    placeholder: place_500
+  - class: ''
+    for: id_for498
+    text: label499
+  - null
+  - null
+- - button
+  - id: id_for501
+    placeholder: place_503
+  - class: ''
+    for: id_for501
+    text: label502
+  - null
+  - null
+- - button
+  - id: id_for504
+    placeholder: place_506
+  - class: ''
+    for: id_for504
+    text: label505
+  - null
+  - null

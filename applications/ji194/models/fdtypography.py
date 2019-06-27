@@ -1,0 +1,76 @@
+#
+# table for controller: typography
+#
+
+from gluon.contrib.populate import populate
+
+db.define_table('dtypography', 
+     Field('f0', label='key',  writable = True , length= 1000),
+     Field('f1', 'text',  label='data string', length= 1000),
+     Field('f2', 'text', label='save data string', length= 1000, default='' ),
+     )
+#
+
+if not db(db.dtypography.id ).count():
+    db.dtypography.insert( f0= 'sx1058', f1= '(1058)Toggle sidebar')
+    db.dtypography.insert( f0= 'sx1060', f1= '(1060)Software Update')
+    db.dtypography.insert( f0= 'sx1061', f1= '(1061)65%')
+    db.dtypography.insert( f0= 'sx1062', f1= '(1062)Hardware Upgrade')
+    db.dtypography.insert( f0= 'sx1063', f1= '(1063)35%')
+    db.dtypography.insert( f0= 'sx1064', f1= '(1064)Unit Testing')
+    db.dtypography.insert( f0= 'sx1065', f1= '(1065)15%')
+    db.dtypography.insert( f0= 'sx1066', f1= '(1066)Bug Fixes')
+    db.dtypography.insert( f0= 'sx1067', f1= '(1067)90%')
+    db.dtypography.insert( f0= 'sx1068', f1= '(1068)+12')
+    db.dtypography.insert( f0= 'sx1069', f1= '(1069)+8')
+    db.dtypography.insert( f0= 'sx1070', f1= '(1070)+11')
+    db.dtypography.insert( f0= 'sx1072', f1= '(1072)Alex:')
+    db.dtypography.insert( f0= 'sp1073', f1= '(1073)a moment ago')
+    db.dtypography.insert( f0= 'sx1075', f1= '(1075)Susan:')
+    db.dtypography.insert( f0= 'sp1076', f1= '(1076)20 minutes ago')
+    db.dtypography.insert( f0= 'sx1078', f1= '(1078)Bob:')
+    db.dtypography.insert( f0= 'sp1079', f1= '(1079)3:15 pm')
+    db.dtypography.insert( f0= 'sx1081', f1= '(1081)Kate:')
+    db.dtypography.insert( f0= 'sp1082', f1= '(1082)1:33 pm')
+    db.dtypography.insert( f0= 'sx1084', f1= '(1084)Fred:')
+    db.dtypography.insert( f0= 'sp1085', f1= '(1085)10:09 am')
+    db.dtypography.insert( f0= 'ic1088', f1= '(1088)Welcome,')
+    db.dtypography.insert( f0= 'sx1091', f1= '(1091)Dashboard')
+    db.dtypography.insert( f0= 'sx1105', f1= '(1105)Tables')
+    db.dtypography.insert( f0= 'sx1108', f1= '(1108)Forms')
+    db.dtypography.insert( f0= 'sx1115', f1= '(1115)Widgets')
+    db.dtypography.insert( f0= 'sx1118', f1= '(1118)Gallery')
+    db.dtypography.insert( f0= 'sx1119', f1= '(1119)More Pages')
+    db.dtypography.insert( f0= 'aa1133', f1= '(1133)Home')
+    db.dtypography.insert( f0= 'lb1134', f1= '(1134)Typography')
+    db.dtypography.insert( f0= 'pb1135', f1= '(1135)Search ...')
+    db.dtypography.insert( f0= 'bb1136', f1= '(1136).container')
+    db.dtypography.insert( f0= 'hh1137', f1= '(1137)Headings & Paragraphs')
+    db.dtypography.insert( f0= 'hh1138', f1= '(1138)h1. Heading 1')
+    db.dtypography.insert( f0= 'hh1139', f1= '(1139)h2. Heading 2')
+    db.dtypography.insert( f0= 'hh1140', f1= '(1140)h3. Heading 3')
+    db.dtypography.insert( f0= 'hh1141', f1= '(1141)h4. Heading 4')
+    db.dtypography.insert( f0= 'hh1142', f1= '(1142)h5. Heading 5')
+    db.dtypography.insert( f0= 'hh1143', f1= '(1143)h6. Heading 6')
+    db.dtypography.insert( f0= 'hd1144', f1= '(1144)Lists')
+    db.dtypography.insert( f0= 'la1145', f1= '(1145)Unordered List Item')
+    db.dtypography.insert( f0= 'ic1146', f1= '(1146)List Item in small tag')
+    db.dtypography.insert( f0= 'bb1147', f1= '(1147)List Item in bold tag')
+    db.dtypography.insert( f0= 'ii1148', f1= '(1148)List Item in italics tag')
+    db.dtypography.insert( f0= 'la1149', f1= '(1149)Unordered List Item which is a longer item and may break into more lines.')
+    db.dtypography.insert( f0= 'sp1150', f1= '(1150)List Item in strong tag')
+    db.dtypography.insert( f0= 'la1151', f1= '(1151)Ordered List Item')
+    db.dtypography.insert( f0= 'lb1152', f1= '(1152).text-primary Ordered List Item')
+    db.dtypography.insert( f0= 'lb1153', f1= '(1153).text-danger Ordered List Item')
+    db.dtypography.insert( f0= 'bb1154', f1= '(1154).text-success')
+    db.dtypography.insert( f0= 'lb1155', f1= '(1155).text-warning Ordered List Item')
+    db.dtypography.insert( f0= 'lb1156', f1= '(1156).text-muted Ordered List Item')
+    db.dtypography.insert( f0= 'pa1157', f1= '(1157)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.')
+    db.dtypography.insert( f0= 'sp1158', f1= '(1158)Twitter, Inc.')
+    db.dtypography.insert( f0= 'sp1159', f1= '(1159)Full Name')
+    db.dtypography.insert( f0= 'aa1160', f1= '(1160)first.last@example.com')
+    db.dtypography.insert( f0= 'hd1161', f1= '(1161)Definition List')
+    db.dtypography.insert( f0= 'bb1162', f1= '(1162)Horizontal')
+    db.dtypography.insert( f0= 'sx1163', f1= '(1163)Ace')
+    db.commit()
+#

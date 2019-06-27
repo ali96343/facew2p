@@ -1,0 +1,30 @@
+- - input
+  - id: id_for507
+    placeholder: Type something
+    type: text
+  - class: ''
+    for: id_for507
+    text: Label name
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for510
+    placeholder: place_513
+    type: checkbox
+  - class: ''
+    for: id_for510
+    text: Label name
+  - null
+  - null
+- - button
+  - class: btn btn-sm btn-success
+    id: id_for514
+    placeholder: place_517
+    type: submit
+    value: Submit
+  - class: ''
+    for: id_for514
+    text: Label name
+  - null
+  - null

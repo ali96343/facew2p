@@ -1,0 +1,80 @@
+- - input
+  - class: form-control
+    id: id_for203
+    placeholder: Email
+    type: email
+  - class: ''
+    for: id_for203
+    text: label204
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for205
+    placeholder: Username
+    type: text
+  - class: ''
+    for: id_for205
+    text: label206
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for207
+    placeholder: Password
+    type: password
+  - class: ''
+    for: id_for207
+    text: label208
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for209
+    placeholder: Repeat password
+    type: password
+  - class: ''
+    for: id_for209
+    text: label210
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for211
+    placeholder: place_215
+    type: checkbox
+  - class: 'block clearfix '
+    for: id_for211
+    text: unk_213
+  - null
+  - null
+- - button
+  - class: width-30 pull-left btn btn-sm
+    id: id_for216
+    placeholder: place_220
+    type: submit
+    value: Reset
+  - class: 'block clearfix '
+    for: id_for216
+    text: unk_218
+  - null
+  - null
+- - button
+  - class: width-65 pull-right btn btn-sm btn-success
+    id: id_for221
+    placeholder: place_225
+    type: submit
+    value: Register
+  - class: 'block clearfix '
+    for: id_for221
+    text: unk_223
+  - null
+  - null
+- - button
+  - id: id_for226
+    placeholder: place_228
+  - class: ''
+    for: id_for226
+    text: label227
+  - null
+  - null

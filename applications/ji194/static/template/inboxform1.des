@@ -1,0 +1,21 @@
+- - input
+  - class: input-small nav-search-input
+    id: id_for655
+    placeholder: Search inbox ...
+    type: text
+  - class: ''
+    for: id_for655
+    text: label656
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: Search inbox ...
+    type: submit
+    value: submit input
+  - class: ''
+    for: id_for655
+    text: label656
+  - null
+  - null

@@ -1,0 +1,22 @@
+- - input
+  - class: form-control
+    id: id_for563
+    placeholder: place_565
+    type: text
+    value: Hello World
+  - class: ''
+    for: id_for563
+    text: label564
+  - null
+  - null
+- - button
+  - class: btn btn-primary btn-sm
+    id: id_for566
+    placeholder: place_569
+    type: submit
+    value: unk_568
+  - class: ''
+    for: id_for566
+    text: label567
+  - null
+  - null

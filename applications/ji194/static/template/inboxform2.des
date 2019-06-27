@@ -1,0 +1,40 @@
+- - input
+  - id: form-field-recipient
+    placeholder: Recipient(s)
+    type: email
+    value: alex@doe.com
+  - class: ''
+    for: form-field-recipient
+    text: label658
+  - null
+  - null
+- - input
+  - class: col-xs-12
+    id: form-field-subject
+    placeholder: Subject
+    type: text
+  - class: ''
+    for: form-field-subject
+    text: label660
+  - null
+  - null
+- - input
+  - id: id_for661
+    placeholder: place_663
+    type: file
+  - class: ''
+    for: id_for661
+    text: label662
+  - null
+  - null
+- - button
+  - class: btn btn-sm btn-danger
+    id: id-add-attachment
+    placeholder: place_666
+    type: submit
+    value: Add Attachment
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: id-add-attachment
+    text: 'Recipient:'
+  - null
+  - null

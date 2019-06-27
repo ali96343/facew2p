@@ -1,0 +1,6 @@
+      db.DBTBL.insert( f0= '00 indextable0', f1= '0w2p1 unk_77', f2= '0w2p2 unk_78', f3= '0w2p3 unk_79', f4= '0w2p4 price', f5= '0w2p5 unk_80', f6= '0w2p6 unk_81', f7= '0w2p7 unk_82', f8= '0w2p8 status', )
+      db.DBTBL.insert( f0= 'internet.com', f1= '$29.99 $19.99', f2= 'on sale', )
+      db.DBTBL.insert( f0= 'online.com', f1= '$16.45', f2= 'approved', )
+      db.DBTBL.insert( f0= 'newnet.com', f1= '$15.00', f2= 'pending', )
+      db.DBTBL.insert( f0= 'web.com', f1= '$24.99 $19.95', f2= 'out of stock', )
+      db.DBTBL.insert( f0= 'domain.com', f1= '$12.00', f2= 'SOLD', )

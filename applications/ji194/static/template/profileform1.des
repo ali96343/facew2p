@@ -1,0 +1,224 @@
+- - input
+  - id: id_for669
+    placeholder: place_671
+    type: file
+  - class: 'col-sm-4 control-label no-padding-right '
+    for: id_for669
+    text: Username
+  - null
+  - null
+- - input
+  - class: col-xs-12 col-sm-10
+    id: form-field-username
+    placeholder: Username
+    type: text
+    value: alexdoe
+  - class: 'col-sm-4 control-label no-padding-right '
+    for: form-field-username
+    text: Username
+  - null
+  - null
+- - input
+  - class: input-small
+    id: form-field-first
+    placeholder: First Name
+    type: text
+    value: Alex
+  - class: 'col-sm-4 control-label no-padding-right '
+    for: form-field-first
+    text: Name
+  - null
+  - null
+- - input
+  - class: input-small
+    id: form-field-last
+    placeholder: Last Name
+    type: text
+    value: Doe
+  - class: 'col-sm-4 control-label no-padding-right '
+    for: form-field-last
+    text: Name
+  - null
+  - null
+- - input
+  - class: input-medium date-picker
+    id: form-field-date
+    placeholder: dd-mm-yyyy
+    type: text
+  - class: ''
+    for: form-field-date
+    text: label679
+  - null
+  - null
+- - input
+  - id: form-field-email
+    placeholder: place_688
+    type: email
+    value: alexdoe@gmail.com
+  - class: ''
+    for: form-field-email
+    text: label687
+  - null
+  - null
+- - input
+  - id: form-field-website
+    placeholder: place_691
+    type: url
+    value: http://www.alexdoe.com/
+  - class: ''
+    for: form-field-website
+    text: label690
+  - null
+  - null
+- - input
+  - class: input-medium input-mask-phone
+    id: form-field-phone
+    placeholder: place_694
+    type: text
+  - class: ''
+    for: form-field-phone
+    text: label693
+  - null
+  - null
+- - input
+  - id: form-field-facebook
+    placeholder: place_697
+    type: text
+    value: facebook_alexdoe
+  - class: ''
+    for: form-field-facebook
+    text: label696
+  - null
+  - null
+- - input
+  - id: form-field-twitter
+    placeholder: place_700
+    type: text
+    value: twitter_alexdoe
+  - class: ''
+    for: form-field-twitter
+    text: label699
+  - null
+  - null
+- - input
+  - id: form-field-gplus
+    placeholder: place_703
+    type: text
+    value: google_alexdoe
+  - class: ''
+    for: form-field-gplus
+    text: label702
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for704
+    placeholder: place_707
+    type: checkbox
+  - class: 'inline '
+    for: id_for704
+    text: Make my profile public
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for708
+    placeholder: place_711
+    type: checkbox
+  - class: 'inline '
+    for: id_for708
+    text: Email me new updates
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for712
+    placeholder: place_715
+    type: checkbox
+  - class: ''
+    for: id_for712
+    text: Keep a history of my conversations
+  - null
+  - null
+- - input
+  - class: input-mini
+    id: id_for716
+    placeholder: place_719
+    type: text
+  - class: ''
+    for: id_for716
+    text: Keep a history of my conversations
+  - null
+  - null
+- - input
+  - id: form-field-pass1
+    placeholder: place_722
+    type: password
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-pass1
+    text: New Password
+  - null
+  - null
+- - input
+  - id: form-field-pass2
+    placeholder: place_725
+    type: password
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-pass2
+    text: Confirm Password
+  - null
+  - null
+- - textarea
+  - id: form-field-comment
+    placeholder: place_728
+  - class: 'col-sm-3 control-label no-padding-right '
+    for: form-field-comment
+    text: Comment
+  - null
+  - null
+- - button
+  - class: btn btn-info
+    id: id_for729
+    placeholder: place_731
+    type: submit
+    value: Save
+  - class: ''
+    for: id_for729
+    text: label730
+  - null
+  - null
+- - button
+  - class: btn
+    id: id_for732
+    placeholder: place_734
+    type: submit
+    value: Reset
+  - class: ''
+    for: id_for732
+    text: label733
+  - null
+  - null
+- - button
+  - id: id_for735
+    placeholder: place_737
+  - class: ''
+    for: id_for735
+    text: label736
+  - null
+  - null
+- - button
+  - id: id_for738
+    placeholder: place_740
+  - class: ''
+    for: id_for738
+    text: label739
+  - null
+  - null
+- - button
+  - id: id_for741
+    placeholder: place_743
+  - class: ''
+    for: id_for741
+    text: label742
+  - null
+  - null

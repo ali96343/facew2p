@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 invoicetable0', f1= '0w2p1 Product', f2= '0w2p2 Description', f3= '0w2p3 Discount', f4= '0w2p4 Total', )
+      db.DBTBL.insert( f0= '1', f1= 'google.com', f2= '1 year domain registration', f3= '---', f4= '$10', )
+      db.DBTBL.insert( f0= '2', f1= 'yahoo.com', f2= '5 year domain registration', f3= '5%', f4= '$45', )
+      db.DBTBL.insert( f0= '3', f1= 'Hosting', f2= '1 year basic hosting', f3= '10%', f4= '$90', )
+      db.DBTBL.insert( f0= '4', f1= 'Design', f2= 'Theme customization', f3= '50%', f4= '$250', )

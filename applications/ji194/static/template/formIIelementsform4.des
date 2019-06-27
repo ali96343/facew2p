@@ -1,0 +1,63 @@
+- - input
+  - class: form-control search-query
+    id: id_for532
+    placeholder: Type your query
+    type: text
+  - class: ''
+    for: id_for532
+    text: label533
+  - null
+  - null
+- - input
+  - class: form-control search-query
+    id: id_for534
+    placeholder: Type your query
+    type: text
+  - class: ''
+    for: id_for534
+    text: label535
+  - null
+  - null
+- - input
+  - class: form-control search-query
+    id: id_for536
+    placeholder: Type your query
+    type: text
+  - class: ''
+    for: id_for536
+    text: label537
+  - null
+  - null
+- - button
+  - class: btn btn-purple btn-sm
+    id: id_for538
+    placeholder: place_540
+    type: submit
+    value: Search
+  - class: ''
+    for: id_for538
+    text: label539
+  - null
+  - null
+- - button
+  - class: btn btn-default btn-lg
+    id: id_for541
+    placeholder: place_543
+    type: submit
+    value: Search
+  - class: ''
+    for: id_for541
+    text: label542
+  - null
+  - null
+- - button
+  - class: btn btn-inverse btn-white
+    id: id_for544
+    placeholder: place_546
+    type: submit
+    value: Search
+  - class: ''
+    for: id_for544
+    text: label545
+  - null
+  - null

@@ -1,0 +1,21 @@
+- - input
+  - class: form-control
+    id: id_for785
+    placeholder: Type your message here ...
+    type: text
+  - class: ''
+    for: id_for785
+    text: label786
+  - null
+  - null
+- - button
+  - class: btn btn-sm btn-info no-radius
+    id: id_for787
+    placeholder: place_789
+    type: submit
+    value: Send
+  - class: ''
+    for: id_for787
+    text: label788
+  - null
+  - null

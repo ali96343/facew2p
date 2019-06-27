@@ -1,0 +1,16 @@
+- - User
+  - string
+- - unk_2
+  - string
+- - unk_3
+  - string
+- - unk_4
+  - string
+- - '@'
+  - string
+- - Email
+  - string
+- - unk_5
+  - string
+- - Status
+  - string

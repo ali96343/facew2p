@@ -1,0 +1,61 @@
+- - input
+  - class: width-100
+    id: inputWarning
+    placeholder: place_588
+    type: text
+  - class: ''
+    for: inputWarning
+    text: label587
+  - null
+  - null
+- - input
+  - class: width-100
+    id: inputError
+    placeholder: place_591
+    type: text
+  - class: ''
+    for: inputError
+    text: label590
+  - null
+  - null
+- - input
+  - class: width-100
+    id: inputSuccess
+    placeholder: place_594
+    type: text
+  - class: ''
+    for: inputSuccess
+    text: label593
+  - null
+  - null
+- - input
+  - class: width-100
+    id: inputInfo
+    placeholder: place_597
+    type: text
+  - class: ''
+    for: inputInfo
+    text: label596
+  - null
+  - null
+- - input
+  - class: width-100
+    id: inputError2
+    placeholder: place_600
+    type: text
+  - class: ''
+    for: inputError2
+    text: label599
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_588
+    type: submit
+    value: submit input
+  - class: ''
+    for: inputWarning
+    text: label587
+  - null
+  - null

@@ -1,0 +1,14 @@
+- - Domain
+  - string
+- - Price
+  - string
+- - Clicks
+  - string
+- - unk_74
+  - string
+- - unk_75
+  - string
+- - unk_76
+  - string
+- - Update
+  - string

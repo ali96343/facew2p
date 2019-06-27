@@ -1,0 +1,200 @@
+- - input
+  - class: col-xs-12 col-sm-6
+    id: email
+    placeholder: place_603
+    type: email
+  - class: ''
+    for: email
+    text: label602
+  - null
+  - null
+- - input
+  - class: col-xs-12 col-sm-4
+    id: password
+    placeholder: place_606
+    type: password
+  - class: ''
+    for: password
+    text: label605
+  - null
+  - null
+- - input
+  - class: col-xs-12 col-sm-4
+    id: password2
+    placeholder: place_609
+    type: password
+  - class: ''
+    for: password2
+    text: label608
+  - null
+  - null
+- - input
+  - class: col-xs-12 col-sm-5
+    id: name
+    placeholder: place_612
+    type: text
+  - class: ''
+    for: name
+    text: label611
+  - null
+  - null
+- - input
+  - id: phone
+    placeholder: place_615
+    type: tel
+  - class: ''
+    for: phone
+    text: label614
+  - null
+  - null
+- - input
+  - class: col-xs-12 col-sm-8
+    id: url
+    placeholder: place_618
+    type: url
+  - class: ''
+    for: url
+    text: label617
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for619
+    placeholder: place_622
+    type: checkbox
+    value: '1'
+  - class: ''
+    for: id_for619
+    text: Latest news and announcements
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for623
+    placeholder: place_626
+    type: checkbox
+    value: '2'
+  - class: ''
+    for: id_for623
+    text: Product offers and discounts
+  - null
+  - null
+- - radio
+  - class: ace
+    id: id_for630
+    type: radio
+    value: '2'
+  - class: 'line-height-1 blue '
+    for: id_for630
+    text: Female
+  - null
+  - gender:
+    - '1'
+    - '2'
+- - checkbox
+  - class: ace
+    id: agree
+    placeholder: place_636
+    type: checkbox
+  - class: ''
+    for: agree
+    text: I accept the policy
+  - null
+  - null
+- - textarea
+  - class: input-xlarge
+    id: comment
+    placeholder: place_639
+  - class: ''
+    for: comment
+    text: label638
+  - null
+  - null
+- - select
+  - class: select2
+    id: state
+    placeholder: place_643
+  - class: 'control-label col-xs-12 col-sm-3 no-padding-right '
+    for: state
+    text: State
+  - &id001
+    - unk_642
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id001
+  - null
+- - select
+  - class: input-medium
+    id: platform
+    placeholder: place_646
+  - class: ''
+    for: platform
+    text: label645
+  - &id002
+    - '------------------'
+    - Linux
+    - Windows
+    - Mac OS
+    - iOS
+    - Android
+    - *id002
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_603
+    type: submit
+    value: submit input
+  - class: ''
+    for: email
+    text: label602
+  - null
+  - null

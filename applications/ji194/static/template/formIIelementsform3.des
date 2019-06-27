@@ -1,0 +1,41 @@
+- - input
+  - class: input-small
+    id: id_for518
+    placeholder: Username
+    type: text
+  - class: 'inline '
+    for: id_for518
+    text: remember me
+  - null
+  - null
+- - input
+  - class: input-small
+    id: id_for521
+    placeholder: Password
+    type: password
+  - class: 'inline '
+    for: id_for521
+    text: remember me
+  - null
+  - null
+- - checkbox
+  - class: ace
+    id: id_for524
+    placeholder: place_527
+    type: checkbox
+  - class: 'inline '
+    for: id_for524
+    text: remember me
+  - null
+  - null
+- - button
+  - class: btn btn-info btn-sm
+    id: id_for528
+    placeholder: place_531
+    type: submit
+    value: Login
+  - class: 'inline '
+    for: id_for528
+    text: remember me
+  - null
+  - null

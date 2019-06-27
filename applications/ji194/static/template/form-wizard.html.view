@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>facew2p</title>
+
+
+		<meta name="description" content="and Validation" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/bootstrap.min.css')}}" />
+		<link rel="stylesheet" href="{{=URL('static','template/assets/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/select2.min.css')}}" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/fonts.googleapis.com.css')}}" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/ace.min.css')}}" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="{{=URL('static','template/assets/css/ace-part2.min.css')}}" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/ace-skins.min.css')}}" />
+		<link rel="stylesheet" href="{{=URL('static','template/assets/css/ace-rtl.min.css')}}" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="{{=URL('static','template/assets/css/ace-ie.min.css')}}" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="{{=URL('static','template/assets/js/ace-extra.min.js')}}"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="{{=URL('static','template/assets/js/html5shiv.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/respond.min.js')}}"></script>
+		<![endif]-->
+	
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">{{=DICT["sx1765"]}}</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="{{=URL(c='default',f='index')}}" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							Ace Admin
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="grey dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-check"></i>
+									4 Tasks to complete
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">{{=DICT["sx1767"]}}</span>
+													<span class="pull-right">{{=DICT["sx1768"]}}</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:65%" class="progress-bar"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">{{=DICT["sx1769"]}}</span>
+													<span class="pull-right">{{=DICT["sx1770"]}}</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">{{=DICT["sx1771"]}}</span>
+													<span class="pull-right">{{=DICT["sx1772"]}}</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">{{=DICT["sx1773"]}}</span>
+													<span class="pull-right">{{=DICT["sx1774"]}}</span>
+												</div>
+
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:90%" class="progress-bar progress-bar-success"></div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										See tasks with details
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									8 Notifications
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														New Comments
+													</span>
+													<span class="pull-right badge badge-info">{{=DICT["sx1775"]}}</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												Bob just signed up as an editor ...
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														New Orders
+													</span>
+													<span class="pull-right badge badge-success">{{=DICT["sx1776"]}}</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+														Followers
+													</span>
+													<span class="pull-right badge badge-info">{{=DICT["sx1777"]}}</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="green dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-envelope-o"></i>
+									5 Messages
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{{=URL('static','template/assets/images/avatars/avatar.png')}}" class="msg-photo" alt="Alex"s Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">{{=DICT["sx1779"]}}</span>
+														Ciao sociis natoque penatibus et auctor ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>{{=DICT["sp1780"]}}</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{{=URL('static','template/assets/images/avatars/avatar3.png')}}" class="msg-photo" alt="Susan"s Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">{{=DICT["sx1782"]}}</span>
+														Vestibulum id ligula porta felis euismod ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>{{=DICT["sp1783"]}}</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{{=URL('static','template/assets/images/avatars/avatar4.png')}}" class="msg-photo" alt="Bob"s Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">{{=DICT["sx1785"]}}</span>
+														Nullam quis risus eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>{{=DICT["sp1786"]}}</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{{=URL('static','template/assets/images/avatars/avatar2.png')}}" class="msg-photo" alt="Kate"s Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">{{=DICT["sx1788"]}}</span>
+														Ciao sociis natoque eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>{{=DICT["sp1789"]}}</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{{=URL('static','template/assets/images/avatars/avatar5.png')}}" class="msg-photo" alt="Fred"s Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">{{=DICT["sx1791"]}}</span>
+														Vestibulum id penatibus et auctor  ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>{{=DICT["sp1792"]}}</span>
+													</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="{{=URL(c='default',f='inbox')}}">
+										See all messages
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="{{=URL('static','template/assets/images/avatars/user.jpg')}}" alt="Jason"s Photo" />
+								<span class="user-info">
+									<small>{{=DICT["ic1795"]}}</small>
+									Jason
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="{{=URL(c='default',f='profile')}}">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState("main-container")}catch(e){}
+			</script>
+
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState("sidebar")}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="{{=URL(c='default',f='index')}}">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text">{{=DICT["sx1798"]}}</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								UI &amp; Elements
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									Layouts
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="{{=URL(c='default',f='topIImenu')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Top Menu
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{=URL(c='default',f='twoIImenuII1')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Two Menus 1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{=URL(c='default',f='twoIImenuII2')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Two Menus 2
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{=URL(c='default',f='mobileIImenuII1')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Default Mobile Menu
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{=URL(c='default',f='mobileIImenuII2')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Mobile Menu 2
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{=URL(c='default',f='mobileIImenuII3')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Mobile Menu 3
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='typography')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Typography
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='elements')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Elements
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='buttons')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Buttons &amp; Icons
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='contentIIslider')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Content Sliders
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='treeview')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Treeview
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='jqueryIIui')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									jQuery UI
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='nestableIIlist')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Nestable Lists
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									Three Level Menu
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="#">
+											<i class="menu-icon fa fa-leaf green"></i>
+											Item #1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-pencil orange"></i>
+
+											4th level
+											<b class="arrow fa fa-angle-down"></b>
+										</a>
+
+										<b class="arrow"></b>
+
+										<ul class="submenu">
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-plus purple"></i>
+													Add Product
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-eye pink"></i>
+													View Products
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text">{{=DICT["sx1812"]}}</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{{=URL(c='default',f='tables')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Simple &amp; Dynamic
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='jqgrid')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									jqGrid plugin
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text">{{=DICT["sx1815"]}}</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{{=URL(c='default',f='formIIelements')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Form Elements
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='formIIelementsII2')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Form Elements 2
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="active">
+								<a href="{{=URL(c='default',f='formIIwizard')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Wizard &amp; Validation
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='wysiwyg')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Wysiwyg &amp; Markdown
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='dropzone')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Dropzone File Upload
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="{{=URL(c='default',f='widgets')}}">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text">{{=DICT["sx1822"]}}</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="{{=URL(c='default',f='calendar')}}">
+							<i class="menu-icon fa fa-calendar"></i>
+
+							<span class="menu-text">
+								Calendar
+
+								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
+									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+								</span>
+							</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="{{=URL(c='default',f='gallery')}}">
+							<i class="menu-icon fa fa-picture-o"></i>
+							<span class="menu-text">{{=DICT["sx1825"]}}</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text">{{=DICT["sx1826"]}}</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{{=URL(c='default',f='profile')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									User Profile
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='inbox')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Inbox
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='pricing')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pricing Tables
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='invoice')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Invoice
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='timeline')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Timeline
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='search')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='email')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Email Templates
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='login')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Login &amp; Register
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-file-o"></i>
+
+							<span class="menu-text">
+								Other Pages
+
+								<span class="badge badge-primary">5</span>
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{{=URL(c='default',f='faq')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									FAQ
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='errorII404')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 404
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='errorII500')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 500
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='grid')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Grid
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{{=URL(c='default',f='blank')}}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Blank Page
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">{{=DICT["aa1840"]}}</a>
+							</li>
+
+							<li>
+								<a href="#">{{=DICT["aa1841"]}}</a>
+							</li>
+							<li class="active">Wizard &amp; Validation</li>
+						</ul><!-- /.breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							
+{{block myformIIwizardform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=formIIwizardform0.custom.begin}}
+{{=formIIwizardform0.custom.widget.f0}}
+{{=formIIwizardform0.custom.submit}}
+{{=formIIwizardform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+						</div><!-- /.nav-search -->
+					</div>
+
+					<div class="page-content">
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select>
+										</div>
+										<span>&nbsp; Choose Skin</span>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
+										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
+										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
+										<label class="lbl" for="ace-settings-add-container">
+											Inside
+											<b>{{=DICT["bb1843"]}}</b>
+										</label>
+									</div>
+								</div><!-- /.pull-left -->
+
+								<div class="pull-left width-50">
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
+										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
+										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
+										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+									</div>
+								</div><!-- /.pull-left -->
+							</div><!-- /.ace-settings-box -->
+						</div><!-- /.ace-settings-container -->
+
+						<div class="page-header">
+							<h1>
+								Form Wizard
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									and Validation
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<h4 class="lighter">
+									<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
+									<a href="#modal-wizard" data-toggle="modal" class="pink">{{=DICT["aa1844"]}}</a>
+								</h4>
+
+								<div class="hr hr-18 hr-double dotted"></div>
+
+								<div class="widget-box">
+									<div class="widget-header widget-header-blue widget-header-flat">
+										<h4 class="widget-title lighter">{{=DICT["hd1845"]}}</h4>
+
+										<div class="widget-toolbar">
+											<label>
+												<small class="green">
+													<b>{{=DICT["bb1846"]}}</b>
+												</small>
+
+												<input id="skip-validation" type="checkbox" class="ace ace-switch ace-switch-4" />
+												<span class="lbl middle"></span>
+											</label>
+										</div>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main">
+											<div id="fuelux-wizard-container">
+												<div>
+													<ul class="steps">
+														<li data-step="1" class="active">
+															<span class="step">1</span>
+															<span class="title">{{=DICT["sx1847"]}}</span>
+														</li>
+
+														<li data-step="2">
+															<span class="step">2</span>
+															<span class="title">{{=DICT["sx1848"]}}</span>
+														</li>
+
+														<li data-step="3">
+															<span class="step">3</span>
+															<span class="title">{{=DICT["sx1849"]}}</span>
+														</li>
+
+														<li data-step="4">
+															<span class="step">4</span>
+															<span class="title">{{=DICT["sx1850"]}}</span>
+														</li>
+													</ul>
+												</div>
+
+												<hr />
+
+												<div class="step-content pos-rel">
+													<div class="step-pane active" data-step="1">
+														<h3 class="lighter block green">{{=DICT["hc1851"]}}</h3>
+
+														
+{{block myformIIwizardform1}}
+{{include 'web2py_ajax.html'}}
+
+{{=formIIwizardform1.custom.begin}}
+{{=formIIwizardform1.custom.widget.f0}}
+{{=formIIwizardform1.custom.widget.f1}}
+{{=formIIwizardform1.custom.widget.f2}}
+{{=formIIwizardform1.custom.widget.f3}}
+{{=formIIwizardform1.custom.widget.f4}}
+{{=formIIwizardform1.custom.submit}}
+{{=formIIwizardform1.custom.end}}
+
+<div  id=divID1 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash1 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID1').length > 0) {
+    $('#divID1').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+
+														
+{{block myformIIwizardform2}}
+{{include 'web2py_ajax.html'}}
+
+{{=formIIwizardform2.custom.begin}}
+{{=formIIwizardform2.custom.widget.f0}}
+{{=formIIwizardform2.custom.widget.f1}}
+{{=formIIwizardform2.custom.widget.f2}}
+{{=formIIwizardform2.custom.widget.f3}}
+{{=formIIwizardform2.custom.widget.f4}}
+{{=formIIwizardform2.custom.widget.f5}}
+<div><label for='id_for619'>Latest news and announcements</label></div>
+{{=formIIwizardform2.custom.widget.f6}}
+<div><label for='id_for623'>Product offers and discounts</label></div>
+{{=formIIwizardform2.custom.widget.f7}}
+<div><label for='id_for630'>Female</label></div>
+{{=formIIwizardform2.custom.widget.f8}}
+<div><label for='agree'>I accept the policy</label></div>
+{{=formIIwizardform2.custom.widget.f9}}
+{{=formIIwizardform2.custom.widget.f10}}
+<div><label for='state'>State</label></div>
+{{=formIIwizardform2.custom.widget.f11}}
+{{=formIIwizardform2.custom.widget.f12}}
+{{=formIIwizardform2.custom.submit}}
+{{=formIIwizardform2.custom.end}}
+
+<div  id=divID2 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash2 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID2').length > 0) {
+    $('#divID2').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+													</div>
+
+													<div class="step-pane" data-step="2">
+														<div>
+															<div class="alert alert-success">
+																<button type="button" class="close" data-dismiss="alert">
+																	<i class="ace-icon fa fa-times"></i>
+																</button>
+
+																<strong>
+																	<i class="ace-icon fa fa-check"></i>
+																	Well done!
+																</strong>
+
+																You successfully read this important alert message.
+																<br />
+															</div>
+
+															<div class="alert alert-danger">
+																<button type="button" class="close" data-dismiss="alert">
+																	<i class="ace-icon fa fa-times"></i>
+																</button>
+
+																<strong>
+																	<i class="ace-icon fa fa-times"></i>
+																	Oh snap!
+																</strong>
+
+																Change a few things up and try submitting again.
+																<br />
+															</div>
+
+															<div class="alert alert-warning">
+																<button type="button" class="close" data-dismiss="alert">
+																	<i class="ace-icon fa fa-times"></i>
+																</button>
+																<strong>{{=DICT["sp1863"]}}</strong>
+
+																Best check yo self, you"re not looking too good.
+																<br />
+															</div>
+
+															<div class="alert alert-info">
+																<button type="button" class="close" data-dismiss="alert">
+																	<i class="ace-icon fa fa-times"></i>
+																</button>
+																<strong>{{=DICT["sp1864"]}}</strong>
+
+																This alert needs your attention, but it"s not super important.
+																<br />
+															</div>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="3">
+														<div class="center">
+															<h3 class="blue lighter">{{=DICT["hc1865"]}}</h3>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="4">
+														<div class="center">
+															<h3 class="green">{{=DICT["hc1866"]}}</h3>
+															Your product is ready to ship! Click finish to continue!
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<hr />
+											<div class="wizard-actions">
+												<button class="btn btn-prev">
+													<i class="ace-icon fa fa-arrow-left"></i>
+													Prev
+												</button>
+
+												<button class="btn btn-success btn-next" data-last="Finish">
+													Next
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+											</div>
+										</div><!-- /.widget-main -->
+									</div><!-- /.widget-body -->
+								</div>
+
+								<div id="modal-wizard" class="modal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div id="modal-wizard-container">
+												<div class="modal-header">
+													<ul class="steps">
+														<li data-step="1" class="active">
+															<span class="step">1</span>
+															<span class="title">{{=DICT["sx1867"]}}</span>
+														</li>
+
+														<li data-step="2">
+															<span class="step">2</span>
+															<span class="title">{{=DICT["sx1868"]}}</span>
+														</li>
+
+														<li data-step="3">
+															<span class="step">3</span>
+															<span class="title">{{=DICT["sx1869"]}}</span>
+														</li>
+
+														<li data-step="4">
+															<span class="step">4</span>
+															<span class="title">{{=DICT["sx1870"]}}</span>
+														</li>
+													</ul>
+												</div>
+
+												<div class="modal-body step-content">
+													<div class="step-pane active" data-step="1">
+														<div class="center">
+															<h4 class="blue">{{=DICT["hd1871"]}}</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="2">
+														<div class="center">
+															<h4 class="blue">{{=DICT["hd1872"]}}</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="3">
+														<div class="center">
+															<h4 class="blue">{{=DICT["hd1873"]}}</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="4">
+														<div class="center">
+															<h4 class="blue">{{=DICT["hd1874"]}}</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="modal-footer wizard-actions">
+												<button class="btn btn-sm btn-prev">
+													<i class="ace-icon fa fa-arrow-left"></i>
+													Prev
+												</button>
+
+												<button class="btn btn-success btn-sm btn-next" data-last="Finish">
+													Next
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+
+												<button class="btn btn-danger btn-sm pull-left" data-dismiss="modal">
+													<i class="ace-icon fa fa-times"></i>
+													Cancel
+												</button>
+											</div>
+										</div>
+									</div>
+								</div><!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">{{=DICT["sx1875"]}}</span>
+							Application &copy; 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="{{=URL('static','template/assets/js/jquery-2.1.4.min.js')}}"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="{{=URL('static','template/assets/js/jquery-1.11.3.min.js')}}"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if("ontouchstart" in document.documentElement) document.write("<script src="{{=URL('static','template/assets/js/jquery.mobile.custom.min.js')}}">"+"<"+"/script>");
+		</script>
+		<script src="{{=URL('static','template/assets/js/bootstrap.min.js')}}"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="{{=URL('static','template/assets/js/wizard.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/jquery.validate.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/jquery-additional-methods.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/bootbox.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/jquery.maskedinput.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/select2.min.js')}}"></script>
+
+		<!-- ace scripts -->
+		<script src="{{=URL('static','template/assets/js/ace-elements.min.js')}}"></script>
+		<script src="{{=URL('static','template/assets/js/ace.min.js')}}"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			
+				$("[data-rel=tooltip]").tooltip();
+			
+				$(".select2").css("width","200px").select2({allowClear:true})
+				.on("change", function(){
+					$(this).closest("form").validate().element($(this));
+				}); 
+			
+			
+				var $validation = false;
+				$("#fuelux-wizard-container")
+				.ace_wizard({
+					//step: 2 //optional argument. wizard will jump to step "2" at first
+					//buttons: ".wizard-actions:eq(0)"
+				})
+				.on("actionclicked.fu.wizard" , function(e, info){
+					if(info.step == 1 && $validation) {
+						if(!$("#validation-form").valid()) e.preventDefault();
+					}
+				})
+				//.on("changed.fu.wizard", function() {
+				//})
+				.on("finished.fu.wizard", function(e) {
+					bootbox.dialog({
+						message: "Thank you! Your information was successfully saved!", 
+						buttons: {
+							"success" : {
+								"label" : "OK",
+								"className" : "btn-sm btn-primary"
+							}
+						}
+					});
+				}).on("stepclick.fu.wizard", function(e){
+					//e.preventDefault();//this will prevent clicking and selecting steps
+				});
+			
+			
+				//jump to a step
+				/**
+				var wizard = $("#fuelux-wizard-container").data("fu.wizard")
+				wizard.currentStep = 3;
+				wizard.setState();
+				*/
+			
+				//determine selected step
+				//wizard.selectedItem().step
+			
+			
+			
+				//hide or show the other form which requires validation
+				//this is for demo only, you usullay want just one form in your application
+				$("#skip-validation").removeAttr("checked").on("click", function(){
+					$validation = this.checked;
+					if(this.checked) {
+						$("#sample-form").hide();
+						$("#validation-form").removeClass("hide");
+					}
+					else {
+						$("#validation-form").addClass("hide");
+						$("#sample-form").show();
+					}
+				})
+			
+			
+			
+				//documentation : https://docs.jquery.com/Plugins/Validation/validate
+			
+			
+				$.mask.definitions["~"]="[+-]";
+				$("#phone").mask(;
+			
+				jQuery.validator.addMethod("phone", function (value, element) {
+					return this.optional(element) || /^\(\d{3}\) \d{3}\-\d{4}( x\d{1,6})?$/.test(value);
+				}, "Enter a valid phone number.");
+			
+				$("#validation-form").validate({
+					errorElement: "div",
+					errorClass: "help-block",
+					focusInvalid: false,
+					ignore: "",
+					rules: {
+						email: {
+							required: true,
+							email:true
+						},
+						password: {
+							required: true,
+							minlength: 5
+						},
+						password2: {
+							required: true,
+							minlength: 5,
+							equalTo: "#password"
+						},
+						name: {
+							required: true
+						},
+						phone: {
+							required: true,
+							phone: "required"
+						},
+						url: {
+							required: true,
+							url: true
+						},
+						comment: {
+							required: true
+						},
+						state: {
+							required: true
+						},
+						platform: {
+							required: true
+						},
+						subscription: {
+							required: true
+						},
+						gender: {
+							required: true,
+						},
+						agree: {
+							required: true,
+						}
+					},
+			
+					messages: {
+						email: {
+							required: "Please provide a valid email.",
+							email: "Please provide a valid email."
+						},
+						password: {
+							required: "Please specify a password.",
+							minlength: "Please specify a secure password."
+						},
+						state: "Please choose state",
+						subscription: "Please choose at least one option",
+						gender: "Please choose gender",
+						agree: "Please accept our policy"
+					},
+			
+			
+					highlight: function (e) {
+						$(e).closest(".form-group").removeClass("has-info").addClass("has-error");
+					},
+			
+					success: function (e) {
+						$(e).closest(".form-group").removeClass("has-error");//.addClass("has-info");
+						$(e).remove();
+					},
+			
+					errorPlacement: function (error, element) {
+						if(element.is("input[type=checkbox]") || element.is("input[type=radio]")) {
+							var controls = element.closest("div[class*="col-"]");
+							if(controls.find(":checkbox,:radio").length > 1) controls.append(error);
+							else error.insertAfter(element.nextAll(".lbl:eq(0)").eq(0));
+						}
+						else if(element.is(".select2")) {
+							error.insertAfter(element.siblings("[class*="select2-container"]:eq(0)"));
+						}
+						else if(element.is(".chosen-select")) {
+							error.insertAfter(element.siblings("[class*="chosen-container"]:eq(0)"));
+						}
+						else error.insertAfter(element.parent());
+					},
+			
+					submitHandler: function (form) {
+					},
+					invalidHandler: function (form) {
+					}
+				});
+			
+				
+				
+				
+				$("#modal-wizard-container").ace_wizard();
+				$("#modal-wizard .wizard-actions .btn[data-dismiss=modal]").removeAttr("disabled");
+				
+				
+				/**
+				$("#date").datepicker({autoclose:true}).on("changeDate", function(ev) {
+					$(this).closest("form").validate().element($(this));
+				});
+				
+				$("#mychosen").chosen().on("change", function(ev) {
+					$(this).closest("form").validate().element($(this));
+				});
+				*/
+				
+				
+				$(document).one("ajaxloadstart.page", function(e) {
+					//in ajax mode, remove remaining elements before leaving page
+					$("[class*=select2]").remove();
+				});
+			})
+		</script>
+	</body>
+</html>

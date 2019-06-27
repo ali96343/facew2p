@@ -1,0 +1,6 @@
+      db.DBTBL.insert( f0= '00 tablestable2', f1= '0w2p1 Price', f2= '0w2p2 Clicks', f3= '0w2p3 unk_74', f4= '0w2p4 unk_75', f5= '0w2p5 unk_76', f6= '0w2p6 Update', )
+      db.DBTBL.insert( f0= 'ace.com', f1= '$45', f2= '3,330', f3= 'Feb 12', )
+      db.DBTBL.insert( f0= 'base.com', f1= '$35', f2= '2,595', f3= 'Feb 18', )
+      db.DBTBL.insert( f0= 'max.com', f1= '$60', f2= '4,400', f3= 'Mar 11', )
+      db.DBTBL.insert( f0= 'best.com', f1= '$75', f2= '6,500', f3= 'Apr 03', )
+      db.DBTBL.insert( f0= 'pro.com', f1= '$55', f2= '4,250', f3= 'Jan 21', )

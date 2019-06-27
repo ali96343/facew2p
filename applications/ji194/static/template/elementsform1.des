@@ -1,0 +1,99 @@
+- - input
+  - class: hidden
+    id: id_for93
+    placeholder: place_96
+    type: text
+    value: '12'
+  - class: 'inline '
+    for: id_for93
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for97
+    placeholder: place_100
+    type: text
+    value: '7'
+  - class: 'inline '
+    for: id_for97
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for101
+    placeholder: place_104
+    type: text
+    value: '4'
+  - class: 'inline '
+    for: id_for101
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for105
+    placeholder: place_108
+    type: text
+    value: '10'
+  - class: 'inline '
+    for: id_for105
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for109
+    placeholder: place_112
+    type: text
+    value: '1'
+  - class: 'inline '
+    for: id_for109
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for113
+    placeholder: place_116
+    type: text
+    value: '0'
+  - class: 'inline '
+    for: id_for113
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for117
+    placeholder: place_120
+    type: text
+    value: '60'
+  - class: 'inline '
+    for: id_for117
+    text: 'Lines:'
+  - null
+  - null
+- - input
+  - class: hidden
+    id: id_for121
+    placeholder: place_124
+    type: text
+    value: '1'
+  - class: 'inline '
+    for: id_for121
+    text: 'Lines:'
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_96
+    type: submit
+    value: submit input
+  - class: 'inline '
+    for: id_for93
+    text: 'Lines:'
+  - null
+  - null

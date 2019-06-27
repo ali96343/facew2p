@@ -1,0 +1,20 @@
+- - input
+  - id: id_for796
+    placeholder: place_798
+    type: file
+  - class: ''
+    for: id_for796
+    text: label797
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: place_798
+    type: submit
+    value: submit input
+  - class: ''
+    for: id_for796
+    text: label797
+  - null
+  - null

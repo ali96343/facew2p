@@ -1,0 +1,21 @@
+- - input
+  - class: search-query
+    id: id_for774
+    placeholder: Give it a search...
+    type: text
+  - class: ''
+    for: id_for774
+    text: label775
+  - null
+  - null
+- - button
+  - class: btn btn-sm
+    id: id_for776
+    placeholder: place_778
+    type: submit
+    value: Go!
+  - class: ''
+    for: id_for776
+    text: label777
+  - null
+  - null

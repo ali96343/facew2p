@@ -1,0 +1,115 @@
+- - input
+  - class: typeahead scrollable
+    id: id_for754
+    placeholder: States of USA
+    type: text
+  - class: ''
+    for: id_for754
+    text: label755
+  - null
+  - null
+- - select
+  - class: multiselect
+    id: food
+    placeholder: place_764
+  - class: 'control-label col-xs-12 col-sm-3 no-padding-right '
+    for: food
+    text: Bootstrap Multiselect
+  - &id001
+    - Cheese
+    - Tomatoes
+    - Mozzarella
+    - Mushrooms
+    - Pepperoni
+    - *id001
+  - null
+- - select
+  - id: duallist
+    placeholder: place_767
+  - class: 'col-sm-3 control-label no-padding-top '
+    for: duallist
+    text: Dual listbox
+  - &id002
+    - Option 1
+    - Option 2
+    - Option 3
+    - Option 4
+    - Option 5
+    - Option 6
+    - Option 7
+    - Option 8
+    - Option 9
+    - Option 10
+    - *id002
+  - null
+- - select
+  - class: select2
+    id: state
+    placeholder: place_771
+  - class: 'btn btn-xs btn-yellow active '
+    for: state
+    text: '1'
+  - &id003
+    - Alabama
+    - Alaska
+    - Arizona
+    - Arkansas
+    - California
+    - Colorado
+    - Connecticut
+    - Delaware
+    - Florida
+    - Georgia
+    - Hawaii
+    - Idaho
+    - Illinois
+    - Indiana
+    - Iowa
+    - Kansas
+    - Kentucky
+    - Louisiana
+    - Maine
+    - Maryland
+    - Massachusetts
+    - Michigan
+    - Minnesota
+    - Mississippi
+    - Missouri
+    - Montana
+    - Nebraska
+    - Nevada
+    - New Hampshire
+    - New Jersey
+    - New Mexico
+    - New York
+    - North Carolina
+    - North Dakota
+    - Ohio
+    - Oklahoma
+    - Oregon
+    - Pennsylvania
+    - Rhode Island
+    - South Carolina
+    - South Dakota
+    - Tennessee
+    - Texas
+    - Utah
+    - Vermont
+    - Virginia
+    - Washington
+    - West Virginia
+    - Wisconsin
+    - Wyoming
+    - *id003
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: States of USA
+    type: submit
+    value: submit input
+  - class: ''
+    for: id_for754
+    text: label755
+  - null
+  - null

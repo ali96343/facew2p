@@ -1,0 +1,30 @@
+- - checkbox
+  - class: ace
+    id: id_for160
+    placeholder: place_163
+    type: checkbox
+  - class: 'pull-left '
+    for: id_for160
+    text: Email me a copy
+  - null
+  - null
+- - textarea
+  - class: width-100
+    id: id_for164
+    placeholder: Type something
+  - class: 'pull-left '
+    for: id_for164
+    text: Email me a copy
+  - null
+  - null
+- - button
+  - class: pull-right btn btn-sm btn-primary btn-white btn-round
+    id: id_for167
+    placeholder: place_170
+    type: submit
+    value: Submit
+  - class: 'pull-left '
+    for: id_for167
+    text: Email me a copy
+  - null
+  - null
