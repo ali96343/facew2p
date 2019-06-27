@@ -1290,8 +1290,9 @@ class CheckEnv (StrDb):
                         sys.exit(
                             'run {} again for search index.html'.format(
                                 os.path.basename(__file__)))
-                     
-            print ( os.listdir(os.listdir(path=".") ) )
+                    
+            print ( 'files in dir') 
+            print ( os.listdir( './'  ) )
             sys.exit("not found: %s" % (Z.main_index))
 
     def check_env_save_orig(Z, ):
