@@ -176,7 +176,7 @@ def hard_clear(ob, ):
 
 # --------------------------------------------------------------------------------------------
 
-def find(name, path):
+def find_file(name, path):
                for root, dirs, files in os.walk(path):
                     if name in files:
                        return os.path.join(root, name)
@@ -197,7 +197,7 @@ def check_in_cur_dir( fnm ):
                shutil.copy(x_nm, './')
                return fnm1
 
-    miss_file= find ( fnm1, './')
+    miss_file= find_file ( fnm1, './')
     if miss_file:
               shutil.copy(miss_file, './')
               return fnm1 
@@ -218,6 +218,7 @@ def check_all_htmls( htmls_list ):
          for link in soup.find_all('a', href=True):
                href= (link['href'])
                if '.html' in href:
+                   href= href.replace(".html#",".html")
                    found_file=  check_in_cur_dir (  href )
                    found_file in htmls_list or htmls_list.append( found_file )               
 
@@ -2969,7 +2970,7 @@ class HtmlView(CheckEnv):
 
         lines = replace_in_list(
             FileOper.file2list(html_fnm), {
-                "'": '"', "http://": "https://", r'\r': '',  '../':''})
+                "'": '"', "http://": "https://", r'\r': '',  '../':'', '.html#': '.html'})
   
         for e in lines:
              if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
@@ -3012,7 +3013,7 @@ class HtmlView(CheckEnv):
                                 ('>' in grp0),
                                 ('tel' in grp0),
                                 ("mailto" in grp0),
-                                (len(grp0) <= 1),
+                                (len(grp0) == 0),
                                 ]):
                             continue
 
@@ -3625,7 +3626,7 @@ class W2pApp(StrDb):
             for e in Z.db_src_not_exists:
                   e1= e.split("/")
                   if e1[-1]:
-                      print ("--find ", e1[-1], end = "")
+                      print ("--find_file: ", e1[-1], end = "")
                       miss_file= find (e1[-1], "./") 
                       if miss_file:
                             print ("----found: ", miss_file )
@@ -3815,4 +3816,4 @@ if __name__ == "__main__":
 
     check_model(dbg=False)
     # --------------------------------------------
-    print("execution time: %.0f sec" % (time.time() - start))
+    prGreen("execution time: %.0f sec" % (time.time() - start))
