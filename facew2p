@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.9" # 27.06.2019
+__version__ = "0.1.10" # 01.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2695,7 +2695,7 @@ class HtmlView(CheckEnv):
 
         def r_h1(Z, ma, p2, num_str):
             ctr1 = 'index'
-            new_pat = r"\g<1>%s%s%s\g<4>" % (h0_beg, ctr1, url_end)
+            new_pat = r"\g<1>%s%s%s\g<3>" % (h0_beg, ctr1, url_end)
             return (new_pat, "")
 
         def check_add_css(fnm):
@@ -2970,7 +2970,7 @@ class HtmlView(CheckEnv):
 
         lines = replace_in_list(
             FileOper.file2list(html_fnm), {
-                "'": '"', "http://": "https://", r'\r': '',  '../':'', '.html#': '.html'})
+                "'": '"', r'\r': '',  '../':'', '.html#': '.html'})
   
         for e in lines:
              if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):

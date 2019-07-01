@@ -62,7 +62,7 @@ def replace_in_obj(ob, dd):
 
 def list2file(str_list, fnm, mode='a'):
     if not str_list:
-        return
+        return None
     with open(fnm, mode) as f:
         f.write("\n".join(str_list))
     return fnm
@@ -114,6 +114,7 @@ def check_facew2p_config():
         data = {
             'ctrl_nm1': {
                 'one 1': [ 'integer', 'text', 'radio', 'select', 'check'], 
+                'cha 1': [ 'integer', 'text', 'radio', 'select', 'check'], 
                 'o2m 1': [ [ 'string', 'text', 'radio', 'select', 'check'], [ 'string', 'text', 'radio', 'select', 'check']], 
                 'm2m 1': [ [ 'string', 'text', 'radio', 'select', 'check'], [ 'string', 'text', 'radio', 'select', 'check']], 
                 'opt': { 'restapi': 'False', 'mail': 'False', 'comment': 'ctrl for task 1', 'ctrl_login' : 'False'}}, 
@@ -401,8 +402,13 @@ def build_tables_from_config():
         print ("tables: ", tables_names_list)
         prGreen ("app name: %s/%s" % (app_name,ctrl_nm) )
 
+    def mk_cha(ctrl_nm, ctrl_opt, tnm, flds):
+        # area line bar 
+        prYellow( 'its charts' )
+        return
+
     print ("---------------------------- db config data_loaded  -----------------------------------------")
-    func_dict = {'one': mk_one, 'o2m': mk_o2m, 'm2m': mk_m2m, 'opt': mk_error}
+    func_dict = {'one': mk_one, 'o2m': mk_o2m, 'm2m': mk_m2m, 'cha': mk_cha, 'opt': mk_error, }
     for ctrl_nm, v in data_loaded.items():
         print ("ctrl-name: ", ctrl_nm)
         print ("ctrl-opt: ", v['opt'])
