@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.11" # 01.07.2019
+__version__ = "0.1.13" # 03.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -1280,9 +1280,16 @@ class CheckEnv (StrDb):
                     if len(path_to_zip_file_list) == 1:
                         path_to_zip_file = path_to_zip_file_list[0]
                         zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
-                        zip_ref.extractall('./')
-                        zip_ref.close()
-                        prYellow('=== unzipped file, is index.html in it ? ===')
+                        try: 
+                           ret = zip_ref.testzip()
+                           if ret is not None:
+                                   print ( "First bad file in zip: %s" % ret )
+                                   sys.exit(1)
+                           zip_ref.extractall('./')
+                           zip_ref.close()
+                           prYellow('=== unzipped file, is index.html in it ? ===')
+                        except:
+                           sys.exit("bad zip file")
                         # if Z.unzip_restart:
                         #      prRed('unzip and restart')
                         #      os.system (os.path.basename(__file__) )
