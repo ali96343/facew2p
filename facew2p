@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.13" # 03.07.2019
+__version__ = "0.1.14" # 04.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -215,12 +215,13 @@ def check_all_htmls( htmls_list ):
 
          soup = bs.BeautifulSoup(html, "lxml")
         
-         for link in soup.find_all('a', href=True):
+         for link in soup.find_all(None, href=True):
                href= (link['href'])
-               if '.html' in href:
-                   href= href.replace(".html#",".html")
-                   found_file=  check_in_cur_dir (  href )
-                   found_file in htmls_list or htmls_list.append( found_file )               
+               if href is None:
+                     continue 
+               if href.endswith('.html'):
+                     found_file=  check_in_cur_dir (  href )
+                     found_file in htmls_list or htmls_list.append( found_file )               
 
 # --------------------------------------------------------------------------------------------
 
@@ -581,8 +582,9 @@ class FileOper:
         return fnm
 
     @staticmethod
-    def recursive_overwrite(src, dest, ignore=None):
-        print ('  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
+    def recursive_overwrite(src, dest, ignore=None, num =1):
+        print (num,'  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
+        num += 1
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -593,10 +595,7 @@ class FileOper:
                 ignored = set()
             for f in files:
                 if f not in ignored:
-                    FileOper.recursive_overwrite(
-                        os.path.join(
-                            src, f), os.path.join(
-                            dest, f), ignore)
+                    FileOper.recursive_overwrite( os.path.join( src, f), os.path.join( dest, f), ignore, num)
         else:
             shutil.copyfile(src, dest)
 
@@ -2774,6 +2773,15 @@ class HtmlView(CheckEnv):
                     Z.db_src_myimg_ctrl[ma2] = Z.get_from_db_fnm2ctrl(Z.f0)
                 return x_nm
 
+        def r_data(Z, ma, p2, num_str):               # data-*= "ccccccc/bbbb"
+            magrp2 = ma.group(2)
+            ll= glob.glob( magrp2+ '.*' )
+            if ( len( glob.glob(magrp2 + '.*')) == 0 ) and (os.path.isfile(magrp2)== False):
+                 new_pat= "\g<1>\g<2>\g<3>"
+                 return (new_pat, "")
+            new_pat = p2 % (url_beg, url_end)
+            return (new_pat, "")
+
         def r_src(Z, ma, p2, num_str):
             gif1x1src = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"'
             #gif1x1black = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="'
@@ -2895,16 +2903,12 @@ class HtmlView(CheckEnv):
             return ("", "")
 
         Z.convert = [ 
-            #['href_#', re.compile(r'(href\s?=\s?")([^\.]+)(\.html[#]\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
             ['href_#', re.compile(r'(href\s?=\s?")([^\.]+)(\.html[#][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
             ['href_html', re.compile(r'(href\s?=\s?")([^\.]+)(\.html\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
             ['href_root', re.compile(r'(href\s?=\s?")([/])(")()'), r'\1 \2 \3', r_h1, True],
             ['href_any', re.compile(r'(href\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
             ['src_any', re.compile(r'(src\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
-            #['content_any', re.compile(r'(content\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
-            #[ 'data-src',   re.compile(r'(data-imgage-src\s?=\s?")([^"]+)(")()'),               r'\g<1>%s\g<2>%s\g<3>',  r_v0, True ],
-            ['data-bg', re.compile(r'(data-setbg\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_v0, True],
-            ['data-video', re.compile(r'(data-video\s?=\s?")([^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_v0, False],
+            ['data-*', re.compile(r'(data-\w+\s?=\s?")(\w+[/][^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
             ['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False],
@@ -3007,7 +3011,7 @@ class HtmlView(CheckEnv):
                         if any([("{{" in grp0),
                                 ('#' in grp0),
                                 ('//' in grp0),
-                                ("javascript" in grp0),
+                                ("script" in grp0),
                                 ('©' in grp0),
                                 ('Colorlib' in grp0),
                                 ('Almsaeed' in grp0),
