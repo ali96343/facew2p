@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.14" # 04.07.2019
+__version__ = "0.1.16" # 05.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -183,16 +183,16 @@ def find_file(name, path):
                return None
 
 def check_in_cur_dir( fnm ):
+    fnm= fnm.replace("../","")
     pat_fnm = fnm.split('/')
+    if len(pat_fnm[0]) == 0 and len(pat_fnm)>1:
+       pat_fnm= pat_fnm[1:]
     fnm1= pat_fnm[-1]
     if os.path.isfile(fnm1):
           return fnm1
     x_nm=""
     for i in range(len(pat_fnm)-1, -1, -1):
          x_nm = "/".join(pat_fnm[i:])
-         if '..' in x_nm:
-               x_nm= ''
-               break
          if os.path.isfile(x_nm):
                shutil.copy(x_nm, './')
                return fnm1
@@ -2979,17 +2979,21 @@ class HtmlView(CheckEnv):
 
         Z.f0 = html_fnm.split('.')[0]
         Z.file_db = Z.dbt_prefix + Z.f0.replace('_', '0').replace('-', '0')
+ 
+        def pre_replace_in_file_lines(html_fnm):
 
-        lines = replace_in_list(
-            FileOper.file2list(html_fnm), {
-                "'": '"', r'\r': '',  '../':'', })
-                #"'": '"', r'\r': '',  '../':'', '.html#': '.html'})
+            file_lines = replace_in_list( FileOper.file2list(html_fnm), { "'": '"', r'\r': '',  '../':'', })
+
+            file_lines=[ re.sub(  r'\"(.*){{(.*)\"'  , '"replaced by facew2p"', i ) for i in file_lines ]
   
-        for e in lines:
-             if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
-                  prRed ("--- %s: found {{ and removed the line- : %s" %  (html_fnm, e))
+            for e in file_lines:
+                 if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
+                      prRed ("--- %s: found {{ and removed the line- : %s" %  (html_fnm, e))
 
-        lines= [ e for e in lines if '{{' not in e ]
+            file_lines= [ e for e in file_lines if '{{' not in e ]
+            return file_lines
+
+        lines= pre_replace_in_file_lines( html_fnm )
 
         ctrl1 = Z.get_from_db_fnm2ctrl(Z.f0)
         link_tbl_e = [html_fnm + Z.myview_ext, html_fnm, ctrl1, Z.file_db]
