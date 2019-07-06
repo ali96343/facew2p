@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.19" # 05.07.2019
+__version__ = "0.1.20" # 06.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2672,6 +2672,7 @@ class HtmlView(CheckEnv):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
+        Z.plus_labels = plus_labels
         #f0 = None
         #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
@@ -2949,11 +2950,11 @@ class HtmlView(CheckEnv):
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False],
-            ['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False],
+            #['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False],
             #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
         ]
 
-        if plus_labels:
+        if Z.plus_labels:
             Z.convert += Z.convert_text
 
         Z.pat_cnt = dict((xpat, 0) for [xpat, _, _, _, _] in Z.convert)
@@ -3014,12 +3015,13 @@ class HtmlView(CheckEnv):
 
                         if any([("{{" in grp0),
                                 ('#' in grp0),
-                                ('//' in grp0),
+                                ('://' in grp0),
                                 ("script" in grp0),
                                 ('©' in grp0),
                                 ('Colorlib' in grp0),
                                 ('Almsaeed' in grp0),
                                 ('Bootstrapious' in grp0),
+                                ('&copy;' in grp0),
                                 ('&lt;' in grp0),
                                 ('&gt;'in grp0),
                                 ('&quot;' in grp0),
@@ -3809,7 +3811,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=True)
+    MyTest(run_test=False)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
