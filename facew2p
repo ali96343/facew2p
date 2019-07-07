@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.21" # 07.07.2019
+__version__ = "0.1.22" # 07.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -604,9 +604,8 @@ class FileOper:
         return fnm
 
     @staticmethod
-    def recursive_overwrite(src, dest, ignore=None, num =1):
-        print (num,'  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
-        num += 1
+    def recursive_overwrite(src, dest, ignore=None, ):
+        print ('  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -617,7 +616,7 @@ class FileOper:
                 ignored = set()
             for f in files:
                 if f not in ignored:
-                    FileOper.recursive_overwrite( os.path.join( src, f), os.path.join( dest, f), ignore, num)
+                    FileOper.recursive_overwrite( os.path.join( src, f), os.path.join( dest, f), ignore,)
         else:
             shutil.copyfile(src, dest)
 
@@ -1286,6 +1285,7 @@ class CheckEnv (StrDb):
             if srcdir is not None:
                 #print ('copy ... pls, wait')
                 FileOper.recursive_overwrite(srcdir, dstdir)
+                print ("")
                 html_file_list= ['index.html']
                 check_all_htmls( html_file_list )
                 #sys.exit("stop")
@@ -2611,7 +2611,6 @@ class FindTables_bs4 (StrDb, ):
 
         except AttributeError as e:
             print ("file: {} no form found".format(fnm))
-            prRed(" ------------------ %s " % fnm)
             return
 # ------------------------------------------------------------------------------------
 
@@ -3037,7 +3036,7 @@ class HtmlView(CheckEnv):
 
                         if any([("{{" in grp0),
                                 ('#' in grp0),
-                                ('://' in grp0),
+                                ('//' in grp0),
                                 ("script" in grp0),
                                 ('©' in grp0),
                                 ('Colorlib' in grp0),
