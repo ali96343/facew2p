@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.20" # 06.07.2019
+__version__ = "0.1.21" # 07.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -106,9 +106,31 @@ def PrintException():
 #    return str(''.join(e for e in string if e.isalnum()) )
 
 
-def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
-def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
-def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+#def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+#def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+#def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+
+def prRed(skk):
+      if sys.stdout.isatty() == True:
+         print("\033[91m {}\033[00m" .format(skk))
+      else:
+         print("--- {} " .format(skk))
+
+def prGreen(skk):
+      if sys.stdout.isatty() == True:
+         print("\033[92m {}\033[00m" .format(skk))
+      else:
+         print("--- {} " .format(skk))
+
+def prYellow(skk):
+      if sys.stdout.isatty() == True:
+         print("\033[93m {}\033[00m" .format(skk))
+      else:
+         print("--- {} " .format(skk))
+
+
+
+
 #def prLightPurple(skk): print("\033[94m {}\033[00m" .format(skk))
 #def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
 #def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
