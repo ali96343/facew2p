@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.22" # 07.07.2019
+__version__ = "0.1.23" # 08.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2931,7 +2931,9 @@ class HtmlView(CheckEnv):
             ['href_any', re.compile(r'(href\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
             ['src_any', re.compile(r'(src\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
             ['data-*', re.compile(r'(data-\w+\s?=\s?")(\w+[/][^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
-            ['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False],
+            #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False],
+            ['url_img', re.compile(r'(url\s?\(\"?)(.+?)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
+            #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False],
         ]
