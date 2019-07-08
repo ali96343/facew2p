@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.32" # 08.07.2019
+__version__ = "0.1.35" # 08.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -208,10 +208,10 @@ def check_in_cur_dir( fnm ):
     fnm= fnm.replace("../","")
     pat_fnm = fnm.split('/')
     if len(pat_fnm[0]) == 0 and len(pat_fnm)>1:
-       pat_fnm= pat_fnm[1:]
+         pat_fnm= pat_fnm[1:]
     fnm1= pat_fnm[-1]
     if os.path.isfile(fnm1):
-          return fnm1
+         return fnm1
     x_nm=""
     for i in range(len(pat_fnm)-1, -1, -1):
          x_nm = "/".join(pat_fnm[i:])
@@ -221,8 +221,8 @@ def check_in_cur_dir( fnm ):
 
     miss_file= find_file ( fnm1, './')
     if miss_file:
-              shutil.copy(miss_file, './')
-              return fnm1 
+         shutil.copy(miss_file, './')
+         return fnm1 
 
     shutil.copyfile('index.html', fnm1 )
     prRed("not found: %s, replaced by index.html" % fnm1)
@@ -241,8 +241,13 @@ def check_all_htmls( htmls_list ):
                href= (link['href'])
                if href is None:
                      continue 
-               if href.endswith('.html'):
+               if href.endswith('.html') or href.endswith('.htmls'):
                      found_file=  check_in_cur_dir (  href )
+                     if found_file.endswith('.htmls'):
+                           xs= found_file.split('.')[-1] + '.html'
+                           if not os.path.isfile(xs):
+                                 shutil.copyfile( found_file, xs )
+                                 found_file = xs
                      found_file in htmls_list or htmls_list.append( found_file )               
 
 # --------------------------------------------------------------------------------------------
@@ -3749,7 +3754,10 @@ class MyTest(StrDb):
                 "for run tests set your url (at end of %s)" %
                 os.path.basename(__file__))
         Z.app_nm = Z.get_app_nm()
-        Z.app_host = socket.gethostname()
+        try:
+            Z.app_host = socket.gethostname()
+        except:
+            sys.exit('gethostname error!')
         [Z.test_template_page(e[2]) for e in Z.link_table]
 
         Z.test_admin_api()
@@ -3765,10 +3773,11 @@ class MyTest(StrDb):
             print ("{}".format(url_name))
             return
 
-        response = requests.get(
-            url_name,
-            headers=Z.req_headers,
-            allow_redirects=False)
+        try:
+            response = requests.get( url_name, headers=Z.req_headers, allow_redirects=False)
+        except :
+            sys.exit('request error')
+          
         print ("{} - {}".format(url_name, response.status_code))
         if response.status_code != 200:
             prRed(" --- %s --- "  %  url_name)
