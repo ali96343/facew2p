@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.23" # 08.07.2019
+__version__ = "0.1.32" # 08.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2707,9 +2707,14 @@ class HtmlView(CheckEnv):
         Z.continue_all = ['sparkline-bar-stat', '000</span>', '6</span']
         Z.continue_all = FileOper.put_get_yaml(
             'facew2pconti' + '.yaml', Z.continue_all,)
+     
+        def madebug(ma):
+           print ("----------magroups, caller: {}".format( sys._getframe(1).f_code.co_name ) )
+           for i in range(0, len(ma.groups())):
+               print ( " {} {} ".format(i, ma.group(i)) )
+              
 
         def r_hx(Z, ma, p2, num_str):
-            #print (ma.group(2), ma.group(3), ma.group(4))
             ctr1 = Z.get_from_db_fnm2ctrl(ma.group(2))
             new_pat = r"\g<1>%s%s%s\g<4>" % (ctrl1_beg, ctr1, url_end)
             #print (new_pat)
@@ -2925,14 +2930,15 @@ class HtmlView(CheckEnv):
             return ("", "")
 
         Z.convert = [ 
-            ['href_#', re.compile(r'(href\s?=\s?")([^\.]+)(\.html[#][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
-            ['href_html', re.compile(r'(href\s?=\s?")([^\.]+)(\.html\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
-            ['href_root', re.compile(r'(href\s?=\s?")([/])(")()'), r'\1 \2 \3', r_h1, True],
-            ['href_any', re.compile(r'(href\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
-            ['src_any', re.compile(r'(src\s?=\s?")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
-            ['data-*', re.compile(r'(data-\w+\s?=\s?")(\w+[/][^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
+            ['href_#', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[#][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
+            ['href_s', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[s][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
+            ['href_html', re.compile(r'(href\s*=\s*")([^\.]+)(\.html\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
+            ['href_root', re.compile(r'(href\s*=\s*")([/])(")()'), r'\1 \2 \3', r_h1, True],
+            ['href_any', re.compile(r'(href\s*=\s*")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
+            ['src_any', re.compile(r'(src\s*=\s*")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
+            ['data-*', re.compile(r'(data-\w+\s?=\s*")(\w+[/][^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
             #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False],
-            ['url_img', re.compile(r'(url\s?\(\"?)(.+?)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
+            ['url_img', re.compile(r'(url\s*\(\s*\"?\s*)(.+?)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
             #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False],
@@ -3834,7 +3840,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
