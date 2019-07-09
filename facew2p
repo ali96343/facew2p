@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.36" # 08.07.2019
+__version__ = "0.1.38" # 09.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -243,10 +243,7 @@ def check_all_htmls( htmls_list ):
                if href.endswith('.html') or href.endswith('.htmls'):
                      found_file=  check_in_cur_dir (  href )
                      if found_file.endswith('.htmls'):
-                           xs= found_file.split('.')[-1] + '.html'
-                           if not os.path.isfile(xs):
-                                 shutil.copyfile( found_file, xs )
-                                 found_file = xs
+                           found_file= check_in_cur_dir (  found_file.split('.')[-2] + '.html' )
                      found_file in htmls_list or htmls_list.append( found_file )               
 
 # --------------------------------------------------------------------------------------------
