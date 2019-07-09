@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.35" # 08.07.2019
+__version__ = "0.1.36" # 08.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -71,8 +71,7 @@ help_text = [
 
 def handler(signum, frame):
     prYellow(
-        'Pls, wait for the program to finish! signal handler called with signal: %s' %
-        signum)
+        'Pls, wait for the program to finish! signal handler called with signal: %s' % signum)
 
 signal.signal(signal.SIGINT, handler)
 
@@ -219,13 +218,13 @@ def check_in_cur_dir( fnm ):
                shutil.copy(x_nm, './')
                return fnm1
 
-    miss_file= find_file ( fnm1, './')
+    miss_file= find_file( fnm1, './')
     if miss_file:
          shutil.copy(miss_file, './')
          return fnm1 
 
     shutil.copyfile('index.html', fnm1 )
-    prRed("not found: %s, replaced by index.html" % fnm1)
+    prRed("not found: %s, replaced with index.html" % fnm1)
     return fnm1
 
 def check_all_htmls( htmls_list ):
@@ -2935,8 +2934,7 @@ class HtmlView(CheckEnv):
             return ("", "")
 
         Z.convert = [ 
-            ['href_#', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[#][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
-            ['href_s', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[s][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
+            ['href_#s', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[#s][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
             ['href_html', re.compile(r'(href\s*=\s*")([^\.]+)(\.html\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
             ['href_root', re.compile(r'(href\s*=\s*")([/])(")()'), r'\1 \2 \3', r_h1, True],
             ['href_any', re.compile(r'(href\s*=\s*")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
@@ -3776,7 +3774,7 @@ class MyTest(StrDb):
         try:
             response = requests.get( url_name, headers=Z.req_headers, allow_redirects=False)
         except :
-            sys.exit('request error')
+            sys.exit('request error, disabled connection ?')
           
         print ("{} - {}".format(url_name, response.status_code))
         if response.status_code != 200:
@@ -3797,10 +3795,10 @@ class MyTest(StrDb):
             if not Z.run_test:
                 print ("{}".format(url_name))
                 continue
-            response = requests.get(
-                url_name,
-                headers=Z.req_headers,
-                allow_redirects=False)
+            try:
+                 response = requests.get( url_name, headers=Z.req_headers, allow_redirects=False)
+            except:
+                 sys.exit('request exception! bad fierwall ?')
             # if url_name.endswith('.json') :
             #        print ("app api")
             #        print (response.content)
