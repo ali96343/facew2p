@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.40" # 10.07.2019
+__version__ = "0.1.45" # 11.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -68,6 +68,8 @@ help_text = [
     "8. look at images in url/myapp/myima",
 ]
 
+if os.name == 'nt':
+    sys.exit("stop: the script not tested on windows")
 
 def handler(signum, frame):
     prYellow(
@@ -110,25 +112,16 @@ def PrintException():
 #def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
 
 def prRed(skk):
-      if sys.stdout.isatty() == True:
-         print("\033[91m {}\033[00m" .format(skk))
-      else:
-         print("--- {} " .format(skk))
+      out_str= "\033[91m {}\033[00m" if sys.stdout.isatty() == True else "--- {} "
+      print(out_str.format(skk))
 
 def prGreen(skk):
-      if sys.stdout.isatty() == True:
-         print("\033[92m {}\033[00m" .format(skk))
-      else:
-         print("--- {} " .format(skk))
+      out_str= "\033[92m {}\033[00m" if sys.stdout.isatty() == True else "--- {} "
+      print(out_str.format(skk))
 
 def prYellow(skk):
-      if sys.stdout.isatty() == True:
-         print("\033[93m {}\033[00m" .format(skk))
-      else:
-         print("--- {} " .format(skk))
-
-
-
+      out_str= "\033[93m {}\033[00m" if sys.stdout.isatty() == True else "--- {} "
+      print(out_str.format(skk))
 
 #def prLightPurple(skk): print("\033[94m {}\033[00m" .format(skk))
 #def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
@@ -1315,6 +1308,10 @@ class CheckEnv (StrDb):
                     path_to_zip_file_list = [fnm for fnm in glob.glob("*.zip")]
                     if len(path_to_zip_file_list) == 1:
                         path_to_zip_file = path_to_zip_file_list[0]
+                        try:
+                             os.chmod( path_to_zip_file , 0o444)
+                        except:
+                             sys.exit("bad zip file access rights")
                         zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
                         try: 
                            ret = zip_ref.testzip()
