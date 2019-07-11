@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.38" # 09.07.2019
+__version__ = "0.1.40" # 10.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -1130,6 +1130,20 @@ class StrDb:
 # ------------------------------------------------------------------------------------
 
 def convert_file_name( file_name_html, rep_sym= 'II'):
+
+
+            if file_name_html is None:
+                 print ("------file_name2ctrl, caller: {}".format( sys._getframe(1).f_code.co_name ) )
+                 sys.exit("file_name2ctrl: file_name is None ")
+
+            if ( not file_name_html.endswith('.html'))  and (not file_name_html.endswith('.htmls')):
+                 return file_name_html
+            fnm0= file_name_html.split('.')[0]
+            if len(fnm0) == 0:
+                 print ("------file_name2ctrl, caller: {}".format( sys._getframe(1).f_code.co_name ) )
+                 sys.exit("file_name2ctrl: len(fnm0) == 0 ")
+
+
 
             ctrlnm = re.sub('[^0-9a-zA-Z]+',  rep_sym , file_name_html.split('.')[0]   )
             if ctrlnm[0].isdigit():
@@ -3045,12 +3059,8 @@ class HtmlView(CheckEnv):
                         if any([("{{" in grp0),
                                 ('#' in grp0),
                                 ('//' in grp0),
+                                ('://' in grp0),
                                 ("script" in grp0),
-                                ('©' in grp0),
-                                ('Colorlib' in grp0),
-                                ('Almsaeed' in grp0),
-                                ('Bootstrapious' in grp0),
-                                ('&copy;' in grp0),
                                 ('&lt;' in grp0),
                                 ('&gt;'in grp0),
                                 ('&quot;' in grp0),
@@ -3061,6 +3071,11 @@ class HtmlView(CheckEnv):
                                 ('>' in grp0),
                                 ('tel' in grp0),
                                 ("mailto" in grp0),
+                                ('©' in grp0),
+                                ('&copy;' in grp0),
+                                ('Colorlib' in grp0),
+                                ('Almsaeed' in grp0),
+                                ('Bootstrapious' in grp0),
                                 (len(grp0) == 0),
                                 ]):
                             continue
