@@ -13,7 +13,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.45" # 11.07.2019
+__version__ = "0.1.50" # 15.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -224,10 +224,13 @@ def check_all_htmls( htmls_list ):
 
      for e in htmls_list:
 
-         with open(e,) as f:
-            html = f.read().decode('utf-8')
-
-         soup = bs.BeautifulSoup(html, "lxml")
+         try:
+             with open(e,) as f:
+                html = f.read().decode('utf-8')
+                soup = bs.BeautifulSoup(html, "lxml")
+         except:
+             sys.exit("except read file: %s" %  e )
+              
         
          for link in soup.find_all(None, href=True):
                href= (link['href'])
@@ -273,6 +276,34 @@ form_types= ['input',  'textarea', 'checkbox', 'select', 'radio']
 
 
 class FileOper:
+
+    @staticmethod
+    def is_minified(fnm, string_len = 80):
+            with open(fnm) as f:
+                test_file = f.read()
+            newlines =  test_file.count('\n')
+            if newlines is None or newlines == 0:
+                   newlines =1
+            path = os.path.join(os.getcwd(), fnm)
+            file_line_len = os.path.getsize(path) / newlines
+            return file_line_len > string_len
+
+    @staticmethod
+    def unmini_html(html_fnm):
+            from bs4 import BeautifulSoup
+            if FileOper.is_minified( html_fnm) == True:
+                 shutil.copyfile(html_fnm, html_fnm + '.omin')
+
+                 with open(html_fnm) as f:
+                          html = f.read().decode('utf-8')
+                 soup= BeautifulSoup(html, "lxml")
+
+                 html = soup.prettify("utf-8")
+
+                 with open(html_fnm , "w") as f:
+                         f.write(unicode(html))
+                 return True
+            return False
 
     @staticmethod
     def put2yaml(fnm, data_fld, mode='w'):
@@ -599,7 +630,7 @@ class FileOper:
 
     @staticmethod
     def recursive_overwrite(src, dest, ignore=None, ):
-        print ('  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
+        #print ('  copy recursive index.html and subdirs to template/ ,  pls wait ...', end='\r')
         if os.path.isdir(src):
             if not os.path.isdir(dest):
                 os.makedirs(dest)
@@ -609,6 +640,8 @@ class FileOper:
             else:
                 ignored = set()
             for f in files:
+                if any ([ ('node_modules' in f),('.git' in f), ]):
+                        continue
                 if f not in ignored:
                     FileOper.recursive_overwrite( os.path.join( src, f), os.path.join( dest, f), ignore,)
         else:
@@ -3001,6 +3034,7 @@ class HtmlView(CheckEnv):
         Z.insert_list = []
 
     def run(Z, html_fnm, dbg=True, pre_replace=True):
+        #FileOper.unmini_html(html_fnm)
         if pre_replace and Z.repl_ll:
             if isinstance(Z.repl_ll, (list,)):
                 for e in Z.repl_ll:
@@ -3053,27 +3087,30 @@ class HtmlView(CheckEnv):
                         grp0 = match.group(2)
                         grp000 = match.group(0)
 
-                        if any([("{{" in grp0),
-                                ('#' in grp0),
-                                ('//' in grp0),
-                                ('://' in grp0),
-                                ("script" in grp0),
-                                ('&lt;' in grp0),
-                                ('&gt;'in grp0),
-                                ('&quot;' in grp0),
-                                ('&amp;' in grp0),
-                                ('&nbsp;' in grp0),
-                                ('&larr;' in grp0),
-                                ('<' in grp0),
-                                ('>' in grp0),
-                                ('tel' in grp0),
-                                ("mailto" in grp0),
-                                ('©' in grp0),
-                                ('&copy;' in grp0),
-                                ('Colorlib' in grp0),
-                                ('Almsaeed' in grp0),
-                                ('Bootstrapious' in grp0),
+                        if any([("{{" in grp0 ),
+                                ('#' in grp0 ),
+                                ('://' in grp0 ),
+                                ("script" in grp0 ),
+                                ('&lt;' in grp0 ),
+                                ('&gt;'in grp0 ),
+                                ('&quot;' in grp0 ),
+                                ('&amp;' in grp0 ),
+                                ('&nbsp;' in grp0 ),
+                                ('&larr;' in grp0 ),
+                                ('&times;' in grp0 ),
+                                ('&copy;' in grp0 ),
+                                ('<' in grp0 ),
+                                ('>' in grp0 ),
+                                ('©' in grp0 ),
+                                ('tel:' in grp0 ),
+                                ("mailto:" in grp0 ),
+                                ('Colorlib' in grp0 ),
+                                ('Almsaeed' in grp0 ),
+                                ('W3layouts' in grp0 ),
+                                ('Bootstrapious' in grp0 ),
                                 (len(grp0) == 0),
+                                #grp0.startswith('#'),
+                                grp0.startswith('//'),
                                 ]):
                             continue
 
@@ -3719,6 +3756,7 @@ class MyPassword(StrDb):
         fnmpass = os.path.join('../../models', datetime.datetime.now().strftime("%y%m%d%H%M%S"))
         upass = Z.randomStringDigits(10)
         FileOper.list2file([umail, upass], fnmpass, 'w')
+        os.chmod( fnmpass, 0o400 )
         print ("recommended password: %s , was saved: %s" % (upass, fnmpass))
 
         if set_passwd:
