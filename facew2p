@@ -6,6 +6,13 @@
 
 from __future__ import print_function
 import sys
+
+if sys.version_info[0] == 3:
+    sys.exit('stop! sory, need python2')
+    #raise Exception("Must be using Python 3")
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -13,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.50" # 15.07.2019
+__version__ = "0.1.54" # 19.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -640,7 +647,7 @@ class FileOper:
             else:
                 ignored = set()
             for f in files:
-                if any ([ ('node_modules' in f),('.git' in f), ]):
+                if any ([ ('node_modules' in f),('.git' in f), ('.babelrc' in f), ('.gitignore' in f), ('.eslint' in f), ('.editor') in f ]):
                         continue
                 if f not in ignored:
                     FileOper.recursive_overwrite( os.path.join( src, f), os.path.join( dest, f), ignore,)
@@ -1384,9 +1391,11 @@ class CheckEnv (StrDb):
             sys.exit("stop: bad env!")
 
         for e in Z.w2p_files:
+            if not os.path.isdir('../../databases'):
+                os.mkdir('../../databases')
             if not os.path.exists(e):
                 print (Z.w2p_files)
-                print (e)
+                print ("where is: {} ?".format( e) )
                 sys.exit("it's not web2py envs")
             if os.path.isfile(e):
                 e_saved = e + Z.sv_ext
@@ -2138,7 +2147,7 @@ class FindTables_bs4 (StrDb, ):
                 found_button = False
                 for eee in data_fld:
                     # for eee in e[3]:
-                    # for i in xrange(0,len(e[3]),2):
+                    # for i in range(0,len(e[3]),2):
                     fld_name = 'f' + str(ii)
                     elem = eee[0]  # [3][i]
                     elem_atrs = eee[1]  # e[3][i+1][0]
@@ -2608,7 +2617,7 @@ class FindTables_bs4 (StrDb, ):
                     #print (radio_names)
                     if (found_button):
                         #minus_a_list= []
-                        # for i  in xrange(0, len( new_list),2)  :
+                        # for i  in range(0, len( new_list),2)  :
                         #    if new_list[i] == 'a': continue
                         #    minus_a_list.append( new_list[i])
                         #    minus_a_list.append( new_list[i + 1])
@@ -2823,12 +2832,19 @@ class HtmlView(CheckEnv):
         r_v0 = r_h2
         r_u0 = r_h2
 
+        def is_it_image(ma2):
+            ma2end= ma2.split('.')[-1].lower()
+            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg', 'bmp']
+            return ma2end in ima_end
+
+
         def check_add_img(ma2):
             ma2end= ma2.split('.')[-1].lower()
             ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg']
             #if any([ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(
             #        ".jpeg"), ma2.endswith(".gif"), ma2.endswith(".svg")]):
-            if ma2end in ima_end:
+            if is_it_image(ma2):
+            #if ma2end in ima_end:
 
                 pat_l = ma2.split('/')
                 x_nm = ""
@@ -2844,15 +2860,47 @@ class HtmlView(CheckEnv):
                 if x_nm not in Z.db_src_myimg_ctrl:
                     Z.db_src_myimg_ctrl[ma2] = Z.get_from_db_fnm2ctrl(Z.f0)
                 return x_nm
+            return None
 
         def r_data(Z, ma, p2, num_str):               # data-*= "ccccccc/bbbb"
             magrp2 = ma.group(2)
-            ll= glob.glob( magrp2+ '.*' )
-            if ( len( glob.glob(magrp2 + '.*')) == 0 ) and (os.path.isfile(magrp2)== False):
+            if ( len( glob.glob(magrp2 + '.*')) == 0 ) and (os.path.isfile(magrp2)== False) and (os.path.isdir(magrp2) == False):
+                 print ("+++++++++++", magrp2)
                  new_pat= "\g<1>\g<2>\g<3>"
                  return (new_pat, "")
+
+            if is_it_image(magrp2) == True:
+                   if  not check_add_img (magrp2) is None:
+                       new_pat = p2 % (url_beg, url_end)
+                       return (new_pat, "")
+                   else:
+                       print ("data-* image not found? put data:image ?")
+
             new_pat = p2 % (url_beg, url_end)
             return (new_pat, "")
+
+        def rX_data(Z, ma, p2, num_str):               # data-*= "ccccccc/bbbb"
+            magrp2 = ma.group(2)
+            if is_it_image(magrp2) == True:
+                   if  not check_add_img (magrp2) is None:
+                       new_pat = p2 % (url_beg, url_end)
+                       return (new_pat, "")
+                   else:
+                       print ("data-* image not found? put data:image ?")
+
+            if os.path.exists(magrp2):
+                       new_pat = p2 % (url_beg, url_end)
+                       return (new_pat, "")
+                 
+
+            # skip, ... write found pattern
+            new_pat= "\g<1>\g<2>\g<3>"
+            return new_pat
+
+
+
+
+        
 
         def r_src(Z, ma, p2, num_str):
             gif1x1src = 'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"'
@@ -3557,7 +3605,7 @@ class W2pApp(StrDb):
             if backwards:
                 widthIter.reverse()
 
-            for i in xrange(height):
+            for i in range(height):
                 gradPos = 0
                 for j in widthIter:
                     if topBottom:
@@ -3587,11 +3635,11 @@ class W2pApp(StrDb):
                 si = width
 
             gradient = [color(i, width, startFill, stopFill)
-                        for i in xrange(si)]
+                        for i in range(si)]
 
             if runTopBottom:
                 modGrad = []
-                for i in xrange(height):
+                for i in range(height):
                     modGrad += [gradient[i]] * width
                 rectangle.putdata(modGrad)
             else:
