@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.54" # 19.07.2019
+__version__ = "0.1.56" # 22.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -3023,14 +3023,15 @@ class HtmlView(CheckEnv):
             return ("", "")
 
         Z.convert = [ 
-            ['href_#s', re.compile(r'(href\s*=\s*")([^\.]+)(\.html[#s][^"]*?)(")()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
-            ['href_html', re.compile(r'(href\s*=\s*")([^\.]+)(\.html\s?)(")()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
-            ['href_root', re.compile(r'(href\s*=\s*")([/])(")()'), r'\1 \2 \3', r_h1, True],
-            ['href_any', re.compile(r'(href\s*=\s*")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
-            ['src_any', re.compile(r'(src\s*=\s*")([^"]+)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
-            ['data-*', re.compile(r'(data-\w+\s?=\s*")(\w+[/][^"]*)(")()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
+            ['href_#s', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html[#s][^\"\']*?)([\"\'])()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True],
+            ['href_html', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True],
+            ['href_root', re.compile(r'(href\s*=\s*[\"\'])([/])([\"\'])()'), r'\1 \2 \3', r_h1, True],
+            ['href_any', re.compile(r'(href\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True],
+            ['src_any', re.compile(r'(src\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True],
+            ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
+            #['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])(\w+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False],
             #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False],
-            ['url_img', re.compile(r'(url\s*\(\s*\"?\s*)(.+?)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
+            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, False],
             #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False],
@@ -3105,9 +3106,9 @@ class HtmlView(CheckEnv):
  
         def pre_replace_in_file_lines(html_fnm):
 
-            file_lines = replace_in_list( FileOper.file2list(html_fnm), { "'": '"', r'\r': '',  '../':'', })
+            file_lines = replace_in_list( FileOper.file2list(html_fnm), {  r'\r': '',  '../':'', })
 
-            file_lines=[ re.sub(  r'\"(.*){{(.*)\"'  , '"replaced by facew2p"', i ) for i in file_lines ]
+            file_lines=[ re.sub(  r'[\"\'](.*){{(.*)[\"\']'  , '"replaced by facew2p"', i ) for i in file_lines ]
   
             for e in file_lines:
                  if (e.find('{{') != -1) : #  or  (e.find('}}') != -1):
@@ -3942,7 +3943,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=True)
+    MyTest(run_test=False)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
