@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.56" # 22.07.2019
+__version__ = "0.1.58" # 22.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -3124,8 +3124,7 @@ class HtmlView(CheckEnv):
 
         list_for_keys = []
 
-        if dbg:
-            log_str = []
+        log_str = []
 
         for num_str, line in enumerate(lines):
             for pat in Z.convert:
@@ -3139,7 +3138,7 @@ class HtmlView(CheckEnv):
                         if any([("{{" in grp0 ),
                                 ('#' in grp0 ),
                                 ('://' in grp0 ),
-                                ("script" in grp0 ),
+                                ("javascript" in grp0 ),
                                 ('&lt;' in grp0 ),
                                 ('&gt;'in grp0 ),
                                 ('&quot;' in grp0 ),
