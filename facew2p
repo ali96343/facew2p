@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.58" # 22.07.2019
+__version__ = "0.1.60" # 22.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2786,7 +2786,7 @@ class HtmlView(CheckEnv):
             return (new_pat, "")
 
         def check_add_css(fnm):
-            if fnm.endswith('.css'):
+            if fnm.endswith( ('.css', '.less') ):
                 pat_l = fnm.split('/')
                 x_nm=""
                 for i in range(len(pat_l) -1, -1, -1):
@@ -3039,6 +3039,7 @@ class HtmlView(CheckEnv):
 
         Z.convert_text = [
             ['strong', re.compile(r'(<strong>)([^<]*)(</strong>)()'), r'\g<1>{{{{={}["sp{}"]}}}}\g<3>', r_sp, True],
+            #['any_empty', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\#]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_sp, True],
             ['<b>', re.compile(r'(<b>)([^<]*)(</b>)()'), r'\g<1>{{{{={}["bb{}"]}}}}\g<3>', r_sp, True],
             # [ '<sup>',  re.compile(r'(<sup>)([^<]*)(</sup>)()'),          r'\g<1>{{{{={}["su{}"]}}}}\g<3>'  ,  r_sp, True ],
             ['<i>', re.compile(r'(<i>)([^<]*)(</i>)()'), r'\g<1>{{{{={}["ii{}"]}}}}\g<3>', r_sp, True],
@@ -3136,9 +3137,16 @@ class HtmlView(CheckEnv):
                         grp000 = match.group(0)
 
                         if any([("{{" in grp0 ),
-                                ('#' in grp0 ),
+                                grp0.startswith('#'),
+                                grp0.startswith('//'),
+                                grp0.startswith('javascript:'),
+                                grp0.startswith('tel:'),
+                                grp0.startswith('mailto:'),
+                                #('#' in grp0 ),
+                                #("javascript" in grp0 ),
+                                #('tel:' in grp0 ),
+                                #("mailto:" in grp0 ),
                                 ('://' in grp0 ),
-                                ("javascript" in grp0 ),
                                 ('&lt;' in grp0 ),
                                 ('&gt;'in grp0 ),
                                 ('&quot;' in grp0 ),
@@ -3150,15 +3158,11 @@ class HtmlView(CheckEnv):
                                 ('<' in grp0 ),
                                 ('>' in grp0 ),
                                 ('©' in grp0 ),
-                                ('tel:' in grp0 ),
-                                ("mailto:" in grp0 ),
                                 ('Colorlib' in grp0 ),
                                 ('Almsaeed' in grp0 ),
                                 ('W3layouts' in grp0 ),
                                 ('Bootstrapious' in grp0 ),
                                 (len(grp0) == 0),
-                                #grp0.startswith('#'),
-                                grp0.startswith('//'),
                                 ]):
                             continue
 
@@ -3780,7 +3784,11 @@ class W2pApp(StrDb):
 
 
         #prYellow ("images in template: %s" %  len(Z.db_src_myimg) )
-        #print ("css in template: ",  Z.db_css_files)
+        #print ("css and less  in template: ",  Z.db_css_files)
+        lless=[i for i in Z.db_css_files if i.endswith('.less')]
+        if len (lless):
+            prRed  ("less in template! need compiller !" )
+            print( lless)
         print ("css does not exist: ", Z.db_css_missed_files)
         if len(Z.db_css_files):
             [FileOper.unminify_css(e, replace=False) for e in Z.db_css_files]
@@ -3942,7 +3950,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
