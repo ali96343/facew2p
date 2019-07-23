@@ -20,11 +20,13 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.62" # 23.07.2019
+__version__ = "0.1.70" # 23.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
+
+# https://cssgrid-generator.netlify.com/
 
 #  <title.*?>(.+?)</title>    r'<title[^>]*>([^<]+)</title>'
 # https://webdesign.tutsplus.com/ru/tutorials/how-to-build-web-form-layouts-with-css-grid--cms-28776
@@ -2758,9 +2760,8 @@ class HtmlView(CheckEnv):
 
         Z.repl_ll = FileOper.put_get_yaml('facew2p' + '.yaml', Z.repl_ll,)
 
-        Z.continue_all = ['sparkline-bar-stat', '000</span>', '6</span']
-        Z.continue_all = FileOper.put_get_yaml(
-            'facew2pconti' + '.yaml', Z.continue_all,)
+       # Z.continue_all = ['sparkline-bar-stat', '000</span>', '6</span']
+       # Z.continue_all = FileOper.put_get_yaml( 'facew2pconti' + '.yaml', Z.continue_all,)
      
         def madebug(ma):
            print ("----------magroups, caller: {}".format( sys._getframe(1).f_code.co_name ) )
@@ -2964,6 +2965,18 @@ class HtmlView(CheckEnv):
             ins_str = ins2table(num_str, key_prefix, ma.group(2))
             return (new_pat, ins_str)
 
+
+        def r_pl_any(Z, ma, p2, num_str):
+            print ("================ ", ma.group(2))
+            new_pat = p2.format('DICT', str(num_str),)
+            s = p2
+            # !!! DANGER hack: create  unique key
+            key_prefix = s[s.index('"') + 1:s.index('"') + 3]
+            ins_str = ins2table(num_str, key_prefix, ma.group(2))
+            return (new_pat, ins_str)
+
+
+
         def r_div(Z, ma, p2, num_str):
             # if ( '<' in ma.group(2)) or ('<' or ma.group(2)) :
             #    return ("","")
@@ -3028,10 +3041,10 @@ class HtmlView(CheckEnv):
             ['href_root', re.compile(r'(href\s*=\s*[\"\'])([/])([\"\'])()'), r'\1 \2 \3', r_h1, True , False],
             ['href_any', re.compile(r'(href\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True , False],
             ['src_any', re.compile(r'(src\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True , False],
-            ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
+            ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, True , True],
             #['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])(\w+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False , False],
-            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
+            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, True , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False , False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False , False],
@@ -3039,7 +3052,7 @@ class HtmlView(CheckEnv):
 
         Z.convert_text = [
             ['strong', re.compile(r'(<strong>)([^<]*)(</strong>)()'), r'\g<1>{{{{={}["sp{}"]}}}}\g<3>', r_sp, True , True],
-            #['any_empty', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\#]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_sp, True , True],
+            #['any_2', re.compile(r'(>)([a-zA-Z]+?)(</)()'), r'\g<1>{{{{={}["bj{}"]}}}}\g<3>', r_pl_any, True , True],
             ['<b>', re.compile(r'(<b>)([^<]*)(</b>)()'), r'\g<1>{{{{={}["bb{}"]}}}}\g<3>', r_sp, True , True],
             # [ '<sup>',  re.compile(r'(<sup>)([^<]*)(</sup>)()'),          r'\g<1>{{{{={}["su{}"]}}}}\g<3>'  ,  r_sp, True  , True],
             ['<i>', re.compile(r'(<i>)([^<]*)(</i>)()'), r'\g<1>{{{{={}["ii{}"]}}}}\g<3>', r_sp, True , True],
@@ -3073,6 +3086,9 @@ class HtmlView(CheckEnv):
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True , True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True , True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False , True],
+            ['any_1', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
+            #['any_2', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)(<)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
+            ['any_3', re.compile(r'(>)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
             #['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False , True],
             #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
         ]
@@ -3135,8 +3151,8 @@ class HtmlView(CheckEnv):
             for pat in Z.convert:
                 [pat_name, p1, p2, func_nm, look_in_flag, is_digit_list] = pat
                 match = re.search(p1, line)
-                if match:
-                    if (look_in_flag):
+                if not match is None:
+                    if (look_in_flag == True):
                         grp0 = match.group(2)
                         grp000 = match.group(0)
 
@@ -3146,35 +3162,39 @@ class HtmlView(CheckEnv):
                                 grp0.startswith('javascript:'),
                                 grp0.startswith('tel:'),
                                 grp0.startswith('mailto:'),
+                                ('://' in grp0 ),
+                                (len(grp0) == 0),
                                 #('#' in grp0 ),
                                 #("javascript" in grp0 ),
                                 #('tel:' in grp0 ),
                                 #("mailto:" in grp0 ),
-                                ('://' in grp0 ),
-                                ('&lt;' in grp0 ),
-                                ('&gt;'in grp0 ),
-                                ('&quot;' in grp0 ),
-                                ('&amp;' in grp0 ),
-                                ('&nbsp;' in grp0 ),
-                                ('&larr;' in grp0 ),
-                                ('&times;' in grp0 ),
-                                ('&copy;' in grp0 ),
-                                ('<' in grp0 ),
-                                ('>' in grp0 ),
-                                ('©' in grp0 ),
-                                ('Colorlib' in grp0 ),
-                                ('Almsaeed' in grp0 ),
-                                ('W3layouts' in grp0 ),
-                                ('Bootstrapious' in grp0 ),
-                                (len(grp0) == 0),
                                 ]):
-                            continue
+                                continue
 
                         if is_digit_list == True:
-                              digit_list =re.search( Z.digit_list_pat , grp0)
-                              if digit_list and len(digit_list.group(0)):
+
+                                if any( [ ('&lt;' in grp0 ),
+                                     ('&gt;'in grp0 ),
+                                     ('&lt;'in grp0 ),
+                                     ('&quot;' in grp0 ),
+                                     ('&amp;' in grp0 ),
+                                     ('&nbsp;' in grp0 ),
+                                     ('&larr;' in grp0 ),
+                                     ('&times;' in grp0 ),
+                                     ('&copy;' in grp0 ),
+                                     ('<' in grp0 ),
+                                     ('>' in grp0 ),
+                                     ('©' in grp0 ),
+                                     ('Colorlib' in grp0 ),
+                                     ('Almsaeed' in grp0 ),
+                                     ('W3layouts' in grp0 ),
+                                     ('Bootstrapious' in grp0 ),] ):
+                                     continue
+
+                                digit_list =re.search( Z.digit_list_pat , grp0)
+                                if digit_list and len(digit_list.group(0)):
                                      #print ('================', digit_list.group(0))
-                                     #print ('================', grp0)
+                                     #print ('================', grp000)
                                      continue
 
                         #if len([x for x in Z.continue_all if x in grp000]):
