@@ -3086,9 +3086,8 @@ class HtmlView(CheckEnv):
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True , True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True , True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False , True],
-            ['any_1', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
-            #['any_2', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)(<)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
-            ['any_3', re.compile(r'(>)([^<\/\>\=\(\)\;\.\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
+            ['any_1', re.compile(r'(^)([^<\/\>\=\(\)\;\.\+\%\{\^\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
+            ['any_3', re.compile(r'(>)([^<\/\>\=\(\)\;\.\+\%\^\{\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
             #['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False , True],
             #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
         ]
