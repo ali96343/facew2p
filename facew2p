@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.70" # 23.07.2019
+__version__ = "0.1.73" # 30.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2834,16 +2834,13 @@ class HtmlView(CheckEnv):
         r_u0 = r_h2
 
         def is_it_image(ma2):
-            ma2end= ma2.split('.')[-1].lower()
-            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg', 'bmp']
-            return ma2end in ima_end
+            return ma2.lower().endswith ( ('.png', '.jpg' , '.jpeg', '.gif', '.svg', '.bmp') )
+            #ma2end= ma2.split('.')[-1].lower()
+            #ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg', 'bmp']
+            #return ma2end in ima_end
 
 
         def check_add_img(ma2):
-            ma2end= ma2.split('.')[-1].lower()
-            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg']
-            #if any([ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(
-            #        ".jpeg"), ma2.endswith(".gif"), ma2.endswith(".svg")]):
             if is_it_image(ma2):
             #if ma2end in ima_end:
 
@@ -2933,11 +2930,8 @@ class HtmlView(CheckEnv):
                 p2 = p2.replace(r'\g<2>', x_nm)
             new_pat = p2 % (url_beg, url_end)
             if not os.path.exists(magrp2):
-                if any([magrp2.endswith(".png"),
-                        magrp2.endswith(".jpg"),
-                        magrp2.endswith(".jpeg"),
-                        magrp2.endswith(".gif"),
-                        magrp2.endswith(".svg")]):
+                #if magrp2.endswith( (  ".png", ".jpg", ".jpeg", ".gif", ".svg") ):
+                if is_it_image(magrp2):
                     new_pat = gif1x1src
             return (new_pat, "")
 
@@ -3038,6 +3032,7 @@ class HtmlView(CheckEnv):
         Z.convert = [ 
             ['href_#s', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html[#s][^\"\']*?)([\"\'])()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True , False],
             ['href_html', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
+            ['action_html', re.compile(r'(action\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
             ['href_root', re.compile(r'(href\s*=\s*[\"\'])([/])([\"\'])()'), r'\1 \2 \3', r_h1, True , False],
             ['href_any', re.compile(r'(href\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True , False],
             ['src_any', re.compile(r'(src\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True , False],
@@ -3096,6 +3091,7 @@ class HtmlView(CheckEnv):
             Z.convert += Z.convert_text
 
         Z.pat_cnt = dict((xpat, 0) for [xpat, _, _, _, _, _] in Z.convert)
+        Z.pat_cnt ['look_in_flag']= 0
         Z.insert_list = []
 
     def run(Z, html_fnm, dbg=True, pre_replace=True):
@@ -3145,6 +3141,7 @@ class HtmlView(CheckEnv):
         Z.digit_list_pat=re.compile( r'(^[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/\$]?\s*)+' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/]?\s*)+?(?![a-zA-Z]+)' )
+        pat_look_in= re.compile( r'^((.*?)(\{\{)(.*?)$)|(^(#|http|\/\/|javascript:|tel:|mailto:)(.*)$)' )
 
         for num_str, line in enumerate(lines):
             for pat in Z.convert:
@@ -3154,25 +3151,22 @@ class HtmlView(CheckEnv):
                     if (look_in_flag == True):
                         grp0 = match.group(2)
                         grp000 = match.group(0)
+                        #ma_look= re.search(pat_look_in, grp0)
+                        #if ma_look:
+                        #     #print ("++++++++++++ ",ma_look.group(0))
+                        #     Z.pat_cnt ['look_in_flag'] += 1
+                        #     continue
 
                         if any([("{{" in grp0 ),
-                                grp0.startswith('#'),
-                                grp0.startswith('//'),
-                                grp0.startswith('javascript:'),
-                                grp0.startswith('tel:'),
-                                grp0.startswith('mailto:'),
-                                ('://' in grp0 ),
-                                (len(grp0) == 0),
-                                #('#' in grp0 ),
-                                #("javascript" in grp0 ),
-                                #('tel:' in grp0 ),
-                                #("mailto:" in grp0 ),
-                                ]):
+                                grp0.startswith( ('#', '//', 'http', 'javascript:', 'tel:', 'mailto:',) )  
+                                 ]):
+                                Z.pat_cnt ['look_in_flag'] += 1
                                 continue
 
                         if is_digit_list == True:
 
                                 if any( [ ('&lt;' in grp0 ),
+                                     (len(grp0) == 0),
                                      ('&gt;'in grp0 ),
                                      ('&lt;'in grp0 ),
                                      ('&quot;' in grp0 ),
@@ -3188,6 +3182,7 @@ class HtmlView(CheckEnv):
                                      ('Almsaeed' in grp0 ),
                                      ('W3layouts' in grp0 ),
                                      ('Bootstrapious' in grp0 ),] ):
+                                     
                                      continue
 
                                 digit_list =re.search( Z.digit_list_pat , grp0)
