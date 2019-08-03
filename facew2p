@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.74" # 30.07.2019
+__version__ = "0.1.75-su" # 3.07.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -697,6 +697,38 @@ class FileOper:
             f.write("\n")
             pprint.pprint(rep_dict, width=1, stream=f)
         return fnm
+
+    @staticmethod
+    def file2pretty2list(html_fnm):
+        import bs4
+        pret_fnm= html_fnm + '.p1'
+        if not os.path.exists(html_fnm):
+            prRed("some errors: %s" % html_fnm)
+            return []
+        t_html = os.path.getmtime( html_fnm )
+        t_pt= 0.0
+        if  os.path.isfile( pret_fnm  ):
+            t_pt = os.path.getmtime( pret_fnm )
+
+        if  (not os.path.isfile( pret_fnm ) ):
+            print ("++++++++++++++++")
+            print (t_html)
+            print (t_pt)
+            with open(html_fnm) as f:
+                soup= bs4.BeautifulSoup(f.read(), "lxml")
+
+            with open(pret_fnm  , "wb") as f:
+                f.write(   soup.prettify("utf-8")   )
+
+            fnm1 = FileOper.replace_pat(
+                    fnm=pret_fnm , src_pat=r'(<title[^<]+)(.*?)(</title>)(.)', 
+                         dst_pat="<title>facew2p</title>\n")
+
+
+        return FileOper.file2list( pret_fnm )
+
+
+
 
     @staticmethod
     def diff_my_files(file1, file2):
@@ -2745,11 +2777,12 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, ):
+    def __init__(Z, plus_labels=True, bs_fmt= True):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
+        Z.bs_fmt= bs_fmt
         #f0 = None
         #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
@@ -2961,7 +2994,8 @@ class HtmlView(CheckEnv):
 
 
         def r_pl_any(Z, ma, p2, num_str):
-            print ("================ ", ma.group(2))
+            #print ("================ ", ma.group(2))
+            #madebug(ma)
             new_pat = p2.format('DICT', str(num_str),)
             s = p2
             # !!! DANGER hack: create  unique key
@@ -3081,17 +3115,20 @@ class HtmlView(CheckEnv):
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True , True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True , True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False , True],
-            #['any_1', re.compile(r'(^)([^<\/\>\=\(\)\;\.\+\%\{\^\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
-            #['any_3', re.compile(r'(>)([^<\/\>\=\(\)\;\.\+\%\^\{\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
-            #['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False , True],
-            #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
+         ] 
+        Z.conv_any= [
+            #['any_txt', re.compile(r'(^\s*)([^<\/\>\=\*\|\(\)\;\+\%\{\^\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
+            ['text', re.compile(r'(^\s*)(((?!fa)[^<\&])*?)(\s*$)()'), r'\g<1>{{{{={}["bw{}"]}}}}', r_pl_any, True , True],
         ]
 
         if Z.plus_labels:
-            Z.convert += Z.convert_text
+            if Z.bs_fmt:
+                Z.convert += Z.conv_any
+            else:
+                Z.convert += Z.convert_text
 
         Z.pat_cnt = dict((xpat, 0) for [xpat, _, _, _, _, _] in Z.convert)
-        Z.pat_cnt ['look_in_flag']= 0
+        Z.pat_cnt ['delim_flag']= 0
         Z.insert_list = []
 
     def run(Z, html_fnm, dbg=True, pre_replace=True):
@@ -3118,7 +3155,12 @@ class HtmlView(CheckEnv):
  
         def pre_replace_in_file_lines(html_fnm):
 
-            file_lines = replace_in_list( FileOper.file2list(html_fnm), {  r'\r': '',  '../':'', })
+            if Z.bs_fmt:
+                file_fmt=FileOper.file2pretty2list
+            else:
+                file_fmt=FileOper.file2list
+
+            file_lines = replace_in_list( file_fmt(html_fnm), {  b'\r': b'',  b'../': b'', })
 
             file_lines=[ re.sub(  r'[\"\'](.*){{(.*)[\"\']'  , '"replaced by facew2p"', i ) for i in file_lines ]
   
@@ -3138,34 +3180,42 @@ class HtmlView(CheckEnv):
 
         log_str = []
 
-        Z.digit_list_pat=re.compile( r'(^[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
+        #Z.digit_list_pat=re.compile( b'^[0-9]+([\s,.\/\%\:]?[0-9]+)?$' )
+        Z.digit_list_pat=re.compile( b'(^fa\-.+|[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
+        #Z.digit_list_pat=re.compile( r'(^fa\-|[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/\$]?\s*)+' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/]?\s*)+?(?![a-zA-Z]+)' )
         pat_look_in= re.compile( r'^((.*?)(\{\{)(.*?)$)|(^(#|http|\/\/|javascript:|tel:|mailto:)(.*)$)' )
 
+        js_flag= False
         for num_str, line in enumerate(lines):
+            
+            if  line.strip() == '<script>' : js_flag = True; continue
+            if  line.strip() == '</script>' : js_flag = False ; continue
+            if js_flag == True: continue
+
             for pat in Z.convert:
-                [pat_name, p1, p2, func_nm, look_in_flag, is_digit_list] = pat
+                [pat_name, p1, p2, func_nm, delim_flag, is_digit_list] = pat
                 match = re.search(p1, line)
                 if not match is None:
-                    if (look_in_flag == True):
+                    if (delim_flag == True):
                         grp0 = match.group(2)
                         grp000 = match.group(0)
                         #ma_look= re.search(pat_look_in, grp0)
                         #if ma_look:
                         #     #print ("++++++++++++ ",ma_look.group(0))
-                        #     Z.pat_cnt ['look_in_flag'] += 1
+                        #     Z.pat_cnt ['delim_flag'] += 1
                         #     continue
 
                         if any([("{{" in grp0 ),
                                 grp0.startswith( ('#', '//', 'http', 'javascript:', 'tel:', 'mailto:',) )  
                                  ]):
-                                Z.pat_cnt ['look_in_flag'] += 1
+                                Z.pat_cnt ['delim_flag'] += 1
                                 continue
 
                         if is_digit_list == True:
 
-                                if any( [ ('&lt;' in grp0 ),
+                                if  any( [ 
                                      (len(grp0) == 0),
                                      ('&gt;'in grp0 ),
                                      ('&lt;'in grp0 ),
@@ -3235,7 +3285,7 @@ class HtmlView(CheckEnv):
 
         [Z.run(fnm, dbg=False) for fnm in glob.glob("*.html")]
         pprint.pprint(Z.pat_cnt, )  # width =1)
-        prYellow("replaced: %s" % sum([int(v) for v in Z.pat_cnt.values()]))
+        prYellow("replaced: %s" % (sum([int(v) for v in Z.pat_cnt.values()])- Z.pat_cnt ['delim_flag']  )   )
         print ("uniq_key_value: %s" % next(int_uniq_key))
 # ---------------------------------------------------------------------------------------------
 
@@ -3975,7 +4025,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    MyTest(run_test=False)
+    #MyTest(run_test=True)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
