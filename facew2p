@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.180" # 4.08.2019
+__version__ = "0.1.181" # 4.08.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -477,6 +477,48 @@ class FileOper:
             result = re.sub(pat, "", code, flags=re.S)
         return result.split('\n')
 
+#-----------------------------------------------------------------------------
+    @staticmethod
+    def check_html_tags(fnm):
+        
+        
+        stack = []
+        
+        with open(fnm, 'r') as parse_file:
+            for line in parse_file:
+                #print ( "INPUT LINE:", line )
+                ltag = line.find('<')
+                if ltag > -1:
+                    rtag = line.find('>')
+                    if rtag > -1:
+                        # Found left and right brackets: grab tag
+                        tag = line[ltag+1: rtag]
+                        open_tag = tag[0] != '/'
+                        if open_tag:
+                            # Add tag to stack
+                            stack.append(tag)
+                            print( "TRACE open", stack )
+                        else:
+                            tag = tag[1:]
+                            if len(stack) == 0:
+                                print ( "No blocks are open; tried to close", tag )
+                            else:
+                                if stack[-1] == tag:
+                                    # Close the block
+                                    stack.pop()
+                                    print ("TRACE close", tag, stack )
+                                else:
+                                    print ("Tried to close", tag, "but most recent open block is", stack[0] )
+                                    if tag in stack:
+                                        stack.remove(tag)
+                                        print ( "Prior block closed; continuing" )
+        
+        if len(stack):
+              print ("Blocks still open at EOF:", stack)
+        
+#-----------------------------------------------------------------------------
+
+
     @staticmethod
     def file2pretty2list(html_fnm):
         import bs4
@@ -494,7 +536,8 @@ class FileOper:
             print (t_html)
             print (t_pt)
             with open(html_fnm) as f:
-                soup= bs4.BeautifulSoup(f.read(), "lxml")
+                #soup= bs4.BeautifulSoup(f.read(), "lxml")
+                soup= bs4.BeautifulSoup(f.read(), "html5lib")
 
             with open(pret_fnm  , "wb") as f:
                 f.write(   soup.prettify("utf-8")   )
@@ -503,7 +546,7 @@ class FileOper:
                     fnm=pret_fnm , src_pat=r'(<title[^<]+)(.*?)(</title>)(.)',
                          dst_pat="<title>facew2p</title>\n")
 
-
+        #FileOper.check_html_tags( pret_fnm )
         return FileOper.file2list( pret_fnm )
 
 
@@ -3057,7 +3100,6 @@ class HtmlView(CheckEnv):
         Z.convert = [ 
             ['href_#s', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html[#s][^\"\']*?)([\"\'])()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True , False],
             ['href_html', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
-            ['href_action', re.compile(r'(action\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
             ['href_root', re.compile(r'(href\s*=\s*[\"\'])([/])([\"\'])()'), r'\1 \2 \3', r_h1, True , False],
             ['href_any', re.compile(r'(href\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True , False],
             ['src_any', re.compile(r'(src\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True , False],
@@ -3140,7 +3182,7 @@ class HtmlView(CheckEnv):
  
         def pre_replace_in_file_lines(html_fnm):
 
-            file_lines = replace_in_list( FileOper.file2pretty2list(html_fnm), {  r'\r': '',  '../':'', })
+            file_lines = replace_in_list( FileOper.file2list(html_fnm), {  r'\r': '',  '../':'', })
 
             file_lines=[ re.sub(  r'[\"\'](.*){{(.*)[\"\']'  , '"replaced by facew2p"', i ) for i in file_lines ]
   
@@ -3167,7 +3209,6 @@ class HtmlView(CheckEnv):
         for num_str, line in enumerate(lines):
             if line.strip() == '<script>':  js_flag = True; continue
             if line.strip() == '</script>': js_flag = False; continue
-            if js_flag == True: continue
 
             for pat in Z.convert:
                 [pat_name, p1, p2, func_nm, look_in_flag, is_digit_list] = pat
