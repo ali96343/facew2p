@@ -3205,10 +3205,8 @@ class HtmlView(CheckEnv):
         Z.digit_list_pat=re.compile( r'(^[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/\$]?\s*)+' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/]?\s*)+?(?![a-zA-Z]+)' )
-        js_flag= False; i_flag= False
         for num_str, line in enumerate(lines):
-            if line.strip() == '<script>':  js_flag = True; continue
-            if line.strip() == '</script>': js_flag = False; continue
+            
 
             for pat in Z.convert:
                 [pat_name, p1, p2, func_nm, look_in_flag, is_digit_list] = pat
