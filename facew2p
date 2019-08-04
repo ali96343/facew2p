@@ -20,13 +20,11 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.75-su" # 3.07.2019
+__version__ = "0.1.180" # 4.08.2019
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
-
-# https://cssgrid-generator.netlify.com/
 
 #  <title.*?>(.+?)</title>    r'<title[^>]*>([^<]+)</title>'
 # https://webdesign.tutsplus.com/ru/tutorials/how-to-build-web-form-layouts-with-css-grid--cms-28776
@@ -480,6 +478,38 @@ class FileOper:
         return result.split('\n')
 
     @staticmethod
+    def file2pretty2list(html_fnm):
+        import bs4
+        pret_fnm= html_fnm + '.p1'
+        if not os.path.exists(html_fnm):
+            prRed("some errors: %s" % html_fnm)
+            return []
+        t_html = os.path.getmtime( html_fnm )
+        t_pt= 0.0
+        if  os.path.isfile( pret_fnm  ):
+            t_pt = os.path.getmtime( pret_fnm )
+
+        if  (not os.path.isfile( pret_fnm ) ):
+            print ("++++++++++++++++")
+            print (t_html)
+            print (t_pt)
+            with open(html_fnm) as f:
+                soup= bs4.BeautifulSoup(f.read(), "lxml")
+
+            with open(pret_fnm  , "wb") as f:
+                f.write(   soup.prettify("utf-8")   )
+
+            fnm1 = FileOper.replace_pat(
+                    fnm=pret_fnm , src_pat=r'(<title[^<]+)(.*?)(</title>)(.)',
+                         dst_pat="<title>facew2p</title>\n")
+
+
+        return FileOper.file2list( pret_fnm )
+
+
+
+
+    @staticmethod
     def rebuild_node_index(
             fnm="index.html",
             dbg=False,
@@ -697,38 +727,6 @@ class FileOper:
             f.write("\n")
             pprint.pprint(rep_dict, width=1, stream=f)
         return fnm
-
-    @staticmethod
-    def file2pretty2list(html_fnm):
-        import bs4
-        pret_fnm= html_fnm + '.p1'
-        if not os.path.exists(html_fnm):
-            prRed("some errors: %s" % html_fnm)
-            return []
-        t_html = os.path.getmtime( html_fnm )
-        t_pt= 0.0
-        if  os.path.isfile( pret_fnm  ):
-            t_pt = os.path.getmtime( pret_fnm )
-
-        if  (not os.path.isfile( pret_fnm ) ):
-            print ("++++++++++++++++")
-            print (t_html)
-            print (t_pt)
-            with open(html_fnm) as f:
-                soup= bs4.BeautifulSoup(f.read(), "lxml")
-
-            with open(pret_fnm  , "wb") as f:
-                f.write(   soup.prettify("utf-8")   )
-
-            fnm1 = FileOper.replace_pat(
-                    fnm=pret_fnm , src_pat=r'(<title[^<]+)(.*?)(</title>)(.)', 
-                         dst_pat="<title>facew2p</title>\n")
-
-
-        return FileOper.file2list( pret_fnm )
-
-
-
 
     @staticmethod
     def diff_my_files(file1, file2):
@@ -2777,12 +2775,11 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, bs_fmt= True):
+    def __init__(Z, plus_labels=True, ):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
-        Z.bs_fmt= bs_fmt
         #f0 = None
         #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
@@ -2793,8 +2790,9 @@ class HtmlView(CheckEnv):
 
         Z.repl_ll = FileOper.put_get_yaml('facew2p' + '.yaml', Z.repl_ll,)
 
-       # Z.continue_all = ['sparkline-bar-stat', '000</span>', '6</span']
-       # Z.continue_all = FileOper.put_get_yaml( 'facew2pconti' + '.yaml', Z.continue_all,)
+        Z.continue_all = ['sparkline-bar-stat', '000</span>', '6</span']
+        Z.continue_all = FileOper.put_get_yaml(
+            'facew2pconti' + '.yaml', Z.continue_all,)
      
         def madebug(ma):
            print ("----------magroups, caller: {}".format( sys._getframe(1).f_code.co_name ) )
@@ -2867,13 +2865,16 @@ class HtmlView(CheckEnv):
         r_u0 = r_h2
 
         def is_it_image(ma2):
-            return ma2.lower().endswith ( ('.png', '.jpg' , '.jpeg', '.gif', '.svg', '.bmp') )
-            #ma2end= ma2.split('.')[-1].lower()
-            #ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg', 'bmp']
-            #return ma2end in ima_end
+            ma2end= ma2.split('.')[-1].lower()
+            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg', 'bmp']
+            return ma2end in ima_end
 
 
         def check_add_img(ma2):
+            ma2end= ma2.split('.')[-1].lower()
+            ima_end= ['png', 'jpg' , 'jpeg', 'gif', 'svg']
+            #if any([ma2.endswith(".png"), ma2.endswith(".jpg"), ma2.endswith(
+            #        ".jpeg"), ma2.endswith(".gif"), ma2.endswith(".svg")]):
             if is_it_image(ma2):
             #if ma2end in ima_end:
 
@@ -2963,8 +2964,11 @@ class HtmlView(CheckEnv):
                 p2 = p2.replace(r'\g<2>', x_nm)
             new_pat = p2 % (url_beg, url_end)
             if not os.path.exists(magrp2):
-                #if magrp2.endswith( (  ".png", ".jpg", ".jpeg", ".gif", ".svg") ):
-                if is_it_image(magrp2):
+                if any([magrp2.endswith(".png"),
+                        magrp2.endswith(".jpg"),
+                        magrp2.endswith(".jpeg"),
+                        magrp2.endswith(".gif"),
+                        magrp2.endswith(".svg")]):
                     new_pat = gif1x1src
             return (new_pat, "")
 
@@ -2991,19 +2995,6 @@ class HtmlView(CheckEnv):
             key_prefix = s[s.index('"') + 1:s.index('"') + 3]
             ins_str = ins2table(num_str, key_prefix, ma.group(2))
             return (new_pat, ins_str)
-
-
-        def r_pl_any(Z, ma, p2, num_str):
-            #print ("================ ", ma.group(2))
-            #madebug(ma)
-            new_pat = p2.format('DICT', str(num_str),)
-            s = p2
-            # !!! DANGER hack: create  unique key
-            key_prefix = s[s.index('"') + 1:s.index('"') + 3]
-            ins_str = ins2table(num_str, key_prefix, ma.group(2))
-            return (new_pat, ins_str)
-
-
 
         def r_div(Z, ma, p2, num_str):
             # if ( '<' in ma.group(2)) or ('<' or ma.group(2)) :
@@ -3066,14 +3057,14 @@ class HtmlView(CheckEnv):
         Z.convert = [ 
             ['href_#s', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html[#s][^\"\']*?)([\"\'])()') , r'\g<1> %s \g<2> %s \g<4> ', r_hx, True , False],
             ['href_html', re.compile(r'(href\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
-            ['action_html', re.compile(r'(action\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
+            ['href_action', re.compile(r'(action\s*=\s*[\"\'])([^\.]+)(\.html\s*)([\"\'])()'), r'\g<1> %s \g<2> %s \g<4> ', r_h0, True , False],
             ['href_root', re.compile(r'(href\s*=\s*[\"\'])([/])([\"\'])()'), r'\1 \2 \3', r_h1, True , False],
             ['href_any', re.compile(r'(href\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_h2, True , False],
             ['src_any', re.compile(r'(src\s*=\s*[\"\'])([^\"\']+)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_src, True , False],
-            ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, True , True],
+            ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
             #['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])(\w+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False , False],
-            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, True , False],
+            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False , False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False , False],
@@ -3081,7 +3072,7 @@ class HtmlView(CheckEnv):
 
         Z.convert_text = [
             ['strong', re.compile(r'(<strong>)([^<]*)(</strong>)()'), r'\g<1>{{{{={}["sp{}"]}}}}\g<3>', r_sp, True , True],
-            #['any_2', re.compile(r'(>)([a-zA-Z]+?)(</)()'), r'\g<1>{{{{={}["bj{}"]}}}}\g<3>', r_pl_any, True , True],
+            #['any_empty', re.compile(r'(^)([^<\/\>\=\(\)\;\.\"\'\&\$\#]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_sp, True , True],
             ['<b>', re.compile(r'(<b>)([^<]*)(</b>)()'), r'\g<1>{{{{={}["bb{}"]}}}}\g<3>', r_sp, True , True],
             # [ '<sup>',  re.compile(r'(<sup>)([^<]*)(</sup>)()'),          r'\g<1>{{{{={}["su{}"]}}}}\g<3>'  ,  r_sp, True  , True],
             ['<i>', re.compile(r'(<i>)([^<]*)(</i>)()'), r'\g<1>{{{{={}["ii{}"]}}}}\g<3>', r_sp, True , True],
@@ -3115,20 +3106,14 @@ class HtmlView(CheckEnv):
             ['<a...>...<', re.compile("(<a[^>]+>)(.*?)(</a>)()"), r'\g<1>{{{{={}["aa{}"]}}}}\g<3>', r_a0, True , True],
             ['div', re.compile("(<div[^>]+>)(.*?)(</div>)()"), r'\g<1>{{{{={}["di{}"]}}}}\g<3>', r_a0, True , True],
             ['mail', re.compile(r'([\w\.-]+@[\w\.-]+)'), r'{{=%s["ma%s"]}}', ret_mail, False , True],
-         ] 
-        Z.conv_any= [
-            #['any_txt', re.compile(r'(^\s*)([^<\/\>\=\*\|\(\)\;\+\%\{\^\}\[\]\"\'\&\$\:\#\d]*)($)()'), r'\g<1>{{{{={}["bw{}"]}}}}\g<3>', r_pl_any, True , True],
-            ['text', re.compile(r'(^\s*)(((?!fa)[^<\&])*?)(\s*$)()'), r'\g<1>{{{{={}["bw{}"]}}}}', r_pl_any, True , True],
+            #['maybe_tel', re.compile(r'(\D{1,2}?\d{2,3})\D{0,2}(\d{2,3})\D{0,2}(\d{2,4})\D{1,2}(\d*)'), r'{{=%s["te%s"]}}', ret_tel, False , True],
+            #[ 'copyright',  re.compile( r'(\s*Copyright\s?)([^<]+<)', re.I  ), r'{{=%s["cp%s"]}}', ret_cp, False ],
         ]
 
         if Z.plus_labels:
-            if Z.bs_fmt:
-                Z.convert += Z.conv_any
-            else:
-                Z.convert += Z.convert_text
+            Z.convert += Z.convert_text
 
         Z.pat_cnt = dict((xpat, 0) for [xpat, _, _, _, _, _] in Z.convert)
-        Z.pat_cnt ['delim_flag']= 0
         Z.insert_list = []
 
     def run(Z, html_fnm, dbg=True, pre_replace=True):
@@ -3155,12 +3140,7 @@ class HtmlView(CheckEnv):
  
         def pre_replace_in_file_lines(html_fnm):
 
-            if Z.bs_fmt:
-                file_fmt=FileOper.file2pretty2list
-            else:
-                file_fmt=FileOper.file2list
-
-            file_lines = replace_in_list( file_fmt(html_fnm), {  b'\r': b'',  b'../': b'', })
+            file_lines = replace_in_list( FileOper.file2pretty2list(html_fnm), {  r'\r': '',  '../':'', })
 
             file_lines=[ re.sub(  r'[\"\'](.*){{(.*)[\"\']'  , '"replaced by facew2p"', i ) for i in file_lines ]
   
@@ -3180,65 +3160,58 @@ class HtmlView(CheckEnv):
 
         log_str = []
 
-        #Z.digit_list_pat=re.compile( b'^[0-9]+([\s,.\/\%\:]?[0-9]+)?$' )
-        Z.digit_list_pat=re.compile( b'(^fa\-.+|[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
-        #Z.digit_list_pat=re.compile( r'(^fa\-|[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
+        Z.digit_list_pat=re.compile( r'(^[\d-]+[\.\,0-9%-]*\s*[\,\/\$]?\s*)+[^a-zA-Z]+$' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/\$]?\s*)+' )
         #Z.digit_list_pat=re.compile( r'(^[0-9-]+[\.0-9%-]?\s*[\,\/]?\s*)+?(?![a-zA-Z]+)' )
-        pat_look_in= re.compile( r'^((.*?)(\{\{)(.*?)$)|(^(#|http|\/\/|javascript:|tel:|mailto:)(.*)$)' )
-
-        js_flag= False
+        js_flag= False; i_flag= False
         for num_str, line in enumerate(lines):
-            
-            if  line.strip() == '<script>' : js_flag = True; continue
-            if  line.strip() == '</script>' : js_flag = False ; continue
+            if line.strip() == '<script>':  js_flag = True; continue
+            if line.strip() == '</script>': js_flag = False; continue
             if js_flag == True: continue
 
             for pat in Z.convert:
-                [pat_name, p1, p2, func_nm, delim_flag, is_digit_list] = pat
+                [pat_name, p1, p2, func_nm, look_in_flag, is_digit_list] = pat
                 match = re.search(p1, line)
-                if not match is None:
-                    if (delim_flag == True):
+                if match:
+                    if (look_in_flag):
                         grp0 = match.group(2)
                         grp000 = match.group(0)
-                        #ma_look= re.search(pat_look_in, grp0)
-                        #if ma_look:
-                        #     #print ("++++++++++++ ",ma_look.group(0))
-                        #     Z.pat_cnt ['delim_flag'] += 1
-                        #     continue
 
                         if any([("{{" in grp0 ),
-                                grp0.startswith( ('#', '//', 'http', 'javascript:', 'tel:', 'mailto:',) )  
-                                 ]):
-                                Z.pat_cnt ['delim_flag'] += 1
-                                continue
+                                grp0.startswith('#'),
+                                grp0.startswith('//'),
+                                grp0.startswith('javascript:'),
+                                grp0.startswith('tel:'),
+                                grp0.startswith('mailto:'),
+                                #('#' in grp0 ),
+                                #("javascript" in grp0 ),
+                                #('tel:' in grp0 ),
+                                #("mailto:" in grp0 ),
+                                ('://' in grp0 ),
+                                ('&lt;' in grp0 ),
+                                ('&gt;'in grp0 ),
+                                ('&quot;' in grp0 ),
+                                ('&amp;' in grp0 ),
+                                ('&nbsp;' in grp0 ),
+                                ('&larr;' in grp0 ),
+                                ('&times;' in grp0 ),
+                                ('&copy;' in grp0 ),
+                                ('<' in grp0 ),
+                                ('>' in grp0 ),
+                                ('©' in grp0 ),
+                                ('Colorlib' in grp0 ),
+                                ('Almsaeed' in grp0 ),
+                                ('W3layouts' in grp0 ),
+                                ('Bootstrapious' in grp0 ),
+                                (len(grp0) == 0),
+                                ]):
+                            continue
 
                         if is_digit_list == True:
-
-                                if  any( [ 
-                                     (len(grp0) == 0),
-                                     ('&gt;'in grp0 ),
-                                     ('&lt;'in grp0 ),
-                                     ('&quot;' in grp0 ),
-                                     ('&amp;' in grp0 ),
-                                     ('&nbsp;' in grp0 ),
-                                     ('&larr;' in grp0 ),
-                                     ('&times;' in grp0 ),
-                                     ('&copy;' in grp0 ),
-                                     ('<' in grp0 ),
-                                     ('>' in grp0 ),
-                                     ('©' in grp0 ),
-                                     ('Colorlib' in grp0 ),
-                                     ('Almsaeed' in grp0 ),
-                                     ('W3layouts' in grp0 ),
-                                     ('Bootstrapious' in grp0 ),] ):
-                                     
-                                     continue
-
-                                digit_list =re.search( Z.digit_list_pat , grp0)
-                                if digit_list and len(digit_list.group(0)):
+                              digit_list =re.search( Z.digit_list_pat , grp0)
+                              if digit_list and len(digit_list.group(0)):
                                      #print ('================', digit_list.group(0))
-                                     #print ('================', grp000)
+                                     #print ('================', grp0)
                                      continue
 
                         #if len([x for x in Z.continue_all if x in grp000]):
@@ -3285,7 +3258,7 @@ class HtmlView(CheckEnv):
 
         [Z.run(fnm, dbg=False) for fnm in glob.glob("*.html")]
         pprint.pprint(Z.pat_cnt, )  # width =1)
-        prYellow("replaced: %s" % (sum([int(v) for v in Z.pat_cnt.values()])- Z.pat_cnt ['delim_flag']  )   )
+        prYellow("replaced: %s" % sum([int(v) for v in Z.pat_cnt.values()]))
         print ("uniq_key_value: %s" % next(int_uniq_key))
 # ---------------------------------------------------------------------------------------------
 
@@ -3926,8 +3899,8 @@ class MyTest(StrDb):
             prYellow("== url tests ==")
         else:
             prYellow("== url tests is off, it's controllers list  ==")
-            prYellow (
-                "for run tests set your url (at end of %s) and run_test = True" %
+            print (
+                "for run tests set your url (at end of %s)" %
                 os.path.basename(__file__))
         Z.app_nm = Z.get_app_nm()
         try:
@@ -4025,7 +3998,7 @@ if __name__ == "__main__":
     prYellow("images: %s" % len(a.db_src_myimg))
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
-    #MyTest(run_test=True)
+    MyTest(run_test=False)
     MyPassword(
         secure_pass=False,
         app_name=a.app_nm).run(
@@ -4033,7 +4006,7 @@ if __name__ == "__main__":
         cre_lock=False)
     print ("uniq_key_4_unk: %s" % str(next(int_uniq_key4unk)))
 
-    prGreen("= the web2py app     %s     was generated with %s %s =" %
+    prGreen("= the web2py app     %s     was generated by %s %s =" %
             (a.app_nm, os.path.basename(__file__), __version__))
     if plus_labels:
         print (
@@ -4050,3 +4023,4 @@ if __name__ == "__main__":
     check_model(dbg=False)
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
+
