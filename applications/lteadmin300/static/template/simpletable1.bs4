@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 simpletable1', f1= '0w2p1 Task', f2= '0w2p2 Progress', f3= '0w2p3 Label', )
+      db.DBTBL.insert( f0= '1.', f1= 'Update software', f2= 'unk_4', f3= '55%', )
+      db.DBTBL.insert( f0= '2.', f1= 'Clean database', f2= 'unk_5', f3= '70%', )
+      db.DBTBL.insert( f0= '3.', f1= 'Cron job running', f2= 'unk_6', f3= '30%', )
+      db.DBTBL.insert( f0= '4.', f1= 'Fix and squish bugs', f2= 'unk_7', f3= '90%', )

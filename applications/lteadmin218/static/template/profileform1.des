@@ -1,0 +1,20 @@
+- - input
+  - class: form-control input-sm
+    id: id_for504
+    placeholder: Response
+  - class: ''
+    for: id_for504
+    text: label505
+  - null
+  - null
+- - button
+  - class: btn btn-danger pull-right btn-block btn-sm
+    id: id_for506
+    placeholder: place_508
+    type: submit
+    value: Send
+  - class: ''
+    for: id_for506
+    text: label507
+  - null
+  - null

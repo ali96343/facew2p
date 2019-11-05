@@ -1,0 +1,10 @@
+- - Qty
+  - string
+- - Product
+  - string
+- - 'Serial #'
+  - string
+- - Description
+  - string
+- - Subtotal
+  - string

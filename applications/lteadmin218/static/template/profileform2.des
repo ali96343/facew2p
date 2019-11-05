@@ -1,0 +1,77 @@
+- - input
+  - class: form-control
+    id: inputName
+    placeholder: Name
+    type: email
+  - class: 'col-sm-2 control-label '
+    for: inputName
+    text: Name
+  - null
+  - null
+- - input
+  - class: form-control
+    id: inputEmail
+    placeholder: Email
+    type: email
+  - class: 'col-sm-2 control-label '
+    for: inputEmail
+    text: Email
+  - null
+  - null
+- - input
+  - class: form-control
+    id: inputName
+    placeholder: Name
+    type: text
+  - class: 'col-sm-2 control-label '
+    for: inputName
+    text: Name
+  - null
+  - null
+- - input
+  - class: form-control
+    id: inputSkills
+    placeholder: Skills
+    type: text
+  - class: 'col-sm-2 control-label '
+    for: inputSkills
+    text: Skills
+  - null
+  - null
+- - checkbox
+  - id: id_for517
+    placeholder: place_520
+    type: checkbox
+  - class: ''
+    for: id_for517
+    text: I agree to the terms and conditions
+  - null
+  - null
+- - textarea
+  - class: form-control
+    id: inputExperience
+    placeholder: Experience
+  - class: 'col-sm-2 control-label '
+    for: inputExperience
+    text: Experience
+  - null
+  - null
+- - button
+  - class: btn btn-danger
+    id: id_for523
+    placeholder: place_525
+    type: submit
+    value: Submit
+  - class: ''
+    for: id_for523
+    text: label524
+  - null
+  - null
+- - button
+  - id: id_for526
+    placeholder: place_529
+  - class: ''
+    for: id_for526
+    text: I agree to the terms and conditions
+  - null
+  - null

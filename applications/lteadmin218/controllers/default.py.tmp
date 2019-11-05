@@ -1,0 +1,408 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+# -------------------------------------------------------------------------
+# This is a sample controller
+# - index is the default action of any application
+# - user is required for authentication and authorization
+# - download is for downloading files uploaded in the db (does streaming)
+# -------------------------------------------------------------------------
+
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+
+
+#@auth.requires_login()
+def inline():
+    response.view = 'default/inline.html'
+    qu=db.dinline.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def readIImail():
+    response.view = 'default/read-mail.html'
+    qu=db.dread0mail.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def blank():
+    response.view = 'default/blank.html'
+    qu=db.dblank.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def advanced():
+    response.view = 'default/advanced.html'
+    qu=db.dadvanced.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def modals():
+    response.view = 'default/modals.html'
+    qu=db.dmodals.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def invoice():
+    response.view = 'default/invoice.html'
+    qu=db.dinvoice.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def pace():
+    response.view = 'default/pace.html'
+    qu=db.dpace.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def compose():
+    response.view = 'default/compose.html'
+    qu=db.dcompose.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def simple():
+    response.view = 'default/simple.html'
+    qu=db.dsimple.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def collapsedIIsidebar():
+    response.view = 'default/collapsed-sidebar.html'
+    qu=db.dcollapsed0sidebar.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def boxed():
+    response.view = 'default/boxed.html'
+    qu=db.dboxed.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def buttons():
+    response.view = 'default/buttons.html'
+    qu=db.dbuttons.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def editors():
+    response.view = 'default/editors.html'
+    qu=db.deditors.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def morris():
+    response.view = 'default/morris.html'
+    qu=db.dmorris.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def chartjs():
+    response.view = 'default/chartjs.html'
+    qu=db.dchartjs.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def icons():
+    response.view = 'default/icons.html'
+    qu=db.dicons.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def index2():
+    response.view = 'default/index2.html'
+    qu=db.dindex2.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def login():
+    response.view = 'default/login.html'
+    qu=db.dlogin.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def mailbox():
+    response.view = 'default/mailbox.html'
+    qu=db.dmailbox.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def lockscreen():
+    response.view = 'default/lockscreen.html'
+    qu=db.dlockscreen.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def sliders():
+    response.view = 'default/sliders.html'
+    qu=db.dsliders.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def profile():
+    response.view = 'default/profile.html'
+    qu=db.dprofile.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def fixed():
+    response.view = 'default/fixed.html'
+    qu=db.dfixed.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def timeline():
+    response.view = 'default/timeline.html'
+    qu=db.dtimeline.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def register():
+    response.view = 'default/register.html'
+    qu=db.dregister.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def widgets():
+    response.view = 'default/widgets.html'
+    qu=db.dwidgets.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+#@auth.requires_login()
+def index():
+    response.view = 'default/index.html'
+    qu=db.dindex.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def calendar():
+    response.view = 'default/calendar.html'
+    qu=db.dcalendar.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def X500():
+    response.view = 'default/500.html'
+    qu=db.d500.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def topIInav():
+    response.view = 'default/top-nav.html'
+    qu=db.dtop0nav.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def general():
+    response.view = 'default/general.html'
+    qu=db.dgeneral.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def starter():
+    response.view = 'default/starter.html'
+    qu=db.dstarter.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def flot():
+    response.view = 'default/flot.html'
+    qu=db.dflot.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def data():
+    response.view = 'default/data.html'
+    qu=db.ddata.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def X404():
+    response.view = 'default/404.html'
+    qu=db.d404.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#
+
+
+#@auth.requires_login()
+def invoiceIIprint():
+    response.view = 'default/invoice-print.html'
+    qu=db.dinvoice0print.id > 0
+    rows=db(qu).select()
+    rows_dict = { r.f0 : r.f1 for r in rows }
+    return dict( DICT= rows_dict)
+#

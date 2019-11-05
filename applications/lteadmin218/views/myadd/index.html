@@ -1,0 +1,259 @@
+{{extend 'w2playout.html'}}
+{{=form}}
+<style>
+   p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12pt; /* Размер шрифта в пунктах */ 
+   }
+  </style>
+<p>{{=T('site tables')}}</p>
+
+<p>{{=A('dinline', _href=URL(c='myadd',f='inline'))}}</p>
+
+<p>{{=A('dread0mail', _href=URL(c='myadd',f='readIImail'))}}</p>
+
+<p>{{=A('dblank', _href=URL(c='myadd',f='blank'))}}</p>
+
+<p>{{=A('dadvanced', _href=URL(c='myadd',f='advanced'))}}</p>
+
+<p>{{=A('dmodals', _href=URL(c='myadd',f='modals'))}}</p>
+
+<p>{{=A('dinvoice', _href=URL(c='myadd',f='invoice'))}}</p>
+
+<p>{{=A('dpace', _href=URL(c='myadd',f='pace'))}}</p>
+
+<p>{{=A('dcompose', _href=URL(c='myadd',f='compose'))}}</p>
+
+<p>{{=A('dsimple', _href=URL(c='myadd',f='simple'))}}</p>
+
+<p>{{=A('dcollapsed0sidebar', _href=URL(c='myadd',f='collapsedIIsidebar'))}}</p>
+
+<p>{{=A('dboxed', _href=URL(c='myadd',f='boxed'))}}</p>
+
+<p>{{=A('dbuttons', _href=URL(c='myadd',f='buttons'))}}</p>
+
+<p>{{=A('deditors', _href=URL(c='myadd',f='editors'))}}</p>
+
+<p>{{=A('dmorris', _href=URL(c='myadd',f='morris'))}}</p>
+
+<p>{{=A('dchartjs', _href=URL(c='myadd',f='chartjs'))}}</p>
+
+<p>{{=A('dicons', _href=URL(c='myadd',f='icons'))}}</p>
+
+<p>{{=A('dindex2', _href=URL(c='myadd',f='index2'))}}</p>
+
+<p>{{=A('dlogin', _href=URL(c='myadd',f='login'))}}</p>
+
+<p>{{=A('dmailbox', _href=URL(c='myadd',f='mailbox'))}}</p>
+
+<p>{{=A('dlockscreen', _href=URL(c='myadd',f='lockscreen'))}}</p>
+
+<p>{{=A('dsliders', _href=URL(c='myadd',f='sliders'))}}</p>
+
+<p>{{=A('dprofile', _href=URL(c='myadd',f='profile'))}}</p>
+
+<p>{{=A('dfixed', _href=URL(c='myadd',f='fixed'))}}</p>
+
+<p>{{=A('dtimeline', _href=URL(c='myadd',f='timeline'))}}</p>
+
+<p>{{=A('dregister', _href=URL(c='myadd',f='register'))}}</p>
+
+<p>{{=A('dwidgets', _href=URL(c='myadd',f='widgets'))}}</p>
+
+<p>{{=A('dindex', _href=URL(c='myadd',f='table_index1'))}}</p>
+
+<p>{{=A('dcalendar', _href=URL(c='myadd',f='calendar'))}}</p>
+
+<p>{{=A('d500', _href=URL(c='myadd',f='X500'))}}</p>
+
+<p>{{=A('dtop0nav', _href=URL(c='myadd',f='topIInav'))}}</p>
+
+<p>{{=A('dgeneral', _href=URL(c='myadd',f='general'))}}</p>
+
+<p>{{=A('dstarter', _href=URL(c='myadd',f='starter'))}}</p>
+
+<p>{{=A('dflot', _href=URL(c='myadd',f='flot'))}}</p>
+
+<p>{{=A('ddata', _href=URL(c='myadd',f='data'))}}</p>
+
+<p>{{=A('d404', _href=URL(c='myadd',f='X404'))}}</p>
+
+<p>{{=A('dinvoice0print', _href=URL(c='myadd',f='invoiceIIprint'))}}</p>
+
+<p>{{=A('auth_event', _href=URL(c='myadd',f='auth_eventctrl'))}}</p>
+
+<p>{{=A('auth_user', _href=URL(c='myadd',f='auth_userctrl'))}}</p>
+
+<p>{{=A('auth_group', _href=URL(c='myadd',f='auth_groupctrl'))}}</p>
+
+<p>{{=A('auth_membership', _href=URL(c='myadd',f='auth_membershipctrl'))}}</p>
+
+<p>{{=A('datatable0', _href=URL(c='myadd',f='datatable0ctrl'))}}</p>
+
+<p>{{=A('datatable1', _href=URL(c='myadd',f='datatable1ctrl'))}}</p>
+
+<p>{{=A('invoicetable0', _href=URL(c='myadd',f='invoicetable0ctrl'))}}</p>
+
+<p>{{=A('invoice0printtable0', _href=URL(c='myadd',f='invoice0printtable0ctrl'))}}</p>
+
+<p>{{=A('index2table0', _href=URL(c='myadd',f='index2table0ctrl'))}}</p>
+
+<p>{{=A('dboxedform0', _href=URL(c='myadd',f='dboxedform0ctrl'))}}</p>
+
+<p>{{=A('dboxedform1', _href=URL(c='myadd',f='dboxedform1ctrl'))}}</p>
+
+<p>{{=A('dfixedform0', _href=URL(c='myadd',f='dfixedform0ctrl'))}}</p>
+
+<p>{{=A('dfixedform1', _href=URL(c='myadd',f='dfixedform1ctrl'))}}</p>
+
+<p>{{=A('dadvancedform0', _href=URL(c='myadd',f='dadvancedform0ctrl'))}}</p>
+
+<p>{{=A('dadvancedform1', _href=URL(c='myadd',f='dadvancedform1ctrl'))}}</p>
+
+<p>{{=A('dX404form0', _href=URL(c='myadd',f='dX404form0ctrl'))}}</p>
+
+<p>{{=A('dX404form1', _href=URL(c='myadd',f='dX404form1ctrl'))}}</p>
+
+<p>{{=A('dX404form2', _href=URL(c='myadd',f='dX404form2ctrl'))}}</p>
+
+<p>{{=A('dcollapsedIIsidebarform0', _href=URL(c='myadd',f='dcollapsedIIsidebarform0ctrl'))}}</p>
+
+<p>{{=A('dcollapsedIIsidebarform1', _href=URL(c='myadd',f='dcollapsedIIsidebarform1ctrl'))}}</p>
+
+<p>{{=A('dstarterform0', _href=URL(c='myadd',f='dstarterform0ctrl'))}}</p>
+
+<p>{{=A('dstarterform1', _href=URL(c='myadd',f='dstarterform1ctrl'))}}</p>
+
+<p>{{=A('dindexform0', _href=URL(c='myadd',f='dindexform0ctrl'))}}</p>
+
+<p>{{=A('dindexform1', _href=URL(c='myadd',f='dindexform1ctrl'))}}</p>
+
+<p>{{=A('dindexform2', _href=URL(c='myadd',f='dindexform2ctrl'))}}</p>
+
+<p>{{=A('dgeneralform0', _href=URL(c='myadd',f='dgeneralform0ctrl'))}}</p>
+
+<p>{{=A('dgeneralform1', _href=URL(c='myadd',f='dgeneralform1ctrl'))}}</p>
+
+<p>{{=A('dbuttonsform0', _href=URL(c='myadd',f='dbuttonsform0ctrl'))}}</p>
+
+<p>{{=A('dbuttonsform1', _href=URL(c='myadd',f='dbuttonsform1ctrl'))}}</p>
+
+<p>{{=A('dreadIImailform0', _href=URL(c='myadd',f='dreadIImailform0ctrl'))}}</p>
+
+<p>{{=A('dreadIImailform1', _href=URL(c='myadd',f='dreadIImailform1ctrl'))}}</p>
+
+<p>{{=A('dsimpleform0', _href=URL(c='myadd',f='dsimpleform0ctrl'))}}</p>
+
+<p>{{=A('dsimpleform1', _href=URL(c='myadd',f='dsimpleform1ctrl'))}}</p>
+
+<p>{{=A('ddataform0', _href=URL(c='myadd',f='ddataform0ctrl'))}}</p>
+
+<p>{{=A('ddataform1', _href=URL(c='myadd',f='ddataform1ctrl'))}}</p>
+
+<p>{{=A('dinlineform0', _href=URL(c='myadd',f='dinlineform0ctrl'))}}</p>
+
+<p>{{=A('dinlineform1', _href=URL(c='myadd',f='dinlineform1ctrl'))}}</p>
+
+<p>{{=A('dloginform0', _href=URL(c='myadd',f='dloginform0ctrl'))}}</p>
+
+<p>{{=A('dprofileform0', _href=URL(c='myadd',f='dprofileform0ctrl'))}}</p>
+
+<p>{{=A('dprofileform1', _href=URL(c='myadd',f='dprofileform1ctrl'))}}</p>
+
+<p>{{=A('dprofileform2', _href=URL(c='myadd',f='dprofileform2ctrl'))}}</p>
+
+<p>{{=A('dprofileform3', _href=URL(c='myadd',f='dprofileform3ctrl'))}}</p>
+
+<p>{{=A('deditorsform0', _href=URL(c='myadd',f='deditorsform0ctrl'))}}</p>
+
+<p>{{=A('deditorsform1', _href=URL(c='myadd',f='deditorsform1ctrl'))}}</p>
+
+<p>{{=A('deditorsform2', _href=URL(c='myadd',f='deditorsform2ctrl'))}}</p>
+
+<p>{{=A('deditorsform3', _href=URL(c='myadd',f='deditorsform3ctrl'))}}</p>
+
+<p>{{=A('dinvoiceform0', _href=URL(c='myadd',f='dinvoiceform0ctrl'))}}</p>
+
+<p>{{=A('dinvoiceform1', _href=URL(c='myadd',f='dinvoiceform1ctrl'))}}</p>
+
+<p>{{=A('dlockscreenform0', _href=URL(c='myadd',f='dlockscreenform0ctrl'))}}</p>
+
+<p>{{=A('dcomposeform0', _href=URL(c='myadd',f='dcomposeform0ctrl'))}}</p>
+
+<p>{{=A('dcomposeform1', _href=URL(c='myadd',f='dcomposeform1ctrl'))}}</p>
+
+<p>{{=A('dblankform0', _href=URL(c='myadd',f='dblankform0ctrl'))}}</p>
+
+<p>{{=A('dblankform1', _href=URL(c='myadd',f='dblankform1ctrl'))}}</p>
+
+<p>{{=A('dmorrisform0', _href=URL(c='myadd',f='dmorrisform0ctrl'))}}</p>
+
+<p>{{=A('dmorrisform1', _href=URL(c='myadd',f='dmorrisform1ctrl'))}}</p>
+
+<p>{{=A('diconsform0', _href=URL(c='myadd',f='diconsform0ctrl'))}}</p>
+
+<p>{{=A('diconsform1', _href=URL(c='myadd',f='diconsform1ctrl'))}}</p>
+
+<p>{{=A('dtopIInavform0', _href=URL(c='myadd',f='dtopIInavform0ctrl'))}}</p>
+
+<p>{{=A('dtimelineform0', _href=URL(c='myadd',f='dtimelineform0ctrl'))}}</p>
+
+<p>{{=A('dtimelineform1', _href=URL(c='myadd',f='dtimelineform1ctrl'))}}</p>
+
+<p>{{=A('dmailboxform0', _href=URL(c='myadd',f='dmailboxform0ctrl'))}}</p>
+
+<p>{{=A('dmailboxform1', _href=URL(c='myadd',f='dmailboxform1ctrl'))}}</p>
+
+<p>{{=A('dpaceform0', _href=URL(c='myadd',f='dpaceform0ctrl'))}}</p>
+
+<p>{{=A('dpaceform1', _href=URL(c='myadd',f='dpaceform1ctrl'))}}</p>
+
+<p>{{=A('dflotform0', _href=URL(c='myadd',f='dflotform0ctrl'))}}</p>
+
+<p>{{=A('dflotform1', _href=URL(c='myadd',f='dflotform1ctrl'))}}</p>
+
+<p>{{=A('dchartjsform0', _href=URL(c='myadd',f='dchartjsform0ctrl'))}}</p>
+
+<p>{{=A('dchartjsform1', _href=URL(c='myadd',f='dchartjsform1ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform0', _href=URL(c='myadd',f='dwidgetsform0ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform1', _href=URL(c='myadd',f='dwidgetsform1ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform2', _href=URL(c='myadd',f='dwidgetsform2ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform3', _href=URL(c='myadd',f='dwidgetsform3ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform4', _href=URL(c='myadd',f='dwidgetsform4ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform5', _href=URL(c='myadd',f='dwidgetsform5ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform6', _href=URL(c='myadd',f='dwidgetsform6ctrl'))}}</p>
+
+<p>{{=A('dwidgetsform7', _href=URL(c='myadd',f='dwidgetsform7ctrl'))}}</p>
+
+<p>{{=A('dslidersform0', _href=URL(c='myadd',f='dslidersform0ctrl'))}}</p>
+
+<p>{{=A('dslidersform1', _href=URL(c='myadd',f='dslidersform1ctrl'))}}</p>
+
+<p>{{=A('dregisterform0', _href=URL(c='myadd',f='dregisterform0ctrl'))}}</p>
+
+<p>{{=A('dmodalsform0', _href=URL(c='myadd',f='dmodalsform0ctrl'))}}</p>
+
+<p>{{=A('dmodalsform1', _href=URL(c='myadd',f='dmodalsform1ctrl'))}}</p>
+
+<p>{{=A('dcalendarform0', _href=URL(c='myadd',f='dcalendarform0ctrl'))}}</p>
+
+<p>{{=A('dcalendarform1', _href=URL(c='myadd',f='dcalendarform1ctrl'))}}</p>
+
+<p>{{=A('dindex2form0', _href=URL(c='myadd',f='dindex2form0ctrl'))}}</p>
+
+<p>{{=A('dindex2form1', _href=URL(c='myadd',f='dindex2form1ctrl'))}}</p>
+
+<p>{{=A('dindex2form2', _href=URL(c='myadd',f='dindex2form2ctrl'))}}</p>
+
+<p>{{=A('dX500form0', _href=URL(c='myadd',f='dX500form0ctrl'))}}</p>
+
+<p>{{=A('dX500form1', _href=URL(c='myadd',f='dX500form1ctrl'))}}</p>
+
+<p>{{=A('dX500form2', _href=URL(c='myadd',f='dX500form2ctrl'))}}</p>

@@ -1,0 +1,40 @@
+- - input
+  - class: form-control
+    id: id_for813
+    placeholder: 'Email to:'
+    type: email
+  - class: ''
+    for: id_for813
+    text: label814
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for815
+    placeholder: Subject
+    type: text
+  - class: ''
+    for: id_for815
+    text: label816
+  - null
+  - null
+- - textarea
+  - class: textarea
+    id: id_for817
+    placeholder: Message
+  - class: ''
+    for: id_for817
+    text: label818
+  - null
+  - null
+- - button
+  - class: unk-class
+    id: unk-id
+    placeholder: 'Email to:'
+    type: submit
+    value: submit input
+  - class: ''
+    for: id_for813
+    text: label814
+  - null
+  - null

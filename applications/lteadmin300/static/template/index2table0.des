@@ -1,0 +1,8 @@
+- - Order ID
+  - string
+- - Item
+  - string
+- - Status
+  - string
+- - Popularity
+  - string

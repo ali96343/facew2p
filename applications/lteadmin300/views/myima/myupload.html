@@ -1,0 +1,12 @@
+{{extend 'w2playout.html'}}
+{{=A(T('To images list'), _title='return to images list', _href=URL( 'myima', 'index' ))}}
+<div >
+<p>Dear User! To see the downloaded image refresh the site page in the browser (Hold down the Shift key and left-click the Reload, or Shift-F5 ... etc )</p>
+<p>please, select new <strong>{{=ext}} </strong> image, old image will be replaced!</p>
+</div>
+{{=A(T('View image page'), _title=ctrl_ima, _href=URL( 'default', ctrl_ima ))}}
+{{=form}}
+<div >
+{{=param}} {{=size_str}}
+</div>
+{{=A(IMG(_src=URL('static/template', param), _title='view image page'),_href=URL('default', ctrl_ima))}}

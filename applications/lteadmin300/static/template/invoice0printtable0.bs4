@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 invoice0printtable0', f1= '0w2p1 Product', f2= '0w2p2 Serial #', f3= '0w2p3 Description', f4= '0w2p4 Subtotal', )
+      db.DBTBL.insert( f0= '1', f1= 'Call of Duty', f2= '455-981-221', f3= 'El snort testosterone trophy driving gloves handsome', f4= '$64.50', )
+      db.DBTBL.insert( f0= '1', f1= 'Need for Speed IV', f2= '247-925-726', f3= 'Wes Anderson umami biodiesel', f4= '$50.00', )
+      db.DBTBL.insert( f0= '1', f1= 'Monsters DVD', f2= '735-845-642', f3= 'Terry Richardson helvetica tousled street art master', f4= '$10.70', )
+      db.DBTBL.insert( f0= '1', f1= 'Grown Ups Blue Ray', f2= '422-568-642', f3= 'Tousled lomo letterpress', f4= '$25.99', )

@@ -1,0 +1,5 @@
+      db.DBTBL.insert( f0= '00 index3table0', f1= '0w2p1 Price', f2= '0w2p2 Sales', f3= '0w2p3 More', )
+      db.DBTBL.insert( f0= 'Some Product', f1= '$13 USD', f2= '12% 12,000 Sold', f3= 'unk_40', )
+      db.DBTBL.insert( f0= 'Another Product', f1= '$29 USD', f2= '0.5% 123,234 Sold', f3= 'unk_41', )
+      db.DBTBL.insert( f0= 'Amazing Product', f1= '$1,230 USD', f2= '3% 198 Sold', f3= 'unk_42', )
+      db.DBTBL.insert( f0= 'Perfect Item NEW', f1= '$199 USD', f2= '63% 87 Sold', f3= 'unk_43', )

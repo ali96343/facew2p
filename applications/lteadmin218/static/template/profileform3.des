@@ -1,0 +1,59 @@
+- - checkbox
+  - class: pull-right
+    id: id_for530
+    placeholder: place_533
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for530
+    text: Report panel usage
+  - null
+  - null
+- - checkbox
+  - class: pull-right
+    id: id_for534
+    placeholder: place_537
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for534
+    text: Allow mail redirect
+  - null
+  - null
+- - checkbox
+  - class: pull-right
+    id: id_for538
+    placeholder: place_541
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for538
+    text: Expose author name in posts
+  - null
+  - null
+- - checkbox
+  - class: pull-right
+    id: id_for542
+    placeholder: place_545
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for542
+    text: Show me as online
+  - null
+  - null
+- - checkbox
+  - class: pull-right
+    id: id_for546
+    placeholder: place_549
+    type: checkbox
+  - class: 'control-sidebar-subheading '
+    for: id_for546
+    text: Turn off notifications
+  - null
+  - null
+- - button
+  - class: text-red pull-right
+    id: id_for550
+    placeholder: place_553
+  - class: 'control-sidebar-subheading '
+    for: id_for550
+    text: Delete chat history
+  - null
+  - null
