@@ -7,7 +7,7 @@
 from __future__ import print_function
 import sys
 
-if sys.version_info[0] == 3:
+if sys.version_info[0] != 2:
     sys.exit('stop! sory, need python2')
     #raise Exception("Must be using Python 3")
 reload(sys)
@@ -20,7 +20,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.186" # 12.08.2019
+__version__ = "0.1.201 04.10.2019"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -372,6 +372,9 @@ class FileOper:
         unminified_css = re.sub(r"\{", " {\n\n\t", minified_css)
         unminified_css = re.sub(r"\}", "\n\n}\n\n", unminified_css)
         unminified_css = re.sub(";", ";\n\t", unminified_css)
+        unminified_css = re.sub("\/\*", "\n\n/*", unminified_css) # myadd
+        unminified_css = re.sub("\*\/", "*/\n\n", unminified_css) # myadd
+        unminified_css = re.sub("\*\/\.", "*/\n\n.", unminified_css) # myadd need remove :)
         #print unminified_css
         newfnm = fnm if replace else fnm + '.un'
         with open(newfnm, 'w') as f:
@@ -2133,7 +2136,8 @@ class FindTables_bs4 (StrDb, ):
 
                 ctrl_new_form = [
                     "",
-                    "    XFORM = SQLFORM(db.DBTBL, _class = 'FORM_CLASS', _id= 'FORM_ID' )",
+                    "    #XFORM = SQLFORM(db.DBTBL, formstyle= 'divs', _class = 'FORM_CLASS', _id= 'FORM_ID' )",
+                    "    XFORM = SQLFORM(db.DBTBL,  _class = 'FORM_CLASS', _id= 'FORM_ID' )",
                     "",
                 ]
 
