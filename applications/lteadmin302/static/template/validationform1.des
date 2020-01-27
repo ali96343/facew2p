@@ -1,0 +1,49 @@
+- - input
+  - class: form-control
+    id: exampleInputEmail1
+    placeholder: Enter email
+    type: email
+  - class: ''
+    for: exampleInputEmail1
+    text: Email address
+  - null
+  - null
+- - input
+  - class: form-control
+    id: exampleInputPassword1
+    placeholder: Password
+    type: password
+  - class: ''
+    for: exampleInputPassword1
+    text: Password
+  - null
+  - null
+- - checkbox
+  - class: custom-control-input
+    id: exampleCheck1
+    placeholder: place_62
+    type: checkbox
+  - class: 'custom-control-label '
+    for: exampleCheck1
+    text: I agree to the terms of service.
+  - null
+  - null
+- - button
+  - class: btn btn-primary
+    id: id_for63
+    placeholder: place_65
+    type: submit
+    value: Submit
+  - class: ''
+    for: id_for63
+    text: Email address
+  - null
+  - null
+- - button
+  - id: id_for66
+    placeholder: place_68
+  - class: 'custom-control-label '
+    for: id_for66
+    text: I agree to the terms of service.
+  - null
+  - null

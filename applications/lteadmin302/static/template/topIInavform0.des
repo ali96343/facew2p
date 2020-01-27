@@ -1,0 +1,21 @@
+- - input
+  - class: form-control form-control-navbar
+    id: id_for291
+    placeholder: Search
+    type: search
+  - class: ''
+    for: id_for291
+    text: label292
+  - null
+  - null
+- - button
+  - class: btn btn-navbar
+    id: id_for293
+    placeholder: place_296
+    type: submit
+    value: unk_295
+  - class: ''
+    for: id_for293
+    text: label294
+  - null
+  - null

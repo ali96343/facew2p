@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>facew2p</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/sweetalert2/sweetalert2.min.css')}}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/toastr/toastr.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{=URL(c='default',f='index3')}}" class="nav-link">{{=DICT["aa697"]}}</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">{{=DICT["aa698"]}}</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    
+{{block mynavbarform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform0.custom.begin}}
+{{=navbarform0.custom.widget.f0}}
+{{=navbarform0.custom.submit}}
+{{=navbarform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">{{=DICT["sx700"]}}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can
+
+                </p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc702"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">{{=DICT["pc704"]}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc705"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">{{=DICT["pc707"]}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc708"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa709"]}}</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">{{=DICT["sx710"]}}</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">{{=DICT["sx711"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">{{=DICT["sx712"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">{{=DICT["sx713"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa714"]}}</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{=URL(c='default',f='index3')}}" class="brand-link">
+      <img src="{{=URL('static','template/dist/img/AdminLTELogo.png')}}"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">{{=DICT["sx717"]}}</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{=DICT["aa719"]}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa721"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index2')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa723"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index3')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa725"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='widgets')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Widgets
+                <span class="right badge badge-danger">{{=DICT["sx727"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Layout Options
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{=DICT["sx728"]}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa730"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInavIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa732"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='boxed')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa734"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa736"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIItopnav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa738"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIfooter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa740"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='collapsedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa742"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Charts
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='chartjs')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa744"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='flot')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa746"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='inline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa748"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                UI Elements
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa750"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='icons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa752"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='buttons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa754"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='sliders')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa756"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='modals')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa758"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='navbar')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa760"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='timeline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa762"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='ribbons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa764"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Forms
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa766"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='advanced')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa768"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='editors')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa770"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='validation')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa772"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tables
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='simple')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa774"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa776"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='jsgrid')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa778"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb779"]}}</li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='calendar')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">{{=DICT["sx781"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='gallery')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='mailbox')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa784"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='compose')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa786"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='readIImail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa788"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='invoice')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa790"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='profile')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa792"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='eIIcommerce')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa794"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projects')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa796"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIadd')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa798"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIedit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa800"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIdetail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa802"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='contacts')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa804"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='login')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa806"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='register')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa808"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='forgotIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa810"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='recoverIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa812"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='lockscreen')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa814"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='legacyIIuserIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa816"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='languageIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa818"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X404')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa820"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X500')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa822"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='pace')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa824"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='blank')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa826"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='starter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa828"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb829"]}}</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>{{=DICT["pa830"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb831"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa832"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+                Level 1
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa833"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Level 2
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa834"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa835"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa836"]}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa837"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa838"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb839"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">{{=DICT["pc840"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>{{=DICT["pa841"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>{{=DICT["pa842"]}}</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>
+              Navbar & Tabs 
+              <small>{{=DICT["ic843"]}}</small>
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">{{=DICT["aa844"]}}</a></li>
+              <li class="breadcrumb-item active">{{=DICT["lb845"]}}</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-edit"></i>
+                  Navbar Examples
+                </h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <h4>{{=DICT["hh847"]}}<small>{{=DICT["ic846"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-light">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa848"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa849"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform1}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform1.custom.begin}}
+{{=navbarform1.custom.widget.f0}}
+{{=navbarform1.custom.submit}}
+{{=navbarform1.custom.end}}
+
+<div  id=divID1 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash1 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID1').length > 0) {
+    $('#divID1').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h4>{{=DICT["hh852"]}}<small>{{=DICT["ic851"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-white navbar-light">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa853"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa854"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform2}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform2.custom.begin}}
+{{=navbarform2.custom.widget.f0}}
+{{=navbarform2.custom.submit}}
+{{=navbarform2.custom.end}}
+
+<div  id=divID2 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash2 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID2').length > 0) {
+    $('#divID2').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <h4 class="mt-4">Primary Navbar <small><b>{{=DICT["bb856"]}}</b>{{=DICT["ic857"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-primary navbar-dark">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa858"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa859"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform3}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform3.custom.begin}}
+{{=navbarform3.custom.widget.f0}}
+{{=navbarform3.custom.submit}}
+{{=navbarform3.custom.end}}
+
+<div  id=divID3 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash3 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID3').length > 0) {
+    $('#divID3').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h4 class="mt-4">Primary Navbar <small>{{=DICT["ic861"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-primary navbar-light">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa862"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa863"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform4}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform4.custom.begin}}
+{{=navbarform4.custom.widget.f0}}
+{{=navbarform4.custom.submit}}
+{{=navbarform4.custom.end}}
+
+<div  id=divID4 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash4 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID4').length > 0) {
+    $('#divID4').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <h4 class="mt-4">Orange Navbar <small><b>{{=DICT["bb865"]}}</b>{{=DICT["ic866"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-orange navbar-light">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa867"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa868"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform5}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform5.custom.begin}}
+{{=navbarform5.custom.widget.f0}}
+{{=navbarform5.custom.submit}}
+{{=navbarform5.custom.end}}
+
+<div  id=divID5 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash5 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID5').length > 0) {
+    $('#divID5').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h4 class="mt-4">Orange Navbar <small>{{=DICT["ic870"]}}</small></h4>
+                    <nav class="navbar navbar-expand navbar-orange navbar-dark">
+                      <!-- Left navbar links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa871"]}}</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                          <a href="#" class="nav-link">{{=DICT["aa872"]}}</a>
+                        </li>
+                      </ul>
+
+                      <!-- SEARCH FORM -->
+                      
+{{block mynavbarform6}}
+{{include 'web2py_ajax.html'}}
+
+{{=navbarform6.custom.begin}}
+{{=navbarform6.custom.widget.f0}}
+{{=navbarform6.custom.submit}}
+{{=navbarform6.custom.end}}
+
+<div  id=divID6 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash6 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID6').length > 0) {
+    $('#divID6').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- row -->
+        <div class="row">
+          <div class="col-12">
+            <h4>{{=DICT["hh875"]}}<small>{{=DICT["ic874"]}}</small></h4>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card card-primary card-tabs">
+              <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">{{=DICT["aa876"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">{{=DICT["aa877"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">{{=DICT["aa878"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill" href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings" aria-selected="false">{{=DICT["aa879"]}}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-one-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
+                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel" aria-labelledby="custom-tabs-one-settings-tab">
+                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card card-primary card-outline card-tabs">
+              <div class="card-header p-0 pt-1 border-bottom-0">
+                <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">{{=DICT["aa880"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">{{=DICT["aa881"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">{{=DICT["aa882"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">{{=DICT["aa883"]}}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-two-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
+                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-two-settings" role="tabpanel" aria-labelledby="custom-tabs-two-settings-tab">
+                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card card-primary card-outline card-outline-tabs">
+              <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">{{=DICT["aa884"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">{{=DICT["aa885"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-three-messages-tab" data-toggle="pill" href="#custom-tabs-three-messages" role="tab" aria-controls="custom-tabs-three-messages" aria-selected="false">{{=DICT["aa886"]}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-three-settings-tab" data-toggle="pill" href="#custom-tabs-three-settings" role="tab" aria-controls="custom-tabs-three-settings" aria-selected="false">{{=DICT["aa887"]}}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-three-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-three-messages" role="tabpanel" aria-labelledby="custom-tabs-three-messages-tab">
+                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-three-settings" role="tabpanel" aria-labelledby="custom-tabs-three-settings-tab">
+                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i class="fas fa-edit"></i>
+              Vertical Tabs Examples
+            </h3>
+          </div>
+          <div class="card-body">
+            <h4>{{=DICT["hh888"]}}</h4>
+            <div class="row">
+              <div class="col-5 col-sm-3">
+                <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home" role="tab" aria-controls="vert-tabs-home" aria-selected="true">{{=DICT["aa889"]}}</a>
+                  <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile" role="tab" aria-controls="vert-tabs-profile" aria-selected="false">{{=DICT["aa890"]}}</a>
+                  <a class="nav-link" id="vert-tabs-messages-tab" data-toggle="pill" href="#vert-tabs-messages" role="tab" aria-controls="vert-tabs-messages" aria-selected="false">{{=DICT["aa891"]}}</a>
+                  <a class="nav-link" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings" role="tab" aria-controls="vert-tabs-settings" aria-selected="false">{{=DICT["aa892"]}}</a>
+                </div>
+              </div>
+              <div class="col-7 col-sm-9">
+                <div class="tab-content" id="vert-tabs-tabContent">
+                  <div class="tab-pane text-left fade show active" id="vert-tabs-home" role="tabpanel" aria-labelledby="vert-tabs-home-tab">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel" aria-labelledby="vert-tabs-messages-tab">
+                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-settings" role="tabpanel" aria-labelledby="vert-tabs-settings-tab">
+                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="mt-4">Right Sided <small>{{=DICT["ic893"]}}</small></h4>
+            <div class="row">
+              <div class="col-7 col-sm-9">
+                <div class="tab-content" id="vert-tabs-right-tabContent">
+                  <div class="tab-pane fade show active" id="vert-tabs-right-home" role="tabpanel" aria-labelledby="vert-tabs-right-home-tab">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-right-profile" role="tabpanel" aria-labelledby="vert-tabs-right-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-right-messages" role="tabpanel" aria-labelledby="vert-tabs-right-messages-tab">
+                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-right-settings" role="tabpanel" aria-labelledby="vert-tabs-right-settings-tab">
+                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+                  </div>
+                </div>
+              </div>
+              <div class="col-5 col-sm-3">
+                <div class="nav flex-column nav-tabs nav-tabs-right h-100" id="vert-tabs-right-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link active" id="vert-tabs-right-home-tab" data-toggle="pill" href="#vert-tabs-right-home" role="tab" aria-controls="vert-tabs-right-home" aria-selected="true">{{=DICT["aa894"]}}</a>
+                  <a class="nav-link" id="vert-tabs-right-profile-tab" data-toggle="pill" href="#vert-tabs-right-profile" role="tab" aria-controls="vert-tabs-right-profile" aria-selected="false">{{=DICT["aa895"]}}</a>
+                  <a class="nav-link" id="vert-tabs-right-messages-tab" data-toggle="pill" href="#vert-tabs-right-messages" role="tab" aria-controls="vert-tabs-right-messages" aria-selected="false">{{=DICT["aa896"]}}</a>
+                  <a class="nav-link" id="vert-tabs-right-settings-tab" data-toggle="pill" href="#vert-tabs-right-settings" role="tab" aria-controls="vert-tabs-right-settings" aria-selected="false">{{=DICT["aa897"]}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.card -->
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i class="fas fa-edit"></i>
+              Tabs Custom Content Examples
+            </h3>
+          </div>
+          <div class="card-body">
+            <h4>{{=DICT["hh898"]}}</h4>
+            <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-content-below-home-tab" data-toggle="pill" href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home" aria-selected="true">{{=DICT["aa899"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false">{{=DICT["aa900"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-below-messages-tab" data-toggle="pill" href="#custom-content-below-messages" role="tab" aria-controls="custom-content-below-messages" aria-selected="false">{{=DICT["aa901"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-below-settings-tab" data-toggle="pill" href="#custom-content-below-settings" role="tab" aria-controls="custom-content-below-settings" aria-selected="false">{{=DICT["aa902"]}}</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="custom-content-below-tabContent">
+              <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
+                 Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-below-messages" role="tabpanel" aria-labelledby="custom-content-below-messages-tab">
+                 Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-below-settings" role="tabpanel" aria-labelledby="custom-content-below-settings-tab">
+                 Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+              </div>
+            </div>
+            <div class="tab-custom-content">
+              <p class="lead mb-0">{{=DICT["pc903"]}}</p>
+            </div>
+            <h4 class="mt-5 ">{{=DICT["hd904"]}}</h4>
+            <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-content-above-home-tab" data-toggle="pill" href="#custom-content-above-home" role="tab" aria-controls="custom-content-above-home" aria-selected="true">{{=DICT["aa905"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-above-profile-tab" data-toggle="pill" href="#custom-content-above-profile" role="tab" aria-controls="custom-content-above-profile" aria-selected="false">{{=DICT["aa906"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-above-messages-tab" data-toggle="pill" href="#custom-content-above-messages" role="tab" aria-controls="custom-content-above-messages" aria-selected="false">{{=DICT["aa907"]}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="custom-content-above-settings-tab" data-toggle="pill" href="#custom-content-above-settings" role="tab" aria-controls="custom-content-above-settings" aria-selected="false">{{=DICT["aa908"]}}</a>
+              </li>
+            </ul>
+            <div class="tab-custom-content">
+              <p class="lead mb-0">{{=DICT["pc909"]}}</p>
+            </div>
+            <div class="tab-content" id="custom-content-above-tabContent">
+              <div class="tab-pane fade show active" id="custom-content-above-home" role="tabpanel" aria-labelledby="custom-content-above-home-tab">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-above-profile" role="tabpanel" aria-labelledby="custom-content-above-profile-tab">
+                 Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-above-messages" role="tabpanel" aria-labelledby="custom-content-above-messages-tab">
+                 Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
+              </div>
+              <div class="tab-pane fade" id="custom-content-above-settings" role="tabpanel" aria-labelledby="custom-content-above-settings-tab">
+                 Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>{{=DICT["bb910"]}}</b> 3.0.2
+    </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">{{=DICT["aa911"]}}</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- wrapper -->
+
+<!-- jQuery -->
+<script src="{{=URL('static','template/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{=URL('static','template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{=URL('static','template/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{=URL('static','template/dist/js/demo.js')}}"></script>
+</body>
+</html>

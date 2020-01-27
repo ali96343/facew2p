@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>facew2p</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition lockscreen">
+<!-- Automatic element centering -->
+<div class="lockscreen-wrapper">
+  <div class="lockscreen-logo">
+    <a href="{{=URL(c='default',f='index2')}}"><b>{{=DICT["bb5836"]}}</b>LTE</a>
+  </div>
+  <!-- User name -->
+  <div class="lockscreen-name">{{=DICT["di5837"]}}</div>
+
+  <!-- START LOCK SCREEN ITEM -->
+  <div class="lockscreen-item">
+    <!-- lockscreen image -->
+    <div class="lockscreen-image">
+      <img src="{{=URL('static','template/dist/img/user1-128x128.jpg')}}" alt="User Image">
+    </div>
+    <!-- /.lockscreen-image -->
+
+    <!-- lockscreen credentials (contains the form) -->
+    
+{{block mylockscreenform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=lockscreenform0.custom.begin}}
+{{=lockscreenform0.custom.widget.f0}}
+{{=lockscreenform0.custom.submit}}
+{{=lockscreenform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+    <!-- /.lockscreen credentials -->
+
+  </div>
+  <!-- /.lockscreen-item -->
+  <div class="help-block text-center">
+    Enter your password to retrieve your session
+  </div>
+  <div class="text-center">
+    <a href="{{=URL(c='default',f='login')}}">{{=DICT["aa5841"]}}</a>
+  </div>
+  <div class="lockscreen-footer text-center">
+    Copyright &copy; 2014-2019 <b><a href="http://adminlte.io" class="text-black">{{=DICT["aa5842"]}}</a></b><br>
+    All rights reserved
+  </div>
+</div>
+<!-- /.center -->
+
+<!-- jQuery -->
+<script src="{{=URL('static','template/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{=URL('static','template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+</body>
+</html>

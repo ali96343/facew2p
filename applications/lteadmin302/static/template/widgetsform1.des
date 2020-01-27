@@ -1,0 +1,21 @@
+- - input
+  - class: form-control
+    id: id_for81
+    placeholder: Type Message ...
+    type: text
+  - class: ''
+    for: id_for81
+    text: label82
+  - null
+  - null
+- - button
+  - class: btn btn-primary
+    id: id_for83
+    placeholder: place_85
+    type: submit
+    value: Send
+  - class: ''
+    for: id_for83
+    text: label84
+  - null
+  - null

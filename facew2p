@@ -8,7 +8,7 @@ from __future__ import print_function
 import sys
 
 if sys.version_info[0] != 2:
-    sys.exit('stop! sory, need python2')
+    sys.exit('stop! sorry, need python2')
     #raise Exception("Must be using Python 3")
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -17,10 +17,10 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 __author__ = "Alex Beskopilny"
-__copyright__ = "Copyright 2019, The web2py app generator from html-css-templates project"
+__copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.201 04.10.2019"
+__version__ = "0.1.202 27.01.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -58,7 +58,6 @@ import datetime
 import requests
 import pprint
 import io
-import yaml
 from email.utils import parseaddr
 from inspect import currentframe, getframeinfo
 
@@ -86,9 +85,10 @@ signal.signal(signal.SIGINT, handler)
 
 try:
     import bs4 as bs
+    import yaml
     from PIL import Image, ImageDraw
 except BaseException:
-    sys.exit('pls, install bs4, PIL: pip install bs4, pip install PIL')
+    sys.exit('pls, install bs4, PIL, yaml : pip install bs4, pip install PIL, pip install yaml')
 
 
 import linecache
@@ -176,7 +176,9 @@ def raw_string(s):
 
 def hard_clear(ob, ):
     def clr_str(s1):
-        if s1 is None:
+        if s1 is None :
+            return "submit" + str(next(int_uniq_key4unk))
+        if len(s1) == 0  :
             return "submit" + str(next(int_uniq_key4unk))
         for e in ['\n\r', '\t', '\n', '\r', "'", '"', ]:
             s1 = s1.replace(e, ' ')
@@ -406,23 +408,6 @@ class FileOper:
         return fnm
 
     @staticmethod
-    def preprocess_hp(hard_hp=False):
-            # for future , now bad
-        for f in glob.glob("*.html"):
-
-            FileOper.hp_print(f, pat=r'(<title>)(.*?)(</title>)(.)')
-            if not hard_hp:
-                continue
-            FileOper.hp_print(f, pat=r'(<p>)(.*?)(</p>)(.)')
-            FileOper.hp_print(f, pat=r'(<p[^>].*?>)(.*?)(</p>)(.)')
-            FileOper.hp_print(f, pat=r'(<h1[^>].*?>)(.*?)(</h1>)(.)')
-            FileOper.hp_print(f, pat=r'(<h2[^>].*?>)(.*?)(</h2>)(.)')
-            FileOper.hp_print(f, pat=r'(<h3[^>].*?>)(.*?)(</h3>)(.)')
-            FileOper.hp_print(f, pat=r'(<h4[^>].*?>)(.*?)(</h4>)(.)')
-            FileOper.hp_print(f, pat=r'(<h5[^>].*?>)(.*?)(</h5>)(.)')
-            FileOper.hp_print(f, pat=r'(<h6[^>].*?>)(.*?)(</h6>)(.)')
-
-    @staticmethod
     def func_off_in_file(fnm, ctrl_nm, add_sym='Y'):
         def get_ast_list(fnm):
             with open(fnm)as f:
@@ -443,7 +428,7 @@ class FileOper:
             dst_pat=r"\g<1> test\n \g<3> \n"):
 
         if not os.path.exists(fnm):
-            prRed(" replace_pat error: file  %s does not exosts" % fnm)
+            prRed(" replace_pat error: file  %s does not exists" % fnm)
             return None
 
         if isinstance(dst_pat, (list,)):
@@ -1006,7 +991,7 @@ class StrDb:
 
     view4mygrid = [
         "",
-        "{{extend 'w2playout.html'}}",
+        "{{extend 'layout.html'}}",
         "<p>{{=A(T('site table list'), _href=URL(c='MYAD',f='index'))}}</p>",
         "<p> DBTBL </p>",
         "{{=grid}}",
@@ -1054,7 +1039,7 @@ class StrDb:
     ]
 
     menu4mygrid = [
-        "{{extend 'w2playout.html'}}",
+        "{{extend 'layout.html'}}",
         "{{=form}}",
         "<style>",
         "   p {",
@@ -1170,21 +1155,16 @@ class StrDb:
 
     menu_main_path = '../../models/menu.py'
     face_lock = "FACELOCK"
-
-    #appadmin_file= "../../views/appadmin.html"
     user_file = "../../views/default/user.html"
-    appadmin_file = "../../views/appadmin.html"
-    appadmin_change = [
-        "{{extend 'layout.html'}}",
-        "{{extend 'w2playout.html'}}"]
+
+    appadmin_file= "../../views/appadmin.html"
+    user_file = "../../views/default/user.html"
     menu_change = ["DEVELOPMENT_MENU = True", "DEVELOPMENT_MENU = False"]
-    index_html_header = ["{{extend 'layout.html'}}", "", ""]
 
     origlayout = '../../views/layout.html'
     orig_ico = '../../static/images/favicon.ico'
     png_ico = '../../static/images/favicon.png'
     base64_ico = ""
-    w2playout = '../../views/w2playout.html'
     req_headers = {
         'User-Agent': 'Mytest facew2p Agent 1.0',
         'From': 'ab96343@gmail.com'}
@@ -1208,9 +1188,8 @@ class StrDb:
 
     views_path = '../../views/'
 
-    w2p_files = [views_path, db_path, w2p_db_path, ctrl_path,
-                 '../../models/menu.py', ctrl_file, origlayout,
-                 appadmin_file, user_file, '../../models/db.py']
+    w2p_files = [views_path, db_path, w2p_db_path, ctrl_path, user_file, appadmin_file,
+                 '../../models/menu.py', ctrl_file, '../../models/db.py']
 
     main_index = "index.html"
 
@@ -2348,11 +2327,18 @@ class FindTables_bs4 (StrDb, ):
                     #FileOper.list2file( view_beg, '../../views/default/' +  view_form_file  , 'a' )
                     #print (str(e[2]))
                     #FileOper.replace_pat(fnm , src_pat=r'(<form[^<]+)(.*?)(</form>)(.)', dst_pat= lay_beg )
-                    dst_view = os.path.join(
-                        '../../views/',
-                        'layout.html') if view_form_file == 'index.html' else os.path.join(
-                        '../../views/default',
-                        view_form_file)
+                    #dst_view = os.path.join(
+                    #    '../../views/default',
+                    #    'index.html') if view_form_file == 'index.html' else os.path.join(
+                    #    '../../views/default',
+                    #    view_form_file)
+
+                    dst_view =  os.path.join( '../../views/default', view_form_file)
+                    if 'user.html' in dst_view:
+                           shutil.copy2(dst_view, dst_view + '.orig')
+                           prRed( dst_view )
+                           prRed("alarm! web2py user.html was rewritten by a html-script-view !!!")
+                    
                     shutil.copy2(fnm, dst_view)
 
                     #FileOper.func_off_in_file('../../controllers/default.py', ctrl_nm ,add_sym= 'F' )
@@ -3340,17 +3326,6 @@ class W2pApp(StrDb):
 
     def create_new_tmp_files(Z):
         shutil.copy2(Z.ctrl_file + Z.sv_ext, Z.ctrl_tmp)
-        FileOper.replace_in_file(
-            Z.appadmin_file + Z.sv_ext,
-            Z.appadmin_file,
-            Z.appadmin_change[0],
-            Z.appadmin_change[1])
-        FileOper.replace_in_file(
-            Z.user_file + Z.sv_ext,
-            Z.user_file,
-            Z.appadmin_change[0],
-            Z.appadmin_change[1])
-        shutil.copy2(Z.origlayout + Z.sv_ext, Z.w2playout)
 
     def build_db(Z, ctrl_nm, db_nm, db_data):
         pat_dict = {'CONTROLLER': ctrl_nm, 'DBTBL': db_nm}
@@ -3473,13 +3448,13 @@ class W2pApp(StrDb):
             os.mkdir(dir_dst)
 
         dst = os.path.join(Z.views_path, dir_nm, html_nm)
-        if dir_nm == 'default':
-            if view_nm == Z.main_index + Z.myview_ext:  # 'index.html.view':
-                dst = Z.views_path + 'layout.html'
-                # DEBUG
-                ind_path = os.path.join(Z.views_path, dir_nm, 'index.html')
-                FileOper.list2file(Z.index_html_header, ind_path, mode='w')
-                #print (Z.views_path + 'index.html' )
+        #if dir_nm == 'default':
+        #    if view_nm == Z.main_index + Z.myview_ext:  # 'index.html.view':
+        #        dst = Z.views_path + 'layout.html'
+        #        # DEBUG
+        #        ind_path = os.path.join(Z.views_path, dir_nm, 'index.html')
+        #        FileOper.list2file(Z.index_html_header, ind_path, mode='w')
+        #        #print (Z.views_path + 'index.html' )
         shutil.copy2(view_nm, dst)
         #os.rename(view_nm, dst)
 
@@ -3506,7 +3481,7 @@ class W2pApp(StrDb):
     def build_ima_app(Z):
         # https://www.quackit.com/css/grid/examples/css_grid_photo_gallery_examples.cfm
         view_beg = [
-            "{{extend 'w2playout.html'}}",
+            "{{extend 'layout.html'}}",
             "<h2>{{=T('site images' )}}</h2>",
             "<p>{{=T('select, pls, image for replace')}}<p>",
             "<style>",
@@ -3535,7 +3510,7 @@ class W2pApp(StrDb):
         #    "{{=A(IMG(_src=URL('static/WDIR', IMGPATH), ),_href=URL('MYIMA', 'UPCTRL'))}}"]
 
         ima_up_view = [
-            "{{extend 'w2playout.html'}}",
+            "{{extend 'layout.html'}}",
             "{{=A(T('To images list'), _title='return to images list', _href=URL( 'myima', 'index' ))}}",
             "<div >",
             "<p>Dear User! To see the downloaded image refresh the site page in the browser (Hold down the Shift key and left-click the Reload, or Shift-F5 ... etc )</p>",

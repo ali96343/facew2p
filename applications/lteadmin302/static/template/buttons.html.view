@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>facew2p</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{=URL(c='default',f='index3')}}" class="nav-link">{{=DICT["aa3224"]}}</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">{{=DICT["aa3225"]}}</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    
+{{block mybuttonsform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=buttonsform0.custom.begin}}
+{{=buttonsform0.custom.widget.f0}}
+{{=buttonsform0.custom.submit}}
+{{=buttonsform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">{{=DICT["sx3227"]}}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">{{=DICT["pc3229"]}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc3230"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">{{=DICT["pc3232"]}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc3233"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">{{=DICT["pc3235"]}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc3236"]}}</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa3237"]}}</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">{{=DICT["sx3238"]}}</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">{{=DICT["sx3239"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">{{=DICT["sx3240"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">{{=DICT["sx3241"]}}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa3242"]}}</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{=URL(c='default',f='index3')}}" class="brand-link">
+      <img src="{{=URL('static','template/dist/img/AdminLTELogo.png')}}"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">{{=DICT["sx3245"]}}</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{=DICT["aa3247"]}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3249"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index2')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3251"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index3')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3253"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='widgets')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Widgets
+                <span class="right badge badge-danger">{{=DICT["sx3255"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Layout Options
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{=DICT["sx3256"]}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3258"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInavIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3260"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='boxed')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3262"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3264"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIItopnav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3266"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIfooter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3268"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='collapsedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3270"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Charts
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='chartjs')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3272"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='flot')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3274"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='inline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3276"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                UI Elements
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3278"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='icons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3280"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='buttons')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3282"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='sliders')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3284"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='modals')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3286"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='navbar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3288"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='timeline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3290"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='ribbons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3292"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Forms
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3294"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='advanced')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3296"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='editors')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3298"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='validation')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3300"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tables
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='simple')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3302"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3304"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='jsgrid')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3306"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb3307"]}}</li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='calendar')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">{{=DICT["sx3309"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='gallery')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='mailbox')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3312"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='compose')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3314"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='readIImail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3316"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='invoice')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3318"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='profile')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3320"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='eIIcommerce')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3322"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projects')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3324"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIadd')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3326"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIedit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3328"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIdetail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3330"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='contacts')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3332"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='login')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3334"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='register')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3336"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='forgotIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3338"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='recoverIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3340"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='lockscreen')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3342"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='legacyIIuserIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3344"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='languageIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3346"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X404')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3348"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X500')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3350"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='pace')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3352"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='blank')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3354"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='starter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3356"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb3357"]}}</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>{{=DICT["pa3358"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb3359"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa3360"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+                Level 1
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3361"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Level 2
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa3362"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa3363"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa3364"]}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa3365"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa3366"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb3367"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">{{=DICT["pc3368"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>{{=DICT["pa3369"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>{{=DICT["pa3370"]}}</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{{=DICT["hh3371"]}}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">{{=DICT["aa3372"]}}</a></li>
+              <li class="breadcrumb-item active">{{=DICT["lb3373"]}}</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-edit"></i>
+                  Buttons
+                </h3>
+              </div>
+              <div class="card-body pad table-responsive">
+                <p>{{=DICT["pf3374"]}}<code>.btn</code></p>
+                <table class="table table-bordered text-center">
+                  <tr>
+                    <th>Normal</th>
+                    <th>Large <code>.btn-lg</code></th>
+                    <th>Small <code>.btn-sm</code></th>
+                    <th>Extra Small <code>.btn-xs</code></th>
+                    <th>Flat <code>.btn-flat</code></th>
+                    <th>Disabled <code>.disabled</code></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default">{{=DICT["bu3375"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default btn-lg">{{=DICT["bu3376"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default btn-sm">{{=DICT["bu3377"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default btn-xs">{{=DICT["bu3378"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default btn-flat">{{=DICT["bu3379"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-default disabled">{{=DICT["bu3380"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary">{{=DICT["bu3381"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary btn-lg">{{=DICT["bu3382"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary btn-sm">{{=DICT["bu3383"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary btn-xs">{{=DICT["bu3384"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary btn-flat">{{=DICT["bu3385"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-primary disabled">{{=DICT["bu3386"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary">{{=DICT["bu3387"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary btn-lg">{{=DICT["bu3388"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary btn-sm">{{=DICT["bu3389"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary btn-xs">{{=DICT["bu3390"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary btn-flat">{{=DICT["bu3391"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-secondary disabled">{{=DICT["bu3392"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success">{{=DICT["bu3393"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success btn-lg">{{=DICT["bu3394"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success btn-sm">{{=DICT["bu3395"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success btn-xs">{{=DICT["bu3396"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success btn-flat">{{=DICT["bu3397"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-success disabled">{{=DICT["bu3398"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info">{{=DICT["bu3399"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info btn-lg">{{=DICT["bu3400"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info btn-sm">{{=DICT["bu3401"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info btn-xs">{{=DICT["bu3402"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info btn-flat">{{=DICT["bu3403"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-info disabled">{{=DICT["bu3404"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger">{{=DICT["bu3405"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger btn-lg">{{=DICT["bu3406"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger btn-sm">{{=DICT["bu3407"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger btn-xs">{{=DICT["bu3408"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger btn-flat">{{=DICT["bu3409"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-danger disabled">{{=DICT["bu3410"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning">{{=DICT["bu3411"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning btn-lg">{{=DICT["bu3412"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning btn-sm">{{=DICT["bu3413"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning btn-xs">{{=DICT["bu3414"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning btn-flat">{{=DICT["bu3415"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-warning disabled">{{=DICT["bu3416"]}}</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-edit"></i>
+                  Outline Buttons
+                </h3>
+              </div>
+              <div class="card-body pad table-responsive">
+                <p>{{=DICT["pf3417"]}}<code>.btn</code></p>
+                <table class="table table-bordered text-center">
+                  <tr>
+                    <th>Normal</th>
+                    <th>Large <code>.btn-lg</code></th>
+                    <th>Small <code>.btn-sm</code></th>
+                    <th>Extra Small <code>.btn-xs</code></th>
+                    <th>Flat <code>.btn-flat</code></th>
+                    <th>Disabled <code>.disabled</code></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary">{{=DICT["bu3418"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary btn-lg">{{=DICT["bu3419"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary btn-sm">{{=DICT["bu3420"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary btn-xs">{{=DICT["bu3421"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary btn-flat">{{=DICT["bu3422"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-primary disabled">{{=DICT["bu3423"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary">{{=DICT["bu3424"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary btn-lg">{{=DICT["bu3425"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary btn-sm">{{=DICT["bu3426"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary btn-xs">{{=DICT["bu3427"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary btn-flat">{{=DICT["bu3428"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-secondary disabled">{{=DICT["bu3429"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success">{{=DICT["bu3430"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success btn-lg">{{=DICT["bu3431"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success btn-sm">{{=DICT["bu3432"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success btn-xs">{{=DICT["bu3433"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success btn-flat">{{=DICT["bu3434"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-success disabled">{{=DICT["bu3435"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info">{{=DICT["bu3436"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info btn-lg">{{=DICT["bu3437"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info btn-sm">{{=DICT["bu3438"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info btn-xs">{{=DICT["bu3439"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info btn-flat">{{=DICT["bu3440"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-info disabled">{{=DICT["bu3441"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger">{{=DICT["bu3442"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger btn-lg">{{=DICT["bu3443"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger btn-sm">{{=DICT["bu3444"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger btn-xs">{{=DICT["bu3445"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger btn-flat">{{=DICT["bu3446"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-danger disabled">{{=DICT["bu3447"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning">{{=DICT["bu3448"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning btn-lg">{{=DICT["bu3449"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning btn-sm">{{=DICT["bu3450"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning btn-xs">{{=DICT["bu3451"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning btn-flat">{{=DICT["bu3452"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block btn-outline-warning disabled">{{=DICT["bu3453"]}}</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-edit"></i>
+                  Gradient Buttons (bg-gradient-*)
+                </h3>
+              </div>
+              <div class="card-body pad table-responsive">
+                <p>{{=DICT["pf3454"]}}<code>.btn</code></p>
+                <table class="table table-bordered text-center">
+                  <tr>
+                    <th>Normal</th>
+                    <th>Large <code>.btn-lg</code></th>
+                    <th>Small <code>.btn-sm</code></th>
+                    <th>Extra Small <code>.btn-xs</code></th>
+                    <th>Flat <code>.btn-flat</code></th>
+                    <th>Disabled <code>.disabled</code></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary">{{=DICT["bu3455"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary btn-lg">{{=DICT["bu3456"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary btn-sm">{{=DICT["bu3457"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary btn-xs">{{=DICT["bu3458"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary btn-flat">{{=DICT["bu3459"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-primary disabled">{{=DICT["bu3460"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary">{{=DICT["bu3461"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary btn-lg">{{=DICT["bu3462"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary btn-sm">{{=DICT["bu3463"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary btn-xs">{{=DICT["bu3464"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary btn-flat">{{=DICT["bu3465"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-secondary disabled">{{=DICT["bu3466"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success">{{=DICT["bu3467"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success btn-lg">{{=DICT["bu3468"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success btn-sm">{{=DICT["bu3469"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success btn-xs">{{=DICT["bu3470"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success btn-flat">{{=DICT["bu3471"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-success disabled">{{=DICT["bu3472"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info">{{=DICT["bu3473"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info btn-lg">{{=DICT["bu3474"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info btn-sm">{{=DICT["bu3475"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info btn-xs">{{=DICT["bu3476"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info btn-flat">{{=DICT["bu3477"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-info disabled">{{=DICT["bu3478"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger">{{=DICT["bu3479"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger btn-lg">{{=DICT["bu3480"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger btn-sm">{{=DICT["bu3481"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger btn-xs">{{=DICT["bu3482"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger btn-flat">{{=DICT["bu3483"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-danger disabled">{{=DICT["bu3484"]}}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning">{{=DICT["bu3485"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning btn-lg">{{=DICT["bu3486"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning btn-sm">{{=DICT["bu3487"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning btn-xs">{{=DICT["bu3488"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning btn-flat">{{=DICT["bu3489"]}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-block bg-gradient-warning disabled">{{=DICT["bu3490"]}}</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+          <!-- row -->
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Block buttons -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3491"]}}</h3>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-default btn-block">{{=DICT["bu3492"]}}</button>
+                <button type="button" class="btn btn-default btn-block btn-flat">{{=DICT["bu3493"]}}</button>
+                <button type="button" class="btn btn-default btn-block btn-sm">{{=DICT["bu3494"]}}</button>
+              </div>
+            </div>
+            <!-- /.card -->
+
+            <!-- Horizontal grouping -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3495"]}}</h3>
+              </div>
+              <div class="card-body table-responsive pad">
+                <p>
+                  Horizontal button groups are easy to create with bootstrap. Just add your buttons
+                  inside <code>&lt;div class="btn-group"&gt;&lt;/div&gt;</code>
+                </p>
+
+                <table class="table table-bordered">
+                  <tr>
+                    <th>Button</th>
+                    <th>Icons</th>
+                    <th>Flat</th>
+                    <th>Dropdown</th>
+                  </tr>
+                  <!-- Default -->
+                  <tr>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default">{{=DICT["bu3496"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3497"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3498"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default">{{=DICT["bu3499"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3500"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">{{=DICT["aa3501"]}}</a>
+                            <a class="dropdown-item" href="#">{{=DICT["aa3502"]}}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- default -->
+                  <!-- Info -->
+                  <tr>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info">{{=DICT["bu3503"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3504"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3505"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-info">{{=DICT["bu3506"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3507"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">{{=DICT["aa3508"]}}</a>
+                            <a class="dropdown-item" href="#">{{=DICT["aa3509"]}}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /. info -->
+                  <!-- /.danger -->
+                  <tr>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3510"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3511"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3512"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3513"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3514"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-danger dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">{{=DICT["aa3515"]}}</a>
+                            <a class="dropdown-item" href="#">{{=DICT["aa3516"]}}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.danger -->
+                  <!-- warning -->
+                  <tr>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3517"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3518"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3519"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3520"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3521"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">{{=DICT["aa3522"]}}</a>
+                            <a class="dropdown-item" href="#">{{=DICT["aa3523"]}}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.warning -->
+                  <!-- success -->
+                  <tr>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success">{{=DICT["bu3524"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3525"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3526"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success">{{=DICT["bu3527"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3528"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">{{=DICT["aa3529"]}}</a>
+                            <a class="dropdown-item" href="#">{{=DICT["aa3530"]}}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.success -->
+                </table>
+              </div>
+            </div>
+            <!-- /.card -->
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3531"]}}</h3>
+              </div>
+              <div class="card-body">
+                <strong>{{=DICT["sp3532"]}}</strong>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">{{=DICT["aa3533"]}}</a>
+                      <a class="dropdown-item" href="#">{{=DICT["aa3534"]}}</a>
+                      <a class="dropdown-item" href="#">{{=DICT["aa3535"]}}</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">{{=DICT["aa3536"]}}</a>
+                    </div>
+                  </div>
+                  <!-- /btn-group -->
+                  <input type="text" class="form-control">
+                </div>
+                <!-- /input-group -->
+                <strong>{{=DICT["sp3537"]}}</strong>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-danger">{{=DICT["bu3538"]}}</button>
+                  </div>
+                  <!-- /btn-group -->
+                  <input type="text" class="form-control">
+                </div>
+                <!-- /input-group -->
+                <strong>{{=DICT["sp3539"]}}</strong>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control rounded-0">
+                  <span class="input-group-append">
+                    <button type="button" class="btn btn-info btn-flat">{{=DICT["bu3540"]}}</button>
+                  </span>
+                </div>
+                <!-- /input-group -->
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <!-- split buttons box -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3541"]}}</h3>
+              </div>
+              <div class="card-body">
+                <!-- Split button -->
+                <p class="mb-1">{{=DICT["pc3542"]}}</p>
+
+                <div class="margin">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">{{=DICT["bu3543"]}}</button>
+                    <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3544"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3545"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3546"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3547"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3548"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info">{{=DICT["bu3549"]}}</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3550"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3551"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3552"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3553"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3554"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger">{{=DICT["bu3555"]}}</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3556"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3557"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3558"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3559"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3560"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success">{{=DICT["bu3561"]}}</button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3562"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3563"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3564"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3565"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3566"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-warning">{{=DICT["bu3567"]}}</button>
+                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3568"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3569"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3570"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3571"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3572"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- flat split buttons -->
+                <p class="mt-3 mb-1">{{=DICT["pc3573"]}}</p>
+
+                <div class="margin">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-flat">{{=DICT["bu3574"]}}</button>
+                    <button type="button" class="btn btn-default btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3575"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3576"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3577"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3578"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3579"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info btn-flat">{{=DICT["bu3580"]}}</button>
+                    <button type="button" class="btn btn-info btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3581"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3582"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3583"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3584"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3585"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger btn-flat">{{=DICT["bu3586"]}}</button>
+                    <button type="button" class="btn btn-danger btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3587"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3588"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3589"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3590"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3591"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-flat">{{=DICT["bu3592"]}}</button>
+                    <button type="button" class="btn btn-success btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3593"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3594"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3595"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3596"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3597"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-warning btn-flat">{{=DICT["bu3598"]}}</button>
+                    <button type="button" class="btn btn-warning btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3599"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3600"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3601"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3602"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3603"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Split button -->
+                <p class="mt-3 mb-1">{{=DICT["pc3604"]}}</p>
+                <div class="margin">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">{{=DICT["bu3605"]}}</button>
+                    <button type="button" class="btn btn-default dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3606"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3607"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3608"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3609"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3610"]}}</a>
+                      </div>
+                    </div>
+                    </button>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info">{{=DICT["bu3611"]}}</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3612"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3613"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3614"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3615"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3616"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger">{{=DICT["bu3617"]}}</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3618"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3619"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3620"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3621"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3622"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success">{{=DICT["bu3623"]}}</button>
+                    <button type="button" class="btn btn-success dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3624"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3625"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3626"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3627"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3628"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-warning">{{=DICT["bu3629"]}}</button>
+                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">{{=DICT["sx3630"]}}</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">{{=DICT["aa3631"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3632"]}}</a>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3633"]}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{=DICT["aa3634"]}}</a>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- end split buttons box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-6">
+            <!-- Application buttons -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3635"]}}</h3>
+              </div>
+              <div class="card-body">
+                <p>{{=DICT["pf3637"]}}<code>.btn.btn-app</code> to an <code>&lt;a></code>{{=DICT["pc3636"]}}</p>
+                <a class="btn btn-app">
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+                <a class="btn btn-app">
+                  <i class="fas fa-play"></i> Play
+                </a>
+                <a class="btn btn-app">
+                  <i class="fas fa-pause"></i> Pause
+                </a>
+                <a class="btn btn-app">
+                  <i class="fas fa-save"></i> Save
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-warning">{{=DICT["sx3638"]}}</span>
+                  <i class="fas fa-bullhorn"></i> Notifications
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-success">300</span>
+                  <i class="fas fa-barcode"></i> Products
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-purple">891</span>
+                  <i class="fas fa-users"></i> Users
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-teal">67</span>
+                  <i class="fas fa-inbox"></i> Orders
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-info">12</span>
+                  <i class="fas fa-envelope"></i> Inbox
+                </a>
+                <a class="btn btn-app">
+                  <span class="badge bg-danger">531</span>
+                  <i class="fas fa-heart"></i> Likes
+                </a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- Vertical grouping -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3639"]}}</h3>
+              </div>
+              <div class="card-body table-responsive pad">
+
+                <p>
+                  Vertical button groups are easy to create with bootstrap. Just add your buttons
+                  inside <code>&lt;div class="btn-group-vertical"&gt;&lt;/div&gt;</code>
+                </p>
+
+                <table class="table table-bordered">
+                  <tr>
+                    <th>Button</th>
+                    <th>Icons</th>
+                    <th>Flat</th>
+                    <th>Dropdown</th>
+                  </tr>
+                  <!-- Default -->
+                  <tr>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-default">{{=DICT["bu3640"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3641"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3642"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-default"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-default">{{=DICT["bu3643"]}}</button>
+                        <button type="button" class="btn btn-default">{{=DICT["bu3644"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3645"]}}</a></li>
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3646"]}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- default -->
+                  <!-- Info -->
+                  <tr>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-info">{{=DICT["bu3647"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3648"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3649"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-info"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-info">{{=DICT["bu3650"]}}</button>
+                        <button type="button" class="btn btn-info">{{=DICT["bu3651"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3652"]}}</a></li>
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3653"]}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /. info -->
+                  <!-- /.danger -->
+                  <tr>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3654"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3655"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3656"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3657"]}}</button>
+                        <button type="button" class="btn btn-danger">{{=DICT["bu3658"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3659"]}}</a></li>
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3660"]}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.danger -->
+                  <!-- warning -->
+                  <tr>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3661"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3662"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3663"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-warning"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-warning btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3664"]}}</button>
+                        <button type="button" class="btn btn-warning">{{=DICT["bu3665"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3666"]}}</a></li>
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3667"]}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.warning -->
+                  <!-- success -->
+                  <tr>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-success">{{=DICT["bu3668"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3669"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3670"]}}</button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-align-right"></i></button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-success btn-flat"><i class="fas fa-align-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-success">{{=DICT["bu3671"]}}</button>
+                        <button type="button" class="btn btn-success">{{=DICT["bu3672"]}}</button>
+
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3673"]}}</a></li>
+                            <li><a class="dropdown-item" href="#">{{=DICT["aa3674"]}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /.success -->
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- Radio Buttons -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{=DICT["hc3675"]}}</h3>
+              </div>
+              <div class="card-body table-responsive pad">
+                <p class="mb-1">Radio Button Group with <code>.btn-secondary</code></p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                  </label>
+                </div>
+
+                <p class="mt-3 mb-1">Radio Button Group with <code>.bg-olive</code></p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn bg-olive active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                  </label>
+                  <label class="btn bg-olive">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                  </label>
+                  <label class="btn bg-olive">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                  </label>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /. row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>{{=DICT["bb3676"]}}</b> 3.0.2
+    </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">{{=DICT["aa3677"]}}</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- wrapper -->
+
+<!-- jQuery -->
+<script src="{{=URL('static','template/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{=URL('static','template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{=URL('static','template/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{=URL('static','template/dist/js/demo.js')}}"></script>
+</body>
+</html>

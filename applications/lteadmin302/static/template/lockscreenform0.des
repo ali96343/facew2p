@@ -1,0 +1,21 @@
+- - input
+  - class: form-control
+    id: id_for357
+    placeholder: password
+    type: password
+  - class: ''
+    for: id_for357
+    text: label358
+  - null
+  - null
+- - button
+  - class: btn
+    id: id_for359
+    placeholder: place_362
+    type: submit
+    value: submit361
+  - class: ''
+    for: id_for359
+    text: label360
+  - null
+  - null

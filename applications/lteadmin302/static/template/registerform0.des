@@ -1,0 +1,69 @@
+- - input
+  - class: form-control
+    id: id_for123
+    placeholder: Full name
+    type: text
+  - class: ''
+    for: id_for123
+    text: I agree to the terms
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for125
+    placeholder: Email
+    type: email
+  - class: ''
+    for: id_for125
+    text: I agree to the terms
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for127
+    placeholder: Password
+    type: password
+  - class: ''
+    for: id_for127
+    text: I agree to the terms
+  - null
+  - null
+- - input
+  - class: form-control
+    id: id_for129
+    placeholder: Retype password
+    type: password
+  - class: ''
+    for: id_for129
+    text: I agree to the terms
+  - null
+  - null
+- - checkbox
+  - id: agreeTerms
+    placeholder: place_133
+    type: checkbox
+    value: agree
+  - class: ''
+    for: agreeTerms
+    text: I agree to the terms
+  - null
+  - null
+- - button
+  - class: btn btn-primary btn-block
+    id: id_for134
+    placeholder: place_136
+    type: submit
+    value: Register
+  - class: ''
+    for: id_for134
+    text: I agree to the terms
+  - null
+  - null
+- - button
+  - id: id_for137
+    placeholder: place_139
+  - class: ''
+    for: id_for137
+    text: I agree to the terms
+  - null
+  - null

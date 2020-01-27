@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>facew2p</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="{{=URL('static','template/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','template/dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+   <meta charset='utf-8'>
+   <link  rel="icon" type="image/x-icon" href="{{=URL('static','images/favicon.ico')}}"  >
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a href="{{=URL(c='default',f='index3')}}" class="navbar-brand">
+        <img src="{{=URL('static','template/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">{{=DICT["sx8577"]}}</span>
+      </a>
+      
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='index3')}}" class="nav-link">{{=DICT["aa8579"]}}</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">{{=DICT["aa8580"]}}</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">{{=DICT["aa8581"]}}</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">{{=DICT["aa8582"]}}</a></li>
+              <li><a href="#" class="dropdown-item">{{=DICT["aa8583"]}}</a></li>
+
+              <li class="dropdown-divider"></li>
+
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu dropdown-hover">
+                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{=DICT["aa8584"]}}</a>
+                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item">{{=DICT["aa8585"]}}</a>
+                  </li>
+
+                  <!-- Level three dropdown-->
+                  <li class="dropdown-submenu">
+                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{=DICT["aa8586"]}}</a>
+                    <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
+                      <li><a href="#" class="dropdown-item">{{=DICT["aa8587"]}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{=DICT["aa8588"]}}</a></li>
+                    </ul>
+                  </li>
+                  <!-- End Level three -->
+
+                  <li><a href="#" class="dropdown-item">{{=DICT["aa8589"]}}</a></li>
+                  <li><a href="#" class="dropdown-item">{{=DICT["aa8590"]}}</a></li>
+                </ul>
+              </li>
+              <!-- End Level two -->
+            </ul>
+          </li>
+        </ul>
+
+        <!-- SEARCH FORM -->
+        
+{{block mytopIInavIIsidebarform0}}
+{{include 'web2py_ajax.html'}}
+
+{{=topIInavIIsidebarform0.custom.begin}}
+{{=topIInavIIsidebarform0.custom.widget.f0}}
+{{=topIInavIIsidebarform0.custom.submit}}
+{{=topIInavIIsidebarform0.custom.end}}
+
+<div  id=divID0 style="heigth:50%;margin 0;display:inline-flex;padding: 0 5px 2px 5px;background-color:#F0FFF0;color:black;border: 1px dashed red;" >
+                   <small>{{=response.flash0 or ''}}</small>
+</div>
+
+ <script>
+ setTimeout(function(){
+  if ($('#divID0').length > 0) {
+    $('#divID0').remove();
+  } 
+}, 15000)
+ </script>
+{{end}}
+
+      </div>
+
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-comments"></i>
+            <span class="badge badge-danger navbar-badge">{{=DICT["sx8592"]}}</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{{=URL('static','template/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">{{=DICT["pc8594"]}}</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc8595"]}}</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{{=URL('static','template/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">{{=DICT["pc8597"]}}</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc8598"]}}</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{{=URL('static','template/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">{{=DICT["pc8600"]}}</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{=DICT["pc8601"]}}</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa8602"]}}</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-header">{{=DICT["sx8603"]}}</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">{{=DICT["sx8604"]}}</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">{{=DICT["sx8605"]}}</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">{{=DICT["sx8606"]}}</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">{{=DICT["aa8607"]}}</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+              class="fas fa-th-large"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{=URL(c='default',f='index3')}}" class="brand-link">
+      <img src="{{=URL('static','template/dist/img/AdminLTELogo.png')}}"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">{{=DICT["sx8610"]}}</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{=URL('static','template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{=DICT["aa8612"]}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8614"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index2')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8616"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='index3')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8618"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='widgets')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Widgets
+                <span class="right badge badge-danger">{{=DICT["sx8620"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Layout Options
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{=DICT["sx8621"]}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8623"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='topIInavIIsidebar')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8625"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='boxed')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8627"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8629"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIItopnav')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8631"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='fixedIIfooter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8633"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='collapsedIIsidebar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8635"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Charts
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='chartjs')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8637"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='flot')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8639"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='inline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8641"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                UI Elements
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8643"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='icons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8645"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='buttons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8647"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='sliders')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8649"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='modals')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8651"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='navbar')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8653"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='timeline')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8655"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='ribbons')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8657"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Forms
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='general')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8659"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='advanced')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8661"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='editors')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8663"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='validation')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8665"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tables
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='simple')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8667"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8669"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='jsgrid')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8671"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb8672"]}}</li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='calendar')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">{{=DICT["sx8674"]}}</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{=URL(c='default',f='gallery')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='mailbox')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8677"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='compose')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8679"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='readIImail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8681"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='invoice')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8683"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='profile')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8685"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='eIIcommerce')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8687"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projects')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8689"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIadd')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8691"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIedit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8693"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='projectIIdetail')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8695"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='contacts')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8697"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='login')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8699"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='register')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8701"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='forgotIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8703"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='recoverIIpassword')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8705"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='lockscreen')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8707"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='legacyIIuserIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8709"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='languageIImenu')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8711"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X404')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8713"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='X500')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8715"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='pace')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8717"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='blank')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8719"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{=URL(c='default',f='starter')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8721"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">{{=DICT["lb8722"]}}</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>{{=DICT["pa8723"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb8724"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa8725"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+                Level 1
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8726"]}}</p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Level 2
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa8727"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa8728"]}}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{=DICT["pa8729"]}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{=DICT["pa8730"]}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>{{=DICT["pa8731"]}}</p>
+            </a>
+          </li>
+          <li class="nav-header">{{=DICT["lb8732"]}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">{{=DICT["pc8733"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>{{=DICT["pa8734"]}}</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>{{=DICT["pa8735"]}}</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark"> Top Navigation <small>{{=DICT["ic8736"]}}</small></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">{{=DICT["aa8737"]}}</a></li>
+              <li class="breadcrumb-item"><a href="#">{{=DICT["aa8738"]}}</a></li>
+              <li class="breadcrumb-item active">{{=DICT["lb8739"]}}</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{=DICT["he8740"]}}</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
+
+                <a href="#" class="card-link">{{=DICT["aa8741"]}}</a>
+                <a href="#" class="card-link">{{=DICT["aa8742"]}}</a>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-body">
+                <h5 class="card-title">{{=DICT["he8743"]}}</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
+                <a href="#" class="card-link">{{=DICT["aa8744"]}}</a>
+                <a href="#" class="card-link">{{=DICT["aa8745"]}}</a>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title m-0">{{=DICT["he8746"]}}</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">{{=DICT["hf8747"]}}</h6>
+
+                <p class="card-text">{{=DICT["pc8748"]}}</p>
+                <a href="#" class="btn btn-primary">{{=DICT["aa8749"]}}</a>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="card-title m-0">{{=DICT["he8750"]}}</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">{{=DICT["hf8751"]}}</h6>
+
+                <p class="card-text">{{=DICT["pc8752"]}}</p>
+                <a href="#" class="btn btn-primary">{{=DICT["aa8753"]}}</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>{{=DICT["hh8754"]}}</h5>
+      <p>{{=DICT["pa8755"]}}</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">{{=DICT["aa8756"]}}</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{{=URL('static','template/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{=URL('static','template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{=URL('static','template/dist/js/adminlte.min.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+- - input
+  - class: form-control form-control-sm
+    id: id_for265
+    placeholder: Response
+  - class: ''
+    for: id_for265
+    text: label266
+  - null
+  - null
+- - button
+  - class: btn btn-danger
+    id: id_for267
+    placeholder: place_269
+    type: submit
+    value: Send
+  - class: ''
+    for: id_for267
+    text: label268
+  - null
+  - null
