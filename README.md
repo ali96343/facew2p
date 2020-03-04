@@ -14,6 +14,8 @@ Python script generates web2py app from html-css-templates
 some test applications (for admin dashboards) are in the applications directory,
 
 for test apps url/myapp/myadd use  nil@nil.com xyz12345
+
+
 9. tabw2p - generates web2py app from tables descriptions in yaml files
 10. create empty dir && cd empty dir
 11. run tabw2p, look-change  at yaml files
