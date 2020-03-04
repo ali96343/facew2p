@@ -1,0 +1,1188 @@
+#!/usr/bin/env python
+# encoding: utf8
+
+
+"""
+Copyright (c) 2009-2019, Alex Beskopilny.
+License: MIT (see LICENSE for details)
+this script builds the web2py-application according to the description from the yml-file
+"""
+
+__author__ = "Alex Beskopilny"
+__copyright__ = "Copyright 2019"
+__credits__ = ["Alex Beskopilny"]
+__license__ = "MIT"
+__version__ = "0.1-dev 15.11.2019"
+__maintainer__ = "Alex Beskopilny"
+__email__ = "ab96343@gmail.com"
+__status__ = "dev"
+
+# http://danielhnyk.cz/dsl-in-python-as-a-python-subset/
+#db.payment_bpay_step1.selection_type.widget = lambda f, v: SQLFORM.widgets.radio.widget(f, v, style='divs')
+# https://github.com/pawnhearts/django_vue_generator/tree/master/django_vue_generator
+# https://habr.com/ru/post/479654/
+# https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
+
+
+import datetime
+import io
+import os
+import re
+import sys
+import urllib.parse
+import socket
+import yaml
+import time
+
+
+def async_test(urls,):
+    # https://www.blog.pythonlibrary.org/2016/07/26/python-3-an-intro-to-asyncio/
+    # https://stackoverflow.com/questions/47934212/how-to-use-python-aiohttp-library-to-download-multiple-webpages
+    # https://pawelmhm.github.io/asyncio/python/aiohttp/2016/04/22/asyncio-aiohttp.html
+
+    import aiohttp
+    import asyncio
+    import async_timeout
+
+    async def download_coroutine(session, url):
+        with async_timeout.timeout(10):
+            async with session.get(url, timeout=5) as response:
+                chunk = await response.content.read()
+                ds = len(chunk)
+                print(ds)
+                # filename = os.path.basename(url+ '.asy')
+                # with open(filename, 'wb') as f_handle:
+                #    while True:
+                #        chunk = await response.content.read(1024)
+                #        if not chunk:
+                #            break
+                #        f_handle.write(chunk)
+                return await response.text()
+                # return await response.release()
+
+    async def main(loop):
+
+        async with aiohttp.ClientSession(loop=loop) as session:
+            tasks = [download_coroutine(session, url) for url in urls]
+            await asyncio.gather(*tasks)
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main(loop))
+    sys.exit("exit async")
+    pass
+
+
+def check_port_host(url):
+    def scan(address, port, timeout=2):
+        """TCP Port Scanner"""
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(timeout)
+        try:
+            ip = socket.gethostbyname(address)
+            sock.connect((ip, port))
+            sock.close()
+            return "connected"
+        except:
+            return "bad TCP"
+
+    aaa = urllib.parse.urlparse(url)
+    port = None
+    if aaa.scheme is None:
+        return "set scheme: %s" % url
+    if aaa.port is None:
+        if aaa.scheme == "http":
+            port = 80
+        if aaa.scheme == "https":
+            port = 443
+    if aaa.port:
+        port = aaa.port
+
+    return scan(aaa.hostname, port)
+
+
+def tread_test(urls, dbg=False):
+    import concurrent.futures
+    import urllib.request
+
+    is_port = check_port_host(urls[0])
+    if is_port != "connected":
+        error_msg("bad TCP, bad app_url! test skipped:  %s" % is_port, sys_stop=False)
+        return 0
+
+    hdr = {
+        # "Connection": "keep-alive",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
+    }
+
+    # Retrieve a single page and report the url and contents
+    def load_url(url, timeout):
+        req = urllib.request.Request(url, headers=hdr)
+        with urllib.request.urlopen(req, timeout=3) as conn:
+            return conn.read()
+
+    data_size = 0
+    start = time.time()
+    print("urls testing, pls, wait ...")
+    # We can use a with statement to ensure threads are cleaned up promptly
+    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+        # Start the load operations and mark each future with its URL
+        future_to_url = {executor.submit(load_url, url, 3): url for url in urls}
+        for future in concurrent.futures.as_completed(future_to_url):
+            url = future_to_url[future]
+            try:
+                data = future.result()
+            except Exception as exc:
+                print("%r generated an exception: %s" % (url, exc))
+                print("timeout ")
+                # return data_size
+
+            else:
+                if dbg:
+                    print("%r page is %d bytes" % (url, len(data)))
+                data_size += len(data)
+    print("time: {:0.1f} sec, urls= {}".format(time.time() - start, len(urls)))
+    return data_size
+
+
+def cre_dir(dir_nm):
+    if not os.path.isdir(dir_nm):
+        os.makedirs(dir_nm)
+        return True
+    return False
+
+
+def file2list(fnm):
+    with open(fnm, "r") as f:
+        text = f.read()
+    return text.split("\n")
+
+
+def list2file(ll, fnm):
+    with open(fnm, "w") as f:
+        f.write("\n".join(ll))
+    return fnm
+
+
+def data2yaml(fnm, data_fld, mode="w"):
+    with io.open(fnm, mode, encoding="utf8") as outfile:
+        yaml.dump(data_fld, outfile, default_flow_style=False, allow_unicode=True)
+    return fnm
+
+
+def yaml2data(fnm):
+
+    with open(fnm, "r") as f:
+        data_fld = yaml.load(f.read(), Loader=yaml.FullLoader)
+    return data_fld
+
+
+def clear_dir(folder):
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        # elif os.path.isdir(file_path): shutil.rmtree(file_path)
+        except Exception as e:
+            print(e)
+    return True
+
+
+def del_funny(s, rep_sym="X"):
+    s = s.strip()
+    s = re.sub(re.compile("[^0-9a-zA-Z_]+"), rep_sym, s)
+    if len(s) == 0:
+        s = rep_sym
+    return s if not s[0].isdigit() else rep_sym + s
+
+
+def error_msg(msg="error_msg", sys_stop=True):
+    if sys_stop:
+        _ = [print(f"report from: {sys._getframe(i).f_code.co_name}") for i in [3, 2]]
+    mess_str = "error: {}" if sys_stop else "warning: {}"
+    print(mess_str.format(msg))
+    if sys_stop:
+        sys.exit("stop!")
+    return sys_stop
+
+
+def check_type(obj, xtype):
+    if not isinstance(obj, xtype):
+        error_msg("found: {}, expected {}".format(obj, xtype))
+    return True
+
+
+def var_substitute(ob, dd):
+    if isinstance(ob, (list,)):
+        return [var_substitute(e, dd) for e in ob]
+    if isinstance(ob, (str,)):
+        for k in dd:
+            if dd[k]:
+                ob = ob.replace(k, dd[k])
+    return ob
+
+
+def str_time_stamp():
+    date_time = datetime.datetime.now()
+    time_stamp = date_time.strftime("%Y-%b-%d %H:%M")
+    return "# generated at {}\n".format(time_stamp)
+
+
+def split_str(s):
+    return [del_funny(e) for e in s.split(" ") if len(e)]
+
+
+# ----------------------------------------------------------------------------------------------------------------
+dal_populate_func = """
+
+DFMT='%d.%m.%Y'
+DTFMT='%d.%m.%Y-%H:%M:%S'
+SLLL=100
+TLLL=250
+daterepr=   lambda x,row: x.strftime(DFMT) if x != None else ''# lambda id, row: db.my_info(id).my_uuid
+
+import os
+def tab_populate(table_name, cnt= 10):
+    if db(db[table_name] ).isempty():
+        from gluon.contrib.populate import populate
+        populate(db[table_name]  , cnt)
+        db.commit()
+
+"""
+
+dal_file_head = [str_time_stamp(), ""]
+dal_table_head = ["", "db.define_table( 'TBL',"]
+dal_table_end = ["    plural='plural',","    singular='singular',","    )", ""]
+dal_table_populate = ["# populate code", ""]
+dal_table_populate = ["tab_populate('TBL')", ""]
+
+
+dal_fld_dict = {
+    "ref": "    Field('REFTBL_id', 'reference REFTBL', label= 'ref REFTBL', requires=IS_EMPTY_OR(IS_IN_DB(db, 'REFTBL.id', db.REFTBL._format)) ),",
+    "date": "    Field('FLD', 'date', label= 'LABEL', default= request.now, requires= IS_NULL_OR(IS_DATE(format=T(DFMT))), represent= daterepr  ), ",
+    "datetime": "    Field('FLD', 'datetime', label= 'LABEL', default= request.now, requires= IS_NULL_OR(IS_DATETIME(format=T(DTFMT)) )),",
+    "float": "    Field('FLD', 'float', label= 'LABEL', default= 0.0 ),",
+    "integer": "    Field('FLD', 'integer', label= 'LABEL', default= 0 ),",
+    "int": "    Field('FLD', 'integer', label= 'LABEL', default= 0 ),",
+    "upload": "    Field('FLD', 'upload',  uploadfolder=os.path.join(request.folder,'uploads') ),",
+    "string": "    Field('FLD', 'string', label= 'LABEL', default= 'FLD', length= SLLL, ),",
+    "lstring": "    Field('FLD', 'list:string', label= 'LABEL', default= 'FLD' ),",
+    "str": "    Field('FLD', 'string', label= 'LABEL', default= 'FLD', length= SLLL, ),",
+    "lstr": "    Field('FLD', 'list:string', label= 'LABEL', widget = SQLFORM.widgets.list.widget, length= TLLL, ),",
+    "text": "    Field('FLD', 'text', label= 'LABEL', default= 'FLD', length= TLLL, ),",
+    "txt": "    Field('FLD', 'text', label= 'LABEL', default= 'FLD', length= TLLL,),",
+    "bool": "    Field('FLD', 'boolean', label= 'LABEL', default= True),",
+    "select": "    Field('FLD', label= 'LABEL' , requires=IS_IN_SET( ['L0B','L1B','L2B'] ), default= 'L1B' ),",
+    "radio": "    Field('FLD', label= 'LABEL' , requires=IS_IN_SET(['L0B', 'L1B', ]), default= 'L0B', widget=SQLFORM.widgets.radio.widget),",
+    "multi": "    Field('FLD', 'list:string',label= 'LABEL' , requires=IS_IN_SET(['L0B', 'L1B', 'L1C'], multiple=True, zero='<-- unk -->'), default= 'L0B',  widget=SQLFORM.widgets.checkboxes.widget),",
+    "signature": "    auth.signature,",
+    "cre_by": "    Field('created_by', db.auth_user, default= auth.user_id, writable= False, label= 'LABEL'),",
+    "cre_on": "    Field('created_on', 'datetime', default= request.now, requires= IS_DATETIME(format=(DTFMT)),label='LABEL', writable=False), ",
+}
+
+
+# ----------------------------------------------------------------------------------------------------------------
+
+w2p_rest = """
+#@auth.requires_login()
+@request.restful()
+def api():
+    from gluon.serializers import json
+    response.view = 'generic.' + request.extension
+    # response.view = 'generic.json'
+    def GET(*args,**vars):
+         patterns = 'auto'
+         parser = db.parse_as_rest(patterns,args,vars)
+         if parser.status == 200:
+            return dict(content=parser.response)
+         else:
+            raise HTTP(parser.status,parser.error)
+    def POST(table_name,**vars):
+        #return db[table_name].validate_and_insert(**vars)
+        #data = gluon.contrib.simplejson.loads(request.body.read())
+        return json(db[table_name].validate_and_insert(**vars))
+        return dict()
+    def PUT(table_name,record_id,**vars):
+        return db(db[table_name]._id==record_id).update(**vars)
+    def DELETE(table_name,record_id):
+        return db(db[table_name]._id==record_id).delete()
+    def OPTIONS(*args,**vars):
+        print ( 'OPTION called' )
+        #return True
+        return dict()
+    return dict(GET=GET,POST=POST,PUT=PUT,DELETE=DELETE,OPTIONS=OPTIONS)
+
+"""
+
+
+w2p_ctrl_file_header = """
+
+
+ignore_rw = True
+def download():
+    return response.download(request, db)
+
+
+#@auth.requires_login()
+def mysmart(tnm_one, tnm_many):
+    gqu = lambda tnm : db[tnm].id>0 # <- query
+    constraints = { tnm_one  :gqu(db[tnm_one]), tnm_many:gqu(db[tnm_many]), }
+    return SQLFORM.smartgrid(db[tnm_one],buttons_placement = 'left', constraints= constraints,   
+           linked_tables=[tnm_many],user_signature=False,  showbuttontext=False, ignore_rw = ignore_rw )
+
+def mygrid(tnm, mydel= False, myorder=None, mycreate = True):
+   return SQLFORM.grid(db[tnm], deletable= mydel, user_signature=False, create= mycreate, orderby= myorder,  showbuttontext=False, csv=True, ignore_rw = ignore_rw, buttons_placement = 'left' )
+
+#@auth.requires_login()
+def myform(tnm):
+   form= SQLFORM(db[tnm], upload=URL('download'), ignore_rw = ignore_rw )
+   if form.accepts(request.vars, session):
+        response.flash = T('new record inserted')
+
+   return form 
+
+#
+
+#@auth.requires_login()
+def index():
+    response.view = 'CTRL/index.html'
+    message = "it's index :)"
+    return dict(message= message)
+
+"""
+
+w2p_ctrl_form = """
+#@auth.requires_login()
+def TBCT():
+    response.view = 'CTRL/TBCT.html'
+    return dict(form = myform('TBL'))
+
+"""
+
+w2p_ctrl_grid = """
+#@auth.requires_login()
+def TBCT():
+    response.view = 'CTRL/TBCT.html'
+    return dict(grid= mygrid('TBL', mydel= True, myorder= ~db.TBL.id, mycreate= True))
+
+"""
+
+w2p_ctrl_smartgrid = """
+def TBCT():
+    response.view = 'CTRL/TBCT.html'
+    return dict(smart=mysmart('TBL','REFTB') )
+
+"""
+
+w2p_view_smartgrid = """{{extend 'layout.html'}}
+<p>{{=A(T('CTRL.py'), _href=URL(c='CTRL', f='index'))}} {{=A(T('one TBL'), _href=URL(c='CTRL', f='TBLgrid'))}} {{=A(T('many REFTB'), _href=URL(c='CTRL', f='REFTBgrid'))}}</p>
+{{=smart}}
+"""
+
+w2p_ctrl_slct = """
+#@auth.requires_login()
+def TBCT():
+    response.view = 'CTRL/TBCT.html'
+    query = db.TBL.id > 0
+    rows= db(query).select()
+    return dict( rows=rows )
+#
+"""
+
+w2p_view_slct = """{{extend 'layout.html'}}
+<p>{{=A(T('CTRL.py table list'), _href=URL(c='CTRL',f='index'))}}</p>
+<p>TBL</p>
+{{=SQLTABLE(rows, orderby=True, headers='labels',truncate=200,  _class='table table-bordered', _width="100%", _style="white-space:wrap")}}
+"""
+
+
+w2p_view_grid = """{{extend 'layout.html'}}
+<p>{{=A(T('CTRL.py table list'), _href=URL(c='CTRL',f='index'))}}</p>
+<p>TBL</p>
+{{=grid}}
+"""
+
+w2p_view_form = """{{extend 'layout.html'}}
+<p>{{=A(T('CTRL table list'), _href=URL(c='CTRL',f='index'))}}</p>
+<p>TBL</p>
+{{=form}}
+"""
+
+w2p_index_head = """{{extend 'layout.html'}}
+<p> {{=A(T('home'), _href=URL('default', 'index')  )}} {{=A(T('appadmin'), _href=URL('appadmin', 'index')  )}} </p> 
+<p>CTRL.py {{=A(T('index'), _href=URL(c='CTRL',f='index'))}}</p>
+"""
+
+w2p_index_item = """
+<p> WHAT {{=A(T('TBL'), _href=URL(c='CTRL',f='TBCT'))}}</p>
+"""
+
+w2p_index_line = chr(0x0001F388)  # + "<p>some header</p>"
+
+
+w2p_menu_head = """# my_menu_mark
+# u"\U0001F4A2"
+# 0x0001F4A2 (1f4a2)  :anger: 
+items_sub_menu= []
+menu_item = [ (chr( 0x0001f534 ), False, URL('default', 'index'), items_sub_menu) ]
+
+save_orig_menu= response.menu
+response.menu = menu_item
+response.menu += save_orig_menu
+items_sub_menu.append( (T('home'), False, URL(_app, 'default', 'index') ),)
+items_sub_menu.append( (T('appadmin'), False, URL(_app, 'appadmin', 'index') ),)
+
+"""
+
+w2p_menu_item = """
+items_sub_menu.append( (T('CTRL'), False, URL('CTRL','index') ), )
+"""
+
+
+# ----------------------------------------------------------------------------------------------------------------
+
+
+dja_file_head = [
+    str_time_stamp(),
+    "",
+    "import datetime",
+    "from django.db import models",
+    "from django.contrib.auth.models import User",
+    "",
+]
+dja_table_head = ["", "class TBL(models.Model):"]
+dja_table_end = [""]
+dja_table_populate = [""]
+
+
+dja_fld_dict = {
+    "ref": "    FLD = models.ForeignKey( REFTBL, related_name = 'REFTBL' )",
+    "date": "    FLD = models.DateField(_('Date'), default = datetime.date.today )",
+    "datetime": "    FLD = models.DateTimeField( auto_now_add = True )",
+    "float": "    FLD = models.DecimalField( max_digits = 5, decimal_places = 2 )",
+    "integer": "    FLD = models.IntegerField( default = 0 )",
+    "string": "    FLD = models.CharField( max_length = 255 )",
+    "text": "    FLD = models.TextField( max_length = 255 * 5 )",
+    "bool": "    FLD = forms.BooleanField( initial = True )",
+    "check": "    FLD = forms.BooleanField( initial = True )",
+}
+
+# ----------------------------------------------------------------------------------------------------------------
+
+
+def py_comment(mess="end table"):
+    return ["#--{}---------------------".format(mess), ""]
+
+
+# ----------------------------------------------------------------------------------------------------------------
+
+
+class DjanFldMeta(type):
+    def __getitem__(cls, index):
+        space_str = "    "
+        coma_str = ","
+
+        findex = "f" + index
+        if findex in cls.__dict__:
+            return space_str + cls.__dict__[findex] + coma_str
+        return space_str + cls.__dict__["fstring"] + coma_str
+
+
+class DjanFld(metaclass=DjanFldMeta):
+    fref = "FLD = models.ForeignKey( REFTBL, related_name = 'REFTBL' )"
+    fdate = "FLD = models.DateField(_('Date'), default = datetime.date.today )"
+    fdatetime = "FLD = models.DateTimeField( auto_now_add = True )"
+    ffloat = "FLD = models.DecimalField( max_digits = 5, decimal_places = 2 )"
+    finteger = "FLD = models.IntegerField( default = 0 )"
+    fstring = "FLD = models.CharField( max_length = 255 )"
+    ftext = "FLD = models.TextField( max_length = 255 * 5 )"
+    fbool = "FLD = forms.BooleanField( initial = True )"
+    fcheck = "FLD = forms.BooleanField( initial = True )"
+
+
+
+
+
+class AppBuilder:
+    def __init__(Z, app_cfg, app_struct):
+        Z.struct = app_struct
+        Z.app_cfg = app_cfg
+        Z.app_cfg_ok = Z.check_app_cfg(app_cfg)
+        Z.uniq = (str(n) for n in range(10000))
+        Z.num_fld_shift = 2
+        Z.num_fld = (str(n + Z.num_fld_shift  ) for n in range(10000))
+        Z.table_list = []
+        Z.table_ref_list = []
+        Z.all_table_list = []
+        Z.all_ctrl_prefix = []
+        Z.all_ref_list = []
+
+    def check_app_cfg(Z, app_cfg):
+        cfg_key_list = [
+            "add_admin",
+            "app_path",
+            "app_url",
+            "clear_db",
+            "frmw",
+            "install",
+        ]
+        for e in cfg_key_list:
+            if e not in app_cfg:
+                error_msg("bad app_cfg.yml, key %s not found " % e)
+
+        return True
+
+    def mk_uniq_tname(Z, tnm):
+        if tnm not in Z.all_table_list:
+            Z.all_table_list.append(tnm)
+            return tnm
+        new_tnm = "{}B{}N".format(tnm, next(Z.uniq))
+        error_msg("%s - not unique table name, try %s" % (tnm, new_tnm), sys_stop=False)
+        return Z.mk_uniq_tname(new_tnm)
+
+    def mk_uniq_ctrl_preix(Z, ctrl_prefix):
+        if ctrl_prefix not in Z.all_ctrl_prefix:
+            Z.all_ctrl_prefix.append(ctrl_prefix)
+            return ctrl_prefix
+        return Z.mk_uniq_ctrl_prefix(ctrl_prefix + "Y" + next(Z.uniq))
+
+    def list2table(Z, tnm, l):
+        check_type(l, list)
+        res = []
+        res += var_substitute(Z.table_head, {"TBL": tnm})
+
+        def mk_fld(elem, tnm1):
+            elem = elem.strip()
+            if len(elem) == 0:
+                elem = "string"
+            nn = next(Z.num_fld)
+            nm_fld = "f" + nn
+
+            l = split_str(elem)
+            if len(l) == 2:
+                elem = l[0]
+                nm_fld = l[1]
+                if elem == "ref":
+                    Z.all_ref_list.append(nm_fld)
+                    return var_substitute(
+                        Z.fld_dict[elem],
+                        {"FLD": "f" + nn, "LABEL": "label" + nn, "REFTBL": nm_fld},
+                    )
+                    tref = nm_fld
+                    Z.table_ref_list.append((tref, tnm1))
+
+            if elem not in Z.fld_dict:
+                error_msg(
+                    "bad field type '%s', replaced with 'string'" % elem, sys_stop=False
+                )
+                elem = "string"
+
+            return var_substitute(
+                Z.fld_dict[elem], {"FLD": nm_fld, "LABEL": "label" + nn}
+            )
+
+        tab_lines = [mk_fld(e, tnm) for e in l]
+        res += tab_lines + Z.table_end + var_substitute(Z.table_populate, {"TBL": tnm})
+        return res
+
+    def get_name_type(Z, s):
+        l = split_str(s)
+        if len(l) == 2:
+            return l[0], Z.mk_uniq_tname(l[1])
+        if len(l) == 1:
+            if l[0] not in ["one", "o2m", "m2m", "opt"]:
+                return "one", Z.mk_uniq_tname(l[0])
+            else:
+                return l[0], Z.mk_uniq_tname("unktab")
+        return error_msg("bad app_struct")
+
+    def mk_tab_nm(Z, s):
+        return del_funny(s) + next(Z.uniq)
+
+    def write_db_file(Z, nm_ctrl):
+        db_file_name = "d" + nm_ctrl + ".py"
+        if not os.path.isdir(Z.m_dir):
+            os.makedirs(Z.m_dir)
+        tnml = []
+        with open(os.path.join(Z.m_dir, db_file_name), "w") as f:
+            f.write("\n".join(Z.m_file_head))
+            for tnm, t_lines in Z.table_list:
+                tnml.append(tnm)
+                f.write("\n".join(t_lines))
+        return db_file_name, tnml
+
+    def check_ref_and_tables(Z):
+
+        for e in Z.all_ref_list:
+            if e not in Z.all_table_list:
+                print("alarm !!! reference to unknown table: {}".format(e))
+
+        print("Z.all_ref_list: ", Z.all_ref_list)
+        print("Z.all_table_list:  ", Z.all_table_list)
+        return True
+
+    def do_struct(Z):
+
+        func_dict = {"one": Z.mk_one, "o2m": Z.mk_o2m, "m2m": Z.mk_m2m, "opt": Z.mk_opt}
+
+        check_type(Z.struct, dict)
+
+        for ctrl_nm, v in Z.struct.items():
+            nm_ctrl = del_funny(ctrl_nm)
+            check_type(v, dict)
+
+            Z.table_list = []
+            Z.table_ref_list = []
+
+            for table, flds in v.items():
+                if "#" in table:
+                    continue
+                if isinstance(flds, str):
+                    if "#" in flds:
+                        continue
+                    flds = Z.fld_str2list(flds)
+
+                nm, tnm0 = Z.get_name_type(table)
+
+                if not nm in func_dict:
+                    error_msg("bad table type %s, set 'one'" % nm, sys_stop=False)
+                    nm = "one"
+
+                check_type(flds, list)
+                func_dict[nm](tnm0, flds)
+            fnm, tnml = Z.write_db_file(nm_ctrl)
+            Z.mk_ctrl(nm_ctrl, tnml)
+            Z.mk_ctrl_selects(nm_ctrl)
+
+        Z.check_ref_and_tables()
+        return True
+
+    def fld_str2list(Z, s):
+
+        l = []
+        if all((";" in s, "," in s)):
+            # l=[ e.split(',') for e in s.split(';') if len(e) ]
+            l = [
+                list(map(lambda s: s.strip(), e.split(",")))
+                for e in s.split(";")
+                if len(e)
+            ]
+            if len(l):
+                return l
+            error_msg("error in table description %s" % s)
+
+        # l = s.split(",")
+        l = [e.strip() for e in s.split(",") if len(e)]
+        return l
+
+    def mk_opt(Z, *args):
+        print(args)
+        print("to be continued :)")
+        return True
+
+    def mk_table(Z, tnm, fld_list):
+        tnm not in Z.all_table_list and Z.all_table_list.append(tnm)
+
+        check_type(fld_list, list)
+        return Z.list2table(tnm, fld_list)
+
+    def mk_one(Z, *args):
+
+        m1 = Z.mk_table(args[0], args[1])
+        m1 += py_comment("end of one: {}".format(args[0]))
+        Z.table_list.append((args[0], m1))
+        return True
+
+    def check_linl(Z, *args):
+        check_type(args[0], str)
+        if len(args[1]) != 2:
+            error_msg("bad args len! error in yml: %s " % args[1])
+        check_type(args[1][0], list)
+        check_type(args[1][1], list)
+        return True
+
+    def mk_o2m(Z, *args):
+        Z.check_linl(*args)
+
+        t1nm = args[0] + "o"
+        t2nm = args[0] + "m"
+
+        m1 = Z.mk_table(t1nm, args[1][0])
+        ref_tab = list(args[1][1]) + ["ref"]
+        m2 = Z.mk_table(t2nm, ref_tab)
+        m2 = var_substitute(m2, {"REFTBL": t1nm})  # FIX!
+        Z.all_ref_list.append(t1nm)
+        m2 += py_comment("end of one2many: {} {}".format(t1nm, t2nm))
+        Z.table_list.append((t1nm, m1))
+        Z.table_list.append((t2nm, m2))
+        Z.table_ref_list.append((t2nm, t1nm))
+        return True
+
+    def mk_ref_table(Z, tref, t1, t2):
+        res = []
+        res += var_substitute(Z.table_head, {"TBL": tref})
+        ref1 = var_substitute(Z.fld_dict["ref"], {"REFTBL": t1, "FLD": "f0"})
+        ref2 = var_substitute(Z.fld_dict["ref"], {"REFTBL": t2, "FLD": "f1"})
+        Z.all_ref_list += [t1, t2]
+        res += (
+            [ref1, ref2] + Z.table_end + var_substitute(Z.table_populate, {"TBL": tref})
+        )
+        Z.table_ref_list.append((tref, t1, t2))
+        Z.table_ref_list.append((tref, t1))
+        Z.table_ref_list.append((tref, t2))
+        return res
+
+    def mk_m2m(Z, *args):
+        Z.check_linl(*args)
+
+        t1nm = args[0] + "m1"
+        t2nm = args[0] + "m2"
+        m1 = Z.mk_table(t1nm, args[1][0])
+        m2 = Z.mk_table(t2nm, args[1][1])
+        t3ref = Z.mk_uniq_tname(args[0] + "ref")
+        m3 = Z.mk_ref_table(t3ref, t1nm, t2nm)
+        m3 += py_comment("end of many2many: {}  {}".format(t1nm, t2nm))
+        Z.table_list.append((t1nm, m1))
+        Z.table_list.append((t2nm, m2))
+        Z.table_list.append((t3ref, m3))
+        return True
+
+    def get_app_path(Z,):
+        return Z.app_cfg.get("app_path", os.getcwd())
+
+
+class Web2py(AppBuilder):
+    def __init__(Z, app_cfg, app_struct):
+        super().__init__(app_cfg, app_struct)
+        Z.m_file_func = dal_populate_func.split("\n")
+        Z.m_file_head = dal_file_head + Z.m_file_func
+
+        Z.table_head = dal_table_head
+        Z.table_end = dal_table_end
+        Z.table_populate = dal_table_populate
+        Z.fld_dict = dal_fld_dict
+
+        Z.ctrl_file_header = w2p_ctrl_file_header
+        Z.table_form = w2p_ctrl_form
+        Z.table_grid = w2p_ctrl_grid
+        Z.table_slct = w2p_ctrl_slct
+        Z.table_smart = w2p_ctrl_smartgrid
+        Z.table_v_grid = w2p_view_grid
+        Z.table_v_form = w2p_view_form
+        Z.table_v_slct = w2p_view_slct
+        Z.table_v_smrt = w2p_view_smartgrid
+
+        Z.ctrl_rest_api = w2p_rest
+        Z.index_head = w2p_index_head
+        Z.index_item = w2p_index_item
+        Z.index_line = w2p_index_line
+
+        Z.menu_head = w2p_menu_head
+        Z.menu_item = w2p_menu_item
+        Z.menu_ctrl_names = []
+
+        Z.app_dir = Z.get_app_path()
+        Z.m_dir, Z.v_dir, Z.c_dir, Z.p_dir, Z.d_dir = Z.mk_dirs()
+        Z.is_clear = Z.clear_db()
+        Z.save_conf_ok = Z.cp_conf(app_cfg, app_struct)
+        Z.all_w2p_controllers = []
+
+    def cp_conf(Z, app_cfg, app_struct):
+        # if not os.path.isdir(Z.p_dir):
+        #    os.mkdir(Z.p_dir)
+        cre_dir(Z.p_dir)
+        data2yaml(os.path.join(Z.p_dir, "app_cfg.yaml"), app_cfg)
+        data2yaml(os.path.join(Z.p_dir, "app_struct.yaml"), app_struct)
+        return True
+
+    def mk_dirs(Z,):
+        if not os.path.isdir(Z.app_dir) or Z.app_cfg["install"] == False:
+            Z.app_dir = os.getcwd()
+
+        m_dir = os.path.join(Z.app_dir, "models")
+        v_dir = os.path.join(Z.app_dir, "views")
+        c_dir = os.path.join(Z.app_dir, "controllers")
+        p_dir = os.path.join(Z.app_dir, "private")
+        d_dir = os.path.join(Z.app_dir, "databases")
+        return m_dir, v_dir, c_dir, p_dir, d_dir
+
+    def mk_view(Z, nm_ctrl, view_list):
+        view_dict = {
+            "grid": Z.table_v_grid,
+            "form": Z.table_v_form,
+            "slct": Z.table_v_slct,
+            "smrt": Z.table_v_smrt,
+        }
+        view_dir = os.path.join(Z.v_dir, nm_ctrl)
+        # if not os.path.isdir( view_dir ):
+        #    os.makedirs(view_dir)
+        cre_dir(view_dir)
+
+        findex = open(os.path.join(view_dir, "index.html"), "w")
+        findex.write(var_substitute(Z.index_head, {"CTRL": nm_ctrl}))
+
+        for e in view_list:
+            for k, v in e.items():
+                # print("----------", k)
+                findex.write(Z.index_line)
+                for ee in v:
+                    with open(os.path.join(view_dir, ee + ".html"), "w") as f:
+                        # print(k)
+                        tref = Z.has_tref(k)
+
+                        vtype = ee[-4:]
+                        if vtype in view_dict:
+                            f.write(
+                                var_substitute(
+                                    view_dict[vtype],
+                                    {"CTRL": nm_ctrl, "TBL": k, "REFTB": tref},
+                                )
+                            )
+                            findex.write(
+                                var_substitute(
+                                    Z.index_item,
+                                    {
+                                        "WHAT": vtype,
+                                        "TBL": k,
+                                        "TBCT": ee,
+                                        "CTRL": nm_ctrl,
+                                    },
+                                )
+                            )
+                        else:
+                            error_msg("bad_vtype: %s" % vtype)
+        findex.close()
+        return True
+
+    def clear_db(Z):
+        if Z.app_cfg["clear_db"] == False:
+            error_msg("the database is not cleaned", sys_stop=False)
+            return False
+
+        if not os.path.isdir(Z.d_dir):
+            return False
+        print("!!! clear %s" % Z.d_dir)
+        if Z.app_cfg["clear_model"] == True:
+            print("!!! clear %s" % Z.m_dir)
+            f1 = file2list(os.path.join(Z.m_dir, "db.py"))
+            f2 = file2list(os.path.join(Z.m_dir, "menu.py"))
+            clear_dir(Z.m_dir)
+            list2file(f1, os.path.join(Z.m_dir, "db.py"))
+            list2file(f2, os.path.join(Z.m_dir, "menu.py"))
+
+        return clear_dir(Z.d_dir)
+
+    def mk_menu(Z, menu_fnm="menu.py"):
+        menu_file = os.path.join(Z.m_dir, menu_fnm)
+
+        if not os.path.isfile(menu_file):
+            error_msg("not found %s" % menu_file, sys_stop=False)
+            return False
+
+        def clear_menu(fnm):
+            with open(fnm, "r") as f:
+                text = f.read()
+            return re.sub(re.compile("# my_menu_mark(.|\n)*"), "", text)
+
+        menu_text = clear_menu(menu_file) + Z.menu_head
+        for e in Z.menu_ctrl_names:
+            menu_text += var_substitute(Z.menu_item, {"CTRL": e})
+
+        with open(menu_file, "w") as f:
+            f.write(menu_text)
+
+        return True
+
+    def mk_ctrl_selects(Z, nm_ctrl):
+        # print("======== ", Z.table_ref_list)
+        # for e in Z.table_ref_list:
+        #     if len(e) == 2:
+        #         print("===== ", e)
+        #     if len(e) == 3:
+        #         print("===== ", e)
+        return True
+
+    def has_tref(Z, tnm):
+        for e in Z.table_ref_list:
+            if len(e) == 2:
+                tref, t = e
+                if tnm == t:
+                    return tref
+        return None
+
+    def mk_ctrl(Z, nm_ctrl, tnml):
+        if len(tnml) == 0:
+            return False
+        # print(nm_ctrl)
+        # print(tnml)
+        if not os.path.isdir(Z.c_dir):
+            os.makedirs(Z.c_dir)
+
+        view_func_dict = {
+            "grid": Z.table_grid,
+            "form": Z.table_form,
+            "slct": Z.table_slct,
+        }
+        view_list = []
+        with open(os.path.join(Z.c_dir, nm_ctrl + ".py"), "w") as f:
+            f.write(str_time_stamp())
+            f.write(var_substitute(Z.ctrl_file_header, {"CTRL": nm_ctrl}))
+            for t in tnml:
+                tref = Z.has_tref(t)
+                tx = Z.mk_uniq_ctrl_preix(t)
+                if tref is not None:
+                    f.write(
+                        var_substitute(
+                            Z.table_smart,
+                            {
+                                "CTRL": nm_ctrl,
+                                "TBCT": tx + "smrt",
+                                "TBL": t,
+                                "REFTB": tref,
+                            },
+                        )
+                    )
+                for k, v in view_func_dict.items():
+                    f.write(
+                        var_substitute(v, {"CTRL": nm_ctrl, "TBL": t, "TBCT": tx + k})
+                    )
+
+                if tref is not None:
+                    view_list.append(
+                        {t: (tx + "smrt", tx + "grid", tx + "form", tx + "slct")}
+                    )
+                    Z.all_w2p_controllers.append(
+                        {nm_ctrl: (tx + "smrt", tx + "grid", tx + "form", tx + "slct")}
+                    )
+                else:
+                    view_list.append({t: (tx + "grid", tx + "form", tx + "slct")})
+                    Z.all_w2p_controllers.append(
+                        {nm_ctrl: (tx + "grid", tx + "form", tx + "slct")}
+                    )
+
+            f.write(Z.ctrl_rest_api)
+        Z.mk_view(nm_ctrl, view_list)
+        Z.table_ref_list = []
+        Z.menu_ctrl_names.append(nm_ctrl)
+        return True
+
+    def build_test_ctrls(Z):
+        myurl = Z.app_cfg["app_url"]
+        urls_list = []
+        rest_list = []
+        for e in Z.all_w2p_controllers:
+            for k, v in e.items():
+                for ee in v:
+                    urls_list.append("{}/{}/{}".format(myurl, k, ee))
+
+                rest_str = "{}/{}/{}".format(myurl, k, "api/patterns.json")
+                not rest_str in rest_list and rest_list.append(rest_str)
+
+        tread_test(urls_list)
+
+        return "ok from test"
+
+    def check_restapi(Z):
+        # https://issue.life/questions/50759577
+        # http://qaru.site/questions/7341399/put-request-not-working-with-web2py
+
+        rest_list = []
+        myurl = Z.app_cfg["app_url"]
+        for e in Z.all_w2p_controllers:
+            for k in e:
+                rest_str = "{}/{}/{}".format(myurl, k, "api/patterns.json")
+                not rest_str in rest_list and rest_list.append(rest_str)
+        print(rest_list)
+        return "ok rest_api"
+
+    def __call__(Z):
+        res = super().do_struct()
+        Z.mk_menu()
+        Z.build_test_ctrls()
+        Z.check_restapi()
+        return "ok from web2py builder!"
+
+    # __call__ = AppBuilder.do_struct
+
+
+class Py4web(AppBuilder):
+    def __init__(Z, app_cfg, app_struct):
+        super().__init__(app_cfg, app_struct)
+
+        Z.m_file_head = dal_file_head
+        Z.table_head = dal_table_head
+        Z.table_end = dal_table_end
+        Z.table_populate = dal_table_populate
+        Z.fld_dict = dal_fld_dict
+
+        Z.ctrl_rest_api = None
+        Z.ctrl_grid = None
+        Z.table_ctrl_form = None
+        Z.table_grid = None
+        Z.table_view = None
+
+    def mk_ctrl(Z, nm_ctrl, tnml):
+        # if None in [Z.__dict__[k] for k in Z.__dict__.keys()]
+        #    error_msg("to be continued")
+        # print(nm_ctrl)
+        # print(tnml)
+        return True
+
+    def __call__(Z):
+        res = super().do_struct()
+        return "ok from py4web builder!"
+
+    # __call__ = AppBuilder.do_struct
+
+
+class Django(AppBuilder):
+    def __init__(Z, app_cfg, app_struct):
+        super().__init__(app_cfg, app_struct)
+        Z.m_file_head = dja_file_head
+        Z.table_head = dja_table_head
+        Z.table_end = dja_table_end
+        Z.table_populate = dja_table_populate
+        Z.fld_dict = dja_fld_dict
+
+        Z.ctrl_rest_api = None
+        Z.ctrl_grid_form = None
+        Z.table_ctrl_form = None
+        Z.table_grid = None
+        Z.table_view = None
+
+    def mk_ctrl(Z, nm_ctrl, tnml):
+        # print(nm_ctrl)
+        # print(tnml)
+
+        return True
+
+    def __call__(Z):
+        res = super().do_struct()
+        return "ok from django builder!"
+
+    # __call__ = AppBuilder.do_struct
+
+
+def get_yml(what):
+    yml_file = ""
+    yml_data = dict()
+
+    if what == "cfg":
+        yml_file = "app_cfg.yml"
+        yml_data = {
+            "app_path": "/home/w3p/web2py/applications/ji500",
+            "app_url": "http://localhost:8000/ji500",
+            "frmw": "web2py",
+            "install": True,
+            "add_admin": False,
+            "clear_model": True,
+            "clear_db": True,
+        }
+
+    elif what == "struct":
+        yml_file = "app_struct.yml"
+        yml_data = {
+            "ctrlnm1": {
+                "#": "comment 1",
+                "tzzup": "int, lstr, upload",
+                "o2m t0": "lstr, upload, str; ii, oo, ii",
+                "m2m t1": "int, str, str; ii, oo, ii",
+                "tx": ["string name1", "string"],
+                "ty": ["string name2", "string"],
+                "tz": ["string name3", "ref tx", "ref ty"],
+                "one tab1": [
+                    "integer myint",
+                    "text",
+                    "float",
+                    "radio",
+                    "select",
+                    "bool",
+                ],
+                "o2m tab2": [
+                    ["string", "text", "radio", "select", "bool"],
+                    ["string", "text", "radio", "select", "bool"],
+                ],
+                "m2m tab3": [
+                    ["string", "text", "radio", "select", "bool"],
+                    ["string", "text", "radio", "select", "bool"],
+                ],
+                # "opt": {
+                #    "populate": "False",
+                #    "restapi": "False",
+                #    "mail": "False",
+                #    "comment": "ctrl for task 1",
+                #    "add_login": "False",
+                # },
+            },
+            "ctrlnm2": {
+                "#": "comment 2",
+                "one tab12": ["integer", "text", "radio", "select", "bool"],
+                "o2m tab22": [
+                    ["string", "text", "radio", "select", "bool"],
+                    ["string", "text", "radio", "select", "bool"],
+                ],
+                "m2m tab32": [
+                    ["string", "text", "radio", "select", "bool"],
+                    ["string", "text", "radio", "select", "bool"],
+                ],
+                "tx": ["int", "text"],
+                "ty": "int, str, str",
+                "o2m ty": "int, str, str; ii, oo, ii",
+                "m2m ty": "int, str, str; ii, oo, ii",
+                # "opt": {
+                #    "populate": "False",
+                #    "restapi": "False",
+                #    "mail": "False",
+                #    "comment": "ctrl for task 2",
+                #    "add_login": "False",
+                # },
+            },
+        }
+    else:
+        return error_msg("get_yml: bad param %s" % what)
+
+    if not os.path.isfile(yml_file):
+        data2yaml(yml_file, yml_data)
+
+    return yaml2data(yml_file)
+
+
+class App:
+    def __init__(Z,):
+        Z.myfrmw = "web2py"
+        Z.env_ok = Z.check_env()
+        Z.app_cfg = get_yml("cfg")
+        Z.app_struct = get_yml("struct")
+        Z.builder_result = Z.get_app()
+
+    def field_help(Z,):
+        xfld = [e for e in dal_fld_dict]
+        print("\nknown fields types for %s: %s" % (Z.myfrmw, xfld))
+        return True
+
+    def check_env(Z,):
+        not sys.version_info >= (3, 5) and error_msg("need  python > 3.5")
+        return True
+
+    def get_app(Z,):
+
+        # frmw = Z.app_cfg["frmw"]
+        frmw = Z.app_cfg.get("frmw", "web2py")
+        frmw_dict = {"web2py": Web2py, "py4web": Py4web, "django": Django}
+
+        frmw = "web2py"
+
+        if frmw in frmw_dict:
+            return frmw_dict[frmw](Z.app_cfg, Z.app_struct)()
+
+        return error_msg("bad frmw name")
+
+    def __call__(Z,):
+        _ = [print("{}: {}".format(k, Z.__dict__[k])) for k in Z.__dict__.keys()]
+        Z.field_help()
+        return True
+
+
+# ----------------------------------------------------------------------------------------------------------------------------------
+if __name__ == "__main__":
+    App()()
