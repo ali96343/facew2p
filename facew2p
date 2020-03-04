@@ -26,6 +26,21 @@ __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
 
+
+#since I can't see your screenshot, I have to guess. But in German we also our special characters and I encode these by the following procedure:
+#
+#    import cgi # I first missed this to mention
+#
+#
+#    def convert_special_chars(label):
+#        if sys.version_info[0]==2: # python 2.x
+#            label = label.decode('utf-8')
+#        label = cgi.escape(label)
+#        label = label.encode('ascii', 'xmlcharrefreplace')
+#
+#        return label
+#
+
 #  <title.*?>(.+?)</title>    r'<title[^>]*>([^<]+)</title>'
 # https://webdesign.tutsplus.com/ru/tutorials/how-to-build-web-form-layouts-with-css-grid--cms-28776
 # https://github.com/flatlogic/sing-app
@@ -89,6 +104,12 @@ try:
     from PIL import Image, ImageDraw
 except BaseException:
     sys.exit('pls, install bs4, PIL, yaml : pip install bs4, pip install PIL, pip install yaml')
+
+
+#>>> from PIL import Image
+#>>> img = Image.open('/home/mdriscoll/Pictures/all_python.jpg')
+#>>> img.format
+#'JPEG'
 
 
 import linecache
@@ -1081,6 +1102,30 @@ class StrDb:
         "",
     ]
     ctrl_upload = [
+        "",
+        "",
+        "def save_and_convert(src,  basewidth = 800):",
+        "",
+        "     img = Image.open(src)",
+        "     width, height = img.size",
+        "     #if width > basewidth:",
+        "     dst = src + '.orig'",
+        "     shutil.copyfile(src, dst)",
+        "     wpercent = (basewidth/float(width))",
+        "     hsize = int((float(height)*float(wpercent)))",
+        "     img = img.resize((basewidth,hsize), )",
+        "     #img = img.resize((basewidth,hsize), Image.ANTIALIAS)",
+        "     if src.lower().endswith(('jpg', 'jpeg', )):",
+        "            img.save(src, 'JPEG', )",
+        "            #img.save(src, 'JPEG', optimize= True, quality=91 )",
+        "     elif src.lower().endswith(('png', )):",
+        "            #img.save(src, 'PNG', optimize=True)",
+        "            img.save(src, 'PNG', )",
+        "     else:",
+        "            img.save(src, )",
+        "",
+        "     return src",
+        "",
         "",
         "",
         "#@auth.requires_login()",
@@ -2808,11 +2853,12 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, ):
+    def __init__(Z, plus_labels=True, add_js_defer = True):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
+        Z.add_js_defer = add_js_defer
         #f0 = None
         #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
@@ -3184,7 +3230,16 @@ class HtmlView(CheckEnv):
             file_lines= [ e for e in file_lines if '{{' not in e ]
             return file_lines
 
+        def defer_js(lines):
+            for i, e in enumerate(lines):
+              if all(['<script' in e, 'src=' in e, '.js' in e, ' defer' not in e]):
+                lines[i] = e.replace('<script','<script defer ')
+                #print ("!!! ", lines[i])
+            return lines 
+
         lines= pre_replace_in_file_lines( html_fnm )
+        if Z.add_js_defer == True:
+             lines= defer_js(lines)
 
         ctrl1 = Z.get_from_db_fnm2ctrl(Z.f0)
         link_tbl_e = [html_fnm + Z.myview_ext, html_fnm, ctrl1, Z.file_db]
@@ -4004,13 +4059,14 @@ def check_model(dbg=True):
 # ------------------------------------------------------------------------------------
 if __name__ == "__main__":
     start = time.time()
+    set_defer_js = True
 
     plus_labels = False if len(sys.argv) >= 2 else True
     plus_bs4 = False if len(sys.argv) >= 3 else True
 
     a = CheckEnv(backup_app=False, unzip_restart=True)
 
-    HtmlView(plus_labels=plus_labels).run_list()
+    HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js ).run_list()
 
     W2pApp().build()
     print ("ignored html in subdirs: ", a.db_html_forward_request)
@@ -4040,6 +4096,7 @@ if __name__ == "__main__":
         print ('   form.new form_types: ', form_types  )
 
     check_model(dbg=False)
+    prYellow("<scrpt defer = %s" % set_defer_js)
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
 
