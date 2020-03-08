@@ -3231,10 +3231,16 @@ class HtmlView(CheckEnv):
             return file_lines
 
         def defer_js(lines):
+
             for i, e in enumerate(lines):
-              if all(['<script' in e, 'src=' in e, '.js' in e, ' defer' not in e]):
-                lines[i] = e.replace('<script','<script defer ')
-                #print ("!!! ", lines[i])
+              if 'defer' in e:
+                  continue
+    
+              js_pat = re.compile(r'<\s*script\s+[=\w+]?[ ]*src\s*=')     
+              if re.search(js_pat, e):     
+                 lines[i] = re.sub(js_pat, '<script defer src=', e)
+                 #print ("!!! ", lines[i])
+              # https://www.bogotobogo.com/python/python_regularExpressions.php  
             return lines 
 
         lines= pre_replace_in_file_lines( html_fnm )
