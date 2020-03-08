@@ -3235,8 +3235,12 @@ class HtmlView(CheckEnv):
             for i, e in enumerate(lines):
               if 'defer' in e:
                   continue
+
+              #if all([ '<script ' in e, 'src=' in e, ".js" in e]):
+              #    lines[i]= e.replace("<script ", "<script defer ")
+              #    print ("!!! ", lines[i])
     
-              js_pat = re.compile(r'<\s*script\s+[=\w+]?[ ]*src\s*=')     
+              js_pat = re.compile(r'<\s*script\s+src\s*=')     
               if re.search(js_pat, e):     
                  lines[i] = re.sub(js_pat, '<script defer src=', e)
                  #print ("!!! ", lines[i])
