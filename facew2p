@@ -3248,19 +3248,22 @@ class HtmlView(CheckEnv):
         def defer2head(lines):
             head_line_num = 0
             def_list=[]
+            def_list.append("<!-- begin: moved by facew2p %s -->" %  datetime.datetime.now().strftime("%H:%M:%S %d.%m.%Y"))
             head_pat= re.compile( r'<\s*?/\s*?head\s*?>' )
-            js_pat = re.compile(r'<script defer src=.*?</script>')     
+            js_pat = re.compile(r'<script defer src=.*?<\s*?/\s*?script\*?>')     
             for i, e in enumerate(lines):
                 if head_line_num ==0:
                     if re.search(head_pat, e):
                         head_line_num = i
                         continue
-
                 else:
                     if re.search(js_pat, e):     
                         def_list.append(e)
                         lines[i] = re.sub(js_pat, '<!--script moved to head -->', e)
+
+            def_list.append("<!-- end: moved by facew2p -->")
             def_list.append('</head>')
+
             new_lines=[]
             for i, e in enumerate(lines):
                 if i != head_line_num:
