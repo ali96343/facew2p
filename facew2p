@@ -25,7 +25,7 @@ __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
-
+# https://github.com/pinetr2e/napkin UML
 
 #since I can't see your screenshot, I have to guess. But in German we also our special characters and I encode these by the following procedure:
 #
@@ -3233,23 +3233,54 @@ class HtmlView(CheckEnv):
         def defer_js(lines):
 
             for i, e in enumerate(lines):
-              if 'defer' in e:
+              if any( [ 'defer' in e,  not '.js' in e]):
                   continue
 
               #if all([ '<script ' in e, 'src=' in e, ".js" in e]):
               #    lines[i]= e.replace("<script ", "<script defer ")
               #    print ("!!! ", lines[i])
     
-              js_pat = re.compile(r'<\s*script\s+src\s*=')     
+              js_pat = re.compile(r'<\s*?script\s+src\s*?=')     
+              #js_pat = re.compile(r'<\s*?script\s+[ =\"\'\w+]*?src\s*?=')     
               if re.search(js_pat, e):     
                  lines[i] = re.sub(js_pat, '<script defer src=', e)
-                 #print ("!!! ", lines[i])
+                 # print ("!!! ", lines[i])
               # https://www.bogotobogo.com/python/python_regularExpressions.php  
             return lines 
+
+        def defer2head(lines):
+            head_line_num = 0
+            def_list=[]
+            head_pat= re.compile( r'<\s*?/\s*?head\s*?>' )
+            js_pat = re.compile(r'<script defer src=.*?</script>')     
+            for i, e in enumerate(lines):
+                if head_line_num ==0:
+                    if re.search(head_pat, e):
+                        head_line_num = i
+                        continue
+
+                else:
+                    if re.search(js_pat, e):     
+                        def_list.append(e)
+                        lines[i] = re.sub(js_pat, '<!--script  moved to head -->', e)
+            def_list.append('</head>')
+            new_lines=[]
+            for i, e in enumerate(lines):
+                if i != head_line_num:
+                   new_lines.append(e)
+                else:
+                   for ee in def_list:
+                       new_lines.append(ee)
+                     
+            return new_lines 
+              
 
         lines= pre_replace_in_file_lines( html_fnm )
         if Z.add_js_defer == True:
              lines= defer_js(lines)
+             lines= defer2head(lines)
+
+
 
         ctrl1 = Z.get_from_db_fnm2ctrl(Z.f0)
         link_tbl_e = [html_fnm + Z.myview_ext, html_fnm, ctrl1, Z.file_db]
@@ -4106,7 +4137,7 @@ if __name__ == "__main__":
         print ('   form.new form_types: ', form_types  )
 
     check_model(dbg=False)
-    prYellow("<scrpt defer = %s" % set_defer_js)
+    prYellow("<scrpt defer = %s, scripts moved to head" % set_defer_js)
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
 
