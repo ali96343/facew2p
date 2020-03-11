@@ -3262,7 +3262,7 @@ class HtmlView(CheckEnv):
                 else:
                     if re.search(js_pat, e):     
                         def_list.append(e)
-                        lines[i] = re.sub(js_pat, '<!--script  moved to head -->', e)
+                        lines[i] = re.sub(js_pat, '<!--script moved to head -->', e)
             def_list.append('</head>')
             new_lines=[]
             for i, e in enumerate(lines):
@@ -3309,6 +3309,8 @@ class HtmlView(CheckEnv):
                                 grp0.startswith('javascript:'),
                                 grp0.startswith('tel:'),
                                 grp0.startswith('mailto:'),
+                                grp0.startswith('skype:'),
+                                grp0.startswith('ftp:'),
                                 #('#' in grp0 ),
                                 #("javascript" in grp0 ),
                                 #('tel:' in grp0 ),
