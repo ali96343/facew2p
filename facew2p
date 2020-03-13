@@ -805,20 +805,36 @@ class StrDb:
         "#@auth.requires_login()",
         "@request.restful()",
         "def api():",
+        "#def v1():",
+        "    # Let's allow it to be used cross origin for our testing ",
+        '    response.headers["Access-Control-Allow-Origin"] = "*" ',
         "    from gluon.serializers import json",
         "    response.view = 'generic.' + request.extension",
         "    def GET(*args,**vars):",
+        "         if request.extension == 'xml':",
+        "            response.view = 'generic.xml'",
+        "         else: ",
+        "            response.view = 'generic.json' ",
         "         patterns = 'auto'",
         "         parser = db.parse_as_rest(patterns,args,vars)",
         "         if parser.status == 200:",
         "            return dict(content=parser.response)",
         "         else:",
         "            raise HTTP(parser.status,parser.error)",
+        "",
         "    def POST(table_name,**vars):",
         "        #return db[table_name].validate_and_insert(**vars)",
         "        #data = gluon.contrib.simplejson.loads(request.body.read())",
-        "        return json(db[table_name].validate_and_insert(**vars))",
-        "        return dict()",
+        "",
+        "        if not tablename in db.tables: ",
+        "                  raise HTTP(400) ",
+        "        retDict = dict()",
+        "        for key, value in fields.items():", 
+        "             retDict.update({key : value})", 
+        "        return db[tablename].validate_and_insert(**retDict)",
+        "        #return json(db[table_name].validate_and_insert(**vars))",
+        "        #return dict()",
+        "",
         "    def PUT(table_name,record_id,**vars):",
         "        return db(db[table_name]._id==record_id).update(**vars)",
         "    def DELETE(table_name,record_id):",
@@ -1101,7 +1117,10 @@ class StrDb:
     ctrl_upload = [
         "",
         "",
-        "def save_and_convert(src,  basewidth = 800):",
+        "import os, shutil ",
+        "from PIL import Image",
+        "",
+        "def save_and_convert(src,  basewidth = 800, anti_alyas = False):",
         "",
         "     img = Image.open(src)",
         "     width, height = img.size",
@@ -1110,8 +1129,10 @@ class StrDb:
         "     shutil.copyfile(src, dst)",
         "     wpercent = (basewidth/float(width))",
         "     hsize = int((float(height)*float(wpercent)))",
-        "     img = img.resize((basewidth,hsize), )",
-        "     #img = img.resize((basewidth,hsize), Image.ANTIALIAS)",
+        "     if anti_alyas == True:",
+        "          img = img.resize((basewidth,hsize), Image.ANTIALIAS)",
+        "     else:",
+        "          img = img.resize((basewidth,hsize), )",
         "     if src.lower().endswith(('jpg', 'jpeg', )):",
         "            img.save(src, 'JPEG', )",
         "            #img.save(src, 'JPEG', optimize= True, quality=91 )",
@@ -1127,64 +1148,49 @@ class StrDb:
         "",
         "#@auth.requires_login()",
         "def FCTRL():",
-        "    import os, shutil ",
-        "    from PIL import Image",
         "",
-        "    def png2jpg(fnm_png, fnm_jpg):",
-        "        im = Image.open(fnm_png)",
-        "        rgb_im = im.convert('RGB')",
-        "        rgb_im.save(fnm_jpg)",
+        "    WIDTH_LIMIT = 1200",
         "",
-        "    def jpg2png(fnm_jpg, fnm_png):",
-        "        im = Image.open(fnm_jpg)",
-        "        im.save(fnm_png)",
-        "",
-        "    sh_cp= shutil.copyfile",
-        "    func_dict= { 'svg2svg':sh_cp,   'gif2gif': sh_cp ,'png2png':  sh_cp , 'PNG2png': sh_cp ,  ",
-        "                'jpg2jpg': sh_cp , 'jpg2jpeg': sh_cp, 'jpeg@jpg': sh_cp ,",
-        "                'JPG2jpg': sh_cp , 'JPG2jpeg': sh_cp, 'JPEG@jpg': sh_cp ,",
-        "                              'png2jpg': png2jpg ,  'jpg2png': jpg2png , ",
-        "                              'PNG2jpg': png2jpg ,  'JPG2png': jpg2png , ",
-        "                              'png2jpeg': png2jpg , 'jpeg2png': jpg2png , 'JPEG2png': jpg2png ,   } ",
-        "",
-        "    new_image_file_path='' ",
-        "    param= request.vars.imgnm # controller arg, replaced image",
+        "    new_image_file_path=''",
+        "    param=request.vars.imgnm # controller arg, replaced image",
         "    ctrl_ima= request.vars.imgctrl # controller name for image",
         "    img_file_path= os.path.join( request.folder, 'static/template', param  )",
-        "    size_str= 'size unknown'",
-        "    if not param.endswith('.svg'):",
-        "        im = Image.open(img_file_path)",
-        "        width, height = im.size",
-        "        size_str='image size: width= {} height= {}'.format( width, height)",
-        "    size_str +=  ', %s' % ctrl_ima ",
-        "    param_ext= param.split('.')[-1]",
-        "    upfolder= os.path.join(request.folder, 'UPFOLDER')",
-        "    form=SQLFORM.factory( Field('new_image_file', 'upload',uploadfolder= upfolder, requires=IS_NOT_EMPTY()  ))",
-        "    if form.process().accepted:",
-        "        new_image_file_path = os.path.join(upfolder, form.vars.new_image_file)",
-        "        jenka_fnm = request.vars.new_image_file.filename # origin file name",
-        "        jenka_ext= jenka_fnm.split('.')[-1]",
-        "        if not jenka_fnm.endswith('.svg'):",
-        "            try: ",
-        "               test = Image.open(new_image_file_path) ",
-        "            except: ",
-        "               session.flash= 'bad %s' % jenka_fnm",
-        "               #session.flash= 'bad file format! check file type and try again!'",
-        "               redirect(URL('myima', 'index'))",
+        "    im = Image.open(img_file_path)",
+        "    width, height = im.size",
         "",
+        "    default_width= 0",
+        "    if width> WIDTH_LIMIT :",
+        "        default_width = WIDTH_LIMIT",
+        "    else:",
+        "        default_width = width",
+        "    size_str='image size: width= {} height= {}'.format( width, height)",
+        "    param_ext= param.split('.')[-1]",
+        "    upfolder= os.path.join(request.folder, 'uploads')",
+        "",
+        "",
+        "    form=SQLFORM.factory( Field('new_image_file', 'upload',uploadfolder= upfolder, requires=IS_NOT_EMPTY()  ),",
+        "                          Field('new_width', label='new width in range: 100 - 1200',  default= str(default_width),",
+        "                          requires=IS_INT_IN_RANGE(100, 1201, error_message='too small or too large!'), ), )",
+        "    form.element('input[name=new_width]')['_style']='width:8rem'",
+        "    if form.process().accepted:",
+        "        jenka_fnm = request.vars.new_image_file.filename # origin file name",
+        "        if not jenka_fnm.lower().endswith(('.png', '.jpg', '.jpeg')):",
+        "            session.flash= 'bad file extension'",
+        "            redirect(URL('myima', 'index'))",
+        "        ",
+        "        jenka_ext= jenka_fnm.split('.')[-1]",
         "        param_ext= param.split('.')[-1]",
-        "        func_key= '{}2{}'.format( jenka_ext, param_ext )",
-        "        if func_key in func_dict:",
-        "            request.flash='image file replaced!' ",
-        "            func_dict[func_key](new_image_file_path, img_file_path  )",
-        "            #shutil.copyfile(new_image_file_path, img_file_path  )",
-        "            session.flash= 'write %s' % jenka_fnm",
-        "            #session.flash= 'replaced'",
-        "            #redirect(URL('default', 'index'))",
+        "        new_image_file_path = os.path.join(upfolder, form.vars.new_image_file)",
+        "        if jenka_ext == param_ext:",
+        "            request.flash='image file replaced!'",
+        "            shutil.copyfile(new_image_file_path, img_file_path  )",
+        "            save_and_convert( img_file_path,  int(form.vars.new_width), anti_alyas = False  )",
+        "            session.flash= 'replaced'",
+        "            redirect(URL('myima', 'index'))",
         "        else:",
-        "            response.flash = 'not %s file, not replaced! maybe bad extension?' % param_ext",
-        "            if os.path.isfile(new_image_file_path): ",
-        "                   os.remove(new_image_file_path) ",
+        "            response.flash = 'not %s file, not replaced!' % param_ext",
+        "            if os.path.isfile(new_image_file_path):",
+        "                   os.remove(new_image_file_path)",
         "",
         "    response.view = 'DIR/VIEW'",
         "    return dict(form=form, param= param, ext=param_ext, size_str= size_str, ctrl_ima= ctrl_ima )",
@@ -2850,12 +2856,13 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, add_js_defer = True):
+    def __init__(Z, plus_labels=True, add_js_defer = True, pragma_no_cache = True):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
         Z.add_js_defer = add_js_defer
+        Z.pragma_no_cache = pragma_no_cache
         #f0 = None
         #file_db = None
         Z.repl_ll = [{"<meta name=\"description\" content=\"\">": "<meta name=\"description\" content=\"my-content\">"},
@@ -3279,6 +3286,35 @@ class HtmlView(CheckEnv):
         if Z.add_js_defer == True:
              lines= defer_js(lines)
              lines= defer2head(lines)
+
+ 
+        def set_pragma_no_cache(lines):
+            meta_line_num = 0
+            meta_add = [
+              '<meta http-equiv="Pragma" content="no-cache">\n'
+              '<meta http-equiv="Expires" content="-1">\n'
+              '<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">\n'
+              ]
+            meta_pat = re.compile(r'<\s*?meta.*?>')
+            for i, e in enumerate(lines):
+                if meta_line_num ==0:
+                    if re.search(meta_pat, e):
+                        meta_line_num = i
+                        meta_add.append(e )
+                        break 
+
+            new_lines = []
+            for i, e in enumerate(lines):
+                if i != meta_line_num:
+                    new_lines.append(e)
+                else:
+                    for ee in meta_add:
+                          new_lines.append( ee ) 
+            
+            return new_lines
+
+        if Z.pragma_no_cache == True:
+             lines= set_pragma_no_cache (lines)
 
 
 
@@ -4103,13 +4139,14 @@ def check_model(dbg=True):
 if __name__ == "__main__":
     start = time.time()
     set_defer_js = True
+    pragma_no_cache = False
 
     plus_labels = False if len(sys.argv) >= 2 else True
     plus_bs4 = False if len(sys.argv) >= 3 else True
 
     a = CheckEnv(backup_app=False, unzip_restart=True)
 
-    HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js ).run_list()
+    HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js, pragma_no_cache = pragma_no_cache ).run_list()
 
     W2pApp().build()
     print ("ignored html in subdirs: ", a.db_html_forward_request)
@@ -4139,7 +4176,9 @@ if __name__ == "__main__":
         print ('   form.new form_types: ', form_types  )
 
     check_model(dbg=False)
-    prYellow("<scrpt defer = %s, scripts moved to head" % set_defer_js)
+    prYellow("<scrpt defer == %s, " % set_defer_js)
+    prYellow("pragma_no_cache == %s, " % pragma_no_cache)
+    prYellow ( "put file FACELOCK to template dir for disable facew2p!" )
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
 
