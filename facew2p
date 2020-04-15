@@ -17,11 +17,12 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.223 15.04.2020"
+__version__ = "0.1.225 15.04.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
+some_title = "\n Developed by ChaosTools"
 
 # script idea from http://www.web2pyslices.com/slice/show/1516/adapt-a-css-template-to-web2py-layouthtml
 
@@ -395,12 +396,15 @@ class FileOper:
 
         # http://pythonfiddle.com/css-unminifier-script/
 
-        unminified_css = re.sub(r"\{", " {\n\n\t", minified_css)
-        unminified_css = re.sub(r"\}", "\n\n}\n\n", unminified_css)
+        #unminified_css = re.sub(r"\{", " {\n\n\t", minified_css)
+        unminified_css = re.sub(r"\{", " {\n\t", minified_css)
+        #unminified_css = re.sub(r"\}", "\n\n}\n\n", unminified_css)
+        unminified_css = re.sub(r"\}", "\n}\n\n", unminified_css)
         unminified_css = re.sub(";", ";\n\t", unminified_css)
         unminified_css = re.sub("\/\*", "\n\n/*", unminified_css) # myadd
         unminified_css = re.sub("\*\/", "*/\n\n", unminified_css) # myadd
         unminified_css = re.sub("\*\/\.", "*/\n\n.", unminified_css) # myadd need remove :)
+        unminified_css = re.sub("\,\.", ",\n.", unminified_css) # myadd
         #print unminified_css
         newfnm = fnm if replace else fnm + '.un'
         with open(newfnm, 'w') as f:
@@ -4137,7 +4141,7 @@ def check_model(dbg=True):
                             list1[0])
                         print (ss)
                         sys.exit("stop!")
-    print ("all db table names are unique")
+    print ("all db tables are unique")
     if dbg:
         print (db_tbl_list)
         print (len(db_tbl_list))
@@ -4189,4 +4193,5 @@ if __name__ == "__main__":
     prYellow ( "put file FACELOCK to template dir for disable facew2p!" )
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
+    prGreen(some_title)
 
