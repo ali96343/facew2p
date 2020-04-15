@@ -17,10 +17,16 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.222 11.03.2020"
+__version__ = "0.1.223 15.04.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
+
+
+# script idea from http://www.web2pyslices.com/slice/show/1516/adapt-a-css-template-to-web2py-layouthtml
+
+# ----------------------------------------------------------------
+
 
 # https://github.com/pinetr2e/napkin UML
 
@@ -883,6 +889,8 @@ class StrDb:
         "    redirect(URL(scheme='https', args=request.args, vars=request.vars))",
         "    session.secure()",
         "#####################################",
+        "",
+        "response.headers['X-Powered-By'] = 'xping'",
         "",
         "",
     ]
