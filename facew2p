@@ -14,10 +14,10 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 __author__ = "Alex Beskopilny"
-__copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
+__copyright__ = "Copyright 2020, The web2py app generator. It generates app  from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.228 30.04.2020"
+__version__ = "0.1.230 30.04.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -4229,12 +4229,12 @@ if __name__ == "__main__":
     check_model(dbg=False)
 
     if URL_optimize == True:
-         prYellow( "app name hard coded to url in html-files" )
+         prYellow( "URL optimized: app name hard coded to url in html-files" )
 
     prYellow("URL_optimize == %s, " % URL_optimize)
-    prYellow("<scrpt defer == %s, " % set_defer_js)
+    prYellow("<script defer == %s, " % set_defer_js)
     prYellow("pragma_no_cache == %s, " % pragma_no_cache)
-    prYellow( "change URL_optimize, <scrpt defer, pragma_no_cache in __main__"  )
+    prYellow( "change URL_optimize, <script defer, pragma_no_cache in __main__"  )
     prYellow ( "put file FACELOCK to template dir for disable facew2p!" )
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
