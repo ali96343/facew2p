@@ -17,7 +17,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.227 30.04.2020"
+__version__ = "0.1.228 30.04.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -2872,12 +2872,12 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, add_js_defer = True, pragma_no_cache = True, static_optimize= True ):
+    def __init__(Z, plus_labels=True, add_js_defer = True, pragma_no_cache = True, URL_optimize= True ):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
-        Z.static_optimize= static_optimize
+        Z.URL_optimize= URL_optimize
         Z.add_js_defer = add_js_defer
         Z.pragma_no_cache = pragma_no_cache
         #f0 = None
@@ -3459,7 +3459,7 @@ class HtmlView(CheckEnv):
                  o_lines.append(e)
             return o_lines 
 
-        if Z.static_optimize == True:
+        if Z.URL_optimize == True:
             FileOper.list2file( optimizer( lines), html_fnm + Z.myview_ext)
         else:
             FileOper.list2file( lines, html_fnm + Z.myview_ext)
@@ -4189,7 +4189,7 @@ if __name__ == "__main__":
 
     set_defer_js = True
     pragma_no_cache = False
-    static_optimize = True
+    URL_optimize = True
 
     plus_labels = False if len(sys.argv) >= 2 else True
     plus_bs4 = False if len(sys.argv) >= 3 else True
@@ -4197,7 +4197,7 @@ if __name__ == "__main__":
     a = CheckEnv(backup_app=False, unzip_restart=True)
 
     HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js,
-         pragma_no_cache = pragma_no_cache, static_optimize= static_optimize ).run_list()
+         pragma_no_cache = pragma_no_cache, URL_optimize= URL_optimize ).run_list()
 
     W2pApp().build()
     print ("ignored html in subdirs: ", a.db_html_forward_request)
@@ -4228,12 +4228,13 @@ if __name__ == "__main__":
 
     check_model(dbg=False)
 
-    if static_optimize == True:
-         prYellow( "app name hard coded in html" )
+    if URL_optimize == True:
+         prYellow( "app name hard coded to url in html-files" )
 
-    prYellow("static_optimize == %s, " % static_optimize)
+    prYellow("URL_optimize == %s, " % URL_optimize)
     prYellow("<scrpt defer == %s, " % set_defer_js)
     prYellow("pragma_no_cache == %s, " % pragma_no_cache)
+    prYellow( "change URL_optimize, <scrpt defer, pragma_no_cache in __main__"  )
     prYellow ( "put file FACELOCK to template dir for disable facew2p!" )
     # --------------------------------------------
     prGreen("execution time: %.0f sec" % (time.time() - start))
