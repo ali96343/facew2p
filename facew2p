@@ -17,16 +17,21 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.225 15.04.2020"
+__version__ = "0.1.227 30.04.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
 
 some_title = "\n Developed by ChaosTools"
 
+# Python source code 	u"\U0001F9A0" MICROBE
+# Python source code 	u"\u2757" HEAVY EXCLAMATION MARK SYMBOL'
+
 # script idea from http://www.web2pyslices.com/slice/show/1516/adapt-a-css-template-to-web2py-layouthtml
 
 # ----------------------------------------------------------------
+
+# https://www.geeksforgeeks.org/performing-google-search-using-python-code/
 
 
 # https://github.com/pinetr2e/napkin UML
@@ -992,7 +997,6 @@ class StrDb:
         #"  <meta name=\"author\" content=\"aaaaaaa\">",
         "",
         #"   <link  rel=\"icon\" type=\"image/png\" href=\"{{=URL(\'static\',\'images/favicon.png\')}}\"  >",
-        "   <meta charset='utf-8'>",
         "   <link  rel=\"icon\" type=\"image/x-icon\" href=\"{{=URL(\'static\',\'images/favicon.ico\')}}\"  >",
         "",
     ]
@@ -2868,11 +2872,12 @@ class FindTables_bs4 (StrDb, ):
 # db[tablename].insert(**{fieldname:value})
 
 class HtmlView(CheckEnv):
-    def __init__(Z, plus_labels=True, add_js_defer = True, pragma_no_cache = True):
+    def __init__(Z, plus_labels=True, add_js_defer = True, pragma_no_cache = True, static_optimize= True ):
         url_beg = r"{{=URL('static','template/" 
         ctrl1_beg = r"{{=URL(c='default',f='"
         url_end = r"')}}"
         Z.plus_labels = plus_labels
+        Z.static_optimize= static_optimize
         Z.add_js_defer = add_js_defer
         Z.pragma_no_cache = pragma_no_cache
         #f0 = None
@@ -3266,7 +3271,7 @@ class HtmlView(CheckEnv):
 
         def defer2head(lines):
             head_line_num = 0
-            def_list=[]
+            def_list=["\n"]
             def_list.append("<!-- begin: moved by facew2p %s -->" %  datetime.datetime.now().strftime("%H:%M:%S %d.%m.%Y"))
             head_pat= re.compile( r'<\s*?/\s*?head\s*?>' )
             js_pat = re.compile(r'<script defer src=.*?<\s*?/\s*?script\*?>')     
@@ -3278,7 +3283,7 @@ class HtmlView(CheckEnv):
                 else:
                     if re.search(js_pat, e):     
                         def_list.append(e)
-                        lines[i] = re.sub(js_pat, '<!--script moved to head -->', e)
+                        lines[i] = re.sub(js_pat, '<!-- js-script-src moved to head -->', e)
 
             def_list.append("<!-- end: moved by facew2p -->")
             def_list.append('</head>')
@@ -3426,7 +3431,38 @@ class HtmlView(CheckEnv):
             FileOper.list2file(log_str, html_fnm + Z.mylog_ext)
         link_tbl_e.append(list_for_keys)
         Z.link_table.append(link_tbl_e)
-        FileOper.list2file(lines, html_fnm + Z.myview_ext)
+
+
+        def get_app_nm():
+            s = os.getcwd().split('/')
+            return s[-3] if len(s) > 4 else 'unk'
+
+        def optimizer(in_lines):
+            o_lines= []
+
+            stat_beg = "{{=URL('static','"
+            stat_end = "')}}"
+            ctrl_beg = "{{=URL(c='default',f='" 
+            ctrl_end = stat_end            
+
+
+            rep_stat= "/{}/static/".format( get_app_nm()  )
+            rep_ctrl= "/{}/default/".format( get_app_nm()  )
+
+            for e in in_lines:
+                 if all( [ stat_beg  in e, stat_end in e  ] ) :
+                     e= e.replace( stat_beg, rep_stat )
+                     e= e.replace( stat_end, '' )
+                 if all( [ ctrl_beg  in e, ctrl_end in e  ] ) :
+                     e= e.replace( ctrl_beg, rep_ctrl )
+                     e= e.replace( ctrl_end, '' )
+                 o_lines.append(e)
+            return o_lines 
+
+        if Z.static_optimize == True:
+            FileOper.list2file( optimizer( lines), html_fnm + Z.myview_ext)
+        else:
+            FileOper.list2file( lines, html_fnm + Z.myview_ext)
         return
 
     def run_list(Z):
@@ -4150,15 +4186,18 @@ def check_model(dbg=True):
 # ------------------------------------------------------------------------------------
 if __name__ == "__main__":
     start = time.time()
+
     set_defer_js = True
     pragma_no_cache = False
+    static_optimize = True
 
     plus_labels = False if len(sys.argv) >= 2 else True
     plus_bs4 = False if len(sys.argv) >= 3 else True
 
     a = CheckEnv(backup_app=False, unzip_restart=True)
 
-    HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js, pragma_no_cache = pragma_no_cache ).run_list()
+    HtmlView(plus_labels=plus_labels, add_js_defer = set_defer_js,
+         pragma_no_cache = pragma_no_cache, static_optimize= static_optimize ).run_list()
 
     W2pApp().build()
     print ("ignored html in subdirs: ", a.db_html_forward_request)
@@ -4188,6 +4227,11 @@ if __name__ == "__main__":
         print ('   form.new form_types: ', form_types  )
 
     check_model(dbg=False)
+
+    if static_optimize == True:
+         prYellow( "app name hard coded in html" )
+
+    prYellow("static_optimize == %s, " % static_optimize)
     prYellow("<scrpt defer == %s, " % set_defer_js)
     prYellow("pragma_no_cache == %s, " % pragma_no_cache)
     prYellow ( "put file FACELOCK to template dir for disable facew2p!" )
