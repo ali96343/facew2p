@@ -17,7 +17,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator. It generates app  from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "0.1.230 30.04.2020"
+__version__ = "10.05.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -311,6 +311,37 @@ tbl_med_type = {
 table_types= ['string', 'textarea', 'integer', 'double', 'datetime', 'date', 'boolean']
 
 form_types= ['input',  'textarea', 'checkbox', 'select', 'radio']
+
+# ---------------------------------------------------------------------------------------------
+app_compile= """
+cd W2P_DIR 
+python -c "import gluon.compileapp; gluon.compileapp.compile_application('applications/APP_NAME')"
+
+#python web2py.py -S APP_NAME -R scripts/zip_static_files.py
+
+cd applications/APP_NAME
+
+
+# alias delgz='find . -type f -name '*.gz''
+# alias yyy="cd W2P_DIR; python web2py.py -S APP_NAME -M"
+"""
+
+def put_compile_script():
+   app_nm = os.getcwd().split('/')[-3]
+   c_txt = app_compile.replace("APP_NAME", app_nm)    
+   up_dir_l= os.getcwd().split('/')  
+   up_dir= "/".join( up_dir_l[0:-2] )
+   w2p_dir= "/".join( up_dir_l[0:-4] )
+   c_txt= c_txt.replace("W2P_DIR", w2p_dir)
+   fnm= os.path.join(up_dir, app_nm + "_c.sh" )   
+   prYellow( "for compile app: %s" % fnm )
+   with  open( fnm , "w") as f:
+        f.write( c_txt )
+   compil_dir= os.path.join(up_dir, "compiled")
+   if os.path.isdir( compil_dir  ):
+      prYellow ("found & remove compiled dir: %s" % compil_dir)
+      shutil.rmtree( compil_dir  )
+   return None
 # ---------------------------------------------------------------------------------------------
 
 
@@ -4202,6 +4233,7 @@ if __name__ == "__main__":
     W2pApp().build()
     print ("ignored html in subdirs: ", a.db_html_forward_request)
     prYellow("images: %s" % len(a.db_src_myimg))
+    put_compile_script()
 
     FindTables_bs4(plus_bs4=plus_bs4).run()
     MyTest(run_test=False)
