@@ -17,7 +17,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator. It generates app  from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "10.05.2020"
+__version__ = "2 10.05.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -4220,7 +4220,7 @@ if __name__ == "__main__":
 
     set_defer_js = True
     pragma_no_cache = False
-    URL_optimize = True
+    URL_optimize = False
 
     plus_labels = False if len(sys.argv) >= 2 else True
     plus_bs4 = False if len(sys.argv) >= 3 else True
