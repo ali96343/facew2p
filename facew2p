@@ -82,6 +82,7 @@ import datetime
 import requests
 import pprint
 import io
+import stat
 from email.utils import parseaddr
 from inspect import currentframe, getframeinfo
 
@@ -337,6 +338,8 @@ def put_compile_script():
    prYellow( "for compile app: %s" % fnm )
    with  open( fnm , "w") as f:
         f.write( c_txt )
+   st = os.stat(fnm)
+   os.chmod(fnm, st.st_mode | stat.S_IEXEC)
    compil_dir= os.path.join(up_dir, "compiled")
    if os.path.isdir( compil_dir  ):
       prYellow ("found & remove compiled dir: %s" % compil_dir)
@@ -3195,7 +3198,8 @@ class HtmlView(CheckEnv):
             ['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])([\w\.-]+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
             #['data-*', re.compile(r'(data-\w+\s?=\s*[\"\'])(\w+[/][^\"\']*)([\"\'])()'), r'\g<1>%s\g<2>%s\g<3>', r_data, False , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([^\)]*\"?)(\))()'), r'\g<1>%s\g<2>%s\g<3>', r_url, False , False],
-            ['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
+            ['url_img', re.compile(r'(url\s*\(\s*(?:[\"\']?)\s*)([^\"\'\)]+?)((?:[\"\']?)\))()') , r"url('%s\g<2>%s')", r_url, False , False],
+            #['url_img', re.compile(r'(url\s*\(\s*[\"\']?\s*)(.+?)([\"\']?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
             #['url_img', re.compile(r'(url\s?\(\"?)([-a-zA-Z./]+)(\"?\))()') , r"url('%s\g<2>%s')", r_url, False , False],
             ['title', re.compile(r'(<title>)([^<]*)(</title>)()'), r'\1%s\3', r_t0, False , False],
             ['/head', re.compile(r'(</head>)'), r'\1%s\3', r_head, False , False],
