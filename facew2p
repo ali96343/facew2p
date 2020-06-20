@@ -7,8 +7,6 @@ import sys
 if sys.version_info[0] != 2:
     sys.exit('stop! sorry, need python2')
     #raise Exception("Must be using Python 3")
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -17,7 +15,7 @@ __author__ = "Alex Beskopilny"
 __copyright__ = "Copyright 2020, The web2py app generator. It generates app  from html-css-templates project"
 __credits__ = ["Alex Beskopilny"]
 __license__ = "MIT"
-__version__ = "2 10.05.2020"
+__version__ = "20.06.2020"
 __maintainer__ = "Alex Beskopilny"
 __email__ = "ab96343@gmail.com"
 __status__ = "Dev"
@@ -321,7 +319,7 @@ python -c "import gluon.compileapp; gluon.compileapp.compile_application('applic
 #python web2py.py -S APP_NAME -R scripts/zip_static_files.py
 
 cd applications/APP_NAME
-
+ls compiled
 
 # alias delgz='find . -type f -name '*.gz''
 # alias yyy="cd W2P_DIR; python web2py.py -S APP_NAME -M"
