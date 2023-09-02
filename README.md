@@ -11,7 +11,7 @@ Python script generates web2py app from html-css-templates
 4. download html-css-template to myapp/static/template,
 5. run the script from template dir  (if template is zipped,  the script unzips the template),
 6. at every run the script delete myapp/databases/*,
-7. look at live examples  https://alibsk.pythonanywhere.com/
+7. its python-2.7 scipt
 
 some test applications (for admin dashboards) are in the applications directory,
 
